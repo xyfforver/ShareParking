@@ -1,0 +1,18 @@
+//
+//  SharedParking.pch
+//  SharedParking
+//
+//  Created by galaxy on 2017/10/23.
+//  Copyright © 2017年 galaxy. All rights reserved.
+//
+
+#ifndef SharedParking_pch
+#define SharedParking_pch
+
+#import "Common_define.h"
+#import "Common_network.h"
+#import "Common_font.h"
+#import "Common_color.h"
+
+
+#endif /* SharedParking_pch */
