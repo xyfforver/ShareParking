@@ -8,7 +8,7 @@
 
 #import "UserModel.h"
 #import <CommonCrypto/CommonDigest.h>
-#import "GTMBase64.h"
+
 
 @implementation UserModel
 
@@ -56,15 +56,5 @@
     }];
 }
 
-//加密 md5和base64
-+(NSString *)getMd5_32Bit_String:( NSString *)srcString{
-    const char *cStr = [srcString UTF8String];
-    unsigned char digest[CC_MD5_DIGEST_LENGTH];
-    CC_MD5( cStr, strlen(cStr), digest );
-    NSData * base64 = [GTMBase64 encodeBytes:digest length:16];
-    NSString * output = [[NSString alloc] initWithData:base64 encoding:NSUTF8StringEncoding];
-    output=[output stringByReplacingOccurrencesOfString:@"=" withString:@""];
-    return output;
-}
 
 @end

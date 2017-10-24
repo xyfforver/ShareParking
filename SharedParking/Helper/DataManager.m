@@ -9,7 +9,6 @@
 #import "DataManager.h"
 #import "UserModel.h"
 #import "StatusModel.h"
-#import "FXKeychain.h"
 
 NSString *const kLoginSuccessNotification = @"LoginSuccessNotification";
 NSString *const kLogoutSuccessNotification = @"LogoutSuccessNotification";
@@ -43,12 +42,10 @@ NSString *const kUserModelUpdatedNotification = @"UserModelUpdatedNotification";
 //    [self configLibraryParams];
     
     NSString *account = GetDataManager.account;
-    NSString *pwd = GetDataManager.password;
-    
-    if ([[FXKeychain defaultKeychain] setObject:pwd forKey:account]) {
-        [[NSUserDefaults standardUserDefaults] setObject:account forKey:kUserKey];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
+
+    [[NSUserDefaults standardUserDefaults] setObject:account forKey:kUserKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
     
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kAutoLogin];
     
@@ -110,13 +107,11 @@ NSString *const kUserModelUpdatedNotification = @"UserModelUpdatedNotification";
     BOOL autoLogin = [[[NSUserDefaults standardUserDefaults] objectForKey:kAutoLogin] boolValue];
     if (autoLogin) {
         NSString *account = [[NSUserDefaults standardUserDefaults] objectForKey:kUserKey];
-        NSString *password = [[FXKeychain defaultKeychain] objectForKey:account];
         
-        [UserModel loginWithAccount:account password:password success:^(StatusModel *statusModel) {
+        [UserModel loginWithAccount:account password:nil success:^(StatusModel *statusModel) {
             if (statusModel.flag == kFlagSuccess) {
                 UserModel *userModel = statusModel.data;
                 self.account = account;
-                self.password = password;
                 self.id = userModel.id;
                 [self loginSucceedWithModel:userModel];
             } else {

@@ -27,7 +27,5 @@
 
 + (void)bindAlipay:(NSString *)alipay success:(NetCompletionBlock)success;
 
-//md5加密
-+(NSString *)getMd5_32Bit_String:(NSString *)srcString;
 
 @end

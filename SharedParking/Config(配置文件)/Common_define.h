@@ -20,6 +20,7 @@
 #import "JKNavigationController.h"
 #import "JMRefreshHeader.h"
 #import "JMRefreshFooter.h"
+#import "IQKeyboardManager.h"
 
 /***类别***/
 #import "UIViewExt.h"

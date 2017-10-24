@@ -51,6 +51,7 @@
 		6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6621F9DDDC300A1020C /* UINavigationController+FDFullscreenPopGesture.m */; };
 		6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6651F9DDDC300A1020C /* KeychainHelper.m */; };
 		6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6671F9DDDC300A1020C /* KeychainIDFA.m */; };
+		6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,8 @@
 		6B91B68F1F9DE9B900A1020C /* MessageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
 		6B91B6911F9DE9C600A1020C /* MineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineVC.h; sourceTree = "<group>"; };
 		6B91B6921F9DE9C600A1020C /* MineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
+		6BF8B2531F9F177000329145 /* AppDelegate+LibConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+LibConfig.h"; sourceTree = "<group>"; };
+		6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+LibConfig.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +229,8 @@
 				6B91B65F1F9DDDC300A1020C /* Libs(第三方库) */,
 				6B91B5F91F9DDB4000A1020C /* AppDelegate.h */,
 				6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */,
+				6BF8B2531F9F177000329145 /* AppDelegate+LibConfig.h */,
+				6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */,
 				6B91B5FC1F9DDB4000A1020C /* ViewController.h */,
 				6B91B5FD1F9DDB4000A1020C /* ViewController.m */,
 				6B91B66E1F9DE48C00A1020C /* SharedParking.pch */,
@@ -725,6 +730,7 @@
 				6B91B6AE1F9DEE2600A1020C /* StatusModel.m in Sources */,
 				6B91B6AD1F9DEE1C00A1020C /* JMRefreshHeader.m in Sources */,
 				6B91B6AC1F9DEE0A00A1020C /* JMRefreshFooter.m in Sources */,
+				6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */,
 				6B91B6AB1F9DEE0200A1020C /* ExtraParaManger.m in Sources */,
 				6B91B6AA1F9DEDF300A1020C /* BaseModel.m in Sources */,
 				6B91B6A91F9DEDE900A1020C /* UIViewExt.m in Sources */,
