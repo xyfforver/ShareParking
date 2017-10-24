@@ -1,6 +1,0 @@
-framework module SDPhotoBrowser {
-  umbrella header "SDPhotoBrowser-umbrella.h"
-
-  export *
-  module * { export * }
-}

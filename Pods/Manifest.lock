@@ -14,22 +14,17 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - DZNEmptyDataSet (1.8.1)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
-  - FXKeychain (1.5.3)
-  - GTMBase64 (1.0.0)
-  - Kingfisher (3.9.1)
+  - IQKeyboardManager (4.0.9)
   - LKDBHelper (2.4.2):
     - FMDB
   - Masonry (1.0.2)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - RegexKitLite (4.0)
-  - SDCycleScrollView (1.65):
-    - SDWebImage (~> 3.7)
-  - SDPhotoBrowser (0.0.3):
-    - Kingfisher
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -39,35 +34,30 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
-  - FXKeychain (~> 1.5.3)
-  - GTMBase64 (~> 1.0.0)
+  - DZNEmptyDataSet (~> 1.8.1)
+  - IQKeyboardManager (~> 4.0.9)
   - LKDBHelper (~> 2.4.2)
   - Masonry (~> 1.0.2)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
   - RegexKitLite (~> 4.0)
-  - SDCycleScrollView (~> 1.64)
-  - SDPhotoBrowser (~> 0.0.3)
   - SDWebImage (~> 3.8.2)
   - WSProgressHUD (~> 1.1.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  FXKeychain: 2fe54573946ffef634f4e2a2851e6c8f4ea15e76
-  GTMBase64: 0da7372e95f5171f3f652db38cde6716f8eb5e24
-  Kingfisher: 6729a0baaa458245bfb8cd5a1296c71c10d6eb6c
+  IQKeyboardManager: 322c7405df3eb5f7e50dede32ea937bf3d4364e0
   LKDBHelper: ab67373b32f47463bf5f838d730f225824f4492a
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
-  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
-  SDPhotoBrowser: a8c4c24b821b8c15aae2fae6da929909f56e7f9e
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   WSProgressHUD: e214ab3dd863115bd69ede25cb3b38e27f78c468
 
-PODFILE CHECKSUM: 89ebdda7cb872c4b818a6b82d82b8bbc7159ef2e
+PODFILE CHECKSUM: 2b9d9bae99c1284ad5729b1eac472f3a048dc790
 
 COCOAPODS: 1.2.1

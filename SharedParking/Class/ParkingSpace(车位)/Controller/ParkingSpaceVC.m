@@ -7,8 +7,11 @@
 //
 
 #import "ParkingSpaceVC.h"
-@interface ParkingSpaceVC ()
 
+@interface ParkingSpaceVC ()
+@property (nonatomic , strong) UIView *headerView;
+@property (nonatomic , strong) UIView *mapView;
+@property (nonatomic , strong) UITableView *tbView;
 @end
 
 @implementation ParkingSpaceVC
@@ -21,11 +24,67 @@
 }
 
 - (void)initView{
+    [self initNavBarView];
+    
+    [self.view addSubview:self.headerView];
+    [self.view addSubview:self.mapView];
+    [self.view addSubview:self.tbView];
+    
+    self.tbView.hidden = YES;
+}
+
+#pragma mark ---------------action ---------------------/
+- (void)codeAction{
+    
+    
+}
+
+- (void)listAction:(UIButton *)button{
+    DLog(@"点击了 翻转");
+    //获取到flipView
+    UIView *flipView = self.navigationItem.rightBarButtonItem.customView;
+    
+    //取得需要翻转的按钮
+    UIView *btn1 = [flipView viewWithTag:1];
+    UIView *btn2 = [flipView viewWithTag:2];
+    
+    //是否从左侧翻转
+    BOOL isLeft = btn1.hidden;
+    
+    //翻转视图
+    [self flipWithView:flipView isLeft:isLeft];
+    [self flipWithView:self.view isLeft:isLeft];
+    
+    //改变按钮显示状态
+    btn1.hidden = !btn1.hidden;
+    btn2.hidden = !btn2.hidden;
+    
+    //切换地图视图与列表视图
+    self.mapView.hidden = !self.mapView.hidden;
+    self.tbView.hidden = !self.tbView.hidden;
+}
+
+#pragma mark -flip animation
+/*
+ view:需要翻转的视图
+ isLeft :是否从左侧翻转
+ */
+- (void)flipWithView:(UIView *)view isLeft:(BOOL)isLeft{
+    
+    //翻转的效果 枚举
+    UIViewAnimationOptions option = isLeft ? UIViewAnimationOptionTransitionFlipFromLeft : UIViewAnimationOptionTransitionFlipFromRight;
+    
+    [UIView transitionWithView:view duration:.3 options:option animations:NULL completion:NULL];
+}
+
+
+#pragma mark ---------------lazy ---------------------/
+
+- (void)initNavBarView{
     self.navigationItem.title = @"车位";
     self.view.backgroundColor = kColorRandom;
     
     self.navigationItem.leftBarButtonItem = [[self class] rightBarButtonWithName:@"扫一扫" imageName:nil target:self action:@selector(codeAction)];
-    
     
     // 创建翻转父视图
     UIView *flipView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
@@ -53,47 +112,28 @@
     self.navigationItem.rightBarButtonItem = rightItem;
 }
 
-
-- (void)codeAction{
-    
-    
+- (UIView *)headerView{
+    if (!_headerView) {
+        _headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
+        _headerView.backgroundColor = kColorRed;
+    }
+    return _headerView;
 }
 
-- (void)listAction:(UIButton *)button{
-    DLog(@"点击了 翻转");
-    //获取到flipView
-    UIView *flipView = self.navigationItem.rightBarButtonItem.customView;
-    
-    //取得需要翻转的按钮
-    UIView *btn1 = [flipView viewWithTag:1];
-    UIView *btn2 = [flipView viewWithTag:2];
-    
-    //是否从左侧翻转
-    BOOL isLeft = btn1.hidden;
-    
-    //翻转视图
-    [self flipWithView:flipView isLeft:isLeft];
-    [self flipWithView:self.view isLeft:isLeft];
-    
-    //改变按钮显示状态
-    btn1.hidden = !btn1.hidden;
-    btn2.hidden = !btn2.hidden;
-    
-    button.selected = !button.selected;
+- (UIView *)mapView{
+    if (!_mapView) {
+        _mapView = [[UIView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height)];
+        _mapView.backgroundColor = kColorOrange;
+    }
+    return _mapView;
 }
 
-#pragma mark -flip animation
-/*
- view:需要翻转的视图
- isLeft :是否从左侧翻转
- */
-- (void)flipWithView:(UIView *)view isLeft:(BOOL)isLeft{
-    
-    //翻转的效果 枚举
-    UIViewAnimationOptions option = isLeft ? UIViewAnimationOptionTransitionFlipFromLeft : UIViewAnimationOptionTransitionFlipFromRight;
-    
-    [UIView transitionWithView:view duration:.3 options:option animations:NULL completion:NULL];
+- (UITableView *)tbView{
+    if (!_tbView) {
+        _tbView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height) style:UITableViewStylePlain];
+        _tbView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tbView.backgroundColor = kColorBlue;
+    }
+    return _tbView;
 }
-
-
 @end
