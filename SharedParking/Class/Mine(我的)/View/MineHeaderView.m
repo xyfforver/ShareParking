@@ -120,7 +120,7 @@
         _nickNameBtn.titleLabel.font = kFontSizeBold20;
         [_nickNameBtn setTitleColor:kColorWhite forState:UIControlStateNormal];
         [_nickNameBtn setTitle:@"1873929338" forState:UIControlStateNormal];
-        [_nickNameBtn setImage:[UIImage imageNamed:@"tab_home_red"] forState:UIControlStateNormal];
+        [_nickNameBtn setImage:[UIImage imageNamed:@"mine_edit"] forState:UIControlStateNormal];
         
     }
     return _nickNameBtn;
@@ -154,7 +154,7 @@
 - (UIView *)lineView{
     if(!_lineView){
         _lineView = [[UIView alloc]init];
-        _lineView.backgroundColor = kColora3a3a3;
+        _lineView.backgroundColor = kColor6B6B6B;
     }
     return _lineView;
 }

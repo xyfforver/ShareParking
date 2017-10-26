@@ -21,6 +21,7 @@
 #import "JMRefreshHeader.h"
 #import "JMRefreshFooter.h"
 #import "IQKeyboardManager.h"
+#import "WSProgressHUD.h"
 
 /***类别***/
 #import "UIViewExt.h"

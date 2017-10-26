@@ -7,6 +7,9 @@
 //
 #define kHeadBgHeight (450/750.0*kScreenWidth)
 #import "MineVC.h"
+#import "SettingVC.h"
+#import "ParkingRecordVC.h"
+
 #import "MineHeaderView.h"
 @interface MineVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) MineHeaderView *headerView;
@@ -86,9 +89,21 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self loginVerifySuccess:^{
-
-    }];
+    if (indexPath.row == 0) {
+        
+    }else if (indexPath.row == 1){
+        
+    }else if (indexPath.row == 2){
+        
+    }else if (indexPath.row == 3){
+        ParkingRecordVC *vc = [[ParkingRecordVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 4){
+        SettingVC *vc = [[SettingVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+    
 }
 
 

@@ -11,6 +11,9 @@
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
+		6B3C16E71FA1CEB9009A6948 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16E61FA1CEB9009A6948 /* SettingVC.m */; };
+		6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16EF1FA1D4FC009A6948 /* ParkingRecordVC.m */; };
+		6B3C16F41FA1D517009A6948 /* ParkingRecordTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16F31FA1D517009A6948 /* ParkingRecordTBCell.m */; };
 		6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */; };
 		6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FD1F9DDB4000A1020C /* ViewController.m */; };
 		6B91B6011F9DDB4000A1020C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B91B5FF1F9DDB4000A1020C /* Main.storyboard */; };
@@ -84,6 +87,12 @@
 		6B1C158A1FA058AF00E584F3 /* BaseTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTBView.m; sourceTree = "<group>"; };
 		6B1C158D1FA05B9F00E584F3 /* MineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
 		6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
+		6B3C16E51FA1CEB9009A6948 /* SettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		6B3C16E61FA1CEB9009A6948 /* SettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		6B3C16EF1FA1D4FC009A6948 /* ParkingRecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkingRecordVC.m; sourceTree = "<group>"; };
+		6B3C16F01FA1D4FC009A6948 /* ParkingRecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkingRecordVC.h; sourceTree = "<group>"; };
+		6B3C16F21FA1D517009A6948 /* ParkingRecordTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingRecordTBCell.h; sourceTree = "<group>"; };
+		6B3C16F31FA1D517009A6948 /* ParkingRecordTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingRecordTBCell.m; sourceTree = "<group>"; };
 		6B91B5F61F9DDB4000A1020C /* SharedParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B91B5F91F9DDB4000A1020C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -205,6 +214,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B3C16EB1FA1D4DD009A6948 /* ParkingRecord(停车记录) */ = {
+			isa = PBXGroup;
+			children = (
+				6B3C16EC1FA1D4DD009A6948 /* Controller */,
+				6B3C16ED1FA1D4DD009A6948 /* Model */,
+				6B3C16EE1FA1D4DD009A6948 /* View */,
+			);
+			path = "ParkingRecord(停车记录)";
+			sourceTree = "<group>";
+		};
+		6B3C16EC1FA1D4DD009A6948 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B3C16F01FA1D4FC009A6948 /* ParkingRecordVC.h */,
+				6B3C16EF1FA1D4FC009A6948 /* ParkingRecordVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B3C16ED1FA1D4DD009A6948 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B3C16EE1FA1D4DD009A6948 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B3C16F21FA1D517009A6948 /* ParkingRecordTBCell.h */,
+				6B3C16F31FA1D517009A6948 /* ParkingRecordTBCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6B91B5ED1F9DDB4000A1020C = {
 			isa = PBXGroup;
 			children = (
@@ -438,6 +482,9 @@
 		6B91B67C1F9DE8AD00A1020C /* Mine(我的) */ = {
 			isa = PBXGroup;
 			children = (
+				6B3C16EB1FA1D4DD009A6948 /* ParkingRecord(停车记录) */,
+				6B3C16E51FA1CEB9009A6948 /* SettingVC.h */,
+				6B3C16E61FA1CEB9009A6948 /* SettingVC.m */,
 				6B91B67D1F9DE8AD00A1020C /* Controller */,
 				6B91B67E1F9DE8AD00A1020C /* Model */,
 				6B91B67F1F9DE8AD00A1020C /* View */,
@@ -741,6 +788,7 @@
 				6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */,
 				6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				6B91B6B01F9DEE3E00A1020C /* UserModel.m in Sources */,
+				6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */,
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
 				6B91B6AF1F9DEE3700A1020C /* StatusRecordListModel.m in Sources */,
 				6B91B6AE1F9DEE2600A1020C /* StatusModel.m in Sources */,
@@ -759,6 +807,7 @@
 				6B91B6A31F9DEDB900A1020C /* UIImage+UIColor.m in Sources */,
 				6B91B6A21F9DEDB300A1020C /* UIColor+Extension.m in Sources */,
 				6B91B6A11F9DEDAC00A1020C /* UIButton+LCAlignment.m in Sources */,
+				6B3C16E71FA1CEB9009A6948 /* SettingVC.m in Sources */,
 				6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */,
 				6B91B6A01F9DEDA500A1020C /* UIButton+Block.m in Sources */,
 				6B91B69F1F9DED9F00A1020C /* UIButton+EnlargeEdge.m in Sources */,
@@ -774,6 +823,7 @@
 				6B91B6941F9DEC2F00A1020C /* BaseViewController.m in Sources */,
 				6B91B68A1F9DE96000A1020C /* ParkingSpaceVC.m in Sources */,
 				6B91B68D1F9DE9A900A1020C /* ReleaseVC.m in Sources */,
+				6B3C16F41FA1D517009A6948 /* ParkingRecordTBCell.m in Sources */,
 				6B91B6901F9DE9B900A1020C /* MessageVC.m in Sources */,
 				6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */,
 				6B91B6091F9DDB4000A1020C /* main.m in Sources */,
