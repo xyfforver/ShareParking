@@ -39,6 +39,7 @@
 #import "UIViewController+Util.h"
 #import "NSDictionary+RequestEncoding.h"
 #import "NSString+Regex.h"
+#import "UIScrollView+EmptyDataSet.h"
 
 
 /***View***/
@@ -58,10 +59,6 @@
 #define Common_define_h
 
 
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight [UIScreen mainScreen].bounds.size.height
-#define kBodyHeight   ([UIScreen mainScreen].applicationFrame.size.height - 44.0)
-
 #define rgbColor(r,g,b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1];
 
 //NSNumber转NSString
@@ -72,6 +69,21 @@
 #define DEVICE_IPHONE5 ([[UIScreen mainScreen] bounds].size.width == 320)
 #define DEVICE_IPHONE6 ([[UIScreen mainScreen] bounds].size.width == 375)
 #define DEVICE_IPHONEPLUS ([[UIScreen mainScreen] bounds].size.width == 414)
+#define DEVICE_IPHONEX [UIScreen mainScreen].bounds.size.width == 375.0f && [UIScreen mainScreen].bounds.size.height == 812.0f
+#define  kStatusBarHeight      (DEVICE_IPHONEX ? 44.f : 20.f)
+#define  kNavigationBarHeight  44.f
+#define  kTabbarSafeBottomMargin         (DEVICE_IPHONEX ? 34.f : 0.f)
+#define  kStatusBarAndNavigationBarHeight  (DEVICE_IPHONEX ? 88.f : 64.f)
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height - kTabbarSafeBottomMargin
+#define kBodyHeight   kScreenHeight - kStatusBarAndNavigationBarHeight
+#define kTabBarHeight   ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
+#define kScreenRect  CGRectMake(0, 0, kScreenWidth, kBodyHeight)
+
+
+#define IOS11 @available(iOS 11.0, *)
+#define ViewSafeAreInsets(view) ({UIEdgeInsets i; if(@available(iOS 11.0, *)) {i = view.safeAreaInsets;} else {i = UIEdgeInsetsZero;} i;})
 
 //=========================================
 #define RMB @"￥"
@@ -93,6 +105,7 @@ static NSString *const kMarginDeleteString = @"<style> *{margin:0px;padding:0;} 
 
 /***图片文字key***/
 #define kTitleKey   @"title"
+#define kSubTitleKey   @"subTitle"
 #define kImgKey     @"imageName"
 #define kSelectImgKey     @"selectImageName"
 #define kCountKey     @"countNumber"

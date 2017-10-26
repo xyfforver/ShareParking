@@ -24,6 +24,11 @@
     self.window.rootViewController = self.rootVC;
     
     [self.window makeKeyAndVisible];
+    
+    if (IOS11){
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }
+    
     return YES;
 }
 

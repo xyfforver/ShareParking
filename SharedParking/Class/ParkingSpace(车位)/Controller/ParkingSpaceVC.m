@@ -12,6 +12,8 @@
 @property (nonatomic , strong) UIView *headerView;
 @property (nonatomic , strong) UIView *mapView;
 @property (nonatomic , strong) UITableView *tbView;
+@property (nonatomic , strong) UIButton *selectedBtn;
+
 @end
 
 @implementation ParkingSpaceVC
@@ -89,7 +91,7 @@
     titleView.backgroundColor = kColorOrange;
     titleView.layer.masksToBounds = YES;
     titleView.layer.cornerRadius = 15;
-    titleView.layer.borderColor = kColorBackGroundColor.CGColor;
+    titleView.layer.borderColor = kColorBlacklight.CGColor;
     titleView.layer.borderWidth = 1.0;
     self.navigationItem.titleView = titleView;
     
@@ -104,6 +106,7 @@
     mistakeBtn.tag = 100;
     [mistakeBtn addTarget:self action:@selector(changeAction:) forControlEvents:UIControlEventTouchUpInside];
     mistakeBtn.selected = YES;
+    self.selectedBtn = mistakeBtn;
     [titleView addSubview:mistakeBtn];
     
     UIButton *rentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -119,7 +122,7 @@
     [titleView addSubview:rentBtn];
 
     
-    self.navigationItem.leftBarButtonItem = [[self class] rightBarButtonWithName:@"扫一扫" imageName:nil target:self action:@selector(codeAction)];
+    self.navigationItem.leftBarButtonItem = [[self class] rightBarButtonWithName:nil imageName:@"tab_home_red" target:self action:@selector(codeAction)];
     
     // 创建翻转父视图
     UIView *flipView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
