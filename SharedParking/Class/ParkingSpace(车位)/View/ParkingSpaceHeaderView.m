@@ -89,7 +89,7 @@
         _numberLab1.font = kFontSize13;
         _numberLab1.textColor = kColorWhite;
         _numberLab1.textAlignment = NSTextAlignmentCenter;
-        _numberLab1.backgroundColor = kColorBlue;
+        _numberLab1.backgroundColor = kColor4292D3;
         _numberLab1.layer.cornerRadius = 3;
         _numberLab1.layer.masksToBounds = YES;
     }
@@ -102,7 +102,7 @@
         _numberLab2.font = kFontSize13;
         _numberLab2.textColor = kColorWhite;
         _numberLab2.textAlignment = NSTextAlignmentCenter;
-        _numberLab2.backgroundColor = kColorBlue;
+        _numberLab2.backgroundColor = kColor4292D3;
         _numberLab2.layer.cornerRadius = 3;
         _numberLab2.layer.masksToBounds = YES;
     }

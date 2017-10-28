@@ -180,7 +180,7 @@
 
 - (ParkingSpaceMapView *)mapView{
     if (!_mapView) {
-        _mapView = [[ParkingSpaceMapView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height)];
+        _mapView = [[ParkingSpaceMapView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height - kTabBarHeight)];
 //        _mapView.backgroundColor = kColorOrange;
     }
     return _mapView;
@@ -188,7 +188,7 @@
 
 - (UITableView *)tbView{
     if (!_tbView) {
-        _tbView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height) style:UITableViewStylePlain];
+        _tbView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height - kTabBarHeight) style:UITableViewStylePlain];
         _tbView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tbView.backgroundColor = kColorBlue;
     }
