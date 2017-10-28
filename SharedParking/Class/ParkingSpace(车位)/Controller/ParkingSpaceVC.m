@@ -8,9 +8,11 @@
 
 #import "ParkingSpaceVC.h"
 
+#import "ParkingSpaceHeaderView.h"
+#import "ParkingSpaceMapView.h"
 @interface ParkingSpaceVC ()
-@property (nonatomic , strong) UIView *headerView;
-@property (nonatomic , strong) UIView *mapView;
+@property (nonatomic , strong) ParkingSpaceHeaderView *headerView;
+@property (nonatomic , strong) ParkingSpaceMapView *mapView;
 @property (nonatomic , strong) UITableView *tbView;
 @property (nonatomic , strong) UIButton *selectedBtn;
 
@@ -18,6 +20,21 @@
 
 @implementation ParkingSpaceVC
 #pragma mark ---------------LifeCycle-------------------------/
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+    [self.mapView setUpMapDelegate];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    self.mapView.mapView.delegate = nil; // 不用时，置nil
+    //关闭定位
+    [self.mapView.service stopUserLocationService];
+    self.mapView.service.delegate = nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -37,7 +54,11 @@
 
 #pragma mark ---------------action ---------------------/
 - (void)changeAction:(UIButton *)button{
-
+    self.selectedBtn.selected = NO;
+    //改变现状按钮颜色
+    button.selected = YES;
+    self.selectedBtn = button;
+    
 }
 
 - (void)codeAction{
@@ -88,10 +109,10 @@
 
 - (void)initNavBarView{
     UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 120, 30)];
-    titleView.backgroundColor = kColorOrange;
+//    titleView.backgroundColor = kColorOrange;
     titleView.layer.masksToBounds = YES;
     titleView.layer.cornerRadius = 15;
-    titleView.layer.borderColor = kColorBlacklight.CGColor;
+    titleView.layer.borderColor = kColorC1C1C1.CGColor;
     titleView.layer.borderWidth = 1.0;
     self.navigationItem.titleView = titleView;
     
@@ -102,7 +123,7 @@
     [mistakeBtn setTitleColor:kColorBlack forState:UIControlStateNormal];
     [mistakeBtn setTitleColor:kColorWhite forState:UIControlStateSelected];
     [mistakeBtn setBackgroundImage:[UIImage createImageWithColor:kColorBackGroundColor] forState:UIControlStateNormal];
-    [mistakeBtn setBackgroundImage:[UIImage createImageWithColor:kColorGreen] forState:UIControlStateSelected];
+    [mistakeBtn setBackgroundImage:[UIImage createImageWithColor:kNavBarColor] forState:UIControlStateSelected];
     mistakeBtn.tag = 100;
     [mistakeBtn addTarget:self action:@selector(changeAction:) forControlEvents:UIControlEventTouchUpInside];
     mistakeBtn.selected = YES;
@@ -116,13 +137,13 @@
     [rentBtn setTitleColor:kColorBlack forState:UIControlStateNormal];
     [rentBtn setTitleColor:kColorWhite forState:UIControlStateSelected];
     [rentBtn setBackgroundImage:[UIImage createImageWithColor:kColorBackGroundColor] forState:UIControlStateNormal];
-    [rentBtn setBackgroundImage:[UIImage createImageWithColor:kColorGreen] forState:UIControlStateSelected];
+    [rentBtn setBackgroundImage:[UIImage createImageWithColor:kNavBarColor] forState:UIControlStateSelected];
     rentBtn.tag = 101;
     [rentBtn addTarget:self action:@selector(changeAction:) forControlEvents:UIControlEventTouchUpInside];
     [titleView addSubview:rentBtn];
 
     
-    self.navigationItem.leftBarButtonItem = [[self class] rightBarButtonWithName:nil imageName:@"tab_home_red" target:self action:@selector(codeAction)];
+    self.navigationItem.leftBarButtonItem = [[self class] rightBarButtonWithName:nil imageName:@"home_qrcode" target:self action:@selector(codeAction)];
     
     // 创建翻转父视图
     UIView *flipView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
@@ -150,18 +171,17 @@
     self.navigationItem.rightBarButtonItem = rightItem;
 }
 
-- (UIView *)headerView{
+- (ParkingSpaceHeaderView *)headerView{
     if (!_headerView) {
-        _headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
-        _headerView.backgroundColor = kColorRed;
+        _headerView = [[ParkingSpaceHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
     }
     return _headerView;
 }
 
-- (UIView *)mapView{
+- (ParkingSpaceMapView *)mapView{
     if (!_mapView) {
-        _mapView = [[UIView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height)];
-        _mapView.backgroundColor = kColorOrange;
+        _mapView = [[ParkingSpaceMapView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height)];
+//        _mapView.backgroundColor = kColorOrange;
     }
     return _mapView;
 }

@@ -119,6 +119,10 @@ static NSString *const kMarginDeleteString = @"<style> *{margin:0px;padding:0;} 
 #define kDefaultStoreLogo         [UIImage imageNamed:@"store_placeHolder"]
 
 //=========================================
+#define BMKMapAK @"8EfaAbqwTcb7uLqMDl0Xki6kvgU7PQE0"
+
+
+//=========================================
 /**
  Synthsize a weak or strong reference.
  

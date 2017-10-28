@@ -21,7 +21,7 @@
 #define kColorRandom [UIColor randomColor]
 
 #pragma mark - ---------基准颜色---------
-#define kNavBarColor UIColorHex(#73B76C)
+#define kNavBarColor UIColorHex(#73B76C) //绿
 #define kBackGroundGrayColor UIColorHex(0xededed)
 #define kColorf4f4f4 UIColorHex(0xf4f4f4)//灰色 超浅
 #define kColorC1C1C1 UIColorHex(0xC1C1C1)//字体颜色 浅

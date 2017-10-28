@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D906E2314229514B9AEA22E /* Pods_SharedParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4662DFD8CE09B8385B9D2768 /* Pods_SharedParking.framework */; };
+		6B057CC11FA2D2FF0017E320 /* ParkingSpaceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */; };
+		6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B176F601FA447410045F55A /* ParkingSpaceMapView.m */; };
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
@@ -57,6 +59,15 @@
 		6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6621F9DDDC300A1020C /* UINavigationController+FDFullscreenPopGesture.m */; };
 		6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6651F9DDDC300A1020C /* KeychainHelper.m */; };
 		6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6671F9DDDC300A1020C /* KeychainIDFA.m */; };
+		6BB67C561FA450DF007CE224 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C431FA44CD6007CE224 /* CoreLocation.framework */; };
+		6BB67C571FA450E7007CE224 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C451FA44CDE007CE224 /* QuartzCore.framework */; };
+		6BB67C581FA450EF007CE224 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C471FA44CE6007CE224 /* OpenGLES.framework */; };
+		6BB67C591FA450F6007CE224 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C491FA44CEE007CE224 /* SystemConfiguration.framework */; };
+		6BB67C5A1FA450FE007CE224 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C4B1FA44CF6007CE224 /* CoreGraphics.framework */; };
+		6BB67C5B1FA45105007CE224 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C4D1FA44CFE007CE224 /* Security.framework */; };
+		6BB67C5C1FA4510D007CE224 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C4F1FA44D08007CE224 /* libsqlite3.0.tbd */; };
+		6BB67C5D1FA45114007CE224 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C511FA44D10007CE224 /* CoreTelephony.framework */; };
+		6BB67C5E1FA4511F007CE224 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C531FA44D19007CE224 /* libstdc++.6.0.9.tbd */; };
 		6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +92,10 @@
 		349AC03596A7C2F92A543814 /* Pods-SharedParking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedParking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking.debug.xcconfig"; sourceTree = "<group>"; };
 		4662DFD8CE09B8385B9D2768 /* Pods_SharedParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharedParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E76ABEDC7B69476CC9FD69 /* Pods-SharedParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedParking.release.xcconfig"; path = "Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking.release.xcconfig"; sourceTree = "<group>"; };
+		6B057CBF1FA2D2FF0017E320 /* ParkingSpaceHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceHeaderView.h; sourceTree = "<group>"; };
+		6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceHeaderView.m; sourceTree = "<group>"; };
+		6B176F5F1FA447410045F55A /* ParkingSpaceMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceMapView.h; sourceTree = "<group>"; };
+		6B176F601FA447410045F55A /* ParkingSpaceMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceMapView.m; sourceTree = "<group>"; };
 		6B1C15871FA058AE00E584F3 /* BaseCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCLView.m; sourceTree = "<group>"; };
 		6B1C15881FA058AE00E584F3 /* BaseTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTBView.h; sourceTree = "<group>"; };
 		6B1C15891FA058AF00E584F3 /* BaseCLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCLView.h; sourceTree = "<group>"; };
@@ -184,6 +199,15 @@
 		6B91B68F1F9DE9B900A1020C /* MessageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
 		6B91B6911F9DE9C600A1020C /* MineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineVC.h; sourceTree = "<group>"; };
 		6B91B6921F9DE9C600A1020C /* MineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
+		6BB67C431FA44CD6007CE224 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6BB67C451FA44CDE007CE224 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6BB67C471FA44CE6007CE224 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		6BB67C491FA44CEE007CE224 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6BB67C4B1FA44CF6007CE224 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6BB67C4D1FA44CFE007CE224 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6BB67C4F1FA44D08007CE224 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		6BB67C511FA44D10007CE224 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		6BB67C531FA44D19007CE224 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		6BF8B2531F9F177000329145 /* AppDelegate+LibConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+LibConfig.h"; sourceTree = "<group>"; };
 		6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+LibConfig.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +217,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB67C5E1FA4511F007CE224 /* libstdc++.6.0.9.tbd in Frameworks */,
+				6BB67C5D1FA45114007CE224 /* CoreTelephony.framework in Frameworks */,
+				6BB67C5C1FA4510D007CE224 /* libsqlite3.0.tbd in Frameworks */,
+				6BB67C5B1FA45105007CE224 /* Security.framework in Frameworks */,
+				6BB67C5A1FA450FE007CE224 /* CoreGraphics.framework in Frameworks */,
+				6BB67C591FA450F6007CE224 /* SystemConfiguration.framework in Frameworks */,
+				6BB67C581FA450EF007CE224 /* OpenGLES.framework in Frameworks */,
+				6BB67C571FA450E7007CE224 /* QuartzCore.framework in Frameworks */,
+				6BB67C561FA450DF007CE224 /* CoreLocation.framework in Frameworks */,
 				4D906E2314229514B9AEA22E /* Pods_SharedParking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +508,10 @@
 		6B91B67B1F9DE89600A1020C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6B057CBF1FA2D2FF0017E320 /* ParkingSpaceHeaderView.h */,
+				6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */,
+				6B176F5F1FA447410045F55A /* ParkingSpaceMapView.h */,
+				6B176F601FA447410045F55A /* ParkingSpaceMapView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -586,6 +623,15 @@
 		6EA91DB080D9ABEBB6F342DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6BB67C531FA44D19007CE224 /* libstdc++.6.0.9.tbd */,
+				6BB67C511FA44D10007CE224 /* CoreTelephony.framework */,
+				6BB67C4F1FA44D08007CE224 /* libsqlite3.0.tbd */,
+				6BB67C4D1FA44CFE007CE224 /* Security.framework */,
+				6BB67C4B1FA44CF6007CE224 /* CoreGraphics.framework */,
+				6BB67C491FA44CEE007CE224 /* SystemConfiguration.framework */,
+				6BB67C471FA44CE6007CE224 /* OpenGLES.framework */,
+				6BB67C451FA44CDE007CE224 /* QuartzCore.framework */,
+				6BB67C431FA44CD6007CE224 /* CoreLocation.framework */,
 				4662DFD8CE09B8385B9D2768 /* Pods_SharedParking.framework */,
 			);
 			name = Frameworks;
@@ -793,6 +839,7 @@
 				6B91B6AF1F9DEE3700A1020C /* StatusRecordListModel.m in Sources */,
 				6B91B6AE1F9DEE2600A1020C /* StatusModel.m in Sources */,
 				6B91B6AD1F9DEE1C00A1020C /* JMRefreshHeader.m in Sources */,
+				6B057CC11FA2D2FF0017E320 /* ParkingSpaceHeaderView.m in Sources */,
 				6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */,
 				6B91B6AC1F9DEE0A00A1020C /* JMRefreshFooter.m in Sources */,
 				6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */,
@@ -816,6 +863,7 @@
 				6B91B69C1F9DED8E00A1020C /* NSDictionary+RequestEncoding.m in Sources */,
 				6B91B69B1F9DED8900A1020C /* NSDictionary+Log.m in Sources */,
 				6B91B69A1F9DED8400A1020C /* NSArray+Log.m in Sources */,
+				6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */,
 				6B91B6981F9DED7800A1020C /* JKHTTPManager.m in Sources */,
 				6B91B6971F9DED7300A1020C /* JKNavigationController.m in Sources */,
 				6B91B6961F9DED1700A1020C /* DataManager.m in Sources */,
@@ -1054,12 +1102,18 @@
 		6B91B6291F9DDB4100A1020C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLQK5CCX6D;
 				INFOPLIST_FILE = SharedParkingUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.galaxy.SharedParkingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SharedParking;
 			};
@@ -1068,12 +1122,18 @@
 		6B91B62A1F9DDB4100A1020C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLQK5CCX6D;
 				INFOPLIST_FILE = SharedParkingUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.galaxy.SharedParkingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SharedParking;
 			};

@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>Privacy - Photo Library Usage Description</key>
+		<string>是否允许此APP访问你的媒体资料库？</string>
+		<key>Privacy - Location When In Use Usage Description</key>
+		<string>是否允许此APP使用您的位置？</string>
+		<key>Privacy - Camera Usage Description</key>
+		<string>是否允许此APP使用你的相机？</string>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

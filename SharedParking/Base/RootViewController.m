@@ -54,14 +54,14 @@
 -(void)createTabBar{
     
     //设置标题属性
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor lightGrayColor]} forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:243/255.0 green:92/255.0 blue:94/255.0 alpha:1]} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : kColor333333} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : kNavBarColor} forState:UIControlStateSelected];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -2)];
     
     NSArray *names = @[@"车位",@"发布",@"消息",@"我的"];
-    NSArray *imageNormals = @[@"tab_home_gray",@"tab_discover_gray",@"tab_shoppingcar_gray",@"tab_user_gray"];
-    NSArray *imageSeleteds = @[@"tab_home_red",@"tab_discover_red",@"tab_shoppingcar_red",@"tab_user_red"];
+    NSArray *imageNormals = @[@"tab_parkingN",@"tab_releaseN",@"tab_messageN",@"tab_mineN"];
+    NSArray *imageSeleteds = @[@"tab_parking",@"tab_release",@"tab_message",@"tab_mine"];
     
     for (int i = 0 ; i<names.count ; i++) {
         UITabBarItem *item = [self.tabBar.items objectAtIndex:i];

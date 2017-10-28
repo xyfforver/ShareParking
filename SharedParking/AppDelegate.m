@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "AppDelegate+LibConfig.h"
 @interface AppDelegate ()
 
 @end
@@ -28,6 +28,8 @@
     if (IOS11){
         [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     }
+    
+    [self setupLibConfigWithOptions:launchOptions];
     
     return YES;
 }
