@@ -10,10 +10,11 @@
 
 #import "ParkingSpaceHeaderView.h"
 #import "ParkingSpaceMapView.h"
+#import "ParkingSpaceTBView.h"
 @interface ParkingSpaceVC ()
 @property (nonatomic , strong) ParkingSpaceHeaderView *headerView;
 @property (nonatomic , strong) ParkingSpaceMapView *mapView;
-@property (nonatomic , strong) UITableView *tbView;
+@property (nonatomic , strong) ParkingSpaceTBView *tbView;
 @property (nonatomic , strong) UIButton *selectedBtn;
 
 @end
@@ -186,11 +187,10 @@
     return _mapView;
 }
 
-- (UITableView *)tbView{
+- (ParkingSpaceTBView *)tbView{
     if (!_tbView) {
-        _tbView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height - kTabBarHeight) style:UITableViewStylePlain];
+        _tbView = [[ParkingSpaceTBView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height - kTabBarHeight) style:UITableViewStylePlain];
         _tbView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tbView.backgroundColor = kColorBlue;
     }
     return _tbView;
 }

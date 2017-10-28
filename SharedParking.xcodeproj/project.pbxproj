@@ -13,6 +13,8 @@
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
+		6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */; };
+		6B339F341FA4792100B52FB0 /* ParkingSpaceTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F331FA4792100B52FB0 /* ParkingSpaceTBCell.m */; };
 		6B3C16E71FA1CEB9009A6948 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16E61FA1CEB9009A6948 /* SettingVC.m */; };
 		6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16EF1FA1D4FC009A6948 /* ParkingRecordVC.m */; };
 		6B3C16F41FA1D517009A6948 /* ParkingRecordTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16F31FA1D517009A6948 /* ParkingRecordTBCell.m */; };
@@ -102,6 +104,10 @@
 		6B1C158A1FA058AF00E584F3 /* BaseTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTBView.m; sourceTree = "<group>"; };
 		6B1C158D1FA05B9F00E584F3 /* MineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
 		6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
+		6B339F2F1FA4787900B52FB0 /* ParkingSpaceTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceTBView.h; sourceTree = "<group>"; };
+		6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceTBView.m; sourceTree = "<group>"; };
+		6B339F321FA4792100B52FB0 /* ParkingSpaceTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceTBCell.h; sourceTree = "<group>"; };
+		6B339F331FA4792100B52FB0 /* ParkingSpaceTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceTBCell.m; sourceTree = "<group>"; };
 		6B3C16E51FA1CEB9009A6948 /* SettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		6B3C16E61FA1CEB9009A6948 /* SettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		6B3C16EF1FA1D4FC009A6948 /* ParkingRecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkingRecordVC.m; sourceTree = "<group>"; };
@@ -512,6 +518,10 @@
 				6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */,
 				6B176F5F1FA447410045F55A /* ParkingSpaceMapView.h */,
 				6B176F601FA447410045F55A /* ParkingSpaceMapView.m */,
+				6B339F2F1FA4787900B52FB0 /* ParkingSpaceTBView.h */,
+				6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */,
+				6B339F321FA4792100B52FB0 /* ParkingSpaceTBCell.h */,
+				6B339F331FA4792100B52FB0 /* ParkingSpaceTBCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -847,6 +857,7 @@
 				6B91B6AA1F9DEDF300A1020C /* BaseModel.m in Sources */,
 				6B91B6A91F9DEDE900A1020C /* UIViewExt.m in Sources */,
 				6B91B6A81F9DEDE100A1020C /* UIViewController+Util.m in Sources */,
+				6B339F341FA4792100B52FB0 /* ParkingSpaceTBCell.m in Sources */,
 				6B91B6A71F9DEDD800A1020C /* UIView+UIViewController.m in Sources */,
 				6B91B6A61F9DEDCF00A1020C /* UIView+BlockGesture.m in Sources */,
 				6B91B6A51F9DEDC800A1020C /* UIViewController+Dealloc.m in Sources */,
@@ -854,6 +865,7 @@
 				6B91B6A31F9DEDB900A1020C /* UIImage+UIColor.m in Sources */,
 				6B91B6A21F9DEDB300A1020C /* UIColor+Extension.m in Sources */,
 				6B91B6A11F9DEDAC00A1020C /* UIButton+LCAlignment.m in Sources */,
+				6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */,
 				6B3C16E71FA1CEB9009A6948 /* SettingVC.m in Sources */,
 				6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */,
 				6B91B6A01F9DEDA500A1020C /* UIButton+Block.m in Sources */,

@@ -25,9 +25,10 @@
 #define kBackGroundGrayColor UIColorHex(0xededed)
 #define kColorf4f4f4 UIColorHex(0xf4f4f4)//灰色 超浅
 #define kColorC1C1C1 UIColorHex(0xC1C1C1)//字体颜色 浅
-#define kColor6B6B6B UIColorHex(0x6B6B6B)//字体颜色 中
-#define kColor333333 UIColorHex(0x333333)//字体颜色 深
+#define kColor6B6B6B UIColorHex(0x6B6B6B)//字体颜色 中 117 117 117
+#define kColor333333 UIColorHex(0x333333)//字体颜色 深  51 51 51
 #define kColor4292D3 UIColorHex(0x4292D3)//蓝色
+#define kColorDD9900 UIColorHex(0xDD9900)//橙色 230 162 16
 
 
 
