@@ -13,6 +13,8 @@
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
+		6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B01FA70398001E86B4 /* GasStationVC.m */; };
+		6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B31FA71F4A001E86B4 /* GasStationInfoView.m */; };
 		6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */; };
 		6B339F341FA4792100B52FB0 /* ParkingSpaceTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F331FA4792100B52FB0 /* ParkingSpaceTBCell.m */; };
 		6B3C16E71FA1CEB9009A6948 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16E61FA1CEB9009A6948 /* SettingVC.m */; };
@@ -104,6 +106,10 @@
 		6B1C158A1FA058AF00E584F3 /* BaseTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTBView.m; sourceTree = "<group>"; };
 		6B1C158D1FA05B9F00E584F3 /* MineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
 		6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
+		6B26B6AF1FA70398001E86B4 /* GasStationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GasStationVC.h; sourceTree = "<group>"; };
+		6B26B6B01FA70398001E86B4 /* GasStationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasStationVC.m; sourceTree = "<group>"; };
+		6B26B6B21FA71F4A001E86B4 /* GasStationInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GasStationInfoView.h; sourceTree = "<group>"; };
+		6B26B6B31FA71F4A001E86B4 /* GasStationInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasStationInfoView.m; sourceTree = "<group>"; };
 		6B339F2F1FA4787900B52FB0 /* ParkingSpaceTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceTBView.h; sourceTree = "<group>"; };
 		6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceTBView.m; sourceTree = "<group>"; };
 		6B339F321FA4792100B52FB0 /* ParkingSpaceTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceTBCell.h; sourceTree = "<group>"; };
@@ -253,6 +259,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B26B6AB1FA7034F001E86B4 /* GasStation(附近加油站) */ = {
+			isa = PBXGroup;
+			children = (
+				6B26B6AC1FA7034F001E86B4 /* Controller */,
+				6B26B6AD1FA7034F001E86B4 /* Model */,
+				6B26B6AE1FA7034F001E86B4 /* View */,
+			);
+			path = "GasStation(附近加油站)";
+			sourceTree = "<group>";
+		};
+		6B26B6AC1FA7034F001E86B4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B26B6AF1FA70398001E86B4 /* GasStationVC.h */,
+				6B26B6B01FA70398001E86B4 /* GasStationVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B26B6AD1FA7034F001E86B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B26B6AE1FA7034F001E86B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B26B6B21FA71F4A001E86B4 /* GasStationInfoView.h */,
+				6B26B6B31FA71F4A001E86B4 /* GasStationInfoView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6B3C16EB1FA1D4DD009A6948 /* ParkingRecord(停车记录) */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +529,7 @@
 		6B91B6781F9DE89600A1020C /* ParkingSpace(车位) */ = {
 			isa = PBXGroup;
 			children = (
+				6B26B6AB1FA7034F001E86B4 /* GasStation(附近加油站) */,
 				6B91B6791F9DE89600A1020C /* Controller */,
 				6B91B67A1F9DE89600A1020C /* Model */,
 				6B91B67B1F9DE89600A1020C /* View */,
@@ -841,11 +883,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */,
+				6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */,
 				6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */,
 				6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				6B91B6B01F9DEE3E00A1020C /* UserModel.m in Sources */,
 				6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */,
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
+				6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */,
 				6B91B6AF1F9DEE3700A1020C /* StatusRecordListModel.m in Sources */,
 				6B91B6AE1F9DEE2600A1020C /* StatusModel.m in Sources */,
 				6B91B6AD1F9DEE1C00A1020C /* JMRefreshHeader.m in Sources */,

@@ -104,7 +104,7 @@ static CGFloat const sizeButton = 50.0;
 
 - (void)initNavBackButton{
     //返回按钮
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 34)];
     [backButton setImage:[UIImage imageNamed:@"goback"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(backToSuperView) forControlEvents:UIControlEventTouchUpInside];
     [backButton setEnlargeEdge:20];

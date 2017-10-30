@@ -7,6 +7,7 @@
 //
 
 #import "ParkingSpaceMapView.h"
+#import "GasStationVC.h"
 @interface ParkingSpaceMapView ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate>
 @property (nonatomic,strong) UIImageView *imgView;
 @property (nonatomic,strong) UIButton *userCenterBtn;
@@ -33,6 +34,13 @@
     [self addSubview:self.userCenterBtn];
     [self addSubview:self.addBtn];
     [self addSubview:self.minusBtn];
+    
+    //初始化定位
+    self.service = [[BMKLocationService alloc] init];
+    //设置代理
+    self.service.delegate = self;
+    //开启定位
+    [self.service startUserLocationService];
     
     [self addItemButton];
     
@@ -105,7 +113,8 @@
         }
             break;
         case 2:{
-            
+            GasStationVC *vc = [[GasStationVC alloc]init];
+            [self.Controller.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 3:{
@@ -129,6 +138,35 @@
 - (void)minusAction:(UIButton *)button{
     NSInteger zoomLevel = self.mapView.zoomLevel;
     [self.mapView setZoomLevel:zoomLevel - 1];
+}
+
+
+#pragma mark --------------- 定位 ---------------------/
+/**
+ *用户方向更新后，会调用此函数
+ *@param userLocation 新的用户位置
+ */
+- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
+{
+    //展示定位
+    self.mapView.showsUserLocation = YES;
+    //更新位置数据
+    [self.mapView updateLocationData:userLocation];
+//    DLog(@"heading is %@",userLocation.heading);
+}
+
+/**
+ *用户位置更新后，会调用此函数
+ *@param userLocation 新的用户位置
+ */
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation {
+    //展示定位
+    self.mapView.showsUserLocation = YES;
+    //更新位置数据
+    [self.mapView updateLocationData:userLocation];
+    
+    self.mapView.centerCoordinate = userLocation.location.coordinate;
+    
 }
 
 #pragma mark -----------------Lazy---------------------/

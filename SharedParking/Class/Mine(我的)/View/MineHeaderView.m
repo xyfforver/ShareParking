@@ -46,7 +46,7 @@
     
     [self.headImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.mas_centerX);
-        make.top.mas_equalTo(70);
+        make.top.mas_equalTo(kStatusBarAndNavigationBarHeight + 10);
         make.width.height.mas_equalTo(kHeadWidth);
     }];
     

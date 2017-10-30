@@ -77,9 +77,9 @@
 #define  kStatusBarAndNavigationBarHeight  (DEVICE_IPHONEX ? 88.f : 64.f)
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight [UIScreen mainScreen].bounds.size.height - kTabbarSafeBottomMargin
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kBodyHeight   kScreenHeight - kStatusBarAndNavigationBarHeight
-#define kTabBarHeight   ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
+#define kTabBarHeight   ([[UIApplication sharedApplication] statusBarFrame].size.height > 20?83:49)
 #define kScreenRect  CGRectMake(0, 0, kScreenWidth, kBodyHeight)
 
 
@@ -103,6 +103,8 @@ static NSString *const kMarginDeleteString = @"<style> *{margin:0px;padding:0;} 
 #define kUrlWithString(urlString) [NSURL URLWithString:urlString]
 
 
+#define kMargin15 15
+#define kMargin10 10
 
 /***图片文字key***/
 #define kTitleKey   @"title"
