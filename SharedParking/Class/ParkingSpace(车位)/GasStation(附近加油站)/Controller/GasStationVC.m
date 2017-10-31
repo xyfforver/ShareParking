@@ -14,11 +14,12 @@
 #import <BaiduMapAPI_Location/BMKLocationService.h>
 
 #import "GasStationInfoView.h"
+#import "CustomAnnotation.h"
 @interface GasStationVC ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate>
 @property (nonatomic , strong) BMKMapView *mapView;
-@property (nonatomic,strong) BMKLocationService *service;//定位服务
-@property (nonatomic,strong) BMKPoiSearch *poiSearch;//搜索服务
-
+@property (nonatomic , strong) BMKLocationService *service;//定位服务
+@property (nonatomic , strong) BMKPoiSearch *poiSearch;//搜索服务
+@property (nonatomic , assign) CLLocationCoordinate2D userCoordinate;
 @property (nonatomic , strong) GasStationInfoView *infoView;
 @end
 
@@ -61,7 +62,6 @@
     //开启定位
     [self.service startUserLocationService];
 
-    [self.infoView show];
 }
 
 #pragma mark ---------------NetWork-------------------------/
@@ -71,8 +71,8 @@
 
 
 #pragma mark --------------- Map Delegate ---------------------/
-- (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation
-{
+- (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation{
+    if ([annotation isKindOfClass:[CustomAnnotation class]]){
 
         static NSString *pointReuseIndetifier = @"pointReuseIndetifier";
         BMKAnnotationView *annotationView = (BMKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndetifier];
@@ -80,20 +80,34 @@
             annotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndetifier];
         }
         annotationView.frame = CGRectMake(0, 0, 100, 100);
-        annotationView.canShowCallout= YES;       //设置气泡可以弹出，默认为NO
+        annotationView.canShowCallout= NO;       //设置气泡可以弹出，默认为NO
 
-        annotationView.image = [UIImage imageNamed:@"home_gasStation"];//parking_carloc
-//        
-//        BMKActionPaopaoView *pView = [[BMKActionPaopaoView alloc]initWithCustomView:view];
-//        
-//        ((BMKAnnotationView*)annotationView).paopaoView = pView;
+        annotationView.image = [UIImage imageNamed:@"home_gasStation"];
         
         annotationView.draggable = YES;
         
         return annotationView;
-
+    }
+    return nil;
 }
 
+
+- (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
+    CustomAnnotation *annotation = (CustomAnnotation *) view.annotation;
+    if(annotation.customType == CustomAnnotationTypeGasStation){
+        //店铺
+        self.infoView.gasStationModel = annotation.gasStationModel;
+        [self.infoView show];
+
+    }else{
+        [self.infoView dismiss];
+    }
+}
+
+- (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view{
+    
+    [self.infoView dismiss];
+}
 
 #pragma mark --------------- 定位 ---------------------/
 /**
@@ -119,9 +133,10 @@
     //更新位置数据
     [self.mapView updateLocationData:userLocation];
 
-    self.mapView.centerCoordinate = userLocation.location.coordinate;
-    
+    self.userCoordinate = userLocation.location.coordinate;
     if (self.mapView.annotations.count == 0) {
+        self.mapView.centerCoordinate = userLocation.location.coordinate;
+        
         [self addNearGasStationWithLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude];
     }
 }
@@ -182,44 +197,21 @@
         BMKPoiInfo *poi = array[i];
         coor.latitude = poi.pt.latitude;
         coor.longitude = poi.pt.longitude;
-        BMKPointAnnotation *point = [[BMKPointAnnotation alloc]init];
+        CustomAnnotation *point = [[CustomAnnotation alloc]init];
+        point.customType = CustomAnnotationTypeGasStation;
         point.coordinate = coor;
         point.title = poi.name;
+
+        GasStationModel *model = [[GasStationModel alloc]init];
+        model.title = poi.name;
+        model.longitude = coor.longitude;
+        model.latitude = coor.latitude;
+        model.location = poi.address;
+        model.distance = [HelpTool calculateTheDistanceWithLon1:self.userCoordinate.longitude Lat1:self.userCoordinate.latitude Lon2:coor.longitude Lat2:coor.latitude];
+        point.gasStationModel = model;
+        
         [self.mapView addAnnotation: point];
     }
-}
-
-#pragma mark ---------------计算两点之间的距离 ---------------------/
-- (double)CalculateTheDistanceWithLon1:(double) lon1
-                                 Lat1:(double) lat1
-                                 Lon2:(double) lon2
-                                 Lat2:(double) lat2{
-    double er = 6371393.0f;//地球半径
-    //第一个位置的经纬度
-    double radlong1 = M_PI*lon1/180.0f;
-    double radlat1 = M_PI*lat1/180.0f;
-    //第二个位置的经纬度
-    double radlat2 = M_PI*lat2/180.0f;
-    double radlong2 = M_PI*lon2/180.0f;
-    //判断经纬度的正负
-    if( radlat1 < 0 ) radlat1 = M_PI/2 + fabs(radlat1);
-    if( radlat1 > 0 ) radlat1 = M_PI/2 - fabs(radlat1);
-    if( radlat2 < 0 ) radlat2 = M_PI/2 + fabs(radlat2);
-    if( radlat2 > 0 ) radlat2 = M_PI/2 - fabs(radlat2);
-    if( radlong2 < 0 ) radlong2 = M_PI*2 - fabs(radlong2);
-    
-    double x1 = er * cos(radlong1) * sin(radlat1);
-    double y1 = er * sin(radlong1) * sin(radlat1);
-    double z1 = er * cos(radlat1);
-    double x2 = er * cos(radlong2) * sin(radlat2);
-    double y2 = er * sin(radlong2) * sin(radlat2);
-    double z2 = er * cos(radlat2);
-    double d = sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)+(z1-z2)*(z1-z2));
-    double theta = acos((er*er+er*er-d*d)/(2*er*er));
-    
-    double dist  = theta * er;
-    //返回最终的距离
-    return dist;
 }
 
 #pragma mark ---------------Lazy-------------------------/

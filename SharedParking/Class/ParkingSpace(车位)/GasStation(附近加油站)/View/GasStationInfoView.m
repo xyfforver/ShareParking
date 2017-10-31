@@ -24,13 +24,22 @@
     }
     return self;
 }
-
+- (void)setGasStationModel:(GasStationModel *)gasStationModel{
+    _gasStationModel = gasStationModel;
+    
+    self.titleLab.text = gasStationModel.title;
+    
+    self.locationLab.text = gasStationModel.location;
+    
+    NSString *dis = [HelpTool stringWithDistance:(NSInteger )gasStationModel.distance];
+    self.distanceLab.text = [NSString stringWithFormat:@"距您%@",dis];
+}
 
 #pragma mark ---------------event ---------------------/
 #pragma mark - Master show/dismiss methods
 - (void)show{
     [UIView animateWithDuration:0.2 animations:^{
-        self.top = kBodyHeight - kViewHeight - kTabbarSafeBottomMargin;
+        self.top = kBodyHeight - kViewHeight;
     }];
     
 }
@@ -104,7 +113,7 @@
         _distanceLab = [[UILabel alloc]init];
         _distanceLab.font = kFontSize15;
         _distanceLab.textColor = kColor333333;
-        _distanceLab.text = @"金城路123号";
+        _distanceLab.text = @"据您330m";
         _distanceLab.textAlignment = NSTextAlignmentRight;
     }
     return _distanceLab;
@@ -116,7 +125,7 @@
         _locationLab.font = kFontSize15;
         _locationLab.textColor = kColor333333;
         _locationLab.numberOfLines = 2;
-        _locationLab.text = @"据您330m";
+        _locationLab.text = @"金城路123号";
     }
     return _locationLab;
 }

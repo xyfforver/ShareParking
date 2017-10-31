@@ -13,6 +13,9 @@
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
+		6B1C4B291FA804A600D543D2 /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B281FA804A600D543D2 /* CustomAnnotation.m */; };
+		6B1C4B2C1FA8070F00D543D2 /* GasStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B2B1FA8070F00D543D2 /* GasStationModel.m */; };
+		6B1C4B2F1FA80E2700D543D2 /* HelpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B2E1FA80E2700D543D2 /* HelpTool.m */; };
 		6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B01FA70398001E86B4 /* GasStationVC.m */; };
 		6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B31FA71F4A001E86B4 /* GasStationInfoView.m */; };
 		6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */; };
@@ -106,6 +109,12 @@
 		6B1C158A1FA058AF00E584F3 /* BaseTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTBView.m; sourceTree = "<group>"; };
 		6B1C158D1FA05B9F00E584F3 /* MineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
 		6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
+		6B1C4B271FA804A600D543D2 /* CustomAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
+		6B1C4B281FA804A600D543D2 /* CustomAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
+		6B1C4B2A1FA8070F00D543D2 /* GasStationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GasStationModel.h; sourceTree = "<group>"; };
+		6B1C4B2B1FA8070F00D543D2 /* GasStationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasStationModel.m; sourceTree = "<group>"; };
+		6B1C4B2D1FA80E2700D543D2 /* HelpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpTool.h; sourceTree = "<group>"; };
+		6B1C4B2E1FA80E2700D543D2 /* HelpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpTool.m; sourceTree = "<group>"; };
 		6B26B6AF1FA70398001E86B4 /* GasStationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GasStationVC.h; sourceTree = "<group>"; };
 		6B26B6B01FA70398001E86B4 /* GasStationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasStationVC.m; sourceTree = "<group>"; };
 		6B26B6B21FA71F4A001E86B4 /* GasStationInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GasStationInfoView.h; sourceTree = "<group>"; };
@@ -281,6 +290,8 @@
 		6B26B6AD1FA7034F001E86B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B1C4B2A1FA8070F00D543D2 /* GasStationModel.h */,
+				6B1C4B2B1FA8070F00D543D2 /* GasStationModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,6 +301,8 @@
 			children = (
 				6B26B6B21FA71F4A001E86B4 /* GasStationInfoView.h */,
 				6B26B6B31FA71F4A001E86B4 /* GasStationInfoView.m */,
+				6B1C4B271FA804A600D543D2 /* CustomAnnotation.h */,
+				6B1C4B281FA804A600D543D2 /* CustomAnnotation.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -397,6 +410,8 @@
 		6B91B62B1F9DDDC300A1020C /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				6B1C4B2D1FA80E2700D543D2 /* HelpTool.h */,
+				6B1C4B2E1FA80E2700D543D2 /* HelpTool.m */,
 				6B91B62C1F9DDDC300A1020C /* BaseModel.h */,
 				6B91B62D1F9DDDC300A1020C /* BaseModel.m */,
 				6B91B62E1F9DDDC300A1020C /* DataManager.h */,
@@ -884,6 +899,7 @@
 			files = (
 				6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */,
 				6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */,
+				6B1C4B2F1FA80E2700D543D2 /* HelpTool.m in Sources */,
 				6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */,
 				6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				6B91B6B01F9DEE3E00A1020C /* UserModel.m in Sources */,
@@ -897,6 +913,7 @@
 				6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */,
 				6B91B6AC1F9DEE0A00A1020C /* JMRefreshFooter.m in Sources */,
 				6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */,
+				6B1C4B2C1FA8070F00D543D2 /* GasStationModel.m in Sources */,
 				6B91B6AB1F9DEE0200A1020C /* ExtraParaManger.m in Sources */,
 				6B91B6AA1F9DEDF300A1020C /* BaseModel.m in Sources */,
 				6B91B6A91F9DEDE900A1020C /* UIViewExt.m in Sources */,
@@ -933,6 +950,7 @@
 				6B91B6091F9DDB4000A1020C /* main.m in Sources */,
 				6B91B6931F9DE9C600A1020C /* MineVC.m in Sources */,
 				6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */,
+				6B1C4B291FA804A600D543D2 /* CustomAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
