@@ -7,6 +7,7 @@
 //
 
 #import "ParkingSpaceHeaderView.h"
+#import "SearchVC.h"
 @interface ParkingSpaceHeaderView ()
 @property (nonatomic , strong) UILabel *cityLab;
 @property (nonatomic , strong) UILabel *numberLab1;
@@ -70,7 +71,8 @@
 
 #pragma mark ---------------event ---------------------/
 - (void)searchAction:(UIButton *)button{
-    
+    SearchVC *vc = [[SearchVC alloc]init];
+    [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -----------------Lazy---------------------/
@@ -112,7 +114,7 @@
 - (UIButton *)searchBtn{
     if (!_searchBtn) {
         _searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_searchBtn setImage:[UIImage imageNamed:@"home_search"] forState:UIControlStateNormal];
+        [_searchBtn setImage:[UIImage imageNamed:@"home_searchGray"] forState:UIControlStateNormal];
         [_searchBtn addTarget:self action:@selector(searchAction:) forControlEvents:UIControlEventTouchUpInside];
         
     }

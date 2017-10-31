@@ -16,6 +16,10 @@
 		6B1C4B291FA804A600D543D2 /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B281FA804A600D543D2 /* CustomAnnotation.m */; };
 		6B1C4B2C1FA8070F00D543D2 /* GasStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B2B1FA8070F00D543D2 /* GasStationModel.m */; };
 		6B1C4B2F1FA80E2700D543D2 /* HelpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B2E1FA80E2700D543D2 /* HelpTool.m */; };
+		6B1C4B361FA84A3200D543D2 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B351FA84A3200D543D2 /* SearchVC.m */; };
+		6B1C4B401FA870BD00D543D2 /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B391FA86DB100D543D2 /* UICollectionViewLeftAlignedLayout.m */; };
+		6B1C4B411FA870C400D543D2 /* YJTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3E1FA86DB100D543D2 /* YJTagView.m */; };
+		6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3B1FA86DB100D543D2 /* YJTagCollectionViewCell.m */; };
 		6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B01FA70398001E86B4 /* GasStationVC.m */; };
 		6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B31FA71F4A001E86B4 /* GasStationInfoView.m */; };
 		6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */; };
@@ -23,6 +27,7 @@
 		6B3C16E71FA1CEB9009A6948 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16E61FA1CEB9009A6948 /* SettingVC.m */; };
 		6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16EF1FA1D4FC009A6948 /* ParkingRecordVC.m */; };
 		6B3C16F41FA1D517009A6948 /* ParkingRecordTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16F31FA1D517009A6948 /* ParkingRecordTBCell.m */; };
+		6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3C1FA86DB100D543D2 /* YJTagCollectionViewCell.xib */; };
 		6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */; };
 		6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FD1F9DDB4000A1020C /* ViewController.m */; };
 		6B91B6011F9DDB4000A1020C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B91B5FF1F9DDB4000A1020C /* Main.storyboard */; };
@@ -115,6 +120,16 @@
 		6B1C4B2B1FA8070F00D543D2 /* GasStationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasStationModel.m; sourceTree = "<group>"; };
 		6B1C4B2D1FA80E2700D543D2 /* HelpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpTool.h; sourceTree = "<group>"; };
 		6B1C4B2E1FA80E2700D543D2 /* HelpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpTool.m; sourceTree = "<group>"; };
+		6B1C4B341FA84A3200D543D2 /* SearchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
+		6B1C4B351FA84A3200D543D2 /* SearchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
+		6B1C4B381FA86DB100D543D2 /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
+		6B1C4B391FA86DB100D543D2 /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
+		6B1C4B3A1FA86DB100D543D2 /* YJTagCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJTagCollectionViewCell.h; sourceTree = "<group>"; };
+		6B1C4B3B1FA86DB100D543D2 /* YJTagCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJTagCollectionViewCell.m; sourceTree = "<group>"; };
+		6B1C4B3C1FA86DB100D543D2 /* YJTagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YJTagCollectionViewCell.xib; sourceTree = "<group>"; };
+		6B1C4B3D1FA86DB100D543D2 /* YJTagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJTagView.h; sourceTree = "<group>"; };
+		6B1C4B3E1FA86DB100D543D2 /* YJTagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJTagView.m; sourceTree = "<group>"; };
+		6B1C4B3F1FA86DB100D543D2 /* YJTagViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJTagViewProtocol.h; sourceTree = "<group>"; };
 		6B26B6AF1FA70398001E86B4 /* GasStationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GasStationVC.h; sourceTree = "<group>"; };
 		6B26B6B01FA70398001E86B4 /* GasStationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasStationVC.m; sourceTree = "<group>"; };
 		6B26B6B21FA71F4A001E86B4 /* GasStationInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GasStationInfoView.h; sourceTree = "<group>"; };
@@ -268,6 +283,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B1C4B301FA84A1600D543D2 /* Search(搜索) */ = {
+			isa = PBXGroup;
+			children = (
+				6B1C4B311FA84A1600D543D2 /* Controller */,
+				6B1C4B321FA84A1600D543D2 /* Model */,
+				6B1C4B331FA84A1600D543D2 /* View */,
+				6B1C4B371FA86DB100D543D2 /* YJTagView */,
+			);
+			path = "Search(搜索)";
+			sourceTree = "<group>";
+		};
+		6B1C4B311FA84A1600D543D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B1C4B341FA84A3200D543D2 /* SearchVC.h */,
+				6B1C4B351FA84A3200D543D2 /* SearchVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B1C4B321FA84A1600D543D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B1C4B331FA84A1600D543D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B1C4B371FA86DB100D543D2 /* YJTagView */ = {
+			isa = PBXGroup;
+			children = (
+				6B1C4B381FA86DB100D543D2 /* UICollectionViewLeftAlignedLayout.h */,
+				6B1C4B391FA86DB100D543D2 /* UICollectionViewLeftAlignedLayout.m */,
+				6B1C4B3A1FA86DB100D543D2 /* YJTagCollectionViewCell.h */,
+				6B1C4B3B1FA86DB100D543D2 /* YJTagCollectionViewCell.m */,
+				6B1C4B3C1FA86DB100D543D2 /* YJTagCollectionViewCell.xib */,
+				6B1C4B3D1FA86DB100D543D2 /* YJTagView.h */,
+				6B1C4B3E1FA86DB100D543D2 /* YJTagView.m */,
+				6B1C4B3F1FA86DB100D543D2 /* YJTagViewProtocol.h */,
+			);
+			path = YJTagView;
+			sourceTree = "<group>";
+		};
 		6B26B6AB1FA7034F001E86B4 /* GasStation(附近加油站) */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +608,7 @@
 		6B91B6781F9DE89600A1020C /* ParkingSpace(车位) */ = {
 			isa = PBXGroup;
 			children = (
+				6B1C4B301FA84A1600D543D2 /* Search(搜索) */,
 				6B26B6AB1FA7034F001E86B4 /* GasStation(附近加油站) */,
 				6B91B6791F9DE89600A1020C /* Controller */,
 				6B91B67A1F9DE89600A1020C /* Model */,
@@ -897,6 +962,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */,
+				6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */,
+				6B1C4B411FA870C400D543D2 /* YJTagView.m in Sources */,
+				6B1C4B401FA870BD00D543D2 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */,
 				6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */,
 				6B1C4B2F1FA80E2700D543D2 /* HelpTool.m in Sources */,
@@ -950,6 +1019,7 @@
 				6B91B6091F9DDB4000A1020C /* main.m in Sources */,
 				6B91B6931F9DE9C600A1020C /* MineVC.m in Sources */,
 				6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */,
+				6B1C4B361FA84A3200D543D2 /* SearchVC.m in Sources */,
 				6B1C4B291FA804A600D543D2 /* CustomAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
