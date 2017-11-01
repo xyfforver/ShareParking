@@ -22,6 +22,7 @@
 		6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3B1FA86DB100D543D2 /* YJTagCollectionViewCell.m */; };
 		6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B01FA70398001E86B4 /* GasStationVC.m */; };
 		6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B31FA71F4A001E86B4 /* GasStationInfoView.m */; };
+		6B3189E91FA95DFF0063AC2F /* SearchHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189E81FA95DFF0063AC2F /* SearchHistoryView.m */; };
 		6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */; };
 		6B339F341FA4792100B52FB0 /* ParkingSpaceTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F331FA4792100B52FB0 /* ParkingSpaceTBCell.m */; };
 		6B3C16E71FA1CEB9009A6948 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16E61FA1CEB9009A6948 /* SettingVC.m */; };
@@ -134,6 +135,8 @@
 		6B26B6B01FA70398001E86B4 /* GasStationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasStationVC.m; sourceTree = "<group>"; };
 		6B26B6B21FA71F4A001E86B4 /* GasStationInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GasStationInfoView.h; sourceTree = "<group>"; };
 		6B26B6B31FA71F4A001E86B4 /* GasStationInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasStationInfoView.m; sourceTree = "<group>"; };
+		6B3189E71FA95DFF0063AC2F /* SearchHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchHistoryView.h; sourceTree = "<group>"; };
+		6B3189E81FA95DFF0063AC2F /* SearchHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchHistoryView.m; sourceTree = "<group>"; };
 		6B339F2F1FA4787900B52FB0 /* ParkingSpaceTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceTBView.h; sourceTree = "<group>"; };
 		6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceTBView.m; sourceTree = "<group>"; };
 		6B339F321FA4792100B52FB0 /* ParkingSpaceTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceTBCell.h; sourceTree = "<group>"; };
@@ -313,6 +316,8 @@
 		6B1C4B331FA84A1600D543D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6B3189E71FA95DFF0063AC2F /* SearchHistoryView.h */,
+				6B3189E81FA95DFF0063AC2F /* SearchHistoryView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -995,6 +1000,7 @@
 				6B91B6A31F9DEDB900A1020C /* UIImage+UIColor.m in Sources */,
 				6B91B6A21F9DEDB300A1020C /* UIColor+Extension.m in Sources */,
 				6B91B6A11F9DEDAC00A1020C /* UIButton+LCAlignment.m in Sources */,
+				6B3189E91FA95DFF0063AC2F /* SearchHistoryView.m in Sources */,
 				6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */,
 				6B3C16E71FA1CEB9009A6948 /* SettingVC.m in Sources */,
 				6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */,

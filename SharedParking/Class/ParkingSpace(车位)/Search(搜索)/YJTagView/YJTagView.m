@@ -40,8 +40,7 @@ static CGFloat kDefaultCellHeight = 24;
 
 #pragma mark - Layout
 /** 适应布局变换 */
-- (void) layoutSubviews
-{
+- (void) layoutSubviews{
     [super layoutSubviews];
     
     UICollectionViewLeftAlignedLayout *layout = (UICollectionViewLeftAlignedLayout *)_collectionView.collectionViewLayout;

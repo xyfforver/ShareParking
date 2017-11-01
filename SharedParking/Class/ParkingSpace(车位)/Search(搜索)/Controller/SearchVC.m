@@ -7,15 +7,18 @@
 //
 
 #import "SearchVC.h"
-#import "YJTagView.h"
+#import "SearchHistoryView.h"
 
 
-@interface SearchVC ()<UISearchBarDelegate,YJTagViewDelegate, YJTagViewDataSource>
+@interface SearchVC ()<UISearchBarDelegate>
 @property (nonatomic,strong) UIView *navigationBar;
 @property (nonatomic,strong) UISearchBar *searchBar;
 @property (nonatomic,strong) UIButton *cancelBtn;
 
-@property (nonatomic, strong) NSMutableArray *historyData;
+@property (nonatomic,strong) SearchHistoryView *historyView;
+
+
+
 @end
 
 @implementation SearchVC
@@ -33,44 +36,22 @@
     self.fd_prefersNavigationBarHidden = YES;
     
     [self.view addSubview:self.navigationBar];
+    [self.view addSubview:self.historyView];
     
-    [self.historyData addObjectsFromArray:@[@"小龙虾", @"日本皮皮虾", @"蓝莓", @"美国进口蓝莓", @"意大利拉面", @"西瓜", @"苹果", @"牛肉", @"🐂", @"🍎", @"🍌",]];
+
     
-    UILabel *titleLab = [[UILabel alloc]initWithFrame:CGRectMake(kMargin15, self.navigationBar.bottom + kMargin15, 100, 20)];
-    titleLab.text = @"历史记录";
-    titleLab.font = kFontSize15;
-    titleLab.textColor = kColor333333;
-    [self.view addSubview:titleLab];
-    
-    YJTagView *view = [[YJTagView alloc] initWithFrame:CGRectMake(kMargin15, titleLab.bottom + 20, kScreenWidth - kMargin15 * 2, 20)];
-    view.dataSource = self;
-    view.delegate = self;
-    view.themeColor = kColor333333;
-    view.tagCornerRadius = 0;
-    view.cellHeight = 33;
-    [self.view addSubview:view];
+   
 }
+
 
 #pragma mark ---------------NetWork-------------------------/
 
-
-#pragma mark ---------------tagView-------------------------/
-- (NSInteger)numOfItems {
-    return self.historyData.count;
-}
-
-- (NSString *)tagView:(YJTagView *)tagView titleForItemAtIndex:(NSInteger)index {
-    return self.historyData[index];
-}
-
-- (void)tagView:(YJTagView *)tagView didSelectedItemAtIndex:(NSInteger)index {
-    NSLog(@"点击%@", self.historyData[index]);
-}
 
 #pragma mark ---------------Event-------------------------/
 - (void)cancelButtonAction:(UIButton *)button{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 #pragma mark ---------------Lazy-------------------------/
 /**
@@ -115,11 +96,11 @@
     return _navigationBar;
 }
 
-- (NSMutableArray *)historyData{
-    if (!_historyData) {
-        _historyData = [NSMutableArray array];
+- (SearchHistoryView *)historyView{
+    if (!_historyView) {
+        _historyView = [[SearchHistoryView alloc]initWithFrame:CGRectMake(0, self.navigationBar.bottom, kScreenWidth, kScreenHeight - self.navigationBar.bottom)];
     }
-    return _historyData;
+    return _historyView;
 }
 
 @end
