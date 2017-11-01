@@ -65,7 +65,12 @@
     self.titleLab.text = @"萧山地下停车场";
     self.numberLab.text = @"车位号：12";
     self.timeLab.text = @"2017-09-09 16：10-17：00";
-    self.priceLab.text = @"1元";
+//    self.priceLab.text = @"1元";
+    
+    NSString *str = @"1元";
+    NSMutableAttributedString *contentMuStr = [[NSMutableAttributedString alloc]initWithString:str];
+    [contentMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(0, str.length - 1)];
+    self.priceLab.attributedText = contentMuStr;
 }
 
 #pragma mark ---------------lazy ---------------------/

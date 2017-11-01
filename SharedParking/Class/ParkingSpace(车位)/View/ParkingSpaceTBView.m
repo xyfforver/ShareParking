@@ -29,7 +29,7 @@
     self.delegate = self;
     self.dataSource = self;
     self.tableFooterView = [UIView new];
-    self.separatorColor = kBackGroundGrayColor;
+    self.separatorColor = kColorC1C1C1;
     self.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
@@ -39,7 +39,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 113;
+    return 110;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

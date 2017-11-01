@@ -72,11 +72,21 @@
     }];
     
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(30);
+        make.height.mas_equalTo(24);
         make.width.mas_equalTo(1);
         make.centerY.mas_equalTo(self.balanceLab);
         make.left.mas_equalTo(kScreenWidth/2.0);
     }];
+    
+    NSString *str = @"余额：12.00";
+    NSMutableAttributedString *contentMuStr = [[NSMutableAttributedString alloc]initWithString:str];
+    [contentMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(3, str.length - 3)];
+    self.balanceLab.attributedText = contentMuStr;
+    
+    NSString *numberStr = @"车牌：浙A13456";
+    NSMutableAttributedString *numberMuStr = [[NSMutableAttributedString alloc]initWithString:numberStr];
+    [numberMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(3, numberStr.length - 3)];
+    self.numberLab.attributedText = numberMuStr;
 }
 
 #pragma mark ---------------event ---------------------/
