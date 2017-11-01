@@ -8,6 +8,7 @@
 
 #import "ParkingSpaceMapView.h"
 #import "GasStationVC.h"
+#import "FuelCounterVC.h"
 @interface ParkingSpaceMapView ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate>
 @property (nonatomic,strong) UIImageView *imgView;
 @property (nonatomic,strong) UIButton *userCenterBtn;
@@ -118,7 +119,8 @@
         }
             break;
         case 3:{
-            
+            FuelCounterVC *vc = [[FuelCounterVC alloc]init];
+            [self.Controller.navigationController pushViewController:vc animated:YES];
         }
             break;
         default:
