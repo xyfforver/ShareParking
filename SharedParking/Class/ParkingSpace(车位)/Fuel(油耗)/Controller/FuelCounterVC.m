@@ -38,7 +38,7 @@
 #pragma mark ---------------Lazy-------------------------/
 - (FuelAverageView *)averageView{
     if (!_averageView) {
-        _averageView = [[NSBundle mainBundle] loadNibNamed:@"FuelAverageView" owner:self options:nil][0];
+        _averageView = [[[NSBundle mainBundle] loadNibNamed:@"FuelAverageView" owner:nil options:nil] lastObject];
         _averageView.frame = CGRectMake( 0, 10, kScreenWidth, 300);
 //        _averageView.backgroundColor = kColorWhite;
     }

@@ -26,6 +26,8 @@
 		6B3189F01FA970130063AC2F /* FuelCounterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189EF1FA970130063AC2F /* FuelCounterVC.m */; };
 		6B3189F61FA973CA0063AC2F /* FuelAverageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189F51FA973CA0063AC2F /* FuelAverageView.m */; };
 		6B3189F81FA974900063AC2F /* FuelAverageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B3189F71FA974900063AC2F /* FuelAverageView.xib */; };
+		6B3189FC1FA9ABDD0063AC2F /* FuelAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189FA1FA9ABDD0063AC2F /* FuelAddVC.m */; };
+		6B3189FD1FA9ABDD0063AC2F /* FuelAddVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B3189FB1FA9ABDD0063AC2F /* FuelAddVC.xib */; };
 		6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */; };
 		6B339F341FA4792100B52FB0 /* ParkingSpaceTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F331FA4792100B52FB0 /* ParkingSpaceTBCell.m */; };
 		6B3C16E71FA1CEB9009A6948 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16E61FA1CEB9009A6948 /* SettingVC.m */; };
@@ -145,6 +147,9 @@
 		6B3189F41FA973CA0063AC2F /* FuelAverageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelAverageView.h; sourceTree = "<group>"; };
 		6B3189F51FA973CA0063AC2F /* FuelAverageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuelAverageView.m; sourceTree = "<group>"; };
 		6B3189F71FA974900063AC2F /* FuelAverageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuelAverageView.xib; sourceTree = "<group>"; };
+		6B3189F91FA9ABDD0063AC2F /* FuelAddVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelAddVC.h; sourceTree = "<group>"; };
+		6B3189FA1FA9ABDD0063AC2F /* FuelAddVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuelAddVC.m; sourceTree = "<group>"; };
+		6B3189FB1FA9ABDD0063AC2F /* FuelAddVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuelAddVC.xib; sourceTree = "<group>"; };
 		6B339F2F1FA4787900B52FB0 /* ParkingSpaceTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceTBView.h; sourceTree = "<group>"; };
 		6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceTBView.m; sourceTree = "<group>"; };
 		6B339F321FA4792100B52FB0 /* ParkingSpaceTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceTBCell.h; sourceTree = "<group>"; };
@@ -399,6 +404,9 @@
 			children = (
 				6B3189EE1FA970130063AC2F /* FuelCounterVC.h */,
 				6B3189EF1FA970130063AC2F /* FuelCounterVC.m */,
+				6B3189F91FA9ABDD0063AC2F /* FuelAddVC.h */,
+				6B3189FA1FA9ABDD0063AC2F /* FuelAddVC.m */,
+				6B3189FB1FA9ABDD0063AC2F /* FuelAddVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -937,6 +945,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B3189FD1FA9ABDD0063AC2F /* FuelAddVC.xib in Resources */,
 				6B91B6061F9DDB4000A1020C /* LaunchScreen.storyboard in Resources */,
 				6B91B6031F9DDB4000A1020C /* Assets.xcassets in Resources */,
 				6B3189F81FA974900063AC2F /* FuelAverageView.xib in Resources */,
@@ -1026,6 +1035,7 @@
 				6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */,
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
 				6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */,
+				6B3189FC1FA9ABDD0063AC2F /* FuelAddVC.m in Sources */,
 				6B3189F01FA970130063AC2F /* FuelCounterVC.m in Sources */,
 				6B91B6AF1F9DEE3700A1020C /* StatusRecordListModel.m in Sources */,
 				6B91B6AE1F9DEE2600A1020C /* StatusModel.m in Sources */,

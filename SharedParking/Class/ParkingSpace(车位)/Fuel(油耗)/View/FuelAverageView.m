@@ -7,6 +7,10 @@
 //
 
 #import "FuelAverageView.h"
+#import "FuelAddVC.h"
+
+
+#import "ParkingSpaceVC.h"
 @interface FuelAverageView ()
 
 @end
@@ -35,6 +39,12 @@
 }
 
 #pragma mark ---------------event ---------------------/
+
+- (IBAction)fuelAction:(id)sender {
+    DLog(@"点击了按钮");
+    FuelAddVC *vc = [[FuelAddVC alloc]initWithNibName:@"FuelAddVC" bundle:[NSBundle mainBundle]];
+    [self.Controller.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark -----------------Lazy---------------------/
 
