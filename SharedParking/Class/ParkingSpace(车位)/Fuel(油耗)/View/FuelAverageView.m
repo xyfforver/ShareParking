@@ -12,6 +12,10 @@
 
 #import "ParkingSpaceVC.h"
 @interface FuelAverageView ()
+@property (strong, nonatomic) IBOutlet UILabel *allAmountLab;
+@property (strong, nonatomic) IBOutlet UILabel *allPriceLab;
+@property (strong, nonatomic) IBOutlet UILabel *averageAmountLab;
+@property (strong, nonatomic) IBOutlet UILabel *averagePriceLab;
 
 @end
 

@@ -77,6 +77,7 @@
 		6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6621F9DDDC300A1020C /* UINavigationController+FDFullscreenPopGesture.m */; };
 		6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6651F9DDDC300A1020C /* KeychainHelper.m */; };
 		6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6671F9DDDC300A1020C /* KeychainIDFA.m */; };
+		6BB1EE2E1FB43662003960F8 /* BalanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0AD31E1FB4309900F3D8E4 /* BalanceVC.m */; };
 		6BB67C561FA450DF007CE224 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C431FA44CD6007CE224 /* CoreLocation.framework */; };
 		6BB67C571FA450E7007CE224 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C451FA44CDE007CE224 /* QuartzCore.framework */; };
 		6BB67C581FA450EF007CE224 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C471FA44CE6007CE224 /* OpenGLES.framework */; };
@@ -112,6 +113,8 @@
 		53E76ABEDC7B69476CC9FD69 /* Pods-SharedParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedParking.release.xcconfig"; path = "Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking.release.xcconfig"; sourceTree = "<group>"; };
 		6B057CBF1FA2D2FF0017E320 /* ParkingSpaceHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceHeaderView.h; sourceTree = "<group>"; };
 		6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceHeaderView.m; sourceTree = "<group>"; };
+		6B0AD31D1FB4309900F3D8E4 /* BalanceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BalanceVC.h; sourceTree = "<group>"; };
+		6B0AD31E1FB4309900F3D8E4 /* BalanceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceVC.m; sourceTree = "<group>"; };
 		6B176F5F1FA447410045F55A /* ParkingSpaceMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceMapView.h; sourceTree = "<group>"; };
 		6B176F601FA447410045F55A /* ParkingSpaceMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceMapView.m; sourceTree = "<group>"; };
 		6B1C15871FA058AE00E584F3 /* BaseCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCLView.m; sourceTree = "<group>"; };
@@ -299,6 +302,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B0AD3191FB4308600F3D8E4 /* Balance(余额) */ = {
+			isa = PBXGroup;
+			children = (
+				6B0AD31A1FB4309000F3D8E4 /* Controller */,
+				6B0AD31C1FB4309000F3D8E4 /* Model */,
+				6B0AD31B1FB4309000F3D8E4 /* View */,
+			);
+			path = "Balance(余额)";
+			sourceTree = "<group>";
+		};
+		6B0AD31A1FB4309000F3D8E4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B0AD31D1FB4309900F3D8E4 /* BalanceVC.h */,
+				6B0AD31E1FB4309900F3D8E4 /* BalanceVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B0AD31B1FB4309000F3D8E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B0AD31C1FB4309000F3D8E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6B1C4B301FA84A1600D543D2 /* Search(搜索) */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,6 +745,7 @@
 		6B91B67C1F9DE8AD00A1020C /* Mine(我的) */ = {
 			isa = PBXGroup;
 			children = (
+				6B0AD3191FB4308600F3D8E4 /* Balance(余额) */,
 				6B3C16EB1FA1D4DD009A6948 /* ParkingRecord(停车记录) */,
 				6B3C16E51FA1CEB9009A6948 /* SettingVC.h */,
 				6B3C16E61FA1CEB9009A6948 /* SettingVC.m */,
@@ -1022,6 +1059,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB1EE2E1FB43662003960F8 /* BalanceVC.m in Sources */,
 				6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */,
 				6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */,
 				6B1C4B411FA870C400D543D2 /* YJTagView.m in Sources */,

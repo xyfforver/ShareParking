@@ -9,7 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FuelAverageView"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FuelAverageView">
+            <connections>
+                <outlet property="allAmountLab" destination="CEp-t3-3nr" id="jhm-NL-Gvm"/>
+                <outlet property="allPriceLab" destination="wYJ-ry-f7b" id="Wb8-XV-6Fa"/>
+                <outlet property="averageAmountLab" destination="BCb-j1-3Et" id="PRR-fm-ymH"/>
+                <outlet property="averagePriceLab" destination="3g7-jz-VQn" id="RgE-kD-siH"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="WCw-1M-KjM" customClass="FuelAverageView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>

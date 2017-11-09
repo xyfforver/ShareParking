@@ -8,6 +8,8 @@
 #define kHeadWidth  80.0
 #define kItemSpace 3.0
 #import "MineHeaderView.h"
+
+#import "BalanceVC.h"
 @interface MineHeaderView()
 @property (nonatomic , strong) UIImageView *bgImgView;
 @property (nonatomic , strong) UIImageView *headImgView;
@@ -144,6 +146,11 @@
         _balanceLab.textAlignment = NSTextAlignmentCenter;
         _balanceLab.text = @"余额：12.00";
         _balanceLab.backgroundColor = kColorWhite;
+        
+        [_balanceLab zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+            BalanceVC *vc = [[BalanceVC alloc]init];
+            [self.Controller.navigationController pushViewController:vc animated:YES];
+        }];
     }
     return _balanceLab;
 }
