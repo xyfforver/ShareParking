@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4D906E2314229514B9AEA22E /* Pods_SharedParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4662DFD8CE09B8385B9D2768 /* Pods_SharedParking.framework */; };
 		6B057CC11FA2D2FF0017E320 /* ParkingSpaceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */; };
+		6B1323581FB43DF300AB1840 /* MyRequestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323571FB43DF300AB1840 /* MyRequestVC.m */; };
+		6B13235B1FB43E4700AB1840 /* MyRequestRentHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */; };
+		6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323511FB43CF800AB1840 /* SettingVC.m */; };
 		6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B176F601FA447410045F55A /* ParkingSpaceMapView.m */; };
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
@@ -30,7 +33,6 @@
 		6B3189FD1FA9ABDD0063AC2F /* FuelAddVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B3189FB1FA9ABDD0063AC2F /* FuelAddVC.xib */; };
 		6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */; };
 		6B339F341FA4792100B52FB0 /* ParkingSpaceTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F331FA4792100B52FB0 /* ParkingSpaceTBCell.m */; };
-		6B3C16E71FA1CEB9009A6948 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16E61FA1CEB9009A6948 /* SettingVC.m */; };
 		6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16EF1FA1D4FC009A6948 /* ParkingRecordVC.m */; };
 		6B3C16F41FA1D517009A6948 /* ParkingRecordTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16F31FA1D517009A6948 /* ParkingRecordTBCell.m */; };
 		6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3C1FA86DB100D543D2 /* YJTagCollectionViewCell.xib */; };
@@ -87,6 +89,8 @@
 		6BB67C5C1FA4510D007CE224 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C4F1FA44D08007CE224 /* libsqlite3.0.tbd */; };
 		6BB67C5D1FA45114007CE224 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C511FA44D10007CE224 /* CoreTelephony.framework */; };
 		6BB67C5E1FA4511F007CE224 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C531FA44D19007CE224 /* libstdc++.6.0.9.tbd */; };
+		6BCD97991FB4485A001F81A5 /* MyRequestRentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD97981FB4485A001F81A5 /* MyRequestRentView.m */; };
+		6BCD979C1FB45481001F81A5 /* MyRequestRentCLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD979B1FB45481001F81A5 /* MyRequestRentCLCell.m */; };
 		6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +119,12 @@
 		6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceHeaderView.m; sourceTree = "<group>"; };
 		6B0AD31D1FB4309900F3D8E4 /* BalanceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BalanceVC.h; sourceTree = "<group>"; };
 		6B0AD31E1FB4309900F3D8E4 /* BalanceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceVC.m; sourceTree = "<group>"; };
+		6B1323501FB43CF800AB1840 /* SettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		6B1323511FB43CF800AB1840 /* SettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		6B1323561FB43DF300AB1840 /* MyRequestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestVC.h; sourceTree = "<group>"; };
+		6B1323571FB43DF300AB1840 /* MyRequestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestVC.m; sourceTree = "<group>"; };
+		6B1323591FB43E4700AB1840 /* MyRequestRentHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestRentHeadView.h; sourceTree = "<group>"; };
+		6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestRentHeadView.m; sourceTree = "<group>"; };
 		6B176F5F1FA447410045F55A /* ParkingSpaceMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceMapView.h; sourceTree = "<group>"; };
 		6B176F601FA447410045F55A /* ParkingSpaceMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceMapView.m; sourceTree = "<group>"; };
 		6B1C15871FA058AE00E584F3 /* BaseCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCLView.m; sourceTree = "<group>"; };
@@ -157,8 +167,6 @@
 		6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceTBView.m; sourceTree = "<group>"; };
 		6B339F321FA4792100B52FB0 /* ParkingSpaceTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceTBCell.h; sourceTree = "<group>"; };
 		6B339F331FA4792100B52FB0 /* ParkingSpaceTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceTBCell.m; sourceTree = "<group>"; };
-		6B3C16E51FA1CEB9009A6948 /* SettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
-		6B3C16E61FA1CEB9009A6948 /* SettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		6B3C16EF1FA1D4FC009A6948 /* ParkingRecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkingRecordVC.m; sourceTree = "<group>"; };
 		6B3C16F01FA1D4FC009A6948 /* ParkingRecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkingRecordVC.h; sourceTree = "<group>"; };
 		6B3C16F21FA1D517009A6948 /* ParkingRecordTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingRecordTBCell.h; sourceTree = "<group>"; };
@@ -263,6 +271,10 @@
 		6BB67C4F1FA44D08007CE224 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		6BB67C511FA44D10007CE224 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		6BB67C531FA44D19007CE224 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		6BCD97971FB4485A001F81A5 /* MyRequestRentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestRentView.h; sourceTree = "<group>"; };
+		6BCD97981FB4485A001F81A5 /* MyRequestRentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestRentView.m; sourceTree = "<group>"; };
+		6BCD979A1FB45481001F81A5 /* MyRequestRentCLCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestRentCLCell.h; sourceTree = "<group>"; };
+		6BCD979B1FB45481001F81A5 /* MyRequestRentCLCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestRentCLCell.m; sourceTree = "<group>"; };
 		6BF8B2531F9F177000329145 /* AppDelegate+LibConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+LibConfig.h"; sourceTree = "<group>"; };
 		6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+LibConfig.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -333,6 +345,54 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6B13234D1FB43CC800AB1840 /* Setting(设置) */ = {
+			isa = PBXGroup;
+			children = (
+				6B1323501FB43CF800AB1840 /* SettingVC.h */,
+				6B1323511FB43CF800AB1840 /* SettingVC.m */,
+			);
+			path = "Setting(设置)";
+			sourceTree = "<group>";
+		};
+		6B1323521FB43DC900AB1840 /* MyRequest(我的求租) */ = {
+			isa = PBXGroup;
+			children = (
+				6B1323531FB43DC900AB1840 /* Controller */,
+				6B1323541FB43DC900AB1840 /* Model */,
+				6B1323551FB43DC900AB1840 /* View */,
+			);
+			path = "MyRequest(我的求租)";
+			sourceTree = "<group>";
+		};
+		6B1323531FB43DC900AB1840 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B1323561FB43DF300AB1840 /* MyRequestVC.h */,
+				6B1323571FB43DF300AB1840 /* MyRequestVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B1323541FB43DC900AB1840 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B1323551FB43DC900AB1840 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B1323591FB43E4700AB1840 /* MyRequestRentHeadView.h */,
+				6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */,
+				6BCD97971FB4485A001F81A5 /* MyRequestRentView.h */,
+				6BCD97981FB4485A001F81A5 /* MyRequestRentView.m */,
+				6BCD979A1FB45481001F81A5 /* MyRequestRentCLCell.h */,
+				6BCD979B1FB45481001F81A5 /* MyRequestRentCLCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6B1C4B301FA84A1600D543D2 /* Search(搜索) */ = {
@@ -745,10 +805,10 @@
 		6B91B67C1F9DE8AD00A1020C /* Mine(我的) */ = {
 			isa = PBXGroup;
 			children = (
+				6B1323521FB43DC900AB1840 /* MyRequest(我的求租) */,
 				6B0AD3191FB4308600F3D8E4 /* Balance(余额) */,
 				6B3C16EB1FA1D4DD009A6948 /* ParkingRecord(停车记录) */,
-				6B3C16E51FA1CEB9009A6948 /* SettingVC.h */,
-				6B3C16E61FA1CEB9009A6948 /* SettingVC.m */,
+				6B13234D1FB43CC800AB1840 /* Setting(设置) */,
 				6B91B67D1F9DE8AD00A1020C /* Controller */,
 				6B91B67E1F9DE8AD00A1020C /* Model */,
 				6B91B67F1F9DE8AD00A1020C /* View */,
@@ -1059,7 +1119,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */,
 				6BB1EE2E1FB43662003960F8 /* BalanceVC.m in Sources */,
+				6BCD979C1FB45481001F81A5 /* MyRequestRentCLCell.m in Sources */,
 				6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */,
 				6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */,
 				6B1C4B411FA870C400D543D2 /* YJTagView.m in Sources */,
@@ -1097,22 +1159,24 @@
 				6B91B6A11F9DEDAC00A1020C /* UIButton+LCAlignment.m in Sources */,
 				6B3189E91FA95DFF0063AC2F /* SearchHistoryView.m in Sources */,
 				6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */,
-				6B3C16E71FA1CEB9009A6948 /* SettingVC.m in Sources */,
 				6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */,
 				6B91B6A01F9DEDA500A1020C /* UIButton+Block.m in Sources */,
 				6B91B69F1F9DED9F00A1020C /* UIButton+EnlargeEdge.m in Sources */,
 				6B91B69E1F9DED9A00A1020C /* NSString+String.m in Sources */,
 				6B91B69D1F9DED9400A1020C /* NSString+Regex.m in Sources */,
+				6BCD97991FB4485A001F81A5 /* MyRequestRentView.m in Sources */,
 				6B91B69C1F9DED8E00A1020C /* NSDictionary+RequestEncoding.m in Sources */,
 				6B91B69B1F9DED8900A1020C /* NSDictionary+Log.m in Sources */,
 				6B3189F61FA973CA0063AC2F /* FuelAverageView.m in Sources */,
 				6B91B69A1F9DED8400A1020C /* NSArray+Log.m in Sources */,
 				6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */,
+				6B1323581FB43DF300AB1840 /* MyRequestVC.m in Sources */,
 				6B91B6981F9DED7800A1020C /* JKHTTPManager.m in Sources */,
 				6B91B6971F9DED7300A1020C /* JKNavigationController.m in Sources */,
 				6B91B6961F9DED1700A1020C /* DataManager.m in Sources */,
 				6B91B6951F9DED1000A1020C /* RootViewController.m in Sources */,
 				6B91B6941F9DEC2F00A1020C /* BaseViewController.m in Sources */,
+				6B13235B1FB43E4700AB1840 /* MyRequestRentHeadView.m in Sources */,
 				6B91B68A1F9DE96000A1020C /* ParkingSpaceVC.m in Sources */,
 				6B91B68D1F9DE9A900A1020C /* ReleaseVC.m in Sources */,
 				6B3C16F41FA1D517009A6948 /* ParkingRecordTBCell.m in Sources */,

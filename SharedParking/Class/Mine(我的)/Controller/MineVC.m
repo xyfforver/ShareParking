@@ -9,6 +9,7 @@
 #import "MineVC.h"
 #import "SettingVC.h"
 #import "ParkingRecordVC.h"
+#import "MyRequestVC.h"
 
 #import "MineHeaderView.h"
 @interface MineVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -37,7 +38,7 @@
     [self.view addSubview:self.navView];
     [self.navView addSubview:self.titleLab];
 
-    self.firstArr = @[@{kImgKey:@"mine_parking",kTitleKey:@"我的求助"},
+    self.firstArr = @[@{kImgKey:@"mine_parking",kTitleKey:@"我的求租"},
                       @{kImgKey:@"mine_release",kTitleKey:@"我的发布"},
                       @{kImgKey:@"mine_reserve",kTitleKey:@"我的预订"},
                       @{kImgKey:@"mine_record",kTitleKey:@"停车记录"},
@@ -90,7 +91,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        
+        MyRequestVC *vc = [[MyRequestVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 1){
         
     }else if (indexPath.row == 2){

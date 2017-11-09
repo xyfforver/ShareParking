@@ -80,7 +80,7 @@
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kBodyHeight   kScreenHeight - kStatusBarAndNavigationBarHeight
-#define kTabBarHeight   ([[UIApplication sharedApplication] statusBarFrame].size.height > 20?83:49)
+#define kTabBarHeight   ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
 #define kScreenRect  CGRectMake(0, 0, kScreenWidth, kBodyHeight)
 
 

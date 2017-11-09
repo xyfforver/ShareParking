@@ -72,7 +72,7 @@ static CGFloat const sizeButton = 50.0;
     self.view.layer.shouldRasterize = YES;
     self.view.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
-    self.view.backgroundColor = kColorWhite;
+    self.view.backgroundColor = kBackGroundGrayColor;
     
     [self hiddenNavBlackLine];
     
