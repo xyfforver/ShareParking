@@ -10,6 +10,7 @@
 #import "SettingVC.h"
 #import "ParkingRecordVC.h"
 #import "MyRequestVC.h"
+#import "MyReserveVC.h"
 
 #import "MineHeaderView.h"
 @interface MineVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -96,7 +97,8 @@
     }else if (indexPath.row == 1){
         
     }else if (indexPath.row == 2){
-        
+        MyReserveVC *vc = [[MyReserveVC alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 3){
         ParkingRecordVC *vc = [[ParkingRecordVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];

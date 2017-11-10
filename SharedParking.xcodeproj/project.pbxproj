@@ -92,6 +92,8 @@
 		6BCD97991FB4485A001F81A5 /* MyRequestRentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD97981FB4485A001F81A5 /* MyRequestRentView.m */; };
 		6BCD979C1FB45481001F81A5 /* MyRequestRentCLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD979B1FB45481001F81A5 /* MyRequestRentCLCell.m */; };
 		6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */; };
+		6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B671FB5745500DED0B7 /* MyReserveVC.m */; };
+		6BF95B6B1FB57D3100DED0B7 /* MyReserveItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B6A1FB57D3100DED0B7 /* MyReserveItemView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,6 +279,10 @@
 		6BCD979B1FB45481001F81A5 /* MyRequestRentCLCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestRentCLCell.m; sourceTree = "<group>"; };
 		6BF8B2531F9F177000329145 /* AppDelegate+LibConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+LibConfig.h"; sourceTree = "<group>"; };
 		6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+LibConfig.m"; sourceTree = "<group>"; };
+		6BF95B661FB5745500DED0B7 /* MyReserveVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyReserveVC.h; sourceTree = "<group>"; };
+		6BF95B671FB5745500DED0B7 /* MyReserveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyReserveVC.m; sourceTree = "<group>"; };
+		6BF95B691FB57D3100DED0B7 /* MyReserveItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyReserveItemView.h; sourceTree = "<group>"; };
+		6BF95B6A1FB57D3100DED0B7 /* MyReserveItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyReserveItemView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -805,6 +811,7 @@
 		6B91B67C1F9DE8AD00A1020C /* Mine(我的) */ = {
 			isa = PBXGroup;
 			children = (
+				6BF95B621FB5743C00DED0B7 /* MyReserve(我的预订) */,
 				6B1323521FB43DC900AB1840 /* MyRequest(我的求租) */,
 				6B0AD3191FB4308600F3D8E4 /* Balance(余额) */,
 				6B3C16EB1FA1D4DD009A6948 /* ParkingRecord(停车记录) */,
@@ -903,6 +910,41 @@
 		6B91B6871F9DE8F100A1020C /* View */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6BF95B621FB5743C00DED0B7 /* MyReserve(我的预订) */ = {
+			isa = PBXGroup;
+			children = (
+				6BF95B631FB5743C00DED0B7 /* Controller */,
+				6BF95B641FB5743C00DED0B7 /* Model */,
+				6BF95B651FB5743C00DED0B7 /* View */,
+			);
+			path = "MyReserve(我的预订)";
+			sourceTree = "<group>";
+		};
+		6BF95B631FB5743C00DED0B7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6BF95B661FB5745500DED0B7 /* MyReserveVC.h */,
+				6BF95B671FB5745500DED0B7 /* MyReserveVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6BF95B641FB5743C00DED0B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6BF95B651FB5743C00DED0B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6BF95B691FB57D3100DED0B7 /* MyReserveItemView.h */,
+				6BF95B6A1FB57D3100DED0B7 /* MyReserveItemView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1125,6 +1167,7 @@
 				6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */,
 				6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */,
 				6B1C4B411FA870C400D543D2 /* YJTagView.m in Sources */,
+				6BF95B6B1FB57D3100DED0B7 /* MyReserveItemView.m in Sources */,
 				6B1C4B401FA870BD00D543D2 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */,
 				6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */,
@@ -1135,6 +1178,7 @@
 				6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */,
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
 				6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */,
+				6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */,
 				6B3189FC1FA9ABDD0063AC2F /* FuelAddVC.m in Sources */,
 				6B3189F01FA970130063AC2F /* FuelCounterVC.m in Sources */,
 				6B91B6AF1F9DEE3700A1020C /* StatusRecordListModel.m in Sources */,

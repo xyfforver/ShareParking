@@ -71,7 +71,7 @@
 #pragma mark ---------------Lazy-------------------------/
 - (MyRequestRentHeadView *)headView{
     if (!_headView) {
-        _headView = [[MyRequestRentHeadView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
+        _headView = [[MyRequestRentHeadView alloc]initWithType:JMHeaderRequestRentType frame:CGRectMake(0, 0, kScreenWidth, [MyRequestRentHeadView getHeight])];
     }
     return _headView;
 }

@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef enum :NSInteger {
+    JMHeaderRequestRentType,//我的求租
+    JMHeaderReserveParkingSpaceType,//我预订的车位
 
+    
+}JMHeaderType;
 @interface MyRequestRentHeadView : UIView
 
+- (instancetype)initWithType:(JMHeaderType)type frame:(CGRect)frame;
+
+@property (nonatomic , assign) JMHeaderType type;
+
+
++ (CGFloat)getHeight;
 @end

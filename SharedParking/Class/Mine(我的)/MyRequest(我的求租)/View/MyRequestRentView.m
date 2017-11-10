@@ -152,7 +152,7 @@
         [_rentBtn setTitle:@"重新求租" forState:UIControlStateNormal];
         _rentBtn.titleLabel.font = kFontSize15;
         [_rentBtn setTitleColor:kColor333333 forState:UIControlStateNormal];
-        [_rentBtn addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_rentBtn addTarget:self action:@selector(rentAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _rentBtn;
 }

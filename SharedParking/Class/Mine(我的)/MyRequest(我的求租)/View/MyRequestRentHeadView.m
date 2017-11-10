@@ -14,10 +14,13 @@
 
 @implementation MyRequestRentHeadView
 
-- (instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithType:(JMHeaderType)type frame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        self.type = type;
+        
         [self initView];
+        
     }
     return self;
 }
@@ -29,11 +32,24 @@
     
     self.titleLab.frame = CGRectMake(kMargin15, 75, self.width - kMargin15 * 2, 20);
     self.requestBtn.frame = CGRectMake((self.width - 190) / 2.0, self.titleLab.bottom + 30, 190, 40);
+    
+    
+    if (self.type == JMHeaderRequestRentType) {
+        self.titleLab.text = @"当前没有您的求租车位信息";
+        [self.requestBtn setTitle:@"求租车位" forState:UIControlStateNormal];
+    }else if (self.type == JMHeaderReserveParkingSpaceType){
+        self.titleLab.text = @"当前没有您的预订信息";
+        [self.requestBtn setTitle:@"去预订" forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark ---------------event ---------------------/
 - (void)requestAction:(UIButton *)button{
-    
+    if (self.type == JMHeaderRequestRentType) {
+
+    }else if (self.type == JMHeaderReserveParkingSpaceType){
+
+    }
 }
 
 #pragma mark -----------------Lazy---------------------/
@@ -43,7 +59,7 @@
         _titleLab.font = kFontSize14;
         _titleLab.textColor = kColor6B6B6B;
         _titleLab.textAlignment = NSTextAlignmentCenter;
-        _titleLab.text = @"当前没有您的求租车位信息";
+        
     }
     return _titleLab;
 }
@@ -51,7 +67,6 @@
 - (UIButton *)requestBtn{
     if (!_requestBtn) {
         _requestBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_requestBtn setTitle:@"求租车位" forState:UIControlStateNormal];
         _requestBtn.titleLabel.font = kFontSizeBold15;
         [_requestBtn setTitleColor:kColorWhite forState:UIControlStateNormal];
         [_requestBtn setBackgroundColor:kNavBarColor];
@@ -60,5 +75,9 @@
         _requestBtn.layer.masksToBounds = YES;
     }
     return _requestBtn;
+}
+
++ (CGFloat)getHeight{
+    return 200;
 }
 @end
