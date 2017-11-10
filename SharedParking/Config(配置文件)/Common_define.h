@@ -23,6 +23,7 @@
 #import "IQKeyboardManager.h"
 #import "WSProgressHUD.h"
 #import "HelpTool.h"
+#import "iOSBlocks.h"
 
 /***类别***/
 #import "UIViewExt.h"

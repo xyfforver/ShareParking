@@ -94,6 +94,17 @@
 		6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */; };
 		6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B671FB5745500DED0B7 /* MyReserveVC.m */; };
 		6BF95B6B1FB57D3100DED0B7 /* MyReserveItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B6A1FB57D3100DED0B7 /* MyReserveItemView.m */; };
+		6BF95B721FB58EF900DED0B7 /* MyIssueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B711FB58EF900DED0B7 /* MyIssueVC.m */; };
+		6BF95B751FB5901E00DED0B7 /* MyIssueTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B741FB5901E00DED0B7 /* MyIssueTBCell.m */; };
+		6BF95B8F1FB59FBF00DED0B7 /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B881FB59DA900DED0B7 /* UIAlertView+Block.m */; };
+		6BF95B901FB59FE300DED0B7 /* CLLocationManager+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B791FB59DA900DED0B7 /* CLLocationManager+Block.m */; };
+		6BF95B911FB59FEB00DED0B7 /* NSURLConnection+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B7C1FB59DA900DED0B7 /* NSURLConnection+Block.m */; };
+		6BF95B921FB59FEF00DED0B7 /* MFMailComposeViewController+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B811FB59DA900DED0B7 /* MFMailComposeViewController+Block.m */; };
+		6BF95B931FB59FF400DED0B7 /* MFMessageComposeViewController+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B831FB59DA900DED0B7 /* MFMessageComposeViewController+Block.m */; };
+		6BF95B941FB59FFA00DED0B7 /* UIActionSheet+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B861FB59DA900DED0B7 /* UIActionSheet+Block.m */; };
+		6BF95B951FB5A00000DED0B7 /* UINavigationController+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B8A1FB59DA900DED0B7 /* UINavigationController+Block.m */; };
+		6BF95B961FB5A00600DED0B7 /* UIPickerView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B8C1FB59DA900DED0B7 /* UIPickerView+Block.m */; };
+		6BF95B971FB5A00B00DED0B7 /* UIPopoverController+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B8E1FB59DA900DED0B7 /* UIPopoverController+Block.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,6 +294,30 @@
 		6BF95B671FB5745500DED0B7 /* MyReserveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyReserveVC.m; sourceTree = "<group>"; };
 		6BF95B691FB57D3100DED0B7 /* MyReserveItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyReserveItemView.h; sourceTree = "<group>"; };
 		6BF95B6A1FB57D3100DED0B7 /* MyReserveItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyReserveItemView.m; sourceTree = "<group>"; };
+		6BF95B701FB58EF900DED0B7 /* MyIssueVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyIssueVC.h; sourceTree = "<group>"; };
+		6BF95B711FB58EF900DED0B7 /* MyIssueVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyIssueVC.m; sourceTree = "<group>"; };
+		6BF95B731FB5901E00DED0B7 /* MyIssueTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyIssueTBCell.h; sourceTree = "<group>"; };
+		6BF95B741FB5901E00DED0B7 /* MyIssueTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyIssueTBCell.m; sourceTree = "<group>"; };
+		6BF95B781FB59DA900DED0B7 /* CLLocationManager+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Block.h"; sourceTree = "<group>"; };
+		6BF95B791FB59DA900DED0B7 /* CLLocationManager+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CLLocationManager+Block.m"; sourceTree = "<group>"; };
+		6BF95B7B1FB59DA900DED0B7 /* NSURLConnection+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+Block.h"; sourceTree = "<group>"; };
+		6BF95B7C1FB59DA900DED0B7 /* NSURLConnection+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+Block.m"; sourceTree = "<group>"; };
+		6BF95B7D1FB59DA900DED0B7 /* iOSBlocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSBlocks.h; sourceTree = "<group>"; };
+		6BF95B7E1FB59DA900DED0B7 /* iOSBlocksProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSBlocksProtocol.h; sourceTree = "<group>"; };
+		6BF95B801FB59DA900DED0B7 /* MFMailComposeViewController+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MFMailComposeViewController+Block.h"; sourceTree = "<group>"; };
+		6BF95B811FB59DA900DED0B7 /* MFMailComposeViewController+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MFMailComposeViewController+Block.m"; sourceTree = "<group>"; };
+		6BF95B821FB59DA900DED0B7 /* MFMessageComposeViewController+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MFMessageComposeViewController+Block.h"; sourceTree = "<group>"; };
+		6BF95B831FB59DA900DED0B7 /* MFMessageComposeViewController+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MFMessageComposeViewController+Block.m"; sourceTree = "<group>"; };
+		6BF95B851FB59DA900DED0B7 /* UIActionSheet+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Block.h"; sourceTree = "<group>"; };
+		6BF95B861FB59DA900DED0B7 /* UIActionSheet+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Block.m"; sourceTree = "<group>"; };
+		6BF95B871FB59DA900DED0B7 /* UIAlertView+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
+		6BF95B881FB59DA900DED0B7 /* UIAlertView+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
+		6BF95B891FB59DA900DED0B7 /* UINavigationController+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Block.h"; sourceTree = "<group>"; };
+		6BF95B8A1FB59DA900DED0B7 /* UINavigationController+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Block.m"; sourceTree = "<group>"; };
+		6BF95B8B1FB59DA900DED0B7 /* UIPickerView+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIPickerView+Block.h"; sourceTree = "<group>"; };
+		6BF95B8C1FB59DA900DED0B7 /* UIPickerView+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+Block.m"; sourceTree = "<group>"; };
+		6BF95B8D1FB59DA900DED0B7 /* UIPopoverController+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+Block.h"; sourceTree = "<group>"; };
+		6BF95B8E1FB59DA900DED0B7 /* UIPopoverController+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+Block.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -699,6 +734,7 @@
 		6B91B65F1F9DDDC300A1020C /* Libs(第三方库) */ = {
 			isa = PBXGroup;
 			children = (
+				6BF95B761FB59DA900DED0B7 /* iOSBlocks */,
 				6B91B6601F9DDDC300A1020C /* FDFullscreenPopGesture */,
 				6B91B6631F9DDDC300A1020C /* KeychainIDFA */,
 			);
@@ -811,6 +847,7 @@
 		6B91B67C1F9DE8AD00A1020C /* Mine(我的) */ = {
 			isa = PBXGroup;
 			children = (
+				6BF95B6C1FB58EDE00DED0B7 /* MyIssue(我的发布) */,
 				6BF95B621FB5743C00DED0B7 /* MyReserve(我的预订) */,
 				6B1323521FB43DC900AB1840 /* MyRequest(我的求租) */,
 				6B0AD3191FB4308600F3D8E4 /* Balance(余额) */,
@@ -947,6 +984,100 @@
 				6BF95B6A1FB57D3100DED0B7 /* MyReserveItemView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6BF95B6C1FB58EDE00DED0B7 /* MyIssue(我的发布) */ = {
+			isa = PBXGroup;
+			children = (
+				6BF95B6D1FB58EDE00DED0B7 /* Controller */,
+				6BF95B6E1FB58EDE00DED0B7 /* Model */,
+				6BF95B6F1FB58EDE00DED0B7 /* View */,
+			);
+			path = "MyIssue(我的发布)";
+			sourceTree = "<group>";
+		};
+		6BF95B6D1FB58EDE00DED0B7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6BF95B701FB58EF900DED0B7 /* MyIssueVC.h */,
+				6BF95B711FB58EF900DED0B7 /* MyIssueVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6BF95B6E1FB58EDE00DED0B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6BF95B6F1FB58EDE00DED0B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6BF95B731FB5901E00DED0B7 /* MyIssueTBCell.h */,
+				6BF95B741FB5901E00DED0B7 /* MyIssueTBCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6BF95B761FB59DA900DED0B7 /* iOSBlocks */ = {
+			isa = PBXGroup;
+			children = (
+				6BF95B771FB59DA900DED0B7 /* CoreLocation */,
+				6BF95B7A1FB59DA900DED0B7 /* Foundation */,
+				6BF95B7D1FB59DA900DED0B7 /* iOSBlocks.h */,
+				6BF95B7E1FB59DA900DED0B7 /* iOSBlocksProtocol.h */,
+				6BF95B7F1FB59DA900DED0B7 /* MessageUI */,
+				6BF95B841FB59DA900DED0B7 /* UIKit */,
+			);
+			path = iOSBlocks;
+			sourceTree = "<group>";
+		};
+		6BF95B771FB59DA900DED0B7 /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				6BF95B781FB59DA900DED0B7 /* CLLocationManager+Block.h */,
+				6BF95B791FB59DA900DED0B7 /* CLLocationManager+Block.m */,
+			);
+			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		6BF95B7A1FB59DA900DED0B7 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				6BF95B7B1FB59DA900DED0B7 /* NSURLConnection+Block.h */,
+				6BF95B7C1FB59DA900DED0B7 /* NSURLConnection+Block.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		6BF95B7F1FB59DA900DED0B7 /* MessageUI */ = {
+			isa = PBXGroup;
+			children = (
+				6BF95B801FB59DA900DED0B7 /* MFMailComposeViewController+Block.h */,
+				6BF95B811FB59DA900DED0B7 /* MFMailComposeViewController+Block.m */,
+				6BF95B821FB59DA900DED0B7 /* MFMessageComposeViewController+Block.h */,
+				6BF95B831FB59DA900DED0B7 /* MFMessageComposeViewController+Block.m */,
+			);
+			path = MessageUI;
+			sourceTree = "<group>";
+		};
+		6BF95B841FB59DA900DED0B7 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				6BF95B851FB59DA900DED0B7 /* UIActionSheet+Block.h */,
+				6BF95B861FB59DA900DED0B7 /* UIActionSheet+Block.m */,
+				6BF95B871FB59DA900DED0B7 /* UIAlertView+Block.h */,
+				6BF95B881FB59DA900DED0B7 /* UIAlertView+Block.m */,
+				6BF95B891FB59DA900DED0B7 /* UINavigationController+Block.h */,
+				6BF95B8A1FB59DA900DED0B7 /* UINavigationController+Block.m */,
+				6BF95B8B1FB59DA900DED0B7 /* UIPickerView+Block.h */,
+				6BF95B8C1FB59DA900DED0B7 /* UIPickerView+Block.m */,
+				6BF95B8D1FB59DA900DED0B7 /* UIPopoverController+Block.h */,
+				6BF95B8E1FB59DA900DED0B7 /* UIPopoverController+Block.m */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		6EA91DB080D9ABEBB6F342DC /* Frameworks */ = {
@@ -1161,6 +1292,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BF95B971FB5A00B00DED0B7 /* UIPopoverController+Block.m in Sources */,
+				6BF95B961FB5A00600DED0B7 /* UIPickerView+Block.m in Sources */,
+				6BF95B951FB5A00000DED0B7 /* UINavigationController+Block.m in Sources */,
+				6BF95B941FB59FFA00DED0B7 /* UIActionSheet+Block.m in Sources */,
+				6BF95B931FB59FF400DED0B7 /* MFMessageComposeViewController+Block.m in Sources */,
+				6BF95B921FB59FEF00DED0B7 /* MFMailComposeViewController+Block.m in Sources */,
+				6BF95B911FB59FEB00DED0B7 /* NSURLConnection+Block.m in Sources */,
+				6BF95B901FB59FE300DED0B7 /* CLLocationManager+Block.m in Sources */,
+				6BF95B8F1FB59FBF00DED0B7 /* UIAlertView+Block.m in Sources */,
 				6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */,
 				6BB1EE2E1FB43662003960F8 /* BalanceVC.m in Sources */,
 				6BCD979C1FB45481001F81A5 /* MyRequestRentCLCell.m in Sources */,
@@ -1168,6 +1308,7 @@
 				6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */,
 				6B1C4B411FA870C400D543D2 /* YJTagView.m in Sources */,
 				6BF95B6B1FB57D3100DED0B7 /* MyReserveItemView.m in Sources */,
+				6BF95B751FB5901E00DED0B7 /* MyIssueTBCell.m in Sources */,
 				6B1C4B401FA870BD00D543D2 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */,
 				6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */,
@@ -1224,6 +1365,7 @@
 				6B91B68A1F9DE96000A1020C /* ParkingSpaceVC.m in Sources */,
 				6B91B68D1F9DE9A900A1020C /* ReleaseVC.m in Sources */,
 				6B3C16F41FA1D517009A6948 /* ParkingRecordTBCell.m in Sources */,
+				6BF95B721FB58EF900DED0B7 /* MyIssueVC.m in Sources */,
 				6B91B6901F9DE9B900A1020C /* MessageVC.m in Sources */,
 				6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */,
 				6B91B6091F9DDB4000A1020C /* main.m in Sources */,
