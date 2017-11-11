@@ -23,6 +23,8 @@
 		6B1C4B401FA870BD00D543D2 /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B391FA86DB100D543D2 /* UICollectionViewLeftAlignedLayout.m */; };
 		6B1C4B411FA870C400D543D2 /* YJTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3E1FA86DB100D543D2 /* YJTagView.m */; };
 		6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3B1FA86DB100D543D2 /* YJTagCollectionViewCell.m */; };
+		6B2549661FB6C0CF007ECE75 /* EditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2549641FB6C0CF007ECE75 /* EditVC.m */; };
+		6B2549671FB6C0CF007ECE75 /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2549651FB6C0CF007ECE75 /* EditVC.xib */; };
 		6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B01FA70398001E86B4 /* GasStationVC.m */; };
 		6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B31FA71F4A001E86B4 /* GasStationInfoView.m */; };
 		6B3189E91FA95DFF0063AC2F /* SearchHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189E81FA95DFF0063AC2F /* SearchHistoryView.m */; };
@@ -162,6 +164,9 @@
 		6B1C4B3D1FA86DB100D543D2 /* YJTagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJTagView.h; sourceTree = "<group>"; };
 		6B1C4B3E1FA86DB100D543D2 /* YJTagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJTagView.m; sourceTree = "<group>"; };
 		6B1C4B3F1FA86DB100D543D2 /* YJTagViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJTagViewProtocol.h; sourceTree = "<group>"; };
+		6B2549631FB6C0CE007ECE75 /* EditVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditVC.h; sourceTree = "<group>"; };
+		6B2549641FB6C0CF007ECE75 /* EditVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditVC.m; sourceTree = "<group>"; };
+		6B2549651FB6C0CF007ECE75 /* EditVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditVC.xib; sourceTree = "<group>"; };
 		6B26B6AF1FA70398001E86B4 /* GasStationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GasStationVC.h; sourceTree = "<group>"; };
 		6B26B6B01FA70398001E86B4 /* GasStationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasStationVC.m; sourceTree = "<group>"; };
 		6B26B6B21FA71F4A001E86B4 /* GasStationInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GasStationInfoView.h; sourceTree = "<group>"; };
@@ -393,6 +398,9 @@
 			children = (
 				6B1323501FB43CF800AB1840 /* SettingVC.h */,
 				6B1323511FB43CF800AB1840 /* SettingVC.m */,
+				6B2549631FB6C0CE007ECE75 /* EditVC.h */,
+				6B2549641FB6C0CF007ECE75 /* EditVC.m */,
+				6B2549651FB6C0CF007ECE75 /* EditVC.xib */,
 			);
 			path = "Setting(设置)";
 			sourceTree = "<group>";
@@ -1217,6 +1225,7 @@
 			files = (
 				6B3189FD1FA9ABDD0063AC2F /* FuelAddVC.xib in Resources */,
 				6B91B6061F9DDB4000A1020C /* LaunchScreen.storyboard in Resources */,
+				6B2549671FB6C0CF007ECE75 /* EditVC.xib in Resources */,
 				6B91B6031F9DDB4000A1020C /* Assets.xcassets in Resources */,
 				6B3189F81FA974900063AC2F /* FuelAverageView.xib in Resources */,
 				6B91B6011F9DDB4000A1020C /* Main.storyboard in Resources */,
@@ -1292,6 +1301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2549661FB6C0CF007ECE75 /* EditVC.m in Sources */,
 				6BF95B971FB5A00B00DED0B7 /* UIPopoverController+Block.m in Sources */,
 				6BF95B961FB5A00600DED0B7 /* UIPickerView+Block.m in Sources */,
 				6BF95B951FB5A00000DED0B7 /* UINavigationController+Block.m in Sources */,

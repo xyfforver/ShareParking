@@ -10,6 +10,7 @@
 #import "MineHeaderView.h"
 
 #import "BalanceVC.h"
+#import "EditVC.h"
 @interface MineHeaderView()
 @property (nonatomic , strong) UIImageView *bgImgView;
 @property (nonatomic , strong) UIImageView *headImgView;
@@ -92,6 +93,14 @@
 }
 
 #pragma mark ---------------event ---------------------/
+- (void)goToEdit{
+//    if (GetDataManager.isLogin) {
+        EditVC *vc = [[EditVC alloc]init];
+        [self.Controller.navigationController pushViewController:vc animated:YES];
+//    }else{
+//        [self GoToLogin];
+//    }
+}
 
 #pragma mark -----------------Lazy---------------------/
 - (UIImageView *)bgImgView{
@@ -115,12 +124,7 @@
         kSelfWeak;
         [_headImgView zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
             kSelfStrong;
-            if (GetDataManager.isLogin) {
-//                EditVC *vc = [[EditVC alloc]init];
-//                [strongSelf.Controller.navigationController pushViewController:vc animated:YES];
-            }else{
-//                [strongSelf GoToLogin];
-            }
+            [strongSelf goToEdit];
         }];
     }
     return _headImgView;
@@ -133,7 +137,11 @@
         [_nickNameBtn setTitleColor:kColorWhite forState:UIControlStateNormal];
         [_nickNameBtn setTitle:@"1873929338" forState:UIControlStateNormal];
         [_nickNameBtn setImage:[UIImage imageNamed:@"mine_edit"] forState:UIControlStateNormal];
-        
+        kSelfWeak;
+        [_nickNameBtn zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+            kSelfStrong;
+            [strongSelf goToEdit];
+        }];
     }
     return _nickNameBtn;
 }
