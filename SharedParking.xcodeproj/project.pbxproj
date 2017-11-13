@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D906E2314229514B9AEA22E /* Pods_SharedParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4662DFD8CE09B8385B9D2768 /* Pods_SharedParking.framework */; };
 		6B057CC11FA2D2FF0017E320 /* ParkingSpaceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */; };
+		6B0A0B3D1FB9986E006130D3 /* CarportPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A0B3C1FB9986E006130D3 /* CarportPayVC.m */; };
 		6B1323581FB43DF300AB1840 /* MyRequestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323571FB43DF300AB1840 /* MyRequestVC.m */; };
 		6B13235B1FB43E4700AB1840 /* MyRequestRentHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */; };
 		6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323511FB43CF800AB1840 /* SettingVC.m */; };
@@ -135,6 +136,8 @@
 		53E76ABEDC7B69476CC9FD69 /* Pods-SharedParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedParking.release.xcconfig"; path = "Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking.release.xcconfig"; sourceTree = "<group>"; };
 		6B057CBF1FA2D2FF0017E320 /* ParkingSpaceHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceHeaderView.h; sourceTree = "<group>"; };
 		6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceHeaderView.m; sourceTree = "<group>"; };
+		6B0A0B3B1FB9986E006130D3 /* CarportPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportPayVC.h; sourceTree = "<group>"; };
+		6B0A0B3C1FB9986E006130D3 /* CarportPayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportPayVC.m; sourceTree = "<group>"; };
 		6B0AD31D1FB4309900F3D8E4 /* BalanceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BalanceVC.h; sourceTree = "<group>"; };
 		6B0AD31E1FB4309900F3D8E4 /* BalanceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceVC.m; sourceTree = "<group>"; };
 		6B1323501FB43CF800AB1840 /* SettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
@@ -841,6 +844,8 @@
 			children = (
 				6B91B6881F9DE96000A1020C /* ParkingSpaceVC.h */,
 				6B91B6891F9DE96000A1020C /* ParkingSpaceVC.m */,
+				6B0A0B3B1FB9986E006130D3 /* CarportPayVC.h */,
+				6B0A0B3C1FB9986E006130D3 /* CarportPayVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1343,6 +1348,7 @@
 				6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				6B91B6B01F9DEE3E00A1020C /* UserModel.m in Sources */,
 				6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */,
+				6B0A0B3D1FB9986E006130D3 /* CarportPayVC.m in Sources */,
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
 				6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */,
 				6BB5CEA31FB9613000A2816F /* FuelCounterTBView.m in Sources */,

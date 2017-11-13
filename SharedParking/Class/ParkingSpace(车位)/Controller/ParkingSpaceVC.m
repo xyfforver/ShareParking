@@ -7,6 +7,7 @@
 //
 
 #import "ParkingSpaceVC.h"
+#import "CarportPayVC.h"
 
 #import "ParkingSpaceHeaderView.h"
 #import "ParkingSpaceMapView.h"
@@ -63,7 +64,8 @@
 }
 
 - (void)codeAction{
-    
+    CarportPayVC *vc = [[CarportPayVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
