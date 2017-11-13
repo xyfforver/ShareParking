@@ -82,6 +82,9 @@
 		6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6651F9DDDC300A1020C /* KeychainHelper.m */; };
 		6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6671F9DDDC300A1020C /* KeychainIDFA.m */; };
 		6BB1EE2E1FB43662003960F8 /* BalanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0AD31E1FB4309900F3D8E4 /* BalanceVC.m */; };
+		6BB5CEA31FB9613000A2816F /* FuelCounterTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5CEA21FB9613000A2816F /* FuelCounterTBView.m */; };
+		6BB5CEA61FB961BA00A2816F /* FuelCounterTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5CEA51FB961BA00A2816F /* FuelCounterTBCell.m */; };
+		6BB5CEA91FB9799100A2816F /* FuelAddRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5CEA81FB9799100A2816F /* FuelAddRecordVC.m */; };
 		6BB67C561FA450DF007CE224 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C431FA44CD6007CE224 /* CoreLocation.framework */; };
 		6BB67C571FA450E7007CE224 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C451FA44CDE007CE224 /* QuartzCore.framework */; };
 		6BB67C581FA450EF007CE224 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C471FA44CE6007CE224 /* OpenGLES.framework */; };
@@ -280,6 +283,12 @@
 		6B91B68F1F9DE9B900A1020C /* MessageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
 		6B91B6911F9DE9C600A1020C /* MineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineVC.h; sourceTree = "<group>"; };
 		6B91B6921F9DE9C600A1020C /* MineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
+		6BB5CEA11FB9613000A2816F /* FuelCounterTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelCounterTBView.h; sourceTree = "<group>"; };
+		6BB5CEA21FB9613000A2816F /* FuelCounterTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuelCounterTBView.m; sourceTree = "<group>"; };
+		6BB5CEA41FB961BA00A2816F /* FuelCounterTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelCounterTBCell.h; sourceTree = "<group>"; };
+		6BB5CEA51FB961BA00A2816F /* FuelCounterTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuelCounterTBCell.m; sourceTree = "<group>"; };
+		6BB5CEA71FB9799100A2816F /* FuelAddRecordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelAddRecordVC.h; sourceTree = "<group>"; };
+		6BB5CEA81FB9799100A2816F /* FuelAddRecordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuelAddRecordVC.m; sourceTree = "<group>"; };
 		6BB67C431FA44CD6007CE224 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6BB67C451FA44CDE007CE224 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6BB67C471FA44CE6007CE224 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -552,6 +561,8 @@
 				6B3189F91FA9ABDD0063AC2F /* FuelAddVC.h */,
 				6B3189FA1FA9ABDD0063AC2F /* FuelAddVC.m */,
 				6B3189FB1FA9ABDD0063AC2F /* FuelAddVC.xib */,
+				6BB5CEA71FB9799100A2816F /* FuelAddRecordVC.h */,
+				6BB5CEA81FB9799100A2816F /* FuelAddRecordVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -569,6 +580,10 @@
 				6B3189F41FA973CA0063AC2F /* FuelAverageView.h */,
 				6B3189F51FA973CA0063AC2F /* FuelAverageView.m */,
 				6B3189F71FA974900063AC2F /* FuelAverageView.xib */,
+				6BB5CEA11FB9613000A2816F /* FuelCounterTBView.h */,
+				6BB5CEA21FB9613000A2816F /* FuelCounterTBView.m */,
+				6BB5CEA41FB961BA00A2816F /* FuelCounterTBCell.h */,
+				6BB5CEA51FB961BA00A2816F /* FuelCounterTBCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1321,6 +1336,7 @@
 				6BF95B751FB5901E00DED0B7 /* MyIssueTBCell.m in Sources */,
 				6B1C4B401FA870BD00D543D2 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */,
+				6BB5CEA61FB961BA00A2816F /* FuelCounterTBCell.m in Sources */,
 				6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */,
 				6B1C4B2F1FA80E2700D543D2 /* HelpTool.m in Sources */,
 				6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */,
@@ -1329,6 +1345,7 @@
 				6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */,
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
 				6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */,
+				6BB5CEA31FB9613000A2816F /* FuelCounterTBView.m in Sources */,
 				6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */,
 				6B3189FC1FA9ABDD0063AC2F /* FuelAddVC.m in Sources */,
 				6B3189F01FA970130063AC2F /* FuelCounterVC.m in Sources */,
@@ -1348,6 +1365,7 @@
 				6B91B6A71F9DEDD800A1020C /* UIView+UIViewController.m in Sources */,
 				6B91B6A61F9DEDCF00A1020C /* UIView+BlockGesture.m in Sources */,
 				6B91B6A51F9DEDC800A1020C /* UIViewController+Dealloc.m in Sources */,
+				6BB5CEA91FB9799100A2816F /* FuelAddRecordVC.m in Sources */,
 				6B91B6A41F9DEDC000A1020C /* UINavigationBar+Awesome.m in Sources */,
 				6B91B6A31F9DEDB900A1020C /* UIImage+UIColor.m in Sources */,
 				6B91B6A21F9DEDB300A1020C /* UIColor+Extension.m in Sources */,
