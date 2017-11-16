@@ -57,4 +57,19 @@
     return str;
 }
 
+//球文本宽高
++ (CGSize)sizeWithString:(NSString *)str font:(UIFont *)font maxSize:(CGSize)maxSize
+
+{
+    NSDictionary *dict = @{NSFontAttributeName: font};
+    CGSize size = [str boundingRectWithSize:maxSize
+                                    options:NSStringDrawingTruncatesLastVisibleLine |
+                   NSStringDrawingUsesLineFragmentOrigin |
+                   NSStringDrawingUsesFontLeading
+                                 attributes:dict
+                                    context:nil].size;
+    
+    return size;
+}
+
 @end

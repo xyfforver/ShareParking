@@ -219,17 +219,18 @@ static CGFloat const sizeButton = 50.0;
         button.frame = CGRectMake(0, 0, image.size.width, image.size.height);
     }else
     {
-        button.frame = CGRectMake(0, 0, sizeButton, sizeButton);
+        CGSize buttonsize = [HelpTool sizeWithString:name font:kFontSizeBold16 maxSize:CGSizeMake(120, sizeButton)];
+        button.frame = CGRectMake(0, 0, buttonsize.width + 10, sizeButton);
     }
     
     if (name && ![name isEqualToString:@""])
     {
         [button setTitle:name forState:UIControlStateNormal];
-        button.titleLabel.font = kFontSizeBold17;
-        [button setTitleColor:kColorBlack forState:UIControlStateNormal];
+        button.titleLabel.font = kFontSizeBold16;
+        [button setTitleColor:kColor333333 forState:UIControlStateNormal];
     }
     
-    button.titleEdgeInsets = UIEdgeInsetsMake(0, 13, 0, 0);
+//    button.titleEdgeInsets = UIEdgeInsetsMake(0, 13, 0, 0);
     
     return button;
 }

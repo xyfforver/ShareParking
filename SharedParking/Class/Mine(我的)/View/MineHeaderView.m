@@ -11,6 +11,7 @@
 
 #import "BalanceVC.h"
 #import "EditVC.h"
+#import "CarNumberListVC.h"
 @interface MineHeaderView()
 @property (nonatomic , strong) UIImageView *bgImgView;
 @property (nonatomic , strong) UIImageView *headImgView;
@@ -171,6 +172,12 @@
         _numberLab.textAlignment = NSTextAlignmentCenter;
         _numberLab.text = @"车牌：浙A13456";
         _numberLab.backgroundColor = kColorWhite;
+        
+        [_numberLab zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+            CarNumberListVC *vc = [[CarNumberListVC alloc]init];
+            [self.Controller.navigationController pushViewController:vc animated:YES];
+        }];
+        
     }
     return _numberLab;
 }

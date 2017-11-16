@@ -16,4 +16,7 @@
                                   Lat2:(double) lat2;
 //距离换算
 + (NSString *)stringWithDistance:(NSInteger )distance;
+
+//求文本宽高
++ (CGSize)sizeWithString:(NSString *)str font:(UIFont *)font maxSize:(CGSize)maxSize;
 @end

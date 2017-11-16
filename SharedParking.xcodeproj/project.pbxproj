@@ -84,6 +84,11 @@
 		6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6621F9DDDC300A1020C /* UINavigationController+FDFullscreenPopGesture.m */; };
 		6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6651F9DDDC300A1020C /* KeychainHelper.m */; };
 		6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6671F9DDDC300A1020C /* KeychainIDFA.m */; };
+		6B968F571FBD5CB60083A1DC /* CarNumberListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B968F561FBD5CB60083A1DC /* CarNumberListVC.m */; };
+		6B968F5A1FBD5D0D0083A1DC /* CarNumberListTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B968F591FBD5D0D0083A1DC /* CarNumberListTBCell.m */; };
+		6B968F5D1FBD61E60083A1DC /* CarNumberAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B968F5C1FBD61E60083A1DC /* CarNumberAddVC.m */; };
+		6B968F691FBD63420083A1DC /* JMTitleTextfieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B968F661FBD62D00083A1DC /* JMTitleTextfieldView.m */; };
+		6B968F6A1FBD63470083A1DC /* JMTitleTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B968F681FBD62D00083A1DC /* JMTitleTextView.m */; };
 		6BB1EE2E1FB43662003960F8 /* BalanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0AD31E1FB4309900F3D8E4 /* BalanceVC.m */; };
 		6BB5CEA31FB9613000A2816F /* FuelCounterTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5CEA21FB9613000A2816F /* FuelCounterTBView.m */; };
 		6BB5CEA61FB961BA00A2816F /* FuelCounterTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5CEA51FB961BA00A2816F /* FuelCounterTBCell.m */; };
@@ -291,6 +296,16 @@
 		6B91B68F1F9DE9B900A1020C /* MessageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
 		6B91B6911F9DE9C600A1020C /* MineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineVC.h; sourceTree = "<group>"; };
 		6B91B6921F9DE9C600A1020C /* MineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
+		6B968F551FBD5CB60083A1DC /* CarNumberListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarNumberListVC.h; sourceTree = "<group>"; };
+		6B968F561FBD5CB60083A1DC /* CarNumberListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarNumberListVC.m; sourceTree = "<group>"; };
+		6B968F581FBD5D0D0083A1DC /* CarNumberListTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarNumberListTBCell.h; sourceTree = "<group>"; };
+		6B968F591FBD5D0D0083A1DC /* CarNumberListTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarNumberListTBCell.m; sourceTree = "<group>"; };
+		6B968F5B1FBD61E60083A1DC /* CarNumberAddVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarNumberAddVC.h; sourceTree = "<group>"; };
+		6B968F5C1FBD61E60083A1DC /* CarNumberAddVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarNumberAddVC.m; sourceTree = "<group>"; };
+		6B968F651FBD62D00083A1DC /* JMTitleTextfieldView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMTitleTextfieldView.h; sourceTree = "<group>"; };
+		6B968F661FBD62D00083A1DC /* JMTitleTextfieldView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTitleTextfieldView.m; sourceTree = "<group>"; };
+		6B968F671FBD62D00083A1DC /* JMTitleTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMTitleTextView.h; sourceTree = "<group>"; };
+		6B968F681FBD62D00083A1DC /* JMTitleTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTitleTextView.m; sourceTree = "<group>"; };
 		6BB5CEA11FB9613000A2816F /* FuelCounterTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelCounterTBView.h; sourceTree = "<group>"; };
 		6BB5CEA21FB9613000A2816F /* FuelCounterTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuelCounterTBView.m; sourceTree = "<group>"; };
 		6BB5CEA41FB961BA00A2816F /* FuelCounterTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelCounterTBCell.h; sourceTree = "<group>"; };
@@ -699,6 +714,7 @@
 		6B91B62B1F9DDDC300A1020C /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				6B968F5E1FBD62D00083A1DC /* JMHelper */,
 				6B1C4B2D1FA80E2700D543D2 /* HelpTool.h */,
 				6B1C4B2E1FA80E2700D543D2 /* HelpTool.m */,
 				6B91B62C1F9DDDC300A1020C /* BaseModel.h */,
@@ -883,6 +899,7 @@
 		6B91B67C1F9DE8AD00A1020C /* Mine(我的) */ = {
 			isa = PBXGroup;
 			children = (
+				6B968F511FBD5C920083A1DC /* CarNumber(车牌) */,
 				6BF95B6C1FB58EDE00DED0B7 /* MyIssue(我的发布) */,
 				6BF95B621FB5743C00DED0B7 /* MyReserve(我的预订) */,
 				6B1323521FB43DC900AB1840 /* MyRequest(我的求租) */,
@@ -985,6 +1002,54 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6B968F511FBD5C920083A1DC /* CarNumber(车牌) */ = {
+			isa = PBXGroup;
+			children = (
+				6B968F521FBD5C920083A1DC /* Controller */,
+				6B968F531FBD5C920083A1DC /* Model */,
+				6B968F541FBD5C920083A1DC /* View */,
+			);
+			path = "CarNumber(车牌)";
+			sourceTree = "<group>";
+		};
+		6B968F521FBD5C920083A1DC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B968F551FBD5CB60083A1DC /* CarNumberListVC.h */,
+				6B968F561FBD5CB60083A1DC /* CarNumberListVC.m */,
+				6B968F5B1FBD61E60083A1DC /* CarNumberAddVC.h */,
+				6B968F5C1FBD61E60083A1DC /* CarNumberAddVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B968F531FBD5C920083A1DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B968F541FBD5C920083A1DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B968F581FBD5D0D0083A1DC /* CarNumberListTBCell.h */,
+				6B968F591FBD5D0D0083A1DC /* CarNumberListTBCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B968F5E1FBD62D00083A1DC /* JMHelper */ = {
+			isa = PBXGroup;
+			children = (
+				6B968F651FBD62D00083A1DC /* JMTitleTextfieldView.h */,
+				6B968F661FBD62D00083A1DC /* JMTitleTextfieldView.m */,
+				6B968F671FBD62D00083A1DC /* JMTitleTextView.h */,
+				6B968F681FBD62D00083A1DC /* JMTitleTextView.m */,
+			);
+			path = JMHelper;
 			sourceTree = "<group>";
 		};
 		6BF95B621FB5743C00DED0B7 /* MyReserve(我的预订) */ = {
@@ -1330,6 +1395,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B968F6A1FBD63470083A1DC /* JMTitleTextView.m in Sources */,
+				6B968F691FBD63420083A1DC /* JMTitleTextfieldView.m in Sources */,
 				6B2549661FB6C0CF007ECE75 /* EditVC.m in Sources */,
 				6BF95B971FB5A00B00DED0B7 /* UIPopoverController+Block.m in Sources */,
 				6BF95B961FB5A00600DED0B7 /* UIPickerView+Block.m in Sources */,
@@ -1376,6 +1443,7 @@
 				6B0A0B411FB9B392006130D3 /* CarportOpenVC.m in Sources */,
 				6B91B6AA1F9DEDF300A1020C /* BaseModel.m in Sources */,
 				6B91B6A91F9DEDE900A1020C /* UIViewExt.m in Sources */,
+				6B968F5D1FBD61E60083A1DC /* CarNumberAddVC.m in Sources */,
 				6B91B6A81F9DEDE100A1020C /* UIViewController+Util.m in Sources */,
 				6B339F341FA4792100B52FB0 /* ParkingSpaceTBCell.m in Sources */,
 				6B91B6A71F9DEDD800A1020C /* UIView+UIViewController.m in Sources */,
@@ -1386,6 +1454,7 @@
 				6B91B6A31F9DEDB900A1020C /* UIImage+UIColor.m in Sources */,
 				6B91B6A21F9DEDB300A1020C /* UIColor+Extension.m in Sources */,
 				6B91B6A11F9DEDAC00A1020C /* UIButton+LCAlignment.m in Sources */,
+				6B968F571FBD5CB60083A1DC /* CarNumberListVC.m in Sources */,
 				6B3189E91FA95DFF0063AC2F /* SearchHistoryView.m in Sources */,
 				6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */,
 				6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */,
@@ -1413,6 +1482,7 @@
 				6B91B6901F9DE9B900A1020C /* MessageVC.m in Sources */,
 				6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */,
 				6B91B6091F9DDB4000A1020C /* main.m in Sources */,
+				6B968F5A1FBD5D0D0083A1DC /* CarNumberListTBCell.m in Sources */,
 				6B91B6931F9DE9C600A1020C /* MineVC.m in Sources */,
 				6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */,
 				6B1C4B361FA84A3200D543D2 /* SearchVC.m in Sources */,

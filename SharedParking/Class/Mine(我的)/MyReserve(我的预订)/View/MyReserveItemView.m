@@ -111,7 +111,7 @@
     if (!_infoBgView) {
         _infoBgView = [[UIView alloc]init];
         _infoBgView.backgroundColor = kColorWhite;
-        _infoBgView.layer.cornerRadius = 5;
+        _infoBgView.layer.cornerRadius = 3;
         _infoBgView.layer.masksToBounds = YES;
     }
     return _infoBgView;
@@ -152,7 +152,7 @@
     if (!_btnBgView) {
         _btnBgView = [[UIView alloc]init];
         _btnBgView.backgroundColor = kColorWhite;
-        _btnBgView.layer.cornerRadius = 5;
+        _btnBgView.layer.cornerRadius = 3;
         _btnBgView.layer.masksToBounds = YES;
     }
     return _btnBgView;

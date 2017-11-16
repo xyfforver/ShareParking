@@ -24,6 +24,8 @@
 #import "WSProgressHUD.h"
 #import "HelpTool.h"
 #import "iOSBlocks.h"
+#import "BaseTBView.h"
+#import "BaseCLView.h"
 
 /***类别***/
 #import "UIViewExt.h"
