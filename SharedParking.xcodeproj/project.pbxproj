@@ -89,6 +89,8 @@
 		6B968F5D1FBD61E60083A1DC /* CarNumberAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B968F5C1FBD61E60083A1DC /* CarNumberAddVC.m */; };
 		6B968F691FBD63420083A1DC /* JMTitleTextfieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B968F661FBD62D00083A1DC /* JMTitleTextfieldView.m */; };
 		6B968F6A1FBD63470083A1DC /* JMTitleTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B968F681FBD62D00083A1DC /* JMTitleTextView.m */; };
+		6B968F711FBD725D0083A1DC /* FindBreakRulesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B968F701FBD725D0083A1DC /* FindBreakRulesVC.m */; };
+		6B968F741FBD72940083A1DC /* FindBreakRulesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B968F731FBD72940083A1DC /* FindBreakRulesView.m */; };
 		6BB1EE2E1FB43662003960F8 /* BalanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0AD31E1FB4309900F3D8E4 /* BalanceVC.m */; };
 		6BB5CEA31FB9613000A2816F /* FuelCounterTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5CEA21FB9613000A2816F /* FuelCounterTBView.m */; };
 		6BB5CEA61FB961BA00A2816F /* FuelCounterTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5CEA51FB961BA00A2816F /* FuelCounterTBCell.m */; };
@@ -306,6 +308,10 @@
 		6B968F661FBD62D00083A1DC /* JMTitleTextfieldView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTitleTextfieldView.m; sourceTree = "<group>"; };
 		6B968F671FBD62D00083A1DC /* JMTitleTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMTitleTextView.h; sourceTree = "<group>"; };
 		6B968F681FBD62D00083A1DC /* JMTitleTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTitleTextView.m; sourceTree = "<group>"; };
+		6B968F6F1FBD725D0083A1DC /* FindBreakRulesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindBreakRulesVC.h; sourceTree = "<group>"; };
+		6B968F701FBD725D0083A1DC /* FindBreakRulesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindBreakRulesVC.m; sourceTree = "<group>"; };
+		6B968F721FBD72940083A1DC /* FindBreakRulesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindBreakRulesView.h; sourceTree = "<group>"; };
+		6B968F731FBD72940083A1DC /* FindBreakRulesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindBreakRulesView.m; sourceTree = "<group>"; };
 		6BB5CEA11FB9613000A2816F /* FuelCounterTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelCounterTBView.h; sourceTree = "<group>"; };
 		6BB5CEA21FB9613000A2816F /* FuelCounterTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuelCounterTBView.m; sourceTree = "<group>"; };
 		6BB5CEA41FB961BA00A2816F /* FuelCounterTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelCounterTBCell.h; sourceTree = "<group>"; };
@@ -850,6 +856,7 @@
 		6B91B6781F9DE89600A1020C /* ParkingSpace(车位) */ = {
 			isa = PBXGroup;
 			children = (
+				6B968F6B1FBD72360083A1DC /* FindBreakRules(查违章) */,
 				6B3189EA1FA96FB10063AC2F /* Fuel(油耗) */,
 				6B1C4B301FA84A1600D543D2 /* Search(搜索) */,
 				6B26B6AB1FA7034F001E86B4 /* GasStation(附近加油站) */,
@@ -1050,6 +1057,41 @@
 				6B968F681FBD62D00083A1DC /* JMTitleTextView.m */,
 			);
 			path = JMHelper;
+			sourceTree = "<group>";
+		};
+		6B968F6B1FBD72360083A1DC /* FindBreakRules(查违章) */ = {
+			isa = PBXGroup;
+			children = (
+				6B968F6C1FBD72360083A1DC /* Controller */,
+				6B968F6D1FBD72360083A1DC /* Model */,
+				6B968F6E1FBD72360083A1DC /* View */,
+			);
+			path = "FindBreakRules(查违章)";
+			sourceTree = "<group>";
+		};
+		6B968F6C1FBD72360083A1DC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B968F6F1FBD725D0083A1DC /* FindBreakRulesVC.h */,
+				6B968F701FBD725D0083A1DC /* FindBreakRulesVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B968F6D1FBD72360083A1DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B968F6E1FBD72360083A1DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B968F721FBD72940083A1DC /* FindBreakRulesView.h */,
+				6B968F731FBD72940083A1DC /* FindBreakRulesView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6BF95B621FB5743C00DED0B7 /* MyReserve(我的预订) */ = {
@@ -1426,6 +1468,7 @@
 				6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */,
 				6B0A0B3D1FB9986E006130D3 /* CarportPayVC.m in Sources */,
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
+				6B968F741FBD72940083A1DC /* FindBreakRulesView.m in Sources */,
 				6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */,
 				6BB5CEA31FB9613000A2816F /* FuelCounterTBView.m in Sources */,
 				6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */,
@@ -1456,6 +1499,7 @@
 				6B91B6A11F9DEDAC00A1020C /* UIButton+LCAlignment.m in Sources */,
 				6B968F571FBD5CB60083A1DC /* CarNumberListVC.m in Sources */,
 				6B3189E91FA95DFF0063AC2F /* SearchHistoryView.m in Sources */,
+				6B968F711FBD725D0083A1DC /* FindBreakRulesVC.m in Sources */,
 				6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */,
 				6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */,
 				6B91B6A01F9DEDA500A1020C /* UIButton+Block.m in Sources */,

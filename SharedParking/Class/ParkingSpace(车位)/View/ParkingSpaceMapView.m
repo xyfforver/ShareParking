@@ -9,6 +9,7 @@
 #import "ParkingSpaceMapView.h"
 #import "GasStationVC.h"
 #import "FuelCounterVC.h"
+#import "FindBreakRulesVC.h"
 @interface ParkingSpaceMapView ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate>
 @property (nonatomic,strong) UIImageView *imgView;
 @property (nonatomic,strong) UIButton *userCenterBtn;
@@ -110,7 +111,8 @@
         }
             break;
         case 1:{
-            
+            FindBreakRulesVC *vc = [[FindBreakRulesVC alloc]init];
+            [self.Controller.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 2:{
