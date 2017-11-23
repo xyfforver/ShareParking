@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D906E2314229514B9AEA22E /* Pods_SharedParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4662DFD8CE09B8385B9D2768 /* Pods_SharedParking.framework */; };
+		6B001E471FC660EF008F6964 /* OpenStateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E461FC660EF008F6964 /* OpenStateVC.m */; };
 		6B057CC11FA2D2FF0017E320 /* ParkingSpaceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */; };
 		6B0A0B3D1FB9986E006130D3 /* CarportPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A0B3C1FB9986E006130D3 /* CarportPayVC.m */; };
 		6B0A0B411FB9B392006130D3 /* CarportOpenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A0B3F1FB9B392006130D3 /* CarportOpenVC.m */; };
@@ -143,6 +144,8 @@
 		349AC03596A7C2F92A543814 /* Pods-SharedParking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedParking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking.debug.xcconfig"; sourceTree = "<group>"; };
 		4662DFD8CE09B8385B9D2768 /* Pods_SharedParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharedParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E76ABEDC7B69476CC9FD69 /* Pods-SharedParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedParking.release.xcconfig"; path = "Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking.release.xcconfig"; sourceTree = "<group>"; };
+		6B001E451FC660EE008F6964 /* OpenStateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenStateVC.h; sourceTree = "<group>"; };
+		6B001E461FC660EF008F6964 /* OpenStateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenStateVC.m; sourceTree = "<group>"; };
 		6B057CBF1FA2D2FF0017E320 /* ParkingSpaceHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceHeaderView.h; sourceTree = "<group>"; };
 		6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceHeaderView.m; sourceTree = "<group>"; };
 		6B0A0B3B1FB9986E006130D3 /* CarportPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportPayVC.h; sourceTree = "<group>"; };
@@ -877,6 +880,8 @@
 				6B0A0B3E1FB9B392006130D3 /* CarportOpenVC.h */,
 				6B0A0B3F1FB9B392006130D3 /* CarportOpenVC.m */,
 				6B0A0B401FB9B392006130D3 /* CarportOpenVC.xib */,
+				6B001E451FC660EE008F6964 /* OpenStateVC.h */,
+				6B001E461FC660EF008F6964 /* OpenStateVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1521,6 +1526,7 @@
 				6B13235B1FB43E4700AB1840 /* MyRequestRentHeadView.m in Sources */,
 				6B91B68A1F9DE96000A1020C /* ParkingSpaceVC.m in Sources */,
 				6B91B68D1F9DE9A900A1020C /* ReleaseVC.m in Sources */,
+				6B001E471FC660EF008F6964 /* OpenStateVC.m in Sources */,
 				6B3C16F41FA1D517009A6948 /* ParkingRecordTBCell.m in Sources */,
 				6BF95B721FB58EF900DED0B7 /* MyIssueVC.m in Sources */,
 				6B91B6901F9DE9B900A1020C /* MessageVC.m in Sources */,
