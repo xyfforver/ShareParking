@@ -8,6 +8,7 @@
 
 #import "ParkingSpaceTBView.h"
 #import "ParkingSpaceTBCell.h"
+#import "CarportDetailVC.h"
 @interface ParkingSpaceTBView ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -51,6 +52,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    CarportDetailVC *vc = [[CarportDetailVC alloc]init];
+    [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 
 

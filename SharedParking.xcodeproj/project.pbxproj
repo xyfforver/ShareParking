@@ -11,6 +11,11 @@
 		6B001E471FC660EF008F6964 /* OpenStateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E461FC660EF008F6964 /* OpenStateVC.m */; };
 		6B001E4B1FC672A9008F6964 /* RequestCarportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E491FC672A9008F6964 /* RequestCarportVC.m */; };
 		6B001E4C1FC672A9008F6964 /* RequestCarportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B001E4A1FC672A9008F6964 /* RequestCarportVC.xib */; };
+		6B001E4F1FC692D0008F6964 /* CarportDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E4E1FC692D0008F6964 /* CarportDetailVC.m */; };
+		6B001E521FC69329008F6964 /* CarportDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E511FC69329008F6964 /* CarportDetailHeaderView.m */; };
+		6B001E551FC6B9CD008F6964 /* CarportDetailShortCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E541FC6B9CD008F6964 /* CarportDetailShortCLView.m */; };
+		6B001E581FC6C670008F6964 /* CarportDetailShortCLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E571FC6C670008F6964 /* CarportDetailShortCLCell.m */; };
+		6B001E5B1FC6CC7C008F6964 /* CarportDetailShortHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E5A1FC6CC7C008F6964 /* CarportDetailShortHeadView.m */; };
 		6B057CC11FA2D2FF0017E320 /* ParkingSpaceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */; };
 		6B0A0B3D1FB9986E006130D3 /* CarportPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A0B3C1FB9986E006130D3 /* CarportPayVC.m */; };
 		6B0A0B411FB9B392006130D3 /* CarportOpenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A0B3F1FB9B392006130D3 /* CarportOpenVC.m */; };
@@ -151,6 +156,16 @@
 		6B001E481FC672A9008F6964 /* RequestCarportVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestCarportVC.h; sourceTree = "<group>"; };
 		6B001E491FC672A9008F6964 /* RequestCarportVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestCarportVC.m; sourceTree = "<group>"; };
 		6B001E4A1FC672A9008F6964 /* RequestCarportVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCarportVC.xib; sourceTree = "<group>"; };
+		6B001E4D1FC692D0008F6964 /* CarportDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailVC.h; sourceTree = "<group>"; };
+		6B001E4E1FC692D0008F6964 /* CarportDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailVC.m; sourceTree = "<group>"; };
+		6B001E501FC69329008F6964 /* CarportDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailHeaderView.h; sourceTree = "<group>"; };
+		6B001E511FC69329008F6964 /* CarportDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailHeaderView.m; sourceTree = "<group>"; };
+		6B001E531FC6B9CD008F6964 /* CarportDetailShortCLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailShortCLView.h; sourceTree = "<group>"; };
+		6B001E541FC6B9CD008F6964 /* CarportDetailShortCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailShortCLView.m; sourceTree = "<group>"; };
+		6B001E561FC6C670008F6964 /* CarportDetailShortCLCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailShortCLCell.h; sourceTree = "<group>"; };
+		6B001E571FC6C670008F6964 /* CarportDetailShortCLCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailShortCLCell.m; sourceTree = "<group>"; };
+		6B001E591FC6CC7C008F6964 /* CarportDetailShortHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailShortHeadView.h; sourceTree = "<group>"; };
+		6B001E5A1FC6CC7C008F6964 /* CarportDetailShortHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailShortHeadView.m; sourceTree = "<group>"; };
 		6B057CBF1FA2D2FF0017E320 /* ParkingSpaceHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceHeaderView.h; sourceTree = "<group>"; };
 		6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceHeaderView.m; sourceTree = "<group>"; };
 		6B0A0B3B1FB9986E006130D3 /* CarportPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportPayVC.h; sourceTree = "<group>"; };
@@ -890,6 +905,8 @@
 				6B0A0B401FB9B392006130D3 /* CarportOpenVC.xib */,
 				6B001E451FC660EE008F6964 /* OpenStateVC.h */,
 				6B001E461FC660EF008F6964 /* OpenStateVC.m */,
+				6B001E4D1FC692D0008F6964 /* CarportDetailVC.h */,
+				6B001E4E1FC692D0008F6964 /* CarportDetailVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -912,6 +929,14 @@
 				6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */,
 				6B339F321FA4792100B52FB0 /* ParkingSpaceTBCell.h */,
 				6B339F331FA4792100B52FB0 /* ParkingSpaceTBCell.m */,
+				6B001E501FC69329008F6964 /* CarportDetailHeaderView.h */,
+				6B001E511FC69329008F6964 /* CarportDetailHeaderView.m */,
+				6B001E531FC6B9CD008F6964 /* CarportDetailShortCLView.h */,
+				6B001E541FC6B9CD008F6964 /* CarportDetailShortCLView.m */,
+				6B001E561FC6C670008F6964 /* CarportDetailShortCLCell.h */,
+				6B001E571FC6C670008F6964 /* CarportDetailShortCLCell.m */,
+				6B001E591FC6CC7C008F6964 /* CarportDetailShortHeadView.h */,
+				6B001E5A1FC6CC7C008F6964 /* CarportDetailShortHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1458,6 +1483,7 @@
 				6BF95B961FB5A00600DED0B7 /* UIPickerView+Block.m in Sources */,
 				6BF95B951FB5A00000DED0B7 /* UINavigationController+Block.m in Sources */,
 				6BF95B941FB59FFA00DED0B7 /* UIActionSheet+Block.m in Sources */,
+				6B001E5B1FC6CC7C008F6964 /* CarportDetailShortHeadView.m in Sources */,
 				6BF95B931FB59FF400DED0B7 /* MFMessageComposeViewController+Block.m in Sources */,
 				6BF95B921FB59FEF00DED0B7 /* MFMailComposeViewController+Block.m in Sources */,
 				6BF95B911FB59FEB00DED0B7 /* NSURLConnection+Block.m in Sources */,
@@ -1465,6 +1491,7 @@
 				6BF95B901FB59FE300DED0B7 /* CLLocationManager+Block.m in Sources */,
 				6BF95B8F1FB59FBF00DED0B7 /* UIAlertView+Block.m in Sources */,
 				6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */,
+				6B001E521FC69329008F6964 /* CarportDetailHeaderView.m in Sources */,
 				6BB1EE2E1FB43662003960F8 /* BalanceVC.m in Sources */,
 				6BCD979C1FB45481001F81A5 /* MyRequestRentCLCell.m in Sources */,
 				6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */,
@@ -1482,6 +1509,7 @@
 				6B91B6B01F9DEE3E00A1020C /* UserModel.m in Sources */,
 				6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */,
 				6B0A0B3D1FB9986E006130D3 /* CarportPayVC.m in Sources */,
+				6B001E551FC6B9CD008F6964 /* CarportDetailShortCLView.m in Sources */,
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
 				6B968F741FBD72940083A1DC /* FindBreakRulesView.m in Sources */,
 				6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */,
@@ -1515,11 +1543,13 @@
 				6B968F571FBD5CB60083A1DC /* CarNumberListVC.m in Sources */,
 				6B3189E91FA95DFF0063AC2F /* SearchHistoryView.m in Sources */,
 				6B968F711FBD725D0083A1DC /* FindBreakRulesVC.m in Sources */,
+				6B001E581FC6C670008F6964 /* CarportDetailShortCLCell.m in Sources */,
 				6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */,
 				6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */,
 				6B91B6A01F9DEDA500A1020C /* UIButton+Block.m in Sources */,
 				6B91B69F1F9DED9F00A1020C /* UIButton+EnlargeEdge.m in Sources */,
 				6B91B69E1F9DED9A00A1020C /* NSString+String.m in Sources */,
+				6B001E4F1FC692D0008F6964 /* CarportDetailVC.m in Sources */,
 				6B91B69D1F9DED9400A1020C /* NSString+Regex.m in Sources */,
 				6BCD97991FB4485A001F81A5 /* MyRequestRentView.m in Sources */,
 				6B91B69C1F9DED8E00A1020C /* NSDictionary+RequestEncoding.m in Sources */,
