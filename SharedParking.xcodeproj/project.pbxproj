@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4D906E2314229514B9AEA22E /* Pods_SharedParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4662DFD8CE09B8385B9D2768 /* Pods_SharedParking.framework */; };
 		6B001E471FC660EF008F6964 /* OpenStateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E461FC660EF008F6964 /* OpenStateVC.m */; };
+		6B001E4B1FC672A9008F6964 /* RequestCarportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E491FC672A9008F6964 /* RequestCarportVC.m */; };
+		6B001E4C1FC672A9008F6964 /* RequestCarportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B001E4A1FC672A9008F6964 /* RequestCarportVC.xib */; };
 		6B057CC11FA2D2FF0017E320 /* ParkingSpaceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */; };
 		6B0A0B3D1FB9986E006130D3 /* CarportPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A0B3C1FB9986E006130D3 /* CarportPayVC.m */; };
 		6B0A0B411FB9B392006130D3 /* CarportOpenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A0B3F1FB9B392006130D3 /* CarportOpenVC.m */; };
@@ -146,6 +148,9 @@
 		53E76ABEDC7B69476CC9FD69 /* Pods-SharedParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedParking.release.xcconfig"; path = "Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking.release.xcconfig"; sourceTree = "<group>"; };
 		6B001E451FC660EE008F6964 /* OpenStateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenStateVC.h; sourceTree = "<group>"; };
 		6B001E461FC660EF008F6964 /* OpenStateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenStateVC.m; sourceTree = "<group>"; };
+		6B001E481FC672A9008F6964 /* RequestCarportVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestCarportVC.h; sourceTree = "<group>"; };
+		6B001E491FC672A9008F6964 /* RequestCarportVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestCarportVC.m; sourceTree = "<group>"; };
+		6B001E4A1FC672A9008F6964 /* RequestCarportVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCarportVC.xib; sourceTree = "<group>"; };
 		6B057CBF1FA2D2FF0017E320 /* ParkingSpaceHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceHeaderView.h; sourceTree = "<group>"; };
 		6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceHeaderView.m; sourceTree = "<group>"; };
 		6B0A0B3B1FB9986E006130D3 /* CarportPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportPayVC.h; sourceTree = "<group>"; };
@@ -461,6 +466,9 @@
 			children = (
 				6B1323561FB43DF300AB1840 /* MyRequestVC.h */,
 				6B1323571FB43DF300AB1840 /* MyRequestVC.m */,
+				6B001E481FC672A9008F6964 /* RequestCarportVC.h */,
+				6B001E491FC672A9008F6964 /* RequestCarportVC.m */,
+				6B001E4A1FC672A9008F6964 /* RequestCarportVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1365,6 +1373,7 @@
 			files = (
 				6B3189FD1FA9ABDD0063AC2F /* FuelAddVC.xib in Resources */,
 				6B91B6061F9DDB4000A1020C /* LaunchScreen.storyboard in Resources */,
+				6B001E4C1FC672A9008F6964 /* RequestCarportVC.xib in Resources */,
 				6B2549671FB6C0CF007ECE75 /* EditVC.xib in Resources */,
 				6B0A0B421FB9B392006130D3 /* CarportOpenVC.xib in Resources */,
 				6B91B6031F9DDB4000A1020C /* Assets.xcassets in Resources */,
@@ -1452,6 +1461,7 @@
 				6BF95B931FB59FF400DED0B7 /* MFMessageComposeViewController+Block.m in Sources */,
 				6BF95B921FB59FEF00DED0B7 /* MFMailComposeViewController+Block.m in Sources */,
 				6BF95B911FB59FEB00DED0B7 /* NSURLConnection+Block.m in Sources */,
+				6B001E4B1FC672A9008F6964 /* RequestCarportVC.m in Sources */,
 				6BF95B901FB59FE300DED0B7 /* CLLocationManager+Block.m in Sources */,
 				6BF95B8F1FB59FBF00DED0B7 /* UIAlertView+Block.m in Sources */,
 				6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */,

@@ -17,11 +17,10 @@
 #define kNavigationBarTitleFont kFontSize18
 
 #pragma mark 大小-细体
-#define CUSTOMFONT           @"PingFang SC-Light"//平方常规
-#define CUSTOMFONTLight      @"PingFang SC-UltraLight"//平方细体
-#define CUSTOMFONTBOLD       @"PingFang SC"//平方中等
-#define CUSTOMFONTMEDIUMBOLD @"PingFang SC-Medium"//平方中等粗体
-#define CUSTOMFONTULTRABOLD  @"PingFang SC-Bold"//平方加重粗体
+#define CUSTOMFONT           @"PingFangSC-Regular"//平方常规
+#define CUSTOMFONTLight      @"PingFangSC-Light"//平方细体
+#define CUSTOMFONTBOLD       @"PingFangSC-Medium"//平方中等
+#define CUSTOMFONTULTRABOLD  @"PingFangSC-Bold"//平方加重粗体
 
 /// 9号字体
 #define kFontSize8 [UIFont fontWithName:CUSTOMFONT size:8.0];
