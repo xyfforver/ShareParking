@@ -60,10 +60,6 @@
             CarportDetailShortHeadView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CarportDetailShortHeadView" forIndexPath:indexPath];
             
             view = headView;
-        }else{
-            UICollectionReusableView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"UICollectionReusableView" forIndexPath:indexPath];
-            
-            view = headView;
         }
     }
     
@@ -76,7 +72,7 @@
     if (section == 0) {
         return CGSizeMake(kScreenWidth, 65);
     }
-    return CGSizeMake(kScreenWidth, 15);
+    return CGSizeZero;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

@@ -54,7 +54,7 @@
         layout.minimumInteritemSpacing = 2;
         layout.itemSize = CGSizeMake((kScreenWidth - 2 * kMargin15 - 4)/3.0, 45);
         
-        _shortCLView = [[CarportDetailShortCLView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kScreenHeight - self.headerView.bottom) collectionViewLayout:layout];
+        _shortCLView = [[CarportDetailShortCLView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom + kMargin10, kScreenWidth, kScreenHeight - self.headerView.bottom - kMargin10) collectionViewLayout:layout];
         
     }
     return _shortCLView;
