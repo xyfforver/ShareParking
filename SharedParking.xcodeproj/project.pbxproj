@@ -28,6 +28,8 @@
 		6B17EAB91FC7B821001E33DE /* CarportDetailRentTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17EAB81FC7B821001E33DE /* CarportDetailRentTBCell.m */; };
 		6B17EAC01FC7E9F2001E33DE /* CarportReserveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17EABE1FC7E9F2001E33DE /* CarportReserveVC.m */; };
 		6B17EAC11FC7E9F2001E33DE /* CarportReserveVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B17EABF1FC7E9F2001E33DE /* CarportReserveVC.xib */; };
+		6B17EAC51FC7F1C1001E33DE /* ReserveSuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17EAC31FC7F1C1001E33DE /* ReserveSuccessVC.m */; };
+		6B17EAC61FC7F1C1001E33DE /* ReserveSuccessVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B17EAC41FC7F1C1001E33DE /* ReserveSuccessVC.xib */; };
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
@@ -194,6 +196,9 @@
 		6B17EABD1FC7E9F2001E33DE /* CarportReserveVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportReserveVC.h; sourceTree = "<group>"; };
 		6B17EABE1FC7E9F2001E33DE /* CarportReserveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportReserveVC.m; sourceTree = "<group>"; };
 		6B17EABF1FC7E9F2001E33DE /* CarportReserveVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarportReserveVC.xib; sourceTree = "<group>"; };
+		6B17EAC21FC7F1C1001E33DE /* ReserveSuccessVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReserveSuccessVC.h; sourceTree = "<group>"; };
+		6B17EAC31FC7F1C1001E33DE /* ReserveSuccessVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReserveSuccessVC.m; sourceTree = "<group>"; };
+		6B17EAC41FC7F1C1001E33DE /* ReserveSuccessVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReserveSuccessVC.xib; sourceTree = "<group>"; };
 		6B1C15871FA058AE00E584F3 /* BaseCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCLView.m; sourceTree = "<group>"; };
 		6B1C15881FA058AE00E584F3 /* BaseTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTBView.h; sourceTree = "<group>"; };
 		6B1C15891FA058AF00E584F3 /* BaseCLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCLView.h; sourceTree = "<group>"; };
@@ -921,6 +926,9 @@
 				6B17EABD1FC7E9F2001E33DE /* CarportReserveVC.h */,
 				6B17EABE1FC7E9F2001E33DE /* CarportReserveVC.m */,
 				6B17EABF1FC7E9F2001E33DE /* CarportReserveVC.xib */,
+				6B17EAC21FC7F1C1001E33DE /* ReserveSuccessVC.h */,
+				6B17EAC31FC7F1C1001E33DE /* ReserveSuccessVC.m */,
+				6B17EAC41FC7F1C1001E33DE /* ReserveSuccessVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1419,6 +1427,7 @@
 				6B001E4C1FC672A9008F6964 /* RequestCarportVC.xib in Resources */,
 				6B2549671FB6C0CF007ECE75 /* EditVC.xib in Resources */,
 				6B0A0B421FB9B392006130D3 /* CarportOpenVC.xib in Resources */,
+				6B17EAC61FC7F1C1001E33DE /* ReserveSuccessVC.xib in Resources */,
 				6B91B6031F9DDB4000A1020C /* Assets.xcassets in Resources */,
 				6B17EAC11FC7E9F2001E33DE /* CarportReserveVC.xib in Resources */,
 				6B3189F81FA974900063AC2F /* FuelAverageView.xib in Resources */,
@@ -1542,6 +1551,7 @@
 				6B057CC11FA2D2FF0017E320 /* ParkingSpaceHeaderView.m in Sources */,
 				6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */,
 				6B91B6AC1F9DEE0A00A1020C /* JMRefreshFooter.m in Sources */,
+				6B17EAC51FC7F1C1001E33DE /* ReserveSuccessVC.m in Sources */,
 				6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */,
 				6B1C4B2C1FA8070F00D543D2 /* GasStationModel.m in Sources */,
 				6B91B6AB1F9DEE0200A1020C /* ExtraParaManger.m in Sources */,

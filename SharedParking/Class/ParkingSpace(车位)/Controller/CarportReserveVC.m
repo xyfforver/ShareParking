@@ -7,7 +7,7 @@
 //
 
 #import "CarportReserveVC.h"
-
+#import "ReserveSuccessVC.h"
 @interface CarportReserveVC ()
 @property (strong, nonatomic) IBOutlet UIButton *numberBtn;
 @property (strong, nonatomic) IBOutlet UIButton *addBtn;
@@ -29,7 +29,8 @@
 
 
 - (IBAction)reserveAction:(id)sender {
-    
+    ReserveSuccessVC *vc = [[ReserveSuccessVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
