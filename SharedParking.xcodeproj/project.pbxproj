@@ -24,6 +24,8 @@
 		6B13235B1FB43E4700AB1840 /* MyRequestRentHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */; };
 		6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323511FB43CF800AB1840 /* SettingVC.m */; };
 		6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B176F601FA447410045F55A /* ParkingSpaceMapView.m */; };
+		6B17EAB61FC7B6B1001E33DE /* CarportDetailRentTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17EAB51FC7B6B1001E33DE /* CarportDetailRentTBView.m */; };
+		6B17EAB91FC7B821001E33DE /* CarportDetailRentTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17EAB81FC7B821001E33DE /* CarportDetailRentTBCell.m */; };
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
@@ -183,6 +185,10 @@
 		6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestRentHeadView.m; sourceTree = "<group>"; };
 		6B176F5F1FA447410045F55A /* ParkingSpaceMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceMapView.h; sourceTree = "<group>"; };
 		6B176F601FA447410045F55A /* ParkingSpaceMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceMapView.m; sourceTree = "<group>"; };
+		6B17EAB41FC7B6B1001E33DE /* CarportDetailRentTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailRentTBView.h; sourceTree = "<group>"; };
+		6B17EAB51FC7B6B1001E33DE /* CarportDetailRentTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailRentTBView.m; sourceTree = "<group>"; };
+		6B17EAB71FC7B821001E33DE /* CarportDetailRentTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailRentTBCell.h; sourceTree = "<group>"; };
+		6B17EAB81FC7B821001E33DE /* CarportDetailRentTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailRentTBCell.m; sourceTree = "<group>"; };
 		6B1C15871FA058AE00E584F3 /* BaseCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCLView.m; sourceTree = "<group>"; };
 		6B1C15881FA058AE00E584F3 /* BaseTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTBView.h; sourceTree = "<group>"; };
 		6B1C15891FA058AF00E584F3 /* BaseCLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCLView.h; sourceTree = "<group>"; };
@@ -937,6 +943,10 @@
 				6B001E571FC6C670008F6964 /* CarportDetailShortCLCell.m */,
 				6B001E591FC6CC7C008F6964 /* CarportDetailShortHeadView.h */,
 				6B001E5A1FC6CC7C008F6964 /* CarportDetailShortHeadView.m */,
+				6B17EAB41FC7B6B1001E33DE /* CarportDetailRentTBView.h */,
+				6B17EAB51FC7B6B1001E33DE /* CarportDetailRentTBView.m */,
+				6B17EAB71FC7B821001E33DE /* CarportDetailRentTBCell.h */,
+				6B17EAB81FC7B821001E33DE /* CarportDetailRentTBCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1534,6 +1544,7 @@
 				6B339F341FA4792100B52FB0 /* ParkingSpaceTBCell.m in Sources */,
 				6B91B6A71F9DEDD800A1020C /* UIView+UIViewController.m in Sources */,
 				6B91B6A61F9DEDCF00A1020C /* UIView+BlockGesture.m in Sources */,
+				6B17EAB91FC7B821001E33DE /* CarportDetailRentTBCell.m in Sources */,
 				6B91B6A51F9DEDC800A1020C /* UIViewController+Dealloc.m in Sources */,
 				6BB5CEA91FB9799100A2816F /* FuelAddRecordVC.m in Sources */,
 				6B91B6A41F9DEDC000A1020C /* UINavigationBar+Awesome.m in Sources */,
@@ -1558,6 +1569,7 @@
 				6B91B69A1F9DED8400A1020C /* NSArray+Log.m in Sources */,
 				6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */,
 				6B1323581FB43DF300AB1840 /* MyRequestVC.m in Sources */,
+				6B17EAB61FC7B6B1001E33DE /* CarportDetailRentTBView.m in Sources */,
 				6B91B6981F9DED7800A1020C /* JKHTTPManager.m in Sources */,
 				6B91B6971F9DED7300A1020C /* JKNavigationController.m in Sources */,
 				6B91B6961F9DED1700A1020C /* DataManager.m in Sources */,

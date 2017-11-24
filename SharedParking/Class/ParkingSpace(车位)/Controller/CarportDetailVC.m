@@ -9,9 +9,12 @@
 #import "CarportDetailVC.h"
 #import "CarportDetailHeaderView.h"
 #import "CarportDetailShortCLView.h"
+#import "CarportDetailRentTBView.h"
 @interface CarportDetailVC ()
 @property (nonatomic , strong) CarportDetailHeaderView *headerView;
 @property (nonatomic , strong) CarportDetailShortCLView *shortCLView;
+@property (nonatomic , strong) CarportDetailRentTBView *rentTBView;
+
 @end
 
 @implementation CarportDetailVC
@@ -28,7 +31,8 @@
     self.fd_prefersNavigationBarHidden = YES;
     
     [self.view addSubview:self.headerView];
-    [self.view addSubview:self.shortCLView];
+//    [self.view addSubview:self.shortCLView];
+    [self.view addSubview:self.rentTBView];
 }
 
 #pragma mark ---------------NetWork-------------------------/
@@ -60,4 +64,11 @@
     return _shortCLView;
 }
 
+- (CarportDetailRentTBView *)rentTBView{
+    if (!_rentTBView) {
+        _rentTBView = [[CarportDetailRentTBView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom + kMargin10, kScreenWidth, kScreenHeight - self.headerView.bottom - kMargin10) style:UITableViewStylePlain];
+        
+    }
+    return _rentTBView;
+}
 @end
