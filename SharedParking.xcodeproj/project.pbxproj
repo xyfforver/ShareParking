@@ -26,6 +26,8 @@
 		6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B176F601FA447410045F55A /* ParkingSpaceMapView.m */; };
 		6B17EAB61FC7B6B1001E33DE /* CarportDetailRentTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17EAB51FC7B6B1001E33DE /* CarportDetailRentTBView.m */; };
 		6B17EAB91FC7B821001E33DE /* CarportDetailRentTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17EAB81FC7B821001E33DE /* CarportDetailRentTBCell.m */; };
+		6B17EAC01FC7E9F2001E33DE /* CarportReserveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17EABE1FC7E9F2001E33DE /* CarportReserveVC.m */; };
+		6B17EAC11FC7E9F2001E33DE /* CarportReserveVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B17EABF1FC7E9F2001E33DE /* CarportReserveVC.xib */; };
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
@@ -189,6 +191,9 @@
 		6B17EAB51FC7B6B1001E33DE /* CarportDetailRentTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailRentTBView.m; sourceTree = "<group>"; };
 		6B17EAB71FC7B821001E33DE /* CarportDetailRentTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailRentTBCell.h; sourceTree = "<group>"; };
 		6B17EAB81FC7B821001E33DE /* CarportDetailRentTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailRentTBCell.m; sourceTree = "<group>"; };
+		6B17EABD1FC7E9F2001E33DE /* CarportReserveVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportReserveVC.h; sourceTree = "<group>"; };
+		6B17EABE1FC7E9F2001E33DE /* CarportReserveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportReserveVC.m; sourceTree = "<group>"; };
+		6B17EABF1FC7E9F2001E33DE /* CarportReserveVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarportReserveVC.xib; sourceTree = "<group>"; };
 		6B1C15871FA058AE00E584F3 /* BaseCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCLView.m; sourceTree = "<group>"; };
 		6B1C15881FA058AE00E584F3 /* BaseTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTBView.h; sourceTree = "<group>"; };
 		6B1C15891FA058AF00E584F3 /* BaseCLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCLView.h; sourceTree = "<group>"; };
@@ -913,6 +918,9 @@
 				6B001E461FC660EF008F6964 /* OpenStateVC.m */,
 				6B001E4D1FC692D0008F6964 /* CarportDetailVC.h */,
 				6B001E4E1FC692D0008F6964 /* CarportDetailVC.m */,
+				6B17EABD1FC7E9F2001E33DE /* CarportReserveVC.h */,
+				6B17EABE1FC7E9F2001E33DE /* CarportReserveVC.m */,
+				6B17EABF1FC7E9F2001E33DE /* CarportReserveVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1412,6 +1420,7 @@
 				6B2549671FB6C0CF007ECE75 /* EditVC.xib in Resources */,
 				6B0A0B421FB9B392006130D3 /* CarportOpenVC.xib in Resources */,
 				6B91B6031F9DDB4000A1020C /* Assets.xcassets in Resources */,
+				6B17EAC11FC7E9F2001E33DE /* CarportReserveVC.xib in Resources */,
 				6B3189F81FA974900063AC2F /* FuelAverageView.xib in Resources */,
 				6B91B6011F9DDB4000A1020C /* Main.storyboard in Resources */,
 			);
@@ -1539,6 +1548,7 @@
 				6B0A0B411FB9B392006130D3 /* CarportOpenVC.m in Sources */,
 				6B91B6AA1F9DEDF300A1020C /* BaseModel.m in Sources */,
 				6B91B6A91F9DEDE900A1020C /* UIViewExt.m in Sources */,
+				6B17EAC01FC7E9F2001E33DE /* CarportReserveVC.m in Sources */,
 				6B968F5D1FBD61E60083A1DC /* CarNumberAddVC.m in Sources */,
 				6B91B6A81F9DEDE100A1020C /* UIViewController+Util.m in Sources */,
 				6B339F341FA4792100B52FB0 /* ParkingSpaceTBCell.m in Sources */,

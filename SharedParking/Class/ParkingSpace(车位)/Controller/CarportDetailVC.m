@@ -31,8 +31,8 @@
     self.fd_prefersNavigationBarHidden = YES;
     
     [self.view addSubview:self.headerView];
-//    [self.view addSubview:self.shortCLView];
-    [self.view addSubview:self.rentTBView];
+    [self.view addSubview:self.shortCLView];
+//    [self.view addSubview:self.rentTBView];
 }
 
 #pragma mark ---------------NetWork-------------------------/

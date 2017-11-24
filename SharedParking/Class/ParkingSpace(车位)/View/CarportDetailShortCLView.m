@@ -9,6 +9,8 @@
 #import "CarportDetailShortCLView.h"
 #import "CarportDetailShortCLCell.h"
 #import "CarportDetailShortHeadView.h"
+
+#import "CarportReserveVC.h"
 @interface CarportDetailShortCLView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @end
@@ -76,7 +78,8 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    CarportReserveVC *vc = [[CarportReserveVC alloc]init];
+    [self.Controller.navigationController pushViewController:vc animated:YES];
     
 }
 
