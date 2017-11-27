@@ -72,4 +72,38 @@
     return size;
 }
 
+
++(void)archiverData:(id)object key:(NSString*)key
+{
+    NSData* data       = [NSKeyedArchiver archivedDataWithRootObject:object];
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:data forKey:key];
+    [ud synchronize];
+}
+
++(id)unArchiverData:(NSString*)key
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSData* data       = [ud objectForKey:key];
+    id my_object       = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    return my_object;
+}
+
+
++(void)archiverSetValue:(id)value key:(NSString*)key
+{
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    [ud setObject:value forKey:key];
+    [ud synchronize];
+}
+
+
++(NSString*)unArchiverValue:(NSString*)key
+{
+    NSUserDefaults* ud=[NSUserDefaults standardUserDefaults];
+    
+    return [ud valueForKey:key];
+}
+
+
 @end

@@ -19,4 +19,10 @@
 
 //求文本宽高
 + (CGSize)sizeWithString:(NSString *)str font:(UIFont *)font maxSize:(CGSize)maxSize;
+
+
++(void)archiverData:(id)object key:(NSString*)key;
++(id)unArchiverData:(NSString*)key;
++(void)archiverSetValue:(id)value key:(NSString*)key;
++(NSString*)unArchiverValue:(NSString*)key;
 @end

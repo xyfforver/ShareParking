@@ -99,6 +99,9 @@
 #define GetAPPDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 #define GetAppBundleVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 #define kSystermVersion [[[UIDevice currentDevice] systemVersion] floatValue]
+#define kPreviousVersion @"PreviousVersion" //版本记录
+#define kGetLatestAppVersion @"getLatestAppVersion"
+
 
 
 ///消除webview margin

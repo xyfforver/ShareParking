@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UITabBarController
+{
+    
+    UIScrollView *startScroll;
+    
+    UIImageView *img;
+    
+}
 
 
 
