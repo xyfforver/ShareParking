@@ -29,7 +29,7 @@
 - (void)initView{
     self.title = @"设置";
     self.view.backgroundColor = kBackGroundGrayColor;
-    self.firstArr = @[@"软件关于",@"意见反馈",@"去评价",@"版本"];
+    self.firstArr = @[@"软件关于",@"意见反馈",@"租用须知",@"联系客服",@"去评价",@"版本"];
     
     [self.view addSubview:self.tbView];
 }
@@ -222,7 +222,7 @@
             _tbView.cellLayoutMarginsFollowReadableWidth = NO;
         }
         
-//        _tbView.tableFooterView = self.exitView;
+        _tbView.tableFooterView = self.exitView;
         [_tbView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     }
     return _tbView;
@@ -234,12 +234,11 @@
         _exitView.backgroundColor = kColorClear;
         
         UIButton *exitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        exitBtn.frame = CGRectMake(85, 65, kScreenWidth - 85 * 2, 35);
-        [exitBtn setTitle:@"退出当前账号" forState:UIControlStateNormal];
-        exitBtn.backgroundColor = kNavBarColor;
-        exitBtn.titleLabel.font = kFontSizeBold15;
-        exitBtn.layer.cornerRadius = 5;
-        exitBtn.layer.masksToBounds = YES;
+        exitBtn.frame = CGRectMake(0, 30, kScreenWidth, 43);
+        [exitBtn setTitle:@"退出登录" forState:UIControlStateNormal];
+        [exitBtn setTitleColor:kColor333333 forState:UIControlStateNormal];
+        exitBtn.backgroundColor = kColorWhite;
+        exitBtn.titleLabel.font = kFontSize15;
         [exitBtn addTarget:self action:@selector(logoutAction) forControlEvents:UIControlEventTouchUpInside];
         [_exitView addSubview:exitBtn];
     }

@@ -7,7 +7,7 @@
 //
 
 #import "BalanceVC.h"
-
+#import "PayRecordVC.h"
 
 @interface BalanceVC ()
 @property (nonatomic , strong) UIButton *iconBtn;
@@ -29,7 +29,7 @@
 - (void)initView{
     self.title = @"余额";
     
-    self.navigationItem.rightBarButtonItem = [[self class] rightBarButtonWithName:@"明细" imageName:nil target:self action:@selector(menuAction)];
+    self.navigationItem.rightBarButtonItem = [[self class] rightBarButtonWithName:@"明细" imageName:nil target:self action:@selector(payRecordAction)];
     
     [self.view addSubview:self.iconBtn];
     [self.iconBtn addSubview:self.priceLab];
@@ -68,8 +68,9 @@
 }
 
 #pragma mark ---------------Event-------------------------/
-- (void)menuAction{
-
+- (void)payRecordAction{
+    PayRecordVC *vc = [[PayRecordVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

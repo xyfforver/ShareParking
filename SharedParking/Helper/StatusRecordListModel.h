@@ -16,5 +16,5 @@
 @property (assign, nonatomic) NSInteger pageCount;
 @property (assign, nonatomic) NSInteger numPerPage;
 
-@property (strong, nonatomic) NSArray *recordList;
+@property (strong, nonatomic) NSArray *list;
 @end

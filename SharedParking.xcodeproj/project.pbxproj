@@ -20,6 +20,13 @@
 		6B0A0B3D1FB9986E006130D3 /* CarportPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A0B3C1FB9986E006130D3 /* CarportPayVC.m */; };
 		6B0A0B411FB9B392006130D3 /* CarportOpenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A0B3F1FB9B392006130D3 /* CarportOpenVC.m */; };
 		6B0A0B421FB9B392006130D3 /* CarportOpenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0A0B401FB9B392006130D3 /* CarportOpenVC.xib */; };
+		6B0E80061FCBBD0200B2C309 /* PayRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E80041FCBBD0100B2C309 /* PayRecordVC.m */; };
+		6B0E80141FCBCE6700B2C309 /* PayRecordGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E800E1FCBBD1E00B2C309 /* PayRecordGroupModel.m */; };
+		6B0E80151FCBCE6700B2C309 /* PayRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E800F1FCBBD1E00B2C309 /* PayRecordModel.m */; };
+		6B0E80161FCBCE6700B2C309 /* PayRecordHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E80091FCBBD1400B2C309 /* PayRecordHeaderView.m */; };
+		6B0E80171FCBCE6700B2C309 /* PayRecordScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E800B1FCBBD1400B2C309 /* PayRecordScreenView.m */; };
+		6B0E80181FCBCE6700B2C309 /* PayRecordTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E80081FCBBD1400B2C309 /* PayRecordTBCell.m */; };
+		6B0E80191FCBCE6700B2C309 /* QFDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E80131FCBBD4B00B2C309 /* QFDatePickerView.m */; };
 		6B1323581FB43DF300AB1840 /* MyRequestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323571FB43DF300AB1840 /* MyRequestVC.m */; };
 		6B13235B1FB43E4700AB1840 /* MyRequestRentHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */; };
 		6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323511FB43CF800AB1840 /* SettingVC.m */; };
@@ -181,6 +188,20 @@
 		6B0A0B401FB9B392006130D3 /* CarportOpenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarportOpenVC.xib; sourceTree = "<group>"; };
 		6B0AD31D1FB4309900F3D8E4 /* BalanceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BalanceVC.h; sourceTree = "<group>"; };
 		6B0AD31E1FB4309900F3D8E4 /* BalanceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceVC.m; sourceTree = "<group>"; };
+		6B0E80041FCBBD0100B2C309 /* PayRecordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRecordVC.m; sourceTree = "<group>"; };
+		6B0E80051FCBBD0200B2C309 /* PayRecordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayRecordVC.h; sourceTree = "<group>"; };
+		6B0E80071FCBBD1400B2C309 /* PayRecordTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayRecordTBCell.h; sourceTree = "<group>"; };
+		6B0E80081FCBBD1400B2C309 /* PayRecordTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRecordTBCell.m; sourceTree = "<group>"; };
+		6B0E80091FCBBD1400B2C309 /* PayRecordHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRecordHeaderView.m; sourceTree = "<group>"; };
+		6B0E800A1FCBBD1400B2C309 /* PayRecordScreenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayRecordScreenView.h; sourceTree = "<group>"; };
+		6B0E800B1FCBBD1400B2C309 /* PayRecordScreenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRecordScreenView.m; sourceTree = "<group>"; };
+		6B0E800C1FCBBD1400B2C309 /* PayRecordHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayRecordHeaderView.h; sourceTree = "<group>"; };
+		6B0E800D1FCBBD1E00B2C309 /* PayRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayRecordModel.h; sourceTree = "<group>"; };
+		6B0E800E1FCBBD1E00B2C309 /* PayRecordGroupModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRecordGroupModel.m; sourceTree = "<group>"; };
+		6B0E800F1FCBBD1E00B2C309 /* PayRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRecordModel.m; sourceTree = "<group>"; };
+		6B0E80101FCBBD1F00B2C309 /* PayRecordGroupModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayRecordGroupModel.h; sourceTree = "<group>"; };
+		6B0E80121FCBBD4B00B2C309 /* QFDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFDatePickerView.h; sourceTree = "<group>"; };
+		6B0E80131FCBBD4B00B2C309 /* QFDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFDatePickerView.m; sourceTree = "<group>"; };
 		6B1323501FB43CF800AB1840 /* SettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		6B1323511FB43CF800AB1840 /* SettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		6B1323561FB43DF300AB1840 /* MyRequestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestVC.h; sourceTree = "<group>"; };
@@ -452,6 +473,8 @@
 			children = (
 				6B0AD31D1FB4309900F3D8E4 /* BalanceVC.h */,
 				6B0AD31E1FB4309900F3D8E4 /* BalanceVC.m */,
+				6B0E80051FCBBD0200B2C309 /* PayRecordVC.h */,
+				6B0E80041FCBBD0100B2C309 /* PayRecordVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -459,6 +482,12 @@
 		6B0AD31B1FB4309000F3D8E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6B0E800C1FCBBD1400B2C309 /* PayRecordHeaderView.h */,
+				6B0E80091FCBBD1400B2C309 /* PayRecordHeaderView.m */,
+				6B0E800A1FCBBD1400B2C309 /* PayRecordScreenView.h */,
+				6B0E800B1FCBBD1400B2C309 /* PayRecordScreenView.m */,
+				6B0E80071FCBBD1400B2C309 /* PayRecordTBCell.h */,
+				6B0E80081FCBBD1400B2C309 /* PayRecordTBCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -466,8 +495,21 @@
 		6B0AD31C1FB4309000F3D8E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B0E80101FCBBD1F00B2C309 /* PayRecordGroupModel.h */,
+				6B0E800E1FCBBD1E00B2C309 /* PayRecordGroupModel.m */,
+				6B0E800D1FCBBD1E00B2C309 /* PayRecordModel.h */,
+				6B0E800F1FCBBD1E00B2C309 /* PayRecordModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6B0E80111FCBBD4B00B2C309 /* QFDatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				6B0E80121FCBBD4B00B2C309 /* QFDatePickerView.h */,
+				6B0E80131FCBBD4B00B2C309 /* QFDatePickerView.m */,
+			);
+			path = QFDatePickerView;
 			sourceTree = "<group>";
 		};
 		6B13234D1FB43CC800AB1840 /* Setting(设置) */ = {
@@ -829,6 +871,7 @@
 		6B91B65F1F9DDDC300A1020C /* Libs(第三方库) */ = {
 			isa = PBXGroup;
 			children = (
+				6B0E80111FCBBD4B00B2C309 /* QFDatePickerView */,
 				6BF95B761FB59DA900DED0B7 /* iOSBlocks */,
 				6B91B6601F9DDDC300A1020C /* FDFullscreenPopGesture */,
 				6B91B6631F9DDDC300A1020C /* KeychainIDFA */,
@@ -1504,6 +1547,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B0E80141FCBCE6700B2C309 /* PayRecordGroupModel.m in Sources */,
+				6B0E80151FCBCE6700B2C309 /* PayRecordModel.m in Sources */,
+				6B0E80161FCBCE6700B2C309 /* PayRecordHeaderView.m in Sources */,
+				6B0E80171FCBCE6700B2C309 /* PayRecordScreenView.m in Sources */,
+				6B0E80181FCBCE6700B2C309 /* PayRecordTBCell.m in Sources */,
+				6B0E80191FCBCE6700B2C309 /* QFDatePickerView.m in Sources */,
 				6B968F6A1FBD63470083A1DC /* JMTitleTextView.m in Sources */,
 				6B968F691FBD63420083A1DC /* JMTitleTextfieldView.m in Sources */,
 				6B2549661FB6C0CF007ECE75 /* EditVC.m in Sources */,
@@ -1542,6 +1591,7 @@
 				6B968F741FBD72940083A1DC /* FindBreakRulesView.m in Sources */,
 				6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */,
 				6BB5CEA31FB9613000A2816F /* FuelCounterTBView.m in Sources */,
+				6B0E80061FCBBD0200B2C309 /* PayRecordVC.m in Sources */,
 				6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */,
 				6B3189FC1FA9ABDD0063AC2F /* FuelAddVC.m in Sources */,
 				6B3189F01FA970130063AC2F /* FuelCounterVC.m in Sources */,

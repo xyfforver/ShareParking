@@ -81,7 +81,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.font = kFontSizeBold16;
+    cell.textLabel.font = kFontSize16;
     cell.textLabel.textColor = kColorBlack;
     
     NSDictionary *dic = self.firstArr[indexPath.row];

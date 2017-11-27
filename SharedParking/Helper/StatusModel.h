@@ -45,7 +45,7 @@ extern NSInteger  const kPageSize;
 /// 状态码，成功或失败
 @property (nonatomic, copy) NSString *returnCode;
 /// 状态信息，提示语
-@property (nonatomic, copy) NSString *returnMsg;
+@property (nonatomic, copy) NSString *message;
 
 @property (copy, nonatomic) NSString *sysDateTime;
 
