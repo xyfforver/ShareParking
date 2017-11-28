@@ -37,9 +37,24 @@
     return self;
 }
 
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    
+}
+
+- (void)layoutSubviews{
+    
+    [super layoutSubviews];
+    
+
+}
+
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
     
+  
 }
 
 #pragma mark ---------------event ---------------------/

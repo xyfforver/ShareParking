@@ -13,7 +13,9 @@
 #import "ParkingSpaceHeaderView.h"
 #import "ParkingSpaceMapView.h"
 #import "ParkingSpaceTBView.h"
+#import "JMTitleSelectView.h"
 @interface ParkingSpaceVC ()
+@property (nonatomic , strong) JMTitleSelectView *titleView;
 @property (nonatomic , strong) ParkingSpaceHeaderView *headerView;
 @property (nonatomic , strong) ParkingSpaceMapView *mapView;
 @property (nonatomic , strong) ParkingSpaceTBView *tbView;
@@ -56,14 +58,6 @@
 }
 
 #pragma mark ---------------action ---------------------/
-- (void)changeAction:(UIButton *)button{
-    self.selectedBtn.selected = NO;
-    //改变现状按钮颜色
-    button.selected = YES;
-    self.selectedBtn = button;
-    
-}
-
 - (void)codeAction{
 //    CarportPayVC *vc = [[CarportPayVC alloc]init];
     CarportOpenVC *vc = [[CarportOpenVC alloc]init];
@@ -113,40 +107,10 @@
 #pragma mark ---------------lazy ---------------------/
 
 - (void)initNavBarView{
-    UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 120, 30)];
-//    titleView.backgroundColor = kColorOrange;
-    titleView.layer.masksToBounds = YES;
-    titleView.layer.cornerRadius = 15;
-    titleView.layer.borderColor = kColorC1C1C1.CGColor;
-    titleView.layer.borderWidth = 1.0;
-    self.navigationItem.titleView = titleView;
-    
-    UIButton *mistakeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    mistakeBtn.frame = CGRectMake(0, 0, titleView.width / 2.0, titleView.height);
-    [mistakeBtn setTitle:@" 错时" forState:UIControlStateNormal];
-    mistakeBtn.titleLabel.font = kFontSize15;
-    [mistakeBtn setTitleColor:kColorBlack forState:UIControlStateNormal];
-    [mistakeBtn setTitleColor:kColorWhite forState:UIControlStateSelected];
-    [mistakeBtn setBackgroundImage:[UIImage createImageWithColor:kColorBackGroundColor] forState:UIControlStateNormal];
-    [mistakeBtn setBackgroundImage:[UIImage createImageWithColor:kNavBarColor] forState:UIControlStateSelected];
-    mistakeBtn.tag = 100;
-    [mistakeBtn addTarget:self action:@selector(changeAction:) forControlEvents:UIControlEventTouchUpInside];
-    mistakeBtn.selected = YES;
-    self.selectedBtn = mistakeBtn;
-    [titleView addSubview:mistakeBtn];
-    
-    UIButton *rentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    rentBtn.frame = CGRectMake(mistakeBtn.right, 0, mistakeBtn.width, mistakeBtn.height);
-    [rentBtn setTitle:@"长租 " forState:UIControlStateNormal];
-    rentBtn.titleLabel.font = kFontSize15;
-    [rentBtn setTitleColor:kColorBlack forState:UIControlStateNormal];
-    [rentBtn setTitleColor:kColorWhite forState:UIControlStateSelected];
-    [rentBtn setBackgroundImage:[UIImage createImageWithColor:kColorBackGroundColor] forState:UIControlStateNormal];
-    [rentBtn setBackgroundImage:[UIImage createImageWithColor:kNavBarColor] forState:UIControlStateSelected];
-    rentBtn.tag = 101;
-    [rentBtn addTarget:self action:@selector(changeAction:) forControlEvents:UIControlEventTouchUpInside];
-    [titleView addSubview:rentBtn];
-
+    if (!_titleView) {
+        _titleView = [[JMTitleSelectView alloc]init];
+        self.navigationItem.titleView = _titleView;
+    }
     
     self.navigationItem.leftBarButtonItem = [[self class] rightBarButtonWithName:nil imageName:@"home_qrcode" target:self action:@selector(codeAction)];
     

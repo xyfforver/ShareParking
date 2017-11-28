@@ -7,7 +7,11 @@
 //
 
 #import "ReleaseVC.h"
+#import "JMTitleSelectView.h"
+#import "ReleaseDetailView.h"
 @interface ReleaseVC ()
+@property (nonatomic , strong) JMTitleSelectView *titleView;
+@property (nonatomic , strong) ReleaseDetailView *detailView;
 
 @end
 
@@ -21,9 +25,24 @@
 }
 
 - (void)initView{
-    self.navigationItem.title = @"发布";
-    self.view.backgroundColor = kColorRandom;
+    
+    self.navigationItem.titleView = self.titleView;
+    [self.view addSubview:self.detailView];
+
 }
 
+- (JMTitleSelectView *)titleView{
+    if (!_titleView) {
+        _titleView = [[JMTitleSelectView alloc]init];
+    }
+    return _titleView;
+}
 
+- (ReleaseDetailView *)detailView{
+    if (!_detailView) {
+        _detailView = [[[NSBundle mainBundle] loadNibNamed:@"ReleaseDetailView" owner:nil options:nil] lastObject];
+        _detailView.frame = self.view.bounds;
+    }
+    return _detailView;
+}
 @end
