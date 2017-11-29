@@ -69,6 +69,8 @@
 		6B62C0C21FCEAEB2007F6861 /* CarportDetailRentTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0BB1FCEAEB2007F6861 /* CarportDetailRentTBCell.m */; };
 		6B62C0C31FCEAEB2007F6861 /* CarportDetailShortHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0BD1FCEAEB2007F6861 /* CarportDetailShortHeadView.m */; };
 		6B62C0C41FCEAEB2007F6861 /* CarportDetailShortCLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0BE1FCEAEB2007F6861 /* CarportDetailShortCLCell.m */; };
+		6B62C0C71FCEB1DB007F6861 /* RobParkingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0C61FCEB1DB007F6861 /* RobParkingView.m */; };
+		6B62C0CA1FCEB643007F6861 /* LongRentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0C91FCEB643007F6861 /* LongRentView.m */; };
 		6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3C1FA86DB100D543D2 /* YJTagCollectionViewCell.xib */; };
 		6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */; };
 		6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FD1F9DDB4000A1020C /* ViewController.m */; };
@@ -289,6 +291,10 @@
 		6B62C0BC1FCEAEB2007F6861 /* CarportDetailShortHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarportDetailShortHeadView.h; sourceTree = "<group>"; };
 		6B62C0BD1FCEAEB2007F6861 /* CarportDetailShortHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarportDetailShortHeadView.m; sourceTree = "<group>"; };
 		6B62C0BE1FCEAEB2007F6861 /* CarportDetailShortCLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarportDetailShortCLCell.m; sourceTree = "<group>"; };
+		6B62C0C51FCEB1DB007F6861 /* RobParkingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobParkingView.h; sourceTree = "<group>"; };
+		6B62C0C61FCEB1DB007F6861 /* RobParkingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobParkingView.m; sourceTree = "<group>"; };
+		6B62C0C81FCEB643007F6861 /* LongRentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LongRentView.h; sourceTree = "<group>"; };
+		6B62C0C91FCEB643007F6861 /* LongRentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongRentView.m; sourceTree = "<group>"; };
 		6B91B5F61F9DDB4000A1020C /* SharedParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B91B5F91F9DDB4000A1020C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1130,6 +1136,10 @@
 				6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */,
 				6B339F321FA4792100B52FB0 /* ParkingSpaceTBCell.h */,
 				6B339F331FA4792100B52FB0 /* ParkingSpaceTBCell.m */,
+				6B62C0C51FCEB1DB007F6861 /* RobParkingView.h */,
+				6B62C0C61FCEB1DB007F6861 /* RobParkingView.m */,
+				6B62C0C81FCEB643007F6861 /* LongRentView.h */,
+				6B62C0C91FCEB643007F6861 /* LongRentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1718,6 +1728,7 @@
 				6BB5CEA61FB961BA00A2816F /* FuelCounterTBCell.m in Sources */,
 				6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */,
 				6B1C4B2F1FA80E2700D543D2 /* HelpTool.m in Sources */,
+				6B62C0CA1FCEB643007F6861 /* LongRentView.m in Sources */,
 				6B62C09F1FCEADF5007F6861 /* CarportOpenVC.m in Sources */,
 				6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */,
 				6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
@@ -1797,6 +1808,7 @@
 				6B968F5A1FBD5D0D0083A1DC /* CarNumberListTBCell.m in Sources */,
 				6B91B6931F9DE9C600A1020C /* MineVC.m in Sources */,
 				6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */,
+				6B62C0C71FCEB1DB007F6861 /* RobParkingView.m in Sources */,
 				6B1C4B361FA84A3200D543D2 /* SearchVC.m in Sources */,
 				6B1C4B291FA804A600D543D2 /* CustomAnnotation.m in Sources */,
 			);
