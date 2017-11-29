@@ -7,7 +7,7 @@
 //
 
 #import "ReserveSuccessVC.h"
-
+#import "NavigationVC.h"
 @interface ReserveSuccessVC ()
 @property (strong, nonatomic) IBOutlet UILabel *numberLab;
 @property (strong, nonatomic) IBOutlet UILabel *timeLab;
@@ -30,7 +30,8 @@
 }
 
 - (IBAction)nowAction:(id)sender {
-    
+    NavigationVC *vc = [[NavigationVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)afterAction:(id)sender {

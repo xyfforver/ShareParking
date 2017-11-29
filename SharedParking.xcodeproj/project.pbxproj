@@ -67,6 +67,8 @@
 		6B4151BF1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4151BE1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m */; };
 		6B4151C31FCE7A8D0000F48E /* CarportCertificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4151C11FCE7A8D0000F48E /* CarportCertificationVC.m */; };
 		6B4151C41FCE7A8D0000F48E /* CarportCertificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4151C21FCE7A8D0000F48E /* CarportCertificationVC.xib */; };
+		6B62C0881FCE9D0D007F6861 /* NavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0871FCE9D0D007F6861 /* NavigationVC.m */; };
+		6B62C08B1FCE9FEB007F6861 /* NavigationBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C08A1FCE9FEB007F6861 /* NavigationBottomView.m */; };
 		6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3C1FA86DB100D543D2 /* YJTagCollectionViewCell.xib */; };
 		6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */; };
 		6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FD1F9DDB4000A1020C /* ViewController.m */; };
@@ -283,6 +285,10 @@
 		6B4151C01FCE7A8D0000F48E /* CarportCertificationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportCertificationVC.h; sourceTree = "<group>"; };
 		6B4151C11FCE7A8D0000F48E /* CarportCertificationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportCertificationVC.m; sourceTree = "<group>"; };
 		6B4151C21FCE7A8D0000F48E /* CarportCertificationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarportCertificationVC.xib; sourceTree = "<group>"; };
+		6B62C0861FCE9D0D007F6861 /* NavigationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationVC.h; sourceTree = "<group>"; };
+		6B62C0871FCE9D0D007F6861 /* NavigationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationVC.m; sourceTree = "<group>"; };
+		6B62C0891FCE9FEB007F6861 /* NavigationBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBottomView.h; sourceTree = "<group>"; };
+		6B62C08A1FCE9FEB007F6861 /* NavigationBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationBottomView.m; sourceTree = "<group>"; };
 		6B91B5F61F9DDB4000A1020C /* SharedParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B91B5F91F9DDB4000A1020C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -752,6 +758,41 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6B62C0821FCE9CF8007F6861 /* Navigation(导航) */ = {
+			isa = PBXGroup;
+			children = (
+				6B62C0831FCE9CF8007F6861 /* Controller */,
+				6B62C0841FCE9CF8007F6861 /* Model */,
+				6B62C0851FCE9CF8007F6861 /* View */,
+			);
+			path = "Navigation(导航)";
+			sourceTree = "<group>";
+		};
+		6B62C0831FCE9CF8007F6861 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B62C0861FCE9D0D007F6861 /* NavigationVC.h */,
+				6B62C0871FCE9D0D007F6861 /* NavigationVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B62C0841FCE9CF8007F6861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B62C0851FCE9CF8007F6861 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B62C0891FCE9FEB007F6861 /* NavigationBottomView.h */,
+				6B62C08A1FCE9FEB007F6861 /* NavigationBottomView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6B91B5ED1F9DDB4000A1020C = {
 			isa = PBXGroup;
 			children = (
@@ -959,6 +1000,7 @@
 		6B91B6781F9DE89600A1020C /* ParkingSpace(车位) */ = {
 			isa = PBXGroup;
 			children = (
+				6B62C0821FCE9CF8007F6861 /* Navigation(导航) */,
 				6B968F6B1FBD72360083A1DC /* FindBreakRules(查违章) */,
 				6B3189EA1FA96FB10063AC2F /* Fuel(油耗) */,
 				6B1C4B301FA84A1600D543D2 /* Search(搜索) */,
@@ -1628,6 +1670,7 @@
 				6B91B6AE1F9DEE2600A1020C /* StatusModel.m in Sources */,
 				6B91B6AD1F9DEE1C00A1020C /* JMRefreshHeader.m in Sources */,
 				6B057CC11FA2D2FF0017E320 /* ParkingSpaceHeaderView.m in Sources */,
+				6B62C0881FCE9D0D007F6861 /* NavigationVC.m in Sources */,
 				6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */,
 				6B0E801F1FCBF4C300B2C309 /* ReleaseDetailView.m in Sources */,
 				6B91B6AC1F9DEE0A00A1020C /* JMRefreshFooter.m in Sources */,
@@ -1659,6 +1702,7 @@
 				6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */,
 				6B0E801C1FCBEBEF00B2C309 /* JMTitleSelectView.m in Sources */,
 				6B91B6A01F9DEDA500A1020C /* UIButton+Block.m in Sources */,
+				6B62C08B1FCE9FEB007F6861 /* NavigationBottomView.m in Sources */,
 				6B91B69F1F9DED9F00A1020C /* UIButton+EnlargeEdge.m in Sources */,
 				6B91B69E1F9DED9A00A1020C /* NSString+String.m in Sources */,
 				6B001E4F1FC692D0008F6964 /* CarportDetailVC.m in Sources */,
