@@ -17,6 +17,7 @@
     frame = CGRectMake(0, 0, 120, 30);
     self = [super initWithFrame:frame];
     if (self) {
+        
         [self initView];
     }
     return self;
@@ -28,6 +29,8 @@
     self.layer.cornerRadius = 15;
     self.layer.borderColor = kColorC1C1C1.CGColor;
     self.layer.borderWidth = 1.0;
+    _selectedSegmentIndex = 0;
+    
     
     UIButton *mistakeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     mistakeBtn.frame = CGRectMake(0, 0, self.width / 2.0, self.height);
@@ -41,7 +44,6 @@
     mistakeBtn.tag = 100;
     [mistakeBtn addTarget:self action:@selector(changeAction:) forControlEvents:UIControlEventTouchUpInside];
     mistakeBtn.selected = YES;
-    self.selectedBtn = mistakeBtn;
     [self addSubview:mistakeBtn];
     
     UIButton *rentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -56,15 +58,40 @@
     rentBtn.tag = 101;
     [rentBtn addTarget:self action:@selector(changeAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:rentBtn];
+    
+    mistakeBtn.selected = 0 == _selectedSegmentIndex;
+    rentBtn.selected = 0 != _selectedSegmentIndex ;
+
 }
 
 #pragma mark ---------------event ---------------------/
 - (void)changeAction:(UIButton *)button{
-    self.selectedBtn.selected = NO;
-    //改变现状按钮颜色
-    button.selected = YES;
-    self.selectedBtn = button;
     
+    NSInteger index = button.tag - 100;
+    self.selectedSegmentIndex = index;
+    
+    if (self.IndexChangeBlock) {
+        self.IndexChangeBlock(index);
+    }
+}
+
+
+- (void)setSelectedSegmentIndex:(NSInteger)selectedSegmentIndex
+{
+    UIButton *lastSelectButton = [self getButtonWithIndex:_selectedSegmentIndex];
+    lastSelectButton.selected = NO;
+    
+    UIButton *willSelectButton = [self getButtonWithIndex:selectedSegmentIndex];
+    willSelectButton.selected = YES;
+    
+    _selectedSegmentIndex = selectedSegmentIndex;
+
+    
+}
+
+- (UIButton *)getButtonWithIndex:(NSInteger)index
+{
+    return (UIButton *)[self viewWithTag:index + 100];
 }
 
 #pragma mark -----------------Lazy---------------------/

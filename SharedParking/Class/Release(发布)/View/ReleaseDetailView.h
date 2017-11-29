@@ -10,4 +10,6 @@
 
 @interface ReleaseDetailView : UIView
 
+@property (nonatomic , assign) CarportRentType type;
+
 @end

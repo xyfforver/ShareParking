@@ -10,11 +10,9 @@
 
 @interface JMTitleSelectView : UIView
 
-//@property (nonatomic , strong) UIButton *mistakeBtn;
-//@property (nonatomic , strong) UIButton *rentBtn;
+@property (nonatomic, assign) NSInteger selectedSegmentIndex;
 
-
-@property (nonatomic , strong) UIButton *selectedBtn;
+@property (nonatomic, copy) void (^IndexChangeBlock)(NSInteger index);
 
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ReleaseDetailView.h"
+#import "CarportCertificationVC.h"
 @interface ReleaseDetailView ()
 //
 @property (strong, nonatomic) IBOutlet UILabel *carportLab;
@@ -54,11 +55,22 @@
 
 
 #pragma mark -----------------LifeCycle---------------------/
+- (void)setType:(CarportRentType)type{
+    _type = type;
+    
+    if (type == CarportShortRentType) {
+        self.contactView.hidden = YES;
+        self.timeView.hidden = NO;
+    }else{
+        self.contactView.hidden = NO;
+        self.timeView.hidden = YES;
+    }
+}
 - (void)layoutSubviews{
     
     [super layoutSubviews];
 
-    self.contactView.hidden = YES;
+    
 }
 
 #pragma mark -----------------LifeCycle---------------------/
@@ -69,6 +81,11 @@
 
 #pragma mark ---------------event ---------------------/
 
+- (IBAction)nextAction:(id)sender {
+    CarportCertificationVC *vc = [[CarportCertificationVC alloc]initWithNibName:@"CarportCertificationVC" bundle:[NSBundle mainBundle]];
+    vc.type = self.type;
+    [self.Controller.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark -----------------Lazy---------------------/
 
 

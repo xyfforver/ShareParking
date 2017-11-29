@@ -65,6 +65,8 @@
 		6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16EF1FA1D4FC009A6948 /* ParkingRecordVC.m */; };
 		6B3C16F41FA1D517009A6948 /* ParkingRecordTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16F31FA1D517009A6948 /* ParkingRecordTBCell.m */; };
 		6B4151BF1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4151BE1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m */; };
+		6B4151C31FCE7A8D0000F48E /* CarportCertificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4151C11FCE7A8D0000F48E /* CarportCertificationVC.m */; };
+		6B4151C41FCE7A8D0000F48E /* CarportCertificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4151C21FCE7A8D0000F48E /* CarportCertificationVC.xib */; };
 		6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3C1FA86DB100D543D2 /* YJTagCollectionViewCell.xib */; };
 		6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */; };
 		6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FD1F9DDB4000A1020C /* ViewController.m */; };
@@ -278,6 +280,9 @@
 		6B3C16F31FA1D517009A6948 /* ParkingRecordTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingRecordTBCell.m; sourceTree = "<group>"; };
 		6B4151BD1FCE48CA0000F48E /* CALayer+JMXibBorderColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+JMXibBorderColor.h"; sourceTree = "<group>"; };
 		6B4151BE1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+JMXibBorderColor.m"; sourceTree = "<group>"; };
+		6B4151C01FCE7A8D0000F48E /* CarportCertificationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportCertificationVC.h; sourceTree = "<group>"; };
+		6B4151C11FCE7A8D0000F48E /* CarportCertificationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportCertificationVC.m; sourceTree = "<group>"; };
+		6B4151C21FCE7A8D0000F48E /* CarportCertificationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarportCertificationVC.xib; sourceTree = "<group>"; };
 		6B91B5F61F9DDB4000A1020C /* SharedParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B91B5F91F9DDB4000A1020C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1113,6 +1118,9 @@
 			children = (
 				6B91B68B1F9DE9A900A1020C /* ReleaseVC.h */,
 				6B91B68C1F9DE9A900A1020C /* ReleaseVC.m */,
+				6B4151C01FCE7A8D0000F48E /* CarportCertificationVC.h */,
+				6B4151C11FCE7A8D0000F48E /* CarportCertificationVC.m */,
+				6B4151C21FCE7A8D0000F48E /* CarportCertificationVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1486,6 +1494,7 @@
 				6B3189FD1FA9ABDD0063AC2F /* FuelAddVC.xib in Resources */,
 				6B0E80231FCBF51600B2C309 /* ReleaseDetailView.xib in Resources */,
 				6B91B6061F9DDB4000A1020C /* LaunchScreen.storyboard in Resources */,
+				6B4151C41FCE7A8D0000F48E /* CarportCertificationVC.xib in Resources */,
 				6B001E4C1FC672A9008F6964 /* RequestCarportVC.xib in Resources */,
 				6B2549671FB6C0CF007ECE75 /* EditVC.xib in Resources */,
 				6B0A0B421FB9B392006130D3 /* CarportOpenVC.xib in Resources */,
@@ -1665,6 +1674,7 @@
 				6B91B6981F9DED7800A1020C /* JKHTTPManager.m in Sources */,
 				6B91B6971F9DED7300A1020C /* JKNavigationController.m in Sources */,
 				6B91B6961F9DED1700A1020C /* DataManager.m in Sources */,
+				6B4151C31FCE7A8D0000F48E /* CarportCertificationVC.m in Sources */,
 				6B91B6951F9DED1000A1020C /* RootViewController.m in Sources */,
 				6B91B6941F9DEC2F00A1020C /* BaseViewController.m in Sources */,
 				6B13235B1FB43E4700AB1840 /* MyRequestRentHeadView.m in Sources */,
