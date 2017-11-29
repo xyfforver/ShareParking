@@ -8,18 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4D906E2314229514B9AEA22E /* Pods_SharedParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4662DFD8CE09B8385B9D2768 /* Pods_SharedParking.framework */; };
-		6B001E471FC660EF008F6964 /* OpenStateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E461FC660EF008F6964 /* OpenStateVC.m */; };
 		6B001E4B1FC672A9008F6964 /* RequestCarportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E491FC672A9008F6964 /* RequestCarportVC.m */; };
 		6B001E4C1FC672A9008F6964 /* RequestCarportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B001E4A1FC672A9008F6964 /* RequestCarportVC.xib */; };
-		6B001E4F1FC692D0008F6964 /* CarportDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E4E1FC692D0008F6964 /* CarportDetailVC.m */; };
-		6B001E521FC69329008F6964 /* CarportDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E511FC69329008F6964 /* CarportDetailHeaderView.m */; };
-		6B001E551FC6B9CD008F6964 /* CarportDetailShortCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E541FC6B9CD008F6964 /* CarportDetailShortCLView.m */; };
-		6B001E581FC6C670008F6964 /* CarportDetailShortCLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E571FC6C670008F6964 /* CarportDetailShortCLCell.m */; };
-		6B001E5B1FC6CC7C008F6964 /* CarportDetailShortHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B001E5A1FC6CC7C008F6964 /* CarportDetailShortHeadView.m */; };
 		6B057CC11FA2D2FF0017E320 /* ParkingSpaceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */; };
-		6B0A0B3D1FB9986E006130D3 /* CarportPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A0B3C1FB9986E006130D3 /* CarportPayVC.m */; };
-		6B0A0B411FB9B392006130D3 /* CarportOpenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A0B3F1FB9B392006130D3 /* CarportOpenVC.m */; };
-		6B0A0B421FB9B392006130D3 /* CarportOpenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0A0B401FB9B392006130D3 /* CarportOpenVC.xib */; };
 		6B0E80061FCBBD0200B2C309 /* PayRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E80041FCBBD0100B2C309 /* PayRecordVC.m */; };
 		6B0E80141FCBCE6700B2C309 /* PayRecordGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E800E1FCBBD1E00B2C309 /* PayRecordGroupModel.m */; };
 		6B0E80151FCBCE6700B2C309 /* PayRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E800F1FCBBD1E00B2C309 /* PayRecordModel.m */; };
@@ -34,12 +25,6 @@
 		6B13235B1FB43E4700AB1840 /* MyRequestRentHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */; };
 		6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323511FB43CF800AB1840 /* SettingVC.m */; };
 		6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B176F601FA447410045F55A /* ParkingSpaceMapView.m */; };
-		6B17EAB61FC7B6B1001E33DE /* CarportDetailRentTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17EAB51FC7B6B1001E33DE /* CarportDetailRentTBView.m */; };
-		6B17EAB91FC7B821001E33DE /* CarportDetailRentTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17EAB81FC7B821001E33DE /* CarportDetailRentTBCell.m */; };
-		6B17EAC01FC7E9F2001E33DE /* CarportReserveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17EABE1FC7E9F2001E33DE /* CarportReserveVC.m */; };
-		6B17EAC11FC7E9F2001E33DE /* CarportReserveVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B17EABF1FC7E9F2001E33DE /* CarportReserveVC.xib */; };
-		6B17EAC51FC7F1C1001E33DE /* ReserveSuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17EAC31FC7F1C1001E33DE /* ReserveSuccessVC.m */; };
-		6B17EAC61FC7F1C1001E33DE /* ReserveSuccessVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B17EAC41FC7F1C1001E33DE /* ReserveSuccessVC.xib */; };
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
@@ -69,6 +54,21 @@
 		6B4151C41FCE7A8D0000F48E /* CarportCertificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4151C21FCE7A8D0000F48E /* CarportCertificationVC.xib */; };
 		6B62C0881FCE9D0D007F6861 /* NavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0871FCE9D0D007F6861 /* NavigationVC.m */; };
 		6B62C08B1FCE9FEB007F6861 /* NavigationBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C08A1FCE9FEB007F6861 /* NavigationBottomView.m */; };
+		6B62C09E1FCEADF5007F6861 /* CarportPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0971FCEADF5007F6861 /* CarportPayVC.m */; };
+		6B62C09F1FCEADF5007F6861 /* CarportOpenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0991FCEADF5007F6861 /* CarportOpenVC.m */; };
+		6B62C0A01FCEADF5007F6861 /* CarportOpenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B62C09A1FCEADF5007F6861 /* CarportOpenVC.xib */; };
+		6B62C0A11FCEADF5007F6861 /* OpenStateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C09B1FCEADF5007F6861 /* OpenStateVC.m */; };
+		6B62C0A81FCEAE23007F6861 /* CarportReserveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0A21FCEAE23007F6861 /* CarportReserveVC.m */; };
+		6B62C0A91FCEAE23007F6861 /* CarportReserveVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B62C0A31FCEAE23007F6861 /* CarportReserveVC.xib */; };
+		6B62C0AA1FCEAE23007F6861 /* ReserveSuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0A41FCEAE23007F6861 /* ReserveSuccessVC.m */; };
+		6B62C0AB1FCEAE23007F6861 /* ReserveSuccessVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B62C0A51FCEAE23007F6861 /* ReserveSuccessVC.xib */; };
+		6B62C0B21FCEAEAA007F6861 /* CarportDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0B11FCEAEAA007F6861 /* CarportDetailVC.m */; };
+		6B62C0BF1FCEAEB2007F6861 /* CarportDetailRentTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0B61FCEAEB1007F6861 /* CarportDetailRentTBView.m */; };
+		6B62C0C01FCEAEB2007F6861 /* CarportDetailShortCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0B81FCEAEB2007F6861 /* CarportDetailShortCLView.m */; };
+		6B62C0C11FCEAEB2007F6861 /* CarportDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0BA1FCEAEB2007F6861 /* CarportDetailHeaderView.m */; };
+		6B62C0C21FCEAEB2007F6861 /* CarportDetailRentTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0BB1FCEAEB2007F6861 /* CarportDetailRentTBCell.m */; };
+		6B62C0C31FCEAEB2007F6861 /* CarportDetailShortHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0BD1FCEAEB2007F6861 /* CarportDetailShortHeadView.m */; };
+		6B62C0C41FCEAEB2007F6861 /* CarportDetailShortCLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0BE1FCEAEB2007F6861 /* CarportDetailShortCLCell.m */; };
 		6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3C1FA86DB100D543D2 /* YJTagCollectionViewCell.xib */; };
 		6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */; };
 		6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FD1F9DDB4000A1020C /* ViewController.m */; };
@@ -172,28 +172,11 @@
 		349AC03596A7C2F92A543814 /* Pods-SharedParking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedParking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking.debug.xcconfig"; sourceTree = "<group>"; };
 		4662DFD8CE09B8385B9D2768 /* Pods_SharedParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharedParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E76ABEDC7B69476CC9FD69 /* Pods-SharedParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedParking.release.xcconfig"; path = "Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking.release.xcconfig"; sourceTree = "<group>"; };
-		6B001E451FC660EE008F6964 /* OpenStateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenStateVC.h; sourceTree = "<group>"; };
-		6B001E461FC660EF008F6964 /* OpenStateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenStateVC.m; sourceTree = "<group>"; };
 		6B001E481FC672A9008F6964 /* RequestCarportVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestCarportVC.h; sourceTree = "<group>"; };
 		6B001E491FC672A9008F6964 /* RequestCarportVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestCarportVC.m; sourceTree = "<group>"; };
 		6B001E4A1FC672A9008F6964 /* RequestCarportVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCarportVC.xib; sourceTree = "<group>"; };
-		6B001E4D1FC692D0008F6964 /* CarportDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailVC.h; sourceTree = "<group>"; };
-		6B001E4E1FC692D0008F6964 /* CarportDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailVC.m; sourceTree = "<group>"; };
-		6B001E501FC69329008F6964 /* CarportDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailHeaderView.h; sourceTree = "<group>"; };
-		6B001E511FC69329008F6964 /* CarportDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailHeaderView.m; sourceTree = "<group>"; };
-		6B001E531FC6B9CD008F6964 /* CarportDetailShortCLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailShortCLView.h; sourceTree = "<group>"; };
-		6B001E541FC6B9CD008F6964 /* CarportDetailShortCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailShortCLView.m; sourceTree = "<group>"; };
-		6B001E561FC6C670008F6964 /* CarportDetailShortCLCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailShortCLCell.h; sourceTree = "<group>"; };
-		6B001E571FC6C670008F6964 /* CarportDetailShortCLCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailShortCLCell.m; sourceTree = "<group>"; };
-		6B001E591FC6CC7C008F6964 /* CarportDetailShortHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailShortHeadView.h; sourceTree = "<group>"; };
-		6B001E5A1FC6CC7C008F6964 /* CarportDetailShortHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailShortHeadView.m; sourceTree = "<group>"; };
 		6B057CBF1FA2D2FF0017E320 /* ParkingSpaceHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceHeaderView.h; sourceTree = "<group>"; };
 		6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceHeaderView.m; sourceTree = "<group>"; };
-		6B0A0B3B1FB9986E006130D3 /* CarportPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportPayVC.h; sourceTree = "<group>"; };
-		6B0A0B3C1FB9986E006130D3 /* CarportPayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportPayVC.m; sourceTree = "<group>"; };
-		6B0A0B3E1FB9B392006130D3 /* CarportOpenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportOpenVC.h; sourceTree = "<group>"; };
-		6B0A0B3F1FB9B392006130D3 /* CarportOpenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportOpenVC.m; sourceTree = "<group>"; };
-		6B0A0B401FB9B392006130D3 /* CarportOpenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarportOpenVC.xib; sourceTree = "<group>"; };
 		6B0AD31D1FB4309900F3D8E4 /* BalanceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BalanceVC.h; sourceTree = "<group>"; };
 		6B0AD31E1FB4309900F3D8E4 /* BalanceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceVC.m; sourceTree = "<group>"; };
 		6B0E80041FCBBD0100B2C309 /* PayRecordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRecordVC.m; sourceTree = "<group>"; };
@@ -223,16 +206,6 @@
 		6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestRentHeadView.m; sourceTree = "<group>"; };
 		6B176F5F1FA447410045F55A /* ParkingSpaceMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceMapView.h; sourceTree = "<group>"; };
 		6B176F601FA447410045F55A /* ParkingSpaceMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceMapView.m; sourceTree = "<group>"; };
-		6B17EAB41FC7B6B1001E33DE /* CarportDetailRentTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailRentTBView.h; sourceTree = "<group>"; };
-		6B17EAB51FC7B6B1001E33DE /* CarportDetailRentTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailRentTBView.m; sourceTree = "<group>"; };
-		6B17EAB71FC7B821001E33DE /* CarportDetailRentTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailRentTBCell.h; sourceTree = "<group>"; };
-		6B17EAB81FC7B821001E33DE /* CarportDetailRentTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailRentTBCell.m; sourceTree = "<group>"; };
-		6B17EABD1FC7E9F2001E33DE /* CarportReserveVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportReserveVC.h; sourceTree = "<group>"; };
-		6B17EABE1FC7E9F2001E33DE /* CarportReserveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportReserveVC.m; sourceTree = "<group>"; };
-		6B17EABF1FC7E9F2001E33DE /* CarportReserveVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarportReserveVC.xib; sourceTree = "<group>"; };
-		6B17EAC21FC7F1C1001E33DE /* ReserveSuccessVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReserveSuccessVC.h; sourceTree = "<group>"; };
-		6B17EAC31FC7F1C1001E33DE /* ReserveSuccessVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReserveSuccessVC.m; sourceTree = "<group>"; };
-		6B17EAC41FC7F1C1001E33DE /* ReserveSuccessVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReserveSuccessVC.xib; sourceTree = "<group>"; };
 		6B1C15871FA058AE00E584F3 /* BaseCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCLView.m; sourceTree = "<group>"; };
 		6B1C15881FA058AE00E584F3 /* BaseTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTBView.h; sourceTree = "<group>"; };
 		6B1C15891FA058AF00E584F3 /* BaseCLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCLView.h; sourceTree = "<group>"; };
@@ -289,6 +262,33 @@
 		6B62C0871FCE9D0D007F6861 /* NavigationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationVC.m; sourceTree = "<group>"; };
 		6B62C0891FCE9FEB007F6861 /* NavigationBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBottomView.h; sourceTree = "<group>"; };
 		6B62C08A1FCE9FEB007F6861 /* NavigationBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationBottomView.m; sourceTree = "<group>"; };
+		6B62C0971FCEADF5007F6861 /* CarportPayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarportPayVC.m; sourceTree = "<group>"; };
+		6B62C0981FCEADF5007F6861 /* OpenStateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenStateVC.h; sourceTree = "<group>"; };
+		6B62C0991FCEADF5007F6861 /* CarportOpenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarportOpenVC.m; sourceTree = "<group>"; };
+		6B62C09A1FCEADF5007F6861 /* CarportOpenVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarportOpenVC.xib; sourceTree = "<group>"; };
+		6B62C09B1FCEADF5007F6861 /* OpenStateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenStateVC.m; sourceTree = "<group>"; };
+		6B62C09C1FCEADF5007F6861 /* CarportOpenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarportOpenVC.h; sourceTree = "<group>"; };
+		6B62C09D1FCEADF5007F6861 /* CarportPayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarportPayVC.h; sourceTree = "<group>"; };
+		6B62C0A21FCEAE23007F6861 /* CarportReserveVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarportReserveVC.m; sourceTree = "<group>"; };
+		6B62C0A31FCEAE23007F6861 /* CarportReserveVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarportReserveVC.xib; sourceTree = "<group>"; };
+		6B62C0A41FCEAE23007F6861 /* ReserveSuccessVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReserveSuccessVC.m; sourceTree = "<group>"; };
+		6B62C0A51FCEAE23007F6861 /* ReserveSuccessVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReserveSuccessVC.xib; sourceTree = "<group>"; };
+		6B62C0A61FCEAE23007F6861 /* CarportReserveVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarportReserveVC.h; sourceTree = "<group>"; };
+		6B62C0A71FCEAE23007F6861 /* ReserveSuccessVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReserveSuccessVC.h; sourceTree = "<group>"; };
+		6B62C0B01FCEAEAA007F6861 /* CarportDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarportDetailVC.h; sourceTree = "<group>"; };
+		6B62C0B11FCEAEAA007F6861 /* CarportDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarportDetailVC.m; sourceTree = "<group>"; };
+		6B62C0B31FCEAEB1007F6861 /* CarportDetailShortCLCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarportDetailShortCLCell.h; sourceTree = "<group>"; };
+		6B62C0B41FCEAEB1007F6861 /* CarportDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarportDetailHeaderView.h; sourceTree = "<group>"; };
+		6B62C0B51FCEAEB1007F6861 /* CarportDetailRentTBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarportDetailRentTBCell.h; sourceTree = "<group>"; };
+		6B62C0B61FCEAEB1007F6861 /* CarportDetailRentTBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarportDetailRentTBView.m; sourceTree = "<group>"; };
+		6B62C0B71FCEAEB1007F6861 /* CarportDetailShortCLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarportDetailShortCLView.h; sourceTree = "<group>"; };
+		6B62C0B81FCEAEB2007F6861 /* CarportDetailShortCLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarportDetailShortCLView.m; sourceTree = "<group>"; };
+		6B62C0B91FCEAEB2007F6861 /* CarportDetailRentTBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarportDetailRentTBView.h; sourceTree = "<group>"; };
+		6B62C0BA1FCEAEB2007F6861 /* CarportDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarportDetailHeaderView.m; sourceTree = "<group>"; };
+		6B62C0BB1FCEAEB2007F6861 /* CarportDetailRentTBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarportDetailRentTBCell.m; sourceTree = "<group>"; };
+		6B62C0BC1FCEAEB2007F6861 /* CarportDetailShortHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarportDetailShortHeadView.h; sourceTree = "<group>"; };
+		6B62C0BD1FCEAEB2007F6861 /* CarportDetailShortHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarportDetailShortHeadView.m; sourceTree = "<group>"; };
+		6B62C0BE1FCEAEB2007F6861 /* CarportDetailShortCLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarportDetailShortCLCell.m; sourceTree = "<group>"; };
 		6B91B5F61F9DDB4000A1020C /* SharedParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B91B5F91F9DDB4000A1020C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -793,6 +793,95 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6B62C08C1FCEAD76007F6861 /* QRCode(扫一扫) */ = {
+			isa = PBXGroup;
+			children = (
+				6B62C08D1FCEAD76007F6861 /* Controller */,
+				6B62C08E1FCEAD76007F6861 /* Model */,
+				6B62C08F1FCEAD76007F6861 /* View */,
+			);
+			path = "QRCode(扫一扫)";
+			sourceTree = "<group>";
+		};
+		6B62C08D1FCEAD76007F6861 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B62C0A61FCEAE23007F6861 /* CarportReserveVC.h */,
+				6B62C0A21FCEAE23007F6861 /* CarportReserveVC.m */,
+				6B62C0A31FCEAE23007F6861 /* CarportReserveVC.xib */,
+				6B62C0A71FCEAE23007F6861 /* ReserveSuccessVC.h */,
+				6B62C0A41FCEAE23007F6861 /* ReserveSuccessVC.m */,
+				6B62C0A51FCEAE23007F6861 /* ReserveSuccessVC.xib */,
+				6B62C09C1FCEADF5007F6861 /* CarportOpenVC.h */,
+				6B62C0991FCEADF5007F6861 /* CarportOpenVC.m */,
+				6B62C09A1FCEADF5007F6861 /* CarportOpenVC.xib */,
+				6B62C09D1FCEADF5007F6861 /* CarportPayVC.h */,
+				6B62C0971FCEADF5007F6861 /* CarportPayVC.m */,
+				6B62C0981FCEADF5007F6861 /* OpenStateVC.h */,
+				6B62C09B1FCEADF5007F6861 /* OpenStateVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B62C08E1FCEAD76007F6861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B62C08F1FCEAD76007F6861 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B62C0AC1FCEAE67007F6861 /* CarportDetail(车位详情) */ = {
+			isa = PBXGroup;
+			children = (
+				6B62C0AD1FCEAE67007F6861 /* Controller */,
+				6B62C0AE1FCEAE67007F6861 /* Model */,
+				6B62C0AF1FCEAE67007F6861 /* View */,
+			);
+			path = "CarportDetail(车位详情)";
+			sourceTree = "<group>";
+		};
+		6B62C0AD1FCEAE67007F6861 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B62C0B01FCEAEAA007F6861 /* CarportDetailVC.h */,
+				6B62C0B11FCEAEAA007F6861 /* CarportDetailVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B62C0AE1FCEAE67007F6861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B62C0AF1FCEAE67007F6861 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B62C0B41FCEAEB1007F6861 /* CarportDetailHeaderView.h */,
+				6B62C0BA1FCEAEB2007F6861 /* CarportDetailHeaderView.m */,
+				6B62C0B51FCEAEB1007F6861 /* CarportDetailRentTBCell.h */,
+				6B62C0BB1FCEAEB2007F6861 /* CarportDetailRentTBCell.m */,
+				6B62C0B91FCEAEB2007F6861 /* CarportDetailRentTBView.h */,
+				6B62C0B61FCEAEB1007F6861 /* CarportDetailRentTBView.m */,
+				6B62C0B31FCEAEB1007F6861 /* CarportDetailShortCLCell.h */,
+				6B62C0BE1FCEAEB2007F6861 /* CarportDetailShortCLCell.m */,
+				6B62C0B71FCEAEB1007F6861 /* CarportDetailShortCLView.h */,
+				6B62C0B81FCEAEB2007F6861 /* CarportDetailShortCLView.m */,
+				6B62C0BC1FCEAEB2007F6861 /* CarportDetailShortHeadView.h */,
+				6B62C0BD1FCEAEB2007F6861 /* CarportDetailShortHeadView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6B91B5ED1F9DDB4000A1020C = {
 			isa = PBXGroup;
 			children = (
@@ -1000,6 +1089,8 @@
 		6B91B6781F9DE89600A1020C /* ParkingSpace(车位) */ = {
 			isa = PBXGroup;
 			children = (
+				6B62C0AC1FCEAE67007F6861 /* CarportDetail(车位详情) */,
+				6B62C08C1FCEAD76007F6861 /* QRCode(扫一扫) */,
 				6B62C0821FCE9CF8007F6861 /* Navigation(导航) */,
 				6B968F6B1FBD72360083A1DC /* FindBreakRules(查违章) */,
 				6B3189EA1FA96FB10063AC2F /* Fuel(油耗) */,
@@ -1017,21 +1108,6 @@
 			children = (
 				6B91B6881F9DE96000A1020C /* ParkingSpaceVC.h */,
 				6B91B6891F9DE96000A1020C /* ParkingSpaceVC.m */,
-				6B0A0B3B1FB9986E006130D3 /* CarportPayVC.h */,
-				6B0A0B3C1FB9986E006130D3 /* CarportPayVC.m */,
-				6B0A0B3E1FB9B392006130D3 /* CarportOpenVC.h */,
-				6B0A0B3F1FB9B392006130D3 /* CarportOpenVC.m */,
-				6B0A0B401FB9B392006130D3 /* CarportOpenVC.xib */,
-				6B001E451FC660EE008F6964 /* OpenStateVC.h */,
-				6B001E461FC660EF008F6964 /* OpenStateVC.m */,
-				6B001E4D1FC692D0008F6964 /* CarportDetailVC.h */,
-				6B001E4E1FC692D0008F6964 /* CarportDetailVC.m */,
-				6B17EABD1FC7E9F2001E33DE /* CarportReserveVC.h */,
-				6B17EABE1FC7E9F2001E33DE /* CarportReserveVC.m */,
-				6B17EABF1FC7E9F2001E33DE /* CarportReserveVC.xib */,
-				6B17EAC21FC7F1C1001E33DE /* ReserveSuccessVC.h */,
-				6B17EAC31FC7F1C1001E33DE /* ReserveSuccessVC.m */,
-				6B17EAC41FC7F1C1001E33DE /* ReserveSuccessVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1054,18 +1130,6 @@
 				6B339F301FA4787900B52FB0 /* ParkingSpaceTBView.m */,
 				6B339F321FA4792100B52FB0 /* ParkingSpaceTBCell.h */,
 				6B339F331FA4792100B52FB0 /* ParkingSpaceTBCell.m */,
-				6B001E501FC69329008F6964 /* CarportDetailHeaderView.h */,
-				6B001E511FC69329008F6964 /* CarportDetailHeaderView.m */,
-				6B001E531FC6B9CD008F6964 /* CarportDetailShortCLView.h */,
-				6B001E541FC6B9CD008F6964 /* CarportDetailShortCLView.m */,
-				6B001E561FC6C670008F6964 /* CarportDetailShortCLCell.h */,
-				6B001E571FC6C670008F6964 /* CarportDetailShortCLCell.m */,
-				6B001E591FC6CC7C008F6964 /* CarportDetailShortHeadView.h */,
-				6B001E5A1FC6CC7C008F6964 /* CarportDetailShortHeadView.m */,
-				6B17EAB41FC7B6B1001E33DE /* CarportDetailRentTBView.h */,
-				6B17EAB51FC7B6B1001E33DE /* CarportDetailRentTBView.m */,
-				6B17EAB71FC7B821001E33DE /* CarportDetailRentTBCell.h */,
-				6B17EAB81FC7B821001E33DE /* CarportDetailRentTBCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1533,18 +1597,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B62C0A01FCEADF5007F6861 /* CarportOpenVC.xib in Resources */,
 				6B3189FD1FA9ABDD0063AC2F /* FuelAddVC.xib in Resources */,
 				6B0E80231FCBF51600B2C309 /* ReleaseDetailView.xib in Resources */,
 				6B91B6061F9DDB4000A1020C /* LaunchScreen.storyboard in Resources */,
 				6B4151C41FCE7A8D0000F48E /* CarportCertificationVC.xib in Resources */,
 				6B001E4C1FC672A9008F6964 /* RequestCarportVC.xib in Resources */,
 				6B2549671FB6C0CF007ECE75 /* EditVC.xib in Resources */,
-				6B0A0B421FB9B392006130D3 /* CarportOpenVC.xib in Resources */,
-				6B17EAC61FC7F1C1001E33DE /* ReserveSuccessVC.xib in Resources */,
 				6B91B6031F9DDB4000A1020C /* Assets.xcassets in Resources */,
-				6B17EAC11FC7E9F2001E33DE /* CarportReserveVC.xib in Resources */,
+				6B62C0A91FCEAE23007F6861 /* CarportReserveVC.xib in Resources */,
 				6B3189F81FA974900063AC2F /* FuelAverageView.xib in Resources */,
 				6B91B6011F9DDB4000A1020C /* Main.storyboard in Resources */,
+				6B62C0AB1FCEAE23007F6861 /* ReserveSuccessVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1630,19 +1694,22 @@
 				6BF95B961FB5A00600DED0B7 /* UIPickerView+Block.m in Sources */,
 				6BF95B951FB5A00000DED0B7 /* UINavigationController+Block.m in Sources */,
 				6BF95B941FB59FFA00DED0B7 /* UIActionSheet+Block.m in Sources */,
-				6B001E5B1FC6CC7C008F6964 /* CarportDetailShortHeadView.m in Sources */,
 				6BF95B931FB59FF400DED0B7 /* MFMessageComposeViewController+Block.m in Sources */,
+				6B62C0BF1FCEAEB2007F6861 /* CarportDetailRentTBView.m in Sources */,
+				6B62C0C11FCEAEB2007F6861 /* CarportDetailHeaderView.m in Sources */,
 				6BF95B921FB59FEF00DED0B7 /* MFMailComposeViewController+Block.m in Sources */,
 				6BF95B911FB59FEB00DED0B7 /* NSURLConnection+Block.m in Sources */,
 				6B001E4B1FC672A9008F6964 /* RequestCarportVC.m in Sources */,
 				6BF95B901FB59FE300DED0B7 /* CLLocationManager+Block.m in Sources */,
 				6BF95B8F1FB59FBF00DED0B7 /* UIAlertView+Block.m in Sources */,
+				6B62C0C21FCEAEB2007F6861 /* CarportDetailRentTBCell.m in Sources */,
 				6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */,
-				6B001E521FC69329008F6964 /* CarportDetailHeaderView.m in Sources */,
 				6BB1EE2E1FB43662003960F8 /* BalanceVC.m in Sources */,
 				6BCD979C1FB45481001F81A5 /* MyRequestRentCLCell.m in Sources */,
 				6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */,
 				6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */,
+				6B62C0C01FCEAEB2007F6861 /* CarportDetailShortCLView.m in Sources */,
+				6B62C0C41FCEAEB2007F6861 /* CarportDetailShortCLCell.m in Sources */,
 				6B1C4B411FA870C400D543D2 /* YJTagView.m in Sources */,
 				6BF95B6B1FB57D3100DED0B7 /* MyReserveItemView.m in Sources */,
 				6BF95B751FB5901E00DED0B7 /* MyIssueTBCell.m in Sources */,
@@ -1651,16 +1718,17 @@
 				6BB5CEA61FB961BA00A2816F /* FuelCounterTBCell.m in Sources */,
 				6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */,
 				6B1C4B2F1FA80E2700D543D2 /* HelpTool.m in Sources */,
+				6B62C09F1FCEADF5007F6861 /* CarportOpenVC.m in Sources */,
 				6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */,
 				6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				6B91B6B01F9DEE3E00A1020C /* UserModel.m in Sources */,
 				6B4151BF1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m in Sources */,
 				6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */,
-				6B0A0B3D1FB9986E006130D3 /* CarportPayVC.m in Sources */,
-				6B001E551FC6B9CD008F6964 /* CarportDetailShortCLView.m in Sources */,
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
 				6B968F741FBD72940083A1DC /* FindBreakRulesView.m in Sources */,
+				6B62C0AA1FCEAE23007F6861 /* ReserveSuccessVC.m in Sources */,
 				6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */,
+				6B62C09E1FCEADF5007F6861 /* CarportPayVC.m in Sources */,
 				6BB5CEA31FB9613000A2816F /* FuelCounterTBView.m in Sources */,
 				6B0E80061FCBBD0200B2C309 /* PayRecordVC.m in Sources */,
 				6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */,
@@ -1674,22 +1742,21 @@
 				6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */,
 				6B0E801F1FCBF4C300B2C309 /* ReleaseDetailView.m in Sources */,
 				6B91B6AC1F9DEE0A00A1020C /* JMRefreshFooter.m in Sources */,
-				6B17EAC51FC7F1C1001E33DE /* ReserveSuccessVC.m in Sources */,
 				6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */,
 				6B1C4B2C1FA8070F00D543D2 /* GasStationModel.m in Sources */,
 				6B91B6AB1F9DEE0200A1020C /* ExtraParaManger.m in Sources */,
-				6B0A0B411FB9B392006130D3 /* CarportOpenVC.m in Sources */,
 				6B91B6AA1F9DEDF300A1020C /* BaseModel.m in Sources */,
 				6B91B6A91F9DEDE900A1020C /* UIViewExt.m in Sources */,
-				6B17EAC01FC7E9F2001E33DE /* CarportReserveVC.m in Sources */,
 				6B968F5D1FBD61E60083A1DC /* CarNumberAddVC.m in Sources */,
 				6B91B6A81F9DEDE100A1020C /* UIViewController+Util.m in Sources */,
 				6B339F341FA4792100B52FB0 /* ParkingSpaceTBCell.m in Sources */,
+				6B62C0A81FCEAE23007F6861 /* CarportReserveVC.m in Sources */,
 				6B91B6A71F9DEDD800A1020C /* UIView+UIViewController.m in Sources */,
 				6B91B6A61F9DEDCF00A1020C /* UIView+BlockGesture.m in Sources */,
-				6B17EAB91FC7B821001E33DE /* CarportDetailRentTBCell.m in Sources */,
+				6B62C0B21FCEAEAA007F6861 /* CarportDetailVC.m in Sources */,
 				6B91B6A51F9DEDC800A1020C /* UIViewController+Dealloc.m in Sources */,
 				6BB5CEA91FB9799100A2816F /* FuelAddRecordVC.m in Sources */,
+				6B62C0C31FCEAEB2007F6861 /* CarportDetailShortHeadView.m in Sources */,
 				6B91B6A41F9DEDC000A1020C /* UINavigationBar+Awesome.m in Sources */,
 				6B91B6A31F9DEDB900A1020C /* UIImage+UIColor.m in Sources */,
 				6B91B6A21F9DEDB300A1020C /* UIColor+Extension.m in Sources */,
@@ -1697,7 +1764,6 @@
 				6B968F571FBD5CB60083A1DC /* CarNumberListVC.m in Sources */,
 				6B3189E91FA95DFF0063AC2F /* SearchHistoryView.m in Sources */,
 				6B968F711FBD725D0083A1DC /* FindBreakRulesVC.m in Sources */,
-				6B001E581FC6C670008F6964 /* CarportDetailShortCLCell.m in Sources */,
 				6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */,
 				6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */,
 				6B0E801C1FCBEBEF00B2C309 /* JMTitleSelectView.m in Sources */,
@@ -1705,7 +1771,6 @@
 				6B62C08B1FCE9FEB007F6861 /* NavigationBottomView.m in Sources */,
 				6B91B69F1F9DED9F00A1020C /* UIButton+EnlargeEdge.m in Sources */,
 				6B91B69E1F9DED9A00A1020C /* NSString+String.m in Sources */,
-				6B001E4F1FC692D0008F6964 /* CarportDetailVC.m in Sources */,
 				6B91B69D1F9DED9400A1020C /* NSString+Regex.m in Sources */,
 				6BCD97991FB4485A001F81A5 /* MyRequestRentView.m in Sources */,
 				6B91B69C1F9DED8E00A1020C /* NSDictionary+RequestEncoding.m in Sources */,
@@ -1714,7 +1779,6 @@
 				6B91B69A1F9DED8400A1020C /* NSArray+Log.m in Sources */,
 				6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */,
 				6B1323581FB43DF300AB1840 /* MyRequestVC.m in Sources */,
-				6B17EAB61FC7B6B1001E33DE /* CarportDetailRentTBView.m in Sources */,
 				6B91B6981F9DED7800A1020C /* JKHTTPManager.m in Sources */,
 				6B91B6971F9DED7300A1020C /* JKNavigationController.m in Sources */,
 				6B91B6961F9DED1700A1020C /* DataManager.m in Sources */,
@@ -1723,8 +1787,8 @@
 				6B91B6941F9DEC2F00A1020C /* BaseViewController.m in Sources */,
 				6B13235B1FB43E4700AB1840 /* MyRequestRentHeadView.m in Sources */,
 				6B91B68A1F9DE96000A1020C /* ParkingSpaceVC.m in Sources */,
+				6B62C0A11FCEADF5007F6861 /* OpenStateVC.m in Sources */,
 				6B91B68D1F9DE9A900A1020C /* ReleaseVC.m in Sources */,
-				6B001E471FC660EF008F6964 /* OpenStateVC.m in Sources */,
 				6B3C16F41FA1D517009A6948 /* ParkingRecordTBCell.m in Sources */,
 				6BF95B721FB58EF900DED0B7 /* MyIssueVC.m in Sources */,
 				6B91B6901F9DE9B900A1020C /* MessageVC.m in Sources */,
