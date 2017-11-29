@@ -64,6 +64,7 @@
 		6B339F341FA4792100B52FB0 /* ParkingSpaceTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339F331FA4792100B52FB0 /* ParkingSpaceTBCell.m */; };
 		6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16EF1FA1D4FC009A6948 /* ParkingRecordVC.m */; };
 		6B3C16F41FA1D517009A6948 /* ParkingRecordTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C16F31FA1D517009A6948 /* ParkingRecordTBCell.m */; };
+		6B4151BF1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4151BE1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m */; };
 		6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3C1FA86DB100D543D2 /* YJTagCollectionViewCell.xib */; };
 		6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */; };
 		6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FD1F9DDB4000A1020C /* ViewController.m */; };
@@ -275,6 +276,8 @@
 		6B3C16F01FA1D4FC009A6948 /* ParkingRecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkingRecordVC.h; sourceTree = "<group>"; };
 		6B3C16F21FA1D517009A6948 /* ParkingRecordTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingRecordTBCell.h; sourceTree = "<group>"; };
 		6B3C16F31FA1D517009A6948 /* ParkingRecordTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingRecordTBCell.m; sourceTree = "<group>"; };
+		6B4151BD1FCE48CA0000F48E /* CALayer+JMXibBorderColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+JMXibBorderColor.h"; sourceTree = "<group>"; };
+		6B4151BE1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+JMXibBorderColor.m"; sourceTree = "<group>"; };
 		6B91B5F61F9DDB4000A1020C /* SharedParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B91B5F91F9DDB4000A1020C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -872,6 +875,8 @@
 				6B91B65C1F9DDDC300A1020C /* UIViewController+Util.m */,
 				6B91B65D1F9DDDC300A1020C /* UIViewExt.h */,
 				6B91B65E1F9DDDC300A1020C /* UIViewExt.m */,
+				6B4151BD1FCE48CA0000F48E /* CALayer+JMXibBorderColor.h */,
+				6B4151BE1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1598,6 +1603,7 @@
 				6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */,
 				6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				6B91B6B01F9DEE3E00A1020C /* UserModel.m in Sources */,
+				6B4151BF1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m in Sources */,
 				6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */,
 				6B0A0B3D1FB9986E006130D3 /* CarportPayVC.m in Sources */,
 				6B001E551FC6B9CD008F6964 /* CarportDetailShortCLView.m in Sources */,

@@ -15,6 +15,11 @@
 //联系方式
 @property (strong, nonatomic) IBOutlet UIView *contactView;
 @property (strong, nonatomic) IBOutlet UITextField *contactField;
+//时间
+@property (strong, nonatomic) IBOutlet UIView *timeView;
+
+
+
 //车位类型
 @property (strong, nonatomic) IBOutlet UIButton *plotCTBtn;
 @property (strong, nonatomic) IBOutlet UIButton *officeCTBtn;
@@ -53,26 +58,12 @@
     
     [super layoutSubviews];
 
-    self.plotCTBtn.layer.borderColor = kNavBarColor.CGColor;
-    self.plotCTBtn.layer.borderWidth = 1;
-    
-    self.officeCTBtn.layer.borderColor = kNavBarColor.CGColor;
-    self.officeCTBtn.layer.borderWidth = 1;
-    
-    self.otherCTBtn.layer.borderColor = kNavBarColor.CGColor;
-    self.otherCTBtn.layer.borderWidth = 1;
-    
-    self.unlimitedRTBtn.layer.borderColor = kNavBarColor.CGColor;
-    self.unlimitedRTBtn.layer.borderWidth = 1;
-    
-    self.limitedRTBtn.layer.borderColor = kNavBarColor.CGColor;
-    self.limitedRTBtn.layer.borderWidth = 1;
+    self.contactView.hidden = YES;
 }
 
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
     
-//    [self setNeedsLayout];
     
 }
 
