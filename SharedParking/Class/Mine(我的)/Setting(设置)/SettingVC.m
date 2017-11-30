@@ -11,6 +11,8 @@
 @interface SettingVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView *tbView;
 @property (nonatomic , strong) NSArray *firstArr;
+@property (nonatomic , strong) NSArray *secondArr;
+
 @property (nonatomic , strong) UIView *exitView;
 @property (nonatomic,strong)UILabel *cacheLab;
 
@@ -29,8 +31,8 @@
 - (void)initView{
     self.title = @"设置";
     self.view.backgroundColor = kBackGroundGrayColor;
-    self.firstArr = @[@"软件关于",@"意见反馈",@"租用须知",@"联系客服",@"去评价",@"版本"];
-    
+    self.firstArr = @[@"账号与安全",@"租用须知"];
+    self.secondArr = @[@"意见反馈",@"软件关于",@"联系客服",@"去评价",@"版本"];
     [self.view addSubview:self.tbView];
 }
 
@@ -165,26 +167,36 @@
 }
 
 #pragma mark -------------tableView--delegate-------------/
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return self.firstArr.count;
-
+    if (section == 0) {
+        return self.firstArr.count;
+    }
+    
+    return self.secondArr.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.font = kFontSizeBold16;
+    cell.textLabel.font = kFontSize16;
     cell.textLabel.textColor = kColor333333;
     
     UILabel *rightLab = [[UILabel alloc]initWithFrame:CGRectMake(kScreenWidth - 110, 0, 80, 50)];
-    rightLab.font = kFontSizeBold15;
+    rightLab.font = kFontSize15;
     rightLab.textAlignment = NSTextAlignmentRight;
     rightLab.textColor = kColorDarkgray;
     rightLab.hidden = YES;
     [cell addSubview:rightLab];
     
-    cell.textLabel.text = self.firstArr[indexPath.row];
+    if (indexPath.section == 0) {
+        cell.textLabel.text = self.firstArr[indexPath.row];
+    }else{
+        cell.textLabel.text = self.secondArr[indexPath.row];
+    }
     
 
     return cell;

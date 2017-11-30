@@ -23,6 +23,11 @@
 @property (nonatomic , strong) ParkingSpaceMapView *mapView;
 @property (nonatomic , strong) ParkingSpaceTBView *tbView;
 @property (nonatomic , strong) UIButton *selectedBtn;
+@property (nonatomic , assign) CarportRentType type;
+
+@property (nonatomic , strong) RobParkingView *itemView;
+@property (nonatomic , strong) LongRentView *rentView;
+@property (nonatomic , strong) ParkingOrderView *orderView;
 
 @end
 
@@ -56,18 +61,21 @@
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.mapView];
     [self.view addSubview:self.tbView];
+    [self.mapView addSubview:self.itemView];
+    [self.mapView addSubview:self.rentView];
+    [self.mapView addSubview:self.orderView];
     
     self.tbView.hidden = YES;
     
+    self.type = CarportShortRentType;
+}
+
+- (void)setType:(CarportRentType)type{
+    _type = type;
     
-    RobParkingView *itemView = [[RobParkingView alloc]initWithFrame:CGRectMake(40, 50, kScreenWidth - 40 * 2, [RobParkingView getHeight])];
-    [self.mapView addSubview:itemView];
+    self.itemView.hidden = type == CarportLongRentType;
+    self.rentView.hidden = type != CarportLongRentType;
     
-    LongRentView *rentView = [[LongRentView alloc]initWithFrame:CGRectMake(40, itemView.bottom + 20, kScreenWidth - 40 * 2, [LongRentView getHeight])];
-    [self.mapView addSubview:rentView];
-    
-    ParkingOrderView *orderView = [[ParkingOrderView alloc]initWithFrame:CGRectMake(40, rentView.bottom + 20, kScreenWidth - 40 * 2, [ParkingOrderView getHeight])];
-    [self.mapView addSubview:orderView];
 }
 
 #pragma mark ---------------action ---------------------/
@@ -122,6 +130,12 @@
 - (void)initNavBarView{
     if (!_titleView) {
         _titleView = [[JMTitleSelectView alloc]init];
+        kSelfWeak;
+        _titleView.IndexChangeBlock = ^(NSInteger index) {
+            kSelfStrong;
+            strongSelf.type = index == 0 ? CarportShortRentType : CarportLongRentType;
+        };
+        
         self.navigationItem.titleView = _titleView;
     }
     
@@ -174,5 +188,29 @@
         _tbView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tbView;
+}
+
+- (RobParkingView *)itemView{
+    if (!_itemView) {
+        _itemView = [[RobParkingView alloc]initWithFrame:CGRectMake(40, self.mapView.height - [RobParkingView getHeight] - 50, kScreenWidth - 40 * 2, [RobParkingView getHeight])];
+        _itemView.hidden = YES;
+    }
+    return _itemView;
+}
+
+- (LongRentView *)rentView{
+    if (!_rentView) {
+        _rentView = [[LongRentView alloc]initWithFrame:CGRectMake(40, self.mapView.height - [LongRentView getHeight] - 50, kScreenWidth - 40 * 2, [LongRentView getHeight])];
+        _rentView.hidden = YES;
+    }
+    return _rentView;
+}
+
+- (ParkingOrderView *)orderView{
+    if (!_orderView) {
+        _orderView = [[ParkingOrderView alloc]initWithFrame:CGRectMake(40, self.mapView.height - [ParkingOrderView getHeight] - 50, kScreenWidth - 40 * 2, [ParkingOrderView getHeight])];
+        _orderView.hidden = YES;
+    }
+    return _orderView;
 }
 @end
