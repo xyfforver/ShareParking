@@ -16,6 +16,7 @@
 #import "JMTitleSelectView.h"
 #import "RobParkingView.h"
 #import "LongRentView.h"
+#import "ParkingOrderView.h"
 @interface ParkingSpaceVC ()
 @property (nonatomic , strong) JMTitleSelectView *titleView;
 @property (nonatomic , strong) ParkingSpaceHeaderView *headerView;
@@ -59,11 +60,14 @@
     self.tbView.hidden = YES;
     
     
-    RobParkingView *itemView = [[RobParkingView alloc]initWithFrame:CGRectMake(40, 200, kScreenWidth - 40 * 2, [RobParkingView getHeight])];
-    [self.view addSubview:itemView];
+    RobParkingView *itemView = [[RobParkingView alloc]initWithFrame:CGRectMake(40, 50, kScreenWidth - 40 * 2, [RobParkingView getHeight])];
+    [self.mapView addSubview:itemView];
     
     LongRentView *rentView = [[LongRentView alloc]initWithFrame:CGRectMake(40, itemView.bottom + 20, kScreenWidth - 40 * 2, [LongRentView getHeight])];
-    [self.view addSubview:rentView];
+    [self.mapView addSubview:rentView];
+    
+    ParkingOrderView *orderView = [[ParkingOrderView alloc]initWithFrame:CGRectMake(40, rentView.bottom + 20, kScreenWidth - 40 * 2, [ParkingOrderView getHeight])];
+    [self.mapView addSubview:orderView];
 }
 
 #pragma mark ---------------action ---------------------/

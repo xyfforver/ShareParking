@@ -28,7 +28,11 @@
 - (void)initView{
     self.backgroundColor = kColorWhite;
     self.layer.cornerRadius = 5;
-    self.layer.masksToBounds = YES;
+//    self.layer.masksToBounds = YES;
+    self.layer.shadowColor = [[UIColor grayColor] colorWithAlphaComponent:0.8].CGColor;
+    self.layer.shadowOffset = CGSizeMake(2,2);
+    self.layer.shadowOpacity = 0.5;
+    self.layer.shadowRadius = 2;
     
     [self addSubview:self.titleLab];
     [self addSubview:self.countLab];
@@ -71,7 +75,7 @@
 - (UILabel *)titleLab{
     if (!_titleLab) {
         _titleLab = [[UILabel alloc]init];
-        _titleLab.font = kFontSizeBold18;
+        _titleLab.font = kFontSize18;
         _titleLab.textColor = kColor333333;
     }
     return _titleLab;
@@ -104,6 +108,8 @@
         _robBtn.titleLabel.font = kFontSizeBold15;
         [_robBtn setTitleColor:kColorWhite forState:UIControlStateNormal];
         [_robBtn setBackgroundColor:kNavBarColor];
+        [_robBtn setImage:[UIImage imageNamed:@"home_nav"] forState:UIControlStateNormal];
+        [_robBtn lc_imageTitleHorizontalAlignmentWithSpace:10];
         [_robBtn addTarget:self action:@selector(robParkingAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _robBtn;
