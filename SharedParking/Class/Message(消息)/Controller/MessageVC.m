@@ -13,6 +13,7 @@
 
 @interface MessageVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) MessageHeaderView *headerView;
+@property (nonatomic , strong) UIScrollView *scrollView;
 @property (nonatomic , strong) BaseTBView *tbView;
 @end
 
@@ -27,13 +28,23 @@
 
 - (void)initView{
     self.navigationItem.title = @"消息";
-    self.view.backgroundColor = kColorRandom;
     
     [self.view addSubview:self.headerView];
-    [self.view addSubview:self.tbView];
+    [self.view addSubview:self.scrollView];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    [self.scrollView addSubview:self.tbView];
     
 }
 
+#pragma mark ---------------event ---------------------/
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSInteger index = scrollView.contentOffset.x/kScreenWidth;
+    
+    self.headerView.selectedSegmentIndex = index;
+
+    
+}
 
 
 #pragma mark -------------tableView--delegate-------------/
@@ -74,16 +85,32 @@
     if (!_headerView) {
         _headerView = [[MessageHeaderView alloc]initWithItems:@[@"个人消息",@"活动通知"] frame:CGRectMake(0, 0, kScreenWidth, [MessageHeaderView defaultHeight])];
         _headerView.selectedSegmentIndex = 0;
+        kSelfWeak;
         _headerView.IndexChangeBlock = ^(NSInteger index) {
-            
+            kSelfStrong;
+            [strongSelf.scrollView setContentOffset:CGPointMake(kScreenWidth*index, 0) animated:YES];
         };
     }
     return _headerView;
 }
 
+- (UIScrollView *)scrollView{
+    if (!_scrollView) {
+        _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height - kTabBarHeight)];
+        _scrollView.contentSize = CGSizeMake(kScreenWidth*2, 0);
+        _scrollView.bounces = NO;
+        _scrollView.pagingEnabled = YES;
+        _scrollView.delegate = self;
+        _scrollView.tag = 200;
+        _scrollView.showsVerticalScrollIndicator = NO;
+        _scrollView.showsHorizontalScrollIndicator = NO;
+    }
+    return _scrollView;
+}
+
 - (BaseTBView *)tbView{
     if (!_tbView) {
-        _tbView = [[BaseTBView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height - kTabBarHeight) style:UITableViewStylePlain];
+        _tbView = [[BaseTBView alloc]initWithFrame:CGRectMake(0, 0, self.scrollView.width, self.scrollView.height) style:UITableViewStylePlain];
         _tbView.delegate = self;
         _tbView.dataSource = self;
         _tbView.rowHeight = 100;
@@ -93,6 +120,6 @@
         [_tbView registerClass:[MessageTBCell class] forCellReuseIdentifier:@"MessageTBCell"];
     }
     return _tbView;
-    return _tbView;
 }
+
 @end

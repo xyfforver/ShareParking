@@ -26,6 +26,8 @@
 		6B12C83A1FCFB0F600B819B4 /* ParkingOrderTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C8391FCFB0F600B819B4 /* ParkingOrderTimeView.m */; };
 		6B12C83D1FCFCFB300B819B4 /* MessageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C83C1FCFCFB300B819B4 /* MessageHeaderView.m */; };
 		6B12C8401FCFD6BF00B819B4 /* MessageTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C83F1FCFD6BF00B819B4 /* MessageTBCell.m */; };
+		6B12C8431FCFE09800B819B4 /* RechargeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C8421FCFE09800B819B4 /* RechargeVC.m */; };
+		6B12C8461FCFE12500B819B4 /* RechargeCLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C8451FCFE12500B819B4 /* RechargeCLCell.m */; };
 		6B1323581FB43DF300AB1840 /* MyRequestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323571FB43DF300AB1840 /* MyRequestVC.m */; };
 		6B13235B1FB43E4700AB1840 /* MyRequestRentHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */; };
 		6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323511FB43CF800AB1840 /* SettingVC.m */; };
@@ -215,6 +217,10 @@
 		6B12C83C1FCFCFB300B819B4 /* MessageHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageHeaderView.m; sourceTree = "<group>"; };
 		6B12C83E1FCFD6BF00B819B4 /* MessageTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageTBCell.h; sourceTree = "<group>"; };
 		6B12C83F1FCFD6BF00B819B4 /* MessageTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageTBCell.m; sourceTree = "<group>"; };
+		6B12C8411FCFE09800B819B4 /* RechargeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RechargeVC.h; sourceTree = "<group>"; };
+		6B12C8421FCFE09800B819B4 /* RechargeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RechargeVC.m; sourceTree = "<group>"; };
+		6B12C8441FCFE12500B819B4 /* RechargeCLCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RechargeCLCell.h; sourceTree = "<group>"; };
+		6B12C8451FCFE12500B819B4 /* RechargeCLCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RechargeCLCell.m; sourceTree = "<group>"; };
 		6B1323501FB43CF800AB1840 /* SettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		6B1323511FB43CF800AB1840 /* SettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		6B1323561FB43DF300AB1840 /* MyRequestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestVC.h; sourceTree = "<group>"; };
@@ -518,6 +524,8 @@
 				6B0AD31E1FB4309900F3D8E4 /* BalanceVC.m */,
 				6B0E80051FCBBD0200B2C309 /* PayRecordVC.h */,
 				6B0E80041FCBBD0100B2C309 /* PayRecordVC.m */,
+				6B12C8411FCFE09800B819B4 /* RechargeVC.h */,
+				6B12C8421FCFE09800B819B4 /* RechargeVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -531,6 +539,8 @@
 				6B0E800B1FCBBD1400B2C309 /* PayRecordScreenView.m */,
 				6B0E80071FCBBD1400B2C309 /* PayRecordTBCell.h */,
 				6B0E80081FCBBD1400B2C309 /* PayRecordTBCell.m */,
+				6B12C8441FCFE12500B819B4 /* RechargeCLCell.h */,
+				6B12C8451FCFE12500B819B4 /* RechargeCLCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1745,6 +1755,7 @@
 				6BCD979C1FB45481001F81A5 /* MyRequestRentCLCell.m in Sources */,
 				6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */,
 				6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */,
+				6B12C8431FCFE09800B819B4 /* RechargeVC.m in Sources */,
 				6B62C0C01FCEAEB2007F6861 /* CarportDetailShortCLView.m in Sources */,
 				6B62C0C41FCEAEB2007F6861 /* CarportDetailShortCLCell.m in Sources */,
 				6B1C4B411FA870C400D543D2 /* YJTagView.m in Sources */,
@@ -1780,6 +1791,7 @@
 				6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */,
 				6B0E801F1FCBF4C300B2C309 /* ReleaseDetailView.m in Sources */,
 				6B91B6AC1F9DEE0A00A1020C /* JMRefreshFooter.m in Sources */,
+				6B12C8461FCFE12500B819B4 /* RechargeCLCell.m in Sources */,
 				6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */,
 				6B1C4B2C1FA8070F00D543D2 /* GasStationModel.m in Sources */,
 				6B91B6AB1F9DEE0200A1020C /* ExtraParaManger.m in Sources */,

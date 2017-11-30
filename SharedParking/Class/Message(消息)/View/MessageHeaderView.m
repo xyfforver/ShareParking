@@ -69,7 +69,7 @@
 - (void)didSelectedSegment:(UIButton *)button
 {
     NSInteger index = button.tag - 100;
-    self.selectedSegmentIndex = index;
+//    self.selectedSegmentIndex = index;
     
     if (self.IndexChangeBlock) {
         self.IndexChangeBlock(index);

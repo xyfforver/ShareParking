@@ -8,7 +8,7 @@
 
 #import "BalanceVC.h"
 #import "PayRecordVC.h"
-
+#import "RechargeVC.h"
 @interface BalanceVC ()
 @property (nonatomic , strong) UIButton *iconBtn;
 @property (nonatomic , strong) UILabel *priceLab;
@@ -107,11 +107,11 @@
         kSelfWeak;
         [_rechangeBtn zzh_clickActionBlock:^(UIButton *button) {
             kSelfStrong;
-//            RechargeVC *vc = [[RechargeVC alloc]init];
-//            vc.rechangeBlock = ^{
-//                [strongSelf loadData];
-//            };
-//            [strongSelf.navigationController pushViewController:vc animated:YES];
+            RechargeVC *vc = [[RechargeVC alloc]init];
+            vc.rechangeBlock = ^{
+                [strongSelf loadData];
+            };
+            [strongSelf.navigationController pushViewController:vc animated:YES];
         }];
     }
     return _rechangeBtn;
