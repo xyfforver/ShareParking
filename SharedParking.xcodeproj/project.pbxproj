@@ -52,6 +52,7 @@
 		6B2AB9F81FD11AE00025D512 /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AB9F71FD11AE00025D512 /* JKCountDownButton.m */; };
 		6B2AB9FF1FD125800025D512 /* BindingPlatesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AB9FD1FD125800025D512 /* BindingPlatesVC.m */; };
 		6B2ABA001FD125800025D512 /* BindingPlatesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2AB9FE1FD125800025D512 /* BindingPlatesVC.xib */; };
+		6B2ABA031FD1317B0025D512 /* LoginReminderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2ABA021FD1317B0025D512 /* LoginReminderVC.m */; };
 		6B3189E91FA95DFF0063AC2F /* SearchHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189E81FA95DFF0063AC2F /* SearchHistoryView.m */; };
 		6B3189F01FA970130063AC2F /* FuelCounterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189EF1FA970130063AC2F /* FuelCounterVC.m */; };
 		6B3189F61FA973CA0063AC2F /* FuelAverageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189F51FA973CA0063AC2F /* FuelAverageView.m */; };
@@ -275,6 +276,8 @@
 		6B2AB9FC1FD125800025D512 /* BindingPlatesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindingPlatesVC.h; sourceTree = "<group>"; };
 		6B2AB9FD1FD125800025D512 /* BindingPlatesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindingPlatesVC.m; sourceTree = "<group>"; };
 		6B2AB9FE1FD125800025D512 /* BindingPlatesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindingPlatesVC.xib; sourceTree = "<group>"; };
+		6B2ABA011FD1317B0025D512 /* LoginReminderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginReminderVC.h; sourceTree = "<group>"; };
+		6B2ABA021FD1317B0025D512 /* LoginReminderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginReminderVC.m; sourceTree = "<group>"; };
 		6B3189E71FA95DFF0063AC2F /* SearchHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchHistoryView.h; sourceTree = "<group>"; };
 		6B3189E81FA95DFF0063AC2F /* SearchHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchHistoryView.m; sourceTree = "<group>"; };
 		6B3189EE1FA970130063AC2F /* FuelCounterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelCounterVC.h; sourceTree = "<group>"; };
@@ -744,6 +747,8 @@
 				6B2AB9FC1FD125800025D512 /* BindingPlatesVC.h */,
 				6B2AB9FD1FD125800025D512 /* BindingPlatesVC.m */,
 				6B2AB9FE1FD125800025D512 /* BindingPlatesVC.xib */,
+				6B2ABA011FD1317B0025D512 /* LoginReminderVC.h */,
+				6B2ABA021FD1317B0025D512 /* LoginReminderVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1848,6 +1853,7 @@
 				6B2AB9EF1FD0FDAF0025D512 /* LoginVC.m in Sources */,
 				6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */,
 				6B3189FC1FA9ABDD0063AC2F /* FuelAddVC.m in Sources */,
+				6B2ABA031FD1317B0025D512 /* LoginReminderVC.m in Sources */,
 				6B3189F01FA970130063AC2F /* FuelCounterVC.m in Sources */,
 				6B91B6AF1F9DEE3700A1020C /* StatusRecordListModel.m in Sources */,
 				6B91B6AE1F9DEE2600A1020C /* StatusModel.m in Sources */,

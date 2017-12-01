@@ -41,7 +41,8 @@
 
 #pragma mark ---------------event ---------------------/
 - (void)nextAction:(UIButton *)button{
-    
+    RootViewController *vc = [[RootViewController alloc] init];
+    UIApplication.sharedApplication.delegate.window.rootViewController = vc;
 }
 
 

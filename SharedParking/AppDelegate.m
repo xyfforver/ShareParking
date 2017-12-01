@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+LibConfig.h"
+#import "LoginReminderVC.h"
 @interface AppDelegate ()
 
 @end
@@ -20,8 +21,8 @@
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.rootVC = [[RootViewController alloc]init];
-    self.window.rootViewController = self.rootVC;
+    LoginReminderVC *vc = [[LoginReminderVC alloc]init];
+    self.window.rootViewController = vc;
     
     [self.window makeKeyAndVisible];
     

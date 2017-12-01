@@ -37,6 +37,8 @@
 - (void)initView{
     self.view.backgroundColor = kColorWhite;
     
+    [self initNavBackButton];
+    
     [self.view addSubview:self.loginView];
     [self.view addSubview:self.logoImgView];
 }
