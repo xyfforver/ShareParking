@@ -12,6 +12,7 @@
 #import "MyRequestVC.h"
 #import "MyReserveVC.h"
 #import "MyIssueVC.h"
+#import "LoginVC.h"
 
 #import "MineHeaderView.h"
 @interface MineVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -105,7 +106,9 @@
         ParkingRecordVC *vc = [[ParkingRecordVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 4){
-        SettingVC *vc = [[SettingVC alloc]init];
+//        SettingVC *vc = [[SettingVC alloc]init];
+//        [self.navigationController pushViewController:vc animated:YES];
+        LoginVC *vc = [[LoginVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     

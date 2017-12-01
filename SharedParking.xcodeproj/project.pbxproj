@@ -46,6 +46,12 @@
 		6B2549671FB6C0CF007ECE75 /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2549651FB6C0CF007ECE75 /* EditVC.xib */; };
 		6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B01FA70398001E86B4 /* GasStationVC.m */; };
 		6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B31FA71F4A001E86B4 /* GasStationInfoView.m */; };
+		6B2AB9EF1FD0FDAF0025D512 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AB9EE1FD0FDAF0025D512 /* LoginVC.m */; };
+		6B2AB9F21FD101540025D512 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AB9F11FD101540025D512 /* LoginView.m */; };
+		6B2AB9F51FD101F80025D512 /* LeftImageTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AB9F41FD101F80025D512 /* LeftImageTextField.m */; };
+		6B2AB9F81FD11AE00025D512 /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AB9F71FD11AE00025D512 /* JKCountDownButton.m */; };
+		6B2AB9FF1FD125800025D512 /* BindingPlatesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AB9FD1FD125800025D512 /* BindingPlatesVC.m */; };
+		6B2ABA001FD125800025D512 /* BindingPlatesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2AB9FE1FD125800025D512 /* BindingPlatesVC.xib */; };
 		6B3189E91FA95DFF0063AC2F /* SearchHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189E81FA95DFF0063AC2F /* SearchHistoryView.m */; };
 		6B3189F01FA970130063AC2F /* FuelCounterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189EF1FA970130063AC2F /* FuelCounterVC.m */; };
 		6B3189F61FA973CA0063AC2F /* FuelAverageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189F51FA973CA0063AC2F /* FuelAverageView.m */; };
@@ -258,6 +264,17 @@
 		6B26B6B01FA70398001E86B4 /* GasStationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasStationVC.m; sourceTree = "<group>"; };
 		6B26B6B21FA71F4A001E86B4 /* GasStationInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GasStationInfoView.h; sourceTree = "<group>"; };
 		6B26B6B31FA71F4A001E86B4 /* GasStationInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasStationInfoView.m; sourceTree = "<group>"; };
+		6B2AB9ED1FD0FDAF0025D512 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		6B2AB9EE1FD0FDAF0025D512 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		6B2AB9F01FD101540025D512 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		6B2AB9F11FD101540025D512 /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		6B2AB9F31FD101F80025D512 /* LeftImageTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftImageTextField.h; sourceTree = "<group>"; };
+		6B2AB9F41FD101F80025D512 /* LeftImageTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftImageTextField.m; sourceTree = "<group>"; };
+		6B2AB9F61FD11AE00025D512 /* JKCountDownButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
+		6B2AB9F71FD11AE00025D512 /* JKCountDownButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
+		6B2AB9FC1FD125800025D512 /* BindingPlatesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindingPlatesVC.h; sourceTree = "<group>"; };
+		6B2AB9FD1FD125800025D512 /* BindingPlatesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindingPlatesVC.m; sourceTree = "<group>"; };
+		6B2AB9FE1FD125800025D512 /* BindingPlatesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindingPlatesVC.xib; sourceTree = "<group>"; };
 		6B3189E71FA95DFF0063AC2F /* SearchHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchHistoryView.h; sourceTree = "<group>"; };
 		6B3189E81FA95DFF0063AC2F /* SearchHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchHistoryView.m; sourceTree = "<group>"; };
 		6B3189EE1FA970130063AC2F /* FuelCounterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelCounterVC.h; sourceTree = "<group>"; };
@@ -705,6 +722,48 @@
 				6B26B6B31FA71F4A001E86B4 /* GasStationInfoView.m */,
 				6B1C4B271FA804A600D543D2 /* CustomAnnotation.h */,
 				6B1C4B281FA804A600D543D2 /* CustomAnnotation.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B2AB9E91FD0FCA20025D512 /* Login(登录) */ = {
+			isa = PBXGroup;
+			children = (
+				6B2AB9EA1FD0FCA20025D512 /* Controller */,
+				6B2AB9EB1FD0FCA20025D512 /* Model */,
+				6B2AB9EC1FD0FCA20025D512 /* View */,
+			);
+			path = "Login(登录)";
+			sourceTree = "<group>";
+		};
+		6B2AB9EA1FD0FCA20025D512 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B2AB9ED1FD0FDAF0025D512 /* LoginVC.h */,
+				6B2AB9EE1FD0FDAF0025D512 /* LoginVC.m */,
+				6B2AB9FC1FD125800025D512 /* BindingPlatesVC.h */,
+				6B2AB9FD1FD125800025D512 /* BindingPlatesVC.m */,
+				6B2AB9FE1FD125800025D512 /* BindingPlatesVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B2AB9EB1FD0FCA20025D512 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B2AB9EC1FD0FCA20025D512 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B2AB9F01FD101540025D512 /* LoginView.h */,
+				6B2AB9F11FD101540025D512 /* LoginView.m */,
+				6B2AB9F31FD101F80025D512 /* LeftImageTextField.h */,
+				6B2AB9F41FD101F80025D512 /* LeftImageTextField.m */,
+				6B2AB9F61FD11AE00025D512 /* JKCountDownButton.h */,
+				6B2AB9F71FD11AE00025D512 /* JKCountDownButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1178,6 +1237,7 @@
 		6B91B67C1F9DE8AD00A1020C /* Mine(我的) */ = {
 			isa = PBXGroup;
 			children = (
+				6B2AB9E91FD0FCA20025D512 /* Login(登录) */,
 				6B968F511FBD5C920083A1DC /* CarNumber(车牌) */,
 				6BF95B6C1FB58EDE00DED0B7 /* MyIssue(我的发布) */,
 				6BF95B621FB5743C00DED0B7 /* MyReserve(我的预订) */,
@@ -1652,6 +1712,7 @@
 				6B91B6031F9DDB4000A1020C /* Assets.xcassets in Resources */,
 				6B62C0A91FCEAE23007F6861 /* CarportReserveVC.xib in Resources */,
 				6B3189F81FA974900063AC2F /* FuelAverageView.xib in Resources */,
+				6B2ABA001FD125800025D512 /* BindingPlatesVC.xib in Resources */,
 				6B91B6011F9DDB4000A1020C /* Main.storyboard in Resources */,
 				6B62C0AB1FCEAE23007F6861 /* ReserveSuccessVC.xib in Resources */,
 			);
@@ -1741,6 +1802,7 @@
 				6BF95B951FB5A00000DED0B7 /* UINavigationController+Block.m in Sources */,
 				6BF95B941FB59FFA00DED0B7 /* UIActionSheet+Block.m in Sources */,
 				6BF95B931FB59FF400DED0B7 /* MFMessageComposeViewController+Block.m in Sources */,
+				6B2AB9F21FD101540025D512 /* LoginView.m in Sources */,
 				6B62C0BF1FCEAEB2007F6861 /* CarportDetailRentTBView.m in Sources */,
 				6B62C0C11FCEAEB2007F6861 /* CarportDetailHeaderView.m in Sources */,
 				6BF95B921FB59FEF00DED0B7 /* MFMailComposeViewController+Block.m in Sources */,
@@ -1753,10 +1815,13 @@
 				6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */,
 				6BB1EE2E1FB43662003960F8 /* BalanceVC.m in Sources */,
 				6BCD979C1FB45481001F81A5 /* MyRequestRentCLCell.m in Sources */,
+				6B2AB9F51FD101F80025D512 /* LeftImageTextField.m in Sources */,
 				6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */,
 				6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */,
 				6B12C8431FCFE09800B819B4 /* RechargeVC.m in Sources */,
 				6B62C0C01FCEAEB2007F6861 /* CarportDetailShortCLView.m in Sources */,
+				6B2AB9FF1FD125800025D512 /* BindingPlatesVC.m in Sources */,
+				6B2AB9F81FD11AE00025D512 /* JKCountDownButton.m in Sources */,
 				6B62C0C41FCEAEB2007F6861 /* CarportDetailShortCLCell.m in Sources */,
 				6B1C4B411FA870C400D543D2 /* YJTagView.m in Sources */,
 				6BF95B6B1FB57D3100DED0B7 /* MyReserveItemView.m in Sources */,
@@ -1780,6 +1845,7 @@
 				6B62C09E1FCEADF5007F6861 /* CarportPayVC.m in Sources */,
 				6BB5CEA31FB9613000A2816F /* FuelCounterTBView.m in Sources */,
 				6B0E80061FCBBD0200B2C309 /* PayRecordVC.m in Sources */,
+				6B2AB9EF1FD0FDAF0025D512 /* LoginVC.m in Sources */,
 				6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */,
 				6B3189FC1FA9ABDD0063AC2F /* FuelAddVC.m in Sources */,
 				6B3189F01FA970130063AC2F /* FuelCounterVC.m in Sources */,
