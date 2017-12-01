@@ -15,6 +15,7 @@
 @property (nonatomic , strong) MessageHeaderView *headerView;
 @property (nonatomic , strong) UIScrollView *scrollView;
 @property (nonatomic , strong) BaseTBView *tbView;
+@property (nonatomic , strong) UIButton *activityBtn;
 @end
 
 @implementation MessageVC
@@ -34,6 +35,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self.scrollView addSubview:self.tbView];
+    [self.scrollView addSubview:self.activityBtn];
     
 }
 
@@ -120,6 +122,20 @@
         [_tbView registerClass:[MessageTBCell class] forCellReuseIdentifier:@"MessageTBCell"];
     }
     return _tbView;
+}
+
+- (UIButton *)activityBtn{
+    if (!_activityBtn) {
+        _activityBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_activityBtn setTitle:@"您还没有收到活动通知哟~" forState:UIControlStateNormal];
+        _activityBtn.titleLabel.font = kFontSize15;
+        [_activityBtn setTitleColor:kColorC1C1C1 forState:UIControlStateNormal];
+        [_activityBtn setImage:[UIImage imageNamed:@"message_null"] forState:UIControlStateNormal];
+        _activityBtn.frame = CGRectMake(kScreenWidth, (kBodyHeight - kScreenWidth)/2.0 - 50, kScreenWidth, kScreenWidth);
+        [_activityBtn lc_imageTitleVerticalAlignmentWithSpace:35];
+        
+    }
+    return _activityBtn;
 }
 
 @end

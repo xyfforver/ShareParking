@@ -53,8 +53,18 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    RechargeCLCell *cell = (RechargeCLCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.layer.borderColor = kColorDD9900.CGColor;
+    cell.titleLab.textColor = kColorDD9900;
+    cell.imgView.hidden = NO;
     
-    
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    RechargeCLCell *cell = (RechargeCLCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.layer.borderColor = kColorC1C1C1.CGColor;
+    cell.titleLab.textColor = kColorC1C1C1;
+    cell.imgView.hidden = YES;
 }
 
 #pragma mark ---------------Lazy-------------------------/

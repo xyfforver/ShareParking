@@ -8,7 +8,7 @@
 
 #import "RechargeCLCell.h"
 @interface RechargeCLCell ()
-@property (nonatomic , strong) UILabel *titleLab;
+
 @end
 
 @implementation RechargeCLCell
@@ -28,9 +28,14 @@
     self.layer.borderColor = kColorC1C1C1.CGColor;
     
     [self addSubview:self.titleLab];
+    [self addSubview:self.imgView];
     
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self);
+    }];
+    
+    [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.right.mas_equalTo(0);
     }];
     
     self.titleLab.text = @"100元";
@@ -47,5 +52,14 @@
         _titleLab.textAlignment = NSTextAlignmentCenter;
     }
     return _titleLab;
+}
+
+- (UIImageView *)imgView{
+    if (!_imgView) {
+        _imgView = [[UIImageView alloc]init];
+        _imgView.image = [UIImage imageNamed:@"recharge_select"];
+        _imgView.hidden = YES;
+    }
+    return _imgView;
 }
 @end

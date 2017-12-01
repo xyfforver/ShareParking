@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RechargeCLCell : UICollectionViewCell
+@property (nonatomic , strong) UILabel *titleLab;
+@property (nonatomic , strong) UIImageView *imgView;
 
 @end
