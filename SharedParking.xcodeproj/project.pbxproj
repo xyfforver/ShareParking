@@ -53,6 +53,13 @@
 		6B2AB9FF1FD125800025D512 /* BindingPlatesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AB9FD1FD125800025D512 /* BindingPlatesVC.m */; };
 		6B2ABA001FD125800025D512 /* BindingPlatesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2AB9FE1FD125800025D512 /* BindingPlatesVC.xib */; };
 		6B2ABA031FD1317B0025D512 /* LoginReminderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2ABA021FD1317B0025D512 /* LoginReminderVC.m */; };
+		6B2ABA161FD1514B0025D512 /* SGQRCodeScanningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2ABA151FD1514B0025D512 /* SGQRCodeScanningVC.m */; };
+		6B2ABA171FD152700025D512 /* UIImage+ImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2ABA071FD150B30025D512 /* UIImage+ImageSize.m */; };
+		6B2ABA181FD152700025D512 /* SGQRCodeAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2ABA0B1FD150B30025D512 /* SGQRCodeAlbumManager.m */; };
+		6B2ABA191FD152700025D512 /* SGQRCodeGenerateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2ABA0D1FD150B30025D512 /* SGQRCodeGenerateManager.m */; };
+		6B2ABA1A1FD152700025D512 /* SGQRCodeHelperTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2ABA0F1FD150B30025D512 /* SGQRCodeHelperTool.m */; };
+		6B2ABA1B1FD152700025D512 /* SGQRCodeScanManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2ABA111FD150B30025D512 /* SGQRCodeScanManager.m */; };
+		6B2ABA1C1FD152700025D512 /* SGQRCodeScanningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2ABA131FD150B30025D512 /* SGQRCodeScanningView.m */; };
 		6B3189E91FA95DFF0063AC2F /* SearchHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189E81FA95DFF0063AC2F /* SearchHistoryView.m */; };
 		6B3189F01FA970130063AC2F /* FuelCounterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189EF1FA970130063AC2F /* FuelCounterVC.m */; };
 		6B3189F61FA973CA0063AC2F /* FuelAverageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3189F51FA973CA0063AC2F /* FuelAverageView.m */; };
@@ -278,6 +285,22 @@
 		6B2AB9FE1FD125800025D512 /* BindingPlatesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindingPlatesVC.xib; sourceTree = "<group>"; };
 		6B2ABA011FD1317B0025D512 /* LoginReminderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginReminderVC.h; sourceTree = "<group>"; };
 		6B2ABA021FD1317B0025D512 /* LoginReminderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginReminderVC.m; sourceTree = "<group>"; };
+		6B2ABA061FD150B30025D512 /* UIImage+ImageSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageSize.h"; sourceTree = "<group>"; };
+		6B2ABA071FD150B30025D512 /* UIImage+ImageSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageSize.m"; sourceTree = "<group>"; };
+		6B2ABA081FD150B30025D512 /* SGQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SGQRCode.bundle; sourceTree = "<group>"; };
+		6B2ABA091FD150B30025D512 /* SGQRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGQRCode.h; sourceTree = "<group>"; };
+		6B2ABA0A1FD150B30025D512 /* SGQRCodeAlbumManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGQRCodeAlbumManager.h; sourceTree = "<group>"; };
+		6B2ABA0B1FD150B30025D512 /* SGQRCodeAlbumManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeAlbumManager.m; sourceTree = "<group>"; };
+		6B2ABA0C1FD150B30025D512 /* SGQRCodeGenerateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGQRCodeGenerateManager.h; sourceTree = "<group>"; };
+		6B2ABA0D1FD150B30025D512 /* SGQRCodeGenerateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeGenerateManager.m; sourceTree = "<group>"; };
+		6B2ABA0E1FD150B30025D512 /* SGQRCodeHelperTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGQRCodeHelperTool.h; sourceTree = "<group>"; };
+		6B2ABA0F1FD150B30025D512 /* SGQRCodeHelperTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeHelperTool.m; sourceTree = "<group>"; };
+		6B2ABA101FD150B30025D512 /* SGQRCodeScanManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGQRCodeScanManager.h; sourceTree = "<group>"; };
+		6B2ABA111FD150B30025D512 /* SGQRCodeScanManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeScanManager.m; sourceTree = "<group>"; };
+		6B2ABA121FD150B30025D512 /* SGQRCodeScanningView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGQRCodeScanningView.h; sourceTree = "<group>"; };
+		6B2ABA131FD150B30025D512 /* SGQRCodeScanningView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeScanningView.m; sourceTree = "<group>"; };
+		6B2ABA141FD1514B0025D512 /* SGQRCodeScanningVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGQRCodeScanningVC.h; sourceTree = "<group>"; };
+		6B2ABA151FD1514B0025D512 /* SGQRCodeScanningVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeScanningVC.m; sourceTree = "<group>"; };
 		6B3189E71FA95DFF0063AC2F /* SearchHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchHistoryView.h; sourceTree = "<group>"; };
 		6B3189E81FA95DFF0063AC2F /* SearchHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchHistoryView.m; sourceTree = "<group>"; };
 		6B3189EE1FA970130063AC2F /* FuelCounterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelCounterVC.h; sourceTree = "<group>"; };
@@ -773,6 +796,35 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6B2ABA041FD150B30025D512 /* SGQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				6B2ABA051FD150B30025D512 /* Category */,
+				6B2ABA081FD150B30025D512 /* SGQRCode.bundle */,
+				6B2ABA091FD150B30025D512 /* SGQRCode.h */,
+				6B2ABA0A1FD150B30025D512 /* SGQRCodeAlbumManager.h */,
+				6B2ABA0B1FD150B30025D512 /* SGQRCodeAlbumManager.m */,
+				6B2ABA0C1FD150B30025D512 /* SGQRCodeGenerateManager.h */,
+				6B2ABA0D1FD150B30025D512 /* SGQRCodeGenerateManager.m */,
+				6B2ABA0E1FD150B30025D512 /* SGQRCodeHelperTool.h */,
+				6B2ABA0F1FD150B30025D512 /* SGQRCodeHelperTool.m */,
+				6B2ABA101FD150B30025D512 /* SGQRCodeScanManager.h */,
+				6B2ABA111FD150B30025D512 /* SGQRCodeScanManager.m */,
+				6B2ABA121FD150B30025D512 /* SGQRCodeScanningView.h */,
+				6B2ABA131FD150B30025D512 /* SGQRCodeScanningView.m */,
+			);
+			path = SGQRCode;
+			sourceTree = "<group>";
+		};
+		6B2ABA051FD150B30025D512 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6B2ABA061FD150B30025D512 /* UIImage+ImageSize.h */,
+				6B2ABA071FD150B30025D512 /* UIImage+ImageSize.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		6B3189EA1FA96FB10063AC2F /* Fuel(油耗) */ = {
 			isa = PBXGroup;
 			children = (
@@ -891,6 +943,7 @@
 		6B62C08C1FCEAD76007F6861 /* QRCode(扫一扫) */ = {
 			isa = PBXGroup;
 			children = (
+				6B2ABA041FD150B30025D512 /* SGQRCode */,
 				6B62C08D1FCEAD76007F6861 /* Controller */,
 				6B62C08E1FCEAD76007F6861 /* Model */,
 				6B62C08F1FCEAD76007F6861 /* View */,
@@ -901,6 +954,8 @@
 		6B62C08D1FCEAD76007F6861 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6B2ABA141FD1514B0025D512 /* SGQRCodeScanningVC.h */,
+				6B2ABA151FD1514B0025D512 /* SGQRCodeScanningVC.m */,
 				6B62C0A61FCEAE23007F6861 /* CarportReserveVC.h */,
 				6B62C0A21FCEAE23007F6861 /* CarportReserveVC.m */,
 				6B62C0A31FCEAE23007F6861 /* CarportReserveVC.xib */,
@@ -1792,6 +1847,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2ABA171FD152700025D512 /* UIImage+ImageSize.m in Sources */,
+				6B2ABA181FD152700025D512 /* SGQRCodeAlbumManager.m in Sources */,
+				6B2ABA191FD152700025D512 /* SGQRCodeGenerateManager.m in Sources */,
+				6B2ABA1A1FD152700025D512 /* SGQRCodeHelperTool.m in Sources */,
+				6B2ABA1B1FD152700025D512 /* SGQRCodeScanManager.m in Sources */,
+				6B2ABA1C1FD152700025D512 /* SGQRCodeScanningView.m in Sources */,
 				6B0E80141FCBCE6700B2C309 /* PayRecordGroupModel.m in Sources */,
 				6B0E80151FCBCE6700B2C309 /* PayRecordModel.m in Sources */,
 				6B0E80161FCBCE6700B2C309 /* PayRecordHeaderView.m in Sources */,
@@ -1887,6 +1948,7 @@
 				6B968F571FBD5CB60083A1DC /* CarNumberListVC.m in Sources */,
 				6B3189E91FA95DFF0063AC2F /* SearchHistoryView.m in Sources */,
 				6B968F711FBD725D0083A1DC /* FindBreakRulesVC.m in Sources */,
+				6B2ABA161FD1514B0025D512 /* SGQRCodeScanningVC.m in Sources */,
 				6B339F311FA4787900B52FB0 /* ParkingSpaceTBView.m in Sources */,
 				6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */,
 				6B0E801C1FCBEBEF00B2C309 /* JMTitleSelectView.m in Sources */,
