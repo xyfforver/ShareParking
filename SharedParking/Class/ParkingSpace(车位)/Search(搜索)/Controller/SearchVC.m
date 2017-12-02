@@ -8,7 +8,7 @@
 
 #import "SearchVC.h"
 #import "SearchHistoryView.h"
-
+#import "SearchModel.h"
 
 @interface SearchVC ()<UISearchBarDelegate>
 @property (nonatomic,strong) UIView *navigationBar;
@@ -28,7 +28,8 @@
     [super viewDidLoad];
     
     [self initView];
-
+    
+    [self loadData];
 }
 
 - (void)initView{
@@ -45,7 +46,11 @@
 
 
 #pragma mark ---------------NetWork-------------------------/
-
+- (void)loadData{
+    [SearchModel searchWithTitle:@"" success:^(StatusModel *statusModel) {
+        
+    }];
+}
 
 #pragma mark ---------------Event-------------------------/
 - (void)cancelButtonAction:(UIButton *)button{

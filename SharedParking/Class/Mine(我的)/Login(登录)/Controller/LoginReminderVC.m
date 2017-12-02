@@ -55,7 +55,7 @@
             img.image = [UIImage imageNamed:[NSString stringWithFormat:@"qidong%d",i]];
             img.userInteractionEnabled=YES;
             if(i==4){
-                UITapGestureRecognizer *singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(initView)];
+                UITapGestureRecognizer *singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(isLogin)];
                 singleRecognizer.numberOfTapsRequired = 1; // 单击
                 [img addGestureRecognizer:singleRecognizer];
             }
@@ -64,12 +64,12 @@
         
     }else{
 #pragma mark - 进开屏页面,并搭建正常页面
-        [self initView];
+        [self isLogin];
     }
     
 }
 
-- (void)initView{
+- (void)isLogin{
     if(startScroll){
         CGRect frame = startScroll.frame;
         frame.origin.y = kScreenHeight;
@@ -82,7 +82,15 @@
         }];
     }
     
-    
+    if (GetDataManager.isLogin) {
+        [self visitorAction];
+    }else{
+        [self initView];
+    }
+}
+
+- (void)initView{
+
     self.view.backgroundColor = kColorWhite;
     
     [self.view addSubview:self.logoImgView];
@@ -96,16 +104,18 @@
 
 
 #pragma mark ---------------Event-------------------------/
-- (void)visitorAction:(UIButton *)button{
-    
-//    [UIView animateWithDuration:0.5 animations:^{
-        RootViewController *vc = [[RootViewController alloc] init];
-        UIApplication.sharedApplication.delegate.window.rootViewController = vc;
-//    }];
+- (void)visitorAction{
+    RootViewController *vc = [[RootViewController alloc] init];
+    UIApplication.sharedApplication.delegate.window.rootViewController = vc;
 }
 
 - (void)loginAction:(UIButton *)button{
     LoginVC *vc = [[LoginVC alloc]init];
+    kSelfWeak;
+    vc.completionBack = ^{
+        kSelfStrong;
+        [strongSelf visitorAction];
+    };
     JKNavigationController *loginNav = [[JKNavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:loginNav animated:YES completion:nil];
 }
@@ -127,7 +137,7 @@
         _visitorBtn.titleLabel.font = kFontSize15;
         [_visitorBtn setTitleColor:kColor333333 forState:UIControlStateNormal];
         [_visitorBtn setImage:[UIImage imageNamed:@"login_visitor"] forState:UIControlStateNormal];
-        [_visitorBtn addTarget:self action:@selector(visitorAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_visitorBtn addTarget:self action:@selector(visitorAction) forControlEvents:UIControlEventTouchUpInside];
         _visitorBtn.frame = CGRectMake((kScreenWidth - 100 * 2 - 70)/2.0, self.logoImgView.bottom + 100, 100, 120);
         [_visitorBtn lc_imageTitleVerticalAlignmentWithSpace:20];
     }

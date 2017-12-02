@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface BindingPlatesVC : BaseViewController
-
+@property (nonatomic, copy) dispatch_block_t completionBack;
 @end

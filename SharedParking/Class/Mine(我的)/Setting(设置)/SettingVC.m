@@ -51,6 +51,28 @@
     self.view.userInteractionEnabled = NO;
     self.fd_interactivePopDisabled = YES;
     [WSProgressHUD show];
+    
+    [UserModel logoutSuccess:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kAutoLogin];
+            [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kLingBaoUser];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            GetDataManager.isLogin = NO;
+            //退出登陆
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccessNotification object:nil];
+            [strongSelf backToSuperView];
+            [WSProgressHUD dismiss];
+            strongSelf.fd_interactivePopDisabled = NO;
+        }else{
+            strongSelf.view.userInteractionEnabled = YES;
+            [WSProgressHUD showImage:nil status:@"退出失败"];
+            strongSelf.fd_interactivePopDisabled = NO;
+        }
+    }];
+    
+    
+    
     [GetDataManager logOutSuccessBlock:^{
         kSelfStrong;
         //退出登陆，不再发送统计信息

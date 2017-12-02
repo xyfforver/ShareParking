@@ -8,6 +8,8 @@
 
 #import "LoginVC.h"
 #import "LoginView.h"
+
+#import "BindingPlatesVC.h"
 @interface LoginVC ()<UIScrollViewDelegate>
 
 @property (nonatomic , strong) LoginView *loginView;
@@ -44,16 +46,51 @@
 }
 
 #pragma mark ---------------NetWork-------------------------/
-
+- (void)loginData:(NSString *)tel code:(NSString *)code{
+    kSelfWeak;
+    [UserModel loginWithPhoneNum:tel codeNum:code success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        [WSProgressHUD showImage:nil status:statusModel.message];
+        
+        if (statusModel.flag == kFlagSuccess) {
+            NSInteger isBinding = (NSInteger)statusModel.data;
+            
+            [[NSUserDefaults standardUserDefaults] setObject:tel forKey:kLingBaoUser];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kAutoLogin];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            if (isBinding) {
+                // 成功回调
+                [strongSelf loginSuccess];
+            }else{
+                BindingPlatesVC *vc = [[BindingPlatesVC alloc]init];
+                vc.completionBack = ^{
+                    [strongSelf loginSuccess];
+                };
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }
+    }];
+}
 
 #pragma mark ---------------Event-------------------------/
-
+- (void)loginSuccess{
+    if (self.completionBack) {
+        [self dismissViewControllerAnimated:YES completion:self.completionBack];
+    } else{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
 
 #pragma mark ---------------Lazy-------------------------/
 - (LoginView *)loginView{
     if (!_loginView) {
         _loginView = [[LoginView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 660/750.0*kScreenWidth)];
-        
+        kSelfWeak;
+        _loginView.loginBlock = ^(NSString *tel, NSString *code) {
+            kSelfStrong;
+            [strongSelf loginData:tel code:code];
+        };
     }
     return _loginView;
 }

@@ -10,4 +10,6 @@
 
 @interface LoginView : UIView
 
+@property (nonatomic , copy) void(^loginBlock)(NSString *tel , NSString *code);
+
 @end

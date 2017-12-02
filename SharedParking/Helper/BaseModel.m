@@ -178,6 +178,7 @@ static dispatch_once_t userOnceToken;
                                       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                                           NSDictionary *dic = [self getErrorDictionary:error];
                                           DLog(@"%@", error);
+
                                           if (completionBlock)
                                           {
                                               completionBlock(dic);
@@ -204,5 +205,21 @@ static dispatch_once_t userOnceToken;
     }
 }
 
+- (void)textDemo{
+    NSURL *url = [NSURL URLWithString:@"http://park.1mxtx.com/index/app/usermeta"];
+    //2.构建http请求
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    //设置请求方式
+    [request setHTTPMethod:@"POST"];
+    //设置请求的超时时间
+    [request setTimeoutInterval:60];
+    
+    
+    NSHTTPURLResponse *response = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                         returningResponse:&response
+                                                     error:nil];
+    NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+}
 @end
 

@@ -149,53 +149,14 @@ NSString *const kUserModelUpdatedNotification = @"UserModelUpdatedNotification";
     [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccessNotification object:nil];
 }
 
-#pragma mark- 更新用户信息
-- (void)updateUserInfoSuccessBlock:(void (^)(void))success fail:(void (^)(void))fail
-{
-    //    kSelfWeak;
-    //    [[UserHttpManager sharedUserHttpManager] modifyUserInfo:@{@"token":self.token} block:^(NSDictionary *json_dic, NSError *error) {
-    //        kSelfStrong;
-    //        StatusModel *statusModel = [StatusModel statusModelWithKeyValues:json_dic class:[UserModel class] error:error];
-    //        if (statusModel.flag == kFlagSuccess) {
-    //            UserModel *uModel = statusModel.data;
-    //            if (uModel) {
-    //                // 设置新model token赋值
-    //                uModel.token = strongSelf.userModel.token;
-    //                strongSelf.userModel = uModel;
-    //            }
-    //
-    //            // 调用block
-    //            if (success) {
-    //                success();
-    //            }
-    //
-    //        } else {
-    //            if (fail) {
-    //                fail();
-    //            }
-    //        }
-    //
-    //        // 通知其他页面刷新:不管是否更新成功，都应该发出这个通知
-    //        [[NSNotificationCenter defaultCenter] postNotificationName:kUserModelUpdatedNotification object:nil];
-    //    }];
-}
-
 #pragma mark- 自动登录
 - (void)autoLogin{
-    NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:kUserIdKey];
     BOOL autoLogin = [[[NSUserDefaults standardUserDefaults] objectForKey:kAutoLogin] boolValue];
     
-    if (![NSString isNull:userId] && autoLogin) {
-        NSString *where = [NSString stringWithFormat:@"userid = '%@'",userId];
-        UserModel *userModel = [UserModel searchSingleWithWhere:where orderBy:nil];
-        
-        if (userModel) {
-            self.userModel = userModel;
-            self.isLogin = YES;
-            //            [self configLibraryParams];
-            // 5 发送通知
-            [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccessNotification object:nil];
-        }
+    if (autoLogin) {
+        self.isLogin = YES;
+        // 发送通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccessNotification object:nil];
     }
 }
 

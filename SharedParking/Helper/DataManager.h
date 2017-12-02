@@ -56,8 +56,6 @@ FOUNDATION_EXPORT NSString *const kUserModelBalanceChangedNotification;
 // 自动登录
 - (void)autoLogin;
 
-- (void)updateUserInfoSuccessBlock:(void (^)(void))success fail:(void (^)(void))fail;
-
 - (void)logOutSuccessBlock:(void (^)(void))success fail:(void(^)(void))fail;
 @end
 

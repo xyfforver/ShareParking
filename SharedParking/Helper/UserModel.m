@@ -46,6 +46,10 @@
     [self postWithStatusModelResponsePath:@"usermeta" params:nil onCompletion:success];
 }
 
+//退出登录
++ (void)logoutSuccess:(NetCompletionBlock)success{
+    [self postWithStatusModelResponsePath:@"logout" params:nil onCompletion:success];
+}
 
 + (void)loginWithAccount:(NSString *)account password:(NSString *)password success:(NetCompletionBlock)success
 {

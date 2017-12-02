@@ -21,6 +21,8 @@
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
+    [GetDataManager autoLogin];//自动登录
+    
     LoginReminderVC *vc = [[LoginReminderVC alloc]init];
     self.window.rootViewController = vc;
     

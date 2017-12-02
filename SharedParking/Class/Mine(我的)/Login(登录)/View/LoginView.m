@@ -10,7 +10,6 @@
 #import "LeftImageTextField.h"
 #import "JKCountDownButton.h"
 
-#import "BindingPlatesVC.h"
 @interface LoginView ()<UITextFieldDelegate>
 @property (nonatomic , strong) UIImageView *imgView;
 @property (nonatomic , strong) LeftImageTextField *telField;
@@ -46,22 +45,7 @@
 }
 
 #pragma mark ---------------network ---------------------/
-- (void)loginData{
-    kSelfWeak;
-    [UserModel loginWithPhoneNum:self.telField.text codeNum:self.codeField.text success:^(StatusModel *statusModel) {
-        kSelfStrong;
-        if (statusModel.flag == kFlagSuccess) {
-            UserModel *user = statusModel.data;
-            user.tel = strongSelf.telField.text;
-            [WSProgressHUD dismiss];
-            
-//            [strongSelf pushToWhichTheController:user thindType:nil];
-        }else {
-            [WSProgressHUD showImage:nil status:statusModel.message];
-        }
-    }];
-    
-}
+
 
 #pragma mark ---------------event ---------------------/
 - (void)getCodeNum{
@@ -94,9 +78,10 @@
         return;
     }
     
-    [self loginData];
-//    BindingPlatesVC *vc = [[BindingPlatesVC alloc]init];
-//    [self.Controller.navigationController pushViewController:vc animated:YES];
+    if (self.loginBlock) {
+        self.loginBlock(self.telField.text, self.codeField.text);
+    }
+    
 }
 
 #pragma mark -----------------Lazy---------------------/
@@ -122,8 +107,8 @@
         _telField.leftImageView.image = [UIImage imageNamed:@"login_tel"];
         _telField.delegate = self;
         _telField.rightViewMode = UITextFieldViewModeWhileEditing;
-//        NSString *phone = [[NSUserDefaults standardUserDefaults] objectForKey:kJuTaoUser];
-//        _telField.text = phone;
+        NSString *phone = [[NSUserDefaults standardUserDefaults] objectForKey:kLingBaoUser];
+        _telField.text = phone;
         _telField.backgroundColor = RGB(255, 255, 255, 0.6);
         _telField.textColor = kColor333333;
         _telField.layer.cornerRadius = 20;
