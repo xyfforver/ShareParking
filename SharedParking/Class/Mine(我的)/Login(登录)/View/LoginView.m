@@ -45,14 +45,58 @@
     
 }
 
-#pragma mark ---------------event ---------------------/
-- (void)getCodeNum{
+#pragma mark ---------------network ---------------------/
+- (void)loginData{
+    kSelfWeak;
+    [UserModel loginWithPhoneNum:self.telField.text codeNum:self.codeField.text success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            UserModel *user = statusModel.data;
+            user.tel = strongSelf.telField.text;
+            [WSProgressHUD dismiss];
+            
+//            [strongSelf pushToWhichTheController:user thindType:nil];
+        }else {
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+    }];
     
 }
 
+#pragma mark ---------------event ---------------------/
+- (void)getCodeNum{
+    if(![self.telField.text isTel]){
+        [WSProgressHUD showImage:nil status:@"请输入正确手机号"];
+        return;
+    }
+    
+    [self.getCodeBtn showActivity];
+    kSelfWeak;
+    [UserModel getCodeWithPhoneNum:self.telField.text success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            [strongSelf.getCodeBtn start];
+        }else{
+            [strongSelf.getCodeBtn stop];
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+    }];
+}
+
 - (void)loginAction:(UIButton *)button{
-    BindingPlatesVC *vc = [[BindingPlatesVC alloc]init];
-    [self.Controller.navigationController pushViewController:vc animated:YES];
+    if(![self.telField.text isTel]){
+        [WSProgressHUD showImage:nil status:@"请输入正确手机号"];
+        return;
+    }
+    
+    if (self.codeField.text.length < 3) {
+        [WSProgressHUD showImage:nil status:@"请输入正确的验证码"];
+        return;
+    }
+    
+    [self loginData];
+//    BindingPlatesVC *vc = [[BindingPlatesVC alloc]init];
+//    [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -----------------Lazy---------------------/
@@ -74,7 +118,7 @@
         NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"您的手机号" attributes: @{NSForegroundColorAttributeName:kColor6B6B6B,
                                             NSFontAttributeName:_telField.font}];
         _telField.attributedPlaceholder = attrString;
-        _telField.keyboardType = UIKeyboardTypeASCIICapable;
+        _telField.keyboardType = UIKeyboardTypeNumberPad;
         _telField.leftImageView.image = [UIImage imageNamed:@"login_tel"];
         _telField.delegate = self;
         _telField.rightViewMode = UITextFieldViewModeWhileEditing;
@@ -95,7 +139,7 @@
         NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"请输入密码" attributes: @{NSForegroundColorAttributeName:kColor6B6B6B,
                              NSFontAttributeName:_codeField.font}];
         _codeField.attributedPlaceholder = attrString;
-        _codeField.keyboardType = UIKeyboardTypeDefault;
+        _codeField.keyboardType = UIKeyboardTypeNumberPad;
         _codeField.secureTextEntry = YES;
         _codeField.leftImageView.image = [UIImage imageNamed:@"login_code"];
         _codeField.delegate = self;

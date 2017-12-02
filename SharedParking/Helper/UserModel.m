@@ -21,6 +21,31 @@
 //{
 //    return @"id";
 //}
+//登录
++ (void)loginWithPhoneNum:(NSString *)phoneNum codeNum:(NSString *)codeNum success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(phoneNum, @"user_mobile");
+    DicObjectSet(codeNum, @"yzm");
+    [self postWithStatusModelResponsePath:@"login" params:ParamsDic onCompletion:success];
+}
+
+//获取验证码
++ (void)getCodeWithPhoneNum:(NSString *)phoneNum success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(phoneNum, @"user_mobile");
+    [self postWithJSONResponsePath:@"sendsms_login" params:ParamsDic onCompletion:^(NSDictionary *jsonDic) {
+        StatusModel *statusModel = [StatusModel statusModelWithKeyValues:jsonDic];
+        if (success) {
+            success(statusModel);
+        }
+    }];
+}
+
+//个人中心
++ (void)getMineDataSuccess:(NetCompletionBlock)success{
+    [self postWithStatusModelResponsePath:@"usermeta" params:nil onCompletion:success];
+}
+
 
 + (void)loginWithAccount:(NSString *)account password:(NSString *)password success:(NetCompletionBlock)success
 {

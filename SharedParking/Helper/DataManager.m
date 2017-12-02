@@ -9,13 +9,16 @@
 #import "DataManager.h"
 #import "UserModel.h"
 #import "StatusModel.h"
+//#import "FXKeychain.h"
 
 NSString *const kLoginSuccessNotification = @"LoginSuccessNotification";
 NSString *const kLogoutSuccessNotification = @"LogoutSuccessNotification";
 NSString *const kUserModelUpdatedNotification = @"UserModelUpdatedNotification";
 
-#define kUserKey @"qiqileSeller"
-#define kAutoLogin @"aotuLogin"
+#define kUserKey @"yimaxingtianxia"
+#define kUserIdKey @"yimaxingtianxiaUserId"
+
+
 
 @implementation DataManager
 
@@ -32,22 +35,82 @@ NSString *const kUserModelUpdatedNotification = @"UserModelUpdatedNotification";
     return sharedManager;
 }
 #pragma mark -  用户属性相关
+- (UserModel *)userModel{
+    if (!_userModel) {
+        _userModel = [[UserModel alloc] init];
+    }
+    
+    return _userModel;
+}
+
+- (NSString *)userid
+{
+    return [NSString isNull:self.userModel.userid]?nil:self.userModel.userid;
+}
+
+- (NSString *)cname
+{
+    return [NSString isNull:self.userModel.cname]?@"":self.userModel.cname;
+}
+
+- (NSString *)sex
+{
+    return [NSString isNull:self.userModel.sex]?@"":self.userModel.sex;
+}
+
+- (NSString *)token
+{
+    return [NSString isNull:self.userModel.token]?nil:self.userModel.token;
+}
+
+- (NSString *)icon
+{
+    return [NSString isNull:self.userModel.icon]?@"":self.userModel.icon;
+}
+
+- (NSString *)tel
+{
+    return [NSString isNull:self.userModel.tel]?@"":self.userModel.tel;
+}
+
+- (NSString *)thindType
+{
+    return [NSString isNull:self.userModel.thindType]?@"":self.userModel.thindType;
+}
+
+- (NSString *)openId
+{
+    return [NSString isNull:self.userModel.openId]?@"":self.userModel.openId;
+}
+
+- (BOOL)isbinding
+{
+    return self.userModel.isbinding ? self.userModel.isbinding:NO;
+}
+
+- (NSString *)longitude{
+    return [NSString stringWithFormat:@"%f",self.geoCodeResult.location.longitude];
+}
+
+- (NSString *)latitude{
+    return [NSString stringWithFormat:@"%f",self.geoCodeResult.location.latitude];
+}
 
 #pragma mark- 登录成功
 - (void)loginSucceedWithModel:(UserModel *)userModel;
 {
     self.userModel = userModel;
     self.token = userModel.token;
+    self.cname = userModel.cname;
+    self.icon = userModel.icon;
+    self.tel = userModel.tel;
     self.isLogin = YES;
-//    [self configLibraryParams];
+    //    [self configLibraryParams];
     
-    NSString *account = GetDataManager.account;
-
-    [[NSUserDefaults standardUserDefaults] setObject:account forKey:kUserKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-
-    
+    [[NSUserDefaults standardUserDefaults] setObject:GetDataManager.tel forKey:kLingBaoUser];
+    [[NSUserDefaults standardUserDefaults] setObject:GetDataManager.userid forKey:kUserIdKey];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kAutoLogin];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.userModel saveToDB];
     
@@ -58,67 +121,83 @@ NSString *const kUserModelUpdatedNotification = @"UserModelUpdatedNotification";
 - (void)logOutSuccessBlock:(void (^)(void))success fail:(void(^)(void))fail
 {
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kAutoLogin];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kUserIdKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+//    [UserModel bindRegistrationID:@"" success:^(StatusModel *statusModel) {
+//
+//    }];
     
     // 1 清除相关信息
     GetDataManager.isLogin = NO;
-    GetDataManager.id = nil;
+    GetDataManager.userid = nil;
     GetDataManager.userModel = nil;
     GetDataManager.token = nil;
+    GetDataManager.cname = nil;
+    GetDataManager.icon = nil;
+    GetDataManager.tel = nil;
     
     //释放数据库资源
     [BaseModel releaseLKDBHelp];
+    
+    // 调用block
+    if (success) {
+        success();
+    }
+    
+    // 3 消息通知退出登录
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccessNotification object:nil];
 }
 
 #pragma mark- 更新用户信息
 - (void)updateUserInfoSuccessBlock:(void (^)(void))success fail:(void (^)(void))fail
 {
-//    kSelfWeak;
-//    [[UserHttpManager sharedUserHttpManager] modifyUserInfo:@{@"token":self.token} block:^(NSDictionary *json_dic, NSError *error) {
-//        kSelfStrong;
-//        StatusModel *statusModel = [StatusModel statusModelWithKeyValues:json_dic class:[UserModel class] error:error];
-//        if (statusModel.flag == kFlagSuccess) {
-//            UserModel *uModel = statusModel.data;
-//            if (uModel) {
-//                // 设置新model token赋值
-//                uModel.token = strongSelf.userModel.token;
-//                strongSelf.userModel = uModel;
-//            }
-//            
-//            // 调用block
-//            if (success) {
-//                success();
-//            }
-//
-//        } else {
-//            if (fail) {
-//                fail();
-//            }
-//        }
-//        
-//        // 通知其他页面刷新:不管是否更新成功，都应该发出这个通知
-//        [[NSNotificationCenter defaultCenter] postNotificationName:kUserModelUpdatedNotification object:nil];
-//    }];
+    //    kSelfWeak;
+    //    [[UserHttpManager sharedUserHttpManager] modifyUserInfo:@{@"token":self.token} block:^(NSDictionary *json_dic, NSError *error) {
+    //        kSelfStrong;
+    //        StatusModel *statusModel = [StatusModel statusModelWithKeyValues:json_dic class:[UserModel class] error:error];
+    //        if (statusModel.flag == kFlagSuccess) {
+    //            UserModel *uModel = statusModel.data;
+    //            if (uModel) {
+    //                // 设置新model token赋值
+    //                uModel.token = strongSelf.userModel.token;
+    //                strongSelf.userModel = uModel;
+    //            }
+    //
+    //            // 调用block
+    //            if (success) {
+    //                success();
+    //            }
+    //
+    //        } else {
+    //            if (fail) {
+    //                fail();
+    //            }
+    //        }
+    //
+    //        // 通知其他页面刷新:不管是否更新成功，都应该发出这个通知
+    //        [[NSNotificationCenter defaultCenter] postNotificationName:kUserModelUpdatedNotification object:nil];
+    //    }];
 }
 
 #pragma mark- 自动登录
-- (void)autoLogin
-{
+- (void)autoLogin{
+    NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:kUserIdKey];
     BOOL autoLogin = [[[NSUserDefaults standardUserDefaults] objectForKey:kAutoLogin] boolValue];
-    if (autoLogin) {
-        NSString *account = [[NSUserDefaults standardUserDefaults] objectForKey:kUserKey];
+    
+    if (![NSString isNull:userId] && autoLogin) {
+        NSString *where = [NSString stringWithFormat:@"userid = '%@'",userId];
+        UserModel *userModel = [UserModel searchSingleWithWhere:where orderBy:nil];
         
-        [UserModel loginWithAccount:account password:nil success:^(StatusModel *statusModel) {
-            if (statusModel.flag == kFlagSuccess) {
-                UserModel *userModel = statusModel.data;
-                self.account = account;
-                self.id = userModel.id;
-                [self loginSucceedWithModel:userModel];
-            } else {
-                
-            }
-        }];
+        if (userModel) {
+            self.userModel = userModel;
+            self.isLogin = YES;
+            //            [self configLibraryParams];
+            // 5 发送通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccessNotification object:nil];
+        }
     }
 }
 
 @end
+

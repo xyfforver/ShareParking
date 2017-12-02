@@ -25,6 +25,12 @@
 
 @implementation MineVC
 #pragma mark ---------------LifeCycle-------------------------/
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self loadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -47,6 +53,12 @@
                       @{kImgKey:@"mine_record",kTitleKey:@"停车记录"},
                       @{kImgKey:@"mine_set",kTitleKey:@"设置"}];
     
+}
+
+- (void)loadData{
+    [UserModel getMineDataSuccess:^(StatusModel *statusModel) {
+        
+    }];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

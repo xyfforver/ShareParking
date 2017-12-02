@@ -2,17 +2,17 @@
 //  StatusModel.m
 //  EasyGo
 //
-//  Created by 徐佳琦 on 16/5/11.
+//  Created by Jammy on 16/5/11.
 //  Copyright © 2016年 Jackie. All rights reserved.
 //
 
 #import "StatusModel.h"
 
 /// 加载成功
-NSInteger const kFlagSuccess = 0;
+NSInteger const kFlagSuccess = 200;
 
 /// 加载失败
-NSInteger const kFlagFailure = 9999;
+NSInteger const kFlagFailure = 401;
 
 //网络超时
 NSInteger const kFlagNetTimeOutFlag = -250;
@@ -33,12 +33,13 @@ NSInteger const  kPageSize = 10;
 - (NSInteger)flag
 {
     NSInteger flag = kFlagFailure;
-    if ([self.returnCode isEqualToString:@"0000"] || [self.returnCode isEqualToString:@"success"]) {
+    if ([self.code isEqualToString:@"200"] || [self.code isEqualToString:@"查询成功"]) {
         flag = kFlagSuccess;
     } else {
-        flag = [self.returnCode integerValue];
+        flag = [self.code integerValue];
     }
     return flag;
 }
 
 @end
+

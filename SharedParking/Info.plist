@@ -2,23 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>是否允许此APP访问你的媒体资料库？</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>是否允许此APP使用您的位置？</string>
-	<key>NSCameraUsageDescription</key>
-	<string>是否允许此APP使用你的相机？</string>
-	<key>allow arbitrary loads</key>
-	<true/>
-	<key>CFBundleDisplayName</key>
-	<string>分刻停车</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>分刻停车</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -35,8 +22,17 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>是否允许此APP使用你的相机？</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>是否允许此APP使用您的位置？</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>是否允许此APP访问你的媒体资料库？</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -54,5 +50,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>allow arbitrary loads</key>
+	<true/>
 </dict>
 </plist>

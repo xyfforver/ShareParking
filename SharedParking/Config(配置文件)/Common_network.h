@@ -13,19 +13,19 @@
 #define isTrueEnvironment 1
 
 #warning 发布时改为0，关闭调试选项
-#define isDebug 1
+#define isDebug 0
 
 #warning 发布时改为1，生产环境推送
 #define push_production 0
 
 #if isTrueEnvironment == 0
-#define LingBao_BASE_URL @"http://192.168.0.152:8080/tv-web-mobile/"
+#define LingBao_BASE_URL @"http://park.1mxtx.com/index/app/"
 
 #elif isTrueEnvironment == 1
-#define LingBao_BASE_URL  @"https://api.ojutao.com/tv-web-mobile/"
+#define LingBao_BASE_URL  @"http://park.1mxtx.com/index/app/"
 
 #else
-#define LingBao_BASE_URL @"http://192.168.0.134:8080/tv-web-mobile/"
+#define LingBao_BASE_URL @"http://park.1mxtx.com/index/app/"
 
 #endif
 

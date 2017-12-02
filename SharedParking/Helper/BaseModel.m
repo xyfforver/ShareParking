@@ -2,7 +2,7 @@
 //  BaseModel.m
 //  EasyGo
 //
-//  Created by 徐佳琦 on 16/5/11.
+//  Created by Jammy on 16/5/11.
 //  Copyright © 2016年 Jackie. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 #import "StatusRecordListModel.h"
 #import "JKHTTPManager.h"
 #import "ExtraParaManger.h"
-static NSString *const DBName = @"JuTao";
+static NSString *const DBName = @"YiMaTong";
 
 @implementation BaseModel
 
@@ -20,7 +20,7 @@ static LKDBHelper* userHelper;
 static dispatch_once_t userOnceToken;
 + (LKDBHelper *)getUserLKDBHelper
 {
-    NSString *dbName = GetDataManager.id;
+    NSString *dbName = GetDataManager.userid;
     dispatch_once(&userOnceToken, ^{
         userHelper = [[LKDBHelper alloc] initWithDBName:dbName];
     });
@@ -38,7 +38,7 @@ static dispatch_once_t userOnceToken;
 + (LKDBHelper *)getUsingLKDBHelper
 {
     LKDBHelper *helper;
-    if (GetDataManager.id.length != 0)
+    if (GetDataManager.userid.length != 0)
     {
         helper = [self getUserLKDBHelper];
     }
@@ -67,7 +67,7 @@ static dispatch_once_t userOnceToken;
 + (instancetype)statusModelRecorListWithKeyValues:(id)keyValues recordListClass:(Class)recordListClass
 {
     [[StatusRecordListModel class] mj_setupObjectClassInArray:^NSDictionary *{
-        return @{@"recordList":recordListClass};
+        return @{@"list":recordListClass};
     }];
     [StatusModel mj_setupNewValueFromOldValue:^id(id object, id oldValue, MJProperty *property) {
         if ([property.name isEqualToString:@"data"]) {
@@ -121,8 +121,8 @@ static dispatch_once_t userOnceToken;
 }
 
 + (NSURLSessionDataTask *)postWithStatusRecordListModelResponsePath:(NSString *)path
-                                                   params:(NSMutableDictionary *)params
-                                             onCompletion:(NetCompletionBlock)completionBlock
+                                                             params:(NSMutableDictionary *)params
+                                                       onCompletion:(NetCompletionBlock)completionBlock
 {
     return [self postWithJSONResponsePath:path params:params onCompletion:^(NSDictionary *jsonDic) {
         StatusModel *statusModel = [StatusModel statusModelRecorListWithKeyValues:jsonDic recordListClass:[self class]];
@@ -147,14 +147,20 @@ static dispatch_once_t userOnceToken;
     JKHTTPManager *manager = [[JKHTTPManager alloc] initWithBaseURL:[NSURL URLWithString:host]];
     
     NSDictionary *mutableParams = [NSMutableDictionary dictionaryWithDictionary:params];
-    [mutableParams setValue:@"1" forKey:@"platformtype"];
-    [mutableParams setValue:GetExtraParaManger.appversion forKey:@"appversion"];
-    [mutableParams setValue:GetDataManager.id forKey:@"uid"];
-    [mutableParams setValue:GetDataManager.token forKey:@"token"];
-    [mutableParams setValue:GetExtraParaManger.clientId forKey:@"clientId"];
+    //    [mutableParams setValue:@"1" forKey:@"platformtype"];
+    //    [mutableParams setValue:GetExtraParaManger.appversion forKey:@"appversion"];
+    //    [mutableParams setValue:GetDataManager.userid forKey:@"userid"];
+    //    [mutableParams setValue:GetDataManager.token forKey:@"token"];
+    //    [mutableParams setValue:GetExtraParaManger.clientId forKey:@"clientId"];
     
-//    [mutableParams setValue:GetExtraParaManger.osversion forKey:@"osversion"];
-//    [mutableParams setValue:GetExtraParaManger.machinemodel forKey:@"machinemodel"];
+    NSArray *allkeys = [mutableParams allKeys];
+    if (![allkeys containsObject:@"userid"]) {
+        [mutableParams setValue:GetDataManager.userid forKey:@"userid"];
+        [mutableParams setValue:GetDataManager.token forKey:@"token"];
+    }
+    
+    //    [mutableParams setValue:GetExtraParaManger.osversion forKey:@"osversion"];
+    //    [mutableParams setValue:GetExtraParaManger.machinemodel forKey:@"machinemodel"];
     DLog(@"\n<<-----------请求-------------------\n Url == %@%@\n Params == %@\n DicStyle == %@\n------------------------------->>", host, path, [mutableParams jsonEncodedKeyValueString], mutableParams);
     
     NSURLSessionDataTask *task = [manager POST:path
@@ -162,6 +168,7 @@ static dispatch_once_t userOnceToken;
                                       progress:^(NSProgress * _Nonnull uploadProgress) {
                                           
                                       } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                          
                                           DLog(@"\n<<-----------返回--------------------\n Url == %@%@\n Res == %@\n DicStyle == %@\n------------------------------->>", host, path, [responseObject jsonEncodedKeyValueString], responseObject);
                                           
                                           if (completionBlock)
@@ -169,7 +176,7 @@ static dispatch_once_t userOnceToken;
                                               completionBlock(responseObject);
                                           }
                                       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                                           NSDictionary *dic = [self getErrorDictionary:error];
+                                          NSDictionary *dic = [self getErrorDictionary:error];
                                           DLog(@"%@", error);
                                           if (completionBlock)
                                           {
@@ -186,15 +193,16 @@ static dispatch_once_t userOnceToken;
     BOOL isTimeout = [[error.userInfo objectForKey:@"NSLocalizedDescription"] rangeOfString:@"超时"].location != NSNotFound;
     if (isTimeout) {
         return [NSDictionary dictionaryWithObjectsAndKeys:
-                [NSNumber numberWithInteger:kFlagNetTimeOutFlag], @"returnCode",
-                @"请求超时，请检查网络",@"returnMsg",
+                [NSNumber numberWithInteger:kFlagNetTimeOutFlag], @"code",
+                @"网络异常，请检查网络",@"message",
                 nil];
     } else {
         return [NSDictionary dictionaryWithObjectsAndKeys:
-                [NSNumber numberWithInteger:kFlagNetDisconnectFlag], @"returnCode",
-                @"网络异常，请检查网络",@"returnMsg",
+                [NSNumber numberWithInteger:kFlagNetDisconnectFlag], @"code",
+                @"网络异常，请检查网络",@"message",
                 nil];
     }
 }
 
 @end
+

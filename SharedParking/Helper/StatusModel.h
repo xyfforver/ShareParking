@@ -2,7 +2,7 @@
 //  StatusModel.h
 //  EasyGo
 //
-//  Created by 徐佳琦 on 16/5/11.
+//  Created by Jammy on 16/5/11.
 //  Copyright © 2016年 Jackie. All rights reserved.
 //
 
@@ -43,11 +43,11 @@ extern NSInteger  const kPageSize;
 @property (assign, nonatomic, readonly) NSInteger flag;
 
 /// 状态码，成功或失败
-@property (nonatomic, copy) NSString *returnCode;
+@property (nonatomic, copy) NSString *code;
 /// 状态信息，提示语
 @property (nonatomic, copy) NSString *message;
 
-@property (copy, nonatomic) NSString *sysDateTime;
+//@property (copy, nonatomic) NSString *sysDateTime;
 
 /// 结果 对应的Model
 @property (nonatomic, strong) id data;
@@ -55,3 +55,4 @@ extern NSInteger  const kPageSize;
 //createTime : 查询时间（每次查询改变）
 //creationTime : 表插入时间（固定时间）
 @end
+

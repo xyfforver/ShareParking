@@ -32,7 +32,7 @@
 }
 
 - (void)initView{
-
+    self.view.backgroundColor = kColorWhite;
     self.fd_prefersNavigationBarHidden = YES;
     
     [self.view addSubview:self.navigationBar];

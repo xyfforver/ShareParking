@@ -96,6 +96,9 @@
 #define IOS11 @available(iOS 11.0, *)
 #define ViewSafeAreInsets(view) ({UIEdgeInsets i; if(@available(iOS 11.0, *)) {i = view.safeAreaInsets;} else {i = UIEdgeInsetsZero;} i;})
 
+
+//=========================================
+
 //=========================================
 #define RMB @"￥"
 
@@ -105,16 +108,20 @@
 #define GetAPPDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 #define GetAppBundleVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 #define kSystermVersion [[[UIDevice currentDevice] systemVersion] floatValue]
+
+#define kLingBaoUser @"kLingBaoUser" // 用户帐户
 #define kPreviousVersion @"PreviousVersion" //版本记录
 #define kGetLatestAppVersion @"getLatestAppVersion"
+#define kRegistrationIDKey @"registrationID"
+#define kAutoLogin @"aotuLogin"
 
 
-
+//=========================================
 ///消除webview margin
 static NSString *const kMarginDeleteString = @"<style> *{margin:0px;padding:0;} img {max-width:100%;}</style>";
 
 #define kUrlWithString(urlString) [NSURL URLWithString:urlString]
-
+//=========================================
 
 #define kMargin15 15
 #define kMargin10 10
