@@ -18,48 +18,48 @@ static NSString *const DBName = @"YiMaTong";
 #pragma mark - DB
 static LKDBHelper* userHelper;
 static dispatch_once_t userOnceToken;
-+ (LKDBHelper *)getUserLKDBHelper
-{
-    NSString *dbName = GetDataManager.userid;
-    dispatch_once(&userOnceToken, ^{
-        userHelper = [[LKDBHelper alloc] initWithDBName:dbName];
-    });
-    [userHelper setDBName:dbName];
-    return userHelper;
-}
-
-+ (void)releaseLKDBHelp
-{
-    userOnceToken = 0;
-    userHelper = nil;
-}
-
-
-+ (LKDBHelper *)getUsingLKDBHelper
-{
-    LKDBHelper *helper;
-    if (GetDataManager.userid.length != 0)
-    {
-        helper = [self getUserLKDBHelper];
-    }
-    else
-    {
-        helper = [self getDefaultLKDBHelper];
-    }
-    return helper;
-}
-
-+(LKDBHelper *)getDefaultLKDBHelper
-{
-    static LKDBHelper* helper;
-    static dispatch_once_t onceToken;
-    NSString *dbName = @"JT_default";
-    dispatch_once(&onceToken, ^{
-        helper = [[LKDBHelper alloc]initWithDBName:dbName];
-    });
-    [helper setDBName:[NSString stringWithFormat:@"%@.db",dbName]];
-    return helper;
-}
+//+ (LKDBHelper *)getUserLKDBHelper
+//{
+//    NSString *dbName = GetDataManager.userid;
+//    dispatch_once(&userOnceToken, ^{
+//        userHelper = [[LKDBHelper alloc] initWithDBName:dbName];
+//    });
+//    [userHelper setDBName:dbName];
+//    return userHelper;
+//}
+//
+//+ (void)releaseLKDBHelp
+//{
+//    userOnceToken = 0;
+//    userHelper = nil;
+//}
+//
+//
+//+ (LKDBHelper *)getUsingLKDBHelper
+//{
+//    LKDBHelper *helper;
+//    if (GetDataManager.userid.length != 0)
+//    {
+//        helper = [self getUserLKDBHelper];
+//    }
+//    else
+//    {
+//        helper = [self getDefaultLKDBHelper];
+//    }
+//    return helper;
+//}
+//
+//+(LKDBHelper *)getDefaultLKDBHelper
+//{
+//    static LKDBHelper* helper;
+//    static dispatch_once_t onceToken;
+//    NSString *dbName = @"JT_default";
+//    dispatch_once(&onceToken, ^{
+//        helper = [[LKDBHelper alloc]initWithDBName:dbName];
+//    });
+//    [helper setDBName:[NSString stringWithFormat:@"%@.db",dbName]];
+//    return helper;
+//}
 
 
 #pragma mark - map
@@ -152,13 +152,7 @@ static dispatch_once_t userOnceToken;
     //    [mutableParams setValue:GetDataManager.userid forKey:@"userid"];
     //    [mutableParams setValue:GetDataManager.token forKey:@"token"];
     //    [mutableParams setValue:GetExtraParaManger.clientId forKey:@"clientId"];
-    
-    NSArray *allkeys = [mutableParams allKeys];
-    if (![allkeys containsObject:@"userid"]) {
-        [mutableParams setValue:GetDataManager.userid forKey:@"userid"];
-        [mutableParams setValue:GetDataManager.token forKey:@"token"];
-    }
-    
+
     //    [mutableParams setValue:GetExtraParaManger.osversion forKey:@"osversion"];
     //    [mutableParams setValue:GetExtraParaManger.machinemodel forKey:@"machinemodel"];
     DLog(@"\n<<-----------请求-------------------\n Url == %@%@\n Params == %@\n DicStyle == %@\n------------------------------->>", host, path, [mutableParams jsonEncodedKeyValueString], mutableParams);

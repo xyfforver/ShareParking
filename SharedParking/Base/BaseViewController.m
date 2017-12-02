@@ -10,7 +10,7 @@
 static CGFloat const sizeButton = 50.0;
 
 #import "BaseViewController.h"
-
+#import "LoginVC.h"
 @interface BaseViewController ()
 
 @property (nonatomic, strong) NSMutableArray *networkOperations;
@@ -160,7 +160,7 @@ static CGFloat const sizeButton = 50.0;
 }
 
 // 判断登录
-- (void)loginVerifySuccess:(void (^)())success
+- (void)loginVerifySuccess:(void (^)(void))success
 {
     //登入
     if (!GetDataManager.isLogin) {
@@ -168,10 +168,10 @@ static CGFloat const sizeButton = 50.0;
         UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"您尚未登录，请登录查看详情" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-//            LoginVC *login = [[LoginVC alloc] init];
-//            login.completionBack = [success copy];
-//            JKNavigationController *loginNav = [[JKNavigationController alloc] initWithRootViewController:login];
-//            [self presentViewController:loginNav animated:YES completion:nil];
+            LoginVC *login = [[LoginVC alloc] init];
+            login.completionBack = [success copy];
+            JKNavigationController *loginNav = [[JKNavigationController alloc] initWithRootViewController:login];
+            [self presentViewController:loginNav animated:YES completion:nil];
             
         }];
         UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];

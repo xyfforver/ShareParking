@@ -51,7 +51,7 @@
 //-(void)reflashClick;
 
 /// 判断登录
-- (void)loginVerifySuccess:(void (^)())success;
+- (void)loginVerifySuccess:(void (^)(void))success;
 
 - (void)addNet:(id)net;
 - (void)releaseNet;

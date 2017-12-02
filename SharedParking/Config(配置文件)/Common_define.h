@@ -26,6 +26,7 @@
 #import "iOSBlocks.h"
 #import "BaseTBView.h"
 #import "BaseCLView.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #import <MapKit/MapKit.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>

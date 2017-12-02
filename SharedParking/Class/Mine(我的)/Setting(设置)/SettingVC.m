@@ -70,24 +70,6 @@
             strongSelf.fd_interactivePopDisabled = NO;
         }
     }];
-    
-    
-    
-    [GetDataManager logOutSuccessBlock:^{
-        kSelfStrong;
-        //退出登陆，不再发送统计信息
-        [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccessNotification object:nil];
-//        [MobClick profileSignOff];
-        [strongSelf backToSuperView];
-        [WSProgressHUD dismiss];
-        strongSelf.fd_interactivePopDisabled = NO;
-        
-    } fail:^{
-        kSelfStrong;
-        strongSelf.view.userInteractionEnabled = YES;
-        [WSProgressHUD showImage:nil status:@"退出失败"];
-        strongSelf.fd_interactivePopDisabled = NO;
-    }];
 }
 
 #pragma mark ---------------Event-------------------------/

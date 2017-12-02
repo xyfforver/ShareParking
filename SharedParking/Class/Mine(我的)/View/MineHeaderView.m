@@ -8,10 +8,6 @@
 #define kHeadWidth  80.0
 #define kItemSpace 3.0
 #import "MineHeaderView.h"
-
-#import "BalanceVC.h"
-#import "EditVC.h"
-#import "CarNumberListVC.h"
 @interface MineHeaderView()
 @property (nonatomic , strong) UIImageView *bgImgView;
 @property (nonatomic , strong) UIImageView *headImgView;
@@ -30,10 +26,27 @@
     return self;
 }
 
+- (void)setUserModel:(UserModel *)userModel{
+    _userModel = userModel;
+    
+    [self.headImgView sd_setImageWithURL:[NSURL URLWithString:userModel.headimg]];
+    [self.nickNameBtn setTitle:userModel.user_mobile forState:UIControlStateNormal];
+    [self.nickNameBtn lc_titleImageHorizontalAlignmentWithSpace:15];
+    
+    NSString *str = [NSString stringWithFormat:@"余额：%.2f",userModel.user_money];
+    NSMutableAttributedString *contentMuStr = [[NSMutableAttributedString alloc]initWithString:str];
+    [contentMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(3, str.length - 3)];
+    self.balanceLab.attributedText = contentMuStr;
+    
+    NSString *numberStr = [NSString stringWithFormat:@"车牌：%@",userModel.car_chepai];
+    NSMutableAttributedString *numberMuStr = [[NSMutableAttributedString alloc]initWithString:numberStr];
+    [numberMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(3, numberStr.length - 3)];
+    self.numberLab.attributedText = numberMuStr;
+}
+
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
     self.backgroundColor = kBackGroundGrayColor;
-    
     
     [self addSubview:self.bgImgView];
     [self addSubview:self.headImgView];
@@ -59,7 +72,7 @@
         make.left.mas_equalTo(10);
         make.right.mas_equalTo(-10);
     }];
-    [_nickNameBtn lc_titleImageHorizontalAlignmentWithSpace:15];
+    
     
     [self.balanceLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
@@ -82,25 +95,13 @@
         make.left.mas_equalTo(kScreenWidth/2.0);
     }];
     
-    NSString *str = @"余额：12.00";
-    NSMutableAttributedString *contentMuStr = [[NSMutableAttributedString alloc]initWithString:str];
-    [contentMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(3, str.length - 3)];
-    self.balanceLab.attributedText = contentMuStr;
-    
-    NSString *numberStr = @"车牌：浙A13456";
-    NSMutableAttributedString *numberMuStr = [[NSMutableAttributedString alloc]initWithString:numberStr];
-    [numberMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(3, numberStr.length - 3)];
-    self.numberLab.attributedText = numberMuStr;
 }
 
 #pragma mark ---------------event ---------------------/
 - (void)goToEdit{
-//    if (GetDataManager.isLogin) {
-        EditVC *vc = [[EditVC alloc]init];
-        [self.Controller.navigationController pushViewController:vc animated:YES];
-//    }else{
-//        [self GoToLogin];
-//    }
+    if (self.pushBlock) {
+        self.pushBlock(0);
+    }
 }
 
 #pragma mark -----------------Lazy---------------------/
@@ -136,7 +137,7 @@
         _nickNameBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _nickNameBtn.titleLabel.font = kFontSizeBold20;
         [_nickNameBtn setTitleColor:kColorWhite forState:UIControlStateNormal];
-        [_nickNameBtn setTitle:@"1873929338" forState:UIControlStateNormal];
+//        [_nickNameBtn setTitle:@"1873929338" forState:UIControlStateNormal];
         [_nickNameBtn setImage:[UIImage imageNamed:@"mine_edit"] forState:UIControlStateNormal];
         kSelfWeak;
         [_nickNameBtn zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
@@ -153,12 +154,13 @@
         _balanceLab.font = kFontSize16;
         _balanceLab.textColor = kColorBlack;
         _balanceLab.textAlignment = NSTextAlignmentCenter;
-        _balanceLab.text = @"余额：12.00";
+//        _balanceLab.text = @"余额：12.00";
         _balanceLab.backgroundColor = kColorWhite;
         
         [_balanceLab zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-            BalanceVC *vc = [[BalanceVC alloc]init];
-            [self.Controller.navigationController pushViewController:vc animated:YES];
+            if (self.pushBlock) {
+                self.pushBlock(1);
+            }
         }];
     }
     return _balanceLab;
@@ -170,12 +172,13 @@
         _numberLab.font = kFontSize16;
         _numberLab.textColor = kColorBlack;
         _numberLab.textAlignment = NSTextAlignmentCenter;
-        _numberLab.text = @"车牌：浙A13456";
+//        _numberLab.text = @"车牌：浙A13456";
         _numberLab.backgroundColor = kColorWhite;
         
         [_numberLab zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-            CarNumberListVC *vc = [[CarNumberListVC alloc]init];
-            [self.Controller.navigationController pushViewController:vc animated:YES];
+            if (self.pushBlock) {
+                self.pushBlock(2);
+            }
         }];
         
     }

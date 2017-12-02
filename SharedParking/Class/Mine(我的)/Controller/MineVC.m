@@ -13,6 +13,9 @@
 #import "MyReserveVC.h"
 #import "MyIssueVC.h"
 #import "LoginVC.h"
+#import "BalanceVC.h"
+#import "EditVC.h"
+#import "CarNumberListVC.h"
 
 #import "MineHeaderView.h"
 @interface MineVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -21,6 +24,8 @@
 @property (nonatomic , strong) NSArray *firstArr;
 @property (nonatomic , strong) UIView *navView;
 @property (nonatomic , strong) UILabel *titleLab;
+
+@property (nonatomic , strong) UserModel *userModel;
 @end
 
 @implementation MineVC
@@ -55,12 +60,24 @@
     
 }
 
+/*--------------------------network---------------------------*/
 - (void)loadData{
+    kSelfWeak;
     [UserModel getMineDataSuccess:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            strongSelf.userModel = statusModel.data;
+        }else{
+            strongSelf.userModel = nil;
+        }
         
+        strongSelf.headerView.userModel = strongSelf.userModel;
+        [strongSelf.tbView reloadData];
     }];
 }
 
+
+#pragma mark ---------------event ---------------------/
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     CGFloat offsetY = scrollView.contentOffset.y;
@@ -84,6 +101,21 @@
 
 }
 
+- (void)pushAction:(NSInteger)type{
+    [self loginVerifySuccess:^{
+        if (type == 0) {
+            EditVC *vc = [[EditVC alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (type == 1){
+            BalanceVC *vc = [[BalanceVC alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (type == 2){
+            CarNumberListVC *vc = [[CarNumberListVC alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }];
+}
+
 #pragma mark -------------tableView--delegate-------------/
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
@@ -105,24 +137,24 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        MyRequestVC *vc = [[MyRequestVC alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 1){
-        MyIssueVC *vc = [[MyIssueVC alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 2){
-        MyReserveVC *vc = [[MyReserveVC alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 3){
-        ParkingRecordVC *vc = [[ParkingRecordVC alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 4){
-        SettingVC *vc = [[SettingVC alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    
-    
+    [self loginVerifySuccess:^{
+        if (indexPath.row == 0) {
+            MyRequestVC *vc = [[MyRequestVC alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 1){
+            MyIssueVC *vc = [[MyIssueVC alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 2){
+            MyReserveVC *vc = [[MyReserveVC alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 3){
+            ParkingRecordVC *vc = [[ParkingRecordVC alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 4){
+            SettingVC *vc = [[SettingVC alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }];
 }
 
 
@@ -130,6 +162,11 @@
 - (MineHeaderView *)headerView{
     if (!_headerView) {
         _headerView = [[MineHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kHeadBgHeight + 80)];
+        kSelfWeak;
+        _headerView.pushBlock = ^(NSInteger type) {
+            kSelfStrong;
+            [strongSelf pushAction:type];
+        };
     }
     return _headerView;
 }

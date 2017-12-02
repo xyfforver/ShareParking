@@ -9,11 +9,12 @@
 #import "BaseModel.h"
 
 @interface UserModel : BaseModel
-@property (copy, nonatomic) NSString *token;
-@property (copy, nonatomic) NSString *userid;
-@property (copy, nonatomic) NSString *icon;
-@property (copy, nonatomic) NSString *cname;
-@property (copy, nonatomic) NSString *sex;
+@property (copy, nonatomic) NSString *headimg;
+@property (copy, nonatomic) NSString *user_mobile;
+@property (copy, nonatomic) NSString *car_chepai;
+@property (assign, nonatomic) CGFloat user_money;
+
+
 @property (copy, nonatomic) NSString *tel;
 @property (copy, nonatomic) NSString *thindType;
 @property (copy, nonatomic) NSString *openId;
