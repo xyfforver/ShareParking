@@ -47,7 +47,7 @@
 
 #pragma mark ---------------NetWork-------------------------/
 - (void)loadData{
-    [SearchModel searchWithTitle:@"" success:^(StatusModel *statusModel) {
+    [SearchModel searchWithTitle:@"停车场" success:^(StatusModel *statusModel) {
         
     }];
 }

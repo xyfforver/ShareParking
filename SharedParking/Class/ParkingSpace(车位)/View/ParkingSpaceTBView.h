@@ -10,4 +10,6 @@
 
 @interface ParkingSpaceTBView : BaseTBView
 
+@property (nonatomic , strong) NSMutableArray *dataArr;
+
 @end

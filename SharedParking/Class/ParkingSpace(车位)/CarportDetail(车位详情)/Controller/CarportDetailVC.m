@@ -10,6 +10,8 @@
 #import "CarportDetailHeaderView.h"
 #import "CarportDetailShortCLView.h"
 #import "CarportDetailRentTBView.h"
+
+#import "CarportDetailModel.h"
 @interface CarportDetailVC ()
 @property (nonatomic , strong) CarportDetailHeaderView *headerView;
 @property (nonatomic , strong) CarportDetailShortCLView *shortCLView;
@@ -20,6 +22,15 @@
 @implementation CarportDetailVC
 
 #pragma mark ---------------LifeCycle-------------------------/
+- (instancetype)initWithCarportId:(NSString *)carportId type:(CarportRentType)type{
+    self = [super init];
+    if (self) {
+        self.carportId = carportId;
+        self.type = type;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -36,7 +47,15 @@
 }
 
 #pragma mark ---------------NetWork-------------------------/
-
+- (void)loadData{
+    [CarportDetailModel carportDetailWithCarPortId:self.carportId type:self.type success:^(StatusModel *statusModel) {
+        if (statusModel.flag == kFlagSuccess) {
+            
+        }else{
+            
+        }
+    }];
+}
 
 #pragma mark ---------------Event-------------------------/
 

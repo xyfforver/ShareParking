@@ -47,55 +47,55 @@
 
 #pragma mark ---------------NetWork-------------------------/
 - (void)loadData{
-    kSelfWeak;
-    [PayRecordModel getPayRecordListWithAddTime:self.timeStr type:self.type page:self.page success:^(StatusModel *statusModel) {
-        kSelfStrong;
-        [strongSelf.tbView.mj_header endRefreshing];
-        [strongSelf.tbView.mj_footer endRefreshing];
-        if (strongSelf.page == 1) [strongSelf.dataArr removeAllObjects];
-        
-        if (statusModel.flag == kFlagSuccess) {
-            StatusRecordListModel *model = statusModel.data;
-            if (model.list.count > 0) {
-                for (PayRecordModel *itemModel in model.list) {
-                    NSString *addTime = itemModel.addtime;
-                    if (addTime.length > 8) {
-                        NSInteger year = [[addTime substringWithRange:NSMakeRange(0,4)] integerValue];
-                        NSInteger month = [[addTime substringWithRange:NSMakeRange(5,2)] integerValue];
-//                        DLog(@"%ld年%ld月",year,month);
-                        
-                        NSInteger count = 0;//标记
-                        for (int i = 0; i < strongSelf.dataArr.count;i++) {
-                            PayRecordGroupModel *groupModel = strongSelf.dataArr[i];
-                            if (groupModel.year == year && groupModel.month == month) {
-                                NSMutableArray *arr = [NSMutableArray array];
-                                [arr addObjectsFromArray:groupModel.list];
-                                [arr addObject:itemModel];
-                                groupModel.list = arr;
-                                [strongSelf.dataArr replaceObjectAtIndex:i withObject:groupModel];
-                                count = 1;
-                                break;
-                            }
-                        }
-                        if (count == 0) {
-                            PayRecordGroupModel *model = [[PayRecordGroupModel alloc]init];
-                            model.year = year;
-                            model.month = month;
-                            NSMutableArray *arr = [[NSMutableArray alloc]init];
-                            [arr addObject:itemModel];
-                            model.list = arr;
-                            model.sprice = itemModel.sprice;
-                            model.zprice = itemModel.zprice;
-                            [strongSelf.dataArr addObject:model];
-                        }
-                    }
-                }
-            }
-        }else{
-            [WSProgressHUD showImage:nil status:statusModel.message];
-        }
-        [strongSelf.tbView reloadData];
-    }];
+//    kSelfWeak;
+//    [PayRecordModel getPayRecordListWithAddTime:self.timeStr type:self.type page:self.page success:^(StatusModel *statusModel) {
+//        kSelfStrong;
+//        [strongSelf.tbView.mj_header endRefreshing];
+//        [strongSelf.tbView.mj_footer endRefreshing];
+//        if (strongSelf.page == 1) [strongSelf.dataArr removeAllObjects];
+//
+//        if (statusModel.flag == kFlagSuccess) {
+//            StatusRecordListModel *model = statusModel.data;
+//            if (model.list.count > 0) {
+//                for (PayRecordModel *itemModel in model.list) {
+//                    NSString *addTime = itemModel.addtime;
+//                    if (addTime.length > 8) {
+//                        NSInteger year = [[addTime substringWithRange:NSMakeRange(0,4)] integerValue];
+//                        NSInteger month = [[addTime substringWithRange:NSMakeRange(5,2)] integerValue];
+////                        DLog(@"%ld年%ld月",year,month);
+//
+//                        NSInteger count = 0;//标记
+//                        for (int i = 0; i < strongSelf.dataArr.count;i++) {
+//                            PayRecordGroupModel *groupModel = strongSelf.dataArr[i];
+//                            if (groupModel.year == year && groupModel.month == month) {
+//                                NSMutableArray *arr = [NSMutableArray array];
+//                                [arr addObjectsFromArray:groupModel.list];
+//                                [arr addObject:itemModel];
+//                                groupModel.list = arr;
+//                                [strongSelf.dataArr replaceObjectAtIndex:i withObject:groupModel];
+//                                count = 1;
+//                                break;
+//                            }
+//                        }
+//                        if (count == 0) {
+//                            PayRecordGroupModel *model = [[PayRecordGroupModel alloc]init];
+//                            model.year = year;
+//                            model.month = month;
+//                            NSMutableArray *arr = [[NSMutableArray alloc]init];
+//                            [arr addObject:itemModel];
+//                            model.list = arr;
+//                            model.sprice = itemModel.sprice;
+//                            model.zprice = itemModel.zprice;
+//                            [strongSelf.dataArr addObject:model];
+//                        }
+//                    }
+//                }
+//            }
+//        }else{
+//            [WSProgressHUD showImage:nil status:statusModel.message];
+//        }
+//        [strongSelf.tbView reloadData];
+//    }];
 }
 
 

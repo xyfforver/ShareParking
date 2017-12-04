@@ -36,7 +36,8 @@
 
 #pragma mark -------------tableView--delegate-------------/
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+//    return 10;
+    return self.dataArr.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -46,7 +47,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ParkingSpaceTBCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParkingSpaceTBCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    cell.itemModel = self.dataArr[indexPath.row];
+    
     return cell;
 }
 
@@ -56,7 +58,12 @@
     [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 
-
+- (NSMutableArray *)dataArr{
+    if (!_dataArr) {
+        _dataArr = [[NSMutableArray alloc]init];
+    }
+    return _dataArr;
+}
 
 
 

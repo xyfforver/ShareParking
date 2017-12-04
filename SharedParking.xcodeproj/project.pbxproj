@@ -131,7 +131,6 @@
 		6B91B6AC1F9DEE0A00A1020C /* JMRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6351F9DDDC300A1020C /* JMRefreshFooter.m */; };
 		6B91B6AD1F9DEE1C00A1020C /* JMRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6371F9DDDC300A1020C /* JMRefreshHeader.m */; };
 		6B91B6AE1F9DEE2600A1020C /* StatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6391F9DDDC300A1020C /* StatusModel.m */; };
-		6B91B6AF1F9DEE3700A1020C /* StatusRecordListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B63B1F9DDDC300A1020C /* StatusRecordListModel.m */; };
 		6B91B6B01F9DEE3E00A1020C /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B63D1F9DDDC300A1020C /* UserModel.m */; };
 		6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6621F9DDDC300A1020C /* UINavigationController+FDFullscreenPopGesture.m */; };
 		6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B6651F9DDDC300A1020C /* KeychainHelper.m */; };
@@ -159,6 +158,8 @@
 		6BB67C5E1FA4511F007CE224 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C531FA44D19007CE224 /* libstdc++.6.0.9.tbd */; };
 		6BCD97991FB4485A001F81A5 /* MyRequestRentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD97981FB4485A001F81A5 /* MyRequestRentView.m */; };
 		6BCD979C1FB45481001F81A5 /* MyRequestRentCLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD979B1FB45481001F81A5 /* MyRequestRentCLCell.m */; };
+		6BD26AF61FD4F61100129F10 /* CarportDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD26AF51FD4F61100129F10 /* CarportDetailModel.m */; };
+		6BD6149C1FD28F3E0042F2E5 /* CarportListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6149B1FD28F3E0042F2E5 /* CarportListModel.m */; };
 		6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */; };
 		6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B671FB5745500DED0B7 /* MyReserveVC.m */; };
 		6BF95B6B1FB57D3100DED0B7 /* MyReserveItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B6A1FB57D3100DED0B7 /* MyReserveItemView.m */; };
@@ -390,8 +391,6 @@
 		6B91B6371F9DDDC300A1020C /* JMRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMRefreshHeader.m; sourceTree = "<group>"; };
 		6B91B6381F9DDDC300A1020C /* StatusModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusModel.h; sourceTree = "<group>"; };
 		6B91B6391F9DDDC300A1020C /* StatusModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusModel.m; sourceTree = "<group>"; };
-		6B91B63A1F9DDDC300A1020C /* StatusRecordListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusRecordListModel.h; sourceTree = "<group>"; };
-		6B91B63B1F9DDDC300A1020C /* StatusRecordListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusRecordListModel.m; sourceTree = "<group>"; };
 		6B91B63C1F9DDDC300A1020C /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		6B91B63D1F9DDDC300A1020C /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		6B91B63F1F9DDDC300A1020C /* NSArray+Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
@@ -486,6 +485,10 @@
 		6BCD97981FB4485A001F81A5 /* MyRequestRentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestRentView.m; sourceTree = "<group>"; };
 		6BCD979A1FB45481001F81A5 /* MyRequestRentCLCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestRentCLCell.h; sourceTree = "<group>"; };
 		6BCD979B1FB45481001F81A5 /* MyRequestRentCLCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestRentCLCell.m; sourceTree = "<group>"; };
+		6BD26AF41FD4F61100129F10 /* CarportDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailModel.h; sourceTree = "<group>"; };
+		6BD26AF51FD4F61100129F10 /* CarportDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailModel.m; sourceTree = "<group>"; };
+		6BD6149A1FD28F3E0042F2E5 /* CarportListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportListModel.h; sourceTree = "<group>"; };
+		6BD6149B1FD28F3E0042F2E5 /* CarportListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportListModel.m; sourceTree = "<group>"; };
 		6BF8B2531F9F177000329145 /* AppDelegate+LibConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+LibConfig.h"; sourceTree = "<group>"; };
 		6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+LibConfig.m"; sourceTree = "<group>"; };
 		6BF95B661FB5745500DED0B7 /* MyReserveVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyReserveVC.h; sourceTree = "<group>"; };
@@ -1014,6 +1017,8 @@
 		6B62C0AE1FCEAE67007F6861 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6BD26AF41FD4F61100129F10 /* CarportDetailModel.h */,
+				6BD26AF51FD4F61100129F10 /* CarportDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1122,8 +1127,6 @@
 				6B91B6371F9DDDC300A1020C /* JMRefreshHeader.m */,
 				6B91B6381F9DDDC300A1020C /* StatusModel.h */,
 				6B91B6391F9DDDC300A1020C /* StatusModel.m */,
-				6B91B63A1F9DDDC300A1020C /* StatusRecordListModel.h */,
-				6B91B63B1F9DDDC300A1020C /* StatusRecordListModel.m */,
 				6B91B63C1F9DDDC300A1020C /* UserModel.h */,
 				6B91B63D1F9DDDC300A1020C /* UserModel.m */,
 			);
@@ -1270,6 +1273,8 @@
 		6B91B67A1F9DE89600A1020C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6BD6149A1FD28F3E0042F2E5 /* CarportListModel.h */,
+				6BD6149B1FD28F3E0042F2E5 /* CarportListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1887,6 +1892,7 @@
 				6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */,
 				6BB1EE2E1FB43662003960F8 /* BalanceVC.m in Sources */,
 				6BCD979C1FB45481001F81A5 /* MyRequestRentCLCell.m in Sources */,
+				6BD6149C1FD28F3E0042F2E5 /* CarportListModel.m in Sources */,
 				6B2AB9F51FD101F80025D512 /* LeftImageTextField.m in Sources */,
 				6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */,
 				6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */,
@@ -1922,7 +1928,6 @@
 				6B3189FC1FA9ABDD0063AC2F /* FuelAddVC.m in Sources */,
 				6B2ABA031FD1317B0025D512 /* LoginReminderVC.m in Sources */,
 				6B3189F01FA970130063AC2F /* FuelCounterVC.m in Sources */,
-				6B91B6AF1F9DEE3700A1020C /* StatusRecordListModel.m in Sources */,
 				6B91B6AE1F9DEE2600A1020C /* StatusModel.m in Sources */,
 				6B91B6AD1F9DEE1C00A1020C /* JMRefreshHeader.m in Sources */,
 				6B057CC11FA2D2FF0017E320 /* ParkingSpaceHeaderView.m in Sources */,
@@ -1969,6 +1974,7 @@
 				6B3189F61FA973CA0063AC2F /* FuelAverageView.m in Sources */,
 				6B91B69A1F9DED8400A1020C /* NSArray+Log.m in Sources */,
 				6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */,
+				6BD26AF61FD4F61100129F10 /* CarportDetailModel.m in Sources */,
 				6B1323581FB43DF300AB1840 /* MyRequestVC.m in Sources */,
 				6B91B6981F9DED7800A1020C /* JKHTTPManager.m in Sources */,
 				6B91B6971F9DED7300A1020C /* JKNavigationController.m in Sources */,

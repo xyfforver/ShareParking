@@ -57,6 +57,10 @@
     return str;
 }
 
++ (NSString *)stringWithInteger:(NSInteger)integer{
+    return [NSString stringWithFormat:@"%ld",integer];
+}
+
 //球文本宽高
 + (CGSize)sizeWithString:(NSString *)str font:(UIFont *)font maxSize:(CGSize)maxSize
 

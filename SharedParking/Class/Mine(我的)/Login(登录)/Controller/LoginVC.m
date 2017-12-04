@@ -53,7 +53,8 @@
         [WSProgressHUD showImage:nil status:statusModel.message];
         
         if (statusModel.flag == kFlagSuccess) {
-            NSInteger isBinding = (NSInteger)statusModel.data;
+            UserModel *userModel = statusModel.data;
+            NSInteger isBinding = userModel.ischepai;
             
             [[NSUserDefaults standardUserDefaults] setObject:tel forKey:kLingBaoUser];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kAutoLogin];

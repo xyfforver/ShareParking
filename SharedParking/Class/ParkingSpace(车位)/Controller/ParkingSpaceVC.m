@@ -19,6 +19,8 @@
 #import "RobParkingView.h"
 #import "LongRentView.h"
 #import "ParkingOrderView.h"
+
+#import "CarportListModel.h"
 @interface ParkingSpaceVC ()
 @property (nonatomic , strong) JMTitleSelectView *titleView;
 @property (nonatomic , strong) ParkingSpaceHeaderView *headerView;
@@ -30,6 +32,8 @@
 @property (nonatomic , strong) RobParkingView *itemView;
 @property (nonatomic , strong) LongRentView *rentView;
 @property (nonatomic , strong) ParkingOrderView *orderView;
+
+@property (nonatomic , assign) NSInteger page;
 
 @end
 
@@ -78,6 +82,28 @@
     self.itemView.hidden = type == CarportLongRentType;
     self.rentView.hidden = type != CarportLongRentType;
     
+    
+    [self loadCarportListData];
+}
+
+- (void)loadCarportListData{
+    kSelfWeak;
+    [CarportListModel carportListWithCity:@"杭州市" type:self.type page:1 success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        [strongSelf.tbView.mj_header endRefreshing];
+        [strongSelf.tbView.mj_footer endRefreshing];
+        if (strongSelf.page == 1) [strongSelf.tbView.dataArr removeAllObjects];
+        
+        if (statusModel.flag == kFlagSuccess) {
+            NSArray *dataArr = statusModel.data;
+            if (dataArr.count > 0) {
+                [strongSelf.tbView.dataArr addObjectsFromArray:dataArr];
+            }
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+        [strongSelf.tbView reloadData];
+    }];
 }
 
 #pragma mark ---------------action ---------------------/

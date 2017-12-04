@@ -8,7 +8,6 @@
 
 #import "BaseModel.h"
 #import "StatusModel.h"
-#import "StatusRecordListModel.h"
 #import "JKHTTPManager.h"
 #import "ExtraParaManger.h"
 static NSString *const DBName = @"YiMaTong";
@@ -66,13 +65,11 @@ static dispatch_once_t userOnceToken;
 
 + (instancetype)statusModelRecorListWithKeyValues:(id)keyValues recordListClass:(Class)recordListClass
 {
-    [[StatusRecordListModel class] mj_setupObjectClassInArray:^NSDictionary *{
-        return @{@"list":recordListClass};
-    }];
+
     [StatusModel mj_setupNewValueFromOldValue:^id(id object, id oldValue, MJProperty *property) {
         if ([property.name isEqualToString:@"data"]) {
-            if ([oldValue isKindOfClass:[NSDictionary class]]) {
-                return [[StatusRecordListModel class] mj_objectWithKeyValues:oldValue];
+            if ([oldValue isKindOfClass:[NSArray class]]){
+                return [recordListClass mj_objectArrayWithKeyValuesArray:oldValue];
             }
         }
         return oldValue;

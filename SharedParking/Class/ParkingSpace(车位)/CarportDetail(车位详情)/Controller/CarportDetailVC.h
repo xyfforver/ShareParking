@@ -10,4 +10,10 @@
 
 @interface CarportDetailVC : BaseViewController
 
+- (instancetype)initWithCarportId:(NSString *)carportId type:(CarportRentType )type;
+
+@property (nonatomic , copy) NSString *carportId;
+@property (nonatomic , assign) CarportRentType type;
+
+
 @end

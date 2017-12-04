@@ -21,7 +21,7 @@
 @property (copy, nonatomic) NSString *client;//注册人数
 @property (assign, nonatomic) BOOL old;//0 刚注册 1 老用户
 
-@property (assign, nonatomic) BOOL isbinding;
+@property (assign, nonatomic) BOOL ischepai;
 
 //登录
 + (void)loginWithPhoneNum:(NSString *)phoneNum codeNum:(NSString *)codeNum success:(NetCompletionBlock)success;

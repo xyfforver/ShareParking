@@ -33,6 +33,21 @@
     return self;
 }
 
+- (void)setItemModel:(CarportListModel *)itemModel{
+    _itemModel = itemModel;
+    NSString *str = [NSString stringWithFormat:@"%@%@",@"http://park.1mxtx.com",itemModel.park_img];
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:str]];
+    
+    
+    self.titleLab.text = itemModel.park_title;
+    self.locationLab.text = @"距您3km  开车约8分钟";
+    self.numberLab.text = @"剩余车位 12/65";
+    self.typeLab.text = @"错时";
+    
+    self.spaceLab.text = @"小区";
+    self.lockLab.text = @"地锁";
+}
+
 - (void)initView{
 //    self.backgroundColor = kColorRandom;
     
@@ -52,22 +67,21 @@
         make.width.height.mas_equalTo(kImageWidth);
     }];
     
-    [self.numberLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.imgView.mas_top).mas_offset(2);
-        make.right.mas_equalTo(-15);
-        make.width.mas_equalTo(105);
-    }];
-    
-    [self.typeLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.numberLab.mas_bottom).mas_offset(10);
-        make.right.mas_equalTo(self.numberLab);
-        make.width.mas_equalTo(60);
-    }];
-    
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.imgView.mas_right).offset(10);
         make.top.mas_equalTo(self.imgView);
         make.right.mas_equalTo(self.numberLab.mas_left).offset(-5);
+    }];
+    
+    [self.numberLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.imgView.mas_top).offset(2);
+        make.right.mas_equalTo(-15);
+    }];
+    
+    [self.typeLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.numberLab.mas_bottom).offset(10);
+        make.right.mas_equalTo(self.numberLab);
+        make.width.mas_equalTo(60);
     }];
     
     [self.locationLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -93,13 +107,7 @@
         make.top.width.height.mas_equalTo(self.reserveLab);
     }];
     
-    self.titleLab.text = @"商场停车场";
-    self.locationLab.text = @"距您3km  开车约8分钟";
-    self.numberLab.text = @"剩余车位 12/65";
-    self.typeLab.text = @"错时";
-    
-    self.spaceLab.text = @"小区";
-    self.lockLab.text = @"地锁";
+
 }
 
 #pragma mark ---------------lazy ---------------------/
@@ -137,6 +145,7 @@
         _numberLab.font = kFontSize15;
         _numberLab.textColor = kColorDD9900;
         _numberLab.textAlignment = NSTextAlignmentRight;
+//        _numberLab.backgroundColor = kColorBlue;
     }
     return _numberLab;
 }

@@ -11,8 +11,7 @@
 #import "AFNetworking.h"
 #import "DataManager.h"
 #import "UserModel.h"
-#import "StatusModel.h"
-#import "StatusRecordListModel.h"
+#import "StatusModel.h" 
 #import <MJRefresh/MJRefresh.h>
 #import <MJExtension/MJExtension.h>
 #import "AppDelegate.h"
@@ -52,7 +51,7 @@
 #import "NSDictionary+RequestEncoding.h"
 #import "NSString+Regex.h"
 #import "UIScrollView+EmptyDataSet.h"
-
+#import "NSString+MJExtension.h"
 
 /***View***/
 
