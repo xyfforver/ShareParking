@@ -2,7 +2,7 @@
 //  JKHTTPManager.m
 //  letou
 //
-//  Created by 徐佳琦 on 17/1/6.
+//  Created by Jammy on 17/1/6.
 //  Copyright © 2017年 letou. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 {
     self = [super initWithBaseURL:url];
     if (self) {
+        //        self.responseSerializer = [AFHTTPResponseSerializer serializer];
         // 创建NSMutableSet对象
         NSMutableSet *newSet = [NSMutableSet set];
         // 添加我们需要的类型
@@ -28,6 +29,8 @@
 
 + (instancetype)manager {
     JKHTTPManager *mgr = [super manager];
+    //    mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
     // 创建NSMutableSet对象
     NSMutableSet *newSet = [NSMutableSet set];
     // 添加我们需要的类型
@@ -40,3 +43,4 @@
     return mgr;
 }
 @end
+

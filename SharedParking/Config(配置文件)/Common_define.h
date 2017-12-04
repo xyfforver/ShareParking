@@ -74,6 +74,7 @@
 
 //NSNumber转NSString
 #define kNumberToString(number) [NSString stringWithFormat:@"%@", number]
+#define kImageStringJoint(imgStr) [NSString stringWithFormat:@"%@%@", Img_Url,imgStr]
 
 #define kSystermVersion [[[UIDevice currentDevice] systemVersion] floatValue]
 

@@ -11,7 +11,7 @@
 #import "CarportDetailShortCLView.h"
 #import "CarportDetailRentTBView.h"
 
-#import "CarportDetailModel.h"
+#import "CarportShortDetailModel.h"
 @interface CarportDetailVC ()
 @property (nonatomic , strong) CarportDetailHeaderView *headerView;
 @property (nonatomic , strong) CarportDetailShortCLView *shortCLView;
@@ -35,6 +35,7 @@
     [super viewDidLoad];
     
     [self initView];
+    [self loadData];
 
 }
 
@@ -42,19 +43,34 @@
     self.fd_prefersNavigationBarHidden = YES;
     
     [self.view addSubview:self.headerView];
-    [self.view addSubview:self.shortCLView];
-//    [self.view addSubview:self.rentTBView];
+    if (self.type == CarportShortRentType) {
+        [self.view addSubview:self.shortCLView];
+    }else{
+        [self.view addSubview:self.rentTBView];
+    }
 }
 
 #pragma mark ---------------NetWork-------------------------/
 - (void)loadData{
-    [CarportDetailModel carportDetailWithCarPortId:self.carportId type:self.type success:^(StatusModel *statusModel) {
+    if (self.type == CarportShortRentType) {
+        [self loadShortData];
+    }else{
+        [self loadLongData];
+    }
+}
+
+- (void)loadShortData{
+    [CarportShortDetailModel carportShortDetailWithCarPortId:self.carportId type:self.type success:^(StatusModel *statusModel) {
         if (statusModel.flag == kFlagSuccess) {
             
         }else{
             
         }
     }];
+}
+
+- (void)loadLongData{
+    
 }
 
 #pragma mark ---------------Event-------------------------/

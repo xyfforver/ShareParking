@@ -29,6 +29,19 @@
     return self;
 }
 
+- (void)setShortModel:(CarportShortDetailModel *)shortModel{
+    _shortModel = shortModel;
+    
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:kImageStringJoint(shortModel.park_img)]];
+    
+    self.titleLab.text = shortModel.park_title;
+    self.locationLab.text = [NSString stringWithFormat:@"距您%@",[HelpTool stringWithDistance:shortModel.distance]];
+    
+    self.timeLab.text = @"一天前 23人浏览";
+    self.personalLab.text = @"个人";
+    self.buildingLab.text = @"写字楼";
+}
+
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
     self.backgroundColor = kColorWhite;

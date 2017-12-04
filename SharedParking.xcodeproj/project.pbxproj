@@ -158,7 +158,7 @@
 		6BB67C5E1FA4511F007CE224 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB67C531FA44D19007CE224 /* libstdc++.6.0.9.tbd */; };
 		6BCD97991FB4485A001F81A5 /* MyRequestRentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD97981FB4485A001F81A5 /* MyRequestRentView.m */; };
 		6BCD979C1FB45481001F81A5 /* MyRequestRentCLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD979B1FB45481001F81A5 /* MyRequestRentCLCell.m */; };
-		6BD26AF61FD4F61100129F10 /* CarportDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD26AF51FD4F61100129F10 /* CarportDetailModel.m */; };
+		6BD26AF61FD4F61100129F10 /* CarportShortDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD26AF51FD4F61100129F10 /* CarportShortDetailModel.m */; };
 		6BD26AF91FD52DF900129F10 /* CarportLongListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD26AF81FD52DF900129F10 /* CarportLongListModel.m */; };
 		6BD6149C1FD28F3E0042F2E5 /* CarportShortListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6149B1FD28F3E0042F2E5 /* CarportShortListModel.m */; };
 		6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */; };
@@ -486,8 +486,8 @@
 		6BCD97981FB4485A001F81A5 /* MyRequestRentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestRentView.m; sourceTree = "<group>"; };
 		6BCD979A1FB45481001F81A5 /* MyRequestRentCLCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestRentCLCell.h; sourceTree = "<group>"; };
 		6BCD979B1FB45481001F81A5 /* MyRequestRentCLCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestRentCLCell.m; sourceTree = "<group>"; };
-		6BD26AF41FD4F61100129F10 /* CarportDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportDetailModel.h; sourceTree = "<group>"; };
-		6BD26AF51FD4F61100129F10 /* CarportDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportDetailModel.m; sourceTree = "<group>"; };
+		6BD26AF41FD4F61100129F10 /* CarportShortDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportShortDetailModel.h; sourceTree = "<group>"; };
+		6BD26AF51FD4F61100129F10 /* CarportShortDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportShortDetailModel.m; sourceTree = "<group>"; };
 		6BD26AF71FD52DF900129F10 /* CarportLongListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportLongListModel.h; sourceTree = "<group>"; };
 		6BD26AF81FD52DF900129F10 /* CarportLongListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportLongListModel.m; sourceTree = "<group>"; };
 		6BD6149A1FD28F3E0042F2E5 /* CarportShortListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportShortListModel.h; sourceTree = "<group>"; };
@@ -1020,8 +1020,8 @@
 		6B62C0AE1FCEAE67007F6861 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6BD26AF41FD4F61100129F10 /* CarportDetailModel.h */,
-				6BD26AF51FD4F61100129F10 /* CarportDetailModel.m */,
+				6BD26AF41FD4F61100129F10 /* CarportShortDetailModel.h */,
+				6BD26AF51FD4F61100129F10 /* CarportShortDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1980,7 +1980,7 @@
 				6B3189F61FA973CA0063AC2F /* FuelAverageView.m in Sources */,
 				6B91B69A1F9DED8400A1020C /* NSArray+Log.m in Sources */,
 				6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */,
-				6BD26AF61FD4F61100129F10 /* CarportDetailModel.m in Sources */,
+				6BD26AF61FD4F61100129F10 /* CarportShortDetailModel.m in Sources */,
 				6B1323581FB43DF300AB1840 /* MyRequestVC.m in Sources */,
 				6B91B6981F9DED7800A1020C /* JKHTTPManager.m in Sources */,
 				6B91B6971F9DED7300A1020C /* JKNavigationController.m in Sources */,

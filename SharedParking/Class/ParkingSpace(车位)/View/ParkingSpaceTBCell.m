@@ -35,8 +35,8 @@
 
 - (void)setShortModel:(CarportShortListModel *)shortModel{
     _shortModel = shortModel;
-    NSString *str = [NSString stringWithFormat:@"%@%@",Img_Url,shortModel.park_img];
-    [self.imgView sd_setImageWithURL:[NSURL URLWithString:str]];
+    
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:kImageStringJoint(shortModel.park_img)]];
     
     self.titleLab.text = shortModel.park_title;
     self.typeLab.text = @"错时";
@@ -56,8 +56,7 @@
 - (void)setLongModel:(CarportLongListModel *)longModel{
     _longModel = longModel;
     
-    NSString *str = [NSString stringWithFormat:@"%@%@",Img_Url,longModel.park_img];
-    [self.imgView sd_setImageWithURL:[NSURL URLWithString:str]];
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:kImageStringJoint(longModel.park_img)]];
     
     
     self.titleLab.text = longModel.parking_title;
