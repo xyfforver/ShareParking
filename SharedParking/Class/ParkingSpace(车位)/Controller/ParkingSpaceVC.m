@@ -20,7 +20,8 @@
 #import "LongRentView.h"
 #import "ParkingOrderView.h"
 
-#import "CarportListModel.h"
+#import "CarportShortListModel.h"
+#import "CarportLongListModel.h"
 @interface ParkingSpaceVC ()
 @property (nonatomic , strong) JMTitleSelectView *titleView;
 @property (nonatomic , strong) ParkingSpaceHeaderView *headerView;
@@ -63,6 +64,7 @@
 
 - (void)initView{
     [self initNavBarView];
+    self.page = 1;
     
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.mapView];
@@ -83,16 +85,50 @@
     self.rentView.hidden = type != CarportLongRentType;
     
     
-    [self loadCarportListData];
+    [self.tbView.mj_header beginRefreshing];
 }
 
-- (void)loadCarportListData{
+- (void)loadData{
+    self.type != CarportLongRentType ? [self loadCarportShortListData] : [self loadCarportLongListData];
+}
+
+- (void)loadCarportShortListData{
     kSelfWeak;
-    [CarportListModel carportListWithCity:@"杭州市" type:self.type page:1 success:^(StatusModel *statusModel) {
+    [CarportShortListModel carportShortListWithPage:self.page success:^(StatusModel *statusModel) {
         kSelfStrong;
         [strongSelf.tbView.mj_header endRefreshing];
         [strongSelf.tbView.mj_footer endRefreshing];
-        if (strongSelf.page == 1) [strongSelf.tbView.dataArr removeAllObjects];
+        
+        strongSelf.tbView.type = strongSelf.type;
+        
+        if (strongSelf.page == 1) {
+            [strongSelf.tbView.dataArr removeAllObjects];
+        }
+        
+        if (statusModel.flag == kFlagSuccess) {
+            NSArray *dataArr = statusModel.data;
+            if (dataArr.count > 0) {
+                [strongSelf.tbView.dataArr addObjectsFromArray:dataArr];
+            }
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+        [strongSelf.tbView reloadData];
+    }];
+}
+
+- (void)loadCarportLongListData{
+    kSelfWeak;
+    [CarportLongListModel carportLongListWithPage:self.page success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        [strongSelf.tbView.mj_header endRefreshing];
+        [strongSelf.tbView.mj_footer endRefreshing];
+        
+        strongSelf.tbView.type = strongSelf.type;
+        
+        if (strongSelf.page == 1) {
+            [strongSelf.tbView.dataArr removeAllObjects];
+        }
         
         if (statusModel.flag == kFlagSuccess) {
             NSArray *dataArr = statusModel.data;
@@ -258,6 +294,18 @@
     if (!_tbView) {
         _tbView = [[ParkingSpaceTBView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height - kTabBarHeight) style:UITableViewStylePlain];
         _tbView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+        kSelfWeak;
+        _tbView.mj_header = [JMRefreshHeader headerWithRefreshingBlock:^{
+            kSelfStrong;
+            strongSelf.page = 1;
+            [strongSelf loadData];
+        }];
+        _tbView.mj_footer = [JMRefreshFooter footerWithRefreshingBlock:^{
+            kSelfStrong;
+            strongSelf.page ++;
+            [strongSelf loadData];
+        }];
     }
     return _tbView;
 }

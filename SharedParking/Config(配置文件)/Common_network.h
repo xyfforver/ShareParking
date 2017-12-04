@@ -29,4 +29,9 @@
 
 #endif
 
+
+
+
+#define Img_Url @"http://park.1mxtx.com"
+
 #endif /* Common_network_h */

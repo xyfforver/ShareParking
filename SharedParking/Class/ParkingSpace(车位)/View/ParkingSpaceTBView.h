@@ -10,6 +10,7 @@
 
 @interface ParkingSpaceTBView : BaseTBView
 
+@property (nonatomic , assign) CarportRentType type;
 @property (nonatomic , strong) NSMutableArray *dataArr;
 
 @end

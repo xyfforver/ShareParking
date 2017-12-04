@@ -9,6 +9,9 @@
 #import "ParkingSpaceTBView.h"
 #import "ParkingSpaceTBCell.h"
 #import "CarportDetailVC.h"
+
+#import "CarportShortListModel.h"
+#import "CarportLongListModel.h"
 @interface ParkingSpaceTBView ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -47,14 +50,26 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ParkingSpaceTBCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParkingSpaceTBCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.itemModel = self.dataArr[indexPath.row];
+    if (self.type == CarportShortRentType) {
+        cell.shortModel = self.dataArr[indexPath.row];
+    }else{
+        cell.longModel = self.dataArr[indexPath.row];
+    }
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    CarportDetailVC *vc = [[CarportDetailVC alloc]init];
+    NSString *carportId = nil;
+    if (self.type == CarportShortRentType) {
+        CarportShortListModel *model = self.dataArr[indexPath.row];
+        carportId = model.id;
+    }else{
+        CarportLongListModel *model = self.dataArr[indexPath.row];
+        carportId = model.id;
+    }
+    
+    CarportDetailVC *vc = [[CarportDetailVC alloc]initWithCarportId:carportId type:self.type];
     [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 

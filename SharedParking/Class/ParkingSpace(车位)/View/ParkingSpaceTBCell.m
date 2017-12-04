@@ -33,19 +33,51 @@
     return self;
 }
 
-- (void)setItemModel:(CarportListModel *)itemModel{
-    _itemModel = itemModel;
-    NSString *str = [NSString stringWithFormat:@"%@%@",@"http://park.1mxtx.com",itemModel.park_img];
+- (void)setShortModel:(CarportShortListModel *)shortModel{
+    _shortModel = shortModel;
+    NSString *str = [NSString stringWithFormat:@"%@%@",Img_Url,shortModel.park_img];
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:str]];
+    
+    self.titleLab.text = shortModel.park_title;
+    self.typeLab.text = @"错时";
+    
+    NSString *distance = [HelpTool stringWithDistance:shortModel.distance];
+    
+    self.locationLab.text = [NSString stringWithFormat:@"距您%@  开车约8分钟",distance];
+    self.numberLab.text = [NSString stringWithFormat:@"剩余车位 %ld/%ld",shortModel.zongnum - shortModel.zhanyongnum,shortModel.zongnum];
+    
+    self.reserveLab.text = @"预订";
+    self.spaceLab.text = @"小区";//
+    self.lockLab.text = @"地锁";
+    self.lockLab.hidden = shortModel.park_type == 0;
+
+}
+
+- (void)setLongModel:(CarportLongListModel *)longModel{
+    _longModel = longModel;
+    
+    NSString *str = [NSString stringWithFormat:@"%@%@",Img_Url,longModel.park_img];
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:str]];
     
     
-    self.titleLab.text = itemModel.park_title;
-    self.locationLab.text = @"距您3km  开车约8分钟";
-    self.numberLab.text = @"剩余车位 12/65";
-    self.typeLab.text = @"错时";
+    self.titleLab.text = longModel.parking_title;
+    self.typeLab.text = @"长租";
     
-    self.spaceLab.text = @"小区";
-    self.lockLab.text = @"地锁";
+    NSString *distance = [HelpTool stringWithDistance:longModel.distance];
+    
+    self.locationLab.text = [NSString stringWithFormat:@"距您%@  开车约8分钟",distance];
+    self.numberLab.text = [NSString stringWithFormat:@"￥%@/月",longModel.parking_fee];
+    
+    self.reserveLab.text = longModel.parking_fabutype ? @"个人" : @"商户";
+    //车位类型 0小区 1写字楼 2 其他
+    if (longModel.parking_cheweitype == 0) {
+        self.spaceLab.text = @"小区";
+    }else if (longModel.parking_cheweitype == 1){
+        self.spaceLab.text = @"写字楼";
+    }else{
+        self.spaceLab.text = @"其他";
+    }
+    self.lockLab.hidden = YES;
 }
 
 - (void)initView{
@@ -170,7 +202,7 @@
         
         _reserveLab.layer.masksToBounds = YES;
         _reserveLab.layer.cornerRadius = 10;
-        _reserveLab.text = @"预订";
+//        _reserveLab.text = @"预订";
     }
     return _reserveLab;
 }

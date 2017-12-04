@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CarportListModel.h"
+#import "CarportShortListModel.h"
+#import "CarportLongListModel.h"
 @interface ParkingSpaceTBCell : UITableViewCell
 
-@property (nonatomic , strong) CarportListModel *itemModel;
-
+@property (nonatomic , strong) CarportShortListModel *shortModel;
+@property (nonatomic , strong) CarportLongListModel *longModel;
 @end

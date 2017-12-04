@@ -8,10 +8,7 @@
 
 #import <MJRefresh/MJRefresh.h>
 
-@interface JMRefreshFooter : MJRefreshAutoGifFooter
-
-//UI默认是40,由于项目中不同页面要求 scroView 有不同的边距，所以开放这个属性（MDZZ）
-@property (nonatomic,assign)CGFloat topInset;
-
+@interface JMRefreshFooter : MJRefreshBackNormalFooter
 
 @end
+

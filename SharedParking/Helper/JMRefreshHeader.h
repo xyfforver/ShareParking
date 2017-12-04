@@ -8,6 +8,7 @@
 
 #import <MJRefresh/MJRefresh.h>
 
-@interface JMRefreshHeader : MJRefreshGifHeader
+@interface JMRefreshHeader : MJRefreshNormalHeader
 - (void)endRefreshingWithNoMoreData;
 @end
+
