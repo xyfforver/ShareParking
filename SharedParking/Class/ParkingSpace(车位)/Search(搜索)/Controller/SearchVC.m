@@ -8,15 +8,17 @@
 
 #import "SearchVC.h"
 #import "SearchHistoryView.h"
-#import "SearchModel.h"
+
+#import "SearchResultVC.h"
 
 @interface SearchVC ()<UISearchBarDelegate>
 @property (nonatomic,strong) UIView *navigationBar;
 @property (nonatomic,strong) UISearchBar *searchBar;
 @property (nonatomic,strong) UIButton *cancelBtn;
 
-@property (nonatomic,strong) SearchHistoryView *historyView;
 
+@property (nonatomic,strong) SearchHistoryView *historyView;
+@property (nonatomic, strong) NSMutableArray *historyData;
 
 
 @end
@@ -29,7 +31,7 @@
     
     [self initView];
     
-    [self loadData];
+    
 }
 
 - (void)initView{
@@ -39,22 +41,29 @@
     [self.view addSubview:self.navigationBar];
     [self.view addSubview:self.historyView];
     
-
-    
-   
-}
-
-
-#pragma mark ---------------NetWork-------------------------/
-- (void)loadData{
-    [SearchModel searchWithTitle:@"停车场" success:^(StatusModel *statusModel) {
-        
-    }];
 }
 
 #pragma mark ---------------Event-------------------------/
 - (void)cancelButtonAction:(UIButton *)button{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    
+    [searchBar resignFirstResponder];
+    
+    [self pushToSearchResult:searchBar.text];
+    
+}
+
+- (void)pushToSearchResult:(NSString *)searchStr{
+    
+    [self.historyView saveHistoryKeyWord:searchStr];
+    
+    SearchResultVC *vc = [[SearchResultVC alloc]initWithSearchStr:searchStr];
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 
@@ -65,7 +74,7 @@
 - (UIView *)navigationBar
 {
     if (!_navigationBar) {
-        _navigationBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
+        _navigationBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kStatusBarAndNavigationBarHeight)];
         _navigationBar.backgroundColor = kColorWhite;
         
         UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, _navigationBar.height - 1, _navigationBar.width, 1)];
@@ -107,5 +116,14 @@
     }
     return _historyView;
 }
+
+- (NSMutableArray *)historyData{
+    if (!_historyData) {
+        _historyData = [[NSMutableArray alloc]init];
+    }
+    return _historyData;
+}
+
+
 
 @end

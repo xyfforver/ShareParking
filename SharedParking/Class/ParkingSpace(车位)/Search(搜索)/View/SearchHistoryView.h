@@ -10,4 +10,10 @@
 
 @interface SearchHistoryView : UIView
 @property (nonatomic, strong) NSMutableArray *historyData;
+
+/**
+ *  保存搜索记录
+ */
+- (void)saveHistoryKeyWord:(NSString *)keyword;
+
 @end

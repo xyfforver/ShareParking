@@ -37,6 +37,7 @@
 		6B17DCE51FD649BA00A30057 /* CarportShortItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCE41FD649BA00A30057 /* CarportShortItemModel.m */; };
 		6B17DCE81FD65F4200A30057 /* CarportReserveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCE71FD65F4200A30057 /* CarportReserveModel.m */; };
 		6B17DCEC1FD68E2200A30057 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCEB1FD68DFC00A30057 /* MZTimerLabel.m */; };
+		6B17DCEF1FD69EB600A30057 /* SearchResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCEE1FD69EB600A30057 /* SearchResultVC.m */; };
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
@@ -259,6 +260,8 @@
 		6B17DCE71FD65F4200A30057 /* CarportReserveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportReserveModel.m; sourceTree = "<group>"; };
 		6B17DCEA1FD68DFC00A30057 /* MZTimerLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
 		6B17DCEB1FD68DFC00A30057 /* MZTimerLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
+		6B17DCED1FD69EB600A30057 /* SearchResultVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultVC.h; sourceTree = "<group>"; };
+		6B17DCEE1FD69EB600A30057 /* SearchResultVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultVC.m; sourceTree = "<group>"; };
 		6B1C15871FA058AE00E584F3 /* BaseCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCLView.m; sourceTree = "<group>"; };
 		6B1C15881FA058AE00E584F3 /* BaseTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTBView.h; sourceTree = "<group>"; };
 		6B1C15891FA058AF00E584F3 /* BaseCLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCLView.h; sourceTree = "<group>"; };
@@ -708,6 +711,8 @@
 			children = (
 				6B1C4B341FA84A3200D543D2 /* SearchVC.h */,
 				6B1C4B351FA84A3200D543D2 /* SearchVC.m */,
+				6B17DCED1FD69EB600A30057 /* SearchResultVC.h */,
+				6B17DCEE1FD69EB600A30057 /* SearchResultVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1955,6 +1960,7 @@
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
 				6B968F741FBD72940083A1DC /* FindBreakRulesView.m in Sources */,
 				6B62C0AA1FCEAE23007F6861 /* ReserveSuccessVC.m in Sources */,
+				6B17DCEF1FD69EB600A30057 /* SearchResultVC.m in Sources */,
 				6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */,
 				6B62C09E1FCEADF5007F6861 /* CarportPayVC.m in Sources */,
 				6BB5CEA31FB9613000A2816F /* FuelCounterTBView.m in Sources */,
