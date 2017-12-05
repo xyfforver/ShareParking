@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SharedParking/Class/ParkingSpace(&#x8f66;&#x4f4d;)/CarportDetail(&#x8f66;&#x4f4d;&#x8be6;&#x60c5;)/View/CarportDetailShortCLView.m"
-            timestampString = "534136613.734181"
+            filePath = "SharedParking/Class/ParkingSpace(&#x8f66;&#x4f4d;)/QRCode(&#x626b;&#x4e00;&#x626b;)/Model/CarportReserveModel.m"
+            timestampString = "534150726.110616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "-collectionView:viewForSupplementaryElementOfKind:atIndexPath:"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "+carportReserveWithParkingId:success:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

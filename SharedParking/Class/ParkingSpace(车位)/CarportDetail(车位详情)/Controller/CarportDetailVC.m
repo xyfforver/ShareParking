@@ -96,8 +96,10 @@
 #pragma mark ---------------Lazy-------------------------/
 - (CarportDetailHeaderView *)headerView{
     if (!_headerView) {
-        _headerView = [[CarportDetailHeaderView alloc]init];
-        _headerView.frame = CGRectMake(0, 0, kScreenWidth, [CarportDetailHeaderView getHeight]);
+        CGFloat height = [CarportDetailHeaderView getHeight];
+        height = self.type == CarportShortRentType ? height - 20 : height;
+        
+        _headerView = [[CarportDetailHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, height) type:self.type];
     }
     return _headerView;
 }

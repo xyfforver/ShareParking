@@ -18,7 +18,7 @@
 
 @property (nonatomic,strong) UILabel *reserveLab;
 @property (nonatomic,strong) UILabel *spaceLab;
-@property (nonatomic,strong) UILabel *lockLab;
+@property (nonatomic,strong) UILabel *timeLab;
 @end
 
 @implementation ParkingSpaceTBCell
@@ -63,7 +63,7 @@
     
     NSString *distance = [HelpTool stringWithDistance:longModel.distance];
     
-    self.locationLab.text = [NSString stringWithFormat:@"距您%@  开车约8分钟",distance];
+    self.locationLab.text = [NSString stringWithFormat:@"距您%@ %ld次浏览",distance,longModel.views];
     self.numberLab.text = [NSString stringWithFormat:@"￥%@/月",longModel.parking_fee];
     
     self.reserveLab.text = longModel.parking_fabutype ? @"个人" : @"商户";
@@ -75,7 +75,8 @@
     }else{
         self.spaceLab.text = @"其他";
     }
-//    self.lockLab.hidden = YES;
+    self.timeLab.hidden = NO;
+    self.timeLab.text = longModel.time_since;
 }
 
 - (void)initView{
@@ -89,7 +90,7 @@
     
     [self.contentView addSubview:self.reserveLab];
     [self.contentView addSubview:self.spaceLab];
-    [self.contentView addSubview:self.lockLab];
+    [self.contentView addSubview:self.timeLab];
     
     [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
@@ -132,9 +133,9 @@
         make.top.width.height.mas_equalTo(self.reserveLab);
     }];
     
-    [self.lockLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.spaceLab.mas_right).offset(5);
-        make.top.width.height.mas_equalTo(self.reserveLab);
+    [self.timeLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-kMargin15);
+        make.top.mas_equalTo(self.typeLab.mas_bottom).offset(5);
     }];
     
 
@@ -219,19 +220,15 @@
     return _spaceLab;
 }
 
-- (UILabel *)lockLab{
-    if (!_lockLab) {
-        _lockLab = [[UILabel alloc]init];
-        _lockLab.font = kFontSizeBold12;
-        _lockLab.textColor = kColorWhite;
-        _lockLab.backgroundColor = kColorDeepBlack;
-        _lockLab.textAlignment = NSTextAlignmentCenter;
-        
-        _lockLab.layer.masksToBounds = YES;
-        _lockLab.layer.cornerRadius = 10;
-        _lockLab.hidden = YES;
+- (UILabel *)timeLab{
+    if (!_timeLab) {
+        _timeLab = [[UILabel alloc]init];
+        _timeLab.font = kFontSize13;
+        _timeLab.textColor = kColor6B6B6B;
+        _timeLab.textAlignment = NSTextAlignmentRight;
+        _timeLab.hidden = YES;
     }
-    return _lockLab;
+    return _timeLab;
 }
 
 @end

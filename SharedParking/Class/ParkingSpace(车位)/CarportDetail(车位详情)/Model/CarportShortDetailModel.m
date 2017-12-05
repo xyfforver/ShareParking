@@ -7,9 +7,12 @@
 //
 
 #import "CarportShortDetailModel.h"
-
+#import "CarportShortItemModel.h"
 @implementation CarportShortDetailModel
 
++ (NSDictionary *)mj_objectClassInArray{
+    return @{@"parkinglist":[CarportShortItemModel class],};
+}
 
 //停车场详情
 + (void)carportShortDetailWithCarPortId:(NSString *)carPortId success:(NetCompletionBlock)success{

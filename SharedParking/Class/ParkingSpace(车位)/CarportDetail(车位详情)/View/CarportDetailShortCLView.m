@@ -11,6 +11,8 @@
 #import "CarportDetailShortHeadView.h"
 
 #import "CarportReserveVC.h"
+
+#import "CarportShortItemModel.h"
 @interface CarportDetailShortCLView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @end
@@ -39,17 +41,19 @@
 }
 
 #pragma mark ------------collectionView delegate ------------------/
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 2;
-}
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+//    return 2;
+//}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 9;
+    return self.shortModel.parkinglist.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CarportDetailShortCLCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarportDetailShortCLCell" forIndexPath:indexPath];
-    cell.titleLab.text = [NSString stringWithFormat:@"%ld区%ld号",indexPath.section,indexPath.row];
+    
+    CarportShortItemModel *itemModel = self.shortModel.parkinglist[indexPath.row];
+    cell.titleLab.text = itemModel.parking_number;
     
     return cell;
 }
@@ -79,7 +83,10 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    CarportReserveVC *vc = [[CarportReserveVC alloc]init];
+    
+    CarportShortItemModel *itemModel = self.shortModel.parkinglist[indexPath.row];
+    
+    CarportReserveVC *vc = [[CarportReserveVC alloc]initWithParkingId:itemModel.id];
     [self.Controller.navigationController pushViewController:vc animated:YES];
     
 }

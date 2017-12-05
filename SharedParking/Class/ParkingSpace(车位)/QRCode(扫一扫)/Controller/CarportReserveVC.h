@@ -10,4 +10,8 @@
 
 @interface CarportReserveVC : BaseViewController
 
+- (instancetype)initWithParkingId:(NSString *)parkingId;
+
+@property (nonatomic , copy) NSString *parkingId;
+
 @end

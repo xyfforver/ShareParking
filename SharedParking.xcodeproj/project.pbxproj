@@ -34,6 +34,8 @@
 		6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323511FB43CF800AB1840 /* SettingVC.m */; };
 		6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B176F601FA447410045F55A /* ParkingSpaceMapView.m */; };
 		6B17DCE21FD6414B00A30057 /* CarportLongDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCE11FD6414B00A30057 /* CarportLongDetailModel.m */; };
+		6B17DCE51FD649BA00A30057 /* CarportShortItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCE41FD649BA00A30057 /* CarportShortItemModel.m */; };
+		6B17DCE81FD65F4200A30057 /* CarportReserveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCE71FD65F4200A30057 /* CarportReserveModel.m */; };
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
@@ -250,6 +252,10 @@
 		6B176F601FA447410045F55A /* ParkingSpaceMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceMapView.m; sourceTree = "<group>"; };
 		6B17DCE01FD6414B00A30057 /* CarportLongDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportLongDetailModel.h; sourceTree = "<group>"; };
 		6B17DCE11FD6414B00A30057 /* CarportLongDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportLongDetailModel.m; sourceTree = "<group>"; };
+		6B17DCE31FD649BA00A30057 /* CarportShortItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportShortItemModel.h; sourceTree = "<group>"; };
+		6B17DCE41FD649BA00A30057 /* CarportShortItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportShortItemModel.m; sourceTree = "<group>"; };
+		6B17DCE61FD65F4200A30057 /* CarportReserveModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportReserveModel.h; sourceTree = "<group>"; };
+		6B17DCE71FD65F4200A30057 /* CarportReserveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportReserveModel.m; sourceTree = "<group>"; };
 		6B1C15871FA058AE00E584F3 /* BaseCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCLView.m; sourceTree = "<group>"; };
 		6B1C15881FA058AE00E584F3 /* BaseTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTBView.h; sourceTree = "<group>"; };
 		6B1C15891FA058AF00E584F3 /* BaseCLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCLView.h; sourceTree = "<group>"; };
@@ -990,6 +996,8 @@
 		6B62C08E1FCEAD76007F6861 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B17DCE61FD65F4200A30057 /* CarportReserveModel.h */,
+				6B17DCE71FD65F4200A30057 /* CarportReserveModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1027,6 +1035,8 @@
 				6BD26AF51FD4F61100129F10 /* CarportShortDetailModel.m */,
 				6B17DCE01FD6414B00A30057 /* CarportLongDetailModel.h */,
 				6B17DCE11FD6414B00A30057 /* CarportLongDetailModel.m */,
+				6B17DCE31FD649BA00A30057 /* CarportShortItemModel.h */,
+				6B17DCE41FD649BA00A30057 /* CarportShortItemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1903,6 +1913,7 @@
 				6BB1EE2E1FB43662003960F8 /* BalanceVC.m in Sources */,
 				6BCD979C1FB45481001F81A5 /* MyRequestRentCLCell.m in Sources */,
 				6BD6149C1FD28F3E0042F2E5 /* CarportShortListModel.m in Sources */,
+				6B17DCE51FD649BA00A30057 /* CarportShortItemModel.m in Sources */,
 				6B2AB9F51FD101F80025D512 /* LeftImageTextField.m in Sources */,
 				6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */,
 				6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */,
@@ -2006,6 +2017,7 @@
 				6B968F5A1FBD5D0D0083A1DC /* CarNumberListTBCell.m in Sources */,
 				6B91B6931F9DE9C600A1020C /* MineVC.m in Sources */,
 				6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */,
+				6B17DCE81FD65F4200A30057 /* CarportReserveModel.m in Sources */,
 				6B62C0C71FCEB1DB007F6861 /* RobParkingView.m in Sources */,
 				6B12C8371FCFAC5A00B819B4 /* ParkingOrderReserveView.m in Sources */,
 				6B12C8401FCFD6BF00B819B4 /* MessageTBCell.m in Sources */,

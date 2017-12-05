@@ -6,7 +6,7 @@
 //  Copyright © 2017年 galaxy. All rights reserved.
 //
 #define kHeadWidth 70
-#define kInfoHeight 110
+#define kInfoHeight (self.type == CarportShortRentType ? 90 : 110)
 #import "CarportDetailHeaderView.h"
 @interface CarportDetailHeaderView ()
 @property (nonatomic,strong) UIButton *backBtn;
@@ -20,10 +20,10 @@
 @end
 
 @implementation CarportDetailHeaderView
-
-- (instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame type:(CarportRentType)type{
     self = [super initWithFrame:frame];
     if (self) {
+        self.type = type;
         [self initView];
     }
     return self;
@@ -37,7 +37,8 @@
     self.titleLab.text = shortModel.park_title;
     self.locationLab.text = [NSString stringWithFormat:@"距您%@",[HelpTool stringWithDistance:shortModel.distance]];
     
-    self.timeLab.text = @"一天前 23人浏览";
+    self.timeLab.hidden = YES;
+    
     self.personalLab.text = @"个人";
     self.buildingLab.text = @"写字楼";
 }
@@ -50,7 +51,7 @@
     self.titleLab.text = longModel.parking_title;
     self.locationLab.text = [NSString stringWithFormat:@"距您%@",[HelpTool stringWithDistance:longModel.distance]];
 
-    self.timeLab.text = @"一天前 23人浏览";
+    self.timeLab.text = [NSString stringWithFormat:@"%@ %ld人浏览",longModel.time_since,longModel.views];
     
     self.personalLab.text = longModel.parking_fabutype ? @"个人" : @"商户";
     //车位类型 0小区 1写字楼 2 其他
@@ -213,6 +214,6 @@
 }
 
 + (CGFloat)getHeight{
-    return 280/750.0*kScreenWidth + kTabbarSafeBottomMargin + kInfoHeight;
+    return 280/750.0*kScreenWidth + kTabbarSafeBottomMargin + 110;
 }
 @end

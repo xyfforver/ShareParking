@@ -8,6 +8,8 @@
 
 #import "ReserveSuccessVC.h"
 #import "NavigationVC.h"
+
+#import "CarportReserveModel.h"
 @interface ReserveSuccessVC ()
 @property (strong, nonatomic) IBOutlet UILabel *numberLab;
 @property (strong, nonatomic) IBOutlet UILabel *timeLab;
@@ -18,6 +20,13 @@
 @end
 
 @implementation ReserveSuccessVC
+- (instancetype)initWithReserveId:(NSString *)reserveId{
+    self = [super init];
+    if (self) {
+        self.reserveId = reserveId;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,8 +36,11 @@
     
     self.afterBtn.layer.borderWidth = 1;
     self.afterBtn.layer.borderColor = kColor6B6B6B.CGColor;
+    
+    [self loadData];
 }
 
+#pragma mark ---------------event ---------------------/
 - (IBAction)nowAction:(id)sender {
     NavigationVC *vc = [[NavigationVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
@@ -38,5 +50,17 @@
     
 }
 
+#pragma mark ---------------network ---------------------/
+- (void)loadData{
+    kSelfWeak;
+    [CarportReserveModel reserveWithReserveId:self.reserveId success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            
+        }else{
+            
+        }
+    }];
+}
 
 @end

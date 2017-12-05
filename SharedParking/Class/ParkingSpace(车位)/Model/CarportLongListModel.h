@@ -17,6 +17,7 @@
 @property (assign, nonatomic) CarportRentType parking_type;//停车类型 0 错时 1 长租
 @property (assign, nonatomic) BOOL parking_fabutype;//发布类型 0 后台发布 1 前台个人发布
 @property (assign, nonatomic) NSInteger parking_cheweitype;//车位类型 0小区 1写字楼 2 其他
+@property (assign, nonatomic) NSInteger views;
 
 @property (copy, nonatomic) NSString *user_id;
 @property (copy, nonatomic) NSString *istype;
@@ -29,6 +30,7 @@
 @property (copy, nonatomic) NSString *parking_obj;
 @property (copy, nonatomic) NSString *isdelete;
 @property (copy, nonatomic) NSString *parking_number;
+@property (copy, nonatomic) NSString *time_since;
 
 
 @property (copy, nonatomic) NSString *remark;

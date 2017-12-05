@@ -20,6 +20,8 @@
 @property (copy, nonatomic) NSString *remark;
 @property (copy, nonatomic) NSString *park_closetime;
 @property (copy, nonatomic) NSString *park_opentime;
+@property (assign, nonatomic) NSInteger views;
+@property (copy, nonatomic) NSString *time_since;
 
 @property (assign, nonatomic) BOOL parking_obj;//出租对象 0不限 1仅限本小区业主
 @property (assign, nonatomic) NSInteger parking_fabutype;

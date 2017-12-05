@@ -10,4 +10,7 @@
 
 @interface ReserveSuccessVC : BaseViewController
 
+- (instancetype)initWithReserveId:(NSString *)reserveId;
+
+@property (nonatomic , copy) NSString *reserveId;
 @end
