@@ -53,6 +53,7 @@
  remark = 我是长租用户;
  */
 //停车场详情
-+ (void)carportLongDetailWithCarPortId:(NSString *)carPortId success:(NetCompletionBlock)success;
++ (void)carportLongDetailWithCarportId:(NSString *)carportId success:(NetCompletionBlock)success;
 
++ (void)browseWithCarportId:(NSString *)carportId success:(NetCompletionBlock)success;
 @end

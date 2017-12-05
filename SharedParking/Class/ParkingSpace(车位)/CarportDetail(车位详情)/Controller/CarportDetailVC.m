@@ -56,6 +56,7 @@
     if (self.type == CarportShortRentType) {
         [self loadShortData];
     }else{
+        [self loadBrowseData];
         [self loadLongData];
     }
 }
@@ -77,7 +78,7 @@
 
 - (void)loadLongData{
     kSelfWeak;
-    [CarportLongDetailModel carportLongDetailWithCarPortId:self.carportId success:^(StatusModel *statusModel) {
+    [CarportLongDetailModel carportLongDetailWithCarportId:self.carportId success:^(StatusModel *statusModel) {
         kSelfStrong;
         if (statusModel.flag == kFlagSuccess) {
             CarportLongDetailModel *model = statusModel.data;
@@ -90,6 +91,11 @@
     }];
 }
 
+- (void)loadBrowseData{
+    [CarportLongDetailModel browseWithCarportId:self.carportId success:^(StatusModel *statusModel) {
+        
+    }];
+}
 #pragma mark ---------------Event-------------------------/
 
 
