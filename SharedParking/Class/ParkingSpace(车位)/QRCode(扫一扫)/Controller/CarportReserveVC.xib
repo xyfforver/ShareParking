@@ -16,6 +16,7 @@
                 <outlet property="numberBtn" destination="mwb-Il-Pey" id="kmy-82-ObY"/>
                 <outlet property="overPriceLab" destination="eok-uf-WLe" id="Hfh-Jj-ZcL"/>
                 <outlet property="priceLab" destination="TlX-BM-p2P" id="Ypu-mk-Aqt"/>
+                <outlet property="reminderBtn" destination="W3N-I5-0iV" id="iaF-GZ-Acp"/>
                 <outlet property="reserveBtn" destination="6l2-pI-9Oa" id="0PZ-Rm-BtW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

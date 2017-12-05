@@ -34,4 +34,11 @@
 + (NSString *)stringFromDate:(NSDate *)date;
 //两个的时间间隔
 +(NSString *)intervalFromLastDate: (NSString *) dateString1  toTheDate:(NSString *) dateString2;
+
+//获取当前系统时间的时间戳
++(NSInteger)getNowTimestamp;
+//将某个时间转化成 时间戳
++(NSInteger)timeSwitchTimestamp:(NSString *)formatTime andFormatter:(NSString *)format;
+//将某个时间戳转化成 时间
++(NSString *)timestampSwitchTime:(NSInteger)timestamp andFormatter:(NSString *)format;
 @end

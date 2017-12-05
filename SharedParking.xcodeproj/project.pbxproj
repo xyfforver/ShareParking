@@ -36,6 +36,7 @@
 		6B17DCE21FD6414B00A30057 /* CarportLongDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCE11FD6414B00A30057 /* CarportLongDetailModel.m */; };
 		6B17DCE51FD649BA00A30057 /* CarportShortItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCE41FD649BA00A30057 /* CarportShortItemModel.m */; };
 		6B17DCE81FD65F4200A30057 /* CarportReserveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCE71FD65F4200A30057 /* CarportReserveModel.m */; };
+		6B17DCEC1FD68E2200A30057 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCEB1FD68DFC00A30057 /* MZTimerLabel.m */; };
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
@@ -256,6 +257,8 @@
 		6B17DCE41FD649BA00A30057 /* CarportShortItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportShortItemModel.m; sourceTree = "<group>"; };
 		6B17DCE61FD65F4200A30057 /* CarportReserveModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportReserveModel.h; sourceTree = "<group>"; };
 		6B17DCE71FD65F4200A30057 /* CarportReserveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportReserveModel.m; sourceTree = "<group>"; };
+		6B17DCEA1FD68DFC00A30057 /* MZTimerLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
+		6B17DCEB1FD68DFC00A30057 /* MZTimerLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
 		6B1C15871FA058AE00E584F3 /* BaseCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCLView.m; sourceTree = "<group>"; };
 		6B1C15881FA058AE00E584F3 /* BaseTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTBView.h; sourceTree = "<group>"; };
 		6B1C15891FA058AF00E584F3 /* BaseCLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCLView.h; sourceTree = "<group>"; };
@@ -678,6 +681,15 @@
 				6BCD979B1FB45481001F81A5 /* MyRequestRentCLCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6B17DCE91FD68DFC00A30057 /* MZTimerLabel */ = {
+			isa = PBXGroup;
+			children = (
+				6B17DCEA1FD68DFC00A30057 /* MZTimerLabel.h */,
+				6B17DCEB1FD68DFC00A30057 /* MZTimerLabel.m */,
+			);
+			path = MZTimerLabel;
 			sourceTree = "<group>";
 		};
 		6B1C4B301FA84A1600D543D2 /* Search(搜索) */ = {
@@ -1195,6 +1207,7 @@
 		6B91B65F1F9DDDC300A1020C /* Libs(第三方库) */ = {
 			isa = PBXGroup;
 			children = (
+				6B17DCE91FD68DFC00A30057 /* MZTimerLabel */,
 				6B0E80111FCBBD4B00B2C309 /* QFDatePickerView */,
 				6BF95B761FB59DA900DED0B7 /* iOSBlocks */,
 				6B91B6601F9DDDC300A1020C /* FDFullscreenPopGesture */,
@@ -1877,6 +1890,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B17DCEC1FD68E2200A30057 /* MZTimerLabel.m in Sources */,
 				6B2ABA171FD152700025D512 /* UIImage+ImageSize.m in Sources */,
 				6B2ABA181FD152700025D512 /* SGQRCodeAlbumManager.m in Sources */,
 				6B2ABA191FD152700025D512 /* SGQRCodeGenerateManager.m in Sources */,

@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *overPriceLab;
 @property (strong, nonatomic) IBOutlet UILabel *lookLab;
 @property (strong, nonatomic) IBOutlet UIButton *reserveBtn;
+@property (strong, nonatomic) IBOutlet UIButton *reminderBtn;
 
 @property (nonatomic , strong) CarportShortItemModel *carItemModel;
 
@@ -38,8 +39,11 @@
     
     
     self.title = @"车位详情";
+    self.reminderBtn.hidden = YES;
     
     [self loadData];
+    
+
 }
 
 #pragma mark ---------------network ---------------------/

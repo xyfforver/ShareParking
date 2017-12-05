@@ -19,6 +19,10 @@
 @property (copy, nonatomic) NSString *reserve_id;
 
 #pragma mark ---------------预订成功 ---------------------/
+@property (copy, nonatomic) NSString *park_title;
+@property (assign, nonatomic) NSInteger reserve_time;
+@property (copy, nonatomic) NSString *park_jwd;
+@property (copy, nonatomic) NSString *park_address;
 
 
 /*
