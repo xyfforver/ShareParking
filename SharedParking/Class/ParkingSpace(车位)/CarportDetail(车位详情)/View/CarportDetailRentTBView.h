@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CarportLongDetailModel.h"
 @interface CarportDetailRentTBView : UITableView
+
+@property (nonatomic , strong) CarportLongDetailModel *longModel;
 
 @end

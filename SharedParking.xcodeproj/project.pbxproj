@@ -33,6 +33,7 @@
 		6B13235B1FB43E4700AB1840 /* MyRequestRentHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */; };
 		6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323511FB43CF800AB1840 /* SettingVC.m */; };
 		6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B176F601FA447410045F55A /* ParkingSpaceMapView.m */; };
+		6B17DCE21FD6414B00A30057 /* CarportLongDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCE11FD6414B00A30057 /* CarportLongDetailModel.m */; };
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
 		6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158A1FA058AF00E584F3 /* BaseTBView.m */; };
 		6B1C158F1FA05B9F00E584F3 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C158E1FA05B9F00E584F3 /* MineHeaderView.m */; };
@@ -247,6 +248,8 @@
 		6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestRentHeadView.m; sourceTree = "<group>"; };
 		6B176F5F1FA447410045F55A /* ParkingSpaceMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceMapView.h; sourceTree = "<group>"; };
 		6B176F601FA447410045F55A /* ParkingSpaceMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceMapView.m; sourceTree = "<group>"; };
+		6B17DCE01FD6414B00A30057 /* CarportLongDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportLongDetailModel.h; sourceTree = "<group>"; };
+		6B17DCE11FD6414B00A30057 /* CarportLongDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportLongDetailModel.m; sourceTree = "<group>"; };
 		6B1C15871FA058AE00E584F3 /* BaseCLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCLView.m; sourceTree = "<group>"; };
 		6B1C15881FA058AE00E584F3 /* BaseTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTBView.h; sourceTree = "<group>"; };
 		6B1C15891FA058AF00E584F3 /* BaseCLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCLView.h; sourceTree = "<group>"; };
@@ -1022,6 +1025,8 @@
 			children = (
 				6BD26AF41FD4F61100129F10 /* CarportShortDetailModel.h */,
 				6BD26AF51FD4F61100129F10 /* CarportShortDetailModel.m */,
+				6B17DCE01FD6414B00A30057 /* CarportLongDetailModel.h */,
+				6B17DCE11FD6414B00A30057 /* CarportLongDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1912,6 +1917,7 @@
 				6B1C4B401FA870BD00D543D2 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */,
 				6BB5CEA61FB961BA00A2816F /* FuelCounterTBCell.m in Sources */,
+				6B17DCE21FD6414B00A30057 /* CarportLongDetailModel.m in Sources */,
 				6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */,
 				6B1C4B2F1FA80E2700D543D2 /* HelpTool.m in Sources */,
 				6B62C0CA1FCEB643007F6861 /* LongRentView.m in Sources */,

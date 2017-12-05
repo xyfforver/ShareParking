@@ -110,4 +110,71 @@
 }
 
 
+#pragma mark - 多久以前
++ (NSString *)stringIntervalFromLastDate:(NSString *)dateString{
+    NSDateFormatter *date=[[NSDateFormatter alloc] init];
+    [date setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *compareDate = [date dateFromString:dateString];
+    NSTimeInterval  timeInterval = [compareDate timeIntervalSinceNow];
+    timeInterval = -timeInterval;
+    
+    long temp = 0;
+    NSString *result;
+    if (timeInterval < 60) {
+        result = [NSString stringWithFormat:@"刚刚"];
+    }
+    else if((temp = timeInterval/60) <60){
+        result = [NSString stringWithFormat:@"%ld分钟前",temp];
+    }
+    
+    else if((temp = temp/60) <24){
+        result = [NSString stringWithFormat:@"%ld小时前",temp];
+    }
+    
+    else if((temp = temp/24) <30){
+        result = [NSString stringWithFormat:@"%ld天前",temp];
+    }
+    
+    else if((temp = temp/30) <12){
+        result = [NSString stringWithFormat:@"%ld月前",temp];
+    }
+    else{
+        temp = temp/12;
+        result = [NSString stringWithFormat:@"%ld年前",temp];
+    }
+    
+    return  result;
+}
+
++(NSDate *)getNowDateEast8{
+    return [NSDate dateWithTimeIntervalSinceNow:8 * 60 * 60];
+}
+
++ (NSString *)stringFromDate:(NSDate *)date{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    [dateFormatter setTimeZone:timeZone];
+    NSString *destDateString = [dateFormatter stringFromDate:date];
+    return destDateString;
+}
+
+
+//两个的时间间隔
++(NSString *)intervalFromLastDate: (NSString *) dateString1  toTheDate:(NSString *) dateString2
+{
+    NSDateFormatter *date=[[NSDateFormatter alloc] init];
+    [date setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *d1=[date dateFromString:dateString1];
+    NSTimeInterval late1=[d1 timeIntervalSince1970]*1;
+    NSDate *d2=[date dateFromString:dateString2];
+    NSTimeInterval late2=[d2 timeIntervalSince1970]*1;
+    NSTimeInterval cha=late2-late1;
+    NSString *timeString=@"";
+    //86400
+    timeString = [NSString stringWithFormat:@"%f", cha/1];
+    timeString = [timeString substringToIndex:timeString.length-7];
+    timeString=[NSString stringWithFormat:@"%@", timeString];
+    return timeString;
+}
 @end

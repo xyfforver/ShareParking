@@ -42,6 +42,27 @@
     self.buildingLab.text = @"写字楼";
 }
 
+- (void)setLongModel:(CarportLongDetailModel *)longModel{
+    _longModel = longModel;
+    
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:kImageStringJoint(longModel.parking_img)]];
+
+    self.titleLab.text = longModel.parking_title;
+    self.locationLab.text = [NSString stringWithFormat:@"距您%@",[HelpTool stringWithDistance:longModel.distance]];
+
+    self.timeLab.text = @"一天前 23人浏览";
+    
+    self.personalLab.text = longModel.parking_fabutype ? @"个人" : @"商户";
+    //车位类型 0小区 1写字楼 2 其他
+    if (longModel.parking_cheweitype == 0) {
+        self.buildingLab.text = @"小区";
+    }else if (longModel.parking_cheweitype == 1){
+        self.buildingLab.text = @"写字楼";
+    }else{
+        self.buildingLab.text = @"其他";
+    }
+}
+
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
     self.backgroundColor = kColorWhite;
@@ -98,13 +119,6 @@
         make.height.width.mas_equalTo(kHeadWidth);
         make.centerY.mas_equalTo(self.imgView.mas_bottom);
     }];
-    
-    
-    self.titleLab.text = @"萧山写字楼";
-    self.locationLab.text = @"距您3km";
-    self.timeLab.text = @"一天前 23人浏览";
-    self.personalLab.text = @"个人";
-    self.buildingLab.text = @"写字楼";
     
 }
 

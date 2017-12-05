@@ -23,6 +23,34 @@
     return self;
 }
 
+- (void)setShortModel:(CarportShortDetailModel *)shortModel{
+    _shortModel = shortModel;
+    
+    self.titleLab.text = [NSString stringWithFormat:@"每小时：%.2f元",shortModel.park_fee];
+    self.timeLab.text = [NSString stringWithFormat:@"停车时间 %@~%@",shortModel.park_opentime,shortModel.park_closetime];
+    
+    if (shortModel.park_closetime.length == 5) {
+        NSDate *nowDate = [HelpTool getNowDateEast8];
+        NSString *nowStr = [HelpTool stringFromDate:nowDate];
+        NSString *closeStr = [NSString stringWithFormat:@"%@:00",shortModel.park_closetime];
+        if ([shortModel.park_closetime isEqualToString:@"24:00"]) {
+            closeStr = @"23:59:59";
+        }
+        closeStr = [nowStr stringByReplacingCharactersInRange:NSMakeRange(nowStr.length - 8, 8) withString:closeStr];
+        
+        NSString *count = [HelpTool intervalFromLastDate:nowStr toTheDate:closeStr];
+
+        if ([count integerValue] > 0) {
+            NSInteger hour = [count integerValue] / (60 * 60 );
+            NSInteger minute = [count integerValue] / 60 - hour * 60;
+            self.surplusTimeLab.text = [NSString stringWithFormat:@"剩余%ld小时%ld分",hour,minute];
+        }else{
+            self.surplusTimeLab.text = @"当前不可预订";
+        }
+    }
+
+}
+
 - (void)initView{
     self.backgroundColor = kColorWhite;
     

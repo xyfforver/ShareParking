@@ -35,7 +35,17 @@
 }
 
 #pragma mark ---------------event ---------------------/
-
+- (void)telAction:(UIButton *)button{
+    if ([NSString isNull:self.longModel.user_mobile]) {
+        [WSProgressHUD showImage:nil status:@"商家联系方式被吞了"];
+        return;
+    }
+    dispatch_after(0.2, dispatch_get_main_queue(), ^{
+        NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",self.longModel.user_mobile];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    });
+    
+}
 
 #pragma mark -------------tableView--delegate-------------/
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -49,11 +59,11 @@
     cell.subLab.textColor = kColor6B6B6B;
     cell.titleLab.text = self.titleArr[indexPath.row];
     if (indexPath.row == 0) {
-        cell.subLab.text = @"金城路234号";
+        cell.subLab.text = self.longModel.park_address;
     }else if (indexPath.row == 1){
-        cell.subLab.text = @"24小时停车";
+        cell.subLab.text = [NSString stringWithFormat:@"%@-%@",self.longModel.park_opentime,self.longModel.park_closetime];
     }else if (indexPath.row == 2){
-        cell.subLab.text = @"不限";
+        cell.subLab.text = self.longModel.parking_obj ? @"仅限本小区业主" : @"不限";
     }else{
         cell.subLab.text = @"查看";
         cell.subLab.textColor = kColorDD9900;
@@ -77,7 +87,7 @@
     
     UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(kMargin15, titleLab.bottom + kMargin10, kScreenWidth - kMargin15 * 2, 90)];
     textView.textColor = kColor6B6B6B;
-    textView.text = @"萧山写字楼车位出租，24小时停车";
+    textView.text = self.longModel.remark;
     textView.font = kFontSize14;
     textView.layer.cornerRadius = 3;
     textView.layer.masksToBounds = YES;
@@ -93,10 +103,9 @@
     telBtn.layer.cornerRadius = 20;
     telBtn.layer.masksToBounds = YES;
     telBtn.frame = CGRectMake((kScreenWidth - 180)/2.0, textView.bottom + kMargin15, 180, 40);
+    [telBtn addTarget:self action:@selector(telAction:) forControlEvents:UIControlEventTouchUpInside];
     [footerView addSubview:telBtn];
-    
-    
-    
+
     return footerView;
 }
 

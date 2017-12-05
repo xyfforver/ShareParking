@@ -60,6 +60,7 @@
         if (indexPath.section == 0) {
             
             CarportDetailShortHeadView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CarportDetailShortHeadView" forIndexPath:indexPath];
+            headView.shortModel = self.shortModel;
             
             view = headView;
         }

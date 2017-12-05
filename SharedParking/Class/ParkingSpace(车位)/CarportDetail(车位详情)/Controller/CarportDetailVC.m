@@ -12,6 +12,7 @@
 #import "CarportDetailRentTBView.h"
 
 #import "CarportShortDetailModel.h"
+#import "CarportLongDetailModel.h"
 @interface CarportDetailVC ()
 @property (nonatomic , strong) CarportDetailHeaderView *headerView;
 @property (nonatomic , strong) CarportDetailShortCLView *shortCLView;
@@ -60,17 +61,33 @@
 }
 
 - (void)loadShortData{
-    [CarportShortDetailModel carportShortDetailWithCarPortId:self.carportId type:self.type success:^(StatusModel *statusModel) {
+    kSelfWeak;
+    [CarportShortDetailModel carportShortDetailWithCarPortId:self.carportId success:^(StatusModel *statusModel) {
+        kSelfStrong;
         if (statusModel.flag == kFlagSuccess) {
-            
+            CarportShortDetailModel *model = statusModel.data;
+            strongSelf.headerView.shortModel = model;
+            strongSelf.shortCLView.shortModel = model;
+            [strongSelf.shortCLView reloadData];
         }else{
-            
+            [WSProgressHUD showImage:nil status:statusModel.message];
         }
     }];
 }
 
 - (void)loadLongData{
-    
+    kSelfWeak;
+    [CarportLongDetailModel carportLongDetailWithCarPortId:self.carportId success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            CarportLongDetailModel *model = statusModel.data;
+            strongSelf.headerView.longModel = model;
+            strongSelf.rentTBView.longModel = model;
+            [strongSelf.rentTBView reloadData];
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+    }];
 }
 
 #pragma mark ---------------Event-------------------------/

@@ -25,4 +25,13 @@
 +(id)unArchiverData:(NSString*)key;
 +(void)archiverSetValue:(id)value key:(NSString*)key;
 +(NSString*)unArchiverValue:(NSString*)key;
+
+//几分钟/小时/天前
++ (NSString *)stringIntervalFromLastDate:(NSString *)dateString;
+//获取当前时间
++ (NSDate *)getNowDateEast8;
+
++ (NSString *)stringFromDate:(NSDate *)date;
+//两个的时间间隔
++(NSString *)intervalFromLastDate: (NSString *) dateString1  toTheDate:(NSString *) dateString2;
 @end

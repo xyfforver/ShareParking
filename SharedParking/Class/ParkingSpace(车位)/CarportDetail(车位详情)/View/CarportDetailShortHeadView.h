@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CarportShortDetailModel.h"
 @interface CarportDetailShortHeadView : UICollectionReusableView
+
+@property (nonatomic , strong) CarportShortDetailModel *shortModel;
 
 @end

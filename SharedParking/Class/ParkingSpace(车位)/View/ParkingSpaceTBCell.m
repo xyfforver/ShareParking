@@ -43,13 +43,12 @@
     
     NSString *distance = [HelpTool stringWithDistance:shortModel.distance];
     
-    self.locationLab.text = [NSString stringWithFormat:@"距您%@  开车约8分钟",distance];
+    self.locationLab.text = [NSString stringWithFormat:@"距您%@",distance];
     self.numberLab.text = [NSString stringWithFormat:@"剩余车位 %ld/%ld",shortModel.zongnum - shortModel.zhanyongnum,shortModel.zongnum];
     
     self.reserveLab.text = @"预订";
-    self.spaceLab.text = @"小区";//
-    self.lockLab.text = @"地锁";
-    self.lockLab.hidden = shortModel.park_type == 0;
+    self.spaceLab.text = @"地锁";
+    self.spaceLab.hidden = shortModel.park_type == 0;
 
 }
 
@@ -76,7 +75,7 @@
     }else{
         self.spaceLab.text = @"其他";
     }
-    self.lockLab.hidden = YES;
+//    self.lockLab.hidden = YES;
 }
 
 - (void)initView{
@@ -230,6 +229,7 @@
         
         _lockLab.layer.masksToBounds = YES;
         _lockLab.layer.cornerRadius = 10;
+        _lockLab.hidden = YES;
     }
     return _lockLab;
 }
