@@ -11,7 +11,9 @@
 @implementation CarportReserveModel
 
 + (NSDictionary *)mj_objectClassInArray{
-    return @{@"car_chepai":[CarportShortItemModel class]};
+    return @{@"car_chepai":[CarportShortItemModel class],
+             @"chepai_list":[CarportShortItemModel class]
+             };
 }
 
 //停车场预订 详情
@@ -35,6 +37,13 @@
     CreateParamsDic;
     DicObjectSet(reserveId, @"reserve_id");
     [self postWithStatusModelResponsePath:@"reserve_success" params:ParamsDic onCompletion:success];
+}
+
+//扫一扫进来
++ (void)qrcodeWithParkingId:(NSString *)parkingId success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(parkingId, @"parking_id");
+    [self postWithStatusModelResponsePath:@"get_qrcode" params:ParamsDic onCompletion:success];
 }
 
 @end

@@ -25,7 +25,10 @@
 @property (copy, nonatomic) NSString *park_jwd;
 @property (copy, nonatomic) NSString *park_address;
 
-
+#pragma mark ---------------扫一扫 ---------------------/
+@property (copy, nonatomic) NSString *park_opentime;
+@property (copy, nonatomic) NSString *park_closetime;
+@property (strong, nonatomic) NSArray *chepai_list;
 /*
  id = 5;
  park_id = 1;
@@ -43,6 +46,7 @@
 + (void)reserveWithParkingId:(NSString *)parkingId carNumId:(NSString *)carNumId success:(NetCompletionBlock)success;
 //预订成功
 + (void)reserveWithReserveId:(NSString *)reserveId success:(NetCompletionBlock)success;
-
+//扫一扫进来
++ (void)qrcodeWithParkingId:(NSString *)parkingId success:(NetCompletionBlock)success;
 
 @end

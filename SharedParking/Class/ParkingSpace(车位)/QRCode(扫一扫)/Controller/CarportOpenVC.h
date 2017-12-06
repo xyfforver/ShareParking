@@ -10,4 +10,8 @@
 
 @interface CarportOpenVC : BaseViewController
 
+- (instancetype)initWithCarportId:(NSString *)carportId;
+
+@property (nonatomic , copy) NSString *carportId;
+
 @end
