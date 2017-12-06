@@ -28,7 +28,7 @@ FOUNDATION_EXPORT NSString *const kUserModelBalanceChangedNotification;
 @property (nonatomic , copy) NSString *longitude;
 @property (nonatomic , copy) NSString *latitude;
 @property (strong, nonatomic) BMKReverseGeoCodeResult *geoCodeResult;
-
+@property (copy, nonatomic) NSString *selectCity;
 
 
 #pragma mark -

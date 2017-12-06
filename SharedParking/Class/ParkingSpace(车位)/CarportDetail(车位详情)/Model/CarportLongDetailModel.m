@@ -15,8 +15,8 @@
     CreateParamsDic;
     [ParamsDic setObject:carportId forKey:@"id"];
     [ParamsDic setObject:@"1" forKey:@"parking_type"];
-    [ParamsDic setObject:@"30" forKey:@"lat"];
-    [ParamsDic setObject:@"120" forKey:@"lng"];
+    [ParamsDic setObject:GetDataManager.latitude forKey:@"lat"];
+    [ParamsDic setObject:GetDataManager.longitude forKey:@"lng"];
     [self postWithStatusModelResponsePath:@"park_xq" params:ParamsDic onCompletion:success];
 }
 

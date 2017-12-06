@@ -23,6 +23,7 @@
 #import "CarportShortListModel.h"
 #import "CarportLongListModel.h"
 @interface ParkingSpaceVC ()
+
 @property (nonatomic , strong) JMTitleSelectView *titleView;
 @property (nonatomic , strong) ParkingSpaceHeaderView *headerView;
 @property (nonatomic , strong) ParkingSpaceMapView *mapView;
@@ -49,10 +50,7 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
-    self.mapView.mapView.delegate = nil; // 不用时，置nil
-    //关闭定位
-    [self.mapView.service stopUserLocationService];
-    self.mapView.service.delegate = nil;
+    [self.mapView cancelMapDelegate];
 }
 
 - (void)viewDidLoad {

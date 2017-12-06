@@ -13,6 +13,7 @@
 @property (copy, nonatomic) NSString *park_id;
 @property (assign, nonatomic) CGFloat park_fee;
 @property (copy, nonatomic) NSString *parking_number;
+@property (assign, nonatomic) CGFloat park_feeovertime;
 @property (strong, nonatomic) NSArray *car_chepai;
 
 #pragma mark ---------------预订 ---------------------/

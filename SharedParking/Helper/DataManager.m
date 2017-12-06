@@ -34,6 +34,15 @@ NSString *const kUserModelUpdatedNotification = @"UserModelUpdatedNotification";
     
     return sharedManager;
 }
+
+- (NSString *)longitude{
+    return [NSString stringWithFormat:@"%f",self.geoCodeResult.location.longitude];
+}
+
+- (NSString *)latitude{
+    return [NSString stringWithFormat:@"%f",self.geoCodeResult.location.latitude];
+}
+
 #pragma mark -  用户属性相关
 - (UserModel *)userModel{
     if (!_userModel) {

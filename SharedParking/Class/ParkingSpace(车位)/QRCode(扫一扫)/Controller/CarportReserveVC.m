@@ -58,7 +58,7 @@
                 [strongSelf.numberBtn setTitle:strongSelf.carItemModel.car_chepai forState:UIControlStateNormal];
             }
             strongSelf.priceLab.text = [NSString stringWithFormat:@"每小时%.2f元",model.park_fee];
-            
+            strongSelf.overPriceLab.text = [NSString stringWithFormat:@"每小时%.2f元",model.park_feeovertime];
         }else{
             
         }

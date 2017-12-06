@@ -53,6 +53,8 @@
 
 #pragma mark ---------------NetWork-------------------------/
 - (void)loadData{
+    [WSProgressHUD show];
+    
     if (self.type == CarportShortRentType) {
         [self loadShortData];
     }else{
@@ -66,6 +68,7 @@
     [CarportShortDetailModel carportShortDetailWithCarPortId:self.carportId success:^(StatusModel *statusModel) {
         kSelfStrong;
         if (statusModel.flag == kFlagSuccess) {
+            [WSProgressHUD dismiss];
             CarportShortDetailModel *model = statusModel.data;
             strongSelf.headerView.shortModel = model;
             strongSelf.shortCLView.shortModel = model;
@@ -81,6 +84,7 @@
     [CarportLongDetailModel carportLongDetailWithCarportId:self.carportId success:^(StatusModel *statusModel) {
         kSelfStrong;
         if (statusModel.flag == kFlagSuccess) {
+            [WSProgressHUD dismiss];
             CarportLongDetailModel *model = statusModel.data;
             strongSelf.headerView.longModel = model;
             strongSelf.rentTBView.longModel = model;

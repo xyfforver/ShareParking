@@ -11,7 +11,7 @@
 #import "FuelCounterVC.h"
 #import "FindBreakRulesVC.h"
 #import "RequestCarportVC.h"
-@interface ParkingSpaceMapView ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate>
+@interface ParkingSpaceMapView ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate>
 @property (nonatomic,strong) UIImageView *imgView;
 @property (nonatomic,strong) UIButton *userCenterBtn;
 @property (nonatomic,strong) UIButton *addBtn;
@@ -32,18 +32,13 @@
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
     
+    GetDataManager.selectCity = @"杭州市";
+    
     [self addSubview:self.mapView];
     [self addSubview:self.imgView];
     [self addSubview:self.userCenterBtn];
     [self addSubview:self.addBtn];
     [self addSubview:self.minusBtn];
-    
-    //初始化定位
-    self.service = [[BMKLocationService alloc] init];
-    //设置代理
-    self.service.delegate = self;
-    //开启定位
-    [self.service startUserLocationService];
     
     [self addItemButton];
     
@@ -73,6 +68,18 @@
 
 - (void)setUpMapDelegate{
     self.mapView.delegate = self;
+    self.service.delegate = self;
+    self.geoCodeSearch.delegate = self;
+    [self.service startUserLocationService];
+}
+
+- (void)cancelMapDelegate{
+    self.mapView.delegate = nil; // 不用时，置nil
+    //关闭定位
+    [self.service stopUserLocationService];
+    self.service.delegate = nil;
+
+    self.geoCodeSearch.delegate = nil;
 }
 
 - (void)addItemButton{
@@ -172,7 +179,53 @@
     [self.mapView updateLocationData:userLocation];
     
     self.mapView.centerCoordinate = userLocation.location.coordinate;
-    
+
+    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+
+    //初始化逆地理编码类
+    BMKReverseGeoCodeOption *reverseGeoCodeOption= [[BMKReverseGeoCodeOption alloc] init];
+    //需要逆地理编码的坐标位置
+    reverseGeoCodeOption.reverseGeoPoint = userLocation.location.coordinate;
+    BOOL reg = [_geoCodeSearch reverseGeoCode:reverseGeoCodeOption];
+    if (reg) {
+        NSLog(@"_____编码成功");
+    }else{
+        NSLog(@"_____编码失败");
+    }
+}
+
+
+/**
+ *返回反地理编码搜索结果
+ *@param searcher 搜索对象
+ *@param result 搜索结果
+ *@param error 错误号，@see BMKSearchErrorCode
+ */
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    if (error == BMK_SEARCH_NO_ERROR){
+
+//        if (![GetDataManager.geoCodeResult.addressDetail.streetName isEqualToString:result.addressDetail.streetName]) {
+        
+            NSString *lngNow = [NSString stringWithFormat:@"%.3f",result.location.longitude];
+            NSString *lngLast = [NSString stringWithFormat:@"%.3f",[GetDataManager.longitude floatValue]];
+            
+            NSString *latNow = [NSString stringWithFormat:@"%.3f",result.location.latitude];
+            NSString *latLast = [NSString stringWithFormat:@"%.3f",[GetDataManager.latitude floatValue]];
+
+            if (![lngNow isEqualToString:lngLast] || ![latNow isEqualToString:latLast]) {
+                GetDataManager.selectCity = [NSString isNull:result.addressDetail.city] ?
+                GetDataManager.selectCity : result.addressDetail.city;
+
+                
+                GetDataManager.geoCodeResult = result;
+                DLog(@"%@------%@------%@",GetDataManager.latitude,GetDataManager.longitude,GetDataManager.selectCity);
+            }
+//        }
+        
+    }else if (error == BMK_SEARCH_PERMISSION_UNFINISHED){
+        
+    }
 }
 
 #pragma mark -----------------Lazy---------------------/
@@ -239,6 +292,21 @@
         [_minusBtn addTarget:self action:@selector(minusAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _minusBtn;
+}
+
+- (BMKLocationService *)service{
+    if (!_service) {
+        _service = [[BMKLocationService alloc]init];
+    }
+    return _service;
+}
+
+
+- (BMKGeoCodeSearch *)geoCodeSearch{
+    if (!_geoCodeSearch) {
+        _geoCodeSearch = [[BMKGeoCodeSearch alloc]init];
+    }
+    return _geoCodeSearch;
 }
 
 @end

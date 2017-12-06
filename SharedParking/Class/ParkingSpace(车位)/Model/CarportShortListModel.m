@@ -15,9 +15,9 @@
     CreateParamsDic;
     [ParamsDic setObject:@(page) forKey:@"page"];
     [ParamsDic setObject:@"0" forKey:@"parking_type"];
-    [ParamsDic setObject:@"30" forKey:@"lat"];
-    [ParamsDic setObject:@"120" forKey:@"lng"];
-    [ParamsDic setObject:@"杭州市" forKey:@"shi"];
+    [ParamsDic setObject:GetDataManager.latitude forKey:@"lat"];
+    [ParamsDic setObject:GetDataManager.longitude forKey:@"lng"];
+    [ParamsDic setObject:GetDataManager.selectCity forKey:@"shi"];
     [self postWithStatusRecordListModelResponsePath:@"park_wordlist" params:ParamsDic onCompletion:success];
 }
 
