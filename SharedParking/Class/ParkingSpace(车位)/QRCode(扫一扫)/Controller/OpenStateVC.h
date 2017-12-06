@@ -9,8 +9,9 @@
 #import "BaseViewController.h"
 
 @interface OpenStateVC : BaseViewController
-- (instancetype)initWithCid:(NSString *)cid zid:(NSString *)zid;
+- (instancetype)initWithCarportId:(NSString *)carportId carNumId:(NSString *)carNumId;
 
-@property (nonatomic , copy) NSString *cid;
-@property (nonatomic , copy) NSString *zid;
+@property (nonatomic , copy) NSString *carportId;
+@property (nonatomic , copy) NSString *carNumId;
+
 @end

@@ -8,7 +8,7 @@
 
 #import "OpenStateVC.h"
 
-//#import "ParkingModel.h"
+#import "CarportReserveModel.h"
 @interface OpenStateVC ()
 @property (nonatomic , strong) UIImageView *bgImgView;
 @property (nonatomic , strong) UIImageView *lockImgView;
@@ -26,11 +26,11 @@
 
 @implementation OpenStateVC
 #pragma mark ---------------LifeCycle-------------------------/
-- (instancetype)initWithCid:(NSString *)cid zid:(NSString *)zid{
+- (instancetype)initWithCarportId:(NSString *)carportId carNumId:(NSString *)carNumId{
     self = [super init];
     if (self) {
-        self.cid = cid;
-        self.zid = zid;
+        self.carportId = carportId;
+        self.carNumId = carNumId;
     }
     return self;
 }
@@ -130,15 +130,15 @@
         [[NSRunLoop currentRunLoop] run];
     });
 
-//    [ParkingModel openOrCloseParkingSpaceWithType:@"2" cid:self.cid zid:self.zid success:^(StatusModel *statusModel) {
-//        if (statusModel.flag == kFlagSuccess) {
-//            self.isOpen = YES;
-//        }else{
-//            self.isOpen = YES;
-//        }
-//    }];
+    [CarportReserveModel openLockWithParkingId:self.carportId carNumId:self.carNumId success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            strongSelf.isOpen = YES;
+        }else{
+            strongSelf.isOpen = YES;
+        }
+    }];
 }
-
 
 #pragma mark ---------------Event-------------------------/
 - (void)backToSuperView{

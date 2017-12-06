@@ -45,5 +45,11 @@
     DicObjectSet(parkingId, @"parking_id");
     [self postWithStatusModelResponsePath:@"get_qrcode" params:ParamsDic onCompletion:success];
 }
-
+//开锁
++ (void)openLockWithParkingId:(NSString *)parkingId carNumId:(NSString *)carNumId success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(parkingId, @"parking_id");
+    DicObjectSet(carNumId, @"chepai_id");
+    [self postWithStatusModelResponsePath:@"parking_openlock" params:ParamsDic onCompletion:success];
+}
 @end

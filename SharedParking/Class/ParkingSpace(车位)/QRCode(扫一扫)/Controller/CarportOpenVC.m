@@ -37,6 +37,7 @@
     [self loadData];
 }
 
+#pragma mark ---------------network ---------------------/
 - (void)loadData{
     kSelfWeak;
     [CarportReserveModel qrcodeWithParkingId:self.carportId success:^(StatusModel *statusModel) {
@@ -56,9 +57,10 @@
 }
 
 
+
 - (IBAction)OpenAction:(id)sender {
-    
-    OpenStateVC *vc = [[OpenStateVC alloc]init];
+
+    OpenStateVC *vc = [[OpenStateVC alloc]initWithCarportId:self.carportId carNumId:self.carItemModel.id];
     [self.navigationController pushViewController:vc animated:YES];
     
 }
