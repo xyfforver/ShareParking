@@ -32,11 +32,14 @@
 @property (copy, nonatomic) NSString *create_time;
 @property (assign, nonatomic) NSInteger distance;
 
+@property (assign, nonatomic) CGFloat latitude;
+@property (assign, nonatomic) CGFloat longitude;
 
 //停车场错时列表
 + (void)carportShortListWithPage:(NSInteger)page success:(NetCompletionBlock)success;
 
-
+//停车场错时 地图
++ (void)carportShortListWithSuccess:(NetCompletionBlock)success;
 //搜索
 + (void)searchWithTitle:(NSString *)title success:(NetCompletionBlock)success;
 

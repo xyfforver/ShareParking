@@ -11,6 +11,9 @@
 #import "FuelCounterVC.h"
 #import "FindBreakRulesVC.h"
 #import "RequestCarportVC.h"
+
+#import "CarportShortListModel.h"
+#import "CustomAnnotation.h"
 @interface ParkingSpaceMapView ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate>
 @property (nonatomic,strong) UIImageView *imgView;
 @property (nonatomic,strong) UIButton *userCenterBtn;
@@ -27,6 +30,55 @@
         [self initView];
     }
     return self;
+}
+
+- (void)setDataArr:(NSArray *)dataArr{
+    _dataArr = dataArr;
+    
+    for (int i = 0; i < dataArr.count; i++) {
+        CarportShortListModel *mapModel = dataArr[i];
+
+        CLLocationCoordinate2D coor;
+        
+        coor.latitude = mapModel.latitude;
+        coor.longitude = mapModel.longitude;
+        DLog(@"%f-----%f",mapModel.latitude,mapModel.longitude);
+        CustomAnnotation *point = [[CustomAnnotation alloc]init];
+        point.coordinate = coor;
+        point.title = mapModel.park_title;
+        [self.mapView addAnnotation:point];
+    }
+}
+
+
+#pragma mark --------------- Map Delegate ---------------------/
+- (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[CustomAnnotation class]]){
+        CustomAnnotation *anno = (CustomAnnotation *)annotation;
+        static NSString *pointReuseIndetifier = @"pointReuseIndetifier";
+        BMKAnnotationView *annotationView = (BMKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndetifier];
+        if (annotationView == nil){
+            annotationView = [[BMKAnnotationView alloc] initWithAnnotation:anno reuseIdentifier:pointReuseIndetifier];
+        }
+        annotationView.image = [UIImage createImageWithColor:kColorRandom];
+        annotationView.frame = CGRectMake(0, 0, 100, 100);
+//        annotationView.canShowCallout= YES;       //设置气泡可以弹出，默认为NO
+        annotationView.annotation = anno;
+        
+        return annotationView;
+    }
+    
+    return nil;
+    
+}
+
+- (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
+
+}
+
+- (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view{
+
 }
 
 #pragma mark -----------------LifeCycle---------------------/
@@ -51,7 +103,6 @@
         make.bottom.mas_equalTo(-15);
     }];
     
-    
     [self.minusBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-15);
         make.bottom.mas_equalTo(self.userCenterBtn);
@@ -63,7 +114,6 @@
         make.bottom.mas_equalTo(self.minusBtn.mas_top);
         make.width.height.mas_equalTo(self.minusBtn);
     }];
-    
 }
 
 - (void)setUpMapDelegate{
@@ -220,6 +270,10 @@
                 
                 GetDataManager.geoCodeResult = result;
                 DLog(@"%@------%@------%@",GetDataManager.latitude,GetDataManager.longitude,GetDataManager.selectCity);
+                
+                if (self.loadBlock) {
+                    self.loadBlock();
+                }
             }
 //        }
         

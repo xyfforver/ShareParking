@@ -13,6 +13,10 @@
 @property (nonatomic,strong) BMKLocationService *service;//定位服务
 @property (nonatomic , strong) BMKGeoCodeSearch *geoCodeSearch;//地图搜索
 
+@property (nonatomic , assign) CarportRentType type;
+@property (nonatomic , strong) NSArray *dataArr;
+@property (nonatomic , copy) void(^loadBlock)(void);
+
 - (void)setUpMapDelegate;
 
 - (void)cancelMapDelegate;
