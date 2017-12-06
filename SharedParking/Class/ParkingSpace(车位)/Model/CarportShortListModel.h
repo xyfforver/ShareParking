@@ -37,5 +37,7 @@
 + (void)carportShortListWithPage:(NSInteger)page success:(NetCompletionBlock)success;
 
 
+//搜索
++ (void)searchWithTitle:(NSString *)title success:(NetCompletionBlock)success;
 
 @end

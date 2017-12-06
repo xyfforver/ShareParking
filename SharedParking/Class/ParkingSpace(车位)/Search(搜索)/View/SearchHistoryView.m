@@ -48,6 +48,10 @@
 
 - (void)tagView:(YJTagView *)tagView didSelectedItemAtIndex:(NSInteger)index {
     NSLog(@"点击%@", self.historyData[index]);
+    
+    if (self.selectBlock) {
+        self.selectBlock(self.historyData[index]);
+    }
 }
 
 - (void)tagView:(YJTagView *)tagView heightUpdated:(CGFloat)height{

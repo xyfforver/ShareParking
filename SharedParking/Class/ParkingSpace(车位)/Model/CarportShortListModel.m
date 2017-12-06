@@ -21,4 +21,11 @@
     [self postWithStatusRecordListModelResponsePath:@"park_wordlist" params:ParamsDic onCompletion:success];
 }
 
+//搜索
++ (void)searchWithTitle:(NSString *)title success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(title, @"park_title");
+    
+    [self postWithStatusRecordListModelResponsePath:@"park_search" params:ParamsDic onCompletion:success];
+}
 @end

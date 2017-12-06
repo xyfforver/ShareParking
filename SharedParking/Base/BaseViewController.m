@@ -67,14 +67,14 @@ static CGFloat const sizeButton = 50.0;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.extendedLayoutIncludesOpaqueBars = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
+
     
     self.view.layer.shouldRasterize = YES;
     self.view.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
     self.view.backgroundColor = kBackGroundGrayColor;
     
-    [self hiddenNavBlackLine];
+//    [self hiddenNavBlackLine];
     
     /*设置默认返回按钮*/
     [self setNavBackItem];

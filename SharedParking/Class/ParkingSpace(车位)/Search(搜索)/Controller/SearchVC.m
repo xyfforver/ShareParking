@@ -113,6 +113,11 @@
 - (SearchHistoryView *)historyView{
     if (!_historyView) {
         _historyView = [[SearchHistoryView alloc]initWithFrame:CGRectMake(0, self.navigationBar.bottom, kScreenWidth, kScreenHeight - self.navigationBar.bottom)];
+        kSelfWeak;
+        _historyView.selectBlock = ^(NSString *searchStr) {
+            kSelfStrong;
+            [strongSelf pushToSearchResult:searchStr];
+        };
     }
     return _historyView;
 }

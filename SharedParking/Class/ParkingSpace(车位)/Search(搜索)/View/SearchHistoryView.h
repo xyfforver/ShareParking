@@ -11,6 +11,8 @@
 @interface SearchHistoryView : UIView
 @property (nonatomic, strong) NSMutableArray *historyData;
 
+@property (nonatomic , copy) void(^selectBlock)(NSString *searchStr);
+
 /**
  *  保存搜索记录
  */
