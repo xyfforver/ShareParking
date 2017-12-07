@@ -27,6 +27,24 @@
     return self;
 }
 
+- (void)setRecordModel:(ParkingRecordModel *)recordModel{
+    _recordModel = recordModel;
+    
+    self.titleLab.text = recordModel.park_title;
+    self.numberLab.text = [NSString stringWithFormat:@"车位号：%@",recordModel.parking_number];
+   
+    NSString *jinStr = [HelpTool timestampSwitchTime:recordModel.order_jintime andFormatter:nil] ;
+    
+    NSString *chuStr = recordModel.order_chutime == 0 ? @"至今" : [HelpTool timestampSwitchTime:recordModel.order_chutime andFormatter:nil];
+    
+    self.timeLab.text = [NSString stringWithFormat:@"%@-%@",jinStr,chuStr];
+    
+    NSString *str = [NSString stringWithFormat:@"%.2f 元",recordModel.order_fee];
+    NSMutableAttributedString *contentMuStr = [[NSMutableAttributedString alloc]initWithString:str];
+    [contentMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(0, str.length - 1)];
+    self.priceLab.attributedText = contentMuStr;
+}
+
 - (void)initView{
     self.backgroundColor = kBackGroundGrayColor;
     
@@ -61,16 +79,7 @@
         make.right.mas_equalTo(-15);
         make.centerY.mas_equalTo(self.bgView.mas_centerY);
     }];
-    
-    self.titleLab.text = @"萧山地下停车场";
-    self.numberLab.text = @"车位号：12";
-    self.timeLab.text = @"2017-09-09 16：10-17：00";
-//    self.priceLab.text = @"1元";
-    
-    NSString *str = @"1元";
-    NSMutableAttributedString *contentMuStr = [[NSMutableAttributedString alloc]initWithString:str];
-    [contentMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(0, str.length - 1)];
-    self.priceLab.attributedText = contentMuStr;
+
 }
 
 #pragma mark ---------------lazy ---------------------/

@@ -246,7 +246,7 @@
 
 +(NSString *)timestampSwitchTime:(NSInteger)timestamp andFormatter:(NSString *)format{
     
-    
+    format = [NSString isNull:format] ? @"YYYY-MM-dd HH:mm:ss" : format;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     

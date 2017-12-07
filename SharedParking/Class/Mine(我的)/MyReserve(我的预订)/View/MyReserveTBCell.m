@@ -51,6 +51,9 @@
     }else if (reserveModel.reserve_status == 1){
         //已取消
         [self.cancelBtn setTitle:@"已取消" forState:UIControlStateNormal];
+    }else if (reserveModel.reserve_status == 2){
+        //停车中
+        [self.cancelBtn setTitle:@"正在停车" forState:UIControlStateNormal];
     }else{
         //已完成
         [self.cancelBtn setTitle:@"已完成" forState:UIControlStateNormal];

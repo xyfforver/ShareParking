@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ParkingRecordModel.h"
 @interface ParkingRecordTBCell : UITableViewCell
+
+@property (nonatomic , strong) ParkingRecordModel *recordModel;
 
 @end

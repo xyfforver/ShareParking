@@ -50,6 +50,7 @@
 		6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3B1FA86DB100D543D2 /* YJTagCollectionViewCell.m */; };
 		6B23C54D1FD905460061C9B6 /* MyReserveTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B23C54C1FD905460061C9B6 /* MyReserveTBView.m */; };
 		6B23C5501FD905920061C9B6 /* MyReserveTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B23C54F1FD905920061C9B6 /* MyReserveTBCell.m */; };
+		6B23C5531FD9271F0061C9B6 /* ParkingRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B23C5521FD9271F0061C9B6 /* ParkingRecordModel.m */; };
 		6B2549661FB6C0CF007ECE75 /* EditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2549641FB6C0CF007ECE75 /* EditVC.m */; };
 		6B2549671FB6C0CF007ECE75 /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2549651FB6C0CF007ECE75 /* EditVC.xib */; };
 		6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B01FA70398001E86B4 /* GasStationVC.m */; };
@@ -170,7 +171,6 @@
 		6BD6149C1FD28F3E0042F2E5 /* CarportShortListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6149B1FD28F3E0042F2E5 /* CarportShortListModel.m */; };
 		6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */; };
 		6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B671FB5745500DED0B7 /* MyReserveVC.m */; };
-		6BF95B6B1FB57D3100DED0B7 /* MyReserveItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B6A1FB57D3100DED0B7 /* MyReserveItemView.m */; };
 		6BF95B721FB58EF900DED0B7 /* MyIssueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B711FB58EF900DED0B7 /* MyIssueVC.m */; };
 		6BF95B751FB5901E00DED0B7 /* MyIssueTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B741FB5901E00DED0B7 /* MyIssueTBCell.m */; };
 		6BF95B8F1FB59FBF00DED0B7 /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B881FB59DA900DED0B7 /* UIAlertView+Block.m */; };
@@ -290,6 +290,8 @@
 		6B23C54C1FD905460061C9B6 /* MyReserveTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyReserveTBView.m; sourceTree = "<group>"; };
 		6B23C54E1FD905920061C9B6 /* MyReserveTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyReserveTBCell.h; sourceTree = "<group>"; };
 		6B23C54F1FD905920061C9B6 /* MyReserveTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyReserveTBCell.m; sourceTree = "<group>"; };
+		6B23C5511FD9271F0061C9B6 /* ParkingRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingRecordModel.h; sourceTree = "<group>"; };
+		6B23C5521FD9271F0061C9B6 /* ParkingRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingRecordModel.m; sourceTree = "<group>"; };
 		6B2549631FB6C0CE007ECE75 /* EditVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditVC.h; sourceTree = "<group>"; };
 		6B2549641FB6C0CF007ECE75 /* EditVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditVC.m; sourceTree = "<group>"; };
 		6B2549651FB6C0CF007ECE75 /* EditVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditVC.xib; sourceTree = "<group>"; };
@@ -517,8 +519,6 @@
 		6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+LibConfig.m"; sourceTree = "<group>"; };
 		6BF95B661FB5745500DED0B7 /* MyReserveVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyReserveVC.h; sourceTree = "<group>"; };
 		6BF95B671FB5745500DED0B7 /* MyReserveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyReserveVC.m; sourceTree = "<group>"; };
-		6BF95B691FB57D3100DED0B7 /* MyReserveItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyReserveItemView.h; sourceTree = "<group>"; };
-		6BF95B6A1FB57D3100DED0B7 /* MyReserveItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyReserveItemView.m; sourceTree = "<group>"; };
 		6BF95B701FB58EF900DED0B7 /* MyIssueVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyIssueVC.h; sourceTree = "<group>"; };
 		6BF95B711FB58EF900DED0B7 /* MyIssueVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyIssueVC.m; sourceTree = "<group>"; };
 		6BF95B731FB5901E00DED0B7 /* MyIssueTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyIssueTBCell.h; sourceTree = "<group>"; };
@@ -933,6 +933,8 @@
 		6B3C16ED1FA1D4DD009A6948 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B23C5511FD9271F0061C9B6 /* ParkingRecordModel.h */,
+				6B23C5521FD9271F0061C9B6 /* ParkingRecordModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1581,8 +1583,6 @@
 		6BF95B651FB5743C00DED0B7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6BF95B691FB57D3100DED0B7 /* MyReserveItemView.h */,
-				6BF95B6A1FB57D3100DED0B7 /* MyReserveItemView.m */,
 				6B23C54B1FD905460061C9B6 /* MyReserveTBView.h */,
 				6B23C54C1FD905460061C9B6 /* MyReserveTBView.m */,
 				6B23C54E1FD905920061C9B6 /* MyReserveTBCell.h */,
@@ -1928,6 +1928,7 @@
 				6BF95B951FB5A00000DED0B7 /* UINavigationController+Block.m in Sources */,
 				6BF95B941FB59FFA00DED0B7 /* UIActionSheet+Block.m in Sources */,
 				6BF95B931FB59FF400DED0B7 /* MFMessageComposeViewController+Block.m in Sources */,
+				6B23C5531FD9271F0061C9B6 /* ParkingRecordModel.m in Sources */,
 				6B2AB9F21FD101540025D512 /* LoginView.m in Sources */,
 				6B62C0BF1FCEAEB2007F6861 /* CarportDetailRentTBView.m in Sources */,
 				6B62C0C11FCEAEB2007F6861 /* CarportDetailHeaderView.m in Sources */,
@@ -1952,7 +1953,6 @@
 				6B2AB9F81FD11AE00025D512 /* JKCountDownButton.m in Sources */,
 				6B62C0C41FCEAEB2007F6861 /* CarportDetailShortCLCell.m in Sources */,
 				6B1C4B411FA870C400D543D2 /* YJTagView.m in Sources */,
-				6BF95B6B1FB57D3100DED0B7 /* MyReserveItemView.m in Sources */,
 				6BF95B751FB5901E00DED0B7 /* MyIssueTBCell.m in Sources */,
 				6B1C4B401FA870BD00D543D2 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */,

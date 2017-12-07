@@ -53,7 +53,7 @@
 }
 
 - (IBAction)afterAction:(id)sender {
-    
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark ---------------network ---------------------/
