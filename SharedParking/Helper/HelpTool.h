@@ -41,4 +41,11 @@
 +(NSInteger)timeSwitchTimestamp:(NSString *)formatTime andFormatter:(NSString *)format;
 //将某个时间戳转化成 时间
 +(NSString *)timestampSwitchTime:(NSInteger)timestamp andFormatter:(NSString *)format;
+
+
+
+#pragma mark ---------------获取字段 ---------------------/
++ (NSString *)getRentObjectWithType:(BOOL)type;
++ (NSString *)getRentCarportWithType:(NSInteger)type;
+
 @end

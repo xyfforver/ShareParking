@@ -68,13 +68,8 @@
     
     self.reserveLab.text = longModel.parking_fabutype ? @"个人" : @"商户";
     //车位类型 0小区 1写字楼 2 其他
-    if (longModel.parking_cheweitype == 0) {
-        self.spaceLab.text = @"小区";
-    }else if (longModel.parking_cheweitype == 1){
-        self.spaceLab.text = @"写字楼";
-    }else{
-        self.spaceLab.text = @"其他";
-    }
+    self.spaceLab.text = [HelpTool getRentCarportWithType:longModel.parking_cheweitype];
+
     self.timeLab.hidden = NO;
     self.timeLab.text = longModel.time_since;
 }

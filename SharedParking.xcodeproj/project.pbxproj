@@ -51,6 +51,7 @@
 		6B23C54D1FD905460061C9B6 /* MyReserveTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B23C54C1FD905460061C9B6 /* MyReserveTBView.m */; };
 		6B23C5501FD905920061C9B6 /* MyReserveTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B23C54F1FD905920061C9B6 /* MyReserveTBCell.m */; };
 		6B23C5531FD9271F0061C9B6 /* ParkingRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B23C5521FD9271F0061C9B6 /* ParkingRecordModel.m */; };
+		6B23C5561FD932490061C9B6 /* MyIssueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B23C5551FD932490061C9B6 /* MyIssueModel.m */; };
 		6B2549661FB6C0CF007ECE75 /* EditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2549641FB6C0CF007ECE75 /* EditVC.m */; };
 		6B2549671FB6C0CF007ECE75 /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2549651FB6C0CF007ECE75 /* EditVC.xib */; };
 		6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B26B6B01FA70398001E86B4 /* GasStationVC.m */; };
@@ -292,6 +293,8 @@
 		6B23C54F1FD905920061C9B6 /* MyReserveTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyReserveTBCell.m; sourceTree = "<group>"; };
 		6B23C5511FD9271F0061C9B6 /* ParkingRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingRecordModel.h; sourceTree = "<group>"; };
 		6B23C5521FD9271F0061C9B6 /* ParkingRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingRecordModel.m; sourceTree = "<group>"; };
+		6B23C5541FD932490061C9B6 /* MyIssueModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyIssueModel.h; sourceTree = "<group>"; };
+		6B23C5551FD932490061C9B6 /* MyIssueModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyIssueModel.m; sourceTree = "<group>"; };
 		6B2549631FB6C0CE007ECE75 /* EditVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditVC.h; sourceTree = "<group>"; };
 		6B2549641FB6C0CF007ECE75 /* EditVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditVC.m; sourceTree = "<group>"; };
 		6B2549651FB6C0CF007ECE75 /* EditVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditVC.xib; sourceTree = "<group>"; };
@@ -1613,6 +1616,8 @@
 		6BF95B6E1FB58EDE00DED0B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B23C5541FD932490061C9B6 /* MyIssueModel.h */,
+				6B23C5551FD932490061C9B6 /* MyIssueModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1962,6 +1967,7 @@
 				6B26B6B11FA70398001E86B4 /* GasStationVC.m in Sources */,
 				6B1C4B2F1FA80E2700D543D2 /* HelpTool.m in Sources */,
 				6B62C0CA1FCEB643007F6861 /* LongRentView.m in Sources */,
+				6B23C5561FD932490061C9B6 /* MyIssueModel.m in Sources */,
 				6B62C09F1FCEADF5007F6861 /* CarportOpenVC.m in Sources */,
 				6B91B6B21F9DEE4A00A1020C /* KeychainHelper.m in Sources */,
 				6B91B6B11F9DEE4400A1020C /* UINavigationController+FDFullscreenPopGesture.m in Sources */,

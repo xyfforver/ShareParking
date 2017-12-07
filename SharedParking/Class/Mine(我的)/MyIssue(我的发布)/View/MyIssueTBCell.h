@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MyIssueModel.h"
 @interface MyIssueTBCell : UITableViewCell
 
-
+@property (nonatomic , strong) MyIssueModel *issueModel;
 
 + (CGFloat)getHeight;
 

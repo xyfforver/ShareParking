@@ -270,4 +270,25 @@
     return confromTimespStr;
     
 }
+
+#pragma mark ---------------获取字段 ---------------------/
++ (NSString *)getRentObjectWithType:(BOOL)type{
+    if (type == 1) {
+        return @"仅限本小区业主";
+    }
+    
+    return @"不限";
+}
+
++ (NSString *)getRentCarportWithType:(NSInteger)type{
+    if (type == 0) {
+        return @"小区";
+    }else if (type == 1){
+        return @"写字楼";
+    }else{
+        return @"其他";
+    }
+}
+
+
 @end

@@ -41,8 +41,8 @@
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
     NSString *title = @"暂时没有数据哦~";
     NSDictionary *attributes = @{
-                                 NSFontAttributeName:kFontSizeBold14,
-                                 NSForegroundColorAttributeName:kColorGreen
+                                 NSFontAttributeName:kFontSize14,
+                                 NSForegroundColorAttributeName:kColorC1C1C1
                                  };
     return [[NSAttributedString alloc] initWithString:title attributes:attributes];
 }

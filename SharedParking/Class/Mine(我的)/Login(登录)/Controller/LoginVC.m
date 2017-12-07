@@ -59,6 +59,7 @@
             [[NSUserDefaults standardUserDefaults] setObject:tel forKey:kLingBaoUser];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kAutoLogin];
             [[NSUserDefaults standardUserDefaults] synchronize];
+            GetDataManager.isLogin = YES;
             
             if (isBinding) {
                 // 成功回调

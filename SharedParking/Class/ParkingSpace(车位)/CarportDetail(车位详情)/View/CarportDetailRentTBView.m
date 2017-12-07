@@ -63,7 +63,7 @@
     }else if (indexPath.row == 1){
         cell.subLab.text = [NSString stringWithFormat:@"%@-%@",self.longModel.park_opentime,self.longModel.park_closetime];
     }else if (indexPath.row == 2){
-        cell.subLab.text = self.longModel.parking_obj ? @"仅限本小区业主" : @"不限";
+        cell.subLab.text = [HelpTool getRentObjectWithType:self.longModel.parking_obj];
     }else{
         cell.subLab.text = @"查看";
         cell.subLab.textColor = kColorDD9900;

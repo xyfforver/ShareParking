@@ -55,13 +55,7 @@
     
     self.personalLab.text = longModel.parking_fabutype ? @"个人" : @"商户";
     //车位类型 0小区 1写字楼 2 其他
-    if (longModel.parking_cheweitype == 0) {
-        self.buildingLab.text = @"小区";
-    }else if (longModel.parking_cheweitype == 1){
-        self.buildingLab.text = @"写字楼";
-    }else{
-        self.buildingLab.text = @"其他";
-    }
+    self.buildingLab.text = [HelpTool getRentCarportWithType:longModel.parking_cheweitype];
 }
 
 #pragma mark -----------------LifeCycle---------------------/

@@ -51,8 +51,8 @@
 //        title = @"无网络连接，请检查网络";
 //    }
     NSDictionary *attributes = @{
-                                 NSFontAttributeName:kFontSizeBold14,
-                                 NSForegroundColorAttributeName:kColorGreen
+                                 NSFontAttributeName:kFontSize14,
+                                 NSForegroundColorAttributeName:kColorC1C1C1
                                  };
     return [[NSAttributedString alloc] initWithString:title attributes:attributes];
 }

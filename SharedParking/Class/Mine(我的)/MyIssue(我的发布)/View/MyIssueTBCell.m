@@ -33,6 +33,17 @@
     return self;
 }
 
+- (void)setIssueModel:(MyIssueModel *)issueModel{
+    _issueModel = issueModel;
+    
+    [self.locationBtn setTitle:issueModel.park_title forState:UIControlStateNormal];
+    NSString *objStr = [HelpTool getRentObjectWithType:issueModel.parking_obj];
+    [self.objectBtn setTitle:[NSString stringWithFormat:@"出租对象：%@",objStr] forState:UIControlStateNormal];
+    NSString *carportStr = [HelpTool getRentCarportWithType:issueModel.parking_cheweitype];
+    [self.carTypeBtn setTitle:[NSString stringWithFormat:@"车位类型：%@",carportStr] forState:UIControlStateNormal];
+    [self.priceBtn setTitle:[NSString stringWithFormat:@"出租价格：%.2f元/月",issueModel.parking_fee] forState:UIControlStateNormal];
+}
+
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
     self.contentView.backgroundColor = kBackGroundGrayColor;
@@ -98,10 +109,7 @@
         make.top.mas_equalTo(self.carTypeBtn.mas_bottom).offset(kMargin15);
     }];
     
-    [_locationBtn setTitle:@"萧山区金城路" forState:UIControlStateNormal];
-    [_objectBtn setTitle:@"出租对象：不限" forState:UIControlStateNormal];
-    [_carTypeBtn setTitle:@"车位类型：小区" forState:UIControlStateNormal];
-    [_priceBtn setTitle:@"出租价格：300元/月" forState:UIControlStateNormal];
+    
 }
 
 #pragma mark ---------------event ---------------------/
