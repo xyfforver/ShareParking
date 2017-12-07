@@ -33,9 +33,9 @@
     self.titleLab.text = recordModel.park_title;
     self.numberLab.text = [NSString stringWithFormat:@"车位号：%@",recordModel.parking_number];
    
-    NSString *jinStr = [HelpTool timestampSwitchTime:recordModel.order_jintime andFormatter:nil] ;
+    NSString *jinStr = [HelpTool timestampSwitchTime:recordModel.order_jintime andFormatter:@"YYYY-MM-dd HH:mm"] ;
     
-    NSString *chuStr = recordModel.order_chutime == 0 ? @"至今" : [HelpTool timestampSwitchTime:recordModel.order_chutime andFormatter:nil];
+    NSString *chuStr = recordModel.order_chutime == 0 ? @"至今" : [HelpTool timestampSwitchTime:recordModel.order_chutime andFormatter:@"YYYY-MM-dd HH:mm"];
     
     self.timeLab.text = [NSString stringWithFormat:@"%@-%@",jinStr,chuStr];
     

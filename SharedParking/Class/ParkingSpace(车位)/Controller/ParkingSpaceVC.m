@@ -7,8 +7,6 @@
 //
 
 #import "ParkingSpaceVC.h"
-#import <AVFoundation/AVFoundation.h>
-#import "SGQRCodeScanningVC.h"
 #import "CarportPayVC.h"
 #import "CarportOpenVC.h"
 
@@ -172,52 +170,9 @@
 #pragma mark ---------------action ---------------------/
 - (void)codeAction{
 //    CarportPayVC *vc = [[CarportPayVC alloc]init];
-    CarportOpenVC *vc = [[CarportOpenVC alloc]initWithCarportId:@"6"];
-    [self.navigationController pushViewController:vc animated:YES];
-//
-//    // 1、 获取摄像设备
-//    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-//    if (device) {
-//        AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-//        if (status == AVAuthorizationStatusNotDetermined) {
-//            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-//                if (granted) {
-//                    dispatch_sync(dispatch_get_main_queue(), ^{
-//                        SGQRCodeScanningVC *vc = [[SGQRCodeScanningVC alloc] init];
-//                        [self.navigationController pushViewController:vc animated:YES];
-//                    });
-//                    // 用户第一次同意了访问相机权限
-//                    NSLog(@"用户第一次同意了访问相机权限 - - %@", [NSThread currentThread]);
-//
-//                } else {
-//                    // 用户第一次拒绝了访问相机权限
-//                    NSLog(@"用户第一次拒绝了访问相机权限 - - %@", [NSThread currentThread]);
-//                }
-//            }];
-//        } else if (status == AVAuthorizationStatusAuthorized) { // 用户允许当前应用访问相机
-//            SGQRCodeScanningVC *vc = [[SGQRCodeScanningVC alloc] init];
-//            [self.navigationController pushViewController:vc animated:YES];
-//        } else if (status == AVAuthorizationStatusDenied) { // 用户拒绝当前应用访问相机
-//            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请去-> [设置 - 隐私 - 相机 - SGQRCodeExample] 打开访问开关" preferredStyle:(UIAlertControllerStyleAlert)];
-//            UIAlertAction *alertA = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-//
-//            }];
-//
-//            [alertC addAction:alertA];
-//            [self presentViewController:alertC animated:YES completion:nil];
-//
-//        } else if (status == AVAuthorizationStatusRestricted) {
-//            NSLog(@"因为系统原因, 无法访问相册");
-//        }
-//    } else {
-//        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"未检测到您的摄像头" preferredStyle:(UIAlertControllerStyleAlert)];
-//        UIAlertAction *alertA = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-//
-//        }];
-//
-//        [alertC addAction:alertA];
-//        [self presentViewController:alertC animated:YES completion:nil];
-//    }
+//    CarportOpenVC *vc = [[CarportOpenVC alloc]initWithCarportId:@"6"];
+//    [self.navigationController pushViewController:vc animated:YES];
+    [self openQRCode];
     
 }
 
@@ -244,6 +199,12 @@
     //切换地图视图与列表视图
     self.mapView.hidden = !self.mapView.hidden;
     self.tbView.hidden = !self.tbView.hidden;
+    
+    if (!self.tbView.hidden) {
+        [self.tbView.mj_header beginRefreshing];
+    }else{
+        [self loadMapData];
+    }
 }
 
 #pragma mark -flip animation

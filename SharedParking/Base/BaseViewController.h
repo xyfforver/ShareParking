@@ -30,25 +30,8 @@
 /// 返回上层视图方法
 - (void)backToSuperView;
 
-/// 点击空白处键盘收回
-//- (void)textFieldReturn;
-
-#pragma mark - 网络
-
-/// 开始加载
-//-(void)loadingDataStart;
-
-/// 加载成功
-//-(void)loadingDataSuccess;
-
-/// 加载失败
-//-(void)loadingDataFail;
-
-/// 没有内容
-//-(void)loadingDataBlank;
-
-/// 刷新代理方法
-//-(void)reflashClick;
+///扫一扫
+- (void)openQRCode;
 
 /// 判断登录
 - (void)loginVerifySuccess:(void (^)(void))success;

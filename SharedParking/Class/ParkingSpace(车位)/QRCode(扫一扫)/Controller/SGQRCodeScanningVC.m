@@ -131,6 +131,9 @@
 //        ScanSuccessJumpVC *jumpVC = [[ScanSuccessJumpVC alloc] init];
 //        jumpVC.jump_URL = [obj stringValue];
 //        [self.navigationController pushViewController:jumpVC animated:YES];
+
+        DLog(@"%@",obj.stringValue);
+        [self getDataWithUrlStr:obj.stringValue];
     } else {
         NSLog(@"暂未识别出扫描的二维码");
     }
@@ -289,5 +292,21 @@
     return _focusView;
 }
 
+#pragma mark ---------------netWork ---------------------/
+- (void)getDataWithUrlStr:(NSString *)urlStr{
+    kSelfWeak;
+    [BaseModel postWithJSONResponseHost:@"" Path:urlStr params:nil onCompletion:^(NSDictionary *jsonDic) {
+        kSelfStrong;
+        NSDictionary *dic = [jsonDic objectForKey:@"data"];
+        StatusModel *statusModel = [StatusModel mj_objectWithKeyValues:jsonDic];
+//        CodeModel *model = [CodeModel mj_objectWithKeyValues:dic];
+        if (statusModel.flag == kFlagSuccess) {
+  
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
+            [strongSelf backToSuperView];
+        }
+    }];
+}
 @end
 
