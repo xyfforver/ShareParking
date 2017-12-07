@@ -59,10 +59,12 @@
 
 
 - (IBAction)OpenAction:(id)sender {
-
-    OpenStateVC *vc = [[OpenStateVC alloc]initWithCarportId:self.carportId carNumId:self.carItemModel.id];
-    [self.navigationController pushViewController:vc animated:YES];
     
+    [self loginVerifySuccess:^{
+        OpenStateVC *vc = [[OpenStateVC alloc]initWithCarportId:self.carportId carNumId:self.carItemModel.id];
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
+
 }
 
 

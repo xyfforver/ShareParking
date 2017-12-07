@@ -20,7 +20,8 @@
 
 @property (nonatomic , assign) BOOL isOpen;
 @property (nonatomic , strong) NSTimer *timer;
-@property (nonatomic, assign) NSInteger time;
+@property (nonatomic , assign) NSInteger time;
+@property (nonatomic , copy) NSString *message;
 
 @end
 
@@ -89,8 +90,8 @@
     }];
     
     [self.stateLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.bgWhiteView);
-        make.top.mas_equalTo(0);
+//        make.centerX.mas_equalTo(self.bgWhiteView);
+        make.left.right.top.mas_equalTo(0);
         make.bottom.mas_equalTo(self.stateBtn.mas_top);
     }];
     
@@ -109,7 +110,7 @@
         [self.stateBtn setTitle:@"知道了" forState:UIControlStateNormal];
     }else{
         //开启失败
-        self.stateLab.text = @"开启失败";
+        self.stateLab.text = [NSString stringWithFormat:@"开启失败\n%@",self.message];
         [self.stateBtn setTitle:@"重新开启" forState:UIControlStateNormal];
     
     }
@@ -134,8 +135,9 @@
         kSelfStrong;
         if (statusModel.flag == kFlagSuccess) {
             strongSelf.isOpen = YES;
-        }else{
-            strongSelf.isOpen = YES;
+        }else {
+            strongSelf.message = statusModel.message;
+            strongSelf.isOpen = NO;
         }
     }];
 }
@@ -232,6 +234,7 @@
         _stateLab.font = kFontSizeBold18;
         _stateLab.textColor = kColorBlack;
         _stateLab.textAlignment = NSTextAlignmentCenter;
+        _stateLab.numberOfLines = 2;
     }
     return _stateLab;
 }

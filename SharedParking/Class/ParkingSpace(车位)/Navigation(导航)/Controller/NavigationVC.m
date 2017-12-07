@@ -17,6 +17,15 @@
 @implementation NavigationVC
 
 #pragma mark ---------------LifeCycle-------------------------/
+- (instancetype)initWithLatitude:(CGFloat )latitude longitude:(CGFloat)longitude{
+    self = [super init];
+    if (self) {
+        self.latitude = latitude;
+        self.longitude = longitude;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
