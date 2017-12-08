@@ -13,6 +13,7 @@ pod 'SDWebImage', '~> 3.8.2'
 pod 'LKDBHelper', '~> 2.4.2'
 pod 'DZNEmptyDataSet', '~> 1.8.1'
 pod 'IQKeyboardManager', '~> 4.0.9'
+pod 'UITextView-WZB', '~> 1.0.2'
 
 pod 'BaiduMapKit', '~> 3.3.1'
 

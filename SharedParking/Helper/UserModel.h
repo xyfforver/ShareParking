@@ -31,6 +31,8 @@
 + (void)getMineDataSuccess:(NetCompletionBlock)success;
 //退出登录
 + (void)logoutSuccess:(NetCompletionBlock)success;
+//意见反馈
++ (void)feedbackWithContent:(NSString *)content success:(NetCompletionBlock)success;
 
 + (void)loginWithAccount:(NSString *)account password:(NSString *)password success:(NetCompletionBlock)success;
 + (void)userLogoutWithSuccess:(NetCompletionBlock)success;

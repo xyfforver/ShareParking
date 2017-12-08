@@ -51,6 +51,19 @@
     [self postWithStatusModelResponsePath:@"logout" params:nil onCompletion:success];
 }
 
+//意见反馈
++ (void)feedbackWithContent:(NSString *)content success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(content, @"feedback_content");
+    [self postWithStatusModelResponsePath:@"user_feedback" params:ParamsDic onCompletion:success];
+}
+
+
+
+
+
+
+
 + (void)loginWithAccount:(NSString *)account password:(NSString *)password success:(NetCompletionBlock)success
 {
     CreateParamsDic;

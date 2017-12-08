@@ -30,6 +30,7 @@ PODS:
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - Shimmer (1.0.2)
+  - UITextView-WZB (1.0.2)
   - WSProgressHUD (1.1.2):
     - Shimmer
 
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1.12)
   - RegexKitLite (~> 4.0)
   - SDWebImage (~> 3.8.2)
+  - UITextView-WZB (~> 1.0.2)
   - WSProgressHUD (~> 1.1.2)
 
 SPEC CHECKSUMS:
@@ -59,8 +61,9 @@ SPEC CHECKSUMS:
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  UITextView-WZB: 8de800ff0eb86d49fb65e35ba123b73440c64a2d
   WSProgressHUD: e214ab3dd863115bd69ede25cb3b38e27f78c468
 
-PODFILE CHECKSUM: eb3315bf5c8e92c1f2926294b10a2455ed1767e3
+PODFILE CHECKSUM: d470572a44a6125fc23ff37e5f086278884570d5
 
 COCOAPODS: 1.2.1

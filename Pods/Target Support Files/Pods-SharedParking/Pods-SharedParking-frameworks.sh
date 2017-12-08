@@ -100,6 +100,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/RegexKitLite/RegexKitLite.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Shimmer/Shimmer.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UITextView-WZB/UITextView_WZB.framework"
   install_framework "$BUILT_PRODUCTS_DIR/WSProgressHUD/WSProgressHUD.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -114,6 +115,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/RegexKitLite/RegexKitLite.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Shimmer/Shimmer.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UITextView-WZB/UITextView_WZB.framework"
   install_framework "$BUILT_PRODUCTS_DIR/WSProgressHUD/WSProgressHUD.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

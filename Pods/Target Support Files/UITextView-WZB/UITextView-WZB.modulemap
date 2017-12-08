@@ -1,0 +1,6 @@
+framework module UITextView_WZB {
+  umbrella header "UITextView-WZB-umbrella.h"
+
+  export *
+  module * { export * }
+}

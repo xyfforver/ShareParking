@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "440264E21793FD374A1826CF7CD3F67E"
-               BuildableName = "Pods_SharedParking.framework"
-               BlueprintName = "Pods-SharedParking"
+               BlueprintIdentifier = "18DDB3D95966636378742C113D7F861A"
+               BuildableName = "UITextView_WZB.framework"
+               BlueprintName = "UITextView-WZB"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "440264E21793FD374A1826CF7CD3F67E"
-            BuildableName = "Pods_SharedParking.framework"
-            BlueprintName = "Pods-SharedParking"
+            BlueprintIdentifier = "18DDB3D95966636378742C113D7F861A"
+            BuildableName = "UITextView_WZB.framework"
+            BlueprintName = "UITextView-WZB"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

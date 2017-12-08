@@ -25,6 +25,7 @@
 		6B1028F41FDA1A5900605638 /* MyRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1028F31FDA1A5900605638 /* MyRequestModel.m */; };
 		6B1028F71FDA318700605638 /* MyRequestItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1028F61FDA318700605638 /* MyRequestItemModel.m */; };
 		6B1028FA1FDA319300605638 /* RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1028F91FDA319300605638 /* RequestModel.m */; };
+		6B1028FD1FDA6C0200605638 /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1028FB1FDA6C0100605638 /* FeedbackVC.m */; };
 		6B12C8341FCF9A0D00B819B4 /* ParkingOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C8331FCF9A0D00B819B4 /* ParkingOrderView.m */; };
 		6B12C8371FCFAC5A00B819B4 /* ParkingOrderReserveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C8361FCFAC5A00B819B4 /* ParkingOrderReserveView.m */; };
 		6B12C83A1FCFB0F600B819B4 /* ParkingOrderTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C8391FCFB0F600B819B4 /* ParkingOrderTimeView.m */; };
@@ -243,6 +244,8 @@
 		6B1028F61FDA318700605638 /* MyRequestItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestItemModel.m; sourceTree = "<group>"; };
 		6B1028F81FDA319300605638 /* RequestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestModel.h; sourceTree = "<group>"; };
 		6B1028F91FDA319300605638 /* RequestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestModel.m; sourceTree = "<group>"; };
+		6B1028FB1FDA6C0100605638 /* FeedbackVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackVC.m; sourceTree = "<group>"; };
+		6B1028FC1FDA6C0200605638 /* FeedbackVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackVC.h; sourceTree = "<group>"; };
 		6B12C8321FCF9A0D00B819B4 /* ParkingOrderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingOrderView.h; sourceTree = "<group>"; };
 		6B12C8331FCF9A0D00B819B4 /* ParkingOrderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingOrderView.m; sourceTree = "<group>"; };
 		6B12C8351FCFAC5A00B819B4 /* ParkingOrderReserveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingOrderReserveView.h; sourceTree = "<group>"; };
@@ -659,6 +662,8 @@
 				6B2549631FB6C0CE007ECE75 /* EditVC.h */,
 				6B2549641FB6C0CF007ECE75 /* EditVC.m */,
 				6B2549651FB6C0CF007ECE75 /* EditVC.xib */,
+				6B1028FC1FDA6C0200605638 /* FeedbackVC.h */,
+				6B1028FB1FDA6C0100605638 /* FeedbackVC.m */,
 			);
 			path = "Setting(设置)";
 			sourceTree = "<group>";
@@ -2006,6 +2011,7 @@
 				6B2ABA031FD1317B0025D512 /* LoginReminderVC.m in Sources */,
 				6B3189F01FA970130063AC2F /* FuelCounterVC.m in Sources */,
 				6B91B6AE1F9DEE2600A1020C /* StatusModel.m in Sources */,
+				6B1028FD1FDA6C0200605638 /* FeedbackVC.m in Sources */,
 				6B91B6AD1F9DEE1C00A1020C /* JMRefreshHeader.m in Sources */,
 				6B057CC11FA2D2FF0017E320 /* ParkingSpaceHeaderView.m in Sources */,
 				6B62C0881FCE9D0D007F6861 /* NavigationVC.m in Sources */,

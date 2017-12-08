@@ -7,7 +7,7 @@
 //
 
 #import "SettingVC.h"
-
+#import "FeedbackVC.h"
 @interface SettingVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView *tbView;
 @property (nonatomic , strong) NSArray *firstArr;
@@ -216,7 +216,14 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    if (indexPath.section == 0) {
+        
+    }else if (indexPath.section == 1){
+        if (indexPath.row == 0) {
+            FeedbackVC *vc = [[FeedbackVC alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }
 }
 
 #pragma mark ---------------Lazy-------------------------/
