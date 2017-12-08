@@ -7,6 +7,7 @@
 //
 
 #import "MyRequestRentView.h"
+#import "RequestCarportVC.h"
 @interface MyRequestRentView ()
 @property (nonatomic , strong) UIView *infoBgView;
 @property (nonatomic , strong) UIButton *locationBtn;
@@ -120,7 +121,8 @@
 }
 
 - (void)rentAction:(UIButton *)button{
-    
+    RequestCarportVC *vc = [[RequestCarportVC alloc]initWithRequestId:self.model.id];
+    [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 
 

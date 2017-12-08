@@ -62,8 +62,8 @@
 #pragma mark ------------collectionView delegate ------------------/
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-//    return self.requestModel.parking.count;
-    return 10;
+    return self.requestModel.parking_list.count;
+//    return 10;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{

@@ -10,4 +10,7 @@
 
 @interface RequestCarportVC : BaseViewController
 
+- (instancetype)initWithRequestId:(NSString *)requestId;
+
+@property (nonatomic , copy) NSString *requestId;
 @end

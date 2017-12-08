@@ -9,7 +9,7 @@
 #import "BaseModel.h"
 #import "MyRequestModel.h"
 @interface RequestModel : BaseModel
-@property (nonatomic , strong) NSArray *parking;
+@property (nonatomic , strong) NSArray *parking_list;
 
 @property (nonatomic , strong) MyRequestModel *help;
 

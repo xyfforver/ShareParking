@@ -14,8 +14,11 @@
 @property (nonatomic , copy) NSString *create_time;
 @property (nonatomic , assign) NSInteger help_fanwei;
 @property (nonatomic , copy) NSString *help_address;
+@property (nonatomic , copy) NSString *id;
 @property (nonatomic , assign) BOOL help_type;//求租类型0 错时 1长租
 
-
-
+//我的求租信息
++ (void)myRequestInfoWithId:(NSString *)requestId success:(NetCompletionBlock)success;
+//删除我的发布
++ (void)deleteMyRequestWithId:(NSString *)requestId success:(NetCompletionBlock)success;
 @end

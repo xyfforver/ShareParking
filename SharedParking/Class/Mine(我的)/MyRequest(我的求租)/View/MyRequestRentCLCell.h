@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MyRequestItemModel.h"
 @interface MyRequestRentCLCell : UICollectionViewCell
+
+@property (nonatomic , strong) MyRequestItemModel *itemModel;
 
 @end

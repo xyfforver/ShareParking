@@ -24,6 +24,16 @@
     return self;
 }
 
+- (void)setItemModel:(MyRequestItemModel *)itemModel{
+    _itemModel = itemModel;
+    
+    self.titleLab.text = itemModel.park_address;
+    self.infoLab.text = @"234m | 5天前 | 3次浏览";
+    self.priceLab.text = @"400 元/月";
+    self.typeLab.text = @"长租";
+}
+
+
 - (void)initView{
     self.layer.cornerRadius = 5;
     self.layer.masksToBounds = YES;
@@ -56,11 +66,7 @@
         make.top.mas_equalTo(self.priceLab.mas_bottom).offset(5);
     }];
     
-    
-    self.titleLab.text = @"金城路12号";
-    self.infoLab.text = @"234m | 5天前 | 3次浏览";
-    self.priceLab.text = @"400 元/月";
-    self.typeLab.text = @"长租";
+
 }
 
 #pragma mark ---------------lazy ---------------------/

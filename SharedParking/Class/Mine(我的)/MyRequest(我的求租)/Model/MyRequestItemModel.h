@@ -9,5 +9,8 @@
 #import "BaseModel.h"
 
 @interface MyRequestItemModel : BaseModel
-
+@property (nonatomic , copy) NSString *zongnum;
+@property (nonatomic , copy) NSString *park_address;
+@property (nonatomic , copy) NSString *distance;
+@property (nonatomic , copy) NSString *zhanyongnum;
 @end
