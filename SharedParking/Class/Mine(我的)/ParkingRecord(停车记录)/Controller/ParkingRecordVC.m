@@ -7,6 +7,8 @@
 //
 
 #import "ParkingRecordVC.h"
+#import "CarportPayVC.h"
+
 #import "BaseTBView.h"
 #import "ParkingRecordTBCell.h"
 
@@ -79,7 +81,16 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    ParkingRecordModel *recordModel = self.dataArr[indexPath.row];
+    if (recordModel.order_status == 0 ) {
+        CarportPayVC *vc = [[CarportPayVC alloc]initWithOrderId:recordModel.id];
+        kSelfWeak;
+        vc.reloadBlock = ^{
+            kSelfStrong;
+            [strongSelf.tbView.mj_header beginRefreshing];
+        };
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 

@@ -9,13 +9,17 @@
 #import "BaseModel.h"
 
 @interface ParkingRecordModel : BaseModel
-@property (copy, nonatomic) NSString *order_id;
+@property (copy, nonatomic) NSString *id;
 @property (assign, nonatomic) CGFloat order_fee;
 @property (copy, nonatomic) NSString *parking_number;
 @property (assign, nonatomic) NSInteger order_chutime;
 @property (assign, nonatomic) NSInteger order_jintime;
 @property (copy, nonatomic) NSString *parking_id;
 @property (copy, nonatomic) NSString *park_title;
+@property (assign, nonatomic) NSInteger order_status;//订单状态 0 正在进行 1取消订单 2 已完成
+
+#pragma mark ---------------付款页 ---------------------/
+@property (assign, nonatomic) CGFloat park_fee;
 
 /*
  order_id = 13;
@@ -29,7 +33,10 @@
  */
 //停车记录
 + (void)parkingRecordWithPage:(NSInteger )page success:(NetCompletionBlock)success;
-
+//车位订单详情
++ (void)orderInfoWithOrderId:(NSString *)orderId success:(NetCompletionBlock)success;
+//上锁
++ (void)lockWithOrderId:(NSString *)orderId payType:(NSString *)payType price:(NSString *)price success:(NetCompletionBlock)success;
 
 
 @end

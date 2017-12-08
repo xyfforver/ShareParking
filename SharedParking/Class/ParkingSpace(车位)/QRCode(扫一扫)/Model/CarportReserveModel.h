@@ -50,4 +50,6 @@
 + (void)qrcodeWithParkingId:(NSString *)parkingId success:(NetCompletionBlock)success;
 //开锁
 + (void)openLockWithParkingId:(NSString *)parkingId carNumId:(NSString *)carNumId success:(NetCompletionBlock)success;
+
+
 @end
