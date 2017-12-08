@@ -12,5 +12,7 @@
 
 @property (nonatomic , strong) MyRequestModel *model;
 
+@property (nonatomic , copy) void(^reloadBlock)(void);
+
 + (CGFloat )getHeight;
 @end

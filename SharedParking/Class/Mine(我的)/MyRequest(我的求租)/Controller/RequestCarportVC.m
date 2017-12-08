@@ -9,11 +9,10 @@
 #import "RequestCarportVC.h"
 #import "MyRequestModel.h"
 @interface RequestCarportVC ()
-@property (strong, nonatomic) IBOutlet UITextField *bournField;
-@property (strong, nonatomic) IBOutlet UITextField *rangeField;
-@property (strong, nonatomic) IBOutlet UIButton *mistakeBtn;
+@property (strong, nonatomic) IBOutlet UITextField *bournField;//目的地
+@property (strong, nonatomic) IBOutlet UITextField *rangeField;//范围
 @property (strong, nonatomic) IBOutlet UIButton *rentBtn;
-@property (strong, nonatomic) IBOutlet UITextField *priceField;
+@property (strong, nonatomic) IBOutlet UITextField *priceField;//价格
 @property (strong, nonatomic) IBOutlet UIButton *confirmBtn;
 
 @end
@@ -30,21 +29,19 @@
     [super viewDidLoad];
     
     [self initView];
-    [self loadData];
+    
+    if (self.requestId) {
+        [self loadData];
+    }
 }
 
 - (void)initView{
     self.title = @"求租车位";
     
-    self.mistakeBtn.layer.borderWidth = 1;
-    self.mistakeBtn.layer.borderColor = kNavBarColor.CGColor;
-    [self.mistakeBtn setTitleColor:kColorWhite forState:UIControlStateSelected];
-    [self.mistakeBtn setBackgroundImage:[UIImage createImageWithColor:kNavBarColor] forState:UIControlStateSelected];
-    
-    self.rentBtn.layer.borderWidth = 1;
-    self.rentBtn.layer.borderColor = kNavBarColor.CGColor;
-    [self.rentBtn setTitleColor:kColorWhite forState:UIControlStateSelected];
-    [self.rentBtn setBackgroundImage:[UIImage createImageWithColor:kNavBarColor] forState:UIControlStateSelected];
+//    self.rentBtn.layer.borderWidth = 1;
+//    self.rentBtn.layer.borderColor = kNavBarColor.CGColor;
+//    [self.rentBtn setTitleColor:kColorWhite forState:UIControlStateSelected];
+//    [self.rentBtn setBackgroundImage:[UIImage createImageWithColor:kNavBarColor] forState:UIControlStateSelected];
 }
 
 #pragma mark ---------------network ---------------------/
@@ -60,23 +57,64 @@
     }];
 }
 
+- (void)issueMyRequestData{
+    [MyRequestModel issueMyRequestInfoWithAddress:self.bournField.text range:self.rangeField.text price:self.priceField.text success:^(StatusModel *statusModel) {
+        [self getDataWithStatusModel:statusModel];
+    }];
+}
+
+- (void)updateMyRequestData{
+    [MyRequestModel UpdateMyRequestInfoWithId:self.requestId address:self.bournField.text range:self.rangeField.text price:self.priceField.text success:^(StatusModel *statusModel) {
+        [self getDataWithStatusModel:statusModel];
+    }];
+}
+
+- (void)getDataWithStatusModel:(StatusModel *)statusModel{
+    if (statusModel.flag == kFlagSuccess) {
+        if (self.reloadBlock) {
+            self.reloadBlock();
+        }
+        
+        [self backToSuperView];
+    }else{
+        [WSProgressHUD showImage:nil status:statusModel.message];
+    }
+}
+
 - (void)setRequestData:(MyRequestModel *)model{
     self.priceField.text = [NSString stringWithFormat:@"%.2f",model.help_money];
     self.rangeField.text = [NSString stringWithFormat:@"%ld",model.help_fanwei];
     self.bournField.text = model.help_address;
-    
-    self.mistakeBtn.selected = !model.help_type;
-    self.rentBtn.selected = model.help_type;
+
     
 }
 #pragma mark ---------------event ---------------------/
 - (IBAction)selectAction:(id)sender {
 
-    self.mistakeBtn.selected = self.mistakeBtn == sender;
-    self.rentBtn.selected = !self.mistakeBtn.selected;
+
 }
 
 - (IBAction)confirmAction:(id)sender {
+    if (self.bournField.text.length <= 0) {
+        [WSProgressHUD showImage:nil status:@"请输入目的地"];
+        return;
+    }
+    
+    if (self.rangeField.text.length <= 0) {
+        [WSProgressHUD showImage:nil status:@"请输入求租范围"];
+        return;
+    }
+    
+    if (self.priceField.text.length <= 0) {
+        [WSProgressHUD showImage:nil status:@"请输入理想价格"];
+        return;
+    }
+    
+    if (self.requestId) {
+        [self updateMyRequestData];
+    }else{
+        [self issueMyRequestData];
+    }
 }
 
 

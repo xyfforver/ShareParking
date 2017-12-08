@@ -14,10 +14,9 @@
             <connections>
                 <outlet property="bournField" destination="YbO-Uz-iPt" id="pJe-tw-rfk"/>
                 <outlet property="confirmBtn" destination="JWC-SF-OfP" id="HiG-Hw-heh"/>
-                <outlet property="mistakeBtn" destination="yP2-uX-pHU" id="NcZ-Vk-4dI"/>
                 <outlet property="priceField" destination="U5h-rg-Z6h" id="v2I-7w-ODn"/>
                 <outlet property="rangeField" destination="uub-Of-3e8" id="qDg-v2-hok"/>
-                <outlet property="rentBtn" destination="0Xf-9n-2aC" id="Xea-eO-OXM"/>
+                <outlet property="rentBtn" destination="yP2-uX-pHU" id="u3M-Vc-fKy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,8 +40,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="求租范围：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fb-bY-Fi7">
-                    <rect key="frame" x="15" y="105" width="77" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="求租范围（米）：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fb-bY-Fi7">
+                    <rect key="frame" x="15" y="105" width="123" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -54,7 +53,7 @@
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="求租类型：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKr-6e-wfg">
                     <rect key="frame" x="15" y="188" width="77" height="18"/>
@@ -64,14 +63,14 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yP2-uX-pHU">
                     <rect key="frame" x="15" y="221" width="95" height="40"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.43838509920000002" green="0.71468138690000005" blue="0.4065129757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="95" id="AY3-n3-Sxk"/>
                         <constraint firstAttribute="height" constant="40" id="XdL-5J-iHR"/>
                     </constraints>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="错时">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="长租">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -79,12 +78,9 @@
                             <integer key="value" value="4"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="selectAction:" destination="-1" eventType="touchUpInside" id="ayz-xG-gQP"/>
-                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="理想价格：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Waj-fR-Nhq">
-                    <rect key="frame" x="15" y="276" width="77" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="理想价格（元）：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Waj-fR-Nhq">
+                    <rect key="frame" x="15" y="276" width="123" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -96,7 +92,7 @@
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWC-SF-OfP">
                     <rect key="frame" x="96" y="444" width="185" height="40"/>
@@ -119,27 +115,6 @@
                         <action selector="confirmAction:" destination="-1" eventType="touchUpInside" id="59m-sR-lCy"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xf-9n-2aC">
-                    <rect key="frame" x="145" y="221" width="95" height="40"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="9GL-yM-jUY"/>
-                        <constraint firstAttribute="width" constant="95" id="eCs-4W-6Ji"/>
-                    </constraints>
-                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="长租">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
-                            <integer key="value" value="4"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="selectAction:" destination="-1" eventType="touchUpInside" id="6gV-Dm-hBD"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -150,7 +125,6 @@
                 <constraint firstItem="H7J-f2-VIh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="D4v-jO-uii"/>
                 <constraint firstItem="3fb-bY-Fi7" firstAttribute="top" secondItem="YbO-Uz-iPt" secondAttribute="bottom" constant="15" id="FX6-zl-uau"/>
                 <constraint firstItem="Waj-fR-Nhq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="HcL-Sh-icu"/>
-                <constraint firstItem="0Xf-9n-2aC" firstAttribute="centerY" secondItem="yP2-uX-pHU" secondAttribute="centerY" id="IHt-xo-P5i"/>
                 <constraint firstAttribute="trailing" secondItem="U5h-rg-Z6h" secondAttribute="trailing" constant="13" id="K5w-AV-jmr"/>
                 <constraint firstAttribute="trailing" secondItem="uub-Of-3e8" secondAttribute="trailing" constant="14" id="Utf-6H-JhQ"/>
                 <constraint firstItem="jKr-6e-wfg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="Wsw-qO-Erv"/>
@@ -158,7 +132,6 @@
                 <constraint firstItem="uub-Of-3e8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="YpP-5W-ty9"/>
                 <constraint firstItem="yP2-uX-pHU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="Zya-2c-fT7"/>
                 <constraint firstItem="U5h-rg-Z6h" firstAttribute="top" secondItem="Waj-fR-Nhq" secondAttribute="bottom" constant="5" id="b1o-i3-fy4"/>
-                <constraint firstItem="0Xf-9n-2aC" firstAttribute="leading" secondItem="yP2-uX-pHU" secondAttribute="trailing" constant="35" id="fKf-zK-7Ov"/>
                 <constraint firstItem="YbO-Uz-iPt" firstAttribute="top" secondItem="H7J-f2-VIh" secondAttribute="bottom" constant="5" id="fYX-16-6JR"/>
                 <constraint firstItem="yP2-uX-pHU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="gER-9C-xr1"/>
                 <constraint firstItem="jKr-6e-wfg" firstAttribute="top" secondItem="uub-Of-3e8" secondAttribute="bottom" constant="15" id="h5Q-ca-zZN"/>

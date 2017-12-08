@@ -21,4 +21,11 @@
 + (void)myRequestInfoWithId:(NSString *)requestId success:(NetCompletionBlock)success;
 //删除我的发布
 + (void)deleteMyRequestWithId:(NSString *)requestId success:(NetCompletionBlock)success;
+//更新我的求租信息
++ (void)UpdateMyRequestInfoWithId:(NSString *)helpId address:(NSString *)address range:(NSString *)range price:(NSString *)price success:(NetCompletionBlock)success;
+//发布我的求租信息
++ (void)issueMyRequestInfoWithAddress:(NSString *)address range:(NSString *)range price:(NSString *)price success:(NetCompletionBlock)success;
+
+
+
 @end

@@ -13,4 +13,6 @@
 - (instancetype)initWithRequestId:(NSString *)requestId;
 
 @property (nonatomic , copy) NSString *requestId;
+@property (nonatomic , copy) void(^reloadBlock)(void);
+
 @end

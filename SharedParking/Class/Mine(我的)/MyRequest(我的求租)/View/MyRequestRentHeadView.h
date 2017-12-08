@@ -19,6 +19,7 @@ typedef enum :NSInteger {
 
 @property (nonatomic , assign) JMHeaderType type;
 
+@property (nonatomic , copy) void(^reloadBlock)(void);
 
 + (CGFloat)getHeight;
 @end

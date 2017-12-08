@@ -7,6 +7,7 @@
 //
 
 #import "MyRequestRentHeadView.h"
+#import "RequestCarportVC.h"
 @interface MyRequestRentHeadView ()
 @property (nonatomic , strong) UILabel *titleLab;
 @property (nonatomic , strong) UIButton *requestBtn;
@@ -46,7 +47,15 @@
 #pragma mark ---------------event ---------------------/
 - (void)requestAction:(UIButton *)button{
     if (self.type == JMHeaderRequestRentType) {
-
+        RequestCarportVC *vc = [[RequestCarportVC alloc]init];
+        kSelfWeak;
+        vc.reloadBlock = ^{
+            kSelfStrong;
+            if (strongSelf.reloadBlock) {
+                strongSelf.reloadBlock();
+            }
+        };
+        [self.Controller.navigationController pushViewController:vc animated:YES];
     }else if (self.type == JMHeaderReserveParkingSpaceType){
 
     }

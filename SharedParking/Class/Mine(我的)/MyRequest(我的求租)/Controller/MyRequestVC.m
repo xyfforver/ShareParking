@@ -48,11 +48,19 @@
             strongSelf.headView.hidden = strongSelf.requestModel ;
             strongSelf.rentView.hidden = !strongSelf.headView.hidden;
             strongSelf.clView.hidden = !strongSelf.headView.hidden;
-            if (strongSelf.requestModel ) {
-                strongSelf.rentView.model = strongSelf.requestModel.help;
-                
-                [strongSelf.clView reloadData];
+   
+            strongSelf.rentView.model = strongSelf.requestModel.help;
+            
+            if (strongSelf.requestModel.parking_list.count == 0) {
+                [WSProgressHUD showImage:nil status:@"没有找到匹配的停车位"];
             }
+            
+            [strongSelf.clView reloadData];
+
+        }else if (statusModel.flag == 400){//没有数据
+            strongSelf.headView.hidden = NO;
+            strongSelf.rentView.hidden = !strongSelf.headView.hidden;
+            strongSelf.clView.hidden = !strongSelf.headView.hidden;
         }
     }];
 }
@@ -93,6 +101,12 @@
     if (!_headView) {
         _headView = [[MyRequestRentHeadView alloc]initWithType:JMHeaderRequestRentType frame:CGRectMake(0, 0, kScreenWidth, [MyRequestRentHeadView getHeight])];
         _headView.hidden = YES;
+        
+        kSelfWeak;
+        _headView.reloadBlock = ^{
+            kSelfStrong;
+            [strongSelf loadData];
+        };
     }
     return _headView;
 }
@@ -101,6 +115,12 @@
     if (!_rentView) {
         _rentView = [[MyRequestRentView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, [MyRequestRentView getHeight])];
         _rentView.hidden = YES;
+        
+        kSelfWeak;
+        _rentView.reloadBlock = ^{
+            kSelfStrong;
+            [strongSelf loadData];
+        };
     }
     return _rentView;
 }

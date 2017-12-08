@@ -115,13 +115,39 @@
     }];
 }
 
+#pragma mark ---------------network ---------------------/
+- (void)deleteRequestData{
+    kSelfWeak;
+    [MyRequestModel deleteMyRequestWithId:self.model.id success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            [WSProgressHUD showImage:nil status:@"删除成功！"];
+            
+            if (strongSelf.reloadBlock) {
+                strongSelf.reloadBlock();
+            }
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+    }];
+}
+
 #pragma mark ---------------event ---------------------/
 - (void)deleteAction:(UIButton *)button{
-    
+    [UIAlertView alertViewWithTitle:@"提示" message:@"确定要删除这条求租信息嘛?" cancelButtonTitle:@"取消" otherButtonTitles:@[@"确定"] onDismiss:^(int buttonIndex, NSString *buttonTitle) {
+        [self deleteRequestData];
+    } onCancel:nil];
 }
 
 - (void)rentAction:(UIButton *)button{
     RequestCarportVC *vc = [[RequestCarportVC alloc]initWithRequestId:self.model.id];
+    kSelfWeak;
+    vc.reloadBlock = ^{
+        kSelfStrong;
+        if (strongSelf.reloadBlock) {
+            strongSelf.reloadBlock();
+        }
+    };
     [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 
@@ -210,7 +236,7 @@
 - (UIButton *)rentBtn{
     if (!_rentBtn) {
         _rentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_rentBtn setTitle:@"重新求租" forState:UIControlStateNormal];
+        [_rentBtn setTitle:@"编辑" forState:UIControlStateNormal];
         _rentBtn.titleLabel.font = kFontSize15;
         [_rentBtn setTitleColor:kColor333333 forState:UIControlStateNormal];
         [_rentBtn addTarget:self action:@selector(rentAction:) forControlEvents:UIControlEventTouchUpInside];
