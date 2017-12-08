@@ -176,6 +176,7 @@
 		6BD26AF91FD52DF900129F10 /* CarportLongListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD26AF81FD52DF900129F10 /* CarportLongListModel.m */; };
 		6BD6149C1FD28F3E0042F2E5 /* CarportShortListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6149B1FD28F3E0042F2E5 /* CarportShortListModel.m */; };
 		6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */; };
+		6BF957761FDA90AE005B56ED /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF957751FDA90AE005B56ED /* MessageModel.m */; };
 		6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B671FB5745500DED0B7 /* MyReserveVC.m */; };
 		6BF95B721FB58EF900DED0B7 /* MyIssueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B711FB58EF900DED0B7 /* MyIssueVC.m */; };
 		6BF95B751FB5901E00DED0B7 /* MyIssueTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B741FB5901E00DED0B7 /* MyIssueTBCell.m */; };
@@ -533,6 +534,8 @@
 		6BD6149B1FD28F3E0042F2E5 /* CarportShortListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportShortListModel.m; sourceTree = "<group>"; };
 		6BF8B2531F9F177000329145 /* AppDelegate+LibConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+LibConfig.h"; sourceTree = "<group>"; };
 		6BF8B2541F9F177000329145 /* AppDelegate+LibConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+LibConfig.m"; sourceTree = "<group>"; };
+		6BF957741FDA90AE005B56ED /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		6BF957751FDA90AE005B56ED /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		6BF95B661FB5745500DED0B7 /* MyReserveVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyReserveVC.h; sourceTree = "<group>"; };
 		6BF95B671FB5745500DED0B7 /* MyReserveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyReserveVC.m; sourceTree = "<group>"; };
 		6BF95B701FB58EF900DED0B7 /* MyIssueVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyIssueVC.h; sourceTree = "<group>"; };
@@ -1437,6 +1440,8 @@
 		6B91B6821F9DE8C400A1020C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6BF957741FDA90AE005B56ED /* MessageModel.h */,
+				6BF957751FDA90AE005B56ED /* MessageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1979,6 +1984,7 @@
 				6B2AB9FF1FD125800025D512 /* BindingPlatesVC.m in Sources */,
 				6B2AB9F81FD11AE00025D512 /* JKCountDownButton.m in Sources */,
 				6B62C0C41FCEAEB2007F6861 /* CarportDetailShortCLCell.m in Sources */,
+				6BF957761FDA90AE005B56ED /* MessageModel.m in Sources */,
 				6B1C4B411FA870C400D543D2 /* YJTagView.m in Sources */,
 				6BF95B751FB5901E00DED0B7 /* MyIssueTBCell.m in Sources */,
 				6B1C4B401FA870BD00D543D2 /* UICollectionViewLeftAlignedLayout.m in Sources */,

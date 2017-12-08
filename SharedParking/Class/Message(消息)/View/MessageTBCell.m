@@ -25,6 +25,14 @@
     return self;
 }
 
+- (void)setMessageModel:(MessageModel *)messageModel{
+    _messageModel = messageModel;
+    
+    self.titleLab.text = messageModel.message_title;
+    self.timeLab.text = [HelpTool timestampSwitchTime:[messageModel.create_time integerValue] andFormatter:nil];
+    self.infoLab.text = messageModel.message_content;
+}
+
 - (void)initView{
     self.contentView.backgroundColor = kColorWhite;
     [self.contentView addSubview:self.titleLab];
@@ -48,9 +56,7 @@
         make.top.mas_equalTo(self.timeLab.mas_bottom).offset(10);
     }];
     
-    self.titleLab.text = @"车位预订提醒";
-    self.timeLab.text = @"2017-10-23 22：22：22";
-    self.infoLab.text = @"您成功预订了一个车位，请在20分钟内停车";
+
 }
 
 #pragma mark ---------------lazy ---------------------/

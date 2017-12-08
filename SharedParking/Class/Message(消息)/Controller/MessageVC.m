@@ -11,11 +11,15 @@
 #import "BaseTBView.h"
 #import "MessageTBCell.h"
 
+#import "MessageModel.h"
 @interface MessageVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) MessageHeaderView *headerView;
 @property (nonatomic , strong) UIScrollView *scrollView;
 @property (nonatomic , strong) BaseTBView *tbView;
 @property (nonatomic , strong) UIButton *activityBtn;
+
+@property (nonatomic , assign) NSInteger page;
+@property (nonatomic , strong) NSMutableArray *dataArr;
 @end
 
 @implementation MessageVC
@@ -24,11 +28,13 @@
     [super viewDidLoad];
     
     [self initView];
+    [self loadData];
     
 }
 
 - (void)initView{
     self.navigationItem.title = @"消息";
+    self.page = 1;
     
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.scrollView];
@@ -39,19 +45,42 @@
     
 }
 
+#pragma mark ---------------network ---------------------/
+- (void)loadData{
+    kSelfWeak;
+    [MessageModel myMessageWithPage:self.page success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        [strongSelf.tbView.mj_header endRefreshing];
+        [strongSelf.tbView.mj_footer endRefreshing];
+        
+        if (strongSelf.page == 1) {
+            [strongSelf.dataArr removeAllObjects];
+        }
+        
+        if (statusModel.flag == kFlagSuccess) {
+            NSArray *dataArr = statusModel.data;
+            if (dataArr.count > 0) {
+                [strongSelf.dataArr addObjectsFromArray:dataArr];
+            }
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+        [strongSelf.tbView reloadData];
+    }];
+}
+
 #pragma mark ---------------event ---------------------/
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSInteger index = scrollView.contentOffset.x/kScreenWidth;
     
     self.headerView.selectedSegmentIndex = index;
 
-    
 }
 
 
 #pragma mark -------------tableView--delegate-------------/
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 10;
+    return self.dataArr.count;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -62,6 +91,9 @@
     MessageTBCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageTBCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    cell.messageModel = self.dataArr[indexPath.row];
+    
     
     return cell;
 }
@@ -120,6 +152,18 @@
         _tbView.backgroundColor = kBackGroundGrayColor;
         
         [_tbView registerClass:[MessageTBCell class] forCellReuseIdentifier:@"MessageTBCell"];
+        
+        kSelfWeak;
+        _tbView.mj_header = [JMRefreshHeader headerWithRefreshingBlock:^{
+            kSelfStrong;
+            strongSelf.page = 1;
+            [strongSelf loadData];
+        }];
+        _tbView.mj_footer = [JMRefreshFooter footerWithRefreshingBlock:^{
+            kSelfStrong;
+            strongSelf.page ++;
+            [strongSelf loadData];
+        }];
     }
     return _tbView;
 }
@@ -138,4 +182,10 @@
     return _activityBtn;
 }
 
+- (NSMutableArray *)dataArr{
+    if (!_dataArr) {
+        _dataArr = [[NSMutableArray alloc]init];
+    }
+    return _dataArr;
+}
 @end
