@@ -12,6 +12,8 @@
 
 @property (nonatomic , strong) MyIssueModel *issueModel;
 
+@property (nonatomic , copy) void(^reloadBlock)(void);
+
 + (CGFloat)getHeight;
 
 @end

@@ -10,6 +10,8 @@
 #import "MyRequestRentHeadView.h"
 #import "MyRequestRentView.h"
 #import "MyRequestRentCLCell.h"
+
+#import "MyRequestModel.h"
 @interface MyRequestVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic , strong) MyRequestRentHeadView *headView;
 @property (nonatomic , strong) MyRequestRentView *rentView;
@@ -23,7 +25,7 @@
     [super viewDidLoad];
     
     [self initView];
-
+    [self loadData];
 }
 
 - (void)initView{
@@ -36,7 +38,11 @@
 }
 
 #pragma mark ---------------NetWork-------------------------/
-
+- (void)loadData{
+    [MyRequestModel myRequestWithSuccess:^(StatusModel *statusModel) {
+        
+    }];
+}
 
 #pragma mark ---------------Event-------------------------/
 

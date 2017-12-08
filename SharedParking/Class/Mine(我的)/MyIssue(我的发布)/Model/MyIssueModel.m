@@ -18,4 +18,11 @@
     [self postWithStatusModelResponsePath:@"user_parking" params:ParamsDic onCompletion:success];
 }
 
+//删除发布
++ (void)deleteIssueWithId:(NSString *)parkingId success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(parkingId, @"parking_id");
+    [self postWithStatusModelResponsePath:@"user_parkingdel" params:ParamsDic onCompletion:success];
+}
+
 @end

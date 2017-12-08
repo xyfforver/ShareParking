@@ -112,10 +112,27 @@
     
 }
 
+#pragma mark ---------------network ---------------------/
+- (void)deleteIssue{
+    kSelfWeak;
+    [MyIssueModel deleteIssueWithId:self.issueModel.parking_id success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            [WSProgressHUD showImage:nil status:@"删除成功！"];
+            
+            if (strongSelf.reloadBlock) {
+                strongSelf.reloadBlock();
+            }
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+    }];
+}
+
 #pragma mark ---------------event ---------------------/
 - (void)deleteAction:(UIButton *)button{
     [UIAlertView alertViewWithTitle:@"提示" message:@"确定要删除此条发布信息？" cancelButtonTitle:@"取消" otherButtonTitles:@[@"确定"] onDismiss:^(int buttonIndex, NSString *buttonTitle) {
-        
+        [self deleteIssue];
     } onCancel:nil];
 }
 

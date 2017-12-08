@@ -22,6 +22,7 @@
 		6B0E801C1FCBEBEF00B2C309 /* JMTitleSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E801B1FCBEBEF00B2C309 /* JMTitleSelectView.m */; };
 		6B0E801F1FCBF4C300B2C309 /* ReleaseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E801E1FCBF4C300B2C309 /* ReleaseDetailView.m */; };
 		6B0E80231FCBF51600B2C309 /* ReleaseDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0E80221FCBF51600B2C309 /* ReleaseDetailView.xib */; };
+		6B1028F41FDA1A5900605638 /* MyRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1028F31FDA1A5900605638 /* MyRequestModel.m */; };
 		6B12C8341FCF9A0D00B819B4 /* ParkingOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C8331FCF9A0D00B819B4 /* ParkingOrderView.m */; };
 		6B12C8371FCFAC5A00B819B4 /* ParkingOrderReserveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C8361FCFAC5A00B819B4 /* ParkingOrderReserveView.m */; };
 		6B12C83A1FCFB0F600B819B4 /* ParkingOrderTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C8391FCFB0F600B819B4 /* ParkingOrderTimeView.m */; };
@@ -234,6 +235,8 @@
 		6B0E801D1FCBF4C300B2C309 /* ReleaseDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseDetailView.h; sourceTree = "<group>"; };
 		6B0E801E1FCBF4C300B2C309 /* ReleaseDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseDetailView.m; sourceTree = "<group>"; };
 		6B0E80221FCBF51600B2C309 /* ReleaseDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleaseDetailView.xib; sourceTree = "<group>"; };
+		6B1028F21FDA1A5900605638 /* MyRequestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestModel.h; sourceTree = "<group>"; };
+		6B1028F31FDA1A5900605638 /* MyRequestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestModel.m; sourceTree = "<group>"; };
 		6B12C8321FCF9A0D00B819B4 /* ParkingOrderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingOrderView.h; sourceTree = "<group>"; };
 		6B12C8331FCF9A0D00B819B4 /* ParkingOrderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingOrderView.m; sourceTree = "<group>"; };
 		6B12C8351FCFAC5A00B819B4 /* ParkingOrderReserveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingOrderReserveView.h; sourceTree = "<group>"; };
@@ -679,6 +682,8 @@
 		6B1323541FB43DC900AB1840 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B1028F21FDA1A5900605638 /* MyRequestModel.h */,
+				6B1028F31FDA1A5900605638 /* MyRequestModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1979,6 +1984,7 @@
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
 				6B968F741FBD72940083A1DC /* FindBreakRulesView.m in Sources */,
 				6B62C0AA1FCEAE23007F6861 /* ReserveSuccessVC.m in Sources */,
+				6B1028F41FDA1A5900605638 /* MyRequestModel.m in Sources */,
 				6B17DCEF1FD69EB600A30057 /* SearchResultVC.m in Sources */,
 				6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */,
 				6B62C09E1FCEADF5007F6861 /* CarportPayVC.m in Sources */,

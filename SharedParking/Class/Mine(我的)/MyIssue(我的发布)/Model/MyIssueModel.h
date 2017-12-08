@@ -22,6 +22,9 @@
 
 //我的发布
 + (void)myIssueWithPage:(NSInteger )page success:(NetCompletionBlock)success;
+//删除发布
++ (void)deleteIssueWithId:(NSString *)parkingId success:(NetCompletionBlock)success;
+
 /*
  park_id = 2;
  parking_fee = 5.00;

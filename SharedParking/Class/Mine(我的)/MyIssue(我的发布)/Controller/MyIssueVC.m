@@ -72,7 +72,11 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.issueModel = self.dataArr[indexPath.row];
-    
+    kSelfWeak;
+    cell.reloadBlock = ^{
+        kSelfStrong;
+        [strongSelf.tbView.mj_header beginRefreshing];
+    };
     return cell;
 }
 
@@ -93,6 +97,18 @@
         _tbView.backgroundColor = kBackGroundGrayColor;
         
         [_tbView registerClass:[MyIssueTBCell class] forCellReuseIdentifier:@"MyIssueTBCell"];
+    
+        kSelfWeak;
+        _tbView.mj_header = [JMRefreshHeader headerWithRefreshingBlock:^{
+            kSelfStrong;
+            strongSelf.page = 1;
+            [strongSelf loadData];
+        }];
+        _tbView.mj_footer = [JMRefreshFooter footerWithRefreshingBlock:^{
+            kSelfStrong;
+            strongSelf.page ++;
+            [strongSelf loadData];
+        }];
     }
     return _tbView;
 }

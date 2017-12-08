@@ -169,7 +169,7 @@ static dispatch_once_t userOnceToken;
                                       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                                           NSDictionary *dic = [self getErrorDictionary:error];
                                           DLog(@"%@", error);
-//                                          [BaseModel textDemo];
+                                          [BaseModel textDemo];
                                           if (completionBlock)
                                           {
                                               completionBlock(dic);
