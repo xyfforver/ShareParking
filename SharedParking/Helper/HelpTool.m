@@ -290,5 +290,13 @@
     }
 }
 
+//错时 长租
++ (NSString *)getCarportTypeWithType:(BOOL)type{
+    if (type == 1) {
+        return @"长租";
+    }
+    
+    return @"错时";
+}
 
 @end

@@ -11,11 +11,12 @@
 #import "MyRequestRentView.h"
 #import "MyRequestRentCLCell.h"
 
-#import "MyRequestModel.h"
+#import "RequestModel.h"
 @interface MyRequestVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic , strong) MyRequestRentHeadView *headView;
 @property (nonatomic , strong) MyRequestRentView *rentView;
 @property (nonatomic , strong) UICollectionView *clView;
+@property (nonatomic , strong) RequestModel *requestModel;
 @end
 
 @implementation MyRequestVC
@@ -31,7 +32,7 @@
 - (void)initView{
     self.title = @"我的求租";
     
-//    [self.view addSubview:self.headView];
+    [self.view addSubview:self.headView];
     [self.view addSubview:self.rentView];
     [self.view addSubview:self.clView];
     
@@ -39,8 +40,20 @@
 
 #pragma mark ---------------NetWork-------------------------/
 - (void)loadData{
-    [MyRequestModel myRequestWithSuccess:^(StatusModel *statusModel) {
-        
+    kSelfWeak;
+    [RequestModel myRequestWithSuccess:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            strongSelf.requestModel = statusModel.data;
+            strongSelf.headView.hidden = strongSelf.requestModel ;
+            strongSelf.rentView.hidden = !strongSelf.headView.hidden;
+            strongSelf.clView.hidden = !strongSelf.headView.hidden;
+            if (strongSelf.requestModel ) {
+                strongSelf.rentView.model = strongSelf.requestModel.help;
+                
+                [strongSelf.clView reloadData];
+            }
+        }
     }];
 }
 
@@ -49,6 +62,7 @@
 #pragma mark ------------collectionView delegate ------------------/
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+//    return self.requestModel.parking.count;
     return 10;
 }
 
@@ -78,6 +92,7 @@
 - (MyRequestRentHeadView *)headView{
     if (!_headView) {
         _headView = [[MyRequestRentHeadView alloc]initWithType:JMHeaderRequestRentType frame:CGRectMake(0, 0, kScreenWidth, [MyRequestRentHeadView getHeight])];
+        _headView.hidden = YES;
     }
     return _headView;
 }
@@ -85,6 +100,7 @@
 - (MyRequestRentView *)rentView{
     if (!_rentView) {
         _rentView = [[MyRequestRentView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, [MyRequestRentView getHeight])];
+        _rentView.hidden = YES;
     }
     return _rentView;
 }
@@ -102,6 +118,7 @@
         _clView.delegate = self;
         _clView.dataSource = self;
         _clView.backgroundColor = kBackGroundGrayColor;
+        _clView.hidden = YES;
         
         [_clView registerClass:[MyRequestRentCLCell class] forCellWithReuseIdentifier:@"MyRequestRentCLCell"];
         

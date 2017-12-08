@@ -9,13 +9,15 @@
 #import "MyRequestRentView.h"
 @interface MyRequestRentView ()
 @property (nonatomic , strong) UIView *infoBgView;
+@property (nonatomic , strong) UIButton *locationBtn;
+@property (nonatomic , strong) UIButton *objectBtn;
+@property (nonatomic , strong) UIButton *carTypeBtn;
+@property (nonatomic , strong) UIButton *priceBtn;
+
 @property (nonatomic , strong) UIView *btnBgView;
-
 @property (nonatomic , strong) UIView *lineView;
-
 @property (nonatomic , strong) UIButton *deleteBtn;
 @property (nonatomic , strong) UIButton *rentBtn;
-
 @property (nonatomic , strong) UIView *greenLine;
 @end
 
@@ -29,9 +31,25 @@
     return self;
 }
 
+- (void)setModel:(MyRequestModel *)model{
+    _model = model;
+    
+    [self.locationBtn setTitle:model.help_address forState:UIControlStateNormal];
+    NSString *objStr = [HelpTool stringWithDistance:model.help_fanwei];
+    [self.objectBtn setTitle:[NSString stringWithFormat:@"求租范围：%@",objStr] forState:UIControlStateNormal];
+    NSString *helpStr = [HelpTool getCarportTypeWithType:model.help_type];
+    [self.carTypeBtn setTitle:[NSString stringWithFormat:@"求租类型：%@",helpStr] forState:UIControlStateNormal];
+    [self.priceBtn setTitle:[NSString stringWithFormat:@"出租价格：%.2f元/月",model.help_money] forState:UIControlStateNormal];
+}
+
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
     [self addSubview:self.infoBgView];
+    [self.infoBgView addSubview:self.locationBtn];
+    [self.infoBgView addSubview:self.objectBtn];
+    [self.infoBgView addSubview:self.carTypeBtn];
+    [self.infoBgView addSubview:self.priceBtn];
+    
     [self addSubview:self.btnBgView];
     [self addSubview:self.greenLine];
     [self.btnBgView addSubview:self.deleteBtn];
@@ -74,34 +92,26 @@
         make.centerY.mas_equalTo(self.btnBgView);
     }];
 
-    CGFloat top = 30;
+    [self.locationBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.right.mas_equalTo(-20);
+        make.top.mas_equalTo(30);
+    }];
     
-    for (int i = 0; i < 4; i++) {
-        UIImageView *imgView = [[UIImageView alloc]init];
-        imgView.backgroundColor = kColorRed;
-        [self.infoBgView addSubview:imgView];
-        
-        UILabel *itemLab = [[UILabel alloc]init];
-        itemLab.font = kFontSize15;
-        itemLab.textColor = kColor333333;
-        itemLab.text = @"哈哈哈哈或";
-        [self.infoBgView addSubview:itemLab];
-        
-        [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(20);
-            make.top.mas_equalTo(top);
-            make.width.height.mas_equalTo(20);
-        }];
-        
-        [itemLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(50);
-            make.centerY.mas_equalTo(imgView.mas_centerY);
-            make.right.mas_equalTo(-kMargin15);
-        }];
-        
-        top = top + 35;
-    }
+    [self.objectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.locationBtn);
+        make.top.mas_equalTo(self.locationBtn.mas_bottom).offset(kMargin15);
+    }];
     
+    [self.carTypeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.locationBtn);
+        make.top.mas_equalTo(self.objectBtn.mas_bottom).offset(kMargin15);
+    }];
+    
+    [self.priceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.locationBtn);
+        make.top.mas_equalTo(self.carTypeBtn.mas_bottom).offset(kMargin15);
+    }];
 }
 
 #pragma mark ---------------event ---------------------/
@@ -123,6 +133,55 @@
         _infoBgView.layer.masksToBounds = YES;
     }
     return _infoBgView;
+}
+
+
+- (UIButton *)locationBtn{
+    if (!_locationBtn) {
+        _locationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _locationBtn.titleLabel.font = kFontSize15;
+        [_locationBtn setTitleColor:kColor333333 forState:UIControlStateNormal];
+        [_locationBtn setImage:[UIImage imageNamed:@"mine_location"] forState:UIControlStateNormal];
+        _locationBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [_locationBtn lc_imageTitleHorizontalAlignmentWithSpace:kMargin15];
+    }
+    return _locationBtn;
+}
+
+- (UIButton *)objectBtn{
+    if (!_objectBtn) {
+        _objectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _objectBtn.titleLabel.font = kFontSize15;
+        [_objectBtn setTitleColor:kColor333333 forState:UIControlStateNormal];
+        [_objectBtn setImage:[UIImage imageNamed:@"mine_object"] forState:UIControlStateNormal];
+        _objectBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [_objectBtn lc_imageTitleHorizontalAlignmentWithSpace:kMargin15];
+    }
+    return _objectBtn;
+}
+
+- (UIButton *)carTypeBtn{
+    if (!_carTypeBtn) {
+        _carTypeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _carTypeBtn.titleLabel.font = kFontSize15;
+        [_carTypeBtn setTitleColor:kColor333333 forState:UIControlStateNormal];
+        [_carTypeBtn setImage:[UIImage imageNamed:@"mine_cartype"] forState:UIControlStateNormal];
+        _carTypeBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [_carTypeBtn lc_imageTitleHorizontalAlignmentWithSpace:kMargin15];
+    }
+    return _carTypeBtn;
+}
+
+- (UIButton *)priceBtn{
+    if (!_priceBtn) {
+        _priceBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _priceBtn.titleLabel.font = kFontSize15;
+        [_priceBtn setTitleColor:kColor333333 forState:UIControlStateNormal];
+        [_priceBtn setImage:[UIImage imageNamed:@"mine_price"] forState:UIControlStateNormal];
+        _priceBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [_priceBtn lc_imageTitleHorizontalAlignmentWithSpace:kMargin15];
+    }
+    return _priceBtn;
 }
 
 - (UIView *)btnBgView{

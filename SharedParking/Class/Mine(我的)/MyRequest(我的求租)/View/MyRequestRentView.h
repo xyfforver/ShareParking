@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MyRequestModel.h"
 @interface MyRequestRentView : UIView
 
-
+@property (nonatomic , strong) MyRequestModel *model;
 
 + (CGFloat )getHeight;
 @end

@@ -47,5 +47,6 @@
 #pragma mark ---------------获取字段 ---------------------/
 + (NSString *)getRentObjectWithType:(BOOL)type;
 + (NSString *)getRentCarportWithType:(NSInteger)type;
++ (NSString *)getCarportTypeWithType:(BOOL)type;//错时 长租
 
 @end

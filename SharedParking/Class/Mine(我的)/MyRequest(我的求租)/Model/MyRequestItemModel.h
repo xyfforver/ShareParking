@@ -1,13 +1,13 @@
 //
-//  MyRequestModel.m
+//  MyRequestItemModel.h
 //  SharedParking
 //
 //  Created by galaxy on 2017/12/8.
 //  Copyright © 2017年 galaxy. All rights reserved.
 //
 
-#import "MyRequestModel.h"
+#import "BaseModel.h"
 
-@implementation MyRequestModel
+@interface MyRequestItemModel : BaseModel
 
 @end

@@ -23,6 +23,8 @@
 		6B0E801F1FCBF4C300B2C309 /* ReleaseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E801E1FCBF4C300B2C309 /* ReleaseDetailView.m */; };
 		6B0E80231FCBF51600B2C309 /* ReleaseDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0E80221FCBF51600B2C309 /* ReleaseDetailView.xib */; };
 		6B1028F41FDA1A5900605638 /* MyRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1028F31FDA1A5900605638 /* MyRequestModel.m */; };
+		6B1028F71FDA318700605638 /* MyRequestItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1028F61FDA318700605638 /* MyRequestItemModel.m */; };
+		6B1028FA1FDA319300605638 /* RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1028F91FDA319300605638 /* RequestModel.m */; };
 		6B12C8341FCF9A0D00B819B4 /* ParkingOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C8331FCF9A0D00B819B4 /* ParkingOrderView.m */; };
 		6B12C8371FCFAC5A00B819B4 /* ParkingOrderReserveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C8361FCFAC5A00B819B4 /* ParkingOrderReserveView.m */; };
 		6B12C83A1FCFB0F600B819B4 /* ParkingOrderTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12C8391FCFB0F600B819B4 /* ParkingOrderTimeView.m */; };
@@ -237,6 +239,10 @@
 		6B0E80221FCBF51600B2C309 /* ReleaseDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleaseDetailView.xib; sourceTree = "<group>"; };
 		6B1028F21FDA1A5900605638 /* MyRequestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestModel.h; sourceTree = "<group>"; };
 		6B1028F31FDA1A5900605638 /* MyRequestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestModel.m; sourceTree = "<group>"; };
+		6B1028F51FDA318700605638 /* MyRequestItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestItemModel.h; sourceTree = "<group>"; };
+		6B1028F61FDA318700605638 /* MyRequestItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestItemModel.m; sourceTree = "<group>"; };
+		6B1028F81FDA319300605638 /* RequestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestModel.h; sourceTree = "<group>"; };
+		6B1028F91FDA319300605638 /* RequestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestModel.m; sourceTree = "<group>"; };
 		6B12C8321FCF9A0D00B819B4 /* ParkingOrderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingOrderView.h; sourceTree = "<group>"; };
 		6B12C8331FCF9A0D00B819B4 /* ParkingOrderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingOrderView.m; sourceTree = "<group>"; };
 		6B12C8351FCFAC5A00B819B4 /* ParkingOrderReserveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingOrderReserveView.h; sourceTree = "<group>"; };
@@ -682,8 +688,12 @@
 		6B1323541FB43DC900AB1840 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B1028F81FDA319300605638 /* RequestModel.h */,
+				6B1028F91FDA319300605638 /* RequestModel.m */,
 				6B1028F21FDA1A5900605638 /* MyRequestModel.h */,
 				6B1028F31FDA1A5900605638 /* MyRequestModel.m */,
+				6B1028F51FDA318700605638 /* MyRequestItemModel.h */,
+				6B1028F61FDA318700605638 /* MyRequestItemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2035,6 +2045,7 @@
 				6B91B69F1F9DED9F00A1020C /* UIButton+EnlargeEdge.m in Sources */,
 				6B91B69E1F9DED9A00A1020C /* NSString+String.m in Sources */,
 				6B91B69D1F9DED9400A1020C /* NSString+Regex.m in Sources */,
+				6B1028F71FDA318700605638 /* MyRequestItemModel.m in Sources */,
 				6BCD97991FB4485A001F81A5 /* MyRequestRentView.m in Sources */,
 				6B91B69C1F9DED8E00A1020C /* NSDictionary+RequestEncoding.m in Sources */,
 				6B91B69B1F9DED8900A1020C /* NSDictionary+Log.m in Sources */,
@@ -2043,6 +2054,7 @@
 				6B91B69A1F9DED8400A1020C /* NSArray+Log.m in Sources */,
 				6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */,
 				6BD26AF61FD4F61100129F10 /* CarportShortDetailModel.m in Sources */,
+				6B1028FA1FDA319300605638 /* RequestModel.m in Sources */,
 				6B1323581FB43DF300AB1840 /* MyRequestVC.m in Sources */,
 				6B91B6981F9DED7800A1020C /* JKHTTPManager.m in Sources */,
 				6B91B6971F9DED7300A1020C /* JKNavigationController.m in Sources */,
