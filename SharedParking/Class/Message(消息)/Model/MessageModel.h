@@ -31,5 +31,6 @@
 
 //我的消息
 + (void)myMessageWithPage:(NSInteger )page success:(NetCompletionBlock)success;
-
+//系统消息
++ (void)systemMessageWithPage:(NSInteger )page success:(NetCompletionBlock)success;
 @end

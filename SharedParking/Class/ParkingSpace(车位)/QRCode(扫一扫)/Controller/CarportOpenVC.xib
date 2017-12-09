@@ -123,6 +123,9 @@
                             <state key="normal" title="+">
                                 <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             </state>
+                            <connections>
+                                <action selector="addAction:" destination="-1" eventType="touchUpInside" id="zhb-YZ-laj"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd4-VP-e9O">
                             <rect key="frame" x="247" y="8" width="52" height="33"/>
@@ -130,6 +133,9 @@
                             <state key="normal" title="车牌号">
                                 <color key="titleColor" red="0.86121433973312378" green="0.57592189311981201" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="selectAction:" destination="-1" eventType="touchUpInside" id="vhk-gq-jpn"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carport_jiantou" translatesAutoresizingMaskIntoConstraints="NO" id="IUG-sk-faS">
                             <rect key="frame" x="319" y="20" width="6" height="10"/>

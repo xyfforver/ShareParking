@@ -8,7 +8,6 @@
 
 #import "ParkingSpaceVC.h"
 #import "CarportPayVC.h"
-#import "CarportOpenVC.h"
 
 #import "ParkingSpaceHeaderView.h"
 #import "ParkingSpaceMapView.h"
@@ -170,7 +169,6 @@
 #pragma mark ---------------action ---------------------/
 - (void)codeAction{
 //    CarportPayVC *vc = [[CarportPayVC alloc]init];
-//    CarportOpenVC *vc = [[CarportOpenVC alloc]initWithCarportId:@"6"];
 //    [self.navigationController pushViewController:vc animated:YES];
     [self openQRCode];
     

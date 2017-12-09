@@ -89,6 +89,7 @@
 		6B4151BF1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4151BE1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m */; };
 		6B4151C31FCE7A8D0000F48E /* CarportCertificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4151C11FCE7A8D0000F48E /* CarportCertificationVC.m */; };
 		6B4151C41FCE7A8D0000F48E /* CarportCertificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4151C21FCE7A8D0000F48E /* CarportCertificationVC.xib */; };
+		6B422E081FDB740700F4DA0F /* SelectCarNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B422E071FDB740700F4DA0F /* SelectCarNumberView.m */; };
 		6B62C0881FCE9D0D007F6861 /* NavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0871FCE9D0D007F6861 /* NavigationVC.m */; };
 		6B62C08B1FCE9FEB007F6861 /* NavigationBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C08A1FCE9FEB007F6861 /* NavigationBottomView.m */; };
 		6B62C09E1FCEADF5007F6861 /* CarportPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0971FCEADF5007F6861 /* CarportPayVC.m */; };
@@ -370,6 +371,8 @@
 		6B4151C01FCE7A8D0000F48E /* CarportCertificationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportCertificationVC.h; sourceTree = "<group>"; };
 		6B4151C11FCE7A8D0000F48E /* CarportCertificationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarportCertificationVC.m; sourceTree = "<group>"; };
 		6B4151C21FCE7A8D0000F48E /* CarportCertificationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarportCertificationVC.xib; sourceTree = "<group>"; };
+		6B422E061FDB740700F4DA0F /* SelectCarNumberView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectCarNumberView.h; sourceTree = "<group>"; };
+		6B422E071FDB740700F4DA0F /* SelectCarNumberView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectCarNumberView.m; sourceTree = "<group>"; };
 		6B62C0861FCE9D0D007F6861 /* NavigationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationVC.h; sourceTree = "<group>"; };
 		6B62C0871FCE9D0D007F6861 /* NavigationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationVC.m; sourceTree = "<group>"; };
 		6B62C0891FCE9FEB007F6861 /* NavigationBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBottomView.h; sourceTree = "<group>"; };
@@ -1055,6 +1058,8 @@
 		6B62C08F1FCEAD76007F6861 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6B422E061FDB740700F4DA0F /* SelectCarNumberView.h */,
+				6B422E071FDB740700F4DA0F /* SelectCarNumberView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2057,6 +2062,7 @@
 				6B91B69F1F9DED9F00A1020C /* UIButton+EnlargeEdge.m in Sources */,
 				6B91B69E1F9DED9A00A1020C /* NSString+String.m in Sources */,
 				6B91B69D1F9DED9400A1020C /* NSString+Regex.m in Sources */,
+				6B422E081FDB740700F4DA0F /* SelectCarNumberView.m in Sources */,
 				6B1028F71FDA318700605638 /* MyRequestItemModel.m in Sources */,
 				6BCD97991FB4485A001F81A5 /* MyRequestRentView.m in Sources */,
 				6B91B69C1F9DED8E00A1020C /* NSDictionary+RequestEncoding.m in Sources */,

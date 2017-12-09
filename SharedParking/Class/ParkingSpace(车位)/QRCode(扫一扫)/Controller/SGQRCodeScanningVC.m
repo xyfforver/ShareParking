@@ -8,8 +8,8 @@
 
 #import "SGQRCodeScanningVC.h"
 #import "SGQRCode.h"
-
-
+#import "ParkingRecordModel.h"
+#import "CarportOpenVC.h"
 @interface SGQRCodeScanningVC () <SGQRCodeScanManagerDelegate, SGQRCodeAlbumManagerDelegate>
 @property (nonatomic, strong) SGQRCodeScanManager *manager;
 @property (nonatomic, strong) SGQRCodeScanningView *scanningView;
@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UIView *bottomView;
 #pragma mark ---------------galaxy add ---------------------/
 @property (nonatomic , strong) UIView *focusView;
+@property (nonatomic , assign) BOOL isReturn;
 @end
 
 @implementation SGQRCodeScanningVC
@@ -34,6 +35,16 @@
     [self.scanningView removeTimer];
     [self removeFlashlightBtn];
     [_manager cancelSampleBufferDelegate];
+    
+    self.isReturn = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if (self.isReturn) {
+        [self backToSuperView];
+    }
 }
 
 - (void)dealloc {
@@ -43,7 +54,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.isReturn = NO;
+    
     self.view.backgroundColor = [UIColor clearColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -299,9 +312,10 @@
         kSelfStrong;
         NSDictionary *dic = [jsonDic objectForKey:@"data"];
         StatusModel *statusModel = [StatusModel mj_objectWithKeyValues:jsonDic];
-//        CodeModel *model = [CodeModel mj_objectWithKeyValues:dic];
+        ParkingRecordModel *model = [ParkingRecordModel mj_objectWithKeyValues:dic];
         if (statusModel.flag == kFlagSuccess) {
-  
+            CarportOpenVC *vc = [[CarportOpenVC alloc]initWithCarportId:model.parking_id];
+            [strongSelf.navigationController pushViewController:vc animated:YES];
         }else{
             [WSProgressHUD showImage:nil status:statusModel.message];
             [strongSelf backToSuperView];
