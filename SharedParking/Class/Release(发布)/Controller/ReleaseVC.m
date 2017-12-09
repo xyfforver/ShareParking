@@ -9,12 +9,12 @@
 #import "ReleaseVC.h"
 #import "JMTitleSelectView.h"
 #import "ReleaseDetailView.h"
-
+#import "ReleaseLongView.h"
 @interface ReleaseVC ()<UIScrollViewDelegate>
 @property (nonatomic , strong) JMTitleSelectView *titleView;
 @property (nonatomic , strong) UIScrollView *scrollView;
 @property (nonatomic , strong) ReleaseDetailView *shortView;
-@property (nonatomic , strong) ReleaseDetailView *rentView;
+@property (nonatomic , strong) ReleaseLongView *rentView;
 
 @end
 
@@ -78,16 +78,14 @@
     if (!_shortView) {
         _shortView = [[[NSBundle mainBundle] loadNibNamed:@"ReleaseDetailView" owner:nil options:nil] lastObject];
         _shortView.frame = CGRectMake(0, 0, self.scrollView.width, self.scrollView.height);
-        _shortView.type = CarportShortRentType;
     }
     return _shortView;
 }
 
-- (ReleaseDetailView *)rentView{
+- (ReleaseLongView *)rentView{
     if (!_rentView) {
-        _rentView = [[[NSBundle mainBundle] loadNibNamed:@"ReleaseDetailView" owner:nil options:nil] lastObject];
+        _rentView = [[[NSBundle mainBundle] loadNibNamed:@"ReleaseLongView" owner:nil options:nil] lastObject];
         _rentView.frame = CGRectMake(kScreenWidth, 0, self.scrollView.width, self.scrollView.height);
-        _rentView.type = CarportLongRentType;
     }
     return _rentView;
 }

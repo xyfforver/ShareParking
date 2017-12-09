@@ -117,6 +117,8 @@
 		6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3C1FA86DB100D543D2 /* YJTagCollectionViewCell.xib */; };
 		6B8AB66E1FDBCDF200A546A3 /* WTCarKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8AB66A1FDBCDD200A546A3 /* WTCarKeyboard.m */; };
 		6B8AB66F1FDBCDF200A546A3 /* WTCarKeyboardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8AB66D1FDBCDD200A546A3 /* WTCarKeyboardModel.m */; };
+		6B8AB6721FDBD46F00A546A3 /* ReleaseLongView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8AB6711FDBD46F00A546A3 /* ReleaseLongView.m */; };
+		6B8AB6741FDBD48C00A546A3 /* ReleaseLongView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8AB6731FDBD48C00A546A3 /* ReleaseLongView.xib */; };
 		6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */; };
 		6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FD1F9DDB4000A1020C /* ViewController.m */; };
 		6B91B6011F9DDB4000A1020C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B91B5FF1F9DDB4000A1020C /* Main.storyboard */; };
@@ -429,6 +431,9 @@
 		6B8AB66A1FDBCDD200A546A3 /* WTCarKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTCarKeyboard.m; sourceTree = "<group>"; };
 		6B8AB66C1FDBCDD200A546A3 /* WTCarKeyboardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTCarKeyboardModel.h; sourceTree = "<group>"; };
 		6B8AB66D1FDBCDD200A546A3 /* WTCarKeyboardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTCarKeyboardModel.m; sourceTree = "<group>"; };
+		6B8AB6701FDBD46F00A546A3 /* ReleaseLongView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseLongView.h; sourceTree = "<group>"; };
+		6B8AB6711FDBD46F00A546A3 /* ReleaseLongView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseLongView.m; sourceTree = "<group>"; };
+		6B8AB6731FDBD48C00A546A3 /* ReleaseLongView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleaseLongView.xib; sourceTree = "<group>"; };
 		6B91B5F61F9DDB4000A1020C /* SharedParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B91B5F91F9DDB4000A1020C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1558,6 +1563,9 @@
 				6B0E801D1FCBF4C300B2C309 /* ReleaseDetailView.h */,
 				6B0E801E1FCBF4C300B2C309 /* ReleaseDetailView.m */,
 				6B0E80221FCBF51600B2C309 /* ReleaseDetailView.xib */,
+				6B8AB6701FDBD46F00A546A3 /* ReleaseLongView.h */,
+				6B8AB6711FDBD46F00A546A3 /* ReleaseLongView.m */,
+				6B8AB6731FDBD48C00A546A3 /* ReleaseLongView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1927,6 +1935,7 @@
 				6B62C0A91FCEAE23007F6861 /* CarportReserveVC.xib in Resources */,
 				6B3189F81FA974900063AC2F /* FuelAverageView.xib in Resources */,
 				6B2ABA001FD125800025D512 /* BindingPlatesVC.xib in Resources */,
+				6B8AB6741FDBD48C00A546A3 /* ReleaseLongView.xib in Resources */,
 				6B91B6011F9DDB4000A1020C /* Main.storyboard in Resources */,
 				6B62C0AB1FCEAE23007F6861 /* ReserveSuccessVC.xib in Resources */,
 			);
@@ -2073,6 +2082,7 @@
 				6B4151BF1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m in Sources */,
 				6B3C16F11FA1D4FC009A6948 /* ParkingRecordVC.m in Sources */,
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
+				6B8AB6721FDBD46F00A546A3 /* ReleaseLongView.m in Sources */,
 				6B968F741FBD72940083A1DC /* FindBreakRulesView.m in Sources */,
 				6B62C0AA1FCEAE23007F6861 /* ReserveSuccessVC.m in Sources */,
 				6B1028F41FDA1A5900605638 /* MyRequestModel.m in Sources */,

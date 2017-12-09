@@ -1,14 +1,13 @@
 //
-//  ReleaseDetailView.h
+//  ReleaseLongView.h
 //  SharedParking
 //
-//  Created by galaxy on 2017/11/27.
+//  Created by galaxy on 2017/12/9.
 //  Copyright © 2017年 galaxy. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ReleaseDetailView : UIView
-
+@interface ReleaseLongView : UIView
 
 @end
