@@ -8,6 +8,7 @@
 
 #import "CarportReserveVC.h"
 #import "ReserveSuccessVC.h"
+#import "PopBottomView.h"
 
 #import "CarportReserveModel.h"
 #import "CarportShortItemModel.h"
@@ -20,6 +21,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *reserveBtn;
 @property (strong, nonatomic) IBOutlet UIButton *reminderBtn;
 
+@property (nonatomic , strong) CarportReserveModel *carModel;
 @property (nonatomic , strong) CarportShortItemModel *carItemModel;
 
 @end
@@ -52,13 +54,13 @@
     [CarportReserveModel carportReserveWithParkingId:self.parkingId success:^(StatusModel *statusModel) {
         kSelfStrong;
         if(statusModel.flag == kFlagSuccess){
-            CarportReserveModel *model = statusModel.data;
-            if (model.car_chepai.count > 0) {
-                strongSelf.carItemModel = [model.car_chepai firstObject];
+            strongSelf.carModel = statusModel.data;
+            if (strongSelf.carModel.car_chepai.count > 0) {
+                strongSelf.carItemModel = [strongSelf.carModel.car_chepai firstObject];
                 [strongSelf.numberBtn setTitle:strongSelf.carItemModel.car_chepai forState:UIControlStateNormal];
             }
-            strongSelf.priceLab.text = [NSString stringWithFormat:@"每小时%.2f元",model.park_fee];
-            strongSelf.overPriceLab.text = [NSString stringWithFormat:@"每小时%.2f元",model.park_feeovertime];
+            strongSelf.priceLab.text = [NSString stringWithFormat:@"每小时%.2f元",strongSelf.carModel.park_fee];
+            strongSelf.overPriceLab.text = [NSString stringWithFormat:@"每小时%.2f元",strongSelf.carModel.park_feeovertime];
         }else{
             
         }
@@ -95,7 +97,21 @@
 }
 
 - (IBAction)selectAction:(id)sender {
-    
+    if (self.carModel.car_chepai.count > 0) {
+        PopBottomView *pop = [[PopBottomView alloc]initWithFrame:self.view.bounds];
+        pop.cancelColor = [UIColor redColor];
+        pop.data = self.carModel.car_chepai;
+        kSelfWeak;
+        pop.blockCallBackIndex = ^(CarportShortItemModel *model) {
+            kSelfStrong;
+            strongSelf.carItemModel = model;
+            [strongSelf.numberBtn setTitle:strongSelf.carItemModel.car_chepai forState:UIControlStateNormal];
+            NSLog(@"id = %@ number:%@",model.id , model.parking_number);
+        };
+        [pop viewShow];
+    }else{
+        [WSProgressHUD showImage:nil status:@"请先前往添加车牌"];
+    }
 }
 
 - (IBAction)addAction:(id)sender {

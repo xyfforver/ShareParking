@@ -10,4 +10,10 @@
 
 @implementation CarportShortItemModel
 
+- (void)setCar_chepai:(NSString *)car_chepai{
+    _car_chepai = car_chepai;
+    
+    self.parking_number = car_chepai;
+}
+
 @end

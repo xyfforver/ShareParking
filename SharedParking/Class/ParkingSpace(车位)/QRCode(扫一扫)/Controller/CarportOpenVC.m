@@ -10,6 +10,7 @@
 #import "OpenStateVC.h"
 #import "CarportReserveModel.h"
 #import "CarportShortItemModel.h"
+#import "PopBottomView.h"
 @interface CarportOpenVC ()
 @property (strong, nonatomic) IBOutlet UIButton *carNumBtn;
 @property (strong, nonatomic) IBOutlet UIButton *addCarNumBtn;
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *timeLab;
 @property (strong, nonatomic) IBOutlet UILabel *topPriceLab;
 
+@property (nonatomic , strong) CarportReserveModel *carModel;
 @property (nonatomic , strong) CarportShortItemModel *carItemModel;
 @end
 
@@ -43,13 +45,13 @@
     [CarportReserveModel qrcodeWithParkingId:self.carportId success:^(StatusModel *statusModel) {
         kSelfStrong;
         if(statusModel.flag == kFlagSuccess){
-            CarportReserveModel *model = statusModel.data;
-            if (model.chepai_list.count > 0) {
-                strongSelf.carItemModel = [model.chepai_list firstObject];
+            strongSelf.carModel = statusModel.data;
+            if (strongSelf.carModel.chepai_list.count > 0) {
+                strongSelf.carItemModel = [strongSelf.carModel.chepai_list firstObject];
                 [strongSelf.carNumBtn setTitle:strongSelf.carItemModel.car_chepai forState:UIControlStateNormal];
             }
-            strongSelf.priceLab.text = [NSString stringWithFormat:@"每小时%.2f元",model.park_fee];
-            strongSelf.timeLab.text = [NSString stringWithFormat:@"%@-%@",model.park_opentime,model.park_closetime];
+            strongSelf.priceLab.text = [NSString stringWithFormat:@"每小时%.2f元",strongSelf.carModel.park_fee];
+            strongSelf.timeLab.text = [NSString stringWithFormat:@"%@-%@",strongSelf.carModel.park_opentime,strongSelf.carModel.park_closetime];
         }else{
             
         }
@@ -67,7 +69,21 @@
 
 }
 - (IBAction)selectAction:(id)sender {
-    
+    if (self.carModel.chepai_list.count > 0) {
+        PopBottomView *pop = [[PopBottomView alloc]initWithFrame:self.view.bounds];
+        pop.cancelColor = [UIColor redColor];
+        pop.data = self.carModel.chepai_list;
+        kSelfWeak;
+        pop.blockCallBackIndex = ^(CarportShortItemModel *model) {
+            kSelfStrong;
+            strongSelf.carItemModel = model;
+            [strongSelf.carNumBtn setTitle:strongSelf.carItemModel.car_chepai forState:UIControlStateNormal];
+            NSLog(@"id = %@ number:%@",model.id , model.parking_number);
+        };
+        [pop viewShow];
+    }else{
+        [WSProgressHUD showImage:nil status:@"请先前往添加车牌"];
+    }
 }
 
 - (IBAction)addAction:(id)sender {
