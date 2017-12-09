@@ -14,6 +14,8 @@
 @property (copy, nonatomic) NSString *create_time;
 @property (copy, nonatomic) NSString *parking_id;
 @property (copy, nonatomic) NSString *message_title;
+@property (copy, nonatomic) NSString *url;
+@property (copy, nonatomic) NSString *message_img;
 @property (assign, nonatomic) NSInteger istype;
 /*
  

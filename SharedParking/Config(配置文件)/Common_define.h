@@ -25,6 +25,7 @@
 #import "iOSBlocks.h"
 #import "BaseTBView.h"
 #import "BaseCLView.h"
+#import "WKWebViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import <MapKit/MapKit.h>

@@ -35,7 +35,7 @@
 //
 //        return [UIImage imageNamed:@"mine_qq"];
 //    }
-    return [UIImage imageNamed:@"loading_null"];
+    return [UIImage imageNamed:@"message_null"];
 }
 
 // 空白区域点击事件

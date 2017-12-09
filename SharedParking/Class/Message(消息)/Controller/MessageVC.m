@@ -8,18 +8,16 @@
 
 #import "MessageVC.h"
 #import "MessageHeaderView.h"
-#import "BaseTBView.h"
-#import "MessageTBCell.h"
+#import "MyMessageTBView.h"
+#import "SystemMessageTBView.h"
 
 #import "MessageModel.h"
-@interface MessageVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface MessageVC ()<UIScrollViewDelegate>
 @property (nonatomic , strong) MessageHeaderView *headerView;
 @property (nonatomic , strong) UIScrollView *scrollView;
-@property (nonatomic , strong) BaseTBView *tbView;
-@property (nonatomic , strong) UIButton *activityBtn;
+@property (nonatomic , strong) MyMessageTBView *myTbView;
+@property (nonatomic , strong) SystemMessageTBView *systemTBView;
 
-@property (nonatomic , assign) NSInteger page;
-@property (nonatomic , strong) NSMutableArray *dataArr;
 @end
 
 @implementation MessageVC
@@ -29,43 +27,66 @@
     
     [self initView];
     [self loadData];
+    [self loadSystemData];
     
 }
 
 - (void)initView{
     self.navigationItem.title = @"消息";
-    self.page = 1;
     
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.scrollView];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    [self.scrollView addSubview:self.tbView];
-    [self.scrollView addSubview:self.activityBtn];
+    [self.scrollView addSubview:self.myTbView];
+    [self.scrollView addSubview:self.systemTBView];
     
 }
 
 #pragma mark ---------------network ---------------------/
 - (void)loadData{
     kSelfWeak;
-    [MessageModel myMessageWithPage:self.page success:^(StatusModel *statusModel) {
+    [MessageModel myMessageWithPage:self.myTbView.page success:^(StatusModel *statusModel) {
         kSelfStrong;
-        [strongSelf.tbView.mj_header endRefreshing];
-        [strongSelf.tbView.mj_footer endRefreshing];
+        [strongSelf.myTbView.mj_header endRefreshing];
+        [strongSelf.myTbView.mj_footer endRefreshing];
         
-        if (strongSelf.page == 1) {
-            [strongSelf.dataArr removeAllObjects];
+        if (strongSelf.myTbView.page == 1) {
+            [strongSelf.myTbView.dataArr removeAllObjects];
         }
         
         if (statusModel.flag == kFlagSuccess) {
             NSArray *dataArr = statusModel.data;
             if (dataArr.count > 0) {
-                [strongSelf.dataArr addObjectsFromArray:dataArr];
+                [strongSelf.myTbView.dataArr addObjectsFromArray:dataArr];
             }
         }else{
             [WSProgressHUD showImage:nil status:statusModel.message];
         }
-        [strongSelf.tbView reloadData];
+        [strongSelf.myTbView reloadData];
+    }];
+}
+
+- (void)loadSystemData{
+    kSelfWeak;
+    [MessageModel systemMessageWithPage:self.systemTBView.page success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        [strongSelf.systemTBView.mj_header endRefreshing];
+        [strongSelf.systemTBView.mj_footer endRefreshing];
+        
+        if (strongSelf.systemTBView.page == 1) {
+            [strongSelf.systemTBView.dataArr removeAllObjects];
+        }
+        
+        if (statusModel.flag == kFlagSuccess) {
+            NSArray *dataArr = statusModel.data;
+            if (dataArr.count > 0) {
+                [strongSelf.systemTBView.dataArr addObjectsFromArray:dataArr];
+            }
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+        [strongSelf.systemTBView reloadData];
     }];
 }
 
@@ -77,41 +98,6 @@
 
 }
 
-
-#pragma mark -------------tableView--delegate-------------/
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.dataArr.count;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MessageTBCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageTBCell" forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    cell.messageModel = self.dataArr[indexPath.row];
-    
-    
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 10;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *headerView = [[UIView alloc]init];
-    headerView.backgroundColor = kBackGroundGrayColor;
-    
-    return headerView;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
 
 
 #pragma mark ---------------lazy ---------------------/
@@ -142,50 +128,42 @@
     return _scrollView;
 }
 
-- (BaseTBView *)tbView{
-    if (!_tbView) {
-        _tbView = [[BaseTBView alloc]initWithFrame:CGRectMake(0, 0, self.scrollView.width, self.scrollView.height) style:UITableViewStylePlain];
-        _tbView.delegate = self;
-        _tbView.dataSource = self;
-        _tbView.rowHeight = 100;
-        _tbView.tableFooterView = [[UIView alloc]init];
-        _tbView.backgroundColor = kBackGroundGrayColor;
-        
-        [_tbView registerClass:[MessageTBCell class] forCellReuseIdentifier:@"MessageTBCell"];
+- (MyMessageTBView *)myTbView{
+    if (!_myTbView) {
+        _myTbView = [[MyMessageTBView alloc]initWithFrame:CGRectMake(0, 0, self.scrollView.width, self.scrollView.height) style:UITableViewStylePlain];
+
+        kSelfWeak;
+        _myTbView.mj_header = [JMRefreshHeader headerWithRefreshingBlock:^{
+            kSelfStrong;
+            strongSelf.myTbView.page = 1;
+            [strongSelf loadData];
+        }];
+        _myTbView.mj_footer = [JMRefreshFooter footerWithRefreshingBlock:^{
+            kSelfStrong;
+            strongSelf.myTbView.page ++;
+            [strongSelf loadData];
+        }];
+    }
+    return _myTbView;
+}
+
+- (SystemMessageTBView *)systemTBView{
+    if (!_systemTBView) {
+        _systemTBView = [[SystemMessageTBView alloc]initWithFrame:CGRectMake(self.scrollView.width, 0, self.scrollView.width, self.scrollView.height) style:UITableViewStylePlain];
         
         kSelfWeak;
-        _tbView.mj_header = [JMRefreshHeader headerWithRefreshingBlock:^{
+        _systemTBView.mj_header = [JMRefreshHeader headerWithRefreshingBlock:^{
             kSelfStrong;
-            strongSelf.page = 1;
+            strongSelf.systemTBView.page = 1;
             [strongSelf loadData];
         }];
-        _tbView.mj_footer = [JMRefreshFooter footerWithRefreshingBlock:^{
+        _systemTBView.mj_footer = [JMRefreshFooter footerWithRefreshingBlock:^{
             kSelfStrong;
-            strongSelf.page ++;
+            strongSelf.systemTBView.page ++;
             [strongSelf loadData];
         }];
     }
-    return _tbView;
+    return _systemTBView;
 }
 
-- (UIButton *)activityBtn{
-    if (!_activityBtn) {
-        _activityBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_activityBtn setTitle:@"您还没有收到活动通知哟~" forState:UIControlStateNormal];
-        _activityBtn.titleLabel.font = kFontSize15;
-        [_activityBtn setTitleColor:kColorC1C1C1 forState:UIControlStateNormal];
-        [_activityBtn setImage:[UIImage imageNamed:@"message_null"] forState:UIControlStateNormal];
-        _activityBtn.frame = CGRectMake(kScreenWidth, (kBodyHeight - kScreenWidth)/2.0 - 50, kScreenWidth, kScreenWidth);
-        [_activityBtn lc_imageTitleVerticalAlignmentWithSpace:35];
-        
-    }
-    return _activityBtn;
-}
-
-- (NSMutableArray *)dataArr{
-    if (!_dataArr) {
-        _dataArr = [[NSMutableArray alloc]init];
-    }
-    return _dataArr;
-}
 @end

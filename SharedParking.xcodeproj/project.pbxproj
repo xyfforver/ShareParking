@@ -36,6 +36,7 @@
 		6B1323581FB43DF300AB1840 /* MyRequestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323571FB43DF300AB1840 /* MyRequestVC.m */; };
 		6B13235B1FB43E4700AB1840 /* MyRequestRentHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */; };
 		6B13235C1FB4405000AB1840 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1323511FB43CF800AB1840 /* SettingVC.m */; };
+		6B16F2121FDB8D0C00E343FB /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B16F2111FDB8BD300E343FB /* WKWebViewController.m */; };
 		6B176F611FA447410045F55A /* ParkingSpaceMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B176F601FA447410045F55A /* ParkingSpaceMapView.m */; };
 		6B17DCE21FD6414B00A30057 /* CarportLongDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCE11FD6414B00A30057 /* CarportLongDetailModel.m */; };
 		6B17DCE51FD649BA00A30057 /* CarportShortItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCE41FD649BA00A30057 /* CarportShortItemModel.m */; };
@@ -90,6 +91,9 @@
 		6B4151C31FCE7A8D0000F48E /* CarportCertificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4151C11FCE7A8D0000F48E /* CarportCertificationVC.m */; };
 		6B4151C41FCE7A8D0000F48E /* CarportCertificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4151C21FCE7A8D0000F48E /* CarportCertificationVC.xib */; };
 		6B422E081FDB740700F4DA0F /* SelectCarNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B422E071FDB740700F4DA0F /* SelectCarNumberView.m */; };
+		6B422E0B1FDB7BCF00F4DA0F /* MyMessageTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B422E0A1FDB7BCF00F4DA0F /* MyMessageTBView.m */; };
+		6B422E0E1FDB7D3700F4DA0F /* SystemMessageTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B422E0D1FDB7D3700F4DA0F /* SystemMessageTBView.m */; };
+		6B422E111FDB809500F4DA0F /* SystemMessageTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B422E101FDB809500F4DA0F /* SystemMessageTBCell.m */; };
 		6B62C0881FCE9D0D007F6861 /* NavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0871FCE9D0D007F6861 /* NavigationVC.m */; };
 		6B62C08B1FCE9FEB007F6861 /* NavigationBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C08A1FCE9FEB007F6861 /* NavigationBottomView.m */; };
 		6B62C09E1FCEADF5007F6861 /* CarportPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0971FCEADF5007F6861 /* CarportPayVC.m */; };
@@ -268,6 +272,8 @@
 		6B1323571FB43DF300AB1840 /* MyRequestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestVC.m; sourceTree = "<group>"; };
 		6B1323591FB43E4700AB1840 /* MyRequestRentHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestRentHeadView.h; sourceTree = "<group>"; };
 		6B13235A1FB43E4700AB1840 /* MyRequestRentHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestRentHeadView.m; sourceTree = "<group>"; };
+		6B16F2101FDB8BD300E343FB /* WKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
+		6B16F2111FDB8BD300E343FB /* WKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
 		6B176F5F1FA447410045F55A /* ParkingSpaceMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingSpaceMapView.h; sourceTree = "<group>"; };
 		6B176F601FA447410045F55A /* ParkingSpaceMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingSpaceMapView.m; sourceTree = "<group>"; };
 		6B17DCE01FD6414B00A30057 /* CarportLongDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarportLongDetailModel.h; sourceTree = "<group>"; };
@@ -373,6 +379,12 @@
 		6B4151C21FCE7A8D0000F48E /* CarportCertificationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarportCertificationVC.xib; sourceTree = "<group>"; };
 		6B422E061FDB740700F4DA0F /* SelectCarNumberView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectCarNumberView.h; sourceTree = "<group>"; };
 		6B422E071FDB740700F4DA0F /* SelectCarNumberView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectCarNumberView.m; sourceTree = "<group>"; };
+		6B422E091FDB7BCF00F4DA0F /* MyMessageTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMessageTBView.h; sourceTree = "<group>"; };
+		6B422E0A1FDB7BCF00F4DA0F /* MyMessageTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyMessageTBView.m; sourceTree = "<group>"; };
+		6B422E0C1FDB7D3700F4DA0F /* SystemMessageTBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemMessageTBView.h; sourceTree = "<group>"; };
+		6B422E0D1FDB7D3700F4DA0F /* SystemMessageTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemMessageTBView.m; sourceTree = "<group>"; };
+		6B422E0F1FDB809500F4DA0F /* SystemMessageTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemMessageTBCell.h; sourceTree = "<group>"; };
+		6B422E101FDB809500F4DA0F /* SystemMessageTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemMessageTBCell.m; sourceTree = "<group>"; };
 		6B62C0861FCE9D0D007F6861 /* NavigationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationVC.h; sourceTree = "<group>"; };
 		6B62C0871FCE9D0D007F6861 /* NavigationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationVC.m; sourceTree = "<group>"; };
 		6B62C0891FCE9FEB007F6861 /* NavigationBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBottomView.h; sourceTree = "<group>"; };
@@ -720,6 +732,23 @@
 				6BCD979B1FB45481001F81A5 /* MyRequestRentCLCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6B16F20E1FDB8BD300E343FB /* WebView(网页) */ = {
+			isa = PBXGroup;
+			children = (
+				6B16F20F1FDB8BD300E343FB /* Controller */,
+			);
+			path = "WebView(网页)";
+			sourceTree = "<group>";
+		};
+		6B16F20F1FDB8BD300E343FB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B16F2101FDB8BD300E343FB /* WKWebViewController.h */,
+				6B16F2111FDB8BD300E343FB /* WKWebViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		6B17DCE91FD68DFC00A30057 /* MZTimerLabel */ = {
@@ -1426,6 +1455,7 @@
 		6B91B6801F9DE8C400A1020C /* Message(消息) */ = {
 			isa = PBXGroup;
 			children = (
+				6B16F20E1FDB8BD300E343FB /* WebView(网页) */,
 				6B91B6811F9DE8C400A1020C /* Controller */,
 				6B91B6821F9DE8C400A1020C /* Model */,
 				6B91B6831F9DE8C400A1020C /* View */,
@@ -1456,8 +1486,14 @@
 			children = (
 				6B12C83B1FCFCFB300B819B4 /* MessageHeaderView.h */,
 				6B12C83C1FCFCFB300B819B4 /* MessageHeaderView.m */,
+				6B422E091FDB7BCF00F4DA0F /* MyMessageTBView.h */,
+				6B422E0A1FDB7BCF00F4DA0F /* MyMessageTBView.m */,
+				6B422E0C1FDB7D3700F4DA0F /* SystemMessageTBView.h */,
+				6B422E0D1FDB7D3700F4DA0F /* SystemMessageTBView.m */,
 				6B12C83E1FCFD6BF00B819B4 /* MessageTBCell.h */,
 				6B12C83F1FCFD6BF00B819B4 /* MessageTBCell.m */,
+				6B422E0F1FDB809500F4DA0F /* SystemMessageTBCell.h */,
+				6B422E101FDB809500F4DA0F /* SystemMessageTBCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1942,6 +1978,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B16F2121FDB8D0C00E343FB /* WKWebViewController.m in Sources */,
 				6B17DCEC1FD68E2200A30057 /* MZTimerLabel.m in Sources */,
 				6B2ABA171FD152700025D512 /* UIImage+ImageSize.m in Sources */,
 				6B2ABA181FD152700025D512 /* SGQRCodeAlbumManager.m in Sources */,
@@ -1958,6 +1995,7 @@
 				6B0E80181FCBCE6700B2C309 /* PayRecordTBCell.m in Sources */,
 				6B0E80191FCBCE6700B2C309 /* QFDatePickerView.m in Sources */,
 				6B968F6A1FBD63470083A1DC /* JMTitleTextView.m in Sources */,
+				6B422E111FDB809500F4DA0F /* SystemMessageTBCell.m in Sources */,
 				6B968F691FBD63420083A1DC /* JMTitleTextfieldView.m in Sources */,
 				6B2549661FB6C0CF007ECE75 /* EditVC.m in Sources */,
 				6BF95B971FB5A00B00DED0B7 /* UIPopoverController+Block.m in Sources */,
@@ -1994,6 +2032,7 @@
 				6BF95B751FB5901E00DED0B7 /* MyIssueTBCell.m in Sources */,
 				6B1C4B401FA870BD00D543D2 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				6B91B6B31F9DEE5100A1020C /* KeychainIDFA.m in Sources */,
+				6B422E0B1FDB7BCF00F4DA0F /* MyMessageTBView.m in Sources */,
 				6B284D5E1FD8DDD800AE3B19 /* MyReserveModel.m in Sources */,
 				6BB5CEA61FB961BA00A2816F /* FuelCounterTBCell.m in Sources */,
 				6B17DCE21FD6414B00A30057 /* CarportLongDetailModel.m in Sources */,
@@ -2039,6 +2078,7 @@
 				6B91B6A81F9DEDE100A1020C /* UIViewController+Util.m in Sources */,
 				6B339F341FA4792100B52FB0 /* ParkingSpaceTBCell.m in Sources */,
 				6B62C0A81FCEAE23007F6861 /* CarportReserveVC.m in Sources */,
+				6B422E0E1FDB7D3700F4DA0F /* SystemMessageTBView.m in Sources */,
 				6B91B6A71F9DEDD800A1020C /* UIView+UIViewController.m in Sources */,
 				6B91B6A61F9DEDCF00A1020C /* UIView+BlockGesture.m in Sources */,
 				6B62C0B21FCEAEAA007F6861 /* CarportDetailVC.m in Sources */,

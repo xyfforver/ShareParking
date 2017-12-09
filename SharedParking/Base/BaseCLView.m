@@ -28,7 +28,7 @@
 #pragma mark ---------------DZNEmptyDataSetSource ---------------------/
 // 返回图片
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
-    return [UIImage imageNamed:@"loading_null"];
+    return [UIImage imageNamed:@"message_null"];
 }
 
 // 空白区域点击事件
