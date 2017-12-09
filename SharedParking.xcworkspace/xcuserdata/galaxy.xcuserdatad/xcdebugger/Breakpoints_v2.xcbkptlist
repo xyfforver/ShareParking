@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SharedParking/Class/ParkingSpace(&#x8f66;&#x4f4d;)/QRCode(&#x626b;&#x4e00;&#x626b;)/View/PopBottomView.m"
-            timestampString = "534496701.072695"
+            timestampString = "534499325.394369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>

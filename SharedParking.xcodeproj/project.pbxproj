@@ -115,6 +115,8 @@
 		6B62C0C71FCEB1DB007F6861 /* RobParkingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0C61FCEB1DB007F6861 /* RobParkingView.m */; };
 		6B62C0CA1FCEB643007F6861 /* LongRentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0C91FCEB643007F6861 /* LongRentView.m */; };
 		6B751A891FA8775D00FDC2DF /* YJTagCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C4B3C1FA86DB100D543D2 /* YJTagCollectionViewCell.xib */; };
+		6B8AB66E1FDBCDF200A546A3 /* WTCarKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8AB66A1FDBCDD200A546A3 /* WTCarKeyboard.m */; };
+		6B8AB66F1FDBCDF200A546A3 /* WTCarKeyboardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8AB66D1FDBCDD200A546A3 /* WTCarKeyboardModel.m */; };
 		6B91B5FB1F9DDB4000A1020C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */; };
 		6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91B5FD1F9DDB4000A1020C /* ViewController.m */; };
 		6B91B6011F9DDB4000A1020C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B91B5FF1F9DDB4000A1020C /* Main.storyboard */; };
@@ -423,6 +425,10 @@
 		6B62C0C61FCEB1DB007F6861 /* RobParkingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobParkingView.m; sourceTree = "<group>"; };
 		6B62C0C81FCEB643007F6861 /* LongRentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LongRentView.h; sourceTree = "<group>"; };
 		6B62C0C91FCEB643007F6861 /* LongRentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongRentView.m; sourceTree = "<group>"; };
+		6B8AB6691FDBCDD200A546A3 /* WTCarKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTCarKeyboard.h; sourceTree = "<group>"; };
+		6B8AB66A1FDBCDD200A546A3 /* WTCarKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTCarKeyboard.m; sourceTree = "<group>"; };
+		6B8AB66C1FDBCDD200A546A3 /* WTCarKeyboardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTCarKeyboardModel.h; sourceTree = "<group>"; };
+		6B8AB66D1FDBCDD200A546A3 /* WTCarKeyboardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTCarKeyboardModel.m; sourceTree = "<group>"; };
 		6B91B5F61F9DDB4000A1020C /* SharedParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B91B5F91F9DDB4000A1020C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B91B5FA1F9DDB4000A1020C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1149,6 +1155,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6B8AB6681FDBCDD200A546A3 /* WTCarKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				6B8AB6691FDBCDD200A546A3 /* WTCarKeyboard.h */,
+				6B8AB66A1FDBCDD200A546A3 /* WTCarKeyboard.m */,
+				6B8AB66C1FDBCDD200A546A3 /* WTCarKeyboardModel.h */,
+				6B8AB66D1FDBCDD200A546A3 /* WTCarKeyboardModel.m */,
+			);
+			path = WTCarKeyboard;
+			sourceTree = "<group>";
+		};
 		6B91B5ED1F9DDB4000A1020C = {
 			isa = PBXGroup;
 			children = (
@@ -1284,6 +1301,7 @@
 		6B91B65F1F9DDDC300A1020C /* Libs(第三方库) */ = {
 			isa = PBXGroup;
 			children = (
+				6B8AB6681FDBCDD200A546A3 /* WTCarKeyboard */,
 				6B17DCE91FD68DFC00A30057 /* MZTimerLabel */,
 				6B0E80111FCBBD4B00B2C309 /* QFDatePickerView */,
 				6BF95B761FB59DA900DED0B7 /* iOSBlocks */,
@@ -1983,6 +2001,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8AB66E1FDBCDF200A546A3 /* WTCarKeyboard.m in Sources */,
+				6B8AB66F1FDBCDF200A546A3 /* WTCarKeyboardModel.m in Sources */,
 				6B16F2121FDB8D0C00E343FB /* WKWebViewController.m in Sources */,
 				6B17DCEC1FD68E2200A30057 /* MZTimerLabel.m in Sources */,
 				6B2ABA171FD152700025D512 /* UIImage+ImageSize.m in Sources */,

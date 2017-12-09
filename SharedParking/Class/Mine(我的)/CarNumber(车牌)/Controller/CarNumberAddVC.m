@@ -8,7 +8,8 @@
 
 #import "CarNumberAddVC.h"
 #import "JMTitleTextfieldView.h"
-@interface CarNumberAddVC ()
+#import "WTCarKeyboard.h"
+@interface CarNumberAddVC ()<WTCarKeyboardDelegate>
 @property (nonatomic , strong) JMTitleTextfieldView *carNumView;
 @property (nonatomic , strong) JMTitleTextfieldView *endNumView;
 @property (nonatomic , strong) UIButton *saveBtn;
@@ -39,6 +40,11 @@
 - (void)saveAction:(UIButton *)button{
     
 }
+#pragma mark ---------------WTCarKeyboardDelegate ---------------------/
+- (void)carKeyboard:(WTCarKeyboard *)carKeyboard didChangeWithText:(NSString *)textStr;
+{
+    NSLog(@"%@",textStr);
+}
 
 #pragma mark ---------------Lazy-------------------------/
 - (JMTitleTextfieldView *)carNumView{
@@ -48,6 +54,13 @@
         _carNumView.layer.masksToBounds = YES;
         _carNumView.backgroundColor = kColorWhite;
         _carNumView.titleLab.text = @"车牌号码：";
+        WTCarKeyboard* carKeyboard = [WTCarKeyboard new];
+        carKeyboard.delegate = self;
+        carKeyboard.inputBlock = ^(NSString* textStr)
+        {
+            NSLog(@"%@",textStr);
+        };
+        _carNumView.textField.inputView = carKeyboard;
     }
     return _carNumView;
 }
