@@ -7,6 +7,7 @@
 //
 
 #import "RobParkingView.h"
+#import "CarportDetailVC.h"
 @interface RobParkingView ()
 @property (nonatomic , strong) UILabel *titleLab;
 @property (nonatomic , strong) UILabel *countLab;
@@ -61,14 +62,15 @@
         make.left.mas_equalTo(self.titleLab.mas_right);
     }];
     
-    self.titleLab.text = @"商场停车场";
+    self.titleLab.text = @"蓝山国际停车场";
     self.infoLab.text = @"距您3km 开车约8分钟";
     self.countLab.text = @"剩余车位12/65";
 }
 
 #pragma mark ---------------event ---------------------/
 - (void)robParkingAction:(UIButton *)button{
-    
+    CarportDetailVC *vc = [[CarportDetailVC alloc]initWithCarportId:@"2" type:CarportShortRentType];
+    [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -----------------Lazy---------------------/

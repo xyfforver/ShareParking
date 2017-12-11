@@ -8,6 +8,7 @@
 
 #import "CarportReserveVC.h"
 #import "ReserveSuccessVC.h"
+#import "CarNumberAddVC.h"
 #import "PopBottomView.h"
 
 #import "CarportReserveModel.h"
@@ -115,7 +116,8 @@
 }
 
 - (IBAction)addAction:(id)sender {
-    
+    CarNumberAddVC *vc = [[CarNumberAddVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "ReleaseDetailView.h"
+#import "SelectCarportVC.h"
 #import "CarportCertificationVC.h"
 @interface ReleaseDetailView ()
 //
@@ -27,6 +28,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *nextBtn;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *allHeight;
 
+@property (copy, nonatomic) NSString *parkId;
 @end
 
 @implementation ReleaseDetailView
@@ -56,17 +58,30 @@
 
     self.infoTextView.placeholder = @"例如：地上车位，在停车场的东北角";
     self.scrollView.contentSize = CGSizeMake(0, self.nextBtn.bottom + 50);
+    kSelfWeak;
+    [self.carportLab zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        kSelfStrong;
+        SelectCarportVC *vc = [[SelectCarportVC alloc]init];
+        vc.backBlock = ^(NSString *parkId, NSString *parkTitle) {
+            strongSelf.carportLab.text = parkTitle;
+            strongSelf.parkId = parkId;
+        };
+        [strongSelf.Controller.navigationController pushViewController:vc animated:YES];
+    }];
 }
 
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
-    
+
     
 }
 
 #pragma mark ---------------event ---------------------/
 
 - (IBAction)nextAction:(id)sender {
+    
+    
+    
     CarportCertificationVC *vc = [[CarportCertificationVC alloc]initWithNibName:@"CarportCertificationVC" bundle:[NSBundle mainBundle]];
     vc.type = CarportShortRentType;
     [self.Controller.navigationController pushViewController:vc animated:YES];

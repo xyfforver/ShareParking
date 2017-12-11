@@ -59,7 +59,7 @@
         make.left.right.height.mas_equalTo(self.rechangeBtn);
     }];
     
-    self.priceLab.text = @"￥1234.00";
+    self.priceLab.text = @"￥0.00";
 }
 
 #pragma mark ---------------NetWork-------------------------/

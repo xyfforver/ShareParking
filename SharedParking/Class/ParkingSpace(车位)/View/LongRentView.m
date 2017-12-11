@@ -7,6 +7,7 @@
 //
 
 #import "LongRentView.h"
+#import "CarportDetailVC.h"
 @interface LongRentView ()
 @property (nonatomic , strong) UILabel *titleLab;
 @property (nonatomic , strong) UILabel *timeLab;
@@ -115,7 +116,8 @@
 }
 
 - (void)infoAction:(UIButton *)button{
-    
+    CarportDetailVC *vc = [[CarportDetailVC alloc]initWithCarportId:@"2" type:CarportLongRentType];
+    [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -----------------Lazy---------------------/

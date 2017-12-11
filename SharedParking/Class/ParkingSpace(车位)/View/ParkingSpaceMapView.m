@@ -61,8 +61,8 @@
         if (annotationView == nil){
             annotationView = [[BMKAnnotationView alloc] initWithAnnotation:anno reuseIdentifier:pointReuseIndetifier];
         }
-        annotationView.image = [UIImage createImageWithColor:kColorRandom];
-        annotationView.frame = CGRectMake(0, 0, 100, 100);
+//        annotationView.image = [UIImage createImageWithColor:kColorRandom];
+//        annotationView.frame = CGRectMake(0, 0, 100, 100);
 //        annotationView.canShowCallout= YES;       //设置气泡可以弹出，默认为NO
         annotationView.annotation = anno;
         
