@@ -166,10 +166,25 @@
         self.equityBtn.hidden = YES;
     }
 
+    //当image从相机中获取的时候存入相册中
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        UIImageWriteToSavedPhotosAlbum(image,self,@selector(image:didFinishSavingWithError:contextInfo:),NULL);
+    }
     [picker dismissViewControllerAnimated:YES completion:^{
         
     }];
 }
+
+//这个地方只做一个提示的功能
+- (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo
+{
+    if (error) {
+        DLog(@"保存失败");
+    }else{
+        DLog(@"保存成功");
+    }
+}
+
 
 #pragma mark ---------------lazy ---------------------/
 - (UIImagePickerController *)pickerController{
@@ -177,7 +192,7 @@
         _pickerController = [[UIImagePickerController alloc]init];
         _pickerController.view.backgroundColor = [UIColor orangeColor];
         _pickerController.delegate = self;
-        _pickerController.allowsEditing = YES;
+//        _pickerController.allowsEditing = YES;
     }
     return _pickerController;
 }

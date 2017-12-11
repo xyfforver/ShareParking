@@ -108,21 +108,21 @@
 
 
 - (IBAction)nextAction:(id)sender {
-//    if ([NSString isNull:self.parkId]) {
-//        [WSProgressHUD showImage:nil status:@"请选择车位所在地点"];
-//        return;
-//    }
-//
-//    if (self.numField.text.length == 0) {
-//        [WSProgressHUD showImage:nil status:@"请输入泊位编码"];
-//        return;
-//    }
+    if ([NSString isNull:self.parkId]) {
+        [WSProgressHUD showImage:nil status:@"请选择车位所在地点"];
+        return;
+    }
+
+    if (self.numField.text.length == 0) {
+        [WSProgressHUD showImage:nil status:@"请输入泊位编码"];
+        return;
+    }
     
     ReleaseModel *model = [[ReleaseModel alloc]init];
-//    model.park_id = self.parkId;
-//    model.parking_number = self.numField.text;
-    model.park_id = @"2";
-    model.parking_number = @"2";
+    model.park_id = self.parkId;
+    model.parking_number = self.numField.text;
+//    model.park_id = @"2";
+//    model.parking_number = @"2";
     model.parking_cheweitype = self.carSelectBtn.tag - 100;
     model.parking_obj = !self.unlimitedRTBtn.selected;
     model.remark = self.infoTextView.text;
