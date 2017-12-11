@@ -28,6 +28,7 @@
     [super viewDidLoad];
     
     [self initView];
+//    [self searchResult:@""];
 
 }
 

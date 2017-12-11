@@ -7,9 +7,10 @@
 //
 
 #import "CarportCertificationVC.h"
-
-@interface CarportCertificationVC ()
+#import "ReleaseModel.h"
+@interface CarportCertificationVC ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIView *bgView;
 @property (strong, nonatomic) IBOutlet UIImageView *equityImgView;
 @property (strong, nonatomic) IBOutlet UIButton *equityBtn;
 @property (strong, nonatomic) IBOutlet UIImageView *carportImgView;
@@ -17,6 +18,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *confirmBtn;
 @property (strong, nonatomic) IBOutlet UILabel *infoLab;
 
+@property (nonatomic, strong)UIImagePickerController *pickerController;
+@property (nonatomic , assign) BOOL isCarport;
 @end
 
 @implementation CarportCertificationVC
@@ -34,6 +37,7 @@
     
     
     self.scrollView.contentSize = CGSizeMake(0, self.confirmBtn.bottom + 100);
+    self.bgView.height = self.confirmBtn.bottom + 100;
 }
 
 - (void)viewDidLoad {
@@ -52,19 +56,130 @@
   
     self.equityImgView.userInteractionEnabled = YES;
     self.carportImgView.userInteractionEnabled = YES;
+
+    [self.equityImgView zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        self.isCarport = NO;
+        [self addPhoto];
+    }];
+    
+    [self.carportImgView zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        self.isCarport = YES;
+        [self addPhoto];
+    }];
+    
     
     self.infoLab.text = @"温馨提示：\n1.为了确保您的车位顺利审核，请提交正确的车位信息。\n2.审核过程中，客服人员将会与您核对车位信息，请您保持电话畅通。\n3.车位注册成功后可自由管理车位。";
 
-//    self.scrollView.contentSize = CGSizeMake(0, self.confirmBtn.bottom + 100);
 }
 
+- (void)addPhoto{
+    [UIActionSheet actionSheetWithTitle:@"添加产权证明"
+                      cancelButtonTitle:@"取消"
+                 destructiveButtonTitle:nil
+                           buttonTitles:@[@"拍照",@"相册"]
+                             showInView:self.view
+                              onDismiss:^(int buttonIndex, NSString *buttonTitle) {
+                                  if (buttonIndex == 0) {//相机
+                                      NSLog(@"支持相机");
+                                      [self makePhoto];
+                                     
+                                  }else if (buttonIndex == 1){//相片
+                                      NSLog(@"支持相册");
+                                      [self choosePicture];
+                                  }
+                              } onCancel:nil];
+}
 
 - (IBAction)confirmAction:(id)sender {
+    DLog(@"111");
+    if (!self.equityImgView.image) {
+        [WSProgressHUD showImage:nil status:@"请上传产权证明图"];
+        return;
+    }
     
+    if (!self.carportImgView.image) {
+        [WSProgressHUD showImage:nil status:@"请上传车位图片"];
+        return;
+    }
+    
+    NSData *equityData = UIImageJPEGRepresentation(self.equityImgView.image, 1);
+    NSData *carportData = UIImageJPEGRepresentation(self.carportImgView.image, 1);
+
+    kSelfWeak;
+    self.confirmBtn.userInteractionEnabled = NO;
+    [WSProgressHUD show];
+    [ReleaseModel releaseShortWithParkId:self.model.park_id parkNum:self.model.parking_number carType:self.model.parking_cheweitype object:self.model.parking_obj remark:self.model.remark carImg:equityData carportImg:carportData success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        strongSelf.confirmBtn.userInteractionEnabled = YES;
+        [WSProgressHUD showImage:nil status:statusModel.message];
+        
+        if (statusModel.flag == kFlagSuccess) {
+            [strongSelf backToSuperView];
+        }
+    }];
+
     
 }
 
 
+#pragma mark - photoViewControllerDelegate
+//跳转到imagePicker里
+- (void)makePhoto{
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        NSLog(@"支持相机");
+        self.pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:self.pickerController animated:YES completion:nil];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"请在设置-->隐私-->相机，中开启本应用的相机访问权限！！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"我知道了", nil];
+        [alert show];
+    }
+    
+}
+//跳转到相册
+- (void)choosePicture{
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+    {
+        NSLog(@"支持相册");
+        self.pickerController.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        [self presentViewController:self.pickerController animated:YES completion:nil];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"请在设置-->隐私-->照片，中开启本应用的相机访问权限！！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"我知道了", nil];
+        [alert show];
+    }
+    
+}
 
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UIImagePickerControllerDelegate  上传头像
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+
+    if (self.isCarport) {
+        self.carportImgView.image = image;
+        self.carportBtn.hidden = YES;
+    }else{
+        self.equityImgView.image = image;
+        self.equityBtn.hidden = YES;
+    }
+
+    [picker dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+#pragma mark ---------------lazy ---------------------/
+- (UIImagePickerController *)pickerController{
+    if (!_pickerController) {
+        _pickerController = [[UIImagePickerController alloc]init];
+        _pickerController.view.backgroundColor = [UIColor orangeColor];
+        _pickerController.delegate = self;
+        _pickerController.allowsEditing = YES;
+    }
+    return _pickerController;
+}
 
 @end

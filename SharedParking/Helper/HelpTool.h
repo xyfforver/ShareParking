@@ -19,7 +19,9 @@
 + (NSString *)stringWithInteger:(NSInteger)integer;
 //求文本宽高
 + (CGSize)sizeWithString:(NSString *)str font:(UIFont *)font maxSize:(CGSize)maxSize;
-
+//随机文件名
++ (NSString *)uuidUniqueFileName;
++ (NSString *)contentTypeForImageData:(NSData *)data;
 
 +(void)archiverData:(id)object key:(NSString*)key;
 +(id)unArchiverData:(NSString*)key;
@@ -41,6 +43,7 @@
 +(NSInteger)timeSwitchTimestamp:(NSString *)formatTime andFormatter:(NSString *)format;
 //将某个时间戳转化成 时间
 +(NSString *)timestampSwitchTime:(NSInteger)timestamp andFormatter:(NSString *)format;
+
 
 
 

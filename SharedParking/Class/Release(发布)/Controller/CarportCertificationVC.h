@@ -7,11 +7,12 @@
 //
 
 #import "BaseViewController.h"
-
+#import "ReleaseModel.h"
 @interface CarportCertificationVC : BaseViewController
 
 - (instancetype)initWithType:(CarportRentType)type;
 
 
 @property (nonatomic , assign) CarportRentType type;
+@property (nonatomic , strong) ReleaseModel *model;
 @end
