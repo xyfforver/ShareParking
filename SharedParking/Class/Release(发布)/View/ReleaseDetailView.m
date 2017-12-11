@@ -25,6 +25,7 @@
 @property (strong, nonatomic) IBOutlet UITextView *infoTextView;
 //下一步
 @property (strong, nonatomic) IBOutlet UIButton *nextBtn;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *allHeight;
 
 @end
 
