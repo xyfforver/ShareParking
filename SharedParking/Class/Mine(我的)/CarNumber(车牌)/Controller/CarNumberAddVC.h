@@ -10,4 +10,6 @@
 
 @interface CarNumberAddVC : BaseViewController
 
+@property (nonatomic , copy) void(^loadBlock)(void);
+
 @end

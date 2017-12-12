@@ -9,6 +9,7 @@
 #import "CarNumberAddVC.h"
 #import "JMTitleTextfieldView.h"
 #import "WTCarKeyboard.h"
+#import "CarportShortItemModel.h"
 @interface CarNumberAddVC ()<WTCarKeyboardDelegate>
 @property (nonatomic , strong) JMTitleTextfieldView *carNumView;
 @property (nonatomic , strong) JMTitleTextfieldView *endNumView;
@@ -34,11 +35,39 @@
 }
 
 #pragma mark ---------------NetWork-------------------------/
-
+- (void)addCarNumData{
+    kSelfWeak;
+    [CarportShortItemModel addCarNumberWithNum:self.carNumView.textField.text endNum:self.endNumView.textField.text success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        [WSProgressHUD showImage:nil status:statusModel.message];
+        
+        if (statusModel.flag == kFlagSuccess) {
+            if (strongSelf.loadBlock) {
+                strongSelf.loadBlock();
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [strongSelf backToSuperView];
+                });
+            }
+        }
+    }];
+}
 
 #pragma mark ---------------Event-------------------------/
 - (void)saveAction:(UIButton *)button{
+    if (self.carNumView.textField.text.length < 4) {
+        [WSProgressHUD showImage:nil status:@"请输入正确的车牌号码"];
+        return;
+    }
     
+    if (self.endNumView.textField.text.length > 0) {
+        if(self.endNumView.textField.text.length != 6){
+            [WSProgressHUD showImage:nil status:@"请输入正确的发动机尾号"];
+            return;            
+        }
+    }
+    
+    [self addCarNumData];
 }
 #pragma mark ---------------WTCarKeyboardDelegate ---------------------/
 - (void)carKeyboard:(WTCarKeyboard *)carKeyboard didChangeWithText:(NSString *)textStr;

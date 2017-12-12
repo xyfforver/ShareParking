@@ -26,6 +26,13 @@
     return self;
 }
 
+- (void)setItemModel:(CarportShortItemModel *)itemModel{
+    _itemModel = itemModel;
+    
+    self.carNumLab.text = itemModel.car_chepai;
+    self.endNumLab.text = [NSString stringWithFormat:@"发动机尾号：%@",itemModel.car_fadongji];
+}
+
 - (void)initView{
     self.contentView.backgroundColor = kBackGroundGrayColor;
     
@@ -58,12 +65,7 @@
         make.left.right.mas_equalTo(self.carNumLab);
         make.top.mas_equalTo(self.carNumLab.mas_bottom).offset(25);
     }];
-    
 
-
-    
-    self.carNumLab.text = @"浙F23333";
-    self.endNumLab.text = @"发动机尾号：1345657";
     
 }
 

@@ -28,7 +28,7 @@
     [super viewDidLoad];
     
     [self initView];
-//    [self searchResult:@""];
+    [self searchResult:@""];
 
 }
 

@@ -16,4 +16,11 @@
 
 //预订 车牌号
 @property (copy, nonatomic) NSString *car_chepai;
+@property (copy, nonatomic) NSString *car_fadongji;//发动机
+
+//我的车牌列表
++ (void)carNumberListWithSuccess:(NetCompletionBlock)success;
+
+//添加车牌
++ (void)addCarNumberWithNum:(NSString *)carNum endNum:(NSString *)endNum success:(NetCompletionBlock)success;
 @end
