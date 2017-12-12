@@ -69,8 +69,6 @@
 		6B2AB9F21FD101540025D512 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AB9F11FD101540025D512 /* LoginView.m */; };
 		6B2AB9F51FD101F80025D512 /* LeftImageTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AB9F41FD101F80025D512 /* LeftImageTextField.m */; };
 		6B2AB9F81FD11AE00025D512 /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AB9F71FD11AE00025D512 /* JKCountDownButton.m */; };
-		6B2AB9FF1FD125800025D512 /* BindingPlatesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AB9FD1FD125800025D512 /* BindingPlatesVC.m */; };
-		6B2ABA001FD125800025D512 /* BindingPlatesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2AB9FE1FD125800025D512 /* BindingPlatesVC.xib */; };
 		6B2ABA031FD1317B0025D512 /* LoginReminderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2ABA021FD1317B0025D512 /* LoginReminderVC.m */; };
 		6B2ABA161FD1514B0025D512 /* SGQRCodeScanningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2ABA151FD1514B0025D512 /* SGQRCodeScanningVC.m */; };
 		6B2ABA171FD152700025D512 /* UIImage+ImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2ABA071FD150B30025D512 /* UIImage+ImageSize.m */; };
@@ -345,9 +343,6 @@
 		6B2AB9F41FD101F80025D512 /* LeftImageTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftImageTextField.m; sourceTree = "<group>"; };
 		6B2AB9F61FD11AE00025D512 /* JKCountDownButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
 		6B2AB9F71FD11AE00025D512 /* JKCountDownButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
-		6B2AB9FC1FD125800025D512 /* BindingPlatesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindingPlatesVC.h; sourceTree = "<group>"; };
-		6B2AB9FD1FD125800025D512 /* BindingPlatesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindingPlatesVC.m; sourceTree = "<group>"; };
-		6B2AB9FE1FD125800025D512 /* BindingPlatesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindingPlatesVC.xib; sourceTree = "<group>"; };
 		6B2ABA011FD1317B0025D512 /* LoginReminderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginReminderVC.h; sourceTree = "<group>"; };
 		6B2ABA021FD1317B0025D512 /* LoginReminderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginReminderVC.m; sourceTree = "<group>"; };
 		6B2ABA061FD150B30025D512 /* UIImage+ImageSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageSize.h"; sourceTree = "<group>"; };
@@ -890,9 +885,6 @@
 			children = (
 				6B2AB9ED1FD0FDAF0025D512 /* LoginVC.h */,
 				6B2AB9EE1FD0FDAF0025D512 /* LoginVC.m */,
-				6B2AB9FC1FD125800025D512 /* BindingPlatesVC.h */,
-				6B2AB9FD1FD125800025D512 /* BindingPlatesVC.m */,
-				6B2AB9FE1FD125800025D512 /* BindingPlatesVC.xib */,
 				6B2ABA011FD1317B0025D512 /* LoginReminderVC.h */,
 				6B2ABA021FD1317B0025D512 /* LoginReminderVC.m */,
 			);
@@ -1949,7 +1941,6 @@
 				6B2549671FB6C0CF007ECE75 /* EditVC.xib in Resources */,
 				6B62C0A91FCEAE23007F6861 /* CarportReserveVC.xib in Resources */,
 				6B3189F81FA974900063AC2F /* FuelAverageView.xib in Resources */,
-				6B2ABA001FD125800025D512 /* BindingPlatesVC.xib in Resources */,
 				6B8AB6741FDBD48C00A546A3 /* ReleaseLongView.xib in Resources */,
 				6B91B6011F9DDB4000A1020C /* Main.storyboard in Resources */,
 				6B62C0AB1FCEAE23007F6861 /* ReserveSuccessVC.xib in Resources */,
@@ -2076,7 +2067,6 @@
 				6B1C4B421FA870CD00D543D2 /* YJTagCollectionViewCell.m in Sources */,
 				6B12C8431FCFE09800B819B4 /* RechargeVC.m in Sources */,
 				6B62C0C01FCEAEB2007F6861 /* CarportDetailShortCLView.m in Sources */,
-				6B2AB9FF1FD125800025D512 /* BindingPlatesVC.m in Sources */,
 				6B2AB9F81FD11AE00025D512 /* JKCountDownButton.m in Sources */,
 				6B62C0C41FCEAEB2007F6861 /* CarportDetailShortCLCell.m in Sources */,
 				6BF957761FDA90AE005B56ED /* MessageModel.m in Sources */,

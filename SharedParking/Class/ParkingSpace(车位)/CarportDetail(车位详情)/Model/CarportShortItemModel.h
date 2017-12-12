@@ -23,4 +23,13 @@
 
 //添加车牌
 + (void)addCarNumberWithNum:(NSString *)carNum endNum:(NSString *)endNum success:(NetCompletionBlock)success;
+
+//删除车牌
++ (void)deleteCarNumberWithCarId:(NSString *)carId success:(NetCompletionBlock)success;
+
+//编辑车牌
++ (void)editCarNumberWithCarId:(NSString *)carId success:(NetCompletionBlock)success;
+
+//更新车牌
++ (void)updateCarNumberWithNum:(NSString *)carNum endNum:(NSString *)endNum carId:(NSString *)carId success:(NetCompletionBlock)success;
 @end

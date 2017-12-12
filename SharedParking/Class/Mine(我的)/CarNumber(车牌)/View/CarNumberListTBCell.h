@@ -12,4 +12,6 @@
 
 @property (nonatomic , strong) CarportShortItemModel *itemModel;
 
+@property (nonatomic , copy) void(^loadBlock)(void);
+
 @end

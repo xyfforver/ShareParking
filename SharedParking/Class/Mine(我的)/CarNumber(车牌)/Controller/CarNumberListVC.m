@@ -58,7 +58,7 @@
 
 #pragma mark ---------------Event-------------------------/
 - (void)addAction:(UIButton *)button{
-    CarNumberAddVC *vc = [[CarNumberAddVC alloc]init];
+    CarNumberAddVC *vc = [[CarNumberAddVC alloc]initWithType:1];
     kSelfWeak;
     vc.loadBlock = ^{
         kSelfStrong;
@@ -77,6 +77,11 @@
     CarNumberListTBCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CarNumberListTBCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.itemModel = self.dataArr[indexPath.row];
+    kSelfWeak;
+    cell.loadBlock = ^{
+        kSelfStrong;
+        [strongSelf.tbView.mj_header beginRefreshing];
+    };
     
     return cell;
 }

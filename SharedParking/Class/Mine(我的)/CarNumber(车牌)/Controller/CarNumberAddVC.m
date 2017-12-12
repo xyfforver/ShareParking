@@ -19,6 +19,14 @@
 @implementation CarNumberAddVC
 
 #pragma mark ---------------LifeCycle-------------------------/
+- (instancetype)initWithType:(NSInteger)type{
+    self = [super init];
+    if (self) {
+        self.type = type;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,11 +35,31 @@
 }
 
 - (void)initView{
-    self.title = @"添加车牌";
-    
     [self.view addSubview:self.carNumView];
     [self.view addSubview:self.endNumView];
     [self.view addSubview:self.saveBtn];
+    
+    if (self.type == 0) {
+        self.title = @"绑定车牌";
+        
+        UIButton *nextBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [nextBtn setTitle:@"以后再说" forState:UIControlStateNormal];
+        nextBtn.titleLabel.font = kFontSizeBold16;
+        [nextBtn setTitleColor:kColor6B6B6B forState:UIControlStateNormal];
+        nextBtn.frame = CGRectMake(0, 0, 70, 20);
+        [nextBtn addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:nextBtn];
+        self.navigationItem.rightBarButtonItem = item;
+        
+    }else if(self.type == 1){
+        self.title = @"添加车牌";
+    }else if (self.type == 2){
+        self.title = @"编辑车牌";
+        self.carNumView.textField.text = self.carModel.car_chepai;
+        self.endNumView.textField.text = self.carModel.car_fadongji;
+    }
+    
+
 }
 
 #pragma mark ---------------NetWork-------------------------/
@@ -44,7 +72,9 @@
         if (statusModel.flag == kFlagSuccess) {
             if (strongSelf.loadBlock) {
                 strongSelf.loadBlock();
-                
+            }
+            
+            if (strongSelf.type) {
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [strongSelf backToSuperView];
                 });
@@ -53,9 +83,32 @@
     }];
 }
 
+- (void)editCarNumberData{
+    kSelfWeak;
+    [CarportShortItemModel updateCarNumberWithNum:self.carNumView.textField.text endNum:self.endNumView.textField.text carId:self.carModel.id success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        [WSProgressHUD showImage:nil status:statusModel.message];
+        
+        if (statusModel.flag == kFlagSuccess) {
+            if (strongSelf.loadBlock) {
+                strongSelf.loadBlock();
+            }
+
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [strongSelf backToSuperView];
+            });
+        }
+    }];
+}
+
 #pragma mark ---------------Event-------------------------/
+- (void)nextAction:(UIButton *)button{
+    RootViewController *vc = [[RootViewController alloc] init];
+    UIApplication.sharedApplication.delegate.window.rootViewController = vc;
+}
+
 - (void)saveAction:(UIButton *)button{
-    if (self.carNumView.textField.text.length < 4) {
+    if (self.carNumView.textField.text.length < 6 || self.carNumView.textField.text.length > 7) {
         [WSProgressHUD showImage:nil status:@"请输入正确的车牌号码"];
         return;
     }
@@ -66,8 +119,12 @@
             return;            
         }
     }
+    if (self.type == 2) {
+        [self editCarNumberData];
+    }else{
+        [self addCarNumData];
+    }
     
-    [self addCarNumData];
 }
 #pragma mark ---------------WTCarKeyboardDelegate ---------------------/
 - (void)carKeyboard:(WTCarKeyboard *)carKeyboard didChangeWithText:(NSString *)textStr;

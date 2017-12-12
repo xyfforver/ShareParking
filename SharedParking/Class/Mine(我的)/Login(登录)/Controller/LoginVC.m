@@ -9,7 +9,7 @@
 #import "LoginVC.h"
 #import "LoginView.h"
 
-#import "BindingPlatesVC.h"
+#import "CarNumberAddVC.h"
 @interface LoginVC ()<UIScrollViewDelegate>
 
 @property (nonatomic , strong) LoginView *loginView;
@@ -65,8 +65,8 @@
                 // 成功回调
                 [strongSelf loginSuccess];
             }else{
-                BindingPlatesVC *vc = [[BindingPlatesVC alloc]init];
-                vc.completionBack = ^{
+                CarNumberAddVC *vc = [[CarNumberAddVC alloc]initWithType:0];
+                vc.loadBlock = ^{
                     [strongSelf loginSuccess];
                 };
                 [self.navigationController pushViewController:vc animated:YES];
