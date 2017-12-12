@@ -19,12 +19,33 @@
     DicObjectSet(@(object), @"parking_obj");
     DicObjectSet(remark, @"remark");
     
-    DLog(@"\n<<-----------请求--------------------\n%@",ParamsDic);
-    NSString *baseUrl = [NSString stringWithFormat:@"%@%@",LingBao_BASE_URL,@"release_short"];
+   
+    [ReleaseModel postWithUrl:@"release_short" parameters:ParamsDic carImg:carImg carport:carport success:success];
+}
+
+//长租车位发布
++ (void)releaseLongWithTitle:(NSString *)title parkId:(NSString *)parkId parkNum:(NSString *)parkNum price:(NSString *)price telNum:(NSString *)telNum carType:(NSInteger)carType object:(NSInteger)object remark:(NSString *)remark carImg:(NSData *)carImg carportImg:(NSData *)carport success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(parkId, @"park_id");
+    DicObjectSet(parkNum, @"parking_number");
+    DicObjectSet(@(carType), @"parking_cheweitype");
+    DicObjectSet(@(object), @"parking_obj");
+    DicObjectSet(remark, @"remark");
+    DicObjectSet(title, @"parking_title");
+    DicObjectSet(price, @"parking_fee");
+    DicObjectSet(telNum, @"user_mobile");
+    
+    [ReleaseModel postWithUrl:@"release_long" parameters:ParamsDic carImg:carImg carport:carport success:success];
+}
+
++ (void)postWithUrl:(NSString *)url parameters:(NSDictionary* )parameters carImg:(NSData *)carImg carport:(NSData *)carport success:(NetCompletionBlock)success{
+     DLog(@"\n<<-----------请求--------------------\n%@",parameters);
+    
+    NSString *baseUrl = [NSString stringWithFormat:@"%@%@",LingBao_BASE_URL,url];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    [manager POST:baseUrl parameters:ParamsDic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [manager POST:baseUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         //随机文件名
         NSString *fileName = [HelpTool uuidUniqueFileName];
         //获取文件后缀
@@ -39,7 +60,7 @@
         [formData appendPartWithFileData:carImg name:@"parking_img" fileName:carportName mimeType:carportExtension];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
-        DLog(@"%@",uploadProgress);
+//        DLog(@"%@",uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves|NSJSONReadingMutableContainers error:nil];
         

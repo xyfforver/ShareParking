@@ -72,6 +72,44 @@
 
 }
 
+#pragma mark ---------------network ---------------------/
+- (void)releaseShortData{
+    NSData *equityData = UIImageJPEGRepresentation(self.equityImgView.image, 1);
+    NSData *carportData = UIImageJPEGRepresentation(self.carportImgView.image, 1);
+    
+    kSelfWeak;
+    self.confirmBtn.userInteractionEnabled = NO;
+    [WSProgressHUD show];
+    [ReleaseModel releaseShortWithParkId:self.model.park_id parkNum:self.model.parking_number carType:self.model.parking_cheweitype object:self.model.parking_obj remark:self.model.remark carImg:equityData carportImg:carportData success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        strongSelf.confirmBtn.userInteractionEnabled = YES;
+        [WSProgressHUD showImage:nil status:statusModel.message];
+        
+        if (statusModel.flag == kFlagSuccess) {
+            [strongSelf backToSuperView];
+        }
+    }];
+}
+
+- (void)releaseLongData{
+    NSData *equityData = UIImageJPEGRepresentation(self.equityImgView.image, 1);
+    NSData *carportData = UIImageJPEGRepresentation(self.carportImgView.image, 1);
+    
+    kSelfWeak;
+    self.confirmBtn.userInteractionEnabled = NO;
+    [WSProgressHUD show];
+    [ReleaseModel releaseLongWithTitle:self.model.parking_title parkId:self.model.park_id parkNum:self.model.parking_number price:self.model.parking_fee telNum:self.model.user_mobile carType:self.model.parking_cheweitype object:self.model.parking_obj remark:self.model.remark carImg:equityData carportImg:carportData success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        strongSelf.confirmBtn.userInteractionEnabled = YES;
+        [WSProgressHUD showImage:nil status:statusModel.message];
+        
+        if (statusModel.flag == kFlagSuccess) {
+            [strongSelf backToSuperView];
+        }
+    }];
+}
+
+#pragma mark ---------------event ---------------------/
 - (void)addPhoto{
     [UIActionSheet actionSheetWithTitle:@"添加产权证明"
                       cancelButtonTitle:@"取消"
@@ -102,23 +140,11 @@
         return;
     }
     
-    NSData *equityData = UIImageJPEGRepresentation(self.equityImgView.image, 1);
-    NSData *carportData = UIImageJPEGRepresentation(self.carportImgView.image, 1);
-
-    kSelfWeak;
-    self.confirmBtn.userInteractionEnabled = NO;
-    [WSProgressHUD show];
-    [ReleaseModel releaseShortWithParkId:self.model.park_id parkNum:self.model.parking_number carType:self.model.parking_cheweitype object:self.model.parking_obj remark:self.model.remark carImg:equityData carportImg:carportData success:^(StatusModel *statusModel) {
-        kSelfStrong;
-        strongSelf.confirmBtn.userInteractionEnabled = YES;
-        [WSProgressHUD showImage:nil status:statusModel.message];
-        
-        if (statusModel.flag == kFlagSuccess) {
-            [strongSelf backToSuperView];
-        }
-    }];
-
-    
+    if (self.type == CarportShortRentType) {
+        [self releaseShortData];
+    }else{
+        [self releaseLongData];
+    }
 }
 
 
@@ -192,7 +218,6 @@
         _pickerController = [[UIImagePickerController alloc]init];
         _pickerController.view.backgroundColor = [UIColor orangeColor];
         _pickerController.delegate = self;
-//        _pickerController.allowsEditing = YES;
     }
     return _pickerController;
 }
