@@ -10,6 +10,7 @@
 #import "JMTitleTextfieldView.h"
 
 #import "CarNumberListVC.h"
+#import "CarportShortItemModel.h"
 @interface FindBreakRulesView ()
 @property (nonatomic , strong) JMTitleTextfieldView *carNumView;
 @property (nonatomic , strong) JMTitleTextfieldView *endNumView;
@@ -38,16 +39,47 @@
 }
 
 #pragma mark ---------------NetWork-------------------------/
+- (void)checkData{
+//    kSelfWeak;
+    [CarportShortItemModel checkViolationWithCarNum:self.carNumView.textField.text endNum:self.endNumView.textField.text success:^(StatusModel *statusModel) {
+//        kSelfStrong;
+        [WSProgressHUD showImage:nil status:statusModel.message];
+        
+        if (statusModel.flag == kFlagSuccess) {
 
+        }
+    }];
+}
 
 #pragma mark ---------------Event-------------------------/
 - (void)selectAction:(UIButton *)button{
     CarNumberListVC *vc = [[CarNumberListVC alloc]init];
+    kSelfWeak;
+    vc.selectBlock = ^(NSString *carNum, NSString *endNum) {
+        kSelfStrong;
+        strongSelf.carNumView.textField.text = carNum;
+        strongSelf.endNumView.textField.text = endNum;
+    };
     [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)submitAction:(UIButton *)button{
+    if (self.carNumView.textField.text.length < 6 || self.carNumView.textField.text.length > 7) {
+        [WSProgressHUD showImage:nil status:@"请输入正确的车牌号码"];
+        return;
+    }
     
+    if(self.endNumView.textField.text.length != 6){
+        [WSProgressHUD showImage:nil status:@"请输入正确的发动机尾号"];
+        return;
+    }
+    
+    if (!self.agreeBtn.selected) {
+        [WSProgressHUD showImage:nil status:@"请阅读并授权协议"];
+        return;
+    }
+
+    [self checkData];
 }
 
 - (void)agreeAction:(UIButton *)button{

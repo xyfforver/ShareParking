@@ -32,4 +32,7 @@
 
 //更新车牌
 + (void)updateCarNumberWithNum:(NSString *)carNum endNum:(NSString *)endNum carId:(NSString *)carId success:(NetCompletionBlock)success;
+
+//查违章
++ (void)checkViolationWithCarNum:(NSString *)carNum endNum:(NSString *)endNum success:(NetCompletionBlock)success;
 @end

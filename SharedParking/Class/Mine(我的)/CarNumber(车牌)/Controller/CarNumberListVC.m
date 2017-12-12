@@ -87,7 +87,12 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if (self.selectBlock) {
+        CarportShortItemModel *model = self.dataArr[indexPath.row];
+        self.selectBlock(model.car_chepai, model.car_fadongji);
+        
+        [self backToSuperView];
+    }
 }
 
 

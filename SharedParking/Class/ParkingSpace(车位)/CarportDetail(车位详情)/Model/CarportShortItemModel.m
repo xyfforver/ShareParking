@@ -54,7 +54,13 @@
     [self postWithStatusModelResponsePath:@"usercar_update" params:ParamsDic onCompletion:success];
 }
 
-
+//查违章
++ (void)checkViolationWithCarNum:(NSString *)carNum endNum:(NSString *)endNum success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(carNum, @"car_chepai");
+    DicObjectSet(endNum, @"car_fadongji");
+    [self postWithStatusModelResponsePath:@"check_violation" params:ParamsDic onCompletion:success];
+}
 
 
 

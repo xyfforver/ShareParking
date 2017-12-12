@@ -10,4 +10,6 @@
 
 @interface CarNumberListVC : BaseViewController
 
+@property (nonatomic , copy) void(^selectBlock)(NSString *carNum , NSString *endNum);
+
 @end
