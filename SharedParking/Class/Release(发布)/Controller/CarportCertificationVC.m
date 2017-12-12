@@ -8,6 +8,7 @@
 
 #import "CarportCertificationVC.h"
 #import "ReleaseModel.h"
+#import "MyIssueVC.h"
 @interface CarportCertificationVC ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIView *bgView;
@@ -74,9 +75,8 @@
 
 #pragma mark ---------------network ---------------------/
 - (void)releaseShortData{
-    NSData *equityData = UIImageJPEGRepresentation(self.equityImgView.image, 1);
-    NSData *carportData = UIImageJPEGRepresentation(self.carportImgView.image, 1);
-    
+    NSData *equityData = [self compressedImage:self.equityImgView.image];
+    NSData *carportData = [self compressedImage:self.carportImgView.image];
     kSelfWeak;
     self.confirmBtn.userInteractionEnabled = NO;
     [WSProgressHUD show];
@@ -86,15 +86,14 @@
         [WSProgressHUD showImage:nil status:statusModel.message];
         
         if (statusModel.flag == kFlagSuccess) {
-            [strongSelf backToSuperView];
+            [strongSelf releaseSuccess];
         }
     }];
 }
 
 - (void)releaseLongData{
-    NSData *equityData = UIImageJPEGRepresentation(self.equityImgView.image, 1);
-    NSData *carportData = UIImageJPEGRepresentation(self.carportImgView.image, 1);
-    
+    NSData *equityData = [self compressedImage:self.equityImgView.image];
+    NSData *carportData = [self compressedImage:self.carportImgView.image];
     kSelfWeak;
     self.confirmBtn.userInteractionEnabled = NO;
     [WSProgressHUD show];
@@ -104,12 +103,40 @@
         [WSProgressHUD showImage:nil status:statusModel.message];
         
         if (statusModel.flag == kFlagSuccess) {
-            [strongSelf backToSuperView];
+            [strongSelf releaseSuccess];
         }
     }];
 }
 
+
 #pragma mark ---------------event ---------------------/
+- (void)releaseSuccess{
+    //删除数据 跳转到我的发布
+    self.model = nil;
+    self.equityImgView.image = nil;
+    self.carportImgView.image = nil;
+    self.equityBtn.hidden = NO;
+    self.carportBtn.hidden = NO;
+    if (self.loadBlock) {
+        self.loadBlock();
+    }
+    MyIssueVC *vc = [[MyIssueVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (NSData *)compressedImage:(UIImage *)image{
+    NSData *data = UIImageJPEGRepresentation(image,1);
+    if (data.length/1024 > 2048) {//kb
+        data = UIImageJPEGRepresentation(image,0.7);
+        if (data.length/1024 > 2048) {//kb
+            [WSProgressHUD showImage:nil status:@"图片过大，请压缩图片后上传"];
+            return nil;
+        }
+    }
+    
+    return data;
+}
+
 - (void)addPhoto{
     [UIActionSheet actionSheetWithTitle:@"添加产权证明"
                       cancelButtonTitle:@"取消"
@@ -130,6 +157,12 @@
 
 - (IBAction)confirmAction:(id)sender {
     DLog(@"111");
+    
+    if (!self.model) {
+        [WSProgressHUD showImage:nil status:@"请前往上一页面填写信息"];
+        return;
+    }
+    
     if (!self.equityImgView.image) {
         [WSProgressHUD showImage:nil status:@"请上传产权证明图"];
         return;
@@ -184,13 +217,16 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
 
-    if (self.isCarport) {
-        self.carportImgView.image = image;
-        self.carportBtn.hidden = YES;
-    }else{
-        self.equityImgView.image = image;
-        self.equityBtn.hidden = YES;
+    if ([self compressedImage:image]) {
+        if (self.isCarport) {
+            self.carportImgView.image = image;
+            self.carportBtn.hidden = YES;
+        }else{
+            self.equityImgView.image = image;
+            self.equityBtn.hidden = YES;
+        }
     }
+    
 
     //当image从相机中获取的时候存入相册中
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {

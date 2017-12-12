@@ -15,4 +15,5 @@
 
 @property (nonatomic , assign) CarportRentType type;
 @property (nonatomic , strong) ReleaseModel *model;
+@property (nonatomic , copy) void(^loadBlock)(void);
 @end

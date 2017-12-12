@@ -130,6 +130,13 @@
     CarportCertificationVC *vc = [[CarportCertificationVC alloc]initWithNibName:@"CarportCertificationVC" bundle:[NSBundle mainBundle]];
     vc.type = CarportShortRentType;
     vc.model = model;
+    kSelfWeak;
+    vc.loadBlock = ^{
+        kSelfStrong;
+        strongSelf.parkId = nil;
+        strongSelf.numField.text = nil;
+        strongSelf.infoTextView.text = nil;
+    };
     [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark -----------------Lazy---------------------/
