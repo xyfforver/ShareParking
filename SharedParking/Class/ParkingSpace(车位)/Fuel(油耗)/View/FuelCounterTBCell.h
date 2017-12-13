@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FuelModel.h"
 @interface FuelCounterTBCell : UITableViewCell
+
+@property (nonatomic , strong) FuelModel *fuelModel;
 
 @end

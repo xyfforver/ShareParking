@@ -28,6 +28,18 @@
     return self;
 }
 
+- (void)setFuelModel:(FuelModel *)fuelModel{
+    _fuelModel = fuelModel;
+    
+    
+    self.timeLab.text = [HelpTool timestampSwitchTime:fuelModel.refuel_time andFormatter:@"YYYY-MM-dd"];
+    self.allPriceLab.text = [NSString stringWithFormat:@"金额：%@（元）",fuelModel.refuel_money];
+    self.allAmountLab.text = [NSString stringWithFormat:@"里程：%@（公里）",fuelModel.refuel_licheng];
+    self.amountLab.text = [NSString stringWithFormat:@"每百公里：%@（升）",fuelModel.refuel_youliang];
+    self.priceLab.text = [NSString stringWithFormat:@"每公里：%@（元）",fuelModel.refuel_youjia];
+    
+}
+
 - (void)initView{
     self.backgroundColor = kBackGroundGrayColor;
     
@@ -55,13 +67,13 @@
     
     [self.allPriceLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.timeLab);
-        make.top.mas_equalTo(self.timeLab.mas_bottom).offset(kMargin10);
+        make.top.mas_equalTo(self.timeLab.mas_bottom).offset(5);
         make.width.mas_equalTo(itemWidth);
     }];
     
     [self.amountLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.width.mas_equalTo(self.timeLab);
-        make.top.mas_equalTo(self.allPriceLab.mas_bottom).offset(kMargin10);
+        make.top.mas_equalTo(self.allPriceLab.mas_bottom).offset(5);
     }];
     
     [self.allAmountLab mas_makeConstraints:^(MASConstraintMaker *make) {

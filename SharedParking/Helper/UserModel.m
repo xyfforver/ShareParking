@@ -97,6 +97,13 @@
     }];
 }
 
+//修改手机号
++ (void)changeTelWithPhoneNum:(NSString *)phoneNum codeNum:(NSString *)codeNum success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(phoneNum, @"user_mobile");
+    DicObjectSet(codeNum, @"yzm");
+    [self postWithStatusModelResponsePath:@"usermobile_update" params:ParamsDic onCompletion:success];
+}
 
 
 

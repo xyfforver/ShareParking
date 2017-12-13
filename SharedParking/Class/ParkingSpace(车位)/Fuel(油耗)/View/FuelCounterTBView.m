@@ -45,15 +45,13 @@
 
 #pragma mark -------------tableView--delegate-------------/
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.type == 0) {
-        return 2;
-    }
-    return 10;
+    return self.dataArr.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FuelCounterTBCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FuelCounterTBCell" forIndexPath:indexPath];
     
+    cell.fuelModel = self.dataArr[indexPath.row];
     return cell;
 }
 
@@ -96,7 +94,12 @@
     return headerView;
 }
 #pragma mark -----------------Lazy---------------------/
-
+- (NSMutableArray *)dataArr{
+    if (!_dataArr) {
+        _dataArr = [[NSMutableArray alloc]init];
+    }
+    return _dataArr;
+}
 
 
 @end

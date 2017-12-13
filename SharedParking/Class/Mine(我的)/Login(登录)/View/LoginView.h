@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginView : UIView
+@property (nonatomic ,assign) NSInteger type;
 
 @property (nonatomic , copy) void(^loginBlock)(NSString *tel , NSString *code);
 

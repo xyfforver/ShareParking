@@ -9,6 +9,9 @@
 #import "FuelCounterVC.h"
 #import "FuelAverageView.h"
 #import "FuelCounterTBView.h"
+
+#import "FuelModel.h"
+#import "FuelCounterModel.h"
 @interface FuelCounterVC ()
 @property (nonatomic , strong) FuelAverageView *averageView;
 @property (nonatomic , strong) FuelCounterTBView *tbView;
@@ -24,6 +27,12 @@
 
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self loadData];
+}
+
 - (void)initView{
     self.title = @"油耗计算器";
 //    self.view.backgroundColor = kBackGroundGrayColor;
@@ -33,7 +42,33 @@
 }
 
 #pragma mark ---------------NetWork-------------------------/
+- (void)loadData{
+    [self getAddFuelRecord];
+    [self loadFuelListData];
+}
 
+- (void)getAddFuelRecord{
+    kSelfWeak;
+    [FuelCounterModel getAddFuelRecordWithSuccess:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            strongSelf.averageView.fuelModel = statusModel.data;
+        }
+    }];
+}
+
+- (void)loadFuelListData{
+    kSelfWeak;
+    [FuelModel fuelRecordListWithPage:1 success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            [strongSelf.tbView.dataArr removeAllObjects];
+            NSArray *arr = statusModel.data;
+            [strongSelf.tbView.dataArr addObjectsFromArray:arr];
+        }
+        [strongSelf.tbView reloadData];
+    }];
+}
 
 #pragma mark ---------------Event-------------------------/
 

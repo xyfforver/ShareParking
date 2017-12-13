@@ -29,6 +29,18 @@
     return self;
 }
 
+- (void)setType:(NSInteger)type{
+    _type = type;
+    
+    if (type == 1) {
+        [self.loginBtn setTitle:@"修改手机号" forState:UIControlStateNormal];
+    }else{
+        [self.loginBtn setTitle:@"登录" forState:UIControlStateNormal];
+        NSString *phone = [[NSUserDefaults standardUserDefaults] objectForKey:kLingBaoUser];
+        self.telField.text = phone;
+    }
+}
+
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
     [self addSubview:self.imgView];
@@ -36,11 +48,6 @@
     [self addSubview:self.codeField];
     [self addSubview:self.getCodeBtn];
     [self addSubview:self.loginBtn];
-    
-    
-    
-    
-    
     
 }
 
@@ -107,8 +114,6 @@
         _telField.leftImageView.image = [UIImage imageNamed:@"login_tel"];
         _telField.delegate = self;
         _telField.rightViewMode = UITextFieldViewModeWhileEditing;
-        NSString *phone = [[NSUserDefaults standardUserDefaults] objectForKey:kLingBaoUser];
-        _telField.text = phone;
         _telField.backgroundColor = RGB(255, 255, 255, 0.6);
         _telField.textColor = kColor333333;
         _telField.layer.cornerRadius = 20;

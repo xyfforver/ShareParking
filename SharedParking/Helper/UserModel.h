@@ -37,7 +37,8 @@
 + (void)feedbackWithContent:(NSString *)content success:(NetCompletionBlock)success;
 //更新个人资料
 + (void)updateUserInfoWithNickname:(NSString *)nickname alipayNum:(NSString *)alipayNum headImg:(NSData *)headImg success:(NetCompletionBlock)success;
-
+//修改手机号
++ (void)changeTelWithPhoneNum:(NSString *)phoneNum codeNum:(NSString *)codeNum success:(NetCompletionBlock)success;
 
 
 + (void)loginWithAccount:(NSString *)account password:(NSString *)password success:(NetCompletionBlock)success;

@@ -37,11 +37,13 @@
     return self;
 }
 
--(void)awakeFromNib
-{
-    [super awakeFromNib];
+- (void)setFuelModel:(FuelCounterModel *)fuelModel{
+    _fuelModel = fuelModel;
     
-    
+    self.allPriceLab.text = fuelModel.total_money;
+    self.allAmountLab.text = fuelModel.total_youliang;
+    self.averagePriceLab.text = fuelModel.average_youfei;
+    self.averageAmountLab.text = fuelModel.average_youhao;
 }
 
 - (void)layoutSubviews{

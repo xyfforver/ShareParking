@@ -10,6 +10,9 @@
 
 @interface LoginVC : BaseViewController
 
+- (instancetype)initWithType:(NSInteger)type completionBack:(dispatch_block_t)completionBack;
+
+@property (nonatomic, assign) NSInteger type; // 0 登录 1 修改手机号
 @property (nonatomic, copy) dispatch_block_t completionBack;
 
 @end

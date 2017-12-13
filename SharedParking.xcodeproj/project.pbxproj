@@ -25,6 +25,9 @@
 		6B0FCA6B1FE0C21D009E6FAF /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FCA691FE0C06E009E6FAF /* UIImage+Crop.m */; };
 		6B0FCA6E1FE0C304009E6FAF /* UIImage+SGHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FCA6D1FE0C304009E6FAF /* UIImage+SGHelper.m */; };
 		6B0FCA6F1FE0C6B2009E6FAF /* WLHCropper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0FCA6A1FE0C06E009E6FAF /* WLHCropper.a */; };
+		6B0FCA721FE0F259009E6FAF /* DateDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FCA711FE0F259009E6FAF /* DateDayView.m */; };
+		6B0FCA751FE0F7E6009E6FAF /* FuelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FCA741FE0F7E6009E6FAF /* FuelModel.m */; };
+		6B0FCA781FE12BFC009E6FAF /* FuelCounterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FCA771FE12BFC009E6FAF /* FuelCounterModel.m */; };
 		6B1028F41FDA1A5900605638 /* MyRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1028F31FDA1A5900605638 /* MyRequestModel.m */; };
 		6B1028F71FDA318700605638 /* MyRequestItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1028F61FDA318700605638 /* MyRequestItemModel.m */; };
 		6B1028FA1FDA319300605638 /* RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1028F91FDA319300605638 /* RequestModel.m */; };
@@ -260,6 +263,12 @@
 		6B0FCA6A1FE0C06E009E6FAF /* WLHCropper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = WLHCropper.a; sourceTree = "<group>"; };
 		6B0FCA6C1FE0C304009E6FAF /* UIImage+SGHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SGHelper.h"; sourceTree = "<group>"; };
 		6B0FCA6D1FE0C304009E6FAF /* UIImage+SGHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SGHelper.m"; sourceTree = "<group>"; };
+		6B0FCA701FE0F258009E6FAF /* DateDayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateDayView.h; sourceTree = "<group>"; };
+		6B0FCA711FE0F259009E6FAF /* DateDayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateDayView.m; sourceTree = "<group>"; };
+		6B0FCA731FE0F7E6009E6FAF /* FuelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelModel.h; sourceTree = "<group>"; };
+		6B0FCA741FE0F7E6009E6FAF /* FuelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuelModel.m; sourceTree = "<group>"; };
+		6B0FCA761FE12BFC009E6FAF /* FuelCounterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelCounterModel.h; sourceTree = "<group>"; };
+		6B0FCA771FE12BFC009E6FAF /* FuelCounterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuelCounterModel.m; sourceTree = "<group>"; };
 		6B1028F21FDA1A5900605638 /* MyRequestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestModel.h; sourceTree = "<group>"; };
 		6B1028F31FDA1A5900605638 /* MyRequestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestModel.m; sourceTree = "<group>"; };
 		6B1028F51FDA318700605638 /* MyRequestItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestItemModel.h; sourceTree = "<group>"; };
@@ -1015,6 +1024,10 @@
 		6B3189EC1FA96FB20063AC2F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B0FCA731FE0F7E6009E6FAF /* FuelModel.h */,
+				6B0FCA741FE0F7E6009E6FAF /* FuelModel.m */,
+				6B0FCA761FE12BFC009E6FAF /* FuelCounterModel.h */,
+				6B0FCA771FE12BFC009E6FAF /* FuelCounterModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1022,6 +1035,8 @@
 		6B3189ED1FA96FB20063AC2F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6B0FCA701FE0F258009E6FAF /* DateDayView.h */,
+				6B0FCA711FE0F259009E6FAF /* DateDayView.m */,
 				6B3189F41FA973CA0063AC2F /* FuelAverageView.h */,
 				6B3189F51FA973CA0063AC2F /* FuelAverageView.m */,
 				6B3189F71FA974900063AC2F /* FuelAverageView.xib */,
@@ -2079,6 +2094,7 @@
 				6B2ABA1B1FD152700025D512 /* SGQRCodeScanManager.m in Sources */,
 				6B2ABA1C1FD152700025D512 /* SGQRCodeScanningView.m in Sources */,
 				6B0E80141FCBCE6700B2C309 /* PayRecordGroupModel.m in Sources */,
+				6B0FCA751FE0F7E6009E6FAF /* FuelModel.m in Sources */,
 				6B0E80151FCBCE6700B2C309 /* PayRecordModel.m in Sources */,
 				6B0E80161FCBCE6700B2C309 /* PayRecordHeaderView.m in Sources */,
 				6BFD90351FDE2E43003203B2 /* SelectCarportVC.m in Sources */,
@@ -2151,6 +2167,7 @@
 				6BB5CEA31FB9613000A2816F /* FuelCounterTBView.m in Sources */,
 				6B0E80061FCBBD0200B2C309 /* PayRecordVC.m in Sources */,
 				6BFD90321FDE2C67003203B2 /* ReleaseModel.m in Sources */,
+				6B0FCA781FE12BFC009E6FAF /* FuelCounterModel.m in Sources */,
 				6B2AB9EF1FD0FDAF0025D512 /* LoginVC.m in Sources */,
 				6BF95B681FB5745500DED0B7 /* MyReserveVC.m in Sources */,
 				6B3189FC1FA9ABDD0063AC2F /* FuelAddVC.m in Sources */,
@@ -2165,6 +2182,7 @@
 				6B0E801F1FCBF4C300B2C309 /* ReleaseDetailView.m in Sources */,
 				6B91B6AC1F9DEE0A00A1020C /* JMRefreshFooter.m in Sources */,
 				6B12C8461FCFE12500B819B4 /* RechargeCLCell.m in Sources */,
+				6B0FCA721FE0F259009E6FAF /* DateDayView.m in Sources */,
 				6BF8B2551F9F177000329145 /* AppDelegate+LibConfig.m in Sources */,
 				6B1C4B2C1FA8070F00D543D2 /* GasStationModel.m in Sources */,
 				6B91B6AB1F9DEE0200A1020C /* ExtraParaManger.m in Sources */,

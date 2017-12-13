@@ -19,6 +19,15 @@
 @implementation LoginVC
 
 #pragma mark ---------------LifeCycle-------------------------/
+- (instancetype)initWithType:(NSInteger)type completionBack:(dispatch_block_t)completionBack{
+    self = [super init];
+    if (self) {
+        self.type = type;
+        self.completionBack = [completionBack copy];
+    }
+    return self;
+}
+
 - (void)loadView
 {
     [super loadView];
@@ -75,6 +84,24 @@
     }];
 }
 
+- (void)changeTelData:(NSString *)tel code:(NSString *)code{
+    [UserModel changeTelWithPhoneNum:tel codeNum:code success:^(StatusModel *statusModel) {
+       
+        [WSProgressHUD showImage:nil status:statusModel.message];
+        
+        kSelfWeak;
+        if (statusModel.flag == kFlagSuccess) {
+            [[NSUserDefaults standardUserDefaults] setObject:tel forKey:kLingBaoUser];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            kSelfStrong;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [strongSelf backToSuperView];
+            });
+        }
+    }];
+    
+}
+
 #pragma mark ---------------Event-------------------------/
 - (void)loginSuccess{
     if (self.completionBack) {
@@ -88,10 +115,15 @@
 - (LoginView *)loginView{
     if (!_loginView) {
         _loginView = [[LoginView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 660/750.0*kScreenWidth)];
+        _loginView.type = self.type;
         kSelfWeak;
         _loginView.loginBlock = ^(NSString *tel, NSString *code) {
             kSelfStrong;
-            [strongSelf loginData:tel code:code];
+            if (strongSelf.type == 1) {
+                [strongSelf changeTelData:tel code:code];
+            }else{
+                [strongSelf loginData:tel code:code];
+            }
         };
     }
     return _loginView;

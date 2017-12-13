@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FuelCounterModel.h"
 @interface FuelAverageView : UIView
+
+@property (nonatomic , strong) FuelCounterModel *fuelModel;
 
 @end

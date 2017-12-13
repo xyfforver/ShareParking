@@ -7,6 +7,7 @@
 //
 
 #import "EditVC.h"
+#import "LoginVC.h"
 
 #import "UIImage+SGHelper.h"
 #import "PhotoViewController.h"
@@ -45,6 +46,13 @@
     [self.headLab zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
         [self selectHeadImage];
     }];
+    
+    [self.telLab zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        LoginVC *vc = [[LoginVC alloc]initWithType:1 completionBack:^{
+            [self loadData];
+        }];
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
 }
 
 - (void)backToSuperView{
@@ -78,6 +86,7 @@
     
     self.nicknameField.text = self.userModel.realname;
     self.zhifubaoField.text = self.userModel.alipay_account;
+    self.telLab.text = self.userModel.user_mobile;
 }
 
 - (void)updateData{
