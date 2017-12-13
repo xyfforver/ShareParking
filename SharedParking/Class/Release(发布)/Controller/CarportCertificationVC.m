@@ -78,8 +78,6 @@
     NSData *equityData = [self compressedImage:self.equityImgView.image];
     NSData *carportData = [self compressedImage:self.carportImgView.image];
     kSelfWeak;
-    self.confirmBtn.userInteractionEnabled = NO;
-    [WSProgressHUD show];
     [ReleaseModel releaseShortWithParkId:self.model.park_id parkNum:self.model.parking_number carType:self.model.parking_cheweitype object:self.model.parking_obj remark:self.model.remark carImg:equityData carportImg:carportData success:^(StatusModel *statusModel) {
         kSelfStrong;
         strongSelf.confirmBtn.userInteractionEnabled = YES;
@@ -95,8 +93,6 @@
     NSData *equityData = [self compressedImage:self.equityImgView.image];
     NSData *carportData = [self compressedImage:self.carportImgView.image];
     kSelfWeak;
-    self.confirmBtn.userInteractionEnabled = NO;
-    [WSProgressHUD show];
     [ReleaseModel releaseLongWithTitle:self.model.parking_title parkId:self.model.park_id parkNum:self.model.parking_number price:self.model.parking_fee telNum:self.model.user_mobile carType:self.model.parking_cheweitype object:self.model.parking_obj remark:self.model.remark carImg:equityData carportImg:carportData success:^(StatusModel *statusModel) {
         kSelfStrong;
         strongSelf.confirmBtn.userInteractionEnabled = YES;
@@ -172,6 +168,9 @@
         [WSProgressHUD showImage:nil status:@"请上传车位图片"];
         return;
     }
+    
+    [WSProgressHUD showWithStatus:@"图片上传中~"];
+    self.confirmBtn.userInteractionEnabled = NO;
     
     if (self.type == CarportShortRentType) {
         [self releaseShortData];

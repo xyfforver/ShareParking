@@ -29,7 +29,7 @@
 - (void)setUserModel:(UserModel *)userModel{
     _userModel = userModel;
     
-    [self.headImgView sd_setImageWithURL:[NSURL URLWithString:userModel.headimg]];
+    [self.headImgView sd_setImageWithURL:[NSURL URLWithString:kImageStringJoint(userModel.headimg)]];
     [self.nickNameBtn setTitle:userModel.user_mobile forState:UIControlStateNormal];
     [self.nickNameBtn lc_titleImageHorizontalAlignmentWithSpace:15];
     

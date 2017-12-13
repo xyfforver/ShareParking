@@ -58,8 +58,44 @@
     [self postWithStatusModelResponsePath:@"user_feedback" params:ParamsDic onCompletion:success];
 }
 
-
-
+//更新个人资料
++ (void)updateUserInfoWithNickname:(NSString *)nickname alipayNum:(NSString *)alipayNum headImg:(NSData *)headImg success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(nickname, @"realname");
+    DicObjectSet(alipayNum, @"alipay_account");
+    
+    DLog(@"\n<<-----------请求--------------------\n%@",ParamsDic);
+    
+    NSString *baseUrl = [NSString stringWithFormat:@"%@%@",LingBao_BASE_URL,@"usermeta_update"];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    [manager POST:baseUrl parameters:ParamsDic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        if (headImg) {
+            //随机文件名
+            NSString *fileName = [HelpTool uuidUniqueFileName];
+            //获取文件后缀
+            NSString *extension = [HelpTool contentTypeForImageData:headImg];
+            NSString *headName = [fileName stringByAppendingPathExtension:extension];
+            DLog(@"%@",headName);
+            [formData appendPartWithFileData:headImg name:@"headimg" fileName:headName mimeType:extension];
+        }
+        
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+        //        DLog(@"%@",uploadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves|NSJSONReadingMutableContainers error:nil];
+        
+        DLog(@"\n<<-----------返回--------------------\n Url == %@\n data == %@\n------------------------------->>",baseUrl,json);
+        StatusModel *statusModel = [StatusModel statusModelWithKeyValues:json];
+        if (success) {
+            success(statusModel);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        DLog(@"error===%@",error);
+    }];
+}
 
 
 

@@ -12,7 +12,9 @@
 @property (copy, nonatomic) NSString *headimg;
 @property (copy, nonatomic) NSString *user_mobile;
 @property (copy, nonatomic) NSString *car_chepai;
+@property (copy, nonatomic) NSString *realname;
 @property (assign, nonatomic) CGFloat user_money;
+@property (copy, nonatomic) NSString *alipay_account;
 
 
 @property (copy, nonatomic) NSString *tel;
@@ -33,6 +35,10 @@
 + (void)logoutSuccess:(NetCompletionBlock)success;
 //意见反馈
 + (void)feedbackWithContent:(NSString *)content success:(NetCompletionBlock)success;
+//更新个人资料
++ (void)updateUserInfoWithNickname:(NSString *)nickname alipayNum:(NSString *)alipayNum headImg:(NSData *)headImg success:(NetCompletionBlock)success;
+
+
 
 + (void)loginWithAccount:(NSString *)account password:(NSString *)password success:(NetCompletionBlock)success;
 + (void)userLogoutWithSuccess:(NetCompletionBlock)success;
