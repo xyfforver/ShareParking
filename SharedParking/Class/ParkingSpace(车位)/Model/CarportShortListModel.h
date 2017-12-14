@@ -20,7 +20,7 @@
 @property (copy, nonatomic) NSString *park_opentime;
 @property (copy, nonatomic) NSString *isdelete;
 @property (assign, nonatomic) CarportRentType parking_type;
-@property (copy, nonatomic) NSString *park_fee;
+@property (assign, nonatomic) CGFloat park_fee;
 @property (copy, nonatomic) NSString *sheng;
 @property (copy, nonatomic) NSString *park_closetime;
 @property (copy, nonatomic) NSString *park_address;

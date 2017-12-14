@@ -47,6 +47,8 @@
 
 //view转image
 + (UIImage *)getImageFromView:(UIView *)view;
+//空闲度得到图片名
++ (NSString *)imageStringWithLeisure:(NSInteger)leisure;
 
 #pragma mark ---------------获取字段 ---------------------/
 + (NSString *)getRentObjectWithType:(BOOL)type;

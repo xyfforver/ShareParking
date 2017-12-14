@@ -13,9 +13,7 @@
 #import "ParkingSpaceMapView.h"
 #import "ParkingSpaceTBView.h"
 #import "JMTitleSelectView.h"
-#import "RobParkingView.h"
-#import "LongRentView.h"
-#import "ParkingOrderView.h"
+
 
 #import "CarportShortListModel.h"
 #import "CarportLongListModel.h"
@@ -28,9 +26,7 @@
 @property (nonatomic , strong) UIButton *selectedBtn;
 @property (nonatomic , assign) CarportRentType type;
 
-@property (nonatomic , strong) RobParkingView *itemView;
-@property (nonatomic , strong) LongRentView *rentView;
-@property (nonatomic , strong) ParkingOrderView *orderView;
+
 
 @property (nonatomic , assign) NSInteger page;
 
@@ -64,9 +60,6 @@
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.mapView];
     [self.view addSubview:self.tbView];
-    [self.mapView addSubview:self.itemView];
-    [self.mapView addSubview:self.rentView];
-    [self.mapView addSubview:self.orderView];
     
     self.tbView.hidden = YES;
     
@@ -75,9 +68,6 @@
 
 - (void)setType:(CarportRentType)type{
     _type = type;
-    
-    self.itemView.hidden = type == CarportLongRentType;
-    self.rentView.hidden = type != CarportLongRentType;
     
     self.mapView.type = type;
     
@@ -249,7 +239,7 @@
 - (ParkingSpaceMapView *)mapView{
     if (!_mapView) {
         _mapView = [[ParkingSpaceMapView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height - kTabBarHeight)];
-        kSelfWeak;
+//        kSelfWeak;
 //        _mapView.loadBlock = ^{
 //            kSelfStrong;
 //            [strongSelf loadMapData];
@@ -278,27 +268,4 @@
     return _tbView;
 }
 
-- (RobParkingView *)itemView{
-    if (!_itemView) {
-        _itemView = [[RobParkingView alloc]initWithFrame:CGRectMake(40, self.mapView.height - [RobParkingView getHeight] - 50, kScreenWidth - 40 * 2, [RobParkingView getHeight])];
-        _itemView.hidden = YES;
-    }
-    return _itemView;
-}
-
-- (LongRentView *)rentView{
-    if (!_rentView) {
-        _rentView = [[LongRentView alloc]initWithFrame:CGRectMake(40, self.mapView.height - [LongRentView getHeight] - 50, kScreenWidth - 40 * 2, [LongRentView getHeight])];
-        _rentView.hidden = YES;
-    }
-    return _rentView;
-}
-
-- (ParkingOrderView *)orderView{
-    if (!_orderView) {
-        _orderView = [[ParkingOrderView alloc]initWithFrame:CGRectMake(40, self.mapView.height - [ParkingOrderView getHeight] - 50, kScreenWidth - 40 * 2, [ParkingOrderView getHeight])];
-        _orderView.hidden = YES;
-    }
-    return _orderView;
-}
 @end

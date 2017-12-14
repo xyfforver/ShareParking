@@ -12,6 +12,10 @@
 #import "FindBreakRulesVC.h"
 #import "MyRequestVC.h"
 
+#import "RobParkingView.h"
+#import "LongRentView.h"
+#import "ParkingOrderView.h"
+
 #import "CarportShortListModel.h"
 #import "CustomAnnotation.h"
 
@@ -31,6 +35,9 @@
 
 /// 当前地图的中心点
 @property (nonatomic) CLLocationCoordinate2D cCoordinate;
+@property (nonatomic , strong) RobParkingView *itemView;
+@property (nonatomic , strong) LongRentView *rentView;
+@property (nonatomic , strong) ParkingOrderView *orderView;
 @end
 
 @implementation ParkingSpaceMapView
@@ -43,49 +50,14 @@
     return self;
 }
 
+- (void)setType:(CarportRentType)type{
+    _type = type;
+
+    self.itemView.hidden = NO;
+    self.rentView.hidden = YES;
+}
+
 #pragma mark ---------------network ---------------------/
-
-#pragma mark - XJClusterAnnotationViewDelegate
-- (void)didAddreesWithClusterAnnotationView:(XJCluster *)cluster clusterAnnotationView:(XJClusterAnnotationView *)clusterAnnotationView{
-    
-    if (clusterAnnotationView.size > 3) {
-//        [_mapView setCenterCoordinate:clusterAnnotationView.annotation.coordinate];
-//        [_mapView zoomIn];
-    }
-}
-
-- (void)onGetDistrictResult:(BMKDistrictSearch *)searcher result:(BMKDistrictResult *)result errorCode:(BMKSearchErrorCode)error {
-    
-    BMKCoordinateRegion region ;//表示范围的结构体
-    region.center = result.center;//中心点
-    region.span.latitudeDelta = 0.02;//经度范围（设置为0.1表示显示范围为0.2的纬度范围）
-    region.span.longitudeDelta = 0.02;//纬度范围
-    [_mapView setRegion:region animated:YES];
-}
-
-
-- (void)addAnnoWithPT{
-    [_clusterManager clearClusterItems];
-    for (CarportShortListModel *model in self.dataArr) {
-        XJCluster *cluster = [[XJCluster alloc] init];
-        cluster.name = model.park_title;
-        
-        CLLocationCoordinate2D coor;
-        coor.latitude = model.latitude;
-        coor.longitude = model.longitude;
-        cluster.pt = coor;
-        
-        BMKClusterItem *clusterItem = [[BMKClusterItem alloc] init];
-        clusterItem.coor = cluster.pt;
-        clusterItem.title = cluster.name;
-        clusterItem.kongxiandu = model.kongxiandu;
-        clusterItem.cluster = cluster;
-        [_clusterManager addClusterItem:clusterItem];
-    }
-    
-    [self updateClusters];
-}
-
 - (void)loadMapData{
     self.type != CarportLongRentType ? [self loadShortMapData] : [self loadLongMapData];
 }
@@ -107,6 +79,29 @@
 
 - (void)loadLongMapData{
     
+}
+
+
+- (void)addAnnoWithPT{
+    [_clusterManager clearClusterItems];
+    for (CarportShortListModel *model in self.dataArr) {
+        XJCluster *cluster = [[XJCluster alloc] init];
+        cluster.name = [NSString stringWithFormat:@"￥%.2f元",model.park_fee];
+        
+        CLLocationCoordinate2D coor;
+        coor.latitude = model.latitude;
+        coor.longitude = model.longitude;
+        cluster.pt = coor;
+        
+        BMKClusterItem *clusterItem = [[BMKClusterItem alloc] init];
+        clusterItem.coor = cluster.pt;
+        clusterItem.title = cluster.name;
+        clusterItem.kongxiandu = model.kongxiandu;
+        clusterItem.cluster = cluster;
+        [_clusterManager addClusterItem:clusterItem];
+    }
+    
+    [self updateClusters];
 }
 
 #pragma mark -----------------ww ---------------------/
@@ -138,6 +133,25 @@
             });
         });
 //    }
+}
+
+
+#pragma mark - XJClusterAnnotationViewDelegate
+- (void)didAddreesWithClusterAnnotationView:(XJCluster *)cluster clusterAnnotationView:(XJClusterAnnotationView *)clusterAnnotationView{
+    
+    if (clusterAnnotationView.size > 3) {
+        //        [_mapView setCenterCoordinate:clusterAnnotationView.annotation.coordinate];
+        //        [_mapView zoomIn];
+    }
+}
+
+- (void)onGetDistrictResult:(BMKDistrictSearch *)searcher result:(BMKDistrictResult *)result errorCode:(BMKSearchErrorCode)error {
+    
+    BMKCoordinateRegion region ;//表示范围的结构体
+    region.center = result.center;//中心点
+    region.span.latitudeDelta = 0.02;//经度范围（设置为0.1表示显示范围为0.2的纬度范围）
+    region.span.longitudeDelta = 0.02;//纬度范围
+    [_mapView setRegion:region animated:YES];
 }
 
 #pragma mark --------------- Map Delegate ---------------------/
@@ -184,11 +198,22 @@
 }
 
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
-
+    if ([view isKindOfClass:[XJClusterAnnotationView class]]) {
+        XJClusterAnnotationView *anView = (XJClusterAnnotationView *)view;
+        anView.imageView.image = [UIImage imageNamed:@"map_leisure4"];
+    
+        [self showInfoView:anView.cluster];
+    }
+    
 }
 
 - (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view{
-
+    if ([view isKindOfClass:[XJClusterAnnotationView class]]) {
+        XJClusterAnnotationView *anView = (XJClusterAnnotationView *)view;
+        anView.imageView.image = [UIImage imageNamed:[HelpTool imageStringWithLeisure:anView.cluster.kongxiandu]];
+    }
+    
+    [self dismissInfoView];
 }
 
 /**
@@ -275,6 +300,9 @@
     [self addSubview:self.userCenterBtn];
     [self addSubview:self.addBtn];
     [self addSubview:self.minusBtn];
+    [self addSubview:self.itemView];
+    [self addSubview:self.rentView];
+    [self addSubview:self.orderView];
     
     _clusterManager = [[BMKClusterManager alloc] init];
     
@@ -399,6 +427,22 @@
     [self.mapView setZoomLevel:zoomLevel - 1];
 }
 
+- (void)showInfoView:(XJCluster *)cluster{
+    if (self.type == CarportShortRentType) {
+        self.itemView.hidden = NO;
+        self.rentView.hidden = YES;
+        self.itemView.shortModel = cluster.shortModel;
+    }else{
+        self.itemView.hidden = YES;
+        self.rentView.hidden = NO;
+    }
+}
+
+- (void)dismissInfoView{
+    self.itemView.hidden = YES;
+    self.rentView.hidden = YES;
+}
+
 #pragma mark -----------------Lazy---------------------/
 - (BMKMapView *)mapView{
     if (!_mapView) {
@@ -480,6 +524,31 @@
         _geoCodeSearch = [[BMKGeoCodeSearch alloc]init];
     }
     return _geoCodeSearch;
+}
+
+
+- (RobParkingView *)itemView{
+    if (!_itemView) {
+        _itemView = [[RobParkingView alloc]initWithFrame:CGRectMake(40, self.height - [RobParkingView getHeight] - 50, kScreenWidth - 40 * 2, [RobParkingView getHeight])];
+        _itemView.hidden = YES;
+    }
+    return _itemView;
+}
+
+- (LongRentView *)rentView{
+    if (!_rentView) {
+        _rentView = [[LongRentView alloc]initWithFrame:CGRectMake(40, self.height - [LongRentView getHeight] - 50, kScreenWidth - 40 * 2, [LongRentView getHeight])];
+        _rentView.hidden = YES;
+    }
+    return _rentView;
+}
+
+- (ParkingOrderView *)orderView{
+    if (!_orderView) {
+        _orderView = [[ParkingOrderView alloc]initWithFrame:CGRectMake(40, self.height - [ParkingOrderView getHeight] - 50, kScreenWidth - 40 * 2, [ParkingOrderView getHeight])];
+        _orderView.hidden = YES;
+    }
+    return _orderView;
 }
 
 @end

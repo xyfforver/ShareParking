@@ -25,6 +25,14 @@
     return self;
 }
 
+- (void)setShortModel:(CarportShortListModel *)shortModel{
+    _shortModel = shortModel;
+    
+    self.titleLab.text = shortModel.park_title;
+    self.infoLab.text = [NSString stringWithFormat:@"距您%@",[HelpTool stringWithDistance: shortModel.distance]];
+    self.countLab.text = [NSString stringWithFormat:@"剩余车位 %ld/%ld",shortModel.zongnum - shortModel.zhanyongnum,shortModel.zongnum];
+}
+
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
     self.backgroundColor = kColorWhite;

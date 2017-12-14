@@ -324,6 +324,17 @@
     return image;
 }
 
+//空闲度得到图片名
++ (NSString *)imageStringWithLeisure:(NSInteger)leisure{
+    if (leisure >= 0 && leisure <= 3) {
+        return @"map_leisure1";
+    }else if (leisure > 3 && leisure <= 7){
+        return @"map_leisure2";
+    }else {
+        return @"map_leisure3";
+    }
+}
+
 #pragma mark ---------------获取字段 ---------------------/
 + (NSString *)getRentObjectWithType:(BOOL)type{
     if (type == 1) {

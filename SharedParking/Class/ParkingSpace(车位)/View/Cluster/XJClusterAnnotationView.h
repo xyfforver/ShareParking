@@ -18,6 +18,8 @@
 @end
 
 @interface XJClusterAnnotationView : BMKPinAnnotationView
+@property (nonatomic, strong)UIImageView *imageView;
+
 @property (nonatomic, copy)NSString *title;
 @property (nonatomic, assign) NSInteger size;
 @property (nonatomic, assign)NSInteger kongxiandu;

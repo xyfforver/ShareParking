@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CarportShortListModel.h"
 @interface RobParkingView : UIView
+
+@property (nonatomic , strong) CarportShortListModel *shortModel;
 
 + (CGFloat)getHeight;
 

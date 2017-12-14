@@ -13,7 +13,7 @@
 @interface XJClusterAnnotationView()
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *pharmacyLabel;
-@property (nonatomic, strong)UIImageView *imageView;
+
 
 @end
 
@@ -84,14 +84,7 @@
         _imageView.hidden = NO;
         _pharmacyLabel.hidden = NO;
         _pharmacyLabel.text = _title;
-        
-        if (_kongxiandu >= 0 && _kongxiandu <= 3) {
-            _imageView.image = [UIImage imageNamed:@"map_ leisure1"];
-        }else if (_kongxiandu > 3 && _kongxiandu <= 7){
-            _imageView.image = [UIImage imageNamed:@"map_ leisure2"];
-        }else {
-            _imageView.image = [UIImage imageNamed:@"map_ leisure3"];
-        }
+        _imageView.image = [UIImage imageNamed:[HelpTool imageStringWithLeisure:_kongxiandu]];
     }
 }
 
