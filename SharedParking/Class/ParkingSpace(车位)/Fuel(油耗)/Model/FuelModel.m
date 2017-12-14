@@ -26,7 +26,7 @@
 + (void)fuelRecordListWithPage:(NSInteger)page success:(NetCompletionBlock)success{
     CreateParamsDic;
     DicObjectSet(@(page), @"page");
-    [self postWithStatusRecordListModelResponsePath:@"user_refuel" params:nil onCompletion:success];
+    [self postWithStatusRecordListModelResponsePath:@"user_refuel" params:ParamsDic onCompletion:success];
 }
 
 

@@ -28,9 +28,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总加油量（升）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftx-5n-nYy">
                             <rect key="frame" x="15" y="0.0" width="110" height="49"/>
                             <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="EtV-hL-dvy"/>
                                 <constraint firstAttribute="width" constant="110" id="WCG-pk-G6s"/>
-                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="49" id="XTk-nx-WKG"/>
                                 <constraint firstAttribute="height" constant="49" id="s3g-wp-hip"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -39,10 +37,9 @@
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgg-6p-MLJ">
                             <rect key="frame" x="0.0" y="49" width="375" height="1"/>
-                            <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="1" id="Dfy-78-GrD"/>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="HIH-6n-USn"/>
+                                <constraint firstAttribute="height" constant="1" id="97T-fd-beM"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="总加油金额（元）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0N9-DA-FCy">
@@ -59,8 +56,7 @@
                             <rect key="frame" x="0.0" y="98" width="375" height="1"/>
                             <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="YPV-Bf-FiD"/>
-                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="Yaz-xf-Fkg"/>
+                                <constraint firstAttribute="height" constant="1" id="YPV-Bf-FiD"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="平均油耗（升/百公里）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Onc-wH-vVZ">
@@ -98,7 +94,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEp-t3-3nr">
                             <rect key="frame" x="125" y="0.0" width="235" height="49"/>
                             <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="SVp-83-YDp"/>
+                                <constraint firstAttribute="height" constant="49" id="SVp-83-YDp"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.39983582496643066" green="0.40389102697372437" blue="0.4079967737197876" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -107,7 +103,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYJ-ry-f7b">
                             <rect key="frame" x="138" y="49" width="222" height="49"/>
                             <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="MWN-Gm-x9Y"/>
+                                <constraint firstAttribute="height" constant="49" id="MWN-Gm-x9Y"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.39983582496643066" green="0.40389102697372437" blue="0.4079967737197876" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -134,6 +130,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="rgg-6p-MLJ" firstAttribute="leading" secondItem="72l-BR-rQm" secondAttribute="leading" id="0RA-HG-MbG"/>
                         <constraint firstItem="3g7-jz-VQn" firstAttribute="top" secondItem="OWv-Ho-RTJ" secondAttribute="bottom" id="4Xn-6h-vSC"/>
                         <constraint firstAttribute="bottom" secondItem="3g7-jz-VQn" secondAttribute="bottom" id="5Nx-Xf-6Pf"/>
                         <constraint firstItem="OWv-Ho-RTJ" firstAttribute="top" secondItem="BCb-j1-3Et" secondAttribute="bottom" id="64d-2n-qGV"/>
@@ -169,7 +166,9 @@
                         <constraint firstItem="Ffc-UG-6Wm" firstAttribute="leading" secondItem="72l-BR-rQm" secondAttribute="leading" id="pXP-Tk-Ths"/>
                         <constraint firstItem="OWv-Ho-RTJ" firstAttribute="top" secondItem="IAf-S1-8P8" secondAttribute="top" id="qSX-ll-VZS"/>
                         <constraint firstItem="0N9-DA-FCy" firstAttribute="leading" secondItem="72l-BR-rQm" secondAttribute="leading" constant="15" id="r2h-ZX-dQg"/>
+                        <constraint firstAttribute="trailing" secondItem="rgg-6p-MLJ" secondAttribute="trailing" id="rKm-FI-BkG"/>
                         <constraint firstItem="BCb-j1-3Et" firstAttribute="top" secondItem="Ffc-UG-6Wm" secondAttribute="bottom" id="s11-up-cOu"/>
+                        <constraint firstItem="rgg-6p-MLJ" firstAttribute="top" secondItem="Ftx-5n-nYy" secondAttribute="bottom" id="s73-El-F7Z"/>
                         <constraint firstAttribute="trailing" secondItem="OWv-Ho-RTJ" secondAttribute="trailing" id="sJc-xR-847"/>
                         <constraint firstItem="IAf-S1-8P8" firstAttribute="leading" secondItem="72l-BR-rQm" secondAttribute="leading" constant="15" id="ssx-Hp-XZS"/>
                         <constraint firstItem="BCb-j1-3Et" firstAttribute="leading" secondItem="Onc-wH-vVZ" secondAttribute="trailing" id="tVE-os-7qh"/>

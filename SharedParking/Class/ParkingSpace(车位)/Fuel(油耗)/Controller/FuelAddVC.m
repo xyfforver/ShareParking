@@ -89,7 +89,54 @@
         return NO;
     }
     [futureString  insertString:string atIndex:range.location];
+    
+    //限制输入2位小数
+    if (![self judgeAmout:futureString]) {
+        return NO;
+    }
+    
+    return  [self setTextFieldValue:textField futureString:futureString];
+
+}
+
+
+- (BOOL)judgeAmout:(NSString *)futureString{
+    //限制只能输入小数点后两位
+    NSInteger flag=0;
+    const NSInteger limited = 2;
+    for (NSInteger i = futureString.length-1; i>=0; i--) {
         
+        if ([futureString characterAtIndex:i] == '.') {
+            
+            if (flag > limited) {
+                return NO;
+            }
+            
+            break;
+        }
+        flag++;
+    }
+
+    return YES;
+
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+
+    if (textField.text.length > 0 ) {
+        [self setTextFieldValue:textField futureString:textField.text];
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    
+    
+    return YES;
+}
+
+- (BOOL)setTextFieldValue:(UITextField *)textField futureString:(NSString *)futureString{
     if (textField == self.priceField) {
         if (self.oilPriceField.text.length > 0) {
             CGFloat result = [futureString floatValue]/[self.oilPriceField.text floatValue];
@@ -119,43 +166,20 @@
     }
     
     if (textField == self.oilMassField) {
-        if (self.priceField.text.length > 0) {
-            CGFloat result = [self.priceField.text floatValue]/[futureString floatValue];
-            self.oilPriceField.text = [NSString stringWithFormat:@"%.2f",result];
-            return YES;
-        }
-        
         if (self.oilPriceField.text.length > 0) {
             CGFloat result = [futureString floatValue] * [self.oilPriceField.text floatValue];
             self.priceField.text = [NSString stringWithFormat:@"%.2f",result];
             return YES;
         }
-    }
-    
-    
-    return YES;
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-    
-    if (textField == self.priceField) {
-        if (self.oilPriceField.text.length > 0) {
-            CGFloat result = [self.priceField.text floatValue]/[self.oilPriceField.text floatValue];
-            self.oilMassField.text = [NSString stringWithFormat:@"%.2f",result];
-            return YES;
-        }
         
-        if (self.oilMassField.text.length > 0) {
-            CGFloat result = [self.priceField.text floatValue]/[self.oilMassField.text floatValue];
+        if (self.priceField.text.length > 0) {
+            CGFloat result = [self.priceField.text floatValue]/[futureString floatValue];
             self.oilPriceField.text = [NSString stringWithFormat:@"%.2f",result];
             return YES;
         }
     }
-    
     return YES;
 }
-
 
 - (IBAction)saveAction:(id)sender {
     

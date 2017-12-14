@@ -59,6 +59,7 @@
 
 - (void)loadFuelListData{
     kSelfWeak;
+    [WSProgressHUD show];
     [FuelModel fuelRecordListWithPage:1 success:^(StatusModel *statusModel) {
         kSelfStrong;
         if (statusModel.flag == kFlagSuccess) {
@@ -66,6 +67,7 @@
             NSArray *arr = statusModel.data;
             [strongSelf.tbView.dataArr addObjectsFromArray:arr];
         }
+        [WSProgressHUD dismiss];
         [strongSelf.tbView reloadData];
     }];
 }
