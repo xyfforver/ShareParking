@@ -162,6 +162,14 @@
 
 #pragma mark ---------------event ---------------------/
 - (void)itemAction:(UIButton *)button{
+    if (!GetDataManager.isLogin) {
+        LoginVC *vc = [[LoginVC alloc]init];
+        JKNavigationController *loginNav = [[JKNavigationController alloc] initWithRootViewController:vc];
+        [self.Controller presentViewController:loginNav animated:YES completion:nil];
+        
+        return;
+    }
+
     NSInteger tag = button.tag - 100;
     switch (tag) {
         case 0:{
@@ -187,6 +195,8 @@
         default:
             break;
     }
+
+
 }
 
 - (void)userCenterAction:(UIButton *)button{

@@ -87,7 +87,7 @@
 
 - (FuelCounterTBView *)tbView{
     if (!_tbView) {
-        _tbView = [[FuelCounterTBView alloc]initWithFrame:CGRectMake(0, self.averageView.bottom + kMargin10, kScreenWidth, kBodyHeight - self.averageView.bottom - kMargin10) style:UITableViewStylePlain];
+        _tbView = [[FuelCounterTBView alloc]initWithFrame:CGRectMake(0, self.averageView.bottom + kMargin10, kScreenWidth, kBodyHeight - self.averageView.bottom - kMargin10) style:UITableViewStyleGrouped];
         _tbView.type = 0;
     }
     return _tbView;

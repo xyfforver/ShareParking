@@ -70,7 +70,7 @@
     UIView *headerView = [[UIView alloc]init];
     headerView.backgroundColor = kBackGroundGrayColor;
     
-    if (self.type == 0) {
+    if (self.type == 0 && self.dataArr.count > 0) {
         UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 5)];
         lineView.backgroundColor = kColorWhite;
         [headerView addSubview:lineView];

@@ -162,8 +162,7 @@ static CGFloat const sizeButton = 50.0;
 }
 
 // 判断登录
-- (void)loginVerifySuccess:(void (^)(void))success
-{
+- (void)loginVerifySuccess:(void (^)(void))success{
     //登入
     if (!GetDataManager.isLogin) {
         

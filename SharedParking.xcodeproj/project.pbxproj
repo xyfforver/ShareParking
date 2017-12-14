@@ -2427,7 +2427,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SharedParking/Class/Mine(我的)/Setting(设置)/Cropper",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.galaxy.SharedParking111;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galaxy.SharedParking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2449,7 +2449,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SharedParking/Class/Mine(我的)/Setting(设置)/Cropper",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.galaxy.SharedParking111;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galaxy.SharedParking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
