@@ -15,7 +15,9 @@
 
 @property (nonatomic , assign) CarportRentType type;
 @property (nonatomic , strong) NSArray *dataArr;
-@property (nonatomic , copy) void(^loadBlock)(void);
+//@property (nonatomic , copy) void(^loadBlock)(void);
+
+- (void)loadMapData;
 
 - (void)setUpMapDelegate;
 

@@ -89,7 +89,7 @@
 }
 
 - (IBAction)addAction:(id)sender {
-    CarNumberAddVC *vc = [[CarNumberAddVC alloc]init];
+    CarNumberAddVC *vc = [[CarNumberAddVC alloc]initWithType:1];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -34,11 +34,11 @@
 }
 
 //停车场错时 地图
-+ (void)carportShortListWithSuccess:(NetCompletionBlock)success{
++ (void)carportShortListWithLatitude:(CGFloat )latitude longitude:(CGFloat)longitude success:(NetCompletionBlock)success{
     CreateParamsDic;
     [ParamsDic setObject:@"0" forKey:@"parking_type"];
-    [ParamsDic setObject:GetDataManager.latitude forKey:@"lat"];
-    [ParamsDic setObject:GetDataManager.longitude forKey:@"lng"];
+    [ParamsDic setObject:@(latitude) forKey:@"lat"];
+    [ParamsDic setObject:@(longitude) forKey:@"lng"];
     [ParamsDic setObject:GetDataManager.selectCity forKey:@"shi"];
     [self postWithStatusRecordListModelResponsePath:@"park_maplist" params:ParamsDic onCompletion:success];
 }

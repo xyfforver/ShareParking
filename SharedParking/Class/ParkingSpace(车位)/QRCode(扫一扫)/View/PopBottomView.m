@@ -138,7 +138,7 @@
     }
     
     [UIView animateWithDuration:0.25 animations:^{
-        self.alpha = 0.5;
+//        self.alpha = 0.5;
         self.view_bg.alpha = 1;
     } completion:^(BOOL finished) {
 
@@ -150,7 +150,7 @@
 -(void)removeOperateView{
     
     [UIView animateWithDuration:0.25 animations:^{
-        self.alpha = 0.0;
+//        self.alpha = 0.0;
         self.view_bg.alpha = 0.0;
     } completion:^(BOOL finished) {
         [self removeFromSuperview];

@@ -23,7 +23,6 @@
 		6B0E801F1FCBF4C300B2C309 /* ReleaseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E801E1FCBF4C300B2C309 /* ReleaseDetailView.m */; };
 		6B0E80231FCBF51600B2C309 /* ReleaseDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0E80221FCBF51600B2C309 /* ReleaseDetailView.xib */; };
 		6B0FCA6B1FE0C21D009E6FAF /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FCA691FE0C06E009E6FAF /* UIImage+Crop.m */; };
-		6B0FCA6E1FE0C304009E6FAF /* UIImage+SGHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FCA6D1FE0C304009E6FAF /* UIImage+SGHelper.m */; };
 		6B0FCA6F1FE0C6B2009E6FAF /* WLHCropper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0FCA6A1FE0C06E009E6FAF /* WLHCropper.a */; };
 		6B0FCA721FE0F259009E6FAF /* DateDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FCA711FE0F259009E6FAF /* DateDayView.m */; };
 		6B0FCA751FE0F7E6009E6FAF /* FuelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FCA741FE0F7E6009E6FAF /* FuelModel.m */; };
@@ -203,6 +202,13 @@
 		6BF95B951FB5A00000DED0B7 /* UINavigationController+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B8A1FB59DA900DED0B7 /* UINavigationController+Block.m */; };
 		6BF95B961FB5A00600DED0B7 /* UIPickerView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B8C1FB59DA900DED0B7 /* UIPickerView+Block.m */; };
 		6BF95B971FB5A00B00DED0B7 /* UIPopoverController+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B8E1FB59DA900DED0B7 /* UIPopoverController+Block.m */; };
+		6BFA274D1FE2548300BCD101 /* BMKClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA27441FE252CF00BCD101 /* BMKClusterAlgorithm.m */; };
+		6BFA274E1FE2548300BCD101 /* BMKClusterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA27461FE252CF00BCD101 /* BMKClusterItem.m */; };
+		6BFA274F1FE2548300BCD101 /* BMKClusterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA27481FE252CF00BCD101 /* BMKClusterManager.m */; };
+		6BFA27501FE2548300BCD101 /* BMKClusterQuadtree.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA274A1FE252CF00BCD101 /* BMKClusterQuadtree.m */; };
+		6BFA27511FE2548300BCD101 /* XJCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA274B1FE2540A00BCD101 /* XJCluster.m */; };
+		6BFA27561FE2650C00BCD101 /* XJClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA27521FE2650B00BCD101 /* XJClusterAnnotation.m */; };
+		6BFA27571FE2650C00BCD101 /* XJClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA27551FE2650C00BCD101 /* XJClusterAnnotationView.m */; };
 		6BFD90321FDE2C67003203B2 /* ReleaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD90311FDE2C67003203B2 /* ReleaseModel.m */; };
 		6BFD90351FDE2E43003203B2 /* SelectCarportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD90341FDE2E43003203B2 /* SelectCarportVC.m */; };
 		6BFD90381FDE30E7003203B2 /* SelectCarportTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD90371FDE30E7003203B2 /* SelectCarportTBCell.m */; };
@@ -261,8 +267,6 @@
 		6B0FCA681FE0C06E009E6FAF /* UIImage+Crop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Crop.h"; sourceTree = "<group>"; };
 		6B0FCA691FE0C06E009E6FAF /* UIImage+Crop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Crop.m"; sourceTree = "<group>"; };
 		6B0FCA6A1FE0C06E009E6FAF /* WLHCropper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = WLHCropper.a; sourceTree = "<group>"; };
-		6B0FCA6C1FE0C304009E6FAF /* UIImage+SGHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SGHelper.h"; sourceTree = "<group>"; };
-		6B0FCA6D1FE0C304009E6FAF /* UIImage+SGHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SGHelper.m"; sourceTree = "<group>"; };
 		6B0FCA701FE0F258009E6FAF /* DateDayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateDayView.h; sourceTree = "<group>"; };
 		6B0FCA711FE0F259009E6FAF /* DateDayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateDayView.m; sourceTree = "<group>"; };
 		6B0FCA731FE0F7E6009E6FAF /* FuelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuelModel.h; sourceTree = "<group>"; };
@@ -608,6 +612,20 @@
 		6BF95B8C1FB59DA900DED0B7 /* UIPickerView+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+Block.m"; sourceTree = "<group>"; };
 		6BF95B8D1FB59DA900DED0B7 /* UIPopoverController+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+Block.h"; sourceTree = "<group>"; };
 		6BF95B8E1FB59DA900DED0B7 /* UIPopoverController+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+Block.m"; sourceTree = "<group>"; };
+		6BFA27431FE252CF00BCD101 /* BMKClusterAlgorithm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMKClusterAlgorithm.h; sourceTree = "<group>"; };
+		6BFA27441FE252CF00BCD101 /* BMKClusterAlgorithm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMKClusterAlgorithm.m; sourceTree = "<group>"; };
+		6BFA27451FE252CF00BCD101 /* BMKClusterItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMKClusterItem.h; sourceTree = "<group>"; };
+		6BFA27461FE252CF00BCD101 /* BMKClusterItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMKClusterItem.m; sourceTree = "<group>"; };
+		6BFA27471FE252CF00BCD101 /* BMKClusterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMKClusterManager.h; sourceTree = "<group>"; };
+		6BFA27481FE252CF00BCD101 /* BMKClusterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMKClusterManager.m; sourceTree = "<group>"; };
+		6BFA27491FE252CF00BCD101 /* BMKClusterQuadtree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMKClusterQuadtree.h; sourceTree = "<group>"; };
+		6BFA274A1FE252CF00BCD101 /* BMKClusterQuadtree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMKClusterQuadtree.m; sourceTree = "<group>"; };
+		6BFA274B1FE2540A00BCD101 /* XJCluster.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XJCluster.m; sourceTree = "<group>"; };
+		6BFA274C1FE2540A00BCD101 /* XJCluster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XJCluster.h; sourceTree = "<group>"; };
+		6BFA27521FE2650B00BCD101 /* XJClusterAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XJClusterAnnotation.m; sourceTree = "<group>"; };
+		6BFA27531FE2650C00BCD101 /* XJClusterAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XJClusterAnnotationView.h; sourceTree = "<group>"; };
+		6BFA27541FE2650C00BCD101 /* XJClusterAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XJClusterAnnotation.h; sourceTree = "<group>"; };
+		6BFA27551FE2650C00BCD101 /* XJClusterAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XJClusterAnnotationView.m; sourceTree = "<group>"; };
 		6BFD90301FDE2C67003203B2 /* ReleaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseModel.h; sourceTree = "<group>"; };
 		6BFD90311FDE2C67003203B2 /* ReleaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseModel.m; sourceTree = "<group>"; };
 		6BFD90331FDE2E43003203B2 /* SelectCarportVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectCarportVC.h; sourceTree = "<group>"; };
@@ -1329,8 +1347,6 @@
 		6B91B63E1F9DDDC300A1020C /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				6B0FCA6C1FE0C304009E6FAF /* UIImage+SGHelper.h */,
-				6B0FCA6D1FE0C304009E6FAF /* UIImage+SGHelper.m */,
 				6B91B63F1F9DDDC300A1020C /* NSArray+Log.h */,
 				6B91B6401F9DDDC300A1020C /* NSArray+Log.m */,
 				6B91B6411F9DDDC300A1020C /* NSDictionary+Log.h */,
@@ -1481,6 +1497,7 @@
 		6B91B67B1F9DE89600A1020C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6BFA27421FE252CF00BCD101 /* Cluster */,
 				6B057CBF1FA2D2FF0017E320 /* ParkingSpaceHeaderView.h */,
 				6B057CC01FA2D2FF0017E320 /* ParkingSpaceHeaderView.m */,
 				6B176F5F1FA447410045F55A /* ParkingSpaceMapView.h */,
@@ -1860,6 +1877,27 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		6BFA27421FE252CF00BCD101 /* Cluster */ = {
+			isa = PBXGroup;
+			children = (
+				6BFA27431FE252CF00BCD101 /* BMKClusterAlgorithm.h */,
+				6BFA27441FE252CF00BCD101 /* BMKClusterAlgorithm.m */,
+				6BFA27451FE252CF00BCD101 /* BMKClusterItem.h */,
+				6BFA27461FE252CF00BCD101 /* BMKClusterItem.m */,
+				6BFA27471FE252CF00BCD101 /* BMKClusterManager.h */,
+				6BFA27481FE252CF00BCD101 /* BMKClusterManager.m */,
+				6BFA27491FE252CF00BCD101 /* BMKClusterQuadtree.h */,
+				6BFA274A1FE252CF00BCD101 /* BMKClusterQuadtree.m */,
+				6BFA274C1FE2540A00BCD101 /* XJCluster.h */,
+				6BFA274B1FE2540A00BCD101 /* XJCluster.m */,
+				6BFA27541FE2650C00BCD101 /* XJClusterAnnotation.h */,
+				6BFA27521FE2650B00BCD101 /* XJClusterAnnotation.m */,
+				6BFA27531FE2650C00BCD101 /* XJClusterAnnotationView.h */,
+				6BFA27551FE2650C00BCD101 /* XJClusterAnnotationView.m */,
+			);
+			path = Cluster;
+			sourceTree = "<group>";
+		};
 		6EA91DB080D9ABEBB6F342DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2081,6 +2119,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFA274D1FE2548300BCD101 /* BMKClusterAlgorithm.m in Sources */,
+				6BFA274E1FE2548300BCD101 /* BMKClusterItem.m in Sources */,
+				6BFA274F1FE2548300BCD101 /* BMKClusterManager.m in Sources */,
+				6BFA27501FE2548300BCD101 /* BMKClusterQuadtree.m in Sources */,
+				6BFA27511FE2548300BCD101 /* XJCluster.m in Sources */,
 				6B0FCA6B1FE0C21D009E6FAF /* UIImage+Crop.m in Sources */,
 				6B8AB66E1FDBCDF200A546A3 /* WTCarKeyboard.m in Sources */,
 				6B8AB66F1FDBCDF200A546A3 /* WTCarKeyboardModel.m in Sources */,
@@ -2159,7 +2202,6 @@
 				6B8AB6721FDBD46F00A546A3 /* ReleaseLongView.m in Sources */,
 				6B968F741FBD72940083A1DC /* FindBreakRulesView.m in Sources */,
 				6B62C0AA1FCEAE23007F6861 /* ReserveSuccessVC.m in Sources */,
-				6B0FCA6E1FE0C304009E6FAF /* UIImage+SGHelper.m in Sources */,
 				6B1028F41FDA1A5900605638 /* MyRequestModel.m in Sources */,
 				6B17DCEF1FD69EB600A30057 /* SearchResultVC.m in Sources */,
 				6B26B6B41FA71F4A001E86B4 /* GasStationInfoView.m in Sources */,
@@ -2216,6 +2258,7 @@
 				6B91B69F1F9DED9F00A1020C /* UIButton+EnlargeEdge.m in Sources */,
 				6B91B69E1F9DED9A00A1020C /* NSString+String.m in Sources */,
 				6B91B69D1F9DED9400A1020C /* NSString+Regex.m in Sources */,
+				6BFA27571FE2650C00BCD101 /* XJClusterAnnotationView.m in Sources */,
 				6B1028F71FDA318700605638 /* MyRequestItemModel.m in Sources */,
 				6BCD97991FB4485A001F81A5 /* MyRequestRentView.m in Sources */,
 				6B91B69C1F9DED8E00A1020C /* NSDictionary+RequestEncoding.m in Sources */,
@@ -2241,6 +2284,7 @@
 				6BF95B721FB58EF900DED0B7 /* MyIssueVC.m in Sources */,
 				6B16F2171FDBA8C000E343FB /* PopBottomCell.m in Sources */,
 				6B91B6901F9DE9B900A1020C /* MessageVC.m in Sources */,
+				6BFA27561FE2650C00BCD101 /* XJClusterAnnotation.m in Sources */,
 				6B91B5FE1F9DDB4000A1020C /* ViewController.m in Sources */,
 				6B91B6091F9DDB4000A1020C /* main.m in Sources */,
 				6B23C5501FD905920061C9B6 /* MyReserveTBCell.m in Sources */,

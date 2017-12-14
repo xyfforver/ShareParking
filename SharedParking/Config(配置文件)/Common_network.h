@@ -30,7 +30,7 @@
 #endif
 
 
-
+//http://park.1mxtx.com/index/index/set_qrcode/parking_id/3
 
 #define Img_Url @"http://park.1mxtx.com"
 

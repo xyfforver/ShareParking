@@ -9,7 +9,7 @@
 #import "EditVC.h"
 #import "LoginVC.h"
 
-#import "UIImage+SGHelper.h"
+#import "UIImage+ImageSize.h"
 #import "PhotoViewController.h"
 #import "UIImage+Crop.h"
 
@@ -116,7 +116,7 @@
 
 #pragma mark - photoViewControllerDelegate
 - (void)imageCropper:(PhotoViewController *)cropperViewController didFinished:(UIImage *)editedImage{
-    editedImage = [UIImage imageWithImage:editedImage scaledToSize:CGSizeMake(200, 200)];
+    editedImage = [UIImage imageWithImageSimple:editedImage scaledToSize:CGSizeMake(200, 200)];
     self.headImgView.image = editedImage;
     self.imgData = UIImageJPEGRepresentation(editedImage, 0.7);
     [cropperViewController dismissViewControllerAnimated:YES completion:nil];

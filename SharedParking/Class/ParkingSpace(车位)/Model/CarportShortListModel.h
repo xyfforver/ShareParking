@@ -31,6 +31,8 @@
 @property (copy, nonatomic) NSString *adminuser_id;
 @property (copy, nonatomic) NSString *create_time;
 @property (assign, nonatomic) NSInteger distance;
+@property (assign, nonatomic) NSInteger kongxiandu;
+
 
 @property (assign, nonatomic) CGFloat latitude;
 @property (assign, nonatomic) CGFloat longitude;
@@ -39,7 +41,7 @@
 + (void)carportShortListWithPage:(NSInteger)page success:(NetCompletionBlock)success;
 
 //停车场错时 地图
-+ (void)carportShortListWithSuccess:(NetCompletionBlock)success;
++ (void)carportShortListWithLatitude:(CGFloat )latitude longitude:(CGFloat)longitude success:(NetCompletionBlock)success;
 //搜索
 + (void)searchWithTitle:(NSString *)title success:(NetCompletionBlock)success;
 

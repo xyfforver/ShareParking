@@ -84,7 +84,7 @@
     if (!self.tbView.hidden) {
         [self.tbView.mj_header beginRefreshing];
     }else{
-        [self loadMapData];
+        [self.mapView loadMapData];
     }
 }
 
@@ -92,28 +92,6 @@
 
 - (void)loadData{
     self.type != CarportLongRentType ? [self loadCarportShortListData] : [self loadCarportLongListData];
-}
-
-- (void)loadMapData{
-    self.type != CarportLongRentType ? [self loadShortMapData] : [self loadLongMapData];
-}
-
-- (void)loadShortMapData{
-    kSelfWeak;
-    [CarportShortListModel carportShortListWithSuccess:^(StatusModel *statusModel) {
-        kSelfStrong;
-        if (statusModel.flag == kFlagSuccess) {
-            NSArray *dataArr = statusModel.data;
-            strongSelf.mapView.dataArr = dataArr;
-
-        }else{
-            [WSProgressHUD showImage:nil status:statusModel.message];
-        }
-    }];
-}
-
-- (void)loadLongMapData{
-    
 }
 
 - (void)loadCarportShortListData{
@@ -201,7 +179,7 @@
     if (!self.tbView.hidden) {
         [self.tbView.mj_header beginRefreshing];
     }else{
-        [self loadMapData];
+        [self.mapView loadMapData];
     }
 }
 
@@ -272,10 +250,10 @@
     if (!_mapView) {
         _mapView = [[ParkingSpaceMapView alloc]initWithFrame:CGRectMake(0, self.headerView.bottom, kScreenWidth, kBodyHeight - self.headerView.height - kTabBarHeight)];
         kSelfWeak;
-        _mapView.loadBlock = ^{
-            kSelfStrong;
-            [strongSelf loadMapData];
-        };
+//        _mapView.loadBlock = ^{
+//            kSelfStrong;
+//            [strongSelf loadMapData];
+//        };
     }
     return _mapView;
 }

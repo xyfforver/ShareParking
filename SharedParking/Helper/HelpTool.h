@@ -45,7 +45,8 @@
 +(NSString *)timestampSwitchTime:(NSInteger)timestamp andFormatter:(NSString *)format;
 
 
-
+//view转image
++ (UIImage *)getImageFromView:(UIView *)view;
 
 #pragma mark ---------------获取字段 ---------------------/
 + (NSString *)getRentObjectWithType:(BOOL)type;

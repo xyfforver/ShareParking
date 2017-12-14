@@ -224,7 +224,7 @@ static CGFloat const sizeButton = 50.0;
         button.frame = CGRectMake(0, 0, buttonsize.width + 10, sizeButton);
     }
     
-    [button setEnlargeEdge:10];
+    [button setEnlargeEdge:15];
     
     if (name && ![name isEqualToString:@""])
     {

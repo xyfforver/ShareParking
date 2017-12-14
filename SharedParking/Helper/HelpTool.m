@@ -315,6 +315,15 @@
     
 }
 
+//view转image
++ (UIImage *)getImageFromView:(UIView *)view{
+    UIGraphicsBeginImageContext(view.bounds.size);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 #pragma mark ---------------获取字段 ---------------------/
 + (NSString *)getRentObjectWithType:(BOOL)type{
     if (type == 1) {

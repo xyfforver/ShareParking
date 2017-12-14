@@ -14,12 +14,23 @@
 
 #import "CarportShortListModel.h"
 #import "CustomAnnotation.h"
-@interface ParkingSpaceMapView ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate>
+
+#import "BMKClusterManager.h"
+#import "XJCluster.h"
+#import "XJClusterAnnotation.h"
+#import "XJClusterAnnotationView.h"
+
+#define viewMultiple 2
+@interface ParkingSpaceMapView ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,XJClusterAnnotationViewDelegate>
 @property (nonatomic,strong) UIImageView *imgView;
 @property (nonatomic,strong) UIButton *userCenterBtn;
 @property (nonatomic,strong) UIButton *addBtn;
 @property (nonatomic,strong) UIButton *minusBtn;
+@property (nonatomic,strong) BMKClusterManager *clusterManager;//点聚合管理类
+@property (nonatomic,assign) NSInteger clusterZoom;//聚合级别
 
+/// 当前地图的中心点
+@property (nonatomic) CLLocationCoordinate2D cCoordinate;
 @end
 
 @implementation ParkingSpaceMapView
@@ -32,45 +43,144 @@
     return self;
 }
 
-- (void)setDataArr:(NSArray *)dataArr{
-    _dataArr = dataArr;
-    
-    for (int i = 0; i < dataArr.count; i++) {
-        CarportShortListModel *mapModel = dataArr[i];
+#pragma mark ---------------network ---------------------/
 
-        CLLocationCoordinate2D coor;
-        
-        coor.latitude = mapModel.latitude;
-        coor.longitude = mapModel.longitude;
-        DLog(@"%f-----%f",mapModel.latitude,mapModel.longitude);
-        CustomAnnotation *point = [[CustomAnnotation alloc]init];
-        point.coordinate = coor;
-        point.title = mapModel.park_title;
-        [self.mapView addAnnotation:point];
+#pragma mark - XJClusterAnnotationViewDelegate
+- (void)didAddreesWithClusterAnnotationView:(XJCluster *)cluster clusterAnnotationView:(XJClusterAnnotationView *)clusterAnnotationView{
+    
+    if (clusterAnnotationView.size > 3) {
+//        [_mapView setCenterCoordinate:clusterAnnotationView.annotation.coordinate];
+//        [_mapView zoomIn];
     }
 }
 
+- (void)onGetDistrictResult:(BMKDistrictSearch *)searcher result:(BMKDistrictResult *)result errorCode:(BMKSearchErrorCode)error {
+    
+    BMKCoordinateRegion region ;//表示范围的结构体
+    region.center = result.center;//中心点
+    region.span.latitudeDelta = 0.02;//经度范围（设置为0.1表示显示范围为0.2的纬度范围）
+    region.span.longitudeDelta = 0.02;//纬度范围
+    [_mapView setRegion:region animated:YES];
+}
 
-#pragma mark --------------- Map Delegate ---------------------/
-- (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation
-{
-    if ([annotation isKindOfClass:[CustomAnnotation class]]){
-        CustomAnnotation *anno = (CustomAnnotation *)annotation;
-        static NSString *pointReuseIndetifier = @"pointReuseIndetifier";
-        BMKAnnotationView *annotationView = (BMKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndetifier];
-        if (annotationView == nil){
-            annotationView = [[BMKAnnotationView alloc] initWithAnnotation:anno reuseIdentifier:pointReuseIndetifier];
-        }
-//        annotationView.image = [UIImage createImageWithColor:kColorRandom];
-//        annotationView.frame = CGRectMake(0, 0, 100, 100);
-//        annotationView.canShowCallout= YES;       //设置气泡可以弹出，默认为NO
-        annotationView.annotation = anno;
+
+- (void)addAnnoWithPT{
+    [_clusterManager clearClusterItems];
+    for (CarportShortListModel *model in self.dataArr) {
+        XJCluster *cluster = [[XJCluster alloc] init];
+        cluster.name = model.park_title;
         
-        return annotationView;
+        CLLocationCoordinate2D coor;
+        coor.latitude = model.latitude;
+        coor.longitude = model.longitude;
+        cluster.pt = coor;
+        
+        BMKClusterItem *clusterItem = [[BMKClusterItem alloc] init];
+        clusterItem.coor = cluster.pt;
+        clusterItem.title = cluster.name;
+        clusterItem.kongxiandu = model.kongxiandu;
+        clusterItem.cluster = cluster;
+        [_clusterManager addClusterItem:clusterItem];
     }
     
-    return nil;
+    [self updateClusters];
+}
+
+- (void)loadMapData{
+    self.type != CarportLongRentType ? [self loadShortMapData] : [self loadLongMapData];
+}
+
+- (void)loadShortMapData{
+    kSelfWeak;
     
+    [CarportShortListModel carportShortListWithLatitude:self.cCoordinate.latitude longitude:self.cCoordinate.longitude success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            NSArray *dataArr = statusModel.data;
+            strongSelf.dataArr = dataArr;
+            [strongSelf addAnnoWithPT];
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+    }];
+}
+
+- (void)loadLongMapData{
+    
+}
+
+#pragma mark -----------------ww ---------------------/
+//更新聚合状态
+- (void)updateClusters {
+    
+    _clusterZoom = (NSInteger)_mapView.zoomLevel;
+//    @synchronized(_clusterCaches) {
+    
+        
+        NSMutableArray *clusters = [NSMutableArray array];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            ///获取聚合后的标注
+            __block NSArray *array = [_clusterManager getClusters:_clusterZoom];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                for (BMKCluster *item in array) {
+                    XJClusterAnnotation *annotation = [[XJClusterAnnotation alloc] init];
+                    annotation.coordinate = item.coordinate;
+                    annotation.size = item.size;
+                    annotation.title = item.title;
+                    annotation.cluster = item.cluster;
+                    [clusters addObject:annotation];
+                }
+                [_mapView removeOverlays:_mapView.overlays];
+                [_mapView removeAnnotations:_mapView.annotations];
+                [_mapView addAnnotations:clusters];
+                
+            });
+        });
+//    }
+}
+
+#pragma mark --------------- Map Delegate ---------------------/
+- (void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+    //屏幕坐标转地图经纬度
+    CLLocationCoordinate2D MapCoordinate = [_mapView convertPoint:_mapView.center toCoordinateFromView:_mapView];
+    
+    DLog(@"regionDidChangeAnimated:%f---%f",MapCoordinate.latitude , MapCoordinate.longitude);
+    
+    [self loadMapData];
+
+}
+
+- (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation
+{
+    //普通annotation
+    NSString *AnnotationViewID = @"ClusterMark";
+    XJClusterAnnotation *cluster = (XJClusterAnnotation*)annotation;
+    XJClusterAnnotationView *annotationView = [[XJClusterAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+    annotationView.title = cluster.title;
+    annotationView.kongxiandu = cluster.cluster.kongxiandu;
+    annotationView.size = cluster.size;
+    annotationView.cluster = cluster.cluster;
+    annotationView.delegate = self;
+    annotationView.canShowCallout = NO;//在点击大头针的时候会弹出那个黑框框
+    annotationView.draggable = NO;//禁止标注在地图上拖动
+    annotationView.annotation = cluster;
+    
+    UIView *viewForImage=[[UIView alloc]init];
+    UIImageView *imageview=[[UIImageView alloc]init];
+    CGSize contentSize = [HelpTool sizeWithString:cluster.title font:kFontSize15 maxSize:CGSizeMake(kScreenWidth- 100, 35)];
+    CGFloat XJ_OffsetX = 15.0f;
+    [viewForImage setFrame:CGRectMake(0, 0, (contentSize.width + XJ_OffsetX ) *viewMultiple, (contentSize.height + XJ_OffsetX ) *viewMultiple)];
+    [imageview setFrame:CGRectMake(0, 0, (contentSize.width + XJ_OffsetX ) *viewMultiple, (contentSize.height + XJ_OffsetX ) *viewMultiple)];
+    annotationView.mj_size = CGSizeMake(contentSize.width + 10, 50);
+    
+    [imageview setImage:[UIImage imageNamed:@"kong"]];
+    
+    imageview.layer.masksToBounds=YES;
+    imageview.layer.cornerRadius = 10;
+    [viewForImage addSubview:imageview];
+    annotationView.image = [HelpTool getImageFromView:viewForImage];
+    return annotationView;
 }
 
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
@@ -80,6 +190,80 @@
 - (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view{
 
 }
+
+/**
+ *地图初始化完毕时会调用此接口
+ *@param mapView 地图View
+ */
+- (void)mapViewDidFinishLoading:(BMKMapView *)mapView {
+    BMKLocationViewDisplayParam *displayParam = [[BMKLocationViewDisplayParam alloc]init];
+    displayParam.isAccuracyCircleShow = NO;//精度圈是否显示
+    [_mapView updateLocationViewWithParam:displayParam];
+    
+    BMKCoordinateRegion region ;//表示范围的结构体
+    region.center = _mapView.centerCoordinate;//中心点
+    
+    region.span.latitudeDelta = 0.1;//经度范围（设置为0.1表示显示范围为0.2的纬度范围）
+    region.span.longitudeDelta = 0.2;//纬度范围
+    [_mapView setRegion:region animated:YES];
+    [self updateClusters];
+}
+
+#pragma mark --------------- 定位 ---------------------/
+/**
+ *用户位置更新后，会调用此函数
+ *@param userLocation 新的用户位置
+ */
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation {
+    //更新位置数据
+    [self.mapView updateLocationData:userLocation];
+    
+    if (!self.cCoordinate.latitude) {
+        self.mapView.centerCoordinate = userLocation.location.coordinate;
+    }
+
+    [self updateClusters];
+    
+    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+
+    //初始化逆地理编码类
+    BMKReverseGeoCodeOption *reverseGeoCodeOption= [[BMKReverseGeoCodeOption alloc] init];
+    //需要逆地理编码的坐标位置
+    reverseGeoCodeOption.reverseGeoPoint = userLocation.location.coordinate;
+    BOOL reg = [_geoCodeSearch reverseGeoCode:reverseGeoCodeOption];
+    if (reg) {
+        NSLog(@"_____编码成功");
+    }else{
+        NSLog(@"_____编码失败");
+    }
+}
+
+
+/**
+ *返回反地理编码搜索结果
+ *@param searcher 搜索对象
+ *@param result 搜索结果
+ *@param error 错误号，@see BMKSearchErrorCode
+ */
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    if (error == BMK_SEARCH_NO_ERROR){
+        
+        GetDataManager.selectCity = [NSString isNull:result.addressDetail.city] ?
+        GetDataManager.selectCity : result.addressDetail.city;
+        
+        GetDataManager.geoCodeResult = result;
+        DLog(@"%@------%@------%@",GetDataManager.latitude,GetDataManager.longitude,GetDataManager.selectCity);
+        [self loadMapData];
+//        if (self.loadBlock) {
+//            self.loadBlock();
+//        }
+        
+    }else if (error == BMK_SEARCH_PERMISSION_UNFINISHED){
+        
+    }
+}
+
 
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
@@ -91,6 +275,8 @@
     [self addSubview:self.userCenterBtn];
     [self addSubview:self.addBtn];
     [self addSubview:self.minusBtn];
+    
+    _clusterManager = [[BMKClusterManager alloc] init];
     
     [self addItemButton];
     
@@ -108,7 +294,7 @@
         make.bottom.mas_equalTo(self.userCenterBtn);
         make.width.height.mas_equalTo(35);
     }];
-
+    
     [self.addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-15);
         make.bottom.mas_equalTo(self.minusBtn.mas_top);
@@ -128,7 +314,7 @@
     //关闭定位
     [self.service stopUserLocationService];
     self.service.delegate = nil;
-
+    
     self.geoCodeSearch.delegate = nil;
 }
 
@@ -169,7 +355,7 @@
         
         return;
     }
-
+    
     NSInteger tag = button.tag - 100;
     switch (tag) {
         case 0:{
@@ -195,8 +381,8 @@
         default:
             break;
     }
-
-
+    
+    
 }
 
 - (void)userCenterAction:(UIButton *)button{
@@ -211,85 +397,6 @@
 - (void)minusAction:(UIButton *)button{
     NSInteger zoomLevel = self.mapView.zoomLevel;
     [self.mapView setZoomLevel:zoomLevel - 1];
-}
-
-
-#pragma mark --------------- 定位 ---------------------/
-/**
- *用户方向更新后，会调用此函数
- *@param userLocation 新的用户位置
- */
-- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
-{
-    //展示定位
-    self.mapView.showsUserLocation = YES;
-    //更新位置数据
-    [self.mapView updateLocationData:userLocation];
-//    DLog(@"heading is %@",userLocation.heading);
-}
-
-/**
- *用户位置更新后，会调用此函数
- *@param userLocation 新的用户位置
- */
-- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation {
-    //展示定位
-    self.mapView.showsUserLocation = YES;
-    //更新位置数据
-    [self.mapView updateLocationData:userLocation];
-    
-    self.mapView.centerCoordinate = userLocation.location.coordinate;
-
-    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
-
-    //初始化逆地理编码类
-    BMKReverseGeoCodeOption *reverseGeoCodeOption= [[BMKReverseGeoCodeOption alloc] init];
-    //需要逆地理编码的坐标位置
-    reverseGeoCodeOption.reverseGeoPoint = userLocation.location.coordinate;
-    BOOL reg = [_geoCodeSearch reverseGeoCode:reverseGeoCodeOption];
-    if (reg) {
-        NSLog(@"_____编码成功");
-    }else{
-        NSLog(@"_____编码失败");
-    }
-}
-
-
-/**
- *返回反地理编码搜索结果
- *@param searcher 搜索对象
- *@param result 搜索结果
- *@param error 错误号，@see BMKSearchErrorCode
- */
-- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
-{
-    if (error == BMK_SEARCH_NO_ERROR){
-
-//        if (![GetDataManager.geoCodeResult.addressDetail.streetName isEqualToString:result.addressDetail.streetName]) {
-        
-            NSString *lngNow = [NSString stringWithFormat:@"%.3f",result.location.longitude];
-            NSString *lngLast = [NSString stringWithFormat:@"%.3f",[GetDataManager.longitude floatValue]];
-            
-            NSString *latNow = [NSString stringWithFormat:@"%.3f",result.location.latitude];
-            NSString *latLast = [NSString stringWithFormat:@"%.3f",[GetDataManager.latitude floatValue]];
-
-            if (![lngNow isEqualToString:lngLast] || ![latNow isEqualToString:latLast]) {
-                GetDataManager.selectCity = [NSString isNull:result.addressDetail.city] ?
-                GetDataManager.selectCity : result.addressDetail.city;
-
-                
-                GetDataManager.geoCodeResult = result;
-                DLog(@"%@------%@------%@",GetDataManager.latitude,GetDataManager.longitude,GetDataManager.selectCity);
-                
-                if (self.loadBlock) {
-                    self.loadBlock();
-                }
-            }
-//        }
-        
-    }else if (error == BMK_SEARCH_PERMISSION_UNFINISHED){
-        
-    }
 }
 
 #pragma mark -----------------Lazy---------------------/
@@ -361,6 +468,8 @@
 - (BMKLocationService *)service{
     if (!_service) {
         _service = [[BMKLocationService alloc]init];
+        _service.desiredAccuracy =  kCLLocationAccuracyBest;
+        _service.distanceFilter = 100;//大于100米
     }
     return _service;
 }
