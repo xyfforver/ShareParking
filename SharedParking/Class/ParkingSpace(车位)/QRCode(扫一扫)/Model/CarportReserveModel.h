@@ -51,5 +51,6 @@
 //开锁
 + (void)openLockWithParkingId:(NSString *)parkingId carNumId:(NSString *)carNumId success:(NetCompletionBlock)success;
 
-
+//首页预订
++ (void)homeReserveWithSuccess:(NetCompletionBlock)success;
 @end

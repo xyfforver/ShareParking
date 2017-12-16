@@ -13,10 +13,11 @@
 #import "ParkingSpaceMapView.h"
 #import "ParkingSpaceTBView.h"
 #import "JMTitleSelectView.h"
-
+#import "ParkingOrderView.h"
 
 #import "CarportShortListModel.h"
 #import "CarportLongListModel.h"
+#import "CarportReserveModel.h"
 @interface ParkingSpaceVC ()
 
 @property (nonatomic , strong) JMTitleSelectView *titleView;
@@ -27,6 +28,7 @@
 @property (nonatomic , assign) CarportRentType type;
 
 
+@property (nonatomic , strong) ParkingOrderView *orderView;
 
 @property (nonatomic , assign) NSInteger page;
 
@@ -38,6 +40,8 @@
     [super viewWillAppear:animated];
 
     [self.mapView setUpMapDelegate];
+    
+    [self loadReserveData];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -60,6 +64,7 @@
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.mapView];
     [self.view addSubview:self.tbView];
+    [self.mapView addSubview:self.orderView];
     
     self.tbView.hidden = YES;
     
@@ -134,6 +139,11 @@
     }];
 }
 
+- (void)loadReserveData{
+    [CarportReserveModel homeReserveWithSuccess:^(StatusModel *statusModel) {
+        
+    }];
+}
 #pragma mark ---------------action ---------------------/
 - (void)codeAction{
 //    CarportPayVC *vc = [[CarportPayVC alloc]init];
@@ -268,4 +278,12 @@
     return _tbView;
 }
 
+
+- (ParkingOrderView *)orderView{
+    if (!_orderView) {
+        _orderView = [[ParkingOrderView alloc]initWithFrame:CGRectMake(40, self.mapView.bottom - [ParkingOrderView getHeight] - 50, kScreenWidth - 40 * 2, [ParkingOrderView getHeight])];
+//        _orderView.hidden = YES;
+    }
+    return _orderView;
+}
 @end

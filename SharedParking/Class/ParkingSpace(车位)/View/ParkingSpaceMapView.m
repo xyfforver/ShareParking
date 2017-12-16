@@ -14,7 +14,6 @@
 
 #import "RobParkingView.h"
 #import "LongRentView.h"
-#import "ParkingOrderView.h"
 
 #import "CarportShortListModel.h"
 #import "CarportLongListModel.h"
@@ -38,7 +37,7 @@
 @property (nonatomic) CLLocationCoordinate2D cCoordinate;
 @property (nonatomic , strong) RobParkingView *itemView;
 @property (nonatomic , strong) LongRentView *rentView;
-@property (nonatomic , strong) ParkingOrderView *orderView;
+
 @end
 
 @implementation ParkingSpaceMapView
@@ -311,7 +310,7 @@
     [self addSubview:self.minusBtn];
     [self addSubview:self.itemView];
     [self addSubview:self.rentView];
-    [self addSubview:self.orderView];
+    
     
     _clusterManager = [[BMKClusterManager alloc] init];
     
@@ -553,12 +552,5 @@
     return _rentView;
 }
 
-- (ParkingOrderView *)orderView{
-    if (!_orderView) {
-        _orderView = [[ParkingOrderView alloc]initWithFrame:CGRectMake(40, self.height - [ParkingOrderView getHeight] - 50, kScreenWidth - 40 * 2, [ParkingOrderView getHeight])];
-        _orderView.hidden = YES;
-    }
-    return _orderView;
-}
 
 @end

@@ -59,4 +59,5 @@
 //搜索
 + (void)searchWithTitle:(NSString *)title success:(NetCompletionBlock)success;
 
+
 @end

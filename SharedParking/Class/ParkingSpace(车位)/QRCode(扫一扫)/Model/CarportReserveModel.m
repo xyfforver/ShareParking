@@ -54,4 +54,10 @@
 }
 
 
+//首页预订
++ (void)homeReserveWithSuccess:(NetCompletionBlock)success{
+    
+    [self postWithStatusModelResponsePath:@"map_reserve" params:nil onCompletion:success];
+}
+
 @end

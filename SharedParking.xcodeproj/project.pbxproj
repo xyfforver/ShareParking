@@ -105,6 +105,7 @@
 		6B4D25831FE4BBE900FC3DD8 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4D257C1FE4BBE900FC3DD8 /* BaiduMapAPI_Location.framework */; };
 		6B4D25841FE4BBE900FC3DD8 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4D257D1FE4BBE900FC3DD8 /* BaiduMapAPI_Cloud.framework */; };
 		6B4D25851FE4BBE900FC3DD8 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4D257E1FE4BBE900FC3DD8 /* BaiduMapAPI_Map.framework */; };
+		6B4D25881FE4FD9600FC3DD8 /* AccountSecurityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4D25871FE4FD9600FC3DD8 /* AccountSecurityVC.m */; };
 		6B62C0881FCE9D0D007F6861 /* NavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0871FCE9D0D007F6861 /* NavigationVC.m */; };
 		6B62C08B1FCE9FEB007F6861 /* NavigationBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C08A1FCE9FEB007F6861 /* NavigationBottomView.m */; };
 		6B62C09E1FCEADF5007F6861 /* CarportPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0971FCEADF5007F6861 /* CarportPayVC.m */; };
@@ -427,6 +428,8 @@
 		6B4D257C1FE4BBE900FC3DD8 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Location.framework; path = Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
 		6B4D257D1FE4BBE900FC3DD8 /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Cloud.framework; path = Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
 		6B4D257E1FE4BBE900FC3DD8 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Map.framework; path = Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
+		6B4D25861FE4FD9600FC3DD8 /* AccountSecurityVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountSecurityVC.h; sourceTree = "<group>"; };
+		6B4D25871FE4FD9600FC3DD8 /* AccountSecurityVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountSecurityVC.m; sourceTree = "<group>"; };
 		6B62C0861FCE9D0D007F6861 /* NavigationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationVC.h; sourceTree = "<group>"; };
 		6B62C0871FCE9D0D007F6861 /* NavigationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationVC.m; sourceTree = "<group>"; };
 		6B62C0891FCE9FEB007F6861 /* NavigationBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBottomView.h; sourceTree = "<group>"; };
@@ -796,6 +799,8 @@
 				6B2549651FB6C0CF007ECE75 /* EditVC.xib */,
 				6B1028FC1FDA6C0200605638 /* FeedbackVC.h */,
 				6B1028FB1FDA6C0100605638 /* FeedbackVC.m */,
+				6B4D25861FE4FD9600FC3DD8 /* AccountSecurityVC.h */,
+				6B4D25871FE4FD9600FC3DD8 /* AccountSecurityVC.m */,
 			);
 			path = "Setting(设置)";
 			sourceTree = "<group>";
@@ -2290,6 +2295,7 @@
 				6B1028F71FDA318700605638 /* MyRequestItemModel.m in Sources */,
 				6BCD97991FB4485A001F81A5 /* MyRequestRentView.m in Sources */,
 				6B91B69C1F9DED8E00A1020C /* NSDictionary+RequestEncoding.m in Sources */,
+				6B4D25881FE4FD9600FC3DD8 /* AccountSecurityVC.m in Sources */,
 				6B91B69B1F9DED8900A1020C /* NSDictionary+Log.m in Sources */,
 				6BD26AF91FD52DF900129F10 /* CarportLongListModel.m in Sources */,
 				6B3189F61FA973CA0063AC2F /* FuelAverageView.m in Sources */,

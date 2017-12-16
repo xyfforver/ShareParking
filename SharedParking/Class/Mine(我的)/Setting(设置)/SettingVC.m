@@ -8,6 +8,7 @@
 
 #import "SettingVC.h"
 #import "FeedbackVC.h"
+#import "AccountSecurityVC.h"
 @interface SettingVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView *tbView;
 @property (nonatomic , strong) NSArray *firstArr;
@@ -83,7 +84,7 @@
 
 - (void)goToComment{
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1261795228&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@""]];
     
 }
 
@@ -217,7 +218,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        
+        if (indexPath.row == 0) {
+            AccountSecurityVC *vc = [[AccountSecurityVC alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }else if (indexPath.section == 1){
         if (indexPath.row == 0) {
             FeedbackVC *vc = [[FeedbackVC alloc]init];

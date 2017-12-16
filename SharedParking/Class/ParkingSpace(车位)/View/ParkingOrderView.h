@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CarportReserveModel"
 @interface ParkingOrderView : UIView
 
-
+@property (strong, nonatomic) CarportReserveModel *reserveModel;
 
 
 + (CGFloat)getHeight;
