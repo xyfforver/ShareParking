@@ -98,6 +98,13 @@
 		6B422E0B1FDB7BCF00F4DA0F /* MyMessageTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B422E0A1FDB7BCF00F4DA0F /* MyMessageTBView.m */; };
 		6B422E0E1FDB7D3700F4DA0F /* SystemMessageTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B422E0D1FDB7D3700F4DA0F /* SystemMessageTBView.m */; };
 		6B422E111FDB809500F4DA0F /* SystemMessageTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B422E101FDB809500F4DA0F /* SystemMessageTBCell.m */; };
+		6B4D257F1FE4BBE900FC3DD8 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4D25781FE4BBE800FC3DD8 /* BaiduMapAPI_Search.framework */; };
+		6B4D25801FE4BBE900FC3DD8 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4D25791FE4BBE900FC3DD8 /* BaiduMapAPI_Base.framework */; };
+		6B4D25811FE4BBE900FC3DD8 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4D257A1FE4BBE900FC3DD8 /* BaiduMapAPI_Utils.framework */; };
+		6B4D25821FE4BBE900FC3DD8 /* BaiduMapAPI_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4D257B1FE4BBE900FC3DD8 /* BaiduMapAPI_Radar.framework */; };
+		6B4D25831FE4BBE900FC3DD8 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4D257C1FE4BBE900FC3DD8 /* BaiduMapAPI_Location.framework */; };
+		6B4D25841FE4BBE900FC3DD8 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4D257D1FE4BBE900FC3DD8 /* BaiduMapAPI_Cloud.framework */; };
+		6B4D25851FE4BBE900FC3DD8 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4D257E1FE4BBE900FC3DD8 /* BaiduMapAPI_Map.framework */; };
 		6B62C0881FCE9D0D007F6861 /* NavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0871FCE9D0D007F6861 /* NavigationVC.m */; };
 		6B62C08B1FCE9FEB007F6861 /* NavigationBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C08A1FCE9FEB007F6861 /* NavigationBottomView.m */; };
 		6B62C09E1FCEADF5007F6861 /* CarportPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62C0971FCEADF5007F6861 /* CarportPayVC.m */; };
@@ -413,6 +420,13 @@
 		6B422E0D1FDB7D3700F4DA0F /* SystemMessageTBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemMessageTBView.m; sourceTree = "<group>"; };
 		6B422E0F1FDB809500F4DA0F /* SystemMessageTBCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemMessageTBCell.h; sourceTree = "<group>"; };
 		6B422E101FDB809500F4DA0F /* SystemMessageTBCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemMessageTBCell.m; sourceTree = "<group>"; };
+		6B4D25781FE4BBE800FC3DD8 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Search.framework; path = Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
+		6B4D25791FE4BBE900FC3DD8 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Base.framework; path = Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
+		6B4D257A1FE4BBE900FC3DD8 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Utils.framework; path = Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
+		6B4D257B1FE4BBE900FC3DD8 /* BaiduMapAPI_Radar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Radar.framework; path = Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Radar.framework; sourceTree = "<group>"; };
+		6B4D257C1FE4BBE900FC3DD8 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Location.framework; path = Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
+		6B4D257D1FE4BBE900FC3DD8 /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Cloud.framework; path = Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
+		6B4D257E1FE4BBE900FC3DD8 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Map.framework; path = Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
 		6B62C0861FCE9D0D007F6861 /* NavigationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationVC.h; sourceTree = "<group>"; };
 		6B62C0871FCE9D0D007F6861 /* NavigationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationVC.m; sourceTree = "<group>"; };
 		6B62C0891FCE9FEB007F6861 /* NavigationBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBottomView.h; sourceTree = "<group>"; };
@@ -639,6 +653,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B4D257F1FE4BBE900FC3DD8 /* BaiduMapAPI_Search.framework in Frameworks */,
+				6B4D25801FE4BBE900FC3DD8 /* BaiduMapAPI_Base.framework in Frameworks */,
+				6B4D25811FE4BBE900FC3DD8 /* BaiduMapAPI_Utils.framework in Frameworks */,
+				6B4D25821FE4BBE900FC3DD8 /* BaiduMapAPI_Radar.framework in Frameworks */,
+				6B4D25831FE4BBE900FC3DD8 /* BaiduMapAPI_Location.framework in Frameworks */,
+				6B4D25841FE4BBE900FC3DD8 /* BaiduMapAPI_Cloud.framework in Frameworks */,
+				6B4D25851FE4BBE900FC3DD8 /* BaiduMapAPI_Map.framework in Frameworks */,
 				6B0FCA6F1FE0C6B2009E6FAF /* WLHCropper.a in Frameworks */,
 				6BB67C5E1FA4511F007CE224 /* libstdc++.6.0.9.tbd in Frameworks */,
 				6BB67C5D1FA45114007CE224 /* CoreTelephony.framework in Frameworks */,
@@ -1901,6 +1922,13 @@
 		6EA91DB080D9ABEBB6F342DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B4D25791FE4BBE900FC3DD8 /* BaiduMapAPI_Base.framework */,
+				6B4D257D1FE4BBE900FC3DD8 /* BaiduMapAPI_Cloud.framework */,
+				6B4D257C1FE4BBE900FC3DD8 /* BaiduMapAPI_Location.framework */,
+				6B4D257E1FE4BBE900FC3DD8 /* BaiduMapAPI_Map.framework */,
+				6B4D257B1FE4BBE900FC3DD8 /* BaiduMapAPI_Radar.framework */,
+				6B4D25781FE4BBE800FC3DD8 /* BaiduMapAPI_Search.framework */,
+				6B4D257A1FE4BBE900FC3DD8 /* BaiduMapAPI_Utils.framework */,
 				6BB67C531FA44D19007CE224 /* libstdc++.6.0.9.tbd */,
 				6BB67C511FA44D10007CE224 /* CoreTelephony.framework */,
 				6BB67C4F1FA44D08007CE224 /* libsqlite3.0.tbd */,
@@ -2463,6 +2491,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLQK5CCX6D;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SharedParking/SharedParking.pch";
 				INFOPLIST_FILE = SharedParking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2471,7 +2505,69 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SharedParking/Class/Mine(我的)/Setting(设置)/Cropper",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.galaxy.SharedParking;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-l\"crypto\"",
+					"-l\"sqlite3.0\"",
+					"-l\"ssl\"",
+					"-l\"stdc++.6.0.9\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"BaiduMapAPI_Base\"",
+					"-framework",
+					"\"BaiduMapAPI_Cloud\"",
+					"-framework",
+					"\"BaiduMapAPI_Location\"",
+					"-framework",
+					"\"BaiduMapAPI_Map\"",
+					"-framework",
+					"\"BaiduMapAPI_Radar\"",
+					"-framework",
+					"\"BaiduMapAPI_Search\"",
+					"-framework",
+					"\"BaiduMapAPI_Utils\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"DZNEmptyDataSet\"",
+					"-framework",
+					"\"FMDB\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"LKDBHelper\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"RegexKitLite\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"Shimmer\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UITextView_WZB\"",
+					"-framework",
+					"\"WSProgressHUD\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yimatong.sharedparking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2485,6 +2581,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLQK5CCX6D;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SharedParking/SharedParking.pch";
 				INFOPLIST_FILE = SharedParking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2493,7 +2595,69 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SharedParking/Class/Mine(我的)/Setting(设置)/Cropper",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.galaxy.SharedParking;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-l\"crypto\"",
+					"-l\"sqlite3.0\"",
+					"-l\"ssl\"",
+					"-l\"stdc++.6.0.9\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"BaiduMapAPI_Base\"",
+					"-framework",
+					"\"BaiduMapAPI_Cloud\"",
+					"-framework",
+					"\"BaiduMapAPI_Location\"",
+					"-framework",
+					"\"BaiduMapAPI_Map\"",
+					"-framework",
+					"\"BaiduMapAPI_Radar\"",
+					"-framework",
+					"\"BaiduMapAPI_Search\"",
+					"-framework",
+					"\"BaiduMapAPI_Utils\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"DZNEmptyDataSet\"",
+					"-framework",
+					"\"FMDB\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"LKDBHelper\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"RegexKitLite\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"Shimmer\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UITextView_WZB\"",
+					"-framework",
+					"\"WSProgressHUD\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yimatong.sharedparking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

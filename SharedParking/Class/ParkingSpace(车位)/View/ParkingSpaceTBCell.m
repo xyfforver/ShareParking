@@ -64,7 +64,7 @@
     NSString *distance = [HelpTool stringWithDistance:longModel.distance];
     
     self.locationLab.text = [NSString stringWithFormat:@"距您%@ %ld次浏览",distance,longModel.views];
-    self.numberLab.text = [NSString stringWithFormat:@"￥%@/月",longModel.parking_fee];
+    self.numberLab.text = [NSString stringWithFormat:@"￥%.2f/月",longModel.parking_fee];
     
     self.reserveLab.text = longModel.parking_fabutype ? @"个人" : @"商户";
     //车位类型 0小区 1写字楼 2 其他

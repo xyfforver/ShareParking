@@ -10,6 +10,15 @@
 
 @implementation CarportLongListModel
 
+- (void)setPark_jwd:(NSString *)park_jwd{
+    _park_jwd = park_jwd;
+    
+    if ([park_jwd containsString:@","]) {
+        NSArray *array = [park_jwd componentsSeparatedByString:@","];
+        self.latitude = [[array lastObject] floatValue];
+        self.longitude = [[array firstObject] floatValue];
+    }
+}
 
 //停车场长租列表
 + (void)carportLongListWithPage:(NSInteger)page success:(NetCompletionBlock)success{
@@ -21,7 +30,6 @@
     [ParamsDic setObject:GetDataManager.selectCity forKey:@"shi"];
     [self postWithStatusRecordListModelResponsePath:@"park_wordlist" params:ParamsDic onCompletion:success];
 }
-
 
 
 @end

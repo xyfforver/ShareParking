@@ -37,11 +37,25 @@
 @property (assign, nonatomic) CGFloat latitude;
 @property (assign, nonatomic) CGFloat longitude;
 
+
+#pragma mark ---------------首页 地图 字段 ---------------------/
+@property (assign, nonatomic) CGFloat parking_fee;
+@property (copy, nonatomic) NSString *parking_title;
+@property (assign, nonatomic) BOOL parking_obj;
+@property (assign, nonatomic) NSInteger parking_cheweitype;
+@property (copy, nonatomic) NSString *time_since;
+@property (copy, nonatomic) NSString *user_mobile;
+
+
 //停车场错时列表
 + (void)carportShortListWithPage:(NSInteger)page success:(NetCompletionBlock)success;
 
 //停车场错时 地图
 + (void)carportShortListWithLatitude:(CGFloat )latitude longitude:(CGFloat)longitude success:(NetCompletionBlock)success;
+
+//停车场长租 地图
++ (void)carportLongListWithLatitude:(CGFloat )latitude longitude:(CGFloat)longitude success:(NetCompletionBlock)success;
+
 //搜索
 + (void)searchWithTitle:(NSString *)title success:(NetCompletionBlock)success;
 

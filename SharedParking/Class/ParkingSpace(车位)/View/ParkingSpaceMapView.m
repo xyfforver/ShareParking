@@ -17,6 +17,7 @@
 #import "ParkingOrderView.h"
 
 #import "CarportShortListModel.h"
+#import "CarportLongListModel.h"
 #import "CustomAnnotation.h"
 
 #import "BMKClusterManager.h"
@@ -52,9 +53,6 @@
 
 - (void)setType:(CarportRentType)type{
     _type = type;
-
-    self.itemView.hidden = NO;
-    self.rentView.hidden = YES;
 }
 
 #pragma mark ---------------network ---------------------/
@@ -78,7 +76,17 @@
 }
 
 - (void)loadLongMapData{
-    
+    kSelfWeak;
+    [CarportShortListModel carportLongListWithLatitude:self.cCoordinate.latitude longitude:self.cCoordinate.longitude success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            NSArray *dataArr = statusModel.data;
+            strongSelf.dataArr = dataArr;
+            [strongSelf addAnnoWithPT];
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+    }];
 }
 
 
@@ -92,6 +100,7 @@
         coor.latitude = model.latitude;
         coor.longitude = model.longitude;
         cluster.pt = coor;
+        cluster.shortModel = model;
         
         BMKClusterItem *clusterItem = [[BMKClusterItem alloc] init];
         clusterItem.coor = cluster.pt;
@@ -139,10 +148,10 @@
 #pragma mark - XJClusterAnnotationViewDelegate
 - (void)didAddreesWithClusterAnnotationView:(XJCluster *)cluster clusterAnnotationView:(XJClusterAnnotationView *)clusterAnnotationView{
     
-    if (clusterAnnotationView.size > 3) {
+//    if (clusterAnnotationView.size > 3) {
         //        [_mapView setCenterCoordinate:clusterAnnotationView.annotation.coordinate];
         //        [_mapView zoomIn];
-    }
+//    }
 }
 
 - (void)onGetDistrictResult:(BMKDistrictSearch *)searcher result:(BMKDistrictResult *)result errorCode:(BMKSearchErrorCode)error {
@@ -435,6 +444,7 @@
     }else{
         self.itemView.hidden = YES;
         self.rentView.hidden = NO;
+        self.rentView.model = cluster.shortModel;
     }
 }
 

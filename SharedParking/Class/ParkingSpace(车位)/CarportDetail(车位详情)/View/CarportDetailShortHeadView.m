@@ -80,9 +80,9 @@
         make.height.mas_equalTo(1);
     }];
     
-    self.titleLab.text = @"每小时：4元";
-    self.timeLab.text = @"停车时间至~15：00";
-    self.surplusTimeLab.text = @"剩余2小时59分";
+//    self.titleLab.text = @"每小时：4元";
+//    self.timeLab.text = @"停车时间至~15：00";
+//    self.surplusTimeLab.text = @"剩余2小时59分";
 }
 
 

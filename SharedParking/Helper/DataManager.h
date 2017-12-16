@@ -20,7 +20,7 @@ FOUNDATION_EXPORT NSString *const kUserModelBalanceChangedNotification;
 // 登录所用的账号
 @property (nonatomic, strong) UserModel *userModel;
 @property (nonatomic, assign) BOOL isLogin;
-
+@property (nonatomic, copy) NSString *headimg;
 #pragma mark -  用户属性相关
 
 

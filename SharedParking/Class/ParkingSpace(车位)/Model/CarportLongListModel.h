@@ -21,7 +21,7 @@
 
 @property (copy, nonatomic) NSString *user_id;
 @property (copy, nonatomic) NSString *istype;
-@property (copy, nonatomic) NSString *parking_fee;
+@property (assign, nonatomic) CGFloat parking_fee;
 @property (copy, nonatomic) NSString *park_id;
 @property (copy, nonatomic) NSString *create_time;
 @property (copy, nonatomic) NSString *park_address;
@@ -31,18 +31,22 @@
 @property (copy, nonatomic) NSString *isdelete;
 @property (copy, nonatomic) NSString *parking_number;
 @property (copy, nonatomic) NSString *time_since;
-
+@property (assign, nonatomic) NSInteger kongxiandu;
 
 @property (copy, nonatomic) NSString *remark;
 @property (copy, nonatomic) NSString *update_time;
 @property (assign, nonatomic) NSInteger distance;
 
 
-
+@property (assign, nonatomic) CGFloat latitude;
+@property (assign, nonatomic) CGFloat longitude;
 
 
 
 //停车场长租列表
 + (void)carportLongListWithPage:(NSInteger)page success:(NetCompletionBlock)success;
+
+
+
 
 @end

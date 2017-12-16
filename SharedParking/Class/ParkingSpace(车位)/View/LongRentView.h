@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CarportShortListModel.h"
 @interface LongRentView : UIView
+
+@property (nonatomic , strong) CarportShortListModel *model;
 
 + (CGFloat)getHeight;
 @end

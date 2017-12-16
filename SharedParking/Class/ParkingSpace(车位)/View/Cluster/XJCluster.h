@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import "CarportShortListModel.h"
+#import "CarportLongListModel.h"
 @interface XJCluster : NSObject
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign)NSInteger kongxiandu;
 @property (nonatomic, assign)CLLocationCoordinate2D pt;
 
 @property (nonatomic,strong) CarportShortListModel *shortModel;
+@property (nonatomic,strong) CarportLongListModel *longModel;
 @end

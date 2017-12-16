@@ -67,6 +67,7 @@
         kSelfStrong;
         if (statusModel.flag == kFlagSuccess) {
             strongSelf.userModel = statusModel.data;
+            GetDataManager.headimg = strongSelf.userModel.headimg;
         }else{
             strongSelf.userModel = nil;
         }

@@ -31,6 +31,15 @@
     return self;
 }
 
+- (void)setModel:(CarportShortListModel *)model{
+    _model = model;
+    
+    self.titleLab.text = model.parking_title;
+    self.infoLab.text = [NSString stringWithFormat:@"距您%@",[HelpTool stringWithDistance: model.distance]];;
+    self.timeLab.text = model.time_since;
+    self.personalab.text = [HelpTool getRentObjectWithType:model.parking_obj];
+    self.buildinglab.text = [HelpTool getRentCarportWithType:model.parking_cheweitype];
+}
 
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
@@ -62,7 +71,7 @@
     [self.buildinglab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-kMargin15);
         make.top.mas_equalTo(kMargin15);
-        make.width.mas_equalTo(40);
+        make.width.mas_equalTo(44);
         make.height.mas_equalTo(20);
     }];
     
@@ -100,23 +109,24 @@
         make.width.mas_equalTo(1);
         make.height.mas_equalTo(20);
     }];
-    
-    
-    
-    self.titleLab.text = @"商场停车场";
-    self.infoLab.text = @"距您3km 开车约8分钟";
-    self.timeLab.text = @"1天前";
-    self.personalab.text = @"个人";
-    self.buildinglab.text = @"小区";
+
 }
 
 #pragma mark ---------------event ---------------------/
 - (void)robParkingAction:(UIButton *)button{
+    if ([NSString isNull:self.model.user_mobile]) {
+        [WSProgressHUD showImage:nil status:@"该联系方式被吞了"];
+        return;
+    }
     
+    dispatch_after(0.2, dispatch_get_main_queue(), ^{
+        NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",self.model.user_mobile];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    });
 }
 
 - (void)infoAction:(UIButton *)button{
-    CarportDetailVC *vc = [[CarportDetailVC alloc]initWithCarportId:@"2" type:CarportLongRentType];
+    CarportDetailVC *vc = [[CarportDetailVC alloc]initWithCarportId:self.model.id type:CarportLongRentType];
     [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 

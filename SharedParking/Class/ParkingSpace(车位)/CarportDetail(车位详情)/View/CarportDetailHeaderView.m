@@ -115,6 +115,7 @@
         make.centerY.mas_equalTo(self.imgView.mas_bottom);
     }];
     
+    [self.headImgView sd_setImageWithURL:[NSURL URLWithString:kImageStringJoint(GetDataManager.headimg)]];
 }
 
 #pragma mark ---------------event ---------------------/
@@ -138,6 +139,7 @@
     if (!_imgView) {
         _imgView = [[UIImageView alloc]init];
         _imgView.backgroundColor = kColorGreen;
+        
     }
     return _imgView;
 }

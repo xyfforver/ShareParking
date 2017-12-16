@@ -21,6 +21,14 @@
     }
 }
 
+- (void)setParking_fee:(CGFloat)parking_fee{
+    _park_fee = parking_fee;
+    
+    _parking_fee = parking_fee;
+}
+
+
+
 
 //停车场错时列表
 + (void)carportShortListWithPage:(NSInteger)page success:(NetCompletionBlock)success{
@@ -42,6 +50,17 @@
     [ParamsDic setObject:GetDataManager.selectCity forKey:@"shi"];
     [self postWithStatusRecordListModelResponsePath:@"park_maplist" params:ParamsDic onCompletion:success];
 }
+
+//停车场长租 地图
++ (void)carportLongListWithLatitude:(CGFloat )latitude longitude:(CGFloat)longitude success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    [ParamsDic setObject:@"1" forKey:@"parking_type"];
+    [ParamsDic setObject:@(latitude) forKey:@"lat"];
+    [ParamsDic setObject:@(longitude) forKey:@"lng"];
+    [ParamsDic setObject:GetDataManager.selectCity forKey:@"shi"];
+    [self postWithStatusRecordListModelResponsePath:@"park_maplist" params:ParamsDic onCompletion:success];
+}
+
 
 //搜索
 + (void)searchWithTitle:(NSString *)title success:(NetCompletionBlock)success{
