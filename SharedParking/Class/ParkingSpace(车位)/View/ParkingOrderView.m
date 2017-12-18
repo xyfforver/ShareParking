@@ -9,6 +9,9 @@
 #import "ParkingOrderView.h"
 #import "ParkingOrderReserveView.h"
 #import "ParkingOrderTimeView.h"
+
+#import "CarportPayVC.h"
+#import "ReserveSuccessVC.h"
 @interface ParkingOrderView ()
 @property (nonatomic , strong) ParkingOrderReserveView *reserveView;
 @property (nonatomic , strong) ParkingOrderTimeView *timeView;
@@ -19,6 +22,7 @@
 @property (nonatomic , strong) UIButton *locationBtn;
 @property (nonatomic , strong) UILabel *locationLab;
 
+@property (nonatomic , assign) BOOL isReserve;
 
 @end
 
@@ -32,6 +36,26 @@
     return self;
 }
 
+- (void)setReserveModel:(CarportReserveModel *)reserveModel{
+    _reserveModel = reserveModel;
+    
+    self.isReserve = reserveModel.reserve_time > 0 && reserveModel.order_jintime == 0;
+    self.reserveView.hidden = !self.isReserve;
+    self.timeView.hidden = self.isReserve;
+    
+    if (self.isReserve) {
+        self.reserveView.reserveTime = reserveModel.reserve_time;
+    }else{
+        self.timeView.startTime = reserveModel.order_jintime;
+        self.timeView.park_fee = reserveModel.park_fee;
+    }
+    
+    self.titleLab.text = reserveModel.park_title;
+    self.numberLab.text = reserveModel.parking_number;
+    self.locationLab.text = reserveModel.park_address;
+    
+}
+
 #pragma mark -----------------LifeCycle---------------------/
 - (void)initView{
     
@@ -40,6 +64,9 @@
     [self.bgView addSubview:self.numberLab];
     [self.bgView addSubview:self.locationBtn];
     [self.bgView addSubview:self.locationLab];
+    [self zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        [self pushToDetail];
+    }];
     
     [self addSubview:self.reserveView];
     [self addSubview:self.timeView];
@@ -83,9 +110,7 @@
     
     [self setNeedsLayout];
     
-    self.titleLab.text = @"地下停车场";
-    self.numberLab.text = @"A区01号";
-    self.locationLab.text = @"蓝爵国际123号";
+    
 }
 
 #pragma mark ---------------event ---------------------/
@@ -102,6 +127,23 @@
     [self.bgView.layer insertSublayer:gradient atIndex:0];
 }
 
+- (void)pushToDetail{
+    if (self.isReserve) {
+        //预订详情
+        ReserveSuccessVC *vc = [[ReserveSuccessVC alloc]initWithReserveId:self.reserveModel.id];
+        [self.Controller.navigationController pushViewController:vc animated:YES];
+    }else{
+        //结算详情
+        CarportPayVC *vc = [[CarportPayVC alloc]initWithOrderId:self.reserveModel.id];
+        kSelfWeak;
+        vc.reloadBlock = ^{
+            kSelfStrong;
+            strongSelf.hidden = YES;
+        };
+        [self.Controller.navigationController pushViewController:vc animated:YES];
+    }
+}
+
 #pragma mark -----------------Lazy---------------------/
 - (ParkingOrderReserveView *)reserveView{
     if (!_reserveView) {
@@ -115,6 +157,7 @@
 - (ParkingOrderTimeView *)timeView{
     if (!_timeView) {
         _timeView = [[ParkingOrderTimeView alloc]init];
+        _timeView.hidden = YES;
     }
     return _timeView;
 }

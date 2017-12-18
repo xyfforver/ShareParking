@@ -140,8 +140,30 @@
 }
 
 - (void)loadReserveData{
+    kSelfWeak;
     [CarportReserveModel homeReserveWithSuccess:^(StatusModel *statusModel) {
-        
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            CarportReserveModel *model = statusModel.data;
+            strongSelf.orderView.reserveModel = model;
+            strongSelf.orderView.hidden = NO;
+        }else{
+            [strongSelf loadOrderData];
+        }
+    }];
+}
+
+- (void)loadOrderData{
+    kSelfWeak;
+    [CarportReserveModel homeOrderWithSuccess:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            CarportReserveModel *model = statusModel.data;
+            strongSelf.orderView.reserveModel = model;
+            strongSelf.orderView.hidden = NO;
+        }else{
+            strongSelf.orderView.hidden = YES;
+        }
     }];
 }
 #pragma mark ---------------action ---------------------/
@@ -282,7 +304,7 @@
 - (ParkingOrderView *)orderView{
     if (!_orderView) {
         _orderView = [[ParkingOrderView alloc]initWithFrame:CGRectMake(40, self.mapView.bottom - [ParkingOrderView getHeight] - 50, kScreenWidth - 40 * 2, [ParkingOrderView getHeight])];
-//        _orderView.hidden = YES;
+        _orderView.hidden = YES;
     }
     return _orderView;
 }

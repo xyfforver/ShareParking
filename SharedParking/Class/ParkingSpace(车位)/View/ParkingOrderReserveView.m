@@ -7,9 +7,13 @@
 //
 
 #import "ParkingOrderReserveView.h"
-@interface ParkingOrderReserveView ()
+#import "MZTimerLabel.h"
+
+@interface ParkingOrderReserveView ()<MZTimerLabelDelegate>
 @property (nonatomic , strong) UILabel *titleLab;
 @property (nonatomic , strong) UILabel *timeLab;
+
+@property (nonatomic , strong) MZTimerLabel *timeLabal;
 @end
 
 @implementation ParkingOrderReserveView
@@ -20,6 +24,16 @@
         [self initView];
     }
     return self;
+}
+
+- (void)setReserveTime:(NSInteger)reserveTime{
+    _reserveTime = reserveTime;
+    
+    NSInteger afterTime = reserveTime + 20 * 60;
+    NSInteger value = afterTime - [HelpTool getNowTimestamp];
+    value = value > 0 ? value : 0;
+    [self.timeLabal setCountDownTime:value];
+    [self.timeLabal start];
 }
 
 #pragma mark -----------------LifeCycle---------------------/
@@ -47,6 +61,10 @@
     
     self.titleLab.text = @"剩余时间：";
     self.timeLab.text = @"00：00";
+    
+    self.timeLabal  = [[MZTimerLabel alloc]initWithLabel:self.timeLab andTimerType:MZTimerLabelTypeTimer];
+    self.timeLabal.timeFormat = @"mm:ss";
+    self.timeLabal.delegate = self;
 }
 
 #pragma mark ---------------event ---------------------/

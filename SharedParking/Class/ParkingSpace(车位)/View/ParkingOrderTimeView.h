@@ -10,4 +10,6 @@
 
 @interface ParkingOrderTimeView : UIView
 
+@property (nonatomic , assign) NSInteger startTime;
+@property (nonatomic , assign) CGFloat park_fee;
 @end

@@ -92,9 +92,10 @@
 
 - (IBAction)reserveAction:(id)sender {
     
-    [self reserveData];
-
-    
+    [UIAlertView alertViewWithTitle:@"提示" message:@"确定要预订此车位嘛？" cancelButtonTitle:@"取消" otherButtonTitles:@[@"确定"] onDismiss:^(int buttonIndex, NSString *buttonTitle) {
+        [self reserveData];        
+    } onCancel:nil];
+ 
 }
 
 - (IBAction)selectAction:(id)sender {

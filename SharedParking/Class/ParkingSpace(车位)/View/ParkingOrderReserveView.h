@@ -10,4 +10,6 @@
 
 @interface ParkingOrderReserveView : UIView
 
+@property (nonatomic , assign) NSInteger reserveTime;
+
 @end

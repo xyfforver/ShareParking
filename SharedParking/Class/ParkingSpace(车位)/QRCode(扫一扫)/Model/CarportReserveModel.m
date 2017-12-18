@@ -60,4 +60,10 @@
     [self postWithStatusModelResponsePath:@"map_reserve" params:nil onCompletion:success];
 }
 
+//首页订单
++ (void)homeOrderWithSuccess:(NetCompletionBlock)success{
+    [self postWithStatusModelResponsePath:@"map_order" params:nil onCompletion:success];
+}
+
+
 @end

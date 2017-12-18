@@ -24,6 +24,8 @@
 @property (assign, nonatomic) NSInteger reserve_time;
 @property (copy, nonatomic) NSString *park_jwd;
 @property (copy, nonatomic) NSString *park_address;
+#pragma mark ---------------首页订单 ---------------------/
+@property (assign, nonatomic) NSInteger order_jintime;
 
 #pragma mark ---------------扫一扫 ---------------------/
 @property (copy, nonatomic) NSString *park_opentime;
@@ -53,4 +55,6 @@
 
 //首页预订
 + (void)homeReserveWithSuccess:(NetCompletionBlock)success;
+//首页订单
++ (void)homeOrderWithSuccess:(NetCompletionBlock)success;
 @end

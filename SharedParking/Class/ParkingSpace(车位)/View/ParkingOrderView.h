@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CarportReserveModel"
+#import "CarportReserveModel.h"
 @interface ParkingOrderView : UIView
 
 @property (strong, nonatomic) CarportReserveModel *reserveModel;
 
+@property (nonatomic , copy) void(^loadBlock)(void);
 
 + (CGFloat)getHeight;
 @end
