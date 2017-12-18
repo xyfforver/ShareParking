@@ -326,9 +326,9 @@
 
 //空闲度得到图片名
 + (NSString *)imageStringWithLeisure:(NSInteger)leisure{
-    if (leisure >= 0 && leisure <= 3) {
+    if (leisure >= 0 && leisure <= 30) {
         return @"map_leisure1";
-    }else if (leisure > 3 && leisure <= 7){
+    }else if (leisure > 30 && leisure <= 70){
         return @"map_leisure2";
     }else {
         return @"map_leisure3";

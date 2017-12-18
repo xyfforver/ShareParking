@@ -33,7 +33,7 @@
     self.title = @"设置";
     self.view.backgroundColor = kBackGroundGrayColor;
     self.firstArr = @[@"账号与安全",@"租用须知"];
-    self.secondArr = @[@"意见反馈",@"软件关于",@"联系客服",@"去评价",@"版本"];
+    self.secondArr = @[@"意见反馈",@"软件关于",@"联系客服",@"清除缓存",@"去评价",@"版本"];
     [self.view addSubview:self.tbView];
 }
 
@@ -190,12 +190,21 @@
     cell.textLabel.font = kFontSize16;
     cell.textLabel.textColor = kColor333333;
     
-    UILabel *rightLab = [[UILabel alloc]initWithFrame:CGRectMake(kScreenWidth - 110, 0, 80, 50)];
+    UILabel *rightLab = [[UILabel alloc]initWithFrame:CGRectMake(kScreenWidth - 100, 0, 80, 50)];
     rightLab.font = kFontSize15;
     rightLab.textAlignment = NSTextAlignmentRight;
     rightLab.textColor = kColorDarkgray;
     rightLab.hidden = YES;
     [cell addSubview:rightLab];
+    
+    if (indexPath.section == 1 && indexPath.row == 5) {
+        //当前版本
+        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+        // app版本
+        NSString *current = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+        rightLab.text = [NSString stringWithFormat:@"%@",current];
+        rightLab.hidden = NO;
+    }
     
     if (indexPath.section == 0) {
         cell.textLabel.text = self.firstArr[indexPath.row];
@@ -226,6 +235,14 @@
         if (indexPath.row == 0) {
             FeedbackVC *vc = [[FeedbackVC alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 1){
+            
+        }else if (indexPath.row == 2){
+            [self contactService];
+        }else if (indexPath.row == 3){
+            [self clearData];
+        }else if (indexPath.row == 4){
+            
         }
     }
 }
