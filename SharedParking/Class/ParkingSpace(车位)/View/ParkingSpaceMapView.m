@@ -35,6 +35,7 @@
 
 /// 当前地图的中心点
 @property (nonatomic) CLLocationCoordinate2D cCoordinate;
+@property (nonatomic) CLLocationCoordinate2D userCoordinate;
 @property (nonatomic , strong) RobParkingView *itemView;
 @property (nonatomic , strong) LongRentView *rentView;
 
@@ -100,11 +101,12 @@
         coor.longitude = model.longitude;
         cluster.pt = coor;
         cluster.shortModel = model;
+        cluster.kongxiandu = model.kongxiandu;
         
         BMKClusterItem *clusterItem = [[BMKClusterItem alloc] init];
         clusterItem.coor = cluster.pt;
         clusterItem.title = cluster.name;
-        clusterItem.kongxiandu = model.kongxiandu;
+        clusterItem.kongxiandu = cluster.kongxiandu;
         clusterItem.cluster = cluster;
         [_clusterManager addClusterItem:clusterItem];
     }
@@ -254,7 +256,8 @@
     if (!self.cCoordinate.latitude) {
         self.mapView.centerCoordinate = userLocation.location.coordinate;
     }
-
+    self.userCoordinate = userLocation.location.coordinate;;
+    
     [self updateClusters];
     
     NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
@@ -422,7 +425,7 @@
 }
 
 - (void)userCenterAction:(UIButton *)button{
-    
+    self.mapView.centerCoordinate = self.userCoordinate;
 }
 
 - (void)addAction:(UIButton *)button{

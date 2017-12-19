@@ -7,7 +7,6 @@
 //
 
 #import "ParkingSpaceVC.h"
-#import "CarportPayVC.h"
 
 #import "ParkingSpaceHeaderView.h"
 #import "ParkingSpaceMapView.h"
@@ -141,6 +140,7 @@
 
 - (void)loadReserveData{
     kSelfWeak;
+    self.orderView.hidden = YES;
     [CarportReserveModel homeReserveWithSuccess:^(StatusModel *statusModel) {
         kSelfStrong;
         if (statusModel.flag == kFlagSuccess) {
@@ -168,10 +168,7 @@
 }
 #pragma mark ---------------action ---------------------/
 - (void)codeAction{
-//    CarportPayVC *vc = [[CarportPayVC alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
     [self openQRCode];
-    
 }
 
 - (void)listAction:(UIButton *)button{

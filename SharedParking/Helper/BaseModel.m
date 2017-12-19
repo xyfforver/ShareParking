@@ -169,7 +169,7 @@ static dispatch_once_t userOnceToken;
                                       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                                           NSDictionary *dic = [self getErrorDictionary:error];
                                           DLog(@"%@", error);
-                                          [BaseModel textDemo];
+//                                          [BaseModel textDemo];
                                           if (completionBlock)
                                           {
                                               completionBlock(dic);
@@ -197,7 +197,7 @@ static dispatch_once_t userOnceToken;
 }
 
 + (void)textDemo{
-    NSURL *url = [NSURL URLWithString:@"http://park.1mxtx.com/index/app/park_xq"];
+    NSURL *url = [NSURL URLWithString:@"http://park.1mxtx.com/index/app/map_reserve"];
     //2.构建http请求
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     //设置请求方式

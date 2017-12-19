@@ -14,6 +14,7 @@
 @property (nonatomic , strong) UILabel *priceLab;
 
 @property (nonatomic , strong) MZTimerLabel *timeLabel;
+@property (nonatomic , assign) NSInteger timeCount;
 @end
 
 @implementation ParkingOrderTimeView
@@ -33,10 +34,11 @@
     NSDate *endD = [NSDate date];
     NSTimeInterval start = [startD timeIntervalSince1970]*1;
     NSTimeInterval end = [endD timeIntervalSince1970]*1;
-    NSInteger value = end - start;
-    if (value > 0) {
-        NSInteger time = value % (60 * 60 * 24);
-        NSInteger day = value / (60 * 60 * 24);
+    self.timeCount = end - start;
+    
+    if (self.timeCount > 0) {
+        NSInteger time = self.timeCount % (60 * 60 * 24);
+        NSInteger day = self.timeCount / (60 * 60 * 24);
         DLog(@"%ld---%ld",day,time);
         if (day > 0) {
             //超过一天
@@ -45,6 +47,10 @@
             self.titleLab.text = @"停车时间：";
         }
     }
+    
+    NSInteger count = self.timeCount/60/60 + 1;
+    self.priceLab.text = [NSString stringWithFormat:@"收费：%.2f元",self.park_fee * count];
+    
     self.timeLabel.startDate = startD;
     [self.timeLabel start];
     
@@ -52,18 +58,17 @@
 
 - (void)setPark_fee:(CGFloat)park_fee{
     _park_fee = park_fee;
-    
-    self.priceLab.text = [NSString stringWithFormat:@"收费：%.2f元",park_fee];
+
 }
 
 #pragma mark ---------------delegate ---------------------/
 - (void)timerLabel:(MZTimerLabel *)timerLabel countingTo:(NSTimeInterval)time timertype:(MZTimerLabelType)timerType{
     NSInteger count = time/60/60 + 1;
     
-//    if (count != self.timeCount) {
-//        self.timeCount = count;
-//        [self setParkingFee];
-//    }
+    
+    if (count != self.timeCount) {
+        self.priceLab.text = [NSString stringWithFormat:@"收费：%.2f元",self.park_fee * count];
+    }
 }
 
 

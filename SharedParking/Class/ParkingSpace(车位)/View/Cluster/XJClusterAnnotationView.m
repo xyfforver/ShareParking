@@ -84,7 +84,7 @@
         _imageView.hidden = NO;
         _pharmacyLabel.hidden = NO;
         _pharmacyLabel.text = _title;
-        _imageView.image = [UIImage imageNamed:[HelpTool imageStringWithLeisure:_kongxiandu]];
+        _imageView.image = [UIImage imageNamed:[HelpTool imageStringWithLeisure:self.kongxiandu]];
     }
 }
 

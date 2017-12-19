@@ -46,8 +46,8 @@
     if (self.isReserve) {
         self.reserveView.reserveTime = reserveModel.reserve_time;
     }else{
-        self.timeView.startTime = reserveModel.order_jintime;
         self.timeView.park_fee = reserveModel.park_fee;
+        self.timeView.startTime = reserveModel.order_jintime;
     }
     
     self.titleLab.text = reserveModel.park_title;
