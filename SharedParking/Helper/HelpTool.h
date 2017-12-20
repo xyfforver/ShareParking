@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface HelpTool : NSObject
+//判断定位是否开启
++ (BOOL)openLocation;
+
 //计算两点之间的距离
 + (double)calculateTheDistanceWithLon1:(double) lon1
                                   Lat1:(double) lat1
@@ -28,6 +31,7 @@
 +(void)archiverSetValue:(id)value key:(NSString*)key;
 +(NSString*)unArchiverValue:(NSString*)key;
 
+#pragma mark ---------------date ---------------------/
 //几分钟/小时/天前
 + (NSString *)stringIntervalFromLastDate:(NSString *)dateString;
 //获取当前时间
@@ -49,6 +53,8 @@
 + (UIImage *)getImageFromView:(UIView *)view;
 //空闲度得到图片名
 + (NSString *)imageStringWithLeisure:(NSInteger)leisure;
+
+
 
 #pragma mark ---------------获取字段 ---------------------/
 + (NSString *)getRentObjectWithType:(BOOL)type;

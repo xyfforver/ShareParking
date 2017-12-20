@@ -425,7 +425,9 @@
 }
 
 - (void)userCenterAction:(UIButton *)button{
-    self.mapView.centerCoordinate = self.userCoordinate;
+    if ([HelpTool openLocation]) {
+        self.mapView.centerCoordinate = self.userCoordinate;
+    }
 }
 
 - (void)addAction:(UIButton *)button{

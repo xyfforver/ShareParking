@@ -23,6 +23,8 @@
     
     [GetDataManager autoLogin];//自动登录
     
+    [HelpTool openLocation];
+    
     LoginReminderVC *vc = [[LoginReminderVC alloc]init];
     self.window.rootViewController = vc;
     

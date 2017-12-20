@@ -10,6 +10,22 @@
 #import "HelpTool.h"
 
 @implementation HelpTool
+#pragma mark - 判断定位是否开启
++ (BOOL)openLocation{
+    if ([CLLocationManager authorizationStatus] ==kCLAuthorizationStatusDenied) {
+        UIAlertView *alertView = [UIAlertView alertViewWithTitle:@"定位" message:@"定位服务未开启,是否前往开启" cancelButtonTitle:@"取消" otherButtonTitles:@[@"去开启"] onDismiss:^(int buttonIndex, NSString *buttonTitle) {
+            //定位不能用
+            NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+            [[UIApplication sharedApplication] openURL:settingsURL];
+        } onCancel:^{
+
+        }];
+        [alertView show];
+        
+        return NO;
+    }
+    return YES;
+}
 
 #pragma mark ---------------计算两点之间的距离 ---------------------/
 + (double)calculateTheDistanceWithLon1:(double) lon1
