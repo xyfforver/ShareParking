@@ -37,17 +37,11 @@
     self.oilPriceField.delegate = self;
     self.oilMassField.delegate = self;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-    
     [self.dateLab zzh_addTapGestureWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        
+        IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+        [manager resignFirstResponder];
+        
         DateDayView *dayView = [[DateDayView alloc]initWithConfirm:^(NSString *dateStr) {
             self.dateLab.text = dateStr;
         }];
@@ -66,16 +60,6 @@
 }
 
 #pragma mark ---------------event ---------------------/
-- (void)keyboardWillShow: (NSNotification*)notification {
-    CGRect keyboardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]; //获得键盘的rect
-    //通过rect做响应的弹起等
-}
-
-- (void)keyboardWillHide: (NSNotification*)notification {
-    CGRect keyboardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]; //获得键盘的rect
-    //通过rect做响应的弹起等
-}
-
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
     if ([string isEqualToString:@""]) {
@@ -99,7 +83,6 @@
 
 }
 
-
 - (BOOL)judgeAmout:(NSString *)futureString{
     //限制只能输入小数点后两位
     NSInteger flag=0;
@@ -120,7 +103,6 @@
     return YES;
 
 }
-
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
 

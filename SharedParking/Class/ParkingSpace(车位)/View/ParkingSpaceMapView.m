@@ -167,9 +167,9 @@
 #pragma mark --------------- Map Delegate ---------------------/
 - (void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     //屏幕坐标转地图经纬度
-    CLLocationCoordinate2D MapCoordinate = [_mapView convertPoint:_mapView.center toCoordinateFromView:_mapView];
+    self.cCoordinate = [_mapView convertPoint:_mapView.center toCoordinateFromView:_mapView];
     
-    DLog(@"regionDidChangeAnimated:%f---%f",MapCoordinate.latitude , MapCoordinate.longitude);
+    DLog(@"regionDidChangeAnimated:%f---%f",self.cCoordinate.latitude , self.cCoordinate.longitude);
     
     [self loadMapData];
 
