@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *addressLab;
 @property (strong, nonatomic) IBOutlet UIButton *nowBtn;
 @property (strong, nonatomic) IBOutlet UIButton *afterBtn;
+@property (strong, nonatomic) IBOutlet UILabel *infoLab;
 
 @property (nonatomic , strong) MZTimerLabel *timeLabal;
 @end
@@ -42,6 +43,12 @@
     self.timeLabal  = [[MZTimerLabel alloc]initWithLabel:self.timeLab andTimerType:MZTimerLabelTypeTimer];
     self.timeLabal.timeFormat = @"mm:ss";
     self.timeLabal.delegate = self;
+    
+    
+    NSString *numberStr = @"即刻起该车位将为您保留20分钟";
+    NSMutableAttributedString *numberMuStr = [[NSMutableAttributedString alloc]initWithString:numberStr];
+    [numberMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(numberStr.length - 4, 2)];
+    self.infoLab.attributedText = numberMuStr;
     
     [self loadData];
 }

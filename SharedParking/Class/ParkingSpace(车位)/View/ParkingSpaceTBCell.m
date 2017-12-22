@@ -45,10 +45,12 @@
     
     self.locationLab.text = [NSString stringWithFormat:@"距您%@",distance];
     self.numberLab.text = [NSString stringWithFormat:@"剩余车位 %ld/%ld",shortModel.zongnum - shortModel.zhanyongnum,shortModel.zongnum];
+    self.numberLab.textColor = shortModel.zongnum - shortModel.zhanyongnum <= 0 ? kColorC1C1C1 : kColorDD9900;
     
     self.reserveLab.text = @"预订";
     self.spaceLab.text = @"地锁";
     self.spaceLab.hidden = shortModel.park_type == 0;
+    
 
 }
 

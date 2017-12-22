@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUz-DS-7pJ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="仅支持合作停车场" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVy-bw-Qiv">
                                     <rect key="frame" x="15" y="15" width="345" height="20"/>
@@ -90,7 +90,7 @@
                                             <rect key="frame" x="99" y="0.0" width="231" height="45"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -331,7 +331,7 @@
                                 <constraint firstItem="39U-Wh-smH" firstAttribute="top" secondItem="Vzs-0H-4ID" secondAttribute="bottom" constant="15" id="giE-Xh-n5F"/>
                                 <constraint firstItem="cVy-bw-Qiv" firstAttribute="leading" secondItem="kUz-DS-7pJ" secondAttribute="leading" constant="15" id="i5T-Kd-yTz"/>
                                 <constraint firstAttribute="trailing" secondItem="wTA-H8-qRw" secondAttribute="trailing" constant="15" id="iNU-a5-FEB"/>
-                                <constraint firstAttribute="height" constant="800" id="jYp-kb-Ucz"/>
+                                <constraint firstAttribute="height" constant="700" id="jYp-kb-Ucz"/>
                                 <constraint firstItem="KrF-jL-oFn" firstAttribute="height" secondItem="39U-Wh-smH" secondAttribute="height" id="jpi-rj-7i6"/>
                                 <constraint firstItem="KrF-jL-oFn" firstAttribute="centerY" secondItem="39U-Wh-smH" secondAttribute="centerY" id="mPE-op-OJE"/>
                                 <constraint firstItem="wTA-H8-qRw" firstAttribute="leading" secondItem="kUz-DS-7pJ" secondAttribute="leading" constant="15" id="oeD-KE-WUu"/>

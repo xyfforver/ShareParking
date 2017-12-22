@@ -42,7 +42,7 @@
     
     
     self.title = @"车位详情";
-    self.reminderBtn.hidden = YES;
+//    self.reminderBtn.hidden = YES;
     
     [self loadData:nil];
     
@@ -56,6 +56,7 @@
         kSelfStrong;
         if(statusModel.flag == kFlagSuccess){
             strongSelf.carModel = statusModel.data;
+            strongSelf.title = strongSelf.carModel.parking_number;
             if (strongSelf.carModel.car_chepai.count > 0) {
                 if (carNumber) {
                     for (CarportShortItemModel *itemModel in strongSelf.carModel.car_chepai) {

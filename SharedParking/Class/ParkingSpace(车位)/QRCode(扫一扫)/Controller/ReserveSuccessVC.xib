@@ -19,6 +19,7 @@
             <connections>
                 <outlet property="addressLab" destination="5bW-Kp-ENd" id="dFy-Vp-FrI"/>
                 <outlet property="afterBtn" destination="HLh-Ql-AWC" id="psU-Iu-aZS"/>
+                <outlet property="infoLab" destination="dch-7C-1cp" id="9Ku-Mx-AYA"/>
                 <outlet property="nowBtn" destination="PxJ-hN-OlG" id="DLE-Cm-mIe"/>
                 <outlet property="numberLab" destination="nkh-Jg-G9d" id="rAc-E2-pSJ"/>
                 <outlet property="timeLab" destination="RpT-3P-GXg" id="ndn-pK-ZGd"/>
@@ -35,7 +36,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="BEa-qf-UzJ"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
                     <color key="textColor" red="0.86121433970000005" green="0.57592189309999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -44,7 +45,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="t00-qz-hW7"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -54,13 +55,13 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="CxF-Aj-Wcl"/>
                         <constraint firstAttribute="height" constant="20" id="jx3-uz-Sab"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpT-3P-GXg">
-                    <rect key="frame" x="193.5" y="183" width="45.5" height="24"/>
-                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                    <rect key="frame" x="193.5" y="185" width="40" height="21"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -69,7 +70,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="PAw-Da-sUA"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="13"/>
                     <color key="textColor" red="0.24836188549999999" green="0.5792925954" blue="0.84106713529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -120,7 +121,7 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="nGv-UE-vSl"/>
                         <constraint firstAttribute="height" constant="20" id="wZ0-HI-vdt"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -133,12 +134,12 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpk-33-nAm">
-                    <rect key="frame" x="244" y="185" width="17" height="20"/>
+                    <rect key="frame" x="238.5" y="185" width="15" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="fHf-le-4Fc"/>
                         <constraint firstAttribute="height" constant="20" id="i7L-bU-63Y"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>

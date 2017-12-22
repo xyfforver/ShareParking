@@ -31,6 +31,7 @@
     self.titleLab.text = shortModel.park_title;
     self.infoLab.text = [NSString stringWithFormat:@"距您%@",[HelpTool stringWithDistance: shortModel.distance]];
     self.countLab.text = [NSString stringWithFormat:@"剩余车位 %ld/%ld",shortModel.zongnum - shortModel.zhanyongnum,shortModel.zongnum];
+    self.countLab.textColor = shortModel.zongnum - shortModel.zhanyongnum <= 0 ? kColorC1C1C1 : kColorDD9900;
 }
 
 #pragma mark -----------------LifeCycle---------------------/

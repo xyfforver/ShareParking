@@ -52,7 +52,7 @@
             strongSelf.rentView.model = strongSelf.requestModel.help;
             
             if (strongSelf.requestModel.parking_list.count == 0) {
-                [WSProgressHUD showImage:nil status:@"没有找到匹配的停车位"];
+                [WSProgressHUD showImage:nil status:@"显示暂时没有匹配到所需车位"];
             }
             
             [strongSelf.clView reloadData];

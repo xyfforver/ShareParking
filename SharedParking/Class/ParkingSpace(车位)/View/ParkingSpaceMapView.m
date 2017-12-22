@@ -94,7 +94,12 @@
     [_clusterManager clearClusterItems];
     for (CarportShortListModel *model in self.dataArr) {
         XJCluster *cluster = [[XJCluster alloc] init];
-        cluster.name = [NSString stringWithFormat:@"￥%.2f元",model.park_fee];
+        
+        if (self.type == CarportShortRentType) {
+            cluster.name = [NSString stringWithFormat:@"￥%.2f元/小时",model.park_fee];
+        }else{
+            cluster.name = [NSString stringWithFormat:@"￥%.2f元/月",model.park_fee];
+        }
         
         CLLocationCoordinate2D coor;
         coor.latitude = model.latitude;

@@ -30,7 +30,12 @@
     _userModel = userModel;
     
     [self.headImgView sd_setImageWithURL:[NSURL URLWithString:kImageStringJoint(userModel.headimg)]];
-    [self.nickNameBtn setTitle:userModel.user_mobile forState:UIControlStateNormal];
+    
+    if (GetDataManager.isLogin) {
+        [self.nickNameBtn setTitle:userModel.user_mobile forState:UIControlStateNormal];
+    }else{
+        [self.nickNameBtn setTitle:@"请登录" forState:UIControlStateNormal];
+    }
     [self.nickNameBtn lc_titleImageHorizontalAlignmentWithSpace:15];
     
     NSString *str = [NSString stringWithFormat:@"余额：%.2f",userModel.user_money];
