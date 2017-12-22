@@ -9,7 +9,7 @@
 #define kItemSpace 3.0
 #import "MineHeaderView.h"
 @interface MineHeaderView()
-@property (nonatomic , strong) UIImageView *bgImgView;
+
 @property (nonatomic , strong) UIImageView *headImgView;
 @property (nonatomic , strong) UIButton *nickNameBtn;//用户名
 @property (nonatomic , strong) UILabel *balanceLab;//余额

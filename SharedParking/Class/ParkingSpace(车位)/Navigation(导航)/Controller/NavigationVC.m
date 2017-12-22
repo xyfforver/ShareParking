@@ -12,16 +12,21 @@
 @property (nonatomic , strong) BMKMapView *mapView;
 @property (nonatomic , strong) BMKLocationService *service;//定位服务
 @property (nonatomic , strong) NavigationBottomView *bottomView;
+
+@property (nonatomic) CLLocationCoordinate2D userCoordinate;
 @end
 
 @implementation NavigationVC
 
 #pragma mark ---------------LifeCycle-------------------------/
-- (instancetype)initWithLatitude:(CGFloat )latitude longitude:(CGFloat)longitude{
+- (instancetype)initWithLatitude:(CGFloat )latitude longitude:(CGFloat)longitude titleStr:(NSString *)titleStr{
     self = [super init];
     if (self) {
         self.latitude = latitude;
         self.longitude = longitude;
+        self.titleStr = titleStr;
+        
+        self.title = titleStr;
     }
     return self;
 }
@@ -30,25 +35,94 @@
     [super viewDidLoad];
     
     [self initView];
+    [self addAnnotations];
+}
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.mapView.delegate = self;
+    self.service.delegate = self;
+    [self.service startUserLocationService];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    self.mapView.delegate = nil; // 不用时，置nil
+    //关闭定位
+    [self.service stopUserLocationService];
+    self.service.delegate = nil;
+    
 }
 
 - (void)initView{
     self.title = @"导航";
+    self.fd_interactivePopDisabled = YES;
     
     self.navigationItem.rightBarButtonItem = [[self class] rightBarButtonWithName:nil imageName:@"home_qrcode" target:self action:@selector(codeAction)];
     
     [self.view addSubview:self.mapView];
     [self.view addSubview:self.bottomView];
+    
 }
 
+//添加大头针
+- (void)addAnnotations{
+    BMKPointAnnotation *annotation =  [[BMKPointAnnotation alloc]init];
+    annotation.coordinate = CLLocationCoordinate2DMake(self.latitude, self.longitude);
+    annotation.title = self.titleStr;
+    [self.mapView addAnnotation:annotation];
+}
 #pragma mark ---------------NetWork-------------------------/
+
+
+#pragma mark --------------- 定位 ---------------------/
+/**
+ *用户位置更新后，会调用此函数
+ *@param userLocation 新的用户位置
+ */
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation {
+    //更新位置数据
+    [self.mapView updateLocationData:userLocation];
+    
+    if (!self.userCoordinate.latitude) {
+        self.mapView.centerCoordinate = userLocation.location.coordinate;
+    }
+    self.userCoordinate = userLocation.location.coordinate;;
+    
+    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+}
+
+
+- (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation
+{
+    //如果是注释点
+    if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
+        
+        //根据注释点,创建并初始化注释点视图
+        BMKPinAnnotationView  *newAnnotation = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"an"];
+        
+        //设置大头针的颜色
+        newAnnotation.pinColor = BMKPinAnnotationColorRed;
+        
+        //设置动画
+        newAnnotation.animatesDrop = YES;
+        
+        return newAnnotation;
+        
+    }
+    
+    return nil;
+}
 
 
 #pragma mark ---------------Event-------------------------/
 - (void)codeAction{
     [self openQRCode];
 }
+
+
 
 #pragma mark ---------------Lazy-------------------------/
 - (BMKMapView *)mapView{
@@ -73,6 +147,16 @@
     }
     return _mapView;
 }
+
+- (BMKLocationService *)service{
+    if (!_service) {
+        _service = [[BMKLocationService alloc]init];
+        _service.desiredAccuracy =  kCLLocationAccuracyBest;
+        _service.distanceFilter = 100;//大于100米
+    }
+    return _service;
+}
+
 
 - (NavigationBottomView *)bottomView{
     if (!_bottomView) {

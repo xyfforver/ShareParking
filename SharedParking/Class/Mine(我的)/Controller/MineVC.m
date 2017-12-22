@@ -80,7 +80,7 @@
 
 #pragma mark ---------------event ---------------------/
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
+    //导航栏
     CGFloat offsetY = scrollView.contentOffset.y;
     if (offsetY + kStatusBarAndNavigationBarHeight <= kHeadBgHeight) {
         CGFloat alpha = 1 - (kHeadBgHeight - kStatusBarAndNavigationBarHeight - offsetY)/(kHeadBgHeight - kStatusBarAndNavigationBarHeight);
@@ -88,11 +88,20 @@
     } else {
         [self adjustNavBarWithAlpha:1];
     }
+    //背景图
+    CGFloat yOffset = scrollView.contentOffset.y; // 偏移的y值
+    if (yOffset < 0) {
+        CGFloat totalOffset = 450.0/750.0*kScreenWidth + ABS(yOffset);
+        [self.headerView.bgImgView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(yOffset);
+            make.height.mas_equalTo(totalOffset);
+        }];
+    }
 }
 
 - (void)adjustNavBarWithAlpha:(CGFloat)alpha
 {
-    DLog(@"%f",alpha);
+//    DLog(@"%f",alpha);
     self.navView.backgroundColor = [UIColor colorWithWhite:1 alpha:alpha];
     if (alpha <= 0.5) {
         self.titleLab.textColor = kColorWhite;

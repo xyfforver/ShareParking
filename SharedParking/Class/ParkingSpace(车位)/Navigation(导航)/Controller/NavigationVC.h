@@ -10,8 +10,9 @@
 
 @interface NavigationVC : BaseViewController
 
-- (instancetype)initWithLatitude:(CGFloat )latitude longitude:(CGFloat)longitude;
+- (instancetype)initWithLatitude:(CGFloat )latitude longitude:(CGFloat)longitude titleStr:(NSString *)titleStr;
 
+@property (copy , nonatomic) NSString *titleStr;
 @property (assign, nonatomic) CGFloat latitude;
 @property (assign, nonatomic) CGFloat longitude;
 

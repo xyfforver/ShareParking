@@ -148,7 +148,7 @@
 }
 
 - (void)gpsAction:(UIButton *)button{
-    NavigationVC *vc = [[NavigationVC alloc]initWithLatitude:self.reserveModel.latitude longitude:self.reserveModel.longitude];
+    NavigationVC *vc = [[NavigationVC alloc]initWithLatitude:self.reserveModel.latitude longitude:self.reserveModel.longitude titleStr:self.reserveModel.park_title];
     [self.Controller.navigationController pushViewController:vc animated:YES];
 }
 

@@ -1,18 +1,19 @@
 //
-//  AccountSecurityVC.m
+//  AbountUsVC.m
 //  SharedParking
 //
-//  Created by galaxy on 2017/12/16.
+//  Created by galaxy on 2017/12/22.
 //  Copyright © 2017年 galaxy. All rights reserved.
 //
 
-#import "AccountSecurityVC.h"
+#import "AbountUsVC.h"
 
-@interface AccountSecurityVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface AbountUsVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView *tbView;
+
 @end
 
-@implementation AccountSecurityVC
+@implementation AbountUsVC
 
 #pragma mark ---------------LifeCycle-------------------------/
 - (void)viewDidLoad {
@@ -23,11 +24,11 @@
 }
 
 - (void)initView{
-    self.title = @"账号与安全";
+    self.title = @"关于我们";
     
     [self.view addSubview:self.tbView];
     
-
+    
 }
 
 #pragma mark ---------------NetWork-------------------------/
@@ -55,25 +56,25 @@
     [cell addSubview:rightLab];
     
     if (indexPath.row == 0) {
-        cell.textLabel.text = @"更改手机号";
-        rightLab.hidden = NO;
-        NSString *phone = [[NSUserDefaults standardUserDefaults] objectForKey:kLingBaoUser];
-        rightLab.text = phone;
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.textLabel.text = @"软件关于";
+        
+
     }else{
-        cell.textLabel.text = @"修改密码";
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.text = @"版本";
+        //当前版本
+        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+        // app版本
+        NSString *current = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+        rightLab.text = [NSString stringWithFormat:@"%@",current];
+        rightLab.hidden = NO;
     }
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        LoginVC *vc = [[LoginVC alloc]initWithType:1 completionBack:^{
+    if (indexPath.row == 1) {
 
-        }];
-        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
@@ -97,9 +98,10 @@
         if (@available(iOS 9.0, *)) {
             _tbView.cellLayoutMarginsFollowReadableWidth = NO;
         }
-    
+        
         [_tbView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     }
     return _tbView;
 }
+
 @end

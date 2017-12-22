@@ -9,13 +9,15 @@
 #import "SettingVC.h"
 #import "FeedbackVC.h"
 #import "AccountSecurityVC.h"
+#import "AbountUsVC.h"
+
+#import "SettingTBCell.h"
 @interface SettingVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView *tbView;
 @property (nonatomic , strong) NSArray *firstArr;
 @property (nonatomic , strong) NSArray *secondArr;
 
 @property (nonatomic , strong) UIView *exitView;
-@property (nonatomic,strong)UILabel *cacheLab;
 
 @end
 
@@ -33,7 +35,7 @@
     self.title = @"设置";
     self.view.backgroundColor = kBackGroundGrayColor;
     self.firstArr = @[@"账号与安全",@"租用须知"];
-    self.secondArr = @[@"意见反馈",@"软件关于",@"联系客服",@"清除缓存",@"去评价",@"版本"];
+    self.secondArr = @[@"意见反馈",@"联系客服",@"清除缓存",@"去评价",@"关于我们"];
     [self.view addSubview:self.tbView];
 }
 
@@ -185,26 +187,10 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
+    SettingTBCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingTBCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.font = kFontSize16;
     cell.textLabel.textColor = kColor333333;
-    
-    UILabel *rightLab = [[UILabel alloc]initWithFrame:CGRectMake(kScreenWidth - 100, 0, 80, 50)];
-    rightLab.font = kFontSize15;
-    rightLab.textAlignment = NSTextAlignmentRight;
-    rightLab.textColor = kColorDarkgray;
-    rightLab.hidden = YES;
-    [cell addSubview:rightLab];
-    
-    if (indexPath.section == 1 && indexPath.row == 5) {
-        //当前版本
-        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-        // app版本
-        NSString *current = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-        rightLab.text = [NSString stringWithFormat:@"%@",current];
-        rightLab.hidden = NO;
-    }
     
     if (indexPath.section == 0) {
         cell.textLabel.text = self.firstArr[indexPath.row];
@@ -212,6 +198,15 @@
         cell.textLabel.text = self.secondArr[indexPath.row];
     }
     
+    if (indexPath.section == 1 && indexPath.row == 2) {
+        //缓存文件的位置
+        NSString *cachPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+        //计算缓存文件的大小
+        CGFloat cachSize = [self getCacheSizeAtPath:cachPath];
+        cell.rightLab.text = [NSString stringWithFormat:@"%.2f M",cachSize];
+    }else{
+        cell.rightLab.text = nil;
+    }
 
     return cell;
 }
@@ -236,13 +231,14 @@
             FeedbackVC *vc = [[FeedbackVC alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
         }else if (indexPath.row == 1){
-            
-        }else if (indexPath.row == 2){
             [self contactService];
-        }else if (indexPath.row == 3){
+        }else if (indexPath.row == 2){
             [self clearData];
-        }else if (indexPath.row == 4){
+        }else if (indexPath.row == 3){
             
+        }else if (indexPath.row == 4){
+            AbountUsVC *vc = [[AbountUsVC alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
     }
 }
@@ -267,7 +263,7 @@
         }
         
         _tbView.tableFooterView = self.exitView;
-        [_tbView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+        [_tbView registerClass:[SettingTBCell class] forCellReuseIdentifier:@"SettingTBCell"];
     }
     return _tbView;
 }

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MineHeaderView : UIView
+@property (nonatomic , strong) UIImageView *bgImgView;
+
 @property (nonatomic , strong) UserModel *userModel;
 
 @property (nonatomic , copy) void(^pushBlock)(NSInteger type);//type 0:编辑 1:余额 2：车牌
