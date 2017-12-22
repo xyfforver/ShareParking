@@ -21,6 +21,7 @@
 		6B0B3B5A1FECEAAF004EB3D7 /* RequestCarportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C5AA1FECE5730070F5F7 /* RequestCarportVC.xib */; };
 		6B0B3B5B1FECEAAF004EB3D7 /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C5DF1FECE5730070F5F7 /* EditVC.xib */; };
 		6B0B3B5D1FECEB09004EB3D7 /* SGQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6B0B3B5C1FECEB09004EB3D7 /* SGQRCode.bundle */; };
+		6B0B3B601FECEF76004EB3D7 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0B3B5F1FECEF76004EB3D7 /* Util.m */; };
 		6B0E80191FCBCE6700B2C309 /* QFDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E80131FCBBD4B00B2C309 /* QFDatePickerView.m */; };
 		6B17DCEC1FD68E2200A30057 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCEB1FD68DFC00A30057 /* MZTimerLabel.m */; };
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
@@ -247,6 +248,8 @@
 		53E76ABEDC7B69476CC9FD69 /* Pods-SharedParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedParking.release.xcconfig"; path = "Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking.release.xcconfig"; sourceTree = "<group>"; };
 		6B075CFD1FD247CD00244359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B0B3B5C1FECEB09004EB3D7 /* SGQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SGQRCode.bundle; path = "SharedParking/Class/ParkingSpace(车位)/QRCode(扫一扫)/SGQRCode/SGQRCode.bundle"; sourceTree = "<group>"; };
+		6B0B3B5E1FECEF76004EB3D7 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		6B0B3B5F1FECEF76004EB3D7 /* Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		6B0E80121FCBBD4B00B2C309 /* QFDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFDatePickerView.h; sourceTree = "<group>"; };
 		6B0E80131FCBBD4B00B2C309 /* QFDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFDatePickerView.m; sourceTree = "<group>"; };
 		6B17DCEA1FD68DFC00A30057 /* MZTimerLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
@@ -796,16 +799,16 @@
 		6B41C5671FECE5730070F5F7 /* Mine(我的) */ = {
 			isa = PBXGroup;
 			children = (
-				6B41C5681FECE5730070F5F7 /* Balance(余额) */,
-				6B41C57E1FECE5730070F5F7 /* CarNumber(车牌) */,
-				6B41C5881FECE5730070F5F7 /* Controller */,
-				6B41C58B1FECE5730070F5F7 /* Login(登录) */,
-				6B41C5991FECE5730070F5F7 /* Model */,
 				6B41C59A1FECE5730070F5F7 /* MyIssue(我的发布) */,
 				6B41C5A41FECE5730070F5F7 /* MyRequest(我的求租) */,
 				6B41C5B91FECE5730070F5F7 /* MyReserve(我的预订) */,
 				6B41C5C51FECE5730070F5F7 /* ParkingRecord(停车记录) */,
 				6B41C5CF1FECE5730070F5F7 /* Setting(设置) */,
+				6B41C58B1FECE5730070F5F7 /* Login(登录) */,
+				6B41C5681FECE5730070F5F7 /* Balance(余额) */,
+				6B41C57E1FECE5730070F5F7 /* CarNumber(车牌) */,
+				6B41C5881FECE5730070F5F7 /* Controller */,
+				6B41C5991FECE5730070F5F7 /* Model */,
 				6B41C5E41FECE5730070F5F7 /* View */,
 			);
 			path = "Mine(我的)";
@@ -1118,11 +1121,11 @@
 		6B41C5CF1FECE5730070F5F7 /* Setting(设置) */ = {
 			isa = PBXGroup;
 			children = (
+				6B41C5D41FECE5730070F5F7 /* Cropper */,
 				6B41C5D01FECE5730070F5F7 /* AbountUsVC.h */,
 				6B41C5D11FECE5730070F5F7 /* AbountUsVC.m */,
 				6B41C5D21FECE5730070F5F7 /* AccountSecurityVC.h */,
 				6B41C5D31FECE5730070F5F7 /* AccountSecurityVC.m */,
-				6B41C5D41FECE5730070F5F7 /* Cropper */,
 				6B41C5DD1FECE5730070F5F7 /* EditVC.h */,
 				6B41C5DE1FECE5730070F5F7 /* EditVC.m */,
 				6B41C5DF1FECE5730070F5F7 /* EditVC.xib */,
@@ -1760,6 +1763,8 @@
 				6B91B6391F9DDDC300A1020C /* StatusModel.m */,
 				6B91B63C1F9DDDC300A1020C /* UserModel.h */,
 				6B91B63D1F9DDDC300A1020C /* UserModel.m */,
+				6B0B3B5E1FECEF76004EB3D7 /* Util.h */,
+				6B0B3B5F1FECEF76004EB3D7 /* Util.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -2281,6 +2286,7 @@
 				6B41C7241FECE5D90070F5F7 /* MyReserveModel.m in Sources */,
 				6B41C7251FECE5D90070F5F7 /* MyReserveTBCell.m in Sources */,
 				6B41C7261FECE5D90070F5F7 /* MyReserveTBView.m in Sources */,
+				6B0B3B601FECEF76004EB3D7 /* Util.m in Sources */,
 				6B41C7271FECE5D90070F5F7 /* ParkingRecordVC.m in Sources */,
 				6B41C7281FECE5D90070F5F7 /* ParkingRecordModel.m in Sources */,
 				6B41C7291FECE5D90070F5F7 /* ParkingRecordTBCell.m in Sources */,

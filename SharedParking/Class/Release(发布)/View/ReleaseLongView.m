@@ -10,7 +10,7 @@
 #import "SelectCarportVC.h"
 #import "CarportCertificationVC.h"
 #import "ReleaseModel.h"
-@interface ReleaseLongView ()
+@interface ReleaseLongView ()<UITextViewDelegate>
 //
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UITextField *titleField;
@@ -57,6 +57,9 @@
     [super layoutSubviews];
     
     self.infoTextView.placeholder = @"例如：地上车位，在停车场的东北角";
+    self.infoTextView.delegate = self;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textViewEditChanged:) name:UITextViewTextDidChangeNotification object:self.infoTextView];
+    
     self.scrollView.contentSize = CGSizeMake(0, self.nextBtn.bottom + 50);
     
     
@@ -87,6 +90,14 @@
 }
 
 #pragma mark ---------------event ---------------------/
+#pragma mark - Notification Method
+-(void)textViewEditChanged:(NSNotification *)obj
+{
+    UITextView *textView = (UITextView *)obj.object;
+    [Util limitTextView:textView Length:50];
+//    NSUInteger length = textView.text.length;
+//    DLog(@"%@,%@",@(length),textView.text);
+}
 
 - (IBAction)carportAction:(UIButton *)sender {
     self.carSelectBtn.selected = NO;

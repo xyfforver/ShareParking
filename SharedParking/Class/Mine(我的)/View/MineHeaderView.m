@@ -38,10 +38,14 @@
     [contentMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(3, str.length - 3)];
     self.balanceLab.attributedText = contentMuStr;
     
-    NSString *numberStr = [NSString stringWithFormat:@"车牌：%@",userModel.car_chepai];
-    NSMutableAttributedString *numberMuStr = [[NSMutableAttributedString alloc]initWithString:numberStr];
-    [numberMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(3, numberStr.length - 3)];
-    self.numberLab.attributedText = numberMuStr;
+    if ([NSString isNull:userModel.car_chepai]) {
+        self.numberLab.text = @"请添加车牌";
+    }else{
+        NSString *numberStr = [NSString stringWithFormat:@"车牌：%@",userModel.car_chepai];
+        NSMutableAttributedString *numberMuStr = [[NSMutableAttributedString alloc]initWithString:numberStr];
+        [numberMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(3, numberStr.length - 3)];
+        self.numberLab.attributedText = numberMuStr;
+    }
 }
 
 #pragma mark -----------------LifeCycle---------------------/

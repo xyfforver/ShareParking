@@ -9,7 +9,7 @@
 #import "SettingVC.h"
 #import "FeedbackVC.h"
 #import "AccountSecurityVC.h"
-#import "AbountUsVC.h"
+//#import "AbountUsVC.h"
 
 #import "SettingTBCell.h"
 @interface SettingVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -35,7 +35,7 @@
     self.title = @"设置";
     self.view.backgroundColor = kBackGroundGrayColor;
     self.firstArr = @[@"账号与安全",@"租用须知"];
-    self.secondArr = @[@"意见反馈",@"联系客服",@"清除缓存",@"去评价",@"关于我们"];
+    self.secondArr = @[@"意见反馈",@"软件关于",@"联系客服",@"清除缓存",@"去评价"];
     [self.view addSubview:self.tbView];
 }
 
@@ -198,7 +198,13 @@
         cell.textLabel.text = self.secondArr[indexPath.row];
     }
     
-    if (indexPath.section == 1 && indexPath.row == 2) {
+    if(indexPath.section == 1 && indexPath.row == 1){
+        //当前版本
+        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+        // app版本
+        NSString *current = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+        cell.rightLab.text = [NSString stringWithFormat:@"%@",current];
+    }else if (indexPath.section == 1 && indexPath.row == 3) {
         //缓存文件的位置
         NSString *cachPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
         //计算缓存文件的大小
@@ -231,14 +237,15 @@
             FeedbackVC *vc = [[FeedbackVC alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
         }else if (indexPath.row == 1){
-            [self contactService];
+            
         }else if (indexPath.row == 2){
-            [self clearData];
+            [self contactService];
         }else if (indexPath.row == 3){
+            [self clearData];
             
         }else if (indexPath.row == 4){
-            AbountUsVC *vc = [[AbountUsVC alloc]init];
-            [self.navigationController pushViewController:vc animated:YES];
+//            AbountUsVC *vc = [[AbountUsVC alloc]init];
+//            [self.navigationController pushViewController:vc animated:YES];
         }
     }
 }
