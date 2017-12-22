@@ -103,6 +103,9 @@
 
 #pragma mark ---------------Event-------------------------/
 - (void)nextAction:(UIButton *)button{
+    [self.carNumView.textField resignFirstResponder];
+    [self.endNumView.textField resignFirstResponder];
+    
     RootViewController *vc = [[RootViewController alloc] init];
     UIApplication.sharedApplication.delegate.window.rootViewController = vc;
 }
@@ -147,6 +150,10 @@
             NSLog(@"%@",textStr);
         };
         _carNumView.textField.inputView = carKeyboard;
+        
+        [_carNumView.titleLab mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(80);
+        }];
     }
     return _carNumView;
 }
@@ -159,6 +166,11 @@
         _endNumView.backgroundColor = kColorWhite;
         _endNumView.titleLab.text = @"发动机尾号后6位：";
         _endNumView.textField.placeholder = @"选填";
+        _endNumView.textField.keyboardType = UIKeyboardTypeASCIICapable;
+        
+        [_endNumView.titleLab mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(140);
+        }];
     }
     return _endNumView;
 }

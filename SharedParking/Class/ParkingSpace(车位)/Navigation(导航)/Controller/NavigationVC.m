@@ -47,7 +47,7 @@
 
 #pragma mark ---------------Event-------------------------/
 - (void)codeAction{
-    
+    [self openQRCode];
 }
 
 #pragma mark ---------------Lazy-------------------------/

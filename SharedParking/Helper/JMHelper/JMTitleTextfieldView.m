@@ -28,7 +28,7 @@
     [self addSubview:self.lineView];
 
     [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.mas_equalTo(self.titleLab.mas_right).offset(5);
+        make.left.mas_equalTo(self.titleLab.mas_right).offset(5);
         make.centerY.mas_equalTo(self.mas_centerY);
         make.right.mas_equalTo(-kMargin15);
         make.bottom.top.mas_equalTo(0);
@@ -37,7 +37,7 @@
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(kMargin15);
         make.centerY.mas_equalTo(self.mas_centerY);
-        make.right.mas_equalTo(self.textField.mas_left).offset(-5);
+//        make.right.mas_equalTo(self.textField.mas_left).offset(-5);
     }];
     
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -45,7 +45,6 @@
         make.height.mas_equalTo(1);
     }];
 }
-
 
 #pragma mark -----------------Lazy---------------------/
 - (UILabel *)titleLab{

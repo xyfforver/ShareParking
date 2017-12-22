@@ -63,7 +63,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     RechargeCLCell *cell = (RechargeCLCell *)[collectionView cellForItemAtIndexPath:indexPath];
     cell.layer.borderColor = kColorC1C1C1.CGColor;
-    cell.titleLab.textColor = kColorC1C1C1;
+    cell.titleLab.textColor = kColor333333;
     cell.imgView.hidden = YES;
 }
 

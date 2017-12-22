@@ -28,15 +28,15 @@
     return self;
 }
 
-- (void)loadView
-{
-    [super loadView];
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    scrollView.alwaysBounceVertical = YES;
-    scrollView.showsVerticalScrollIndicator = NO;
-    scrollView.delegate = self;
-    self.view = scrollView;
-}
+//- (void)loadView
+//{
+//    [super loadView];
+//    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+//    scrollView.alwaysBounceVertical = YES;
+//    scrollView.showsVerticalScrollIndicator = NO;
+//    scrollView.delegate = self;
+//    self.view = scrollView;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

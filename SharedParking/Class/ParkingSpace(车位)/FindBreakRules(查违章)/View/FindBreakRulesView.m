@@ -8,10 +8,10 @@
 
 #import "FindBreakRulesView.h"
 #import "JMTitleTextfieldView.h"
-
+#import "WTCarKeyboard.h"
 #import "CarNumberListVC.h"
 #import "CarportShortItemModel.h"
-@interface FindBreakRulesView ()
+@interface FindBreakRulesView ()<WTCarKeyboardDelegate>
 @property (nonatomic , strong) JMTitleTextfieldView *carNumView;
 @property (nonatomic , strong) JMTitleTextfieldView *endNumView;
 @property (nonatomic , strong) UIButton *selectBtn;
@@ -43,10 +43,12 @@
 //    kSelfWeak;
     [CarportShortItemModel checkViolationWithCarNum:self.carNumView.textField.text endNum:self.endNumView.textField.text success:^(StatusModel *statusModel) {
 //        kSelfStrong;
-        [WSProgressHUD showImage:nil status:statusModel.message];
+        
         
         if (statusModel.flag == kFlagSuccess) {
-
+            [WSProgressHUD showImage:nil status:@"提交成功"];
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
         }
     }];
 }
@@ -86,6 +88,12 @@
     button.selected = !button.selected;
 }
 
+#pragma mark ---------------WTCarKeyboardDelegate ---------------------/
+- (void)carKeyboard:(WTCarKeyboard *)carKeyboard didChangeWithText:(NSString *)textStr;
+{
+    NSLog(@"%@",textStr);
+}
+
 #pragma mark ---------------Lazy-------------------------/
 - (JMTitleTextfieldView *)carNumView{
     if (!_carNumView) {
@@ -94,6 +102,17 @@
         _carNumView.layer.masksToBounds = YES;
         _carNumView.backgroundColor = kColorWhite;
         _carNumView.titleLab.text = @"车牌号码：";
+        WTCarKeyboard* carKeyboard = [WTCarKeyboard new];
+        carKeyboard.delegate = self;
+        carKeyboard.inputBlock = ^(NSString* textStr)
+        {
+            NSLog(@"%@",textStr);
+        };
+        _carNumView.textField.inputView = carKeyboard;
+        
+        [_carNumView.titleLab mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(80);
+        }];
     }
     return _carNumView;
 }
@@ -105,6 +124,11 @@
         _endNumView.layer.masksToBounds = YES;
         _endNumView.backgroundColor = kColorWhite;
         _endNumView.titleLab.text = @"发动机尾号后6位：";
+        _endNumView.textField.keyboardType = UIKeyboardTypeASCIICapable;
+        
+        [_endNumView.titleLab mas_updateConstraints:^(MASConstraintMaker *make) {
+           make.width.mas_equalTo(140);
+        }];
     }
     return _endNumView;
 }
@@ -136,6 +160,7 @@
         [_agreeBtn addTarget:self action:@selector(agreeAction:) forControlEvents:UIControlEventTouchUpInside];
         _agreeBtn.frame = CGRectMake(kMargin15, self.selectBtn.bottom + 35, kScreenWidth - kMargin15 * 2, 20);
         [_agreeBtn lc_imageTitleHorizontalAlignmentWithSpace:5];
+        _agreeBtn.selected = YES;
         
         
     }

@@ -178,7 +178,7 @@
         _tbView.dataSource = self;
         _tbView.showsVerticalScrollIndicator = NO;
         _tbView.rowHeight = 55;
-        _tbView.backgroundColor = kColorWhite;
+        _tbView.backgroundColor = kBackGroundGrayColor;
         _tbView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
         _tbView.estimatedRowHeight = 0;
         _tbView.estimatedSectionHeaderHeight = 0;
