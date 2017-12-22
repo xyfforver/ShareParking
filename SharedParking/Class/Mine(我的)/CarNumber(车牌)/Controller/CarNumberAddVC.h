@@ -15,6 +15,6 @@
 
 @property (nonatomic , assign) NSInteger type;//0 绑定  1 添加  2 编辑
 @property (nonatomic , strong) CarportShortItemModel *carModel;//编辑时需要的参数
-@property (nonatomic , copy) void(^loadBlock)(void);
+@property (nonatomic , copy) void(^loadBlock)(NSString *carNumber);
 
 @end

@@ -75,7 +75,7 @@
                 [strongSelf loginSuccess];
             }else{
                 CarNumberAddVC *vc = [[CarNumberAddVC alloc]initWithType:0];
-                vc.loadBlock = ^{
+                vc.loadBlock = ^(NSString *carNumber) {
                     [strongSelf loginSuccess];
                 };
                 [self.navigationController pushViewController:vc animated:YES];

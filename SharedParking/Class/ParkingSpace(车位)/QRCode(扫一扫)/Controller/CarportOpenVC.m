@@ -38,18 +38,28 @@
     
     self.title = @"扫一扫";
     
-    [self loadData];
+    [self loadData:nil];
 }
 
 #pragma mark ---------------network ---------------------/
-- (void)loadData{
+- (void)loadData:(NSString *)carNumber{
     kSelfWeak;
     [CarportReserveModel qrcodeWithParkingId:self.carportId success:^(StatusModel *statusModel) {
         kSelfStrong;
         if(statusModel.flag == kFlagSuccess){
             strongSelf.carModel = statusModel.data;
             if (strongSelf.carModel.chepai_list.count > 0) {
-                strongSelf.carItemModel = [strongSelf.carModel.chepai_list lastObject];
+                if (carNumber) {
+                    for (CarportShortItemModel *itemModel in strongSelf.carModel.chepai_list) {
+                        if ([itemModel.parking_number isEqualToString:carNumber]) {
+                            strongSelf.carItemModel = itemModel;
+                            break;
+                        }
+                    }
+                }else{
+                    strongSelf.carItemModel = [strongSelf.carModel.chepai_list lastObject];
+                }
+                
                 [strongSelf.carNumBtn setTitle:strongSelf.carItemModel.car_chepai forState:UIControlStateNormal];
             }
             strongSelf.priceLab.text = [NSString stringWithFormat:@"每小时%.2f元",strongSelf.carModel.park_fee];
@@ -91,9 +101,9 @@
 - (IBAction)addAction:(id)sender {
     CarNumberAddVC *vc = [[CarNumberAddVC alloc]initWithType:1];
     kSelfWeak;
-    vc.loadBlock = ^{
+    vc.loadBlock = ^(NSString *carNumber) {
         kSelfStrong;
-        [strongSelf loadData];
+        [strongSelf loadData:carNumber];
     };
     [self.navigationController pushViewController:vc animated:YES];
 }

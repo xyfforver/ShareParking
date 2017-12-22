@@ -208,22 +208,25 @@
 }
 
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
-    if ([view isKindOfClass:[XJClusterAnnotationView class]]) {
-        XJClusterAnnotationView *anView = (XJClusterAnnotationView *)view;
-        anView.imageView.image = [UIImage imageNamed:@"map_leisure4"];
-    
-        [self showInfoView:anView.cluster];
+    if(!self.isOrder){
+        if ([view isKindOfClass:[XJClusterAnnotationView class]]) {
+            XJClusterAnnotationView *anView = (XJClusterAnnotationView *)view;
+            anView.imageView.image = [UIImage imageNamed:@"map_leisure4"];
+            
+            [self showInfoView:anView.cluster];
+        }
     }
-    
 }
 
 - (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view{
-    if ([view isKindOfClass:[XJClusterAnnotationView class]]) {
-        XJClusterAnnotationView *anView = (XJClusterAnnotationView *)view;
-        anView.imageView.image = [UIImage imageNamed:[HelpTool imageStringWithLeisure:anView.cluster.kongxiandu]];
+    if(!self.isOrder){
+        if ([view isKindOfClass:[XJClusterAnnotationView class]]) {
+            XJClusterAnnotationView *anView = (XJClusterAnnotationView *)view;
+            anView.imageView.image = [UIImage imageNamed:[HelpTool imageStringWithLeisure:anView.cluster.kongxiandu]];
+        }
+        
+        [self dismissInfoView];
     }
-    
-    [self dismissInfoView];
 }
 
 /**

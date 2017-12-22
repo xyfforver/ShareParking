@@ -60,7 +60,7 @@
 - (void)addAction:(UIButton *)button{
     CarNumberAddVC *vc = [[CarNumberAddVC alloc]initWithType:1];
     kSelfWeak;
-    vc.loadBlock = ^{
+    vc.loadBlock = ^(NSString *carNumber) {
         kSelfStrong;
         [strongSelf.tbView.mj_header beginRefreshing];
     };

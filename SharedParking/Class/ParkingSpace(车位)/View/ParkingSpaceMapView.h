@@ -14,7 +14,10 @@
 @property (nonatomic , strong) BMKGeoCodeSearch *geoCodeSearch;//地图搜索
 
 @property (nonatomic , assign) CarportRentType type;
+@property (nonatomic , assign) BOOL isOrder;//是否有订单
+
 @property (nonatomic , strong) NSArray *dataArr;
+
 //@property (nonatomic , copy) void(^loadBlock)(void);
 
 - (void)loadMapData;

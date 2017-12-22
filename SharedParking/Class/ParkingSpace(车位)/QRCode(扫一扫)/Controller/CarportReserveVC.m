@@ -44,20 +44,29 @@
     self.title = @"车位详情";
     self.reminderBtn.hidden = YES;
     
-    [self loadData];
+    [self loadData:nil];
     
 
 }
 
 #pragma mark ---------------network ---------------------/
-- (void)loadData{
+- (void)loadData:(NSString *)carNumber{
     kSelfWeak;
     [CarportReserveModel carportReserveWithParkingId:self.parkingId success:^(StatusModel *statusModel) {
         kSelfStrong;
         if(statusModel.flag == kFlagSuccess){
             strongSelf.carModel = statusModel.data;
             if (strongSelf.carModel.car_chepai.count > 0) {
-                strongSelf.carItemModel = [strongSelf.carModel.car_chepai lastObject];
+                if (carNumber) {
+                    for (CarportShortItemModel *itemModel in strongSelf.carModel.car_chepai) {
+                        if ([itemModel.parking_number isEqualToString:carNumber]) {
+                            strongSelf.carItemModel = itemModel;
+                            break;
+                        }
+                    }
+                }else{
+                    strongSelf.carItemModel = [strongSelf.carModel.car_chepai lastObject];
+                }
                 [strongSelf.numberBtn setTitle:strongSelf.carItemModel.car_chepai forState:UIControlStateNormal];
             }
             strongSelf.priceLab.text = [NSString stringWithFormat:@"每小时%.2f元",strongSelf.carModel.park_fee];
@@ -120,9 +129,9 @@
     DLog(@"添加车牌");
     CarNumberAddVC *vc = [[CarNumberAddVC alloc]initWithType:1];
     kSelfWeak;
-    vc.loadBlock = ^{
+    vc.loadBlock = ^(NSString *carNumber) {
         kSelfStrong;
-        [strongSelf loadData];
+        [strongSelf loadData:carNumber];
     };
     [self.navigationController pushViewController:vc animated:YES];
 }

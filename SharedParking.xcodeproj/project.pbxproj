@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		4D906E2314229514B9AEA22E /* Pods_SharedParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4662DFD8CE09B8385B9D2768 /* Pods_SharedParking.framework */; };
 		6B075CFE1FD247CD00244359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B075CFD1FD247CD00244359 /* Assets.xcassets */; };
+		6B0B3B511FECEAAF004EB3D7 /* CarportOpenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C6421FECE5730070F5F7 /* CarportOpenVC.xib */; };
+		6B0B3B521FECEAAF004EB3D7 /* CarportReserveVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C6471FECE5730070F5F7 /* CarportReserveVC.xib */; };
+		6B0B3B531FECEAAF004EB3D7 /* ReserveSuccessVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C64C1FECE5730070F5F7 /* ReserveSuccessVC.xib */; };
+		6B0B3B541FECEAAF004EB3D7 /* YJTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C6761FECE5730070F5F7 /* YJTagCollectionViewCell.xib */; };
+		6B0B3B551FECEAAF004EB3D7 /* FuelAddVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C6131FECE5730070F5F7 /* FuelAddVC.xib */; };
+		6B0B3B561FECEAAF004EB3D7 /* FuelAverageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C6201FECE5730070F5F7 /* FuelAverageView.xib */; };
+		6B0B3B571FECEAAF004EB3D7 /* CarportCertificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C6A01FECE5730070F5F7 /* CarportCertificationVC.xib */; };
+		6B0B3B581FECEAAF004EB3D7 /* ReleaseDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C6AD1FECE5730070F5F7 /* ReleaseDetailView.xib */; };
+		6B0B3B591FECEAAF004EB3D7 /* ReleaseLongView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C6B01FECE5730070F5F7 /* ReleaseLongView.xib */; };
+		6B0B3B5A1FECEAAF004EB3D7 /* RequestCarportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C5AA1FECE5730070F5F7 /* RequestCarportVC.xib */; };
+		6B0B3B5B1FECEAAF004EB3D7 /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B41C5DF1FECE5730070F5F7 /* EditVC.xib */; };
+		6B0B3B5D1FECEB09004EB3D7 /* SGQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6B0B3B5C1FECEB09004EB3D7 /* SGQRCode.bundle */; };
 		6B0E80191FCBCE6700B2C309 /* QFDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E80131FCBBD4B00B2C309 /* QFDatePickerView.m */; };
 		6B17DCEC1FD68E2200A30057 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B17DCEB1FD68DFC00A30057 /* MZTimerLabel.m */; };
 		6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C15871FA058AE00E584F3 /* BaseCLView.m */; };
@@ -234,6 +246,7 @@
 		4662DFD8CE09B8385B9D2768 /* Pods_SharedParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharedParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E76ABEDC7B69476CC9FD69 /* Pods-SharedParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharedParking.release.xcconfig"; path = "Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking.release.xcconfig"; sourceTree = "<group>"; };
 		6B075CFD1FD247CD00244359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6B0B3B5C1FECEB09004EB3D7 /* SGQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SGQRCode.bundle; path = "SharedParking/Class/ParkingSpace(车位)/QRCode(扫一扫)/SGQRCode/SGQRCode.bundle"; sourceTree = "<group>"; };
 		6B0E80121FCBBD4B00B2C309 /* QFDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFDatePickerView.h; sourceTree = "<group>"; };
 		6B0E80131FCBBD4B00B2C309 /* QFDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFDatePickerView.m; sourceTree = "<group>"; };
 		6B17DCEA1FD68DFC00A30057 /* MZTimerLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
@@ -1171,15 +1184,15 @@
 		6B41C5E91FECE5730070F5F7 /* ParkingSpace(车位) */ = {
 			isa = PBXGroup;
 			children = (
-				6B41C5EA1FECE5730070F5F7 /* CarportDetail(车位详情) */,
-				6B41C6021FECE5730070F5F7 /* Controller */,
-				6B41C6051FECE5730070F5F7 /* FindBreakRules(查违章) */,
-				6B41C60D1FECE5730070F5F7 /* Fuel(油耗) */,
-				6B41C6251FECE5730070F5F7 /* GasStation(附近加油站) */,
-				6B41C6311FECE5730070F5F7 /* Model */,
 				6B41C6361FECE5730070F5F7 /* Navigation(导航) */,
 				6B41C63E1FECE5730070F5F7 /* QRCode(扫一扫) */,
 				6B41C6671FECE5730070F5F7 /* Search(搜索) */,
+				6B41C6051FECE5730070F5F7 /* FindBreakRules(查违章) */,
+				6B41C60D1FECE5730070F5F7 /* Fuel(油耗) */,
+				6B41C6251FECE5730070F5F7 /* GasStation(附近加油站) */,
+				6B41C5EA1FECE5730070F5F7 /* CarportDetail(车位详情) */,
+				6B41C6021FECE5730070F5F7 /* Controller */,
+				6B41C6311FECE5730070F5F7 /* Model */,
 				6B41C67A1FECE5730070F5F7 /* View */,
 			);
 			path = "ParkingSpace(车位)";
@@ -1662,6 +1675,7 @@
 		6B91B5ED1F9DDB4000A1020C = {
 			isa = PBXGroup;
 			children = (
+				6B0B3B5C1FECEB09004EB3D7 /* SGQRCode.bundle */,
 				6B91B5F81F9DDB4000A1020C /* SharedParking */,
 				6B91B6111F9DDB4100A1020C /* SharedParkingTests */,
 				6B91B61C1F9DDB4100A1020C /* SharedParkingUITests */,
@@ -2064,6 +2078,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B0B3B5D1FECEB09004EB3D7 /* SGQRCode.bundle in Resources */,
+				6B0B3B511FECEAAF004EB3D7 /* CarportOpenVC.xib in Resources */,
+				6B0B3B521FECEAAF004EB3D7 /* CarportReserveVC.xib in Resources */,
+				6B0B3B531FECEAAF004EB3D7 /* ReserveSuccessVC.xib in Resources */,
+				6B0B3B541FECEAAF004EB3D7 /* YJTagCollectionViewCell.xib in Resources */,
+				6B0B3B551FECEAAF004EB3D7 /* FuelAddVC.xib in Resources */,
+				6B0B3B561FECEAAF004EB3D7 /* FuelAverageView.xib in Resources */,
+				6B0B3B571FECEAAF004EB3D7 /* CarportCertificationVC.xib in Resources */,
+				6B0B3B581FECEAAF004EB3D7 /* ReleaseDetailView.xib in Resources */,
+				6B0B3B591FECEAAF004EB3D7 /* ReleaseLongView.xib in Resources */,
+				6B0B3B5A1FECEAAF004EB3D7 /* RequestCarportVC.xib in Resources */,
+				6B0B3B5B1FECEAAF004EB3D7 /* EditVC.xib in Resources */,
 				6B91B6061F9DDB4000A1020C /* LaunchScreen.storyboard in Resources */,
 				6B075CFE1FD247CD00244359 /* Assets.xcassets in Resources */,
 				6B91B6011F9DDB4000A1020C /* Main.storyboard in Resources */,

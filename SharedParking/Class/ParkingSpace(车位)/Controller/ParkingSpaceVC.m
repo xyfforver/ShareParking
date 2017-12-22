@@ -141,12 +141,14 @@
 - (void)loadReserveData{
     kSelfWeak;
     self.orderView.hidden = YES;
+    self.mapView.isOrder = NO;
     [CarportReserveModel homeReserveWithSuccess:^(StatusModel *statusModel) {
         kSelfStrong;
         if (statusModel.flag == kFlagSuccess) {
             CarportReserveModel *model = statusModel.data;
             strongSelf.orderView.reserveModel = model;
             strongSelf.orderView.hidden = NO;
+            strongSelf.mapView.isOrder = YES;
         }else{
             [strongSelf loadOrderData];
         }
@@ -161,8 +163,10 @@
             CarportReserveModel *model = statusModel.data;
             strongSelf.orderView.reserveModel = model;
             strongSelf.orderView.hidden = NO;
+            strongSelf.mapView.isOrder = YES;
         }else{
             strongSelf.orderView.hidden = YES;
+            strongSelf.mapView.isOrder = NO;
         }
     }];
 }

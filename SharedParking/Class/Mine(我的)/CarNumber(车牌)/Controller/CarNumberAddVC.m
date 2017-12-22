@@ -71,7 +71,7 @@
         
         if (statusModel.flag == kFlagSuccess) {
             if (strongSelf.loadBlock) {
-                strongSelf.loadBlock();
+                strongSelf.loadBlock(strongSelf.carNumView.textField.text);
             }
             
             if (strongSelf.type) {
@@ -91,7 +91,7 @@
         
         if (statusModel.flag == kFlagSuccess) {
             if (strongSelf.loadBlock) {
-                strongSelf.loadBlock();
+                strongSelf.loadBlock(strongSelf.carNumView.textField.text);
             }
 
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

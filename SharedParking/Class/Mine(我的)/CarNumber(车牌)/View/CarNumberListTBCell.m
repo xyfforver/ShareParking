@@ -62,7 +62,7 @@
     kSelfWeak;
     CarNumberAddVC *vc = [[CarNumberAddVC alloc]initWithType:2];
     vc.carModel = self.itemModel;
-    vc.loadBlock = ^{
+    vc.loadBlock = ^(NSString *carNumber) {
         kSelfStrong;
         if (strongSelf.loadBlock) {
             strongSelf.loadBlock();
