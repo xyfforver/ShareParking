@@ -56,7 +56,7 @@
     
     [super layoutSubviews];
     
-    self.infoTextView.placeholder = @"例如：地上车位，在停车场的东北角";
+    self.infoTextView.placeholder = @"例如：地上车位，在停车场的东北角(50字以内)";
     self.infoTextView.delegate = self;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textViewEditChanged:) name:UITextViewTextDidChangeNotification object:self.infoTextView];
     
