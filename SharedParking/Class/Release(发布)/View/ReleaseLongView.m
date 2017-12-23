@@ -62,7 +62,6 @@
     
     self.scrollView.contentSize = CGSizeMake(0, self.nextBtn.bottom + 50);
     
-    
     self.carSelectBtn = self.plotCTBtn;
     
     [self setSelectState:self.plotCTBtn];
