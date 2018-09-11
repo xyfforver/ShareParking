@@ -24,12 +24,13 @@
     if (self) {
         //CGSize imageSize = [self contentSize];
 
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.f, 0.f, 60, 60)];
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.f, 0.f, 100, 100)];
         _titleLabel.textColor = [UIColor whiteColor];
         _titleLabel.font = [UIFont systemFontOfSize:12];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.numberOfLines = 2;
         _titleLabel.backgroundColor = [UIColor colorWithRed:255/255.0 green:87/255.0 blue:138/255.0 alpha:0.9];
+
         UITapGestureRecognizer *labelTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelClick)];
         // 2. 将点击事件添加到label上
         [_titleLabel addGestureRecognizer:labelTapGestureRecognizer];

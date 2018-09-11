@@ -49,17 +49,17 @@
     }
     
     NSInteger count = self.timeCount/60/60 + 1;
-    self.priceLab.text = [NSString stringWithFormat:@"收费：%.2f元",self.park_fee * count];
+    self.priceLab.text = [NSString stringWithFormat:@"收费：%.2f元",self.park_fee];
     
     self.timeLabel.startDate = startD;
     [self.timeLabel start];
     
 }
 
-- (void)setPark_fee:(CGFloat)park_fee{
-    _park_fee = park_fee;
-
-}
+//- (void)setPark_fee:(CGFloat)park_fee{
+//    _park_fee = park_fee;
+//
+//}
 
 #pragma mark ---------------delegate ---------------------/
 - (void)timerLabel:(MZTimerLabel *)timerLabel countingTo:(NSTimeInterval)time timertype:(MZTimerLabelType)timerType{
@@ -67,7 +67,7 @@
     
     
     if (count != self.timeCount) {
-        self.priceLab.text = [NSString stringWithFormat:@"收费：%.2f元",self.park_fee * count];
+        self.priceLab.text = [NSString stringWithFormat:@"收费：%.2f元",self.park_fee];
     }
 }
 

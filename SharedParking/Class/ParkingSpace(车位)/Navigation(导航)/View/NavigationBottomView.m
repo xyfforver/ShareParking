@@ -54,7 +54,9 @@
 
 #pragma mark ---------------event ---------------------/
 - (void)goAction:(UIButton *)button{
-    
+    if (self.gpsBlock) {
+        self.gpsBlock();
+    }
 }
 
 #pragma mark -----------------Lazy---------------------/

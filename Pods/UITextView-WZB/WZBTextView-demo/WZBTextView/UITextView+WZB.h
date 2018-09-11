@@ -18,11 +18,14 @@ typedef void(^textViewHeightDidChangedBlock)(CGFloat currentTextViewHeight);
 @property (nonatomic, strong) UIColor *placeholderColor;
 /* 最大高度，如果需要随文字改变高度的时候使用 */
 @property (nonatomic, assign) CGFloat maxHeight;
+/* 最小高度，如果需要随文字改变高度的时候使用 */
+@property (nonatomic, assign) CGFloat minHeight;
 @property (nonatomic, copy) textViewHeightDidChangedBlock textViewHeightDidChanged;
 /* 获取图片数组 */
 - (NSArray *)getImages;
 
-
+/* 自动高度的方法，maxHeight：最大高度 */
+- (void)autoHeightWithMaxHeight:(CGFloat)maxHeight;
 /* 自动高度的方法，maxHeight：最大高度， textHeightDidChanged：高度改变的时候调用 */
 - (void)autoHeightWithMaxHeight:(CGFloat)maxHeight textViewHeightDidChanged:(textViewHeightDidChangedBlock)textViewHeightDidChanged;
 /* 添加一张图片 image:要添加的图片 */

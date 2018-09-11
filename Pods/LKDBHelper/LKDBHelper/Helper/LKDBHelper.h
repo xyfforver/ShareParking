@@ -6,12 +6,12 @@
 //  Copyright (c) 2012年 LJH. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <FMDB/FMDB.h>
-#import "LKDBUtils.h"
 #import "LKDB+Mapping.h"
+#import "LKDBUtils.h"
 #import "NSObject+LKDBHelper.h"
 #import "NSObject+LKModel.h"
+#import <FMDB/FMDB.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *	@brief  filepath the use of : "documents/db/" + fileName + ".db"
+ *          add to global cache with instance created
  *  refer:  FMDatabase.h  + (instancetype)databaseWithPath:(NSString *)inPath;
  */
 - (instancetype)initWithDBName:(NSString *)dbname;
@@ -40,6 +41,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithDBPath:(NSString *)filePath;
 - (void)setDBPath:(NSString *)filePath;
+
+/**
+ *    @brief  closing a database connection and remove instance for global cache
+ */
+- (void)closeDB;
+
+/**
+ *    @brief  当数据库无操作 多少秒后 自动关闭数据库连接, 区间 [10 ~ int_max]  默认：20秒
+ */
+- (void)setAutoCloseDBTime:(NSInteger)time;
 
 /**
  *  @brief current encryption key.
@@ -176,7 +187,7 @@ NS_ASSUME_NONNULL_BEGIN
        orderBy:(nullable NSString *)orderBy
         offset:(NSInteger)offset
          count:(NSInteger)count
-      callback:(void (^)(NSMutableArray * _Nullable array))block;
+      callback:(void (^)(NSMutableArray *_Nullable array))block;
 
 ///return first model or nil
 - (nullable id)searchSingle:(Class)modelClass where:(nullable id)where orderBy:(nullable NSString *)orderBy;

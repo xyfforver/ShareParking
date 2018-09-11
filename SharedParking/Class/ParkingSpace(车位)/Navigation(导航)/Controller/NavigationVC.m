@@ -8,6 +8,7 @@
 
 #import "NavigationVC.h"
 #import "NavigationBottomView.h"
+#import "JZLocationConverter.h"
 @interface NavigationVC ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate>
 @property (nonatomic , strong) BMKMapView *mapView;
 @property (nonatomic , strong) BMKLocationService *service;//定位服务
@@ -73,6 +74,8 @@
     annotation.coordinate = CLLocationCoordinate2DMake(self.latitude, self.longitude);
     annotation.title = self.titleStr;
     [self.mapView addAnnotation:annotation];
+    
+    
 }
 #pragma mark ---------------NetWork-------------------------/
 
@@ -117,6 +120,80 @@
 }
 
 
+
+
+#pragma mark ---------------导航--—--------------------/
+-(BOOL)canOpenUrl:(NSString *)string {
+    return  [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:string]];
+}
+
+- (void)selectGPSWithLatitude:(CGFloat)latitude andLongitude:(CGFloat )longitude{
+    CLLocationCoordinate2D coordinate = {latitude,longitude};
+    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    @weakify(self);
+    UIAlertAction *appleAction = [UIAlertAction actionWithTitle:@"苹果地图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        @strongify(self);
+        CLLocationCoordinate2D coor = [JZLocationConverter bd09ToGcj02:coordinate];
+        [self openAppleMapWithLatitude:coor.latitude andLongitude:coor.longitude];
+    }];
+    
+    UIAlertAction *gaodeAction = [UIAlertAction actionWithTitle:@"高德地图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        @strongify(self);
+        if ([self canOpenUrl:@"iosamap://"]) {
+            CLLocationCoordinate2D coor = [JZLocationConverter bd09ToGcj02:coordinate];
+            [self openGaoDeMapWithLatitude:coor.latitude andLongitude:coor.longitude];
+        }else {
+            [WSProgressHUD showImage:nil status:@"未安装高德地图"];
+        }
+    }];
+    UIAlertAction *baiduAction = [UIAlertAction actionWithTitle:@"百度地图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        @strongify(self);
+        if ([self canOpenUrl:@"baidumap://"]) {
+            [self openBaiDuMapWithLatitude:latitude andLongitude:longitude];
+        }else {
+            [WSProgressHUD showImage:nil status:@"未安装百度地图"];
+        }
+    }];
+    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [alertVc addAction:appleAction];
+    [alertVc addAction:gaodeAction];
+    [alertVc addAction:baiduAction];
+    [alertVc addAction:cancleAction];
+    
+    [self showDetailViewController:alertVc sender:nil];
+    
+}
+
+//苹果地图
+- (void)openAppleMapWithLatitude:(CGFloat)latitude andLongitude:(CGFloat )longitude{
+    CLLocationCoordinate2D loc = CLLocationCoordinate2DMake(latitude , longitude);
+    MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
+    MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:loc addressDictionary:nil]];
+    toLocation.name = @"目的地";
+    [MKMapItem openMapsWithItems:@[currentLocation, toLocation]
+                   launchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving,
+                                   MKLaunchOptionsShowsTrafficKey: [NSNumber numberWithBool:YES]}];
+}
+//高德地图
+- (void)openGaoDeMapWithLatitude:(CGFloat)latitude andLongitude:(CGFloat )longitude{
+    NSString *urlString = [[NSString stringWithFormat:@"iosamap://path?sourceApplication=%@&sid=BGVIS1&did=BGVIS2&dlat=%f&dlon=%f&dev=0&t=0",@"分刻停车",latitude, longitude]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+}
+//百度地图
+- (void)openBaiDuMapWithLatitude:(CGFloat)latitude andLongitude:(CGFloat )longitude{
+    
+    //    CLLocationCoordinate2D userLoc = self.mapView.coordinate;
+    NSString *urlString = [[NSString stringWithFormat:@"baidumap://map/direction?origin=%f,%f&destination=latlng:%f,%f|name=目的地&mode=driving",[GetDataManager.latitude floatValue],[GetDataManager.longitude floatValue],latitude, longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+}
+
+
 #pragma mark ---------------Event-------------------------/
 - (void)codeAction{
     [self openQRCode];
@@ -135,7 +212,7 @@
         _mapView.isSelectedAnnotationViewFront = YES;//选中图标显示在最上面
         
         //在手机上当前可使用的级别为3-21级
-        _mapView.zoomLevel = 13;
+        _mapView.zoomLevel = 14;
         
         ///如果您需要进入地图就显示定位小蓝点，则需要下面两行代码
         _mapView.showsUserLocation = YES;
@@ -161,6 +238,11 @@
 - (NavigationBottomView *)bottomView{
     if (!_bottomView) {
         _bottomView = [[NavigationBottomView alloc]initWithFrame:CGRectMake(0, self.mapView.bottom, kScreenWidth, 80 + kTabbarSafeBottomMargin)];
+        kSelfWeak;
+        _bottomView.gpsBlock = ^{
+            kSelfStrong;
+            [strongSelf selectGPSWithLatitude:strongSelf.latitude andLongitude:strongSelf.longitude];
+        };
     }
     return _bottomView;
 }

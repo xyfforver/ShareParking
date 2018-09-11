@@ -9,7 +9,6 @@
 #import "ParkingSpaceHeaderView.h"
 #import "SearchVC.h"
 @interface ParkingSpaceHeaderView ()
-@property (nonatomic , strong) UILabel *cityLab;
 @property (nonatomic , strong) UILabel *numberLab1;
 @property (nonatomic , strong) UILabel *numberLab2;
 
@@ -68,6 +67,9 @@
     self.numberLab1.text = @"1";
     self.numberLab2.text = @"9";
 }
+
+
+
 
 #pragma mark ---------------event ---------------------/
 - (void)searchAction:(UIButton *)button{

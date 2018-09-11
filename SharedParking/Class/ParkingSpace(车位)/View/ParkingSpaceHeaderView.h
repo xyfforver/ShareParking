@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ParkingSpaceHeaderView : UIView
-
+@property (nonatomic , strong) UILabel *cityLab;
 @end

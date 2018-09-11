@@ -9,6 +9,10 @@
 #import "CarportPayVC.h"
 #import "ParkingRecordModel.h"
 #import "MZTimerLabel.h"
+#import "OrderPayMethodView.h"
+#import "PayInfoModel.h"
+#import "ParkingRecordDetailVC.h"
+#import "PayCouponView.h"
 @interface CarportPayVC ()<MZTimerLabelDelegate>
 @property (nonatomic , strong) UIImageView *bgView;
 @property (nonatomic , strong) UIImageView *bgItemView;
@@ -16,10 +20,13 @@
 @property (nonatomic , strong) MZTimerLabel *timeLab;
 @property (nonatomic , strong) UILabel *priceLab;
 @property (nonatomic , strong) UIButton *closeBtn;
+@property (nonatomic , strong) OrderPayMethodView *payView;
+@property (nonatomic , strong) PayCouponView *couponView;
 
 @property (nonatomic , strong) NSDate *time;
 @property (nonatomic , assign) NSInteger timeCount;
 @property (nonatomic , strong) ParkingRecordModel *parkingModel;
+@property (nonatomic , strong) ParkingRecordModel *parkRuleMode;//计费
 @end
 
 @implementation CarportPayVC
@@ -31,11 +38,24 @@
     return self;
 }
 #pragma mark ---------------LifeCycle-------------------------/
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(payResault:) name:kWXpayresult object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(payResault:) name:kZhifubaoPaysuccessNoti object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kWXpayresult object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kZhifubaoPaysuccessNoti object:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initView];
     [self loadData];
+    [self loadParkRuleData];
 }
 
 - (void)initView{
@@ -46,10 +66,12 @@
     [self.view addSubview:self.bgItemView];
     [self.view addSubview:self.titleLab];
     [self.view addSubview:self.timeLab];
+    [self.view addSubview:self.couponView];
     
     [self.view addSubview:self.priceLab];
     [self.view addSubview:self.closeBtn];
-    
+    [self.view addSubview:self.payView];
+
     
     
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -71,9 +93,15 @@
         make.centerY.mas_equalTo(self.titleLab.mas_centerY);
     }];
     
-    [self.priceLab mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.couponView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.top.mas_equalTo(self.bgView.mas_bottom);
+        make.height.mas_equalTo(55);
+    }];
+    
+    [self.priceLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.equalTo(self.couponView.mas_bottom).offset(1);
         make.height.mas_equalTo(55);
     }];
     
@@ -95,20 +123,54 @@
         if (statusModel.flag == kFlagSuccess) {
             strongSelf.parkingModel = statusModel.data;
             
-            [strongSelf setParkingFee];
+            //[strongSelf setParkingFee];
             
             strongSelf.time = [NSDate dateWithTimeIntervalSince1970:strongSelf.parkingModel.order_jintime];
             [strongSelf startTime];
             
         }else{
             [WSProgressHUD showImage:nil status:statusModel.message];
+            [strongSelf backToSuperView];
+
+        }
+    }];
+    
+    
+}
+
+//获取计费价格
+-(void)loadParkRuleData{
+    kSelfWeak;
+    [ParkingRecordModel parkingPayWithOrderId:self.orderId success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            strongSelf.parkRuleMode = statusModel.data;
+            [strongSelf setParkingFee];
         }
     }];
 }
-
+//余额支付
 - (void)lockCarportData{
+    [WSProgressHUD showWithMaskType:(WSProgressHUDMaskTypeClear)];
+    CGFloat price = self.parkRuleMode.order_fee;
+    NSString *zerotype = @"0";
+    //原价格为0
+    if (price == 0) {
+        price = 0;
+        zerotype = @"0";
+    }
+    //使用优惠券后价格大于0
+    else if (price - 5 > 0) {
+        price = price - 5;
+        zerotype = @"0";
+    }
+    //使用优惠券后价格小于等于0
+    else{
+        price = 0;
+        zerotype = @"1";
+    }
     kSelfWeak;
-    [ParkingRecordModel lockWithOrderId:self.orderId payType:@"blancepay" price:@"1" success:^(StatusModel *statusModel) {
+    [ParkingRecordModel lockWithOrderId:self.orderId payType:@"blancepay" price:[NSString stringWithFormat:@"%.2f", price] zeroType:zerotype success:^(StatusModel *statusModel) {
         kSelfStrong;
         if (statusModel.flag == kFlagSuccess) {
             [strongSelf.timeLab pause];
@@ -119,7 +181,8 @@
                 if (strongSelf.reloadBlock) {
                     strongSelf.reloadBlock();
                 }
-                [strongSelf backToSuperView];
+               // [strongSelf backToSuperView];
+                [self gotoOrderDetailVC];
             });
         }else{
             [WSProgressHUD showImage:nil status:statusModel.message];
@@ -127,14 +190,193 @@
     }];
 }
 
+//支付宝微信支付地锁
+-(void)alipayOrWxpayOfdisuowithtype:(NSString *)type{
+    //价格为0 或者使用优惠券后价格为0 自动使用余额支付
+    if (self.parkRuleMode.order_fee == 0 || (self.parkRuleMode.order_fee - 5 <= 0)) {
+        [self lockCarportData];
+    }else{
+    
+        
+    
+    kSelfWeak;
+    [PayInfoModel alipaylockWithOrderId:self.orderId payType:type price:[NSString stringWithFormat:@"%.2f", self.parkRuleMode.order_fee-5] success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            [strongSelf.timeLab pause];
+            //    [[NSNotificationCenter defaultCenter]postNotificationName:kOpenParkingSpaceSuccessData object:nil];
+            [self getPayResult];
+
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+        
+    }];
+    }
+}
+- (void)closeParkingSpace{
+    [WSProgressHUD showWithStatus:@"上锁中~"];
+//    kSelfWeak;
+//    [ParkingModel openOrCloseParkingSpaceWithType:@"1" cid:self.carCid zid:self.zid success:^(StatusModel *statusModel) {
+        //kSelfStrong;
+        //self.isClose = YES;
+        [self.timeLab pause];
+        [[NSNotificationCenter defaultCenter]postNotificationName:kOpenParkingSpaceSuccessData object:nil];
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [WSProgressHUD showImage:nil status:@"支付成功，已上锁"];
+            if (self.reloadBlock) {
+                self.reloadBlock();
+            }
+           // [self backToSuperView];
+            [self gotoOrderDetailVC];
+        });
+//    }];
+}
+//跳转到订单详情界面
+-(void)gotoOrderDetailVC{
+    [self backToSuperView];
+    ParkingRecordDetailVC *vc = [ParkingRecordDetailVC new];
+    vc.order_id = self.orderId;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)getPayPriceIsTan:(BOOL)isTan{
+    //    kSelfWeak;closeAnaccountWithCard:self.zid success:^(StatusModel *statusModel)
+//    [ParkingModel closeAnAccountWithCarId:self.zid success:^(StatusModel *statusModel) {
+//        kSelfStrong;kSelfStrong if
+//        if(statusModel.flag == kFlagSuccess){
+//            strongSelf.parkingModel = statusModel.data;
+//            CGFloat price = strongSelf.timeCount * strongSelf.parkingModel.carcost - strongSelf.parkingModel.mycouponprice;
+//            NSString *str = nil;
+//            if (strongSelf.parkingModel.mycouponprice == 0) {
+//                str = [NSString stringWithFormat:@"停车费为：%.2f元",strongSelf.timeCount * strongSelf.parkingModel.carcost];
+//            }else{
+//                str = [NSString stringWithFormat:@"停车费为：%.2f元\n优惠后为：%.2f元",strongSelf.timeCount * strongSelf.parkingModel.carcost,price <= 0 ? 0 : price];
+//            }
+//            strongSelf.priceLab.text = str;
+//            strongSelf.time = [NSDate dateWithTimeIntervalSince1970:[strongSelf.parkingModel.starttime integerValue]];
+//            [strongSelf startTime];
+//
+//            if (isTan) {
+//                [UIAlertView alertViewWithTitle:@"支付" message:str cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:nil onCancel:^{
+//                    if(price <= 0){
+//                        [strongSelf closeParkingSpace];
+//                    }else{
+//                        [strongSelf showPay];
+//                    }
+//                }];
+//            }
+//        }else{
+//            [WSProgressHUD showImage:nil status:statusModel.message];
+//        }
+//    }];
+    CGFloat price = self.timeCount * self.parkingModel.park_fee;
+    if (isTan) {
+//        [UIAlertView alertViewWithTitle:@"支付" message:str cancelButtonTitle:@"确定" otherButtonTitles:nil onDismiss:nil onCancel:^{
+            if(price <= 0){
+                [self closeParkingSpace];
+            }else{
+                [self showPay];
+            }
+//        }];
+    }
+}
+
+
+
+
 #pragma mark ---------------Event-------------------------/
 - (void)closeAnAccount:(UIButton *)button{
     [UIAlertView alertViewWithTitle:@"提示" message:@"请确认您的爱车已开出停车位" cancelButtonTitle:@"还没有" otherButtonTitles:@[@"已开出"] onDismiss:^(int buttonIndex, NSString *buttonTitle) {
-        [self lockCarportData];
+//        [WSProgressHUD show];
+       //[self lockCarportData];
+      //  [self getPayPriceIsTan:YES];
+        //获取支付金额
+        [self loadParkRuleData];
+        [self showPay];
     } onCancel:^{
         
     }];
 }
+
+- (void)showPay{
+    [UIView animateWithDuration:0.2 animations:^{
+        self.payView.top = kBodyHeight - kTabbarSafeBottomMargin - self.payView.height;
+    }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    
+    NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象
+    UITouch *touch = [allTouches anyObject];   //视图中的所有对象
+    CGPoint point = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
+    
+    //隐藏支付页面
+    CGRect collectionViewRect = self.payView.frame;
+    if (!CGRectContainsPoint(collectionViewRect, point)) {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.payView.top = kBodyHeight;
+        }];
+    }
+}
+
+
+- (void)payMethod:(NSInteger)index{
+    CGFloat price = self.parkRuleMode.order_fee;
+    //地锁支付
+    if ([self.park_type isEqualToString:@"1"]) {
+        if (index == 0) {
+            DLog(@"微信支付");
+            [self alipayOrWxpayOfdisuowithtype:@"wxpay"];
+            
+        }else if(index == 1){
+            DLog(@"支付宝支付");
+            
+            [self alipayOrWxpayOfdisuowithtype:@"alipay"];
+            
+            
+        }else{
+            DLog(@"余额支付");
+            [self lockCarportData];
+            
+        }
+
+    }//道闸下支付
+    else if ([self.park_type isEqualToString:@"0"]){
+        if (index == 0) {
+            [WSProgressHUD showImage:nil status:@"道闸支付紧急开发中，请耐心等待"];
+        }
+        else if (index == 1){
+            [WSProgressHUD showImage:nil status:@"道闸支付紧急开发中，请耐心等待"];
+
+        }else{
+            [WSProgressHUD showImage:nil status:@"道闸支付紧急开发中，请耐心等待"];
+
+//            [PayInfoModel gateoutWithCarNumber:@"浙A88888" payType:@"blancepay" price:[NSString stringWithFormat:@"%.2f", price] success:^(StatusModel *statusModel) {
+//
+//            }];
+        }
+    }
+}
+
+- (void)payResault:(NSNotification *)note {
+    NSString *str = note.object;
+    if ([str isEqualToString:@"1"]) {
+        [self getPayResult];
+    }else{
+        //支付失败
+        [WSProgressHUD showImage:nil status:@"支付失败"];
+    }
+}
+
+- (void)getPayResult{
+    [WSProgressHUD showImage:nil status:@"付款成功!"];
+    [self closeParkingSpace];
+}
+
+
+
 
 - (void)startTime{
     NSDate *endD = [NSDate date];
@@ -157,9 +399,20 @@
 }
 
 - (void)setParkingFee{
-    CGFloat price = self.timeCount * self.parkingModel.park_fee;
+    CGFloat price = self.parkRuleMode.order_fee;
+    if (price == 0) {
+        price = 0;
+    }
+    //使用优惠券后价格大于0
+    else if (price - 5 > 0) {
+        price = price - 5;
+    }
+    //使用优惠券后价格小于等于0
+    else{
+        price = 0;
+    }
     NSString *priceStr = [NSString stringWithFormat:@"%.2f",price];
-    NSString *str = [NSString stringWithFormat:@"当前停车费：%@元",priceStr];
+    NSString *str = [NSString stringWithFormat:@"合计：%@元",priceStr];
     NSMutableAttributedString *contentMuStr = [[NSMutableAttributedString alloc]initWithString:str];
     [contentMuStr addAttribute:NSForegroundColorAttributeName value:kColorDD9900 range:NSMakeRange(str.length - priceStr.length - 1, priceStr.length)];
     self.priceLab.attributedText = contentMuStr;
@@ -233,7 +486,7 @@
 - (UIButton *)closeBtn{
     if (!_closeBtn) {
         _closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_closeBtn setTitle:@"点击上锁" forState:UIControlStateNormal];
+        [_closeBtn setTitle:@"点击结算" forState:UIControlStateNormal];
         _closeBtn.titleLabel.font = kFontSize15;
         [_closeBtn setTitleColor:kColorWhite forState:UIControlStateNormal];
         [_closeBtn setBackgroundColor:kNavBarColor];
@@ -243,5 +496,26 @@
     }
     return _closeBtn;
 }
+- (OrderPayMethodView *)payView{
+    if (!_payView) {
+        _payView = [[OrderPayMethodView alloc]initWithFrame:CGRectMake(0, kBodyHeight, kScreenWidth, 250)];
+        kSelfWeak;
+        _payView.payMethodBlock = ^(NSInteger index) {
+            kSelfStrong;
+            if ([strongSelf.park_type isEqualToString:@"0"]) {
+                [strongSelf payMethod:index];
+            }else{
+            [strongSelf payMethod:index];
+            }
+        };
+    }
+    return _payView;
+}
 
+-(PayCouponView *)couponView{
+    if (!_couponView) {
+        _couponView = [[PayCouponView alloc] init];
+    }
+    return _couponView;
+}
 @end

@@ -28,9 +28,9 @@
 - (void)setShortModel:(CarportShortListModel *)shortModel{
     _shortModel = shortModel;
     
+    self.countLab.text = [NSString stringWithFormat:@"剩余车位 %ld/%ld",shortModel.zongnum - shortModel.zhanyongnum,shortModel.zongnum];
     self.titleLab.text = shortModel.park_title;
     self.infoLab.text = [NSString stringWithFormat:@"距您%@",[HelpTool stringWithDistance: shortModel.distance]];
-    self.countLab.text = [NSString stringWithFormat:@"剩余车位 %ld/%ld",shortModel.zongnum - shortModel.zhanyongnum,shortModel.zongnum];
     self.countLab.textColor = shortModel.zongnum - shortModel.zhanyongnum <= 0 ? kColorC1C1C1 : kColorDD9900;
 }
 
@@ -44,8 +44,8 @@
     self.layer.shadowOpacity = 0.5;
     self.layer.shadowRadius = 2;
     
-    [self addSubview:self.titleLab];
     [self addSubview:self.countLab];
+    [self addSubview:self.titleLab];
     [self addSubview:self.infoLab];
     [self addSubview:self.robBtn];
     
@@ -53,22 +53,24 @@
         make.left.bottom.right.mas_equalTo(0);
         make.height.mas_equalTo(40);
     }];
+   
+    [self.countLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(20);
+        make.right.mas_equalTo(-kMargin15);
+        //make.width.mas_equalTo(100);
+        //make.left.mas_equalTo(self.titleLab.mas_right);
+    }];
     
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(kMargin15);
         make.top.mas_equalTo(kMargin15);
+        make.right.mas_equalTo(self.countLab.mas_left);
     }];
     
     [self.infoLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.titleLab);
         make.top.mas_equalTo(self.titleLab.mas_bottom).offset(5);
         make.right.mas_equalTo(-kMargin15);
-    }];
-    
-    [self.countLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(20);
-        make.right.mas_equalTo(-kMargin15);
-        make.left.mas_equalTo(self.titleLab.mas_right);
     }];
     
 //    self.titleLab.text = @"蓝山国际停车场";

@@ -10,7 +10,7 @@
 
 @interface ParkingRecordModel : BaseModel
 @property (copy, nonatomic) NSString *id;
-@property (assign, nonatomic) CGFloat order_fee;
+@property (assign, nonatomic) CGFloat order_fee;//!<结算价格
 @property (copy, nonatomic) NSString *parking_number;
 @property (assign, nonatomic) NSInteger order_chutime;
 @property (assign, nonatomic) NSInteger order_jintime;
@@ -20,6 +20,10 @@
 
 #pragma mark ---------------付款页 ---------------------/
 @property (assign, nonatomic) CGFloat park_fee;
+
+#pragma mark ---------------计费规则----------/
+//@property (assign, nonatomic) CGFloat order_fee;//!<结算价格
+@property (copy, nonatomic) NSString *rule_fee;//!<停车场单价/小时
 
 /*
  order_id = 13;
@@ -36,7 +40,9 @@
 //车位订单详情
 + (void)orderInfoWithOrderId:(NSString *)orderId success:(NetCompletionBlock)success;
 //上锁
-+ (void)lockWithOrderId:(NSString *)orderId payType:(NSString *)payType price:(NSString *)price success:(NetCompletionBlock)success;
++ (void)lockWithOrderId:(NSString *)orderId payType:(NSString *)payType price:(NSString *)price zeroType:(NSString *)zerotype success:(NetCompletionBlock)success;
+//停车费用
++ (void)parkingPayWithOrderId:(NSString * )orderid success:(NetCompletionBlock)success;
 
 
 @end

@@ -29,7 +29,7 @@
 - (void)initView{
     self.title = @"余额";
     
-    self.navigationItem.rightBarButtonItem = [[self class] rightBarButtonWithName:@"明细" imageName:nil target:self action:@selector(payRecordAction)];
+//    self.navigationItem.rightBarButtonItem = [[self class] rightBarButtonWithName:@"明细" imageName:nil target:self action:@selector(payRecordAction)];
     
     [self.view addSubview:self.iconBtn];
     [self.iconBtn addSubview:self.priceLab];
@@ -59,7 +59,7 @@
         make.left.right.height.mas_equalTo(self.rechangeBtn);
     }];
     
-    self.priceLab.text = @"￥0.00";
+    self.priceLab.text = [NSString stringWithFormat:@"¥%.2f", self.user_money];
 }
 
 #pragma mark ---------------NetWork-------------------------/

@@ -26,7 +26,15 @@
     [self initView];
     
 }
-
+//-(void)viewDidDisappear:(BOOL)animated{
+//    [super viewDidDisappear:animated];
+//    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+//}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+    [self.shortView endEditing:YES];
+}
 - (void)initView{
     
     self.navigationItem.titleView = self.titleView;

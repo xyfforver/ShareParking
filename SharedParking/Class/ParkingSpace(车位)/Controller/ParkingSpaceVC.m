@@ -7,7 +7,7 @@
 //
 
 #import "ParkingSpaceVC.h"
-
+#import "DataManager.h"
 #import "ParkingSpaceHeaderView.h"
 #import "ParkingSpaceMapView.h"
 #import "ParkingSpaceTBView.h"
@@ -17,6 +17,7 @@
 #import "CarportShortListModel.h"
 #import "CarportLongListModel.h"
 #import "CarportReserveModel.h"
+#import "ParkingRecordModel.h"
 @interface ParkingSpaceVC ()
 
 @property (nonatomic , strong) JMTitleSelectView *titleView;
@@ -30,7 +31,7 @@
 @property (nonatomic , strong) ParkingOrderView *orderView;
 
 @property (nonatomic , assign) NSInteger page;
-
+@property (nonatomic , strong) DataManager *manager;
 @end
 
 @implementation ParkingSpaceVC
@@ -41,7 +42,14 @@
     [self.mapView setUpMapDelegate];
     
     [self loadReserveData];
+
+    if (self.manager.geoCodeResult == nil) {
+        self.headerView.cityLab.text = @"杭州 今日限行";
+    }else{
+    self.headerView.cityLab.text = [NSString stringWithFormat:@"%@ 今日限行", self.manager.geoCodeResult.addressDetail.city];
+    }
 }
+
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -51,17 +59,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.mapView setUpMapDelegate];
+    [self.mapView.service startUserLocationService];
+    self.manager = [DataManager sharedManager];
+
     [self initView];
+    
+    NSLog(@"%f", self.mapView.mapView.zoomLevel);
     
 }
 
 - (void)initView{
     [self initNavBarView];
     self.page = 1;
-    
-    [self.view addSubview:self.headerView];
     [self.view addSubview:self.mapView];
+
+    [self.view addSubview:self.headerView];
     [self.view addSubview:self.tbView];
     [self.mapView addSubview:self.orderView];
     
@@ -80,12 +93,14 @@
     }else{
         [self.mapView loadMapData];
     }
+    
 }
 
 #pragma mark ---------------network ---------------------/
 
 - (void)loadData{
     self.type != CarportLongRentType ? [self loadCarportShortListData] : [self loadCarportLongListData];
+    self.headerView.cityLab.text = [NSString stringWithFormat:@"%@ 今日限行", self.manager.geoCodeResult.addressDetail.city];
 }
 
 - (void)loadCarportShortListData{
@@ -139,6 +154,8 @@
 }
 
 - (void)loadReserveData{
+    
+
     kSelfWeak;
     self.orderView.hidden = YES;
     self.mapView.isOrder = NO;
@@ -161,14 +178,36 @@
         kSelfStrong;
         if (statusModel.flag == kFlagSuccess) {
             CarportReserveModel *model = statusModel.data;
-            strongSelf.orderView.reserveModel = model;
+            [strongSelf loadParkMoenyDataWithmodel:model];
+//            strongSelf.orderView.reserveModel = model;
+//            strongSelf.orderView.hidden = NO;
+//            strongSelf.mapView.isOrder = YES;
+        }else{
+//            strongSelf.orderView.hidden = YES;
+//            strongSelf.mapView.isOrder = NO;
+        }
+    }];
+}
+//刷新订单价格
+- (void)loadParkMoenyDataWithmodel:(CarportReserveModel *)carportModel{
+    kSelfWeak;
+    [ParkingRecordModel parkingPayWithOrderId:carportModel.id success:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            ParkingRecordModel *model = statusModel.data;
+            CGFloat price = model.order_fee;
+            strongSelf.orderView.price = price;
+            strongSelf.orderView.reserveModel = carportModel;
+            
             strongSelf.orderView.hidden = NO;
             strongSelf.mapView.isOrder = YES;
+            
         }else{
             strongSelf.orderView.hidden = YES;
             strongSelf.mapView.isOrder = NO;
         }
     }];
+    
 }
 #pragma mark ---------------action ---------------------/
 - (void)codeAction{
@@ -265,6 +304,8 @@
 - (ParkingSpaceHeaderView *)headerView{
     if (!_headerView) {
         _headerView = [[ParkingSpaceHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
+        
+
     }
     return _headerView;
 }
@@ -275,8 +316,10 @@
 //        kSelfWeak;
 //        _mapView.loadBlock = ^{
 //            kSelfStrong;
-//            [strongSelf loadMapData];
+//            strongSelf.headerView.cityLab.text = [NSString stringWithFormat:@"%@ 今日限行", strongSelf.manager.geoCodeResult.addressDetail.city];
+//
 //        };
+        
     }
     return _mapView;
 }

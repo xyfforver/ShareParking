@@ -48,7 +48,7 @@
     self.numberLab.textColor = shortModel.zongnum - shortModel.zhanyongnum <= 0 ? kColorC1C1C1 : kColorDD9900;
     
     self.reserveLab.text = @"预订";
-    self.spaceLab.text = @"地锁";
+    self.spaceLab.text = [shortModel.park_type intValue] ? @"地锁" : @"道闸";
     self.spaceLab.hidden = shortModel.park_type == 0;
     
 

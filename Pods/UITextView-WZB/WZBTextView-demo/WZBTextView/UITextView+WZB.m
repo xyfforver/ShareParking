@@ -15,15 +15,21 @@ static const void *WZBPlaceholderViewKey = &WZBPlaceholderViewKey;
 static const void *WZBPlaceholderColorKey = &WZBPlaceholderColorKey;
 // 最大高度
 static const void *WZBTextViewMaxHeightKey = &WZBTextViewMaxHeightKey;
+// 最小高度
+static const void *WZBTextViewMinHeightKey = &WZBTextViewMinHeightKey;
 // 高度变化的block
 static const void *WZBTextViewHeightDidChangedBlockKey = &WZBTextViewHeightDidChangedBlockKey;
 // 存储添加的图片
 static const void *WZBTextViewImageArrayKey = &WZBTextViewImageArrayKey;
+// 存储最后一次改变高度后的值
+static const void *WZBTextViewLastHeightKey = &WZBTextViewLastHeightKey;
 
 @interface UITextView ()
 
 // 存储添加的图片
 @property (nonatomic, strong) NSMutableArray *imageArray;
+// 存储最后一次改变高度后的值
+@property (nonatomic, assign) CGFloat lastHeight;
 
 @end
 
@@ -141,6 +147,22 @@ static const void *WZBTextViewImageArrayKey = &WZBTextViewImageArrayKey;
     return [objc_getAssociatedObject(self, WZBTextViewMaxHeightKey) doubleValue];
 }
 
+- (void)setMinHeight:(CGFloat)minHeight {
+    objc_setAssociatedObject(self, WZBTextViewMinHeightKey, [NSString stringWithFormat:@"%lf", minHeight], OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (CGFloat)minHeight {
+    return [objc_getAssociatedObject(self, WZBTextViewMinHeightKey) doubleValue];
+}
+
+- (void)setLastHeight:(CGFloat)lastHeight {
+    objc_setAssociatedObject(self, WZBTextViewLastHeightKey, [NSString stringWithFormat:@"%lf", lastHeight], OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (CGFloat)lastHeight {
+    return [objc_getAssociatedObject(self, WZBTextViewLastHeightKey) doubleValue];
+}
+
 - (void)setTextViewHeightDidChanged:(textViewHeightDidChangedBlock)textViewHeightDidChanged {
     objc_setAssociatedObject(self, WZBTextViewHeightDidChangedBlockKey, textViewHeightDidChanged, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
@@ -193,26 +215,36 @@ static const void *WZBTextViewImageArrayKey = &WZBTextViewImageArrayKey;
         
         // 计算高度
         NSInteger currentHeight = ceil([self sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)].height);
-        NSInteger lastheight = ceil(self.maxHeight + self.textContainerInset.top + self.textContainerInset.bottom);
         
         // 如果高度有变化，调用block
-        if (currentHeight != lastheight) {
-            
+        if (currentHeight != self.lastHeight) {
+            // 是否可以滚动
             self.scrollEnabled = currentHeight >= self.maxHeight;
-            if (self.textViewHeightDidChanged) {
-                self.textViewHeightDidChanged(currentHeight >= self.maxHeight ? self.maxHeight : currentHeight);
+            CGFloat currentTextViewHeight = currentHeight >= self.maxHeight ? self.maxHeight : currentHeight;
+            // 改变textView的高度
+            if (currentTextViewHeight >= self.minHeight) {
+                CGRect frame = self.frame;
+                frame.size.height = currentTextViewHeight;
+                self.frame = frame;
+                // 调用block
+                if (self.textViewHeightDidChanged) self.textViewHeightDidChanged(currentTextViewHeight);
+                // 记录当前高度
+                self.lastHeight = currentTextViewHeight;
             }
         }
     }
     
-    if (!self.isFirstResponder) {
-        [self becomeFirstResponder];
-    }
+    if (!self.isFirstResponder) [self becomeFirstResponder];
+}
+
+- (void)autoHeightWithMaxHeight:(CGFloat)maxHeight {
+    [self autoHeightWithMaxHeight:maxHeight textViewHeightDidChanged:nil];
 }
 
 - (void)autoHeightWithMaxHeight:(CGFloat)maxHeight textViewHeightDidChanged:(void(^)(CGFloat currentTextViewHeight))textViewHeightDidChanged {
+    [self placeholderView];
     self.maxHeight = maxHeight;
-    self.textViewHeightDidChanged = textViewHeightDidChanged;
+    if (textViewHeightDidChanged) self.textViewHeightDidChanged = textViewHeightDidChanged;
 }
 
 // 判断是否有placeholder值，这步很重要
@@ -222,9 +254,7 @@ static const void *WZBTextViewImageArrayKey = &WZBTextViewImageArrayKey;
     UITextView *placeholderView = objc_getAssociatedObject(self, WZBPlaceholderViewKey);
     
     // 如果有placeholder值
-    if (placeholderView) {
-        return YES;
-    }
+    if (placeholderView) return YES;
     
     return NO;
 }

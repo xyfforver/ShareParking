@@ -46,7 +46,8 @@
     if (self.isReserve) {
         self.reserveView.reserveTime = reserveModel.reserve_time;
     }else{
-        self.timeView.park_fee = reserveModel.park_fee;
+        //self.timeView.park_fee = reserveModel.park_fee;
+        self.timeView.park_fee = self.price;
         self.timeView.startTime = reserveModel.order_jintime;
     }
     
@@ -140,6 +141,7 @@
             kSelfStrong;
             strongSelf.hidden = YES;
         };
+        vc.park_type = self.reserveModel.park_type;
         [self.Controller.navigationController pushViewController:vc animated:YES];
     }
 }

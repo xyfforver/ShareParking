@@ -16,6 +16,7 @@
 #import "BalanceVC.h"
 #import "EditVC.h"
 #import "CarNumberListVC.h"
+#import "FKAllOrderViewController.h"
 
 #import "MineHeaderView.h"
 @interface MineVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -118,6 +119,7 @@
             [self.navigationController pushViewController:vc animated:YES];
         }else if (type == 1){
             BalanceVC *vc = [[BalanceVC alloc]init];
+            vc.user_money = self.userModel.user_money;
             [self.navigationController pushViewController:vc animated:YES];
         }else if (type == 2){
             CarNumberListVC *vc = [[CarNumberListVC alloc]init];
@@ -157,6 +159,8 @@
         }else if (indexPath.row == 2){
             MyReserveVC *vc = [[MyReserveVC alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
+//            FKAllOrderViewController *vc = [FKAllOrderViewController new];
+//            [self.navigationController pushViewController:vc animated:YES];
         }else if (indexPath.row == 3){
             ParkingRecordVC *vc = [[ParkingRecordVC alloc]init];
             [self.navigationController pushViewController:vc animated:YES];

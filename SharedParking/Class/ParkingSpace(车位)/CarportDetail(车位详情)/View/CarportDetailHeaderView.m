@@ -15,8 +15,8 @@
 @property (nonatomic,strong) UILabel *locationLab;
 @property (nonatomic,strong) UIImageView *headImgView;
 @property (nonatomic,strong) UILabel *timeLab;
-@property (nonatomic,strong) UILabel *personalLab;
-@property (nonatomic,strong) UILabel *buildingLab;
+@property (nonatomic,strong) UILabel *personalLab;//!<预订
+@property (nonatomic,strong) UILabel *buildingLab;//!<地锁or道闸
 @end
 
 @implementation CarportDetailHeaderView
@@ -39,8 +39,8 @@
     
     self.timeLab.hidden = YES;
     
-    self.personalLab.text = @"个人";
-    self.buildingLab.text = @"写字楼";
+    self.personalLab.text = @"预订";
+    self.buildingLab.text = [shortModel.park_type intValue] ? @"地锁" : @"道闸";
 }
 
 - (void)setLongModel:(CarportLongDetailModel *)longModel{
@@ -69,7 +69,7 @@
     [self addSubview:self.timeLab];
     [self addSubview:self.personalLab];
     [self addSubview:self.buildingLab];
-    [self addSubview:self.headImgView];
+    //[self addSubview:self.headImgView];
 
     [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.mas_equalTo(0);
@@ -109,13 +109,13 @@
         make.width.mas_equalTo(50);
     }];
     
-    [self.headImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(-kMargin15);
-        make.height.width.mas_equalTo(kHeadWidth);
-        make.centerY.mas_equalTo(self.imgView.mas_bottom);
-    }];
-    
-    [self.headImgView sd_setImageWithURL:[NSURL URLWithString:kImageStringJoint(GetDataManager.headimg)]];
+//    [self.headImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.mas_equalTo(-kMargin15);
+//        make.height.width.mas_equalTo(kHeadWidth);
+//        make.centerY.mas_equalTo(self.imgView.mas_bottom);
+//    }];
+//    
+//    [self.headImgView sd_setImageWithURL:[NSURL URLWithString:kImageStringJoint(GetDataManager.headimg)]];
 }
 
 #pragma mark ---------------event ---------------------/

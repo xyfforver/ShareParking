@@ -31,6 +31,10 @@
     }
     return self;
 }
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [WSProgressHUD dismiss];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

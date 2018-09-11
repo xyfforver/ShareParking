@@ -26,11 +26,21 @@
 }
 
 //上锁
-+ (void)lockWithOrderId:(NSString *)orderId payType:(NSString *)payType price:(NSString *)price success:(NetCompletionBlock)success{
++ (void)lockWithOrderId:(NSString *)orderId payType:(NSString *)payType price:(NSString *)price zeroType:(NSString *)zerotype success:(NetCompletionBlock)success{
     CreateParamsDic;
     DicObjectSet(orderId, @"order_id");
     DicObjectSet(payType, @"order_paytype");
     DicObjectSet(price, @"order_fee");
+    DicObjectSet(zerotype, @"zero_type")
     [self postWithStatusModelResponsePath:@"parking_closelock" params:ParamsDic onCompletion:success];
 }
+
+//停车费用
++ (void)parkingPayWithOrderId:(NSString * )orderid success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(orderid, @"order_id");
+    [self postWithStatusModelResponsePath:@"app_rule" params:ParamsDic onCompletion:success];
+}
+
+
 @end

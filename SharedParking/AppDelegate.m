@@ -9,6 +9,12 @@
 #import "AppDelegate.h"
 #import "AppDelegate+LibConfig.h"
 #import "LoginReminderVC.h"
+
+#import "GBWXPayManager.h"
+#import "WXApi.h"
+#import <AlipaySDK/AlipaySDK.h>
+#define WECHAT_APPID @"wx7311892fb056d1a3"
+
 @interface AppDelegate ()
 
 @end
@@ -36,9 +42,56 @@
     
     [self setupLibConfigWithOptions:launchOptions];
     
+    [WXApi registerApp:WECHAT_APPID];//微信支付
+    
     return YES;
 }
 
+// 支持所有iOS系统
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    //1.收到支付宝支付结果回调
+    if ([url.host isEqualToString:@"safepay"]) {
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+            //【由于在跳转支付宝客户端支付的过程中,商户 app 在后台很可能被系统 kill 了,所以 pay 接 口的 callback 就会失效,请商户对 standbyCallback 返回的回调结果进行处理,就是在这个方法 里面处理跟 callback 一样的逻辑】
+            if (resultDic){
+                NSString *resultStatus=[resultDic objectForKey:@"resultStatus"];
+                if([resultStatus isEqualToString:@"9000"]){
+                    [[NSNotificationCenter defaultCenter] postNotificationName:kZhifubaoPaysuccessNoti object:@"1"];
+                }else{
+                    //[WSProgressHUD showImage:nil status:[NSString stringWithFormat:@"%@", [resultDic objectForKey:@"memo"]]];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:kZhifubaoPaysuccessNoti object:@"1"];
+                }
+            }
+        }];
+        
+        return YES;
+    } else if ([url.host isEqualToString:@"platformapi"]){//2.支付宝快登授权返回 authCode
+        [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+            if (resultDic){
+                NSString *resultStatus=[resultDic objectForKey:@"resultStatus"];
+                if([resultStatus isEqualToString:@"9000"]){
+                    [[NSNotificationCenter defaultCenter] postNotificationName:kZhifubaoPaysuccessNoti object:@"1"];
+                }
+            }
+        }];
+        return YES;
+    }
+    else {//有盟三方登录
+//        BOOL result = [self UMSocialHandleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+//        if (result == FALSE) {
+            return  [WXApi handleOpenURL:url delegate:[GBWXPayManager sharedManager]];
+//        }
+//        return result;
+    }
+    return YES;
+}
+#pragma mark ---------------WXApi ---------------------/
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [WXApi handleOpenURL:url delegate:[GBWXPayManager sharedManager]];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

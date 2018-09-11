@@ -13,10 +13,10 @@
 #define isTrueEnvironment 1
 
 #warning 发布时改为0，关闭调试选项
-#define isDebug 0
+#define isDebug 1
 
 #warning 发布时改为1，生产环境推送
-#define push_production 0
+#define push_production 1
 
 #if isTrueEnvironment == 0
 #define LingBao_BASE_URL @"http://park.1mxtx.com/index/app/"

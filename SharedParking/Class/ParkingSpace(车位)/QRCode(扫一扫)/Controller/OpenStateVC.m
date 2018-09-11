@@ -111,6 +111,7 @@
     }else{
         //开启失败
         self.stateLab.text = [NSString stringWithFormat:@"开启失败\n%@",self.message];
+        
         [self.stateBtn setTitle:@"重新开启" forState:UIControlStateNormal];
     
     }
@@ -122,7 +123,7 @@
     kSelfWeak;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         assert(weakSelf != nil);
-        weakSelf.timer =[NSTimer scheduledTimerWithTimeInterval:0.1
+        weakSelf.timer =[NSTimer scheduledTimerWithTimeInterval:0.2
                                                          target:weakSelf
                                                        selector:@selector(timeAction:)
                                                        userInfo:nil
@@ -139,6 +140,7 @@
             strongSelf.message = statusModel.message;
             strongSelf.isOpen = NO;
         }
+        self.bgWhiteView.hidden = NO;
     }];
 }
 
@@ -147,6 +149,7 @@
     [super backToSuperView];
 //    [[NSNotificationCenter defaultCenter]postNotificationName:kOpenParkingSpaceSuccessData object:nil];
     GetAPPDelegate.rootVC.selectedIndex = 0;
+    [self.navigationController popToRootViewControllerAnimated:YES];
     
 }
 
@@ -163,12 +166,12 @@
 - (void)timeAction:(NSTimer *)timer{
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        _time += 2;
+        _time += 1;
         self.progressLab.text = [NSString stringWithFormat:@"%ld%%",self.time];
-        if (_time == 100)
+        if (_time == 99)
         {
             _time = 0;
-            self.bgWhiteView.hidden = NO;
+//            self.bgWhiteView.hidden = NO;
             [self stop];
         }
     });
@@ -178,7 +181,7 @@
 - (void)stop
 {
     _time = 0;
-    self.bgWhiteView.hidden = NO;
+    //self.bgWhiteView.hidden = NO;
     
     if (_timer)
     {

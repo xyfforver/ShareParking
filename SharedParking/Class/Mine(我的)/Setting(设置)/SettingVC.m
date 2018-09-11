@@ -10,6 +10,7 @@
 #import "FeedbackVC.h"
 #import "AccountSecurityVC.h"
 //#import "AbountUsVC.h"
+#import "AboutAppViewController.h"
 
 #import "SettingTBCell.h"
 @interface SettingVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -53,7 +54,7 @@
     kSelfWeak;
     self.view.userInteractionEnabled = NO;
     self.fd_interactivePopDisabled = YES;
-    [WSProgressHUD show];
+    [WSProgressHUD showWithMaskType:(WSProgressHUDMaskTypeClear)];
     
     [UserModel logoutSuccess:^(StatusModel *statusModel) {
         kSelfStrong;
@@ -243,7 +244,8 @@
             FeedbackVC *vc = [[FeedbackVC alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
         }else if (indexPath.row == 1){
-            
+            AboutAppViewController *aboutVC = [[AboutAppViewController alloc] init];
+            [self.navigationController pushViewController:aboutVC animated:YES];
         }else if (indexPath.row == 2){
             [self contactService];
         }else if (indexPath.row == 3){
@@ -252,6 +254,7 @@
         }else if (indexPath.row == 4){
 //            AbountUsVC *vc = [[AbountUsVC alloc]init];
 //            [self.navigationController pushViewController:vc animated:YES];
+            
         }
     }
 }
@@ -270,7 +273,7 @@
         _tbView.estimatedSectionHeaderHeight = 0;
         _tbView.estimatedSectionFooterHeight = 0;
         _tbView.tableFooterView = [UIView new];
-        
+    
         if (@available(iOS 9.0, *)) {
             _tbView.cellLayoutMarginsFollowReadableWidth = NO;
         }

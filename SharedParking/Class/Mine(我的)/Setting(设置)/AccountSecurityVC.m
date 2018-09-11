@@ -7,6 +7,7 @@
 //
 
 #import "AccountSecurityVC.h"
+#import "PayPasswordListVC.h"
 
 @interface AccountSecurityVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView *tbView;
@@ -38,7 +39,7 @@
 
 #pragma mark -------------tableView--delegate-------------/
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -54,26 +55,76 @@
     rightLab.hidden = YES;
     [cell addSubview:rightLab];
     
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"更改手机号";
-        rightLab.hidden = NO;
-        NSString *phone = [[NSUserDefaults standardUserDefaults] objectForKey:kLingBaoUser];
-        rightLab.text = phone;
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }else{
-        cell.textLabel.text = @"修改密码";
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    if (indexPath.row == 0) {
+//        cell.textLabel.text = @"更改手机号";
+//        rightLab.hidden = NO;
+//        NSString *phone = [[NSUserDefaults standardUserDefaults] objectForKey:kLingBaoUser];
+//        rightLab.text = phone;
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//    }else{
+//        cell.textLabel.text = @"修改密码";
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    }
+    switch (indexPath.row) {
+        case 0:
+            {
+                cell.textLabel.text = @"更改手机号";
+                rightLab.hidden = NO;
+                NSString *phone = [[NSUserDefaults standardUserDefaults] objectForKey:kLingBaoUser];
+                rightLab.text = phone;
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+            break;
+        case 1:
+        {
+            cell.textLabel.text = @"修改密码";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+            break;
+        case 2:
+        {
+            cell.textLabel.text = @"支付密码";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+            break;
+        default:
+            break;
     }
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        LoginVC *vc = [[LoginVC alloc]initWithType:1 completionBack:^{
-
-        }];
-        [self.navigationController pushViewController:vc animated:YES];
+//    if (indexPath.row == 0) {
+//        LoginVC *vc = [[LoginVC alloc]initWithType:1 completionBack:^{
+//
+//        }];
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }
+    switch (indexPath.row) {
+        case 0:
+            {
+                LoginVC *vc = [[LoginVC alloc]initWithType:1 completionBack:^{
+                    
+                }];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            break;
+        case 1:
+        {
+            [WSProgressHUD showImage:nil status:@"敬请期待"];
+        }
+            break;
+        case 2:
+        {
+         
+            PayPasswordListVC *listVC = [PayPasswordListVC new];
+            [self.navigationController pushViewController:listVC animated:YES];
+        }
+            break;
+            
+        default:
+            break;
     }
 }
 

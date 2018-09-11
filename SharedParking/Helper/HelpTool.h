@@ -54,7 +54,10 @@
 //空闲度得到图片名
 + (NSString *)imageStringWithLeisure:(NSInteger)leisure;
 
++ (void)drawLineOfDashByCAShapeLayer:(UIView *)lineView lineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *)lineColor lineDirection:(BOOL)isHorizonal;
 
+//md5加密
++(NSString *)getMd5_32Bit_String:( NSString *)srcString;
 
 #pragma mark ---------------获取字段 ---------------------/
 + (NSString *)getRentObjectWithType:(BOOL)type;

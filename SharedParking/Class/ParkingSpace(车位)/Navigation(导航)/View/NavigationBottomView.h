@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface NavigationBottomView : UIView
+@property (nonatomic , copy) void(^gpsBlock)();
 
 @end

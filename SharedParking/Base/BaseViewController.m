@@ -44,7 +44,7 @@ static CGFloat const sizeButton = 50.0;
     
     [super viewWillDisappear:animated];
     [self.view endEditing:YES];
-    
+    [WSProgressHUD dismiss];
     [self resignCurrentFirstResponder];
     
     if ([self isNavRoot]){

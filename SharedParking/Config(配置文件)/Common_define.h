@@ -118,6 +118,7 @@
 #define kGetLatestAppVersion @"getLatestAppVersion"
 #define kRegistrationIDKey @"registrationID"
 #define kAutoLogin @"aotuLogin"
+#define kZhiFuBaoSchemes  @"zhifubaoFK"//支付宝schemes
 
 
 //=========================================
@@ -146,7 +147,7 @@ static NSString *const kMarginDeleteString = @"<style> *{margin:0px;padding:0;} 
 
 //=========================================
 #define BMKMapAK @"8EfaAbqwTcb7uLqMDl0Xki6kvgU7PQE0"
-
+//#define BMKMapAK @"ZbTkb6164sosSN1PasxGocKNFw13a7If"
 
 
 //=========================================

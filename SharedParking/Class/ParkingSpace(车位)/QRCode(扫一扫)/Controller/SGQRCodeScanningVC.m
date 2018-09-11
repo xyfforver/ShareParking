@@ -119,7 +119,6 @@
 //    [manager cancelSampleBufferDelegate];
     _manager.delegate = self;
 }
-
 #pragma mark - - - SGQRCodeAlbumManagerDelegate
 - (void)QRCodeAlbumManagerDidCancelWithImagePickerController:(SGQRCodeAlbumManager *)albumManager {
     [self.view addSubview:self.scanningView];
@@ -307,8 +306,11 @@
 
 #pragma mark ---------------netWork ---------------------/
 - (void)getDataWithUrlStr:(NSString *)urlStr{
+    NSString *type = @"1";
+    CreateParamsDic;
+    DicObjectSet(type, @"type");
     kSelfWeak;
-    [BaseModel postWithJSONResponseHost:@"" Path:urlStr params:nil onCompletion:^(NSDictionary *jsonDic) {
+    [BaseModel postWithJSONResponseHost:@"" Path:urlStr params:ParamsDic onCompletion:^(NSDictionary *jsonDic) {
         kSelfStrong;
         NSDictionary *dic = [jsonDic objectForKey:@"data"];
         StatusModel *statusModel = [StatusModel mj_objectWithKeyValues:jsonDic];

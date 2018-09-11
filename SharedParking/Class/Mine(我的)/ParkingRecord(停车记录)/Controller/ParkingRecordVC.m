@@ -8,6 +8,7 @@
 
 #import "ParkingRecordVC.h"
 #import "CarportPayVC.h"
+#import "ParkingRecordDetailVC.h"
 
 #import "BaseTBView.h"
 #import "ParkingRecordTBCell.h"
@@ -89,6 +90,10 @@
             kSelfStrong;
             [strongSelf.tbView.mj_header beginRefreshing];
         };
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        ParkingRecordDetailVC *vc = [ParkingRecordDetailVC new];
+        vc.order_id = recordModel.id;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

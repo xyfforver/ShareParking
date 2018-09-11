@@ -8,11 +8,21 @@
 
 #import "RechargeVC.h"
 #import "RechargeCLCell.h"
+#import "OrderPayMethodView.h"
+#import "PayInfoModel.h"
+#import "RechargeModel.h"
 @interface RechargeVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic , strong) UIScrollView *scrollView;
 @property (nonatomic , strong) UIView *titleView;
 @property (nonatomic , strong) UICollectionView *clView;
 @property (nonatomic , strong) UIView *infoView;
+@property (nonatomic , strong) OrderPayMethodView *payView;
+@property (nonatomic , strong) RechargeModel *rechargeModel;
+
+@property (nonatomic , copy) NSString *priceId;
+@property (nonatomic , strong) NSMutableArray *priceArray;
+
+
 @end
 
 @implementation RechargeVC
@@ -23,6 +33,7 @@
     
     [self initView];
 
+    [self loadData];
 }
 
 - (void)initView{
@@ -33,21 +44,123 @@
     [self.scrollView addSubview:self.titleView];
     [self.scrollView addSubview:self.clView];
     [self.scrollView addSubview:self.infoView];
+    [self.scrollView addSubview:self.payView];
 }
 
 #pragma mark ---------------NetWork-------------------------/
-
+- (void)loadData{
+    kSelfWeak;
+    [WSProgressHUD show];
+    [RechargeModel rechargeListWithSuccess:^(StatusModel *statusModel) {
+        kSelfStrong;
+        if (statusModel.flag == kFlagSuccess) {
+            strongSelf.rechargeModel = statusModel.data;
+            NSArray *array = [strongSelf.rechargeModel.deposit_fee componentsSeparatedByString:@","];
+            strongSelf.priceArray = [NSMutableArray arrayWithArray:array];
+//            strongSelf.moneyView.moneyLab.text = [NSString stringWithFormat:@"%.2f",[strongSelf.rechargeModel.totalprice floatValue]];
+            [strongSelf.clView reloadData];
+            [WSProgressHUD dismiss];
+        }else{
+            [WSProgressHUD showImage:nil status:statusModel.message];
+        }
+    }];
+}
 
 #pragma mark ---------------Event-------------------------/
+-(void)clickRechangeBtn:(UIButton *)button{
+    NSLog(@"我要充钱");
+//    if ([NSString isNull:self.priceId]) {
+//        [WSProgressHUD showImage:nil status:@"请选择充值金额"];
+//        return;
+//    }
+    [self showPay];
+}
+
+- (void)payMethod:(NSInteger)index{
+    
+    switch (index) {
+        case 0:{
+            DLog(@"微信支付");
+            [WSProgressHUD showImage:nil status:@"该功能正在紧急开发，敬请期待"];
+            //[PayInfoModel rechargeWithPriceId:self.priceId type:PayOrderWechatType success:nil];
+        }
+            break;
+        case 1:{
+            DLog(@"支付宝支付");
+            [PayInfoModel rechargeWithPriceId:self.priceId type:PayOrderAliType success:^(StatusModel *statusModel) {
+                [self getPayResult];
+            }];
+        }
+            break;
+        case 2:{
+            DLog(@"会员卡支付");
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)payResault:(NSNotification *)note {
+    NSString *str = note.object;
+    if ([str isEqualToString:@"1"]) {
+        [self getPayResult];
+    }else{
+        //支付失败
+        [WSProgressHUD showImage:nil status:@"支付失败"];
+    }
+}
+
+- (void)getPayResult{
+    [WSProgressHUD showImage:nil status:@"支付成功！"];
+    [self dismissPay];
+    
+    if (self.rechangeBlock) {
+        self.rechangeBlock();
+    }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self backToSuperView];
+    });
+}
+
+- (void)showPay{
+    [UIView animateWithDuration:0.2 animations:^{
+        self.payView.top = kBodyHeight - kTabbarSafeBottomMargin - self.payView.height;
+    }];
+}
+
+- (void)dismissPay{
+    [UIView animateWithDuration:0.2 animations:^{
+        self.payView.top = kBodyHeight;
+    }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    
+    NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象
+    UITouch *touch = [allTouches anyObject];   //视图中的所有对象
+    CGPoint point = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
+    
+    //隐藏支付页面
+    CGRect collectionViewRect = self.payView.frame;
+    if (!CGRectContainsPoint(collectionViewRect, point)) {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.payView.top = kBodyHeight;
+        }];
+    }
+}
+
 
 #pragma mark ------------collectionView delegate ------------------/
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 5;
+    return self.priceArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     RechargeCLCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RechargeCLCell" forIndexPath:indexPath];
-    
+    cell.titleLab.text = [NSString stringWithFormat:@"%@元", self.priceArray[indexPath.row]];
     
     return cell;
 }
@@ -57,6 +170,7 @@
     cell.layer.borderColor = kColorDD9900.CGColor;
     cell.titleLab.textColor = kColorDD9900;
     cell.imgView.hidden = NO;
+    self.priceId = self.priceArray[indexPath.row];
     
 }
 
@@ -138,10 +252,28 @@
         rechangeBtn.layer.cornerRadius = 20;
         rechangeBtn.titleLabel.font = kFontSize15;
         [rechangeBtn setTitleColor:kColorWhite forState:UIControlStateNormal];
+        [rechangeBtn addTarget:self action:@selector(clickRechangeBtn:) forControlEvents:(UIControlEventTouchUpInside)];
         rechangeBtn.backgroundColor = kNavBarColor;
         [_infoView addSubview:rechangeBtn];
     }
     return _infoView;
 }
-
+- (OrderPayMethodView *)payView{
+    if (!_payView) {
+        _payView = [[OrderPayMethodView alloc]initWithIsRechange:YES frame:CGRectMake(0, kBodyHeight, kScreenWidth, 200)];
+        kSelfWeak;
+        _payView.payMethodBlock = ^(NSInteger index) {
+            kSelfStrong;
+            [strongSelf payMethod:index];
+            
+        };
+    }
+    return _payView;
+}
+- (NSMutableArray *)priceArray{
+    if (!_priceArray) {
+        _priceArray = [[NSMutableArray alloc]init];
+    }
+    return _priceArray;
+}
 @end

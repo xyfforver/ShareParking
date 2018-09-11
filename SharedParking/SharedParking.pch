@@ -13,6 +13,6 @@
 #import "Common_network.h"
 #import "Common_font.h"
 #import "Common_color.h"
-
+#import "Common_notification.h"
 
 #endif /* SharedParking_pch */

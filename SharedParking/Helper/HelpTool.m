@@ -8,6 +8,7 @@
 //
 
 #import "HelpTool.h"
+#import <CommonCrypto/CommonDigest.h>
 
 @implementation HelpTool
 #pragma mark - 判断定位是否开启
@@ -350,6 +351,84 @@
         return @"map_leisure3";
     }
 }
+
+
+/**
+ *  通过 CAShapeLayer 方式绘制虚线
+ *
+ *  param lineView:       需要绘制成虚线的view
+ *  param lineLength:     虚线的宽度
+ *  param lineSpacing:    虚线的间距
+ *  param lineColor:      虚线的颜色
+ *  param lineDirection   虚线的方向  YES 为水平方向， NO 为垂直方向
+ **/
++ (void)drawLineOfDashByCAShapeLayer:(UIView *)lineView lineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *)lineColor lineDirection:(BOOL)isHorizonal {
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    
+    [shapeLayer setBounds:lineView.bounds];
+    
+    if (isHorizonal) {
+        
+        [shapeLayer setPosition:CGPointMake(CGRectGetWidth(lineView.frame) / 2, CGRectGetHeight(lineView.frame))];
+        
+    } else{
+        [shapeLayer setPosition:CGPointMake(CGRectGetWidth(lineView.frame) / 2, CGRectGetHeight(lineView.frame)/2)];
+    }
+    
+    [shapeLayer setFillColor:[UIColor clearColor].CGColor];
+    //  设置虚线颜色为blackColor
+    [shapeLayer setStrokeColor:lineColor.CGColor];
+    //  设置虚线宽度
+    if (isHorizonal) {
+        [shapeLayer setLineWidth:CGRectGetHeight(lineView.frame)];
+    } else {
+        
+        [shapeLayer setLineWidth:CGRectGetWidth(lineView.frame)];
+    }
+    [shapeLayer setLineJoin:kCALineJoinRound];
+    //  设置线宽，线间距
+    [shapeLayer setLineDashPattern:[NSArray arrayWithObjects:[NSNumber numberWithInt:lineLength], [NSNumber numberWithInt:lineSpacing], nil]];
+    //  设置路径
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, NULL, 0, 0);
+    
+    if (isHorizonal) {
+        CGPathAddLineToPoint(path, NULL,CGRectGetWidth(lineView.frame), 0);
+    } else {
+        CGPathAddLineToPoint(path, NULL, 0, CGRectGetHeight(lineView.frame));
+    }
+    
+    [shapeLayer setPath:path];
+    CGPathRelease(path);
+    //  把绘制好的虚线添加上来
+    [lineView.layer addSublayer:shapeLayer];
+}
+
+//md5加密
++(NSString *)getMd5_32Bit_String:( NSString *)srcString{
+    //    const char *cStr = [srcString UTF8String];
+    //    unsigned char digest[CC_MD5_DIGEST_LENGTH];
+    //    CC_MD5( cStr, strlen(cStr), digest );
+    //    NSData * base64 = [GTMBase64 encodeBytes:digest length:16];
+    //    NSString * output = [[NSString alloc] initWithData:base64 encoding:NSUTF8StringEncoding];
+    //    output=[output stringByReplacingOccurrencesOfString:@"=" withString:@""];
+    //        return output;
+    
+    //MD532位小写
+    const char *cStr = [srcString UTF8String];
+    unsigned char result[16];
+    CC_MD5(cStr, strlen(cStr), result); // This is the md5 call
+    return [NSString stringWithFormat:
+            @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+            result[0], result[1], result[2], result[3],
+            result[4], result[5], result[6], result[7],
+            result[8], result[9], result[10], result[11],
+            result[12], result[13], result[14], result[15]
+            ];
+    
+}
+
 
 #pragma mark ---------------获取字段 ---------------------/
 + (NSString *)getRentObjectWithType:(BOOL)type{

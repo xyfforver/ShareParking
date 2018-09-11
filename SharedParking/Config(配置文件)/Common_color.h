@@ -29,6 +29,8 @@
 #define kColor333333 UIColorHex(0x333333)//字体颜色 深  51 51 51
 #define kColor4292D3 UIColorHex(0x4292D3)//蓝色
 #define kColorDD9900 UIColorHex(0xDD9900)//橙色 230 162 16
+#define kColor2b2b2b UIColorHex(0x2b2b2b)//字体颜色 深
+#define kColora3a3a3 UIColorHex(0xa3a3a3)//字体颜色 浅
 
 
 

@@ -14,7 +14,7 @@
 @property (assign, nonatomic) CGFloat park_fee;
 @property (copy, nonatomic) NSString *parking_number;
 @property (assign, nonatomic) CGFloat park_feeovertime;
-@property (strong, nonatomic) NSArray *car_chepai;
+@property (strong, nonatomic) NSArray *car_chepai;//!<车牌号数组
 
 #pragma mark ---------------预订 ---------------------/
 @property (copy, nonatomic) NSString *reserve_id;
@@ -24,6 +24,10 @@
 @property (assign, nonatomic) NSInteger reserve_time;
 @property (copy, nonatomic) NSString *park_jwd;
 @property (copy, nonatomic) NSString *park_address;
+@property (copy, nonatomic) NSString *car_id;
+@property (copy, nonatomic) NSString *parking_id;
+@property (copy, nonatomic) NSString *car_chepai1;//!<车牌号
+@property (copy, nonatomic) NSString *park_type;//!< 0地锁 1道闸
 #pragma mark ---------------首页订单 ---------------------/
 @property (assign, nonatomic) NSInteger order_jintime;
 
@@ -57,4 +61,8 @@
 + (void)homeReserveWithSuccess:(NetCompletionBlock)success;
 //首页订单
 + (void)homeOrderWithSuccess:(NetCompletionBlock)success;
+
+//取消预订
++ (void)cancelReserveWithId:(NSString *)reserveId success:(NetCompletionBlock)success;
+
 @end

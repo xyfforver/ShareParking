@@ -65,5 +65,11 @@
     [self postWithStatusModelResponsePath:@"map_order" params:nil onCompletion:success];
 }
 
+//取消预订
++ (void)cancelReserveWithId:(NSString *)reserveId success:(NetCompletionBlock)success{
+    CreateParamsDic;
+    DicObjectSet(reserveId, @"reserve_id");
+    [self postWithStatusModelResponsePath:@"cancel_reserve" params:ParamsDic onCompletion:success];
+}
 
 @end

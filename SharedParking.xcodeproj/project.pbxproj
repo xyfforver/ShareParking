@@ -223,6 +223,32 @@
 		6BF95B951FB5A00000DED0B7 /* UINavigationController+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B8A1FB59DA900DED0B7 /* UINavigationController+Block.m */; };
 		6BF95B961FB5A00600DED0B7 /* UIPickerView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B8C1FB59DA900DED0B7 /* UIPickerView+Block.m */; };
 		6BF95B971FB5A00B00DED0B7 /* UIPopoverController+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF95B8E1FB59DA900DED0B7 /* UIPopoverController+Block.m */; };
+		E500E0DA2011CF6A00B77636 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E500E0D92011CF6A00B77636 /* libc++.tbd */; };
+		E500E0DC2011CF7700B77636 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E500E0DB2011CF7700B77636 /* libz.tbd */; };
+		E500E0DE2011CFA500B77636 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E500E0DD2011CFA500B77636 /* CoreText.framework */; };
+		E500E0E02011CFBD00B77636 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E500E0DF2011CFBD00B77636 /* UIKit.framework */; };
+		E500E0E22011CFCE00B77636 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E500E0E12011CFCE00B77636 /* Foundation.framework */; };
+		E500E0E42011CFD900B77636 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E500E0E32011CFD900B77636 /* CFNetwork.framework */; };
+		E500E0E62011CFE800B77636 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E500E0E52011CFE800B77636 /* CoreMotion.framework */; };
+		E500E0E72011D02800B77636 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E500E0D52011CF3800B77636 /* AlipaySDK.bundle */; };
+		E500E0E82011D05900B77636 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E500E0D62011CF3800B77636 /* AlipaySDK.framework */; };
+		E500E0EC2011DA5D00B77636 /* PayInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E500E0EA2011DA5C00B77636 /* PayInfoModel.m */; };
+		E500E0F92011DB2C00B77636 /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = E500E0EF2011DB2C00B77636 /* WXUtil.mm */; };
+		E500E0FA2011DB2C00B77636 /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = E500E0F22011DB2C00B77636 /* ApiXml.mm */; };
+		E500E0FB2011DB2C00B77636 /* payRequsestHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = E500E0F32011DB2C00B77636 /* payRequsestHandler.mm */; };
+		E500E0FC2011DB2C00B77636 /* GBWXPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E500E0F72011DB2C00B77636 /* GBWXPayManager.m */; };
+		E500E0FF201320B200B77636 /* RechargeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E500E0FE201320B200B77636 /* RechargeModel.m */; };
+		E500E10320132DD900B77636 /* ParkingRecordDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E500E10120132DD900B77636 /* ParkingRecordDetailVC.m */; };
+		E500E10420132DD900B77636 /* ParkingRecordDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E500E10220132DD900B77636 /* ParkingRecordDetailVC.xib */; };
+		E500E10720133C1900B77636 /* ParkingRecordDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E500E10620133C1900B77636 /* ParkingRecordDetailModel.m */; };
+		E53C7A25200D87E800B2B181 /* FKAllOrderHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E53C7A24200D87E800B2B181 /* FKAllOrderHeaderView.m */; };
+		E53C7A28200D8AF200B2B181 /* FKAllOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E53C7A27200D8AF200B2B181 /* FKAllOrderViewController.m */; };
+		E53C7A2F2010427C00B2B181 /* OrderPayMethodView.m in Sources */ = {isa = PBXBuildFile; fileRef = E53C7A2D2010427C00B2B181 /* OrderPayMethodView.m */; };
+		E5E05C0E2005DA20005CEFE7 /* JZLocationConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E05C0C2005DA1F005CEFE7 /* JZLocationConverter.m */; };
+		E5EB4B482021AC900010B837 /* PayCouponView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EB4B472021AC900010B837 /* PayCouponView.m */; };
+		E5ECC4322007407B0056CB38 /* AboutAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5ECC42F2007407A0056CB38 /* AboutAppViewController.m */; };
+		E5ECC4332007407B0056CB38 /* AboutAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5ECC4312007407B0056CB38 /* AboutAppViewController.xib */; };
+		E5ECC43620087F7C0056CB38 /* PayPasswordListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5ECC43520087F7C0056CB38 /* PayPasswordListVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -659,6 +685,49 @@
 		6BF95B8C1FB59DA900DED0B7 /* UIPickerView+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+Block.m"; sourceTree = "<group>"; };
 		6BF95B8D1FB59DA900DED0B7 /* UIPopoverController+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+Block.h"; sourceTree = "<group>"; };
 		6BF95B8E1FB59DA900DED0B7 /* UIPopoverController+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+Block.m"; sourceTree = "<group>"; };
+		E500E0D52011CF3800B77636 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		E500E0D62011CF3800B77636 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		E500E0D92011CF6A00B77636 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		E500E0DB2011CF7700B77636 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E500E0DD2011CFA500B77636 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		E500E0DF2011CFBD00B77636 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E500E0E12011CFCE00B77636 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E500E0E32011CFD900B77636 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E500E0E52011CFE800B77636 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		E500E0E92011D22C00B77636 /* Common_notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common_notification.h; sourceTree = "<group>"; };
+		E500E0EA2011DA5C00B77636 /* PayInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayInfoModel.m; sourceTree = "<group>"; };
+		E500E0EB2011DA5D00B77636 /* PayInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayInfoModel.h; sourceTree = "<group>"; };
+		E500E0EF2011DB2C00B77636 /* WXUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXUtil.mm; sourceTree = "<group>"; };
+		E500E0F02011DB2C00B77636 /* payRequsestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = payRequsestHandler.h; sourceTree = "<group>"; };
+		E500E0F12011DB2C00B77636 /* ApiXml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiXml.h; sourceTree = "<group>"; };
+		E500E0F22011DB2C00B77636 /* ApiXml.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ApiXml.mm; sourceTree = "<group>"; };
+		E500E0F32011DB2C00B77636 /* payRequsestHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = payRequsestHandler.mm; sourceTree = "<group>"; };
+		E500E0F42011DB2C00B77636 /* WXUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXUtil.h; sourceTree = "<group>"; };
+		E500E0F62011DB2C00B77636 /* GBWXPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBWXPayManager.h; sourceTree = "<group>"; };
+		E500E0F72011DB2C00B77636 /* GBWXPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBWXPayManager.m; sourceTree = "<group>"; };
+		E500E0F82011DB2C00B77636 /* GBWXPayManagerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBWXPayManagerConfig.h; sourceTree = "<group>"; };
+		E500E0FD201320B200B77636 /* RechargeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RechargeModel.h; sourceTree = "<group>"; };
+		E500E0FE201320B200B77636 /* RechargeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RechargeModel.m; sourceTree = "<group>"; };
+		E500E10020132DD900B77636 /* ParkingRecordDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingRecordDetailVC.h; sourceTree = "<group>"; };
+		E500E10120132DD900B77636 /* ParkingRecordDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingRecordDetailVC.m; sourceTree = "<group>"; };
+		E500E10220132DD900B77636 /* ParkingRecordDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkingRecordDetailVC.xib; sourceTree = "<group>"; };
+		E500E10520133C1900B77636 /* ParkingRecordDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingRecordDetailModel.h; sourceTree = "<group>"; };
+		E500E10620133C1900B77636 /* ParkingRecordDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingRecordDetailModel.m; sourceTree = "<group>"; };
+		E53C7A23200D87E800B2B181 /* FKAllOrderHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKAllOrderHeaderView.h; sourceTree = "<group>"; };
+		E53C7A24200D87E800B2B181 /* FKAllOrderHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FKAllOrderHeaderView.m; sourceTree = "<group>"; };
+		E53C7A26200D8AF200B2B181 /* FKAllOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKAllOrderViewController.h; sourceTree = "<group>"; };
+		E53C7A27200D8AF200B2B181 /* FKAllOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FKAllOrderViewController.m; sourceTree = "<group>"; };
+		E53C7A2D2010427C00B2B181 /* OrderPayMethodView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderPayMethodView.m; sourceTree = "<group>"; };
+		E53C7A2E2010427C00B2B181 /* OrderPayMethodView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderPayMethodView.h; sourceTree = "<group>"; };
+		E5E05C0C2005DA1F005CEFE7 /* JZLocationConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZLocationConverter.m; sourceTree = "<group>"; };
+		E5E05C0D2005DA20005CEFE7 /* JZLocationConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZLocationConverter.h; sourceTree = "<group>"; };
+		E5EB4B462021AC900010B837 /* PayCouponView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayCouponView.h; sourceTree = "<group>"; };
+		E5EB4B472021AC900010B837 /* PayCouponView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayCouponView.m; sourceTree = "<group>"; };
+		E5ECC42F2007407A0056CB38 /* AboutAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutAppViewController.m; sourceTree = "<group>"; };
+		E5ECC4302007407B0056CB38 /* AboutAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutAppViewController.h; sourceTree = "<group>"; };
+		E5ECC4312007407B0056CB38 /* AboutAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutAppViewController.xib; sourceTree = "<group>"; };
+		E5ECC43420087F7C0056CB38 /* PayPasswordListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayPasswordListVC.h; sourceTree = "<group>"; };
+		E5ECC43520087F7C0056CB38 /* PayPasswordListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayPasswordListVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -666,6 +735,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E500E0E62011CFE800B77636 /* CoreMotion.framework in Frameworks */,
+				E500E0E42011CFD900B77636 /* CFNetwork.framework in Frameworks */,
+				E500E0E22011CFCE00B77636 /* Foundation.framework in Frameworks */,
+				E500E0E02011CFBD00B77636 /* UIKit.framework in Frameworks */,
+				E500E0DE2011CFA500B77636 /* CoreText.framework in Frameworks */,
+				6BB67C5D1FA45114007CE224 /* CoreTelephony.framework in Frameworks */,
+				E500E0DC2011CF7700B77636 /* libz.tbd in Frameworks */,
+				E500E0DA2011CF6A00B77636 /* libc++.tbd in Frameworks */,
 				6B41C7321FECE64D0070F5F7 /* WLHCropper.a in Frameworks */,
 				6B4D257F1FE4BBE900FC3DD8 /* BaiduMapAPI_Search.framework in Frameworks */,
 				6B4D25801FE4BBE900FC3DD8 /* BaiduMapAPI_Base.framework in Frameworks */,
@@ -675,13 +752,13 @@
 				6B4D25841FE4BBE900FC3DD8 /* BaiduMapAPI_Cloud.framework in Frameworks */,
 				6B4D25851FE4BBE900FC3DD8 /* BaiduMapAPI_Map.framework in Frameworks */,
 				6BB67C5E1FA4511F007CE224 /* libstdc++.6.0.9.tbd in Frameworks */,
-				6BB67C5D1FA45114007CE224 /* CoreTelephony.framework in Frameworks */,
 				6BB67C5C1FA4510D007CE224 /* libsqlite3.0.tbd in Frameworks */,
 				6BB67C5B1FA45105007CE224 /* Security.framework in Frameworks */,
 				6BB67C5A1FA450FE007CE224 /* CoreGraphics.framework in Frameworks */,
 				6BB67C591FA450F6007CE224 /* SystemConfiguration.framework in Frameworks */,
 				6BB67C581FA450EF007CE224 /* OpenGLES.framework in Frameworks */,
 				6BB67C571FA450E7007CE224 /* QuartzCore.framework in Frameworks */,
+				E500E0E82011D05900B77636 /* AlipaySDK.framework in Frameworks */,
 				6BB67C561FA450DF007CE224 /* CoreLocation.framework in Frameworks */,
 				4D906E2314229514B9AEA22E /* Pods_SharedParking.framework in Frameworks */,
 			);
@@ -799,6 +876,7 @@
 		6B41C5671FECE5730070F5F7 /* Mine(我的) */ = {
 			isa = PBXGroup;
 			children = (
+				E53C7A1F200D879600B2B181 /* AllOrder(全部订单) */,
 				6B41C59A1FECE5730070F5F7 /* MyIssue(我的发布) */,
 				6B41C5A41FECE5730070F5F7 /* MyRequest(我的求租) */,
 				6B41C5B91FECE5730070F5F7 /* MyReserve(我的预订) */,
@@ -844,6 +922,8 @@
 				6B41C5721FECE5730070F5F7 /* PayRecordGroupModel.m */,
 				6B41C5731FECE5730070F5F7 /* PayRecordModel.h */,
 				6B41C5741FECE5730070F5F7 /* PayRecordModel.m */,
+				E500E0FD201320B200B77636 /* RechargeModel.h */,
+				E500E0FE201320B200B77636 /* RechargeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1096,6 +1176,9 @@
 			children = (
 				6B41C5C71FECE5730070F5F7 /* ParkingRecordVC.h */,
 				6B41C5C81FECE5730070F5F7 /* ParkingRecordVC.m */,
+				E500E10020132DD900B77636 /* ParkingRecordDetailVC.h */,
+				E500E10120132DD900B77636 /* ParkingRecordDetailVC.m */,
+				E500E10220132DD900B77636 /* ParkingRecordDetailVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1105,6 +1188,8 @@
 			children = (
 				6B41C5CA1FECE5730070F5F7 /* ParkingRecordModel.h */,
 				6B41C5CB1FECE5730070F5F7 /* ParkingRecordModel.m */,
+				E500E10520133C1900B77636 /* ParkingRecordDetailModel.h */,
+				E500E10620133C1900B77636 /* ParkingRecordDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1121,11 +1206,16 @@
 		6B41C5CF1FECE5730070F5F7 /* Setting(设置) */ = {
 			isa = PBXGroup;
 			children = (
+				E5ECC4302007407B0056CB38 /* AboutAppViewController.h */,
+				E5ECC42F2007407A0056CB38 /* AboutAppViewController.m */,
+				E5ECC4312007407B0056CB38 /* AboutAppViewController.xib */,
 				6B41C5D41FECE5730070F5F7 /* Cropper */,
 				6B41C5D01FECE5730070F5F7 /* AbountUsVC.h */,
 				6B41C5D11FECE5730070F5F7 /* AbountUsVC.m */,
 				6B41C5D21FECE5730070F5F7 /* AccountSecurityVC.h */,
 				6B41C5D31FECE5730070F5F7 /* AccountSecurityVC.m */,
+				E5ECC43420087F7C0056CB38 /* PayPasswordListVC.h */,
+				E5ECC43520087F7C0056CB38 /* PayPasswordListVC.m */,
 				6B41C5DD1FECE5730070F5F7 /* EditVC.h */,
 				6B41C5DE1FECE5730070F5F7 /* EditVC.m */,
 				6B41C5DF1FECE5730070F5F7 /* EditVC.xib */,
@@ -1419,6 +1509,8 @@
 		6B41C63A1FECE5730070F5F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E5E05C0D2005DA20005CEFE7 /* JZLocationConverter.h */,
+				E5E05C0C2005DA1F005CEFE7 /* JZLocationConverter.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1435,6 +1527,7 @@
 		6B41C63E1FECE5730070F5F7 /* QRCode(扫一扫) */ = {
 			isa = PBXGroup;
 			children = (
+				E53C7A2920103B8900B2B181 /* Pay(支付) */,
 				6B41C63F1FECE5730070F5F7 /* Controller */,
 				6B41C64F1FECE5730070F5F7 /* Model */,
 				6B41C6521FECE5730070F5F7 /* SGQRCode */,
@@ -1510,6 +1603,8 @@
 				6B41C6641FECE5730070F5F7 /* PopBottomCell.m */,
 				6B41C6651FECE5730070F5F7 /* PopBottomView.h */,
 				6B41C6661FECE5730070F5F7 /* PopBottomView.m */,
+				E5EB4B462021AC900010B837 /* PayCouponView.h */,
+				E5EB4B472021AC900010B837 /* PayCouponView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1813,6 +1908,8 @@
 		6B91B65F1F9DDDC300A1020C /* Libs(第三方库) */ = {
 			isa = PBXGroup;
 			children = (
+				E500E0ED2011DB2C00B77636 /* WXPay */,
+				E500E0D42011CF3800B77636 /* AliPay */,
 				6B8AB6681FDBCDD200A546A3 /* WTCarKeyboard */,
 				6B17DCE91FD68DFC00A30057 /* MZTimerLabel */,
 				6B0E80111FCBBD4B00B2C309 /* QFDatePickerView */,
@@ -1850,6 +1947,7 @@
 				6B91B66A1F9DDDC400A1020C /* Common_color.h */,
 				6B91B66C1F9DDDC400A1020C /* Common_font.h */,
 				6B91B66D1F9DDDC400A1020C /* Common_network.h */,
+				E500E0E92011D22C00B77636 /* Common_notification.h */,
 			);
 			path = "Config(配置文件)";
 			sourceTree = "<group>";
@@ -1944,6 +2042,13 @@
 		6EA91DB080D9ABEBB6F342DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E500E0E52011CFE800B77636 /* CoreMotion.framework */,
+				E500E0E32011CFD900B77636 /* CFNetwork.framework */,
+				E500E0E12011CFCE00B77636 /* Foundation.framework */,
+				E500E0DF2011CFBD00B77636 /* UIKit.framework */,
+				E500E0DD2011CFA500B77636 /* CoreText.framework */,
+				E500E0DB2011CF7700B77636 /* libz.tbd */,
+				E500E0D92011CF6A00B77636 /* libc++.tbd */,
 				6B4D25791FE4BBE900FC3DD8 /* BaiduMapAPI_Base.framework */,
 				6B4D257D1FE4BBE900FC3DD8 /* BaiduMapAPI_Cloud.framework */,
 				6B4D257C1FE4BBE900FC3DD8 /* BaiduMapAPI_Location.framework */,
@@ -1972,6 +2077,117 @@
 				53E76ABEDC7B69476CC9FD69 /* Pods-SharedParking.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E500E0D42011CF3800B77636 /* AliPay */ = {
+			isa = PBXGroup;
+			children = (
+				E500E0D52011CF3800B77636 /* AlipaySDK.bundle */,
+				E500E0D62011CF3800B77636 /* AlipaySDK.framework */,
+			);
+			path = AliPay;
+			sourceTree = "<group>";
+		};
+		E500E0ED2011DB2C00B77636 /* WXPay */ = {
+			isa = PBXGroup;
+			children = (
+				E500E0EE2011DB2C00B77636 /* wxPayLib */,
+				E500E0F52011DB2C00B77636 /* GBWXPayManager */,
+			);
+			path = WXPay;
+			sourceTree = "<group>";
+		};
+		E500E0EE2011DB2C00B77636 /* wxPayLib */ = {
+			isa = PBXGroup;
+			children = (
+				E500E0EF2011DB2C00B77636 /* WXUtil.mm */,
+				E500E0F02011DB2C00B77636 /* payRequsestHandler.h */,
+				E500E0F12011DB2C00B77636 /* ApiXml.h */,
+				E500E0F22011DB2C00B77636 /* ApiXml.mm */,
+				E500E0F32011DB2C00B77636 /* payRequsestHandler.mm */,
+				E500E0F42011DB2C00B77636 /* WXUtil.h */,
+			);
+			path = wxPayLib;
+			sourceTree = "<group>";
+		};
+		E500E0F52011DB2C00B77636 /* GBWXPayManager */ = {
+			isa = PBXGroup;
+			children = (
+				E500E0F62011DB2C00B77636 /* GBWXPayManager.h */,
+				E500E0F72011DB2C00B77636 /* GBWXPayManager.m */,
+				E500E0F82011DB2C00B77636 /* GBWXPayManagerConfig.h */,
+			);
+			path = GBWXPayManager;
+			sourceTree = "<group>";
+		};
+		E53C7A1F200D879600B2B181 /* AllOrder(全部订单) */ = {
+			isa = PBXGroup;
+			children = (
+				E53C7A20200D879600B2B181 /* model */,
+				E53C7A21200D879600B2B181 /* View */,
+				E53C7A22200D879600B2B181 /* Contorller */,
+			);
+			path = "AllOrder(全部订单)";
+			sourceTree = "<group>";
+		};
+		E53C7A20200D879600B2B181 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		E53C7A21200D879600B2B181 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E53C7A23200D87E800B2B181 /* FKAllOrderHeaderView.h */,
+				E53C7A24200D87E800B2B181 /* FKAllOrderHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E53C7A22200D879600B2B181 /* Contorller */ = {
+			isa = PBXGroup;
+			children = (
+				E53C7A26200D8AF200B2B181 /* FKAllOrderViewController.h */,
+				E53C7A27200D8AF200B2B181 /* FKAllOrderViewController.m */,
+			);
+			path = Contorller;
+			sourceTree = "<group>";
+		};
+		E53C7A2920103B8900B2B181 /* Pay(支付) */ = {
+			isa = PBXGroup;
+			children = (
+				E53C7A2A20103B8900B2B181 /* model */,
+				E53C7A2B20103B8900B2B181 /* View */,
+				E53C7A2C20103B8900B2B181 /* Contorller */,
+			);
+			path = "Pay(支付)";
+			sourceTree = "<group>";
+		};
+		E53C7A2A20103B8900B2B181 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E500E0EB2011DA5D00B77636 /* PayInfoModel.h */,
+				E500E0EA2011DA5C00B77636 /* PayInfoModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		E53C7A2B20103B8900B2B181 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E53C7A2E2010427C00B2B181 /* OrderPayMethodView.h */,
+				E53C7A2D2010427C00B2B181 /* OrderPayMethodView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E53C7A2C20103B8900B2B181 /* Contorller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contorller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2089,6 +2305,8 @@
 				6B0B3B531FECEAAF004EB3D7 /* ReserveSuccessVC.xib in Resources */,
 				6B0B3B541FECEAAF004EB3D7 /* YJTagCollectionViewCell.xib in Resources */,
 				6B0B3B551FECEAAF004EB3D7 /* FuelAddVC.xib in Resources */,
+				E500E0E72011D02800B77636 /* AlipaySDK.bundle in Resources */,
+				E5ECC4332007407B0056CB38 /* AboutAppViewController.xib in Resources */,
 				6B0B3B561FECEAAF004EB3D7 /* FuelAverageView.xib in Resources */,
 				6B0B3B571FECEAAF004EB3D7 /* CarportCertificationVC.xib in Resources */,
 				6B0B3B581FECEAAF004EB3D7 /* ReleaseDetailView.xib in Resources */,
@@ -2098,6 +2316,7 @@
 				6B91B6061F9DDB4000A1020C /* LaunchScreen.storyboard in Resources */,
 				6B075CFE1FD247CD00244359 /* Assets.xcassets in Resources */,
 				6B91B6011F9DDB4000A1020C /* Main.storyboard in Resources */,
+				E500E10420132DD900B77636 /* ParkingRecordDetailVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2124,9 +2343,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking-resources.sh",
+				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mapapi.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2139,13 +2361,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SharedParking-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FEE770A445B637F6C0C4DC69 /* [CP] Embed Pods Frameworks */ = {
@@ -2154,9 +2379,36 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SharedParking/Pods-SharedParking-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/LKDBHelper/LKDBHelper.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/RegexKitLite/RegexKitLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView-WZB/UITextView_WZB.framework",
+				"${BUILT_PRODUCTS_DIR}/WSProgressHUD/WSProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LKDBHelper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RegexKitLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shimmer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_WZB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WSProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2190,12 +2442,14 @@
 				6B41C6C41FECE5D80070F5F7 /* FuelModel.m in Sources */,
 				6B41C6C51FECE5D80070F5F7 /* DateDayView.m in Sources */,
 				6B41C6C61FECE5D80070F5F7 /* FuelAverageView.m in Sources */,
+				E53C7A25200D87E800B2B181 /* FKAllOrderHeaderView.m in Sources */,
 				6B41C6C71FECE5D80070F5F7 /* FuelCounterTBCell.m in Sources */,
 				6B41C6C81FECE5D80070F5F7 /* FuelCounterTBView.m in Sources */,
 				6B41C6C91FECE5D80070F5F7 /* GasStationVC.m in Sources */,
 				6B41C6CA1FECE5D80070F5F7 /* GasStationModel.m in Sources */,
 				6B41C6CB1FECE5D80070F5F7 /* CustomAnnotation.m in Sources */,
 				6B41C6CC1FECE5D80070F5F7 /* GasStationInfoView.m in Sources */,
+				E5EB4B482021AC900010B837 /* PayCouponView.m in Sources */,
 				6B41C6CD1FECE5D80070F5F7 /* CarportLongListModel.m in Sources */,
 				6B41C6CE1FECE5D80070F5F7 /* CarportShortListModel.m in Sources */,
 				6B41C6CF1FECE5D80070F5F7 /* NavigationVC.m in Sources */,
@@ -2218,6 +2472,7 @@
 				6B41C6E01FECE5D80070F5F7 /* SearchResultVC.m in Sources */,
 				6B41C6E11FECE5D80070F5F7 /* SearchVC.m in Sources */,
 				6B41C6E21FECE5D80070F5F7 /* SearchHistoryView.m in Sources */,
+				E53C7A2F2010427C00B2B181 /* OrderPayMethodView.m in Sources */,
 				6B41C6E31FECE5D80070F5F7 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				6B41C6E41FECE5D80070F5F7 /* YJTagCollectionViewCell.m in Sources */,
 				6B41C6E51FECE5D80070F5F7 /* YJTagView.m in Sources */,
@@ -2235,7 +2490,9 @@
 				6B41C6F11FECE5D80070F5F7 /* ParkingSpaceHeaderView.m in Sources */,
 				6B41C6F21FECE5D80070F5F7 /* ParkingSpaceMapView.m in Sources */,
 				6B41C6F31FECE5D80070F5F7 /* ParkingSpaceTBCell.m in Sources */,
+				E500E10320132DD900B77636 /* ParkingRecordDetailVC.m in Sources */,
 				6B41C6F41FECE5D80070F5F7 /* ParkingSpaceTBView.m in Sources */,
+				E500E0EC2011DA5D00B77636 /* PayInfoModel.m in Sources */,
 				6B41C6F51FECE5D80070F5F7 /* RobParkingView.m in Sources */,
 				6B41C6F61FECE5D80070F5F7 /* CarportCertificationVC.m in Sources */,
 				6B41C6F71FECE5D80070F5F7 /* ReleaseVC.m in Sources */,
@@ -2243,6 +2500,7 @@
 				6B41C6F91FECE5D80070F5F7 /* ReleaseModel.m in Sources */,
 				6B41C6FA1FECE5D80070F5F7 /* JMTitleSelectView.m in Sources */,
 				6B41C6FB1FECE5D80070F5F7 /* ReleaseDetailView.m in Sources */,
+				E5E05C0E2005DA20005CEFE7 /* JZLocationConverter.m in Sources */,
 				6B41C6FC1FECE5D80070F5F7 /* ReleaseLongView.m in Sources */,
 				6B41C6FD1FECE5D80070F5F7 /* SelectCarportTBCell.m in Sources */,
 				6B41C6FE1FECE5D80070F5F7 /* MessageVC.m in Sources */,
@@ -2252,6 +2510,7 @@
 				6B41C7021FECE5D80070F5F7 /* MyMessageTBView.m in Sources */,
 				6B41C7031FECE5D80070F5F7 /* SystemMessageTBCell.m in Sources */,
 				6B41C7041FECE5D80070F5F7 /* SystemMessageTBView.m in Sources */,
+				E53C7A28200D8AF200B2B181 /* FKAllOrderViewController.m in Sources */,
 				6B41C7051FECE5D80070F5F7 /* WKWebViewController.m in Sources */,
 				6B41C7061FECE5D80070F5F7 /* BalanceVC.m in Sources */,
 				6B41C7071FECE5D80070F5F7 /* PayRecordVC.m in Sources */,
@@ -2264,6 +2523,8 @@
 				6B41C70E1FECE5D80070F5F7 /* RechargeCLCell.m in Sources */,
 				6B41C70F1FECE5D80070F5F7 /* CarNumberAddVC.m in Sources */,
 				6B41C7101FECE5D80070F5F7 /* CarNumberListVC.m in Sources */,
+				E500E0F92011DB2C00B77636 /* WXUtil.mm in Sources */,
+				E500E0FB2011DB2C00B77636 /* payRequsestHandler.mm in Sources */,
 				6B41C7111FECE5D80070F5F7 /* CarNumberListTBCell.m in Sources */,
 				6B41C7121FECE5D80070F5F7 /* MineVC.m in Sources */,
 				6B41C7131FECE5D80070F5F7 /* LoginReminderVC.m in Sources */,
@@ -2274,6 +2535,7 @@
 				6B41C7181FECE5D80070F5F7 /* MyIssueVC.m in Sources */,
 				6B41C7191FECE5D80070F5F7 /* MyIssueModel.m in Sources */,
 				6B41C71A1FECE5D80070F5F7 /* MyIssueTBCell.m in Sources */,
+				E500E0FF201320B200B77636 /* RechargeModel.m in Sources */,
 				6B41C71B1FECE5D80070F5F7 /* MyRequestVC.m in Sources */,
 				6B41C71C1FECE5D80070F5F7 /* RequestCarportVC.m in Sources */,
 				6B41C71D1FECE5D80070F5F7 /* MyRequestItemModel.m in Sources */,
@@ -2299,17 +2561,20 @@
 				6B41C7301FECE5D90070F5F7 /* MineHeaderView.m in Sources */,
 				6B41C7311FECE5D90070F5F7 /* SettingTBCell.m in Sources */,
 				6B8AB66E1FDBCDF200A546A3 /* WTCarKeyboard.m in Sources */,
+				E500E0FC2011DB2C00B77636 /* GBWXPayManager.m in Sources */,
 				6B8AB66F1FDBCDF200A546A3 /* WTCarKeyboardModel.m in Sources */,
 				6B17DCEC1FD68E2200A30057 /* MZTimerLabel.m in Sources */,
 				6B0E80191FCBCE6700B2C309 /* QFDatePickerView.m in Sources */,
 				6B968F6A1FBD63470083A1DC /* JMTitleTextView.m in Sources */,
 				6B968F691FBD63420083A1DC /* JMTitleTextfieldView.m in Sources */,
+				E5ECC4322007407B0056CB38 /* AboutAppViewController.m in Sources */,
 				6BF95B971FB5A00B00DED0B7 /* UIPopoverController+Block.m in Sources */,
 				6BF95B961FB5A00600DED0B7 /* UIPickerView+Block.m in Sources */,
 				6BF95B951FB5A00000DED0B7 /* UINavigationController+Block.m in Sources */,
 				6BF95B941FB59FFA00DED0B7 /* UIActionSheet+Block.m in Sources */,
 				6BF95B931FB59FF400DED0B7 /* MFMessageComposeViewController+Block.m in Sources */,
 				6BF95B921FB59FEF00DED0B7 /* MFMailComposeViewController+Block.m in Sources */,
+				E500E10720133C1900B77636 /* ParkingRecordDetailModel.m in Sources */,
 				6BF95B911FB59FEB00DED0B7 /* NSURLConnection+Block.m in Sources */,
 				6BF95B901FB59FE300DED0B7 /* CLLocationManager+Block.m in Sources */,
 				6BF95B8F1FB59FBF00DED0B7 /* UIAlertView+Block.m in Sources */,
@@ -2320,6 +2585,7 @@
 				6B91B6B01F9DEE3E00A1020C /* UserModel.m in Sources */,
 				6B4151BF1FCE48CA0000F48E /* CALayer+JMXibBorderColor.m in Sources */,
 				6B1C158C1FA058AF00E584F3 /* BaseTBView.m in Sources */,
+				E5ECC43620087F7C0056CB38 /* PayPasswordListVC.m in Sources */,
 				6B91B6AE1F9DEE2600A1020C /* StatusModel.m in Sources */,
 				6B91B6AD1F9DEE1C00A1020C /* JMRefreshHeader.m in Sources */,
 				6B91B6AC1F9DEE0A00A1020C /* JMRefreshFooter.m in Sources */,
@@ -2336,6 +2602,7 @@
 				6B91B6A21F9DEDB300A1020C /* UIColor+Extension.m in Sources */,
 				6B91B6A11F9DEDAC00A1020C /* UIButton+LCAlignment.m in Sources */,
 				6B1C158B1FA058AF00E584F3 /* BaseCLView.m in Sources */,
+				E500E0FA2011DB2C00B77636 /* ApiXml.mm in Sources */,
 				6B91B6A01F9DEDA500A1020C /* UIButton+Block.m in Sources */,
 				6B91B69F1F9DED9F00A1020C /* UIButton+EnlargeEdge.m in Sources */,
 				6B91B69E1F9DED9A00A1020C /* NSString+String.m in Sources */,
@@ -2515,6 +2782,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLQK5CCX6D;
@@ -2522,6 +2790,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit",
+					"$(PROJECT_DIR)/SharedParking/Libs(第三方库)/AliPay",
 				);
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SharedParking/SharedParking.pch";
@@ -2598,7 +2867,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2608,6 +2877,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLQK5CCX6D;
@@ -2615,6 +2885,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/BaiduMapKit/BaiduMapKit",
+					"$(PROJECT_DIR)/SharedParking/Libs(第三方库)/AliPay",
 				);
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SharedParking/SharedParking.pch";
@@ -2691,7 +2962,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

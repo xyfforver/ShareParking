@@ -24,6 +24,7 @@
 #import "XJClusterAnnotation.h"
 #import "XJClusterAnnotationView.h"
 
+#import "ParkingSpaceHeaderView.h"
 #define viewMultiple 2
 @interface ParkingSpaceMapView ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,XJClusterAnnotationViewDelegate>
 @property (nonatomic,strong) UIImageView *imgView;
@@ -246,8 +247,8 @@
     BMKCoordinateRegion region ;//表示范围的结构体
     region.center = _mapView.centerCoordinate;//中心点
     
-    region.span.latitudeDelta = 0.1;//经度范围（设置为0.1表示显示范围为0.2的纬度范围）
-    region.span.longitudeDelta = 0.2;//纬度范围
+//    region.span.latitudeDelta = 0.1;//经度范围（设置为0.1表示显示范围为0.2的纬度范围）
+//    region.span.longitudeDelta = 0.2;//纬度范围
     [_mapView setRegion:region animated:YES];
     [self updateClusters];
 }
@@ -354,6 +355,7 @@
     self.service.delegate = self;
     self.geoCodeSearch.delegate = self;
     [self.service startUserLocationService];
+    
 }
 
 - (void)cancelMapDelegate{
@@ -476,7 +478,7 @@
         _mapView.isSelectedAnnotationViewFront = YES;//选中图标显示在最上面
         
         //在手机上当前可使用的级别为3-21级
-        _mapView.zoomLevel = 13;
+        _mapView.zoomLevel = 16;
         
         ///如果您需要进入地图就显示定位小蓝点，则需要下面两行代码
         _mapView.showsUserLocation = YES;

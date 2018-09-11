@@ -15,8 +15,8 @@ pod 'DZNEmptyDataSet', '~> 1.8.1'
 pod 'IQKeyboardManager', '~> 4.0.9'
 pod 'UITextView-WZB', '~> 1.0.2'
 
-pod 'BaiduMapKit', '~> 3.3.1'
-
+pod 'BaiduMapKit'
+pod 'WechatOpenSDK', '~> 1.7.7'
 
 
 

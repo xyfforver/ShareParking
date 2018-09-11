@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface BalanceVC : BaseViewController
-
+@property (assign, nonatomic) CGFloat user_money;
 @end
